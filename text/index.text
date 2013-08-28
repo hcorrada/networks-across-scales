@@ -1,0 +1,219 @@
+% CMSC702: Computational Systems Biology and Functional Genomics (Spring 2013)
+
+Course Information
+-------------------
+
+*	Instructor:  
+	[H&eacute;ctor Corrada Bravo](http://www.cbcb.umd.edu/~hcorrada)  
+	Center for Bioinformatics and Computational Biology  
+	Department of Computer Science  
+	<hcorrada@umiacs.umd.edu>  
+	Office: 3114F Biomolecular Sciences Building  
+	Phone Number: 301-405-2481 
+
+*	Lecture Meeting times  
+
+	Monday and Wednesday, 3:30pm-4:45pm  
+	Room CSI 3120
+
+*	Office Hours: Friday 1:00pm-2:00pm AVW 3223 and by appointment
+
+*	TA: Wikum Dinalankara  
+	<wikum@cs.umd.edu>  
+	Office Hours: TBA  
+
+* 	Discussion site: [https://piazza.com/class#spring2013/cmsc702](https://piazza.com/class#spring2013/cmsc702)  
+	Handin: [http://inclass.umiacs.umd.edu/perl/handin.pl?course=cmsc702](http://inclass.umiacs.umd.edu/perl/handin.pl?course=cmsc702)  
+	Grades server: [http://grades.cs.umd.edu](http://grades.cs.umd.edu)  
+
+
+
+Course Calendar
+----------
+
+<table class="table">
+<colgroup>
+<thead>
+<tr><th>Date<th>Lecture Name<th>Readings (*recommended*)<th>Work Due
+<tbody>
+<tr><td>1/23<td>[Course introduction and administrivia](lectures/lect1/CMSC702_Lecture1.pdf)<td><td>
+
+<tr><td>1/28<td>[Molecular biology for computer scientists and statisticians](lectures/lect2_Biointro/CMSC702_BioIntro.pdf)<td>[Hunter. Life and its molecules](readings/hunter04.pdf)<br>
+      [*Hunter. Molecular Biology for Computer Scientists*](readings/hunter-bio-for-CS.pdf)<td>
+
+<tr><td>1/30<td>[Statistical Learning:](lectures/lect3_StatLearnIntro/StatLearnOverview.pdf) a whirlwind tour of statistical inference 
+	machine learning and probabilistic models<td><td>
+
+<tr><td>2/4<td>[The R statistical programming environment](lectures/lect20_Rintro/Rintro.pdf)<td>[Baltimore data analysis example](lectures/lect20_Rintro/baltimore.html)<br>[R markdown source](lectures/lect20_Rintro/baltimore.Rmd)<br>[arrest data](Data/BPD_Arrests.csv)<br>[CCTV data](Data/CCTV_Locations.csv)<td>
+
+<tr><td>2/6<td>[The R/Bioconductor genomics analysis environment](lectures/lect21_bioc/bioconductor.pdf)<td>The setup script: [setup.R](lectures/lect21_bioc/setup.R)<br>
+		    The script we're using in class: [bioconductor.R](lectures/lect21_bioc/bioconductor.R)<br>
+		    [Cursory introduction to microarray](lectures/lect21_bioc/biocIntro.pdf)
+		    <td>
+
+<tr><td>2/11<td>[Overview of second generation sequencing technology](lectures/lect22_seqIntro/seqIntro.pdf)<td><br>
+[Bowtie](readings/bowtie.pdf)<td>
+
+<tr><td>2/13<td>**Gene expression analysis**: [RNA sequencing analysis](lectures/lect12_RNASeqI/RNAseqI.pdf)<td>
+[DESeq](readings/deseq.pdf)<br>
+[*RNAseq review article*](readings/wang_rnaseq.pdf)<br>
+[*Myrna*](readings/myrna.pdf)<td>
+
+<tr><td>2/18<td> [Overview of microarray technology, preprocessing methods and algorithms](lectures/lect4_MicroarrayExpressionI/MicroarraysExpressionI.pdf)<td>[[1] Chs. 1](readings/Solutions_ch1.pdf) and [2 (Specifically Section 2.3.2)](readings/Solutions_ch2.pdf)<br>
+[[2] *Sec 6.1 Local polynomial regression*](readings/ESLII_print5.pdf)<br>
+[*Quantile Normalization paper (Bolstad, et al., Bioinformatics 2003.)*](readings/Bioinformatics_2003_Bolstad.pdf)<td>
+
+<tr><td>2/20<td>[Differential expression analysis](lectures/lect5_MicroarrayExpressionII/MicroarraysExpressionII.pdf)<td>[[1] Ch. 11](readings/Solutions_ch12.pdf) and [Ch. 14](readings/Solutions_ch14.pdf)<br>[*SAM*](readings/sam.pdf)<br><td>
+
+<tr><td>2/27<td>[Empirical Bayes, SAM and Multiple testing](lectures/lect7_DifferentialExpressionII/DifferentialExpressionII.pdf)<td>[q-value](readings/storey_qvalue.pdf)<br>[*limma*](readings/limma.pdf)<td>
+
+<tr><td>3/1<td>[Isoform expression quantification and transcriptome assembly](lectures/lect13_RNASeqII/RNASeqII.pdf)<td>[Cufflinks](readings/cufflinks.pdf)<br>[*Jiang and Wong*](readings/jiang_rnaseq.pdf)<br>
+[*Salzman, Jiang and Wong*](readings/salzman_rnaseq.pdf)
+<td>
+
+<tr><td>3/4<td>[Unsupervised methods](lectures/lect8_UnsupervisedMethods/unsupervised.pdf)<td>[1] [Chs. 12](readings/Solutions_ch12.pdf) and [13](readings/Solutions_ch13.pdf)<br><br>[*[2] Ch. 14*](readings/ELSII_print5.pdf)<td>HW 1
+
+<tr><td>3/6<td>CANCELLED DUE TO WEATHER<td><td>
+
+<tr><td>3/11<td>[Classification and prediction methods (I)](lectures/lect10_classification/classification.pdf)<td>[*[2] Ch. 4*](readings/ESLII_print5.pdf)<td>
+
+<tr><td>3/13<td>Classification and prediction methods (II)<td><td>
+
+<tr><td>3/18<td>No class: Spring Break<td><td>
+
+<tr><td>3/20<td>No class: Spring Break<td><td>
+
+<tr><td>3/25<td>[Sparse methods in genomics](lectures/lect11_sparsity/l1sparsity.pdf)<td>[*[2] Ch. 18*](readings/ESLII_print5.pdf)<td>HW2
+
+<tr><td>3/27<td>[Geneset Enrichment Analysis](lectures/lect14_Genesets/GeneSets.pdf)<td>[*GOstats and references therein*](readings/falcon_GOstats.pdf)<br>
+[*GSEA*](readings/tian_gsea.pdf)<td>
+
+<tr><td>3/29<td>THIS IS NOT A LECTURE DATE<td><td>Project Proposal
+
+<tr><td>4/1<td>**Gene regulation** [Transcription factor analysis (ChIPSeq) and Motif finding](lectures/lect23_transfac/lect23_transfac.pdf)<td>[Zhang et al., 2011*](readings/pics.pdf)<br>[Bailey and Elkan, ISMB 1994*](readings/bailey-1994-ismb-meme.pdf)<td>
+
+<tr><td>4/3<td>[Regulatory network discovery](lectures/lect24_networks/lect24_networks.pdf)<td>[Segal, et al., 2003*](readings/modules.pdf)<td>
+
+<tr><td>4/8<td>[**Epigenetics**: Intro to epigenetics: Chromatin modifications,DNA methylation and the CpG genomic landscape](lectures/lect17_epigenetics/epigenetics.pdf)<td>[Bock and Lengauer, 2008](readings/epigenetics_bock.pdf)<br>
+[*Baylin and Jones, 2012*](readings/cancerEpigenome_BaylinJones.pdf)<br>
+[*Wu, et al., 2010*](readings/cpgislands_Wu.pdf)<td>Midterm
+
+<tr><td>4/10<td>[Analysis of differential methylation with microarrays and sequencing](lectures/lect17/epigenetics2.pdf)<td>[Hansen et al., 2012*](readings/Hansen-etal_2012.pdf)<br>
+[Supplementary](readings/Hansen-etal_2012_supp.pdf)<td>
+
+<tr><td>4/15<td>[Chromatin modifications and conformation](lectures/lect17/epigenetics3.pdf)<td>[Chromatin HMM, Ernst, et al., 2011*](readings/chromHMM.pdf)<br>
+[Supplementary](readings/chromHMM_Supp.pdf)<br>
+[Hi-C: Chromosome conformation, Lieberman-Aiden, 2009*](readings/Hi-C_2009.pdf)<br>
+[Supplementary](readings/Hi-C_Supp.pdf)<td>
+
+<tr><td>4/17<td>**Genetics**: [Genomic variant discovery with sequencing technology](lectures/lect15_genotyping/genotyping.pdf)<td>[Li, 2011*](readings/Li_2011.pdf)<br>[*SOAP*](readings/SOAP.pdf)<td>
+
+<tr><td>4/19<td>THIS IS NOT A LECTURE DATE<td><td>Project progress report
+
+<tr><td>4/22<td>Structural variant analysis with sequencing technology<td>[Hormozdiari, et al., 2012*](readings/hormozdiari_2012.pdf)<br>[Supplementary Material](readings/recomb2011-GR-final-supp.pdf)<td>
+
+<tr><td>4/24<td>[Genotype/phenotype association discovery and analysis](lectures/lect16_gwas/gwas.pdf)<td>[RAPID*](readings/RAPID.pdf)<br>
+[Lirnet*](readings/Lirnet.pdf)<td>
+
+<tr><td>4/29<td>**Data integration**: [Methods and algorithms for genomic data integration](lectures/lect18_integrationI/integration1.pdf)<td>[modEncode*](readings/svmIntegrate.pdf)<br>
+[Hefalmap](readings/hefalmap.pdf)<td>
+
+<tr><td>5/1<td>[Approaching the promise of individualized medicine](lectures/lect25_wrapup/wrapup.pptx)<td><td>
+
+<tr><td>5/3><td>**THIS IS NOT A LECTURE DATE**<td><td>HW 3
+<tr><td>5/6<td>Project presentations (1)<td><td>
+
+<tr><td>5/8<td>Project presentations (2)<td><td>
+
+<tr><td>5/15<td>**THIS IS NOT A LECTURE DATE**<td><td>Final project
+</table>
+
+Papers available for group presentation are marked with an asterisk (\*). *Lectures linked are from last semester and very likely to change near lecture time*
+
+<table class="table">
+	<colgroup>
+	<thead>
+		<tr><th>Legend
+	</thead>
+	<tbody>
+		<tr class="tr-present"><td>Under construction
+		<tr class="tr-future"><td>Not updated yet
+	</tbody>
+</table>
+
+[1] [Gentleman, R., Carey, V.J., et al. *Bioinformatics and Computational Biology Solutions Using R and Bioconductor.* Springer, 2005.](http://www.springerlink.com.proxy-um.researchport.umd.edu/content/978-0-387-25146-2#section=519948&page=1&locus=0)   
+[2] [Hastie, Tibshirani and Friedman. The Elements of Statistical Learning. Springer 2009.](http://www-stat.stanford.edu/~tibs/ElemStatLearn/)  
+
+Many slides are borrowed from a number of sources (hopefully cited in slides). A lot of them are borrowed from [Rafael A. Irizarry](http://rafalab.org).
+
+Homeworks
+----------
+
+<table class="table">
+<thead>
+<tr><th>Homework<th>Date posted<th>Due date<th>Hints and solutions
+<tbody>
+<tr><td>[Homework 1](homeworks/HW1.pdf)<td>Feb 15<td>Mar 4<td>[Part IV](homeworks/HW1_PartIV_solution.html)/[Everything else](homeworks/HW1_solution.pdf)
+<tr><td>[Homework 2](homeworks/HW2.pdf)<td>Mar 6<td>Mar 25<td>[Solution](homeworks/HW2_solution.html) [Rmd source](homeworks/HW2_solution.Rmd)
+<tr><td>[Homework 3](homeworks/HW3.pdf)<td>Apr 22<td>May 3<td>
+</table>
+
+Resources
+---------
+
+* R/Bioconductor: [R](http://www.r-project.org) is an open-source environment for data analysis. The [Bioconductor project](http://bioconductor.org) provides a
+large number of useful libraries for high-throughput genomic data analysis. [You can browse them by task](http://www.bioconductor.org/packages/release/BiocViews.html)
+* R Task Views: The [Machine Learning](http://cran.r-project.org/web/views/MachineLearning.html) and [Optimization](http://cran.r-project.org/web/views/Optimization.html) Task Views list useful packages in R we may use.
+* R/Matlab references: [A short R guide for Matlab users.](http://mathesaurus.sourceforge.net/octave-r.html) [A longer one.](http://cran.r-project.org/doc/contrib/Hiebeler-matlabR.pdf) 
+* R/Python references: [A short R guide for Python users.](http://mathesaurus.sourceforge.net/r-numpy.html) 
+* [Scitable](http://www.nature.com/scitable) is an excellent resource provided by the journal *Nature* providing introductory reading material on most of the topics in biology/genetics/medicine we 
+discuss in class. 
+* [Hastie, Tibshirani and Friedman. The Elements of Statistical Learning. Springer 2009.](http://www-stat.stanford.edu/~tibs/ElemStatLearn/) This book covers many of the Machine/Statistical Learning methods we will use in class. [You can download it here.](http://www-stat.stanford.edu/~tibs/ElemStatLearn/download.html)
+* [Diez, Barr and Cetinkaya-Rundel. OpenIntro Statistics. 2011](http://www.openintro.org/stat/online.php) A good introductory Statistics textbook. [You can download it here.](http://www.openintro.org/stat/downloads.php).
+* [Rafael Irizarry's lecture videos](http://www.youtube.com/user/RafalabChannel?feature=watch) are good to watch.
+
+Syllabus
+--------
+
+The official syllabus detailing class policies, calendar and other details can be found [here](syllabus.html) [[pdf]](pdf/syllabus.pdf)
+
+
+Description
+------------
+
+Major advances in technology for genomic studies are bringing the prospect of personalized
+and individualized medicine closer to reality. Many of these advances
+are predicated on the ability to generate data at an unprecedented
+rate, posing a significant need for computational data analysis that
+is clinically and biologically useful and robust.
+
+This course will concentrate on the fundamental computational and
+ statistical methods required to meet this need. It will cover topics in functional
+genomics, population genetics and epigenetics. Computational methods
+studied for this type of analysis include: supervised, unsupervised
+and semi-supervised learning, data visualization, statistical modeling
+and inference, probabilistic graphical models, sparse methods, and
+numerical optimization. Machine learning methods will be a
+core component of this class. No prior knowledge of biology is required.
+
+Topics to be covered (not an exhaustive list)
+----------------------------------------------
+
+*	Introduction
+	*	A primer on molecular biology for computer scientists and statisticians
+
+*	Functional genomics
+	*	Gene expression analysis by probabilistic modeling and statistical inference
+	*	Supervised, unsupervised and semi-supervised learning models for classification and clustering from gene expression data
+	*	Deriving medical diagnosis and prognosis models from expression data using sparse methods in machine learning
+	*	Probabilistic graphical models of gene co-regulation
+
+*	Genetics and epigenetics
+	*	 Genotype-phenotype association analysis by probabilistic modeling and statistical inference
+	*	 Genomic-environmental-clinical data integration methods
+
+*	Emerging Topics
+	*	 Sequencing technologies
+	*	 Individualized Medicine
+
+

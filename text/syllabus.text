@@ -1,0 +1,127 @@
+% CMSC702: Computational Systems Biology and Functional Genomics
+
+This page and the [main course page](index.html) serve as syllabus for this class.
+
+Description
+-----------
+
+Major advances in technology for genomic studies are bringing the prospect of personalized
+and individualized medicine closer to reality. Many of these advances
+are predicated on the ability to generate data at an unprecedented
+rate, posing a significant need for computational data analysis that
+is clinically and biologically useful and robust.
+
+This course will concentrate on the fundamental computational and
+ statistical methods required to meet this need. It will cover topics in functional
+genomics, population genetics and epigenetics. Computational methods
+studied for this type of analysis include: supervised, unsupervised
+and semi-supervised learning, data visualization, statistical modeling
+and inference, probabilistic graphical models, sparse methods, and
+numerical optimization. Machine learning methods will be a
+core component of this class. No prior knowledge of biology is required.
+
+Course Information
+------------------
+
+*	Instructor:  
+	[H&eacute;ctor Corrada Bravo](http://www.cbcb.umd.edu/~hcorrada)  
+	Center for Bioinformatics and Computational Biology  
+	Department of Computer Science  
+	<hcorrada@umiacs.umd.edu>  
+	Office: 3114F Biomolecular Sciences Building  
+	Phone Number: 301-405-2481
+
+*	Lecture Meeting times  
+
+	Monday and Wednesday, 3:30pm-4:45pm  
+	Room CSI 3120
+
+*	Office Hours: Friday 1:00pm-2:00pm AVW 3223 and by appointment
+
+*	TA: Wikum Dinalankara  
+	<wikum@cs.umd.edu>  
+	Office Hours: TBA 
+
+*	Evaluation
+
+	*	 Assignments: Three assignments including programming, data
+	analysis and pen-and-paper problems (25%) 
+	*	 Project and its presentation (25%) 
+	*	 Paper presentation (20%) and discussion (5%) 
+	*	 Midterm (20%) 
+	*	 Class participation (5%) 
+
+*	Textbook: There is no required textbook. 
+
+Tentative Course Calendar
+-------------------------
+
+*	1/23: Course introduction and administrivia 
+*	1/28: Molecular biology for computer scientists and statisticians 
+*	1/30: Statistical Learning: a whirlwind tour of statistical inference, machine learning and probabilistic models 
+*	2/4: The R statistical programming environment 
+*	2/6: The R/Bioconductor genomics analysis environment 
+*	2/11: Overview of second generation sequencing technology 
+*	2/13: **Gene expression analysis**: RNA sequencing analysis 
+*	2/18: Differential expression analysis 
+*	2/20: Empirical Bayes, SAM and Multiple testing 
+*	2/25: Geneset Enrichment Analysis *HW 1 due* 
+*	2/27: Microarray technology, preprocessing methods and algorithms 
+*	3/4: Isoform expression quantification and transcriptome assembly 
+*	3/6: Clustering and dimensionality reduction methods 
+*	3/11: Classification and prediction methods 
+*	3/13: Classification and prediction methods (2) *HW 2 due* 
+*	3/18: No class: Spring Break 
+*	3/20: No class: Spring Break 
+*	3/25: Sparse methods in genomics *Project proposal due* 
+*	3/27: **Gene regulation** Transcription factor analysis (ChIPSeq) 
+*	4/1: Motif finding 
+*	4/3: Regulatory network discovery and analysis *Take home midterm due* 
+*	4/8: **Epigenetics**: Intro to epigenetics: Chromatin modifications, DNA methylation and the CpG genomic landscape 
+*	4/10: Analysis of differential methylation with microarrays and sequencing 
+*	4/15: Chromatin modifications and conformation 
+*	4/17: **Genetics**: Genomic variant discovery with sequencing technology (1)
+*	4/22: Structural variant analysis with sequencing technology (2)
+*	4/24: Statistical methods and algorithms for discovering genetic disease associations *HW 3 due*
+*	4/29: **Data integration**: Methods and algorithms for genomic data integration,  
+*	5/1: Approaching the promise of individualized medicine 
+*	5/6: Project presentations (1) 
+*	5/8: Project presentations (2) 
+*	5/15: *Final Project Due* 
+
+The final (mutable) calendar is in the course homepage.
+
+Teamwork
+---------
+
+You will be working in teams of 2-4 students this semester. Each team will carry out three tasks: a) present a paper in class, b) lead discussion of a paper presented by another team in class, c) the final project. You can find more information about each task below. Form teams using the [piazza class page](https://piazza.com/class#spring2013/cmsc702). Teams need to be formed by the end of the second week of class. More information about team formation will be given in the first lecture. 
+
+In-class Paper Presentations
+-----------------------------
+
+Each team will present one paper during the semster. The (30 minute) presentation should center on methods and techniques, as the instructor will introduce required Biology concepts beforehand. For each presentation, another team will be assigned to lead discussion. This team should be prepared to ask questions, provide clarifications, and/or add perspective as required. More information about paper assignments will be given in the first lecture. 
+
+Preliminary Project Guidelines
+--------------------------
+
+A substantial amount of the evaluation in this course will consist of a project. In general you can choose from four types of projects:
+
+1. Algorithm/method design: Design and provide a preliminary implementation of an algorithm or method to analyze a particular type of genomic assay 
+2. Algorithm/method application: Apply existing algorithms or methods to existing genomic datasets 
+3. Literature review: Review the existing methods for a particular analysis task 
+4. Other: Any other *approved* project analyzing high-throughput genomic assays 
+
+Policies
+--------
+
+* There will be reading assignments. Students are expected to have read the material **before** class. 
+* Students are expected to attend lectures. Active participation is expected.  
+* Assignments are to be handed-in electronically or in class as instructed on their due date. Late assignments will be penalized. 
+* Students may discuss homeworks in groups. However, each student must write solutions independently. 
+* Programming exercises must be completed using R. We will spend time in class going over enough R that you can complete your assignments. 
+* Cell phone usage is **prohibited** during lecture, laptop use will be allowed to the extent that students use it to follow along an in-class analysis or demonstration 
+* Using or referencing any materials from the web without proper citation is a violation to the honor code 
+* In this course you are responsible for both the [University's Code of Academic Integrity](http://www.jpo.umd.edu/) and the [University of Maryland Guidelines for Acceptable Use of Computing Resources](http://www.nethics.umd.edu/aup/). Any evidence of unacceptable use of computer accounts or unauthorized cooperation on tests, quizzes, or projects will be submitted to the Student Honor Council, which could result in an XF for the course, suspension, or expulsion from the University. 
+* Students claiming an excused absence for an exam must apply in writing and furnish documentary support (such as from a health care professional who treated the student). No make-up exams are given. 
+* Any student eligible for and requesting reasonable academic accommodations due to a disability is requested to provide, to the instructor in office hours, a letter of accommodation from the Office of Disability Support Services (DSS) within the first two weeks of the semester. 
+* Any student who must miss a class due to religious holidays should also notify the instructor during the first two weeks of class.
