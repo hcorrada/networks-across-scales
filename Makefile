@@ -1,8 +1,9 @@
 SUBDIRS=text 
 CLEAN_SUBDIRS=$(patsubst %,clean-%,$(SUBDIRS))
+COURSE=CMSC423
 
-LOCALHOST=$(HOME)/Sites/CMSC858B
-REMOTEHOST=willow.umiacs.umd.edu:/fs/www-umiacs-users/hcorrada/CMSC702
+LOCALHOST=$(HOME)/Sites/$(COURSE)
+REMOTEHOST=willow.umiacs.umd.edu:/fs/www-umiacs-users/hcorrada/$(COURSE)
 
 .PHONY: all clean subdirs $(SUBDIRS) clean-subdirs $(CLEAN_SUBDIRS)
 
@@ -25,7 +26,6 @@ $(CLEAN_SUBDIRS):
 pushlocal: subdirs
 	rsync -avz text/*.html $(LOCALHOST)
 	rsync -avz ../css $(LOCALHOST)
-#	rsync -avz text/lectures/ --exclude=* --include=*.html $(LOCALHOST)/lectures
 	rsync -avz images $(LOCALHOST)
 	rsync -avz text/*.pdf $(LOCALHOST)/pdf
 	rsync -avz readings/ $(LOCALHOST)/readings
@@ -33,12 +33,10 @@ pushlocal: subdirs
 #	rsync -avz src/*.R $(LOCALHOST)/src
 #	rsync -avz ../Data $(LOCALHOST)
 	rsync -avz text/homeworks/ --include='*.pdf' --include='*.html' --exclude='*.*' $(LOCALHOST)/homeworks
-	rsync -avz text/homeworks/*.pdf $(LOCALHOST)/homeworks
 
 pushremote: subdirs
 	rsync -avz text/*.html $(REMOTEHOST)
 	rsync -avz ../css $(REMOTEHOST)
-#	rsync -avz text/lectures/*.html $(REMOTEHOST)/lectures/
 	rsync -avz images/ $(REMOTEHOST)/images
 	rsync -avz text/*.pdf $(REMOTEHOST)/pdf/
 	rsync -avz readings/ $(REMOTEHOST)/readings
@@ -46,8 +44,6 @@ pushremote: subdirs
 	rsync -avz ../Data $(REMOTEHOST)
 #	rsync -avz src/*.R $(REMOTEHOST)/src/
 	rsync -avz text/homeworks/ --include='*.pdf' --include='*.R' --include='*.html' --include='*.Rmd' --exclude='*.*' $(REMOTEHOST)/homeworks
-#	rsync -avz text/homeworks/*.pdf $(REMOTEHOST)/homeworks
-#	rsync -avz text/contest.txt $(REMOTEHOST)
 
 
 
