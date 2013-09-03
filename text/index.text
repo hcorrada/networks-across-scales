@@ -25,11 +25,14 @@ Course Information
 * 	Discussion site: [https://piazza.com/class/hkw79sqktnk3sf](https://piazza.com/class/hkw79sqktnk3sf)  
 	`grace` info: TBA  
 	Grades server: [http://grades.cs.umd.edu](http://grades.cs.umd.edu)  
+	Course readings in canvas: [https://umd.instructure.com/courses/1030134](https://umd.instructure.com/courses/1030134)
 
 
 
 Tentative Course Calendar
 ----------
+
+Readings are uploaded to canvas: [https://umd.instructure.com/courses/1030134](https://umd.instructure.com/courses/1030134)
 
 <table class="table">
 <colgroup>
@@ -37,33 +40,33 @@ Tentative Course Calendar
 <tr><th>Date<th>Lecture Materials<th>Readings<th>Work Due
 <tbody>
 <tr class="tr-present"><td>9/3<td>Course Introduction<td><td>
-<tr class="tr-present"><td>9/5<td>Molecular biology for computer scientists<td>Hunter<td>
-<tr class="tr-present"><td>9/11<td>Programming for bioinformatics<td>BioPython primer (?)<td>
-<tr class="tr-future"><td>9/12<td>Bioinformatics public resources<td>Pevsner chapter<td>
-<tr class="tr-future"><td>9/17<td>DNA sequencing<td>Shendure/Ben<td>
-<tr class="tr-future"><td>9/19<td>Sequence alignment - exact matching<td>Gusfield<td>
-<tr class="tr-future"><td>9/24<td>Sequence alignment - exact matching<td>Gusfield<td>
-<tr class="tr-future"><td>9/26<td>Data structures for efficient string querying (suffix trees)<td>Gusfield<td>Project I
-<tr class="tr-future"><td>10/1<td>Data structures for efficient string querying (suffix arrays)<td>Gusfield<td>
-<tr class="tr-future"><td>10/3<td>Data structures for efficient string querying (Burrows-Wheeler transform)<td>Bowtie<td>
+<tr class="tr-present"><td>9/5<td>Molecular biology for computer scientists<td>`Hunter:BiologyForCS.pdf`<td>
+<tr class="tr-present"><td>9/11<td>Programming for bioinformatics<td><!-- BioPython primer (?) --><td>
+<tr class="tr-future"><td>9/12<td>Bioinformatics public resources<td><!-- Pevsner chapter --><td>
+<tr class="tr-future"><td>9/17<td>DNA sequencing<td><!-- Shendure/Ben --><td>
+<tr class="tr-future"><td>9/19<td>Sequence alignment - exact matching<td><!-- Gusfield --><td>
+<tr class="tr-future"><td>9/24<td>Sequence alignment - exact matching<td><!-- Gusfield --><td>
+<tr class="tr-future"><td>9/26<td>Data structures for efficient string querying (suffix trees)<td><!-- Gusfield --><td>Project I
+<tr class="tr-future"><td>10/1<td>Data structures for efficient string querying (suffix arrays)<td><!-- Gusfield --><td>
+<tr class="tr-future"><td>10/3<td>Data structures for efficient string querying (Burrows-Wheeler transform)<td><!-- Bowtie --><td>
 <tr><td>10/8<td>**Midterm I**<td><td>
-<tr class="tr-future"><td>10/10<td>Genome Sequence Assembly<td>Waterman book & Assembly primer<td>
-<tr class="tr-future"><td>10/15<td>Genome Sequence Assembly<td>Pevsner algos<td>
-<tr class="tr-future"><td>10/17<td>Sequence alignment - inexact matching<td>Pevsner algos<td>Project II
+<tr class="tr-future"><td>10/10<td>Genome Sequence Assembly<td><!-- Waterman book & Assembly primer --><td>
+<tr class="tr-future"><td>10/15<td>Genome Sequence Assembly<td><!-- Pevsner algos --><td>
+<tr class="tr-future"><td>10/17<td>Sequence alignment - inexact matching<td><!-- Pevsner algos --><td>Project II
 <tr class="tr-future"><td>10/22<td>Sequence alignment - inexact matching<td><td>
-<tr class="tr-future"><td>10/24<td>Sequence alignment - inexact matching<td>durbin<td>
-<tr class="tr-future"><td>10/29<td>Multiple sequence alignment<td>durbin<td>
-<tr class="tr-future"><td>10/31<td>Whole genome comparison with MUMMER<td>paper<td>
+<tr class="tr-future"><td>10/24<td>Sequence alignment - inexact matching<td><!-- durbin --><td>
+<tr class="tr-future"><td>10/29<td>Multiple sequence alignment<td><!-- durbin --><td>
+<tr class="tr-future"><td>10/31<td>Whole genome comparison with MUMMER<td><!-- paper --><td>
 <tr><td>11/5<td>**Midterm II**<td><td>
-<tr class="tr-future"><td>11/7<td>Signal finding - gene finding<td>durbin<td>
-<tr class="tr-future"><td>11/12<td>Signal finding - motif analysis<td>pevsner (?)<td>
-<tr class="tr-future"><td>11/14<td>Expression analysis (feature selection and prediction)<td>baldi?<td>
-<tr class="tr-future"><td>11/19<td>Expression analysis (clustering)<td>baldi?<td>Project III
-<tr class="tr-future"><td>11/21<td>Regulatory network analysis (network modules)<td>paper<td>
-<tr class="tr-future"><td>11/26<td>Trees in genetics and phylogenetics<td>waterman<td>
-<tr class="tr-future"><td>11/28<td>Thanksgiving recess<td><td>
-<tr class="tr-future"><td>12/3<td>Genetic population variation<td>waterman<td>
-<tr class="tr-future"><td>12/5<td>Phylogenetic analysis<td>waterman<td>Project IV
+<tr class="tr-future"><td>11/7<td>Signal finding - gene finding<td><!-- durbin --><td>
+<tr class="tr-future"><td>11/12<td>Signal finding - motif analysis<td><!-- pevsner (?) --><td>
+<tr class="tr-future"><td>11/14<td>Expression analysis (feature selection and prediction)<td><!-- baldi? --><td>
+<tr class="tr-future"><td>11/19<td>Expression analysis (clustering)<td><!-- baldi? --><td>Project III
+<tr class="tr-future"><td>11/21<td>Regulatory network analysis (network modules)<td><!-- paper --><td>
+<tr class="tr-future"><td>11/26<td>Trees in genetics and phylogenetics<td><!-- waterman --><td>
+<tr class="tr-future"><td>11/28<td>**No lecture: Thanksgiving recess**<td><td>
+<tr class="tr-future"><td>12/3<td>Genetic population variation<td><!-- waterman --><td>
+<tr class="tr-future"><td>12/5<td>Phylogenetic analysis<td><!-- waterman --><td>Project IV
 <tr class="tr-future"><td>12/10<td>What you missed<td><td>
 <tr class="tr-future"><td>12/12<td>Recap/review<td><td>
 </table>
@@ -94,17 +97,30 @@ Programming Projects
 <tr class="tr-future"><td>Project IV: Classification, clustering and HMMs<td>11/19<td>12/5
 </table>
 
-Resources
+Python
+-------
+
+We will be using [Python](http://www.python.org/) for all programming projects. Here are some resources
+to get you started:
+
+*   [Short tutorial by Hal Daume](http://www.umiacs.umd.edu/~hal/courses/2011F_ML/p0/)  
+*	[Python Tutorial](http://docs.python.org/tutorial/)  
+*	[Python Docs](http://docs.python.org/index.html)  
+*	[Numpy Tutorial (tentative)](http://scipy.org/Tentative_NumPy_Tutorial)  
+*	[Numpy User's Guide](http://docs.scipy.org/doc/numpy/user/)  
+*	[Scipy docs](http://docs.scipy.org/doc/)  
+*	[IPython docs](http://ipython.org/ipython-doc/stable/index.html)  
+*   [IPy Notebook](http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html)  
+*	[An introductory video on IPy notebook by Titus Brown (starts about 2 minutes in)](http://www.youtube.com/watch?feature=player_detailpage&v=HaS4NXxL5Qc#t=138s)  
+
+Other Resources
 ---------
 
 * R/Bioconductor: [R](http://www.r-project.org) is an open-source environment for data analysis. The [Bioconductor project](http://bioconductor.org) provides a
 large number of useful libraries for high-throughput genomic data analysis. [You can browse them by task](http://www.bioconductor.org/packages/release/BiocViews.html)
-* R Task Views: The [Machine Learning](http://cran.r-project.org/web/views/MachineLearning.html) and [Optimization](http://cran.r-project.org/web/views/Optimization.html) Task Views list useful packages in R we may use.
-* R/Matlab references: [A short R guide for Matlab users.](http://mathesaurus.sourceforge.net/octave-r.html) [A longer one.](http://cran.r-project.org/doc/contrib/Hiebeler-matlabR.pdf) 
 * R/Python references: [A short R guide for Python users.](http://mathesaurus.sourceforge.net/r-numpy.html) 
 * [Scitable](http://www.nature.com/scitable) is an excellent resource provided by the journal *Nature* providing introductory reading material on most of the topics in biology/genetics/medicine we 
 discuss in class. 
-* [Hastie, Tibshirani and Friedman. The Elements of Statistical Learning. Springer 2009.](http://www-stat.stanford.edu/~tibs/ElemStatLearn/) This book covers many of the Machine/Statistical Learning methods we will use in class. [You can download it here.](http://www-stat.stanford.edu/~tibs/ElemStatLearn/download.html)
 * [Diez, Barr and Cetinkaya-Rundel. OpenIntro Statistics. 2011](http://www.openintro.org/stat/online.php) A good introductory Statistics textbook. [You can download it here.](http://www.openintro.org/stat/downloads.php).
 * [Rafael Irizarry's lecture videos](http://www.youtube.com/user/RafalabChannel?feature=watch) are good to watch.
 
