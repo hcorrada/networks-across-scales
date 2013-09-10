@@ -44,6 +44,38 @@ for your work. To run it in grace use command `python2.7`. We will use the `nump
 `Bio` and `matplotlib` libraries in class. These are all available in grace. Programming
 project descriptions will include any information about extra libraries if needed.
 
+We've installed a couple of other useful packages, namely IPython and the ability to use the IPython
+notebook (although it is awfully slow in grace). To access these, run:
+
+```shell
+# for bash
+source /afs/glue.umd.edu/class/fall2013/cmsc/423/0101/public/python2.7/bin/activate
+
+# for csh
+source /afs/glue.umd.edu/class/fall2013/cmsc/423/0101/public/python2.7/bin/activate.csh
+```
+
+After doing this, the `python` command will use this installation of python2.7. To use the system default again use:
+
+```shell
+deactivate
+```
+
+To start [Ipython](http://ipython.org/) with matplotlib and numpy imported. 
+
+```shell
+ipython --pylab=auto
+```
+
+Although not recommended in grace since it can be very slow (but highly recommended otherwise), you can use the IPython HTML notebook:
+
+```shell
+ipython notebook --pylab=inline &
+
+# look for url in messages
+firefox http://127.0.0.1:8888/ &
+```
+
 ###Other useful software
 Although python is required for all programming projects, there is other
 software available. GNU C and C++ (`gcc` and `g++`) compilers are
