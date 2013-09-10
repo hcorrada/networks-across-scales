@@ -28,10 +28,11 @@ pushlocal: subdirs
 	rsync -avz ../css $(LOCALHOST)
 	rsync -avz images $(LOCALHOST)
 	rsync -avz text/*.pdf $(LOCALHOST)/pdf
-	rsync -avz readings/ $(LOCALHOST)/readings
+#	rsync -avz readings/ $(LOCALHOST)/readings
 	rsync -avz text/lectures/ --include='*.pdf' --include='*.html' --include='*.R' --include='*.Rmd' --exclude='*.*' $(LOCALHOST)/lectures
 #	rsync -avz src/*.R $(LOCALHOST)/src
 #	rsync -avz ../Data $(LOCALHOST)
+	rsync -avz projects/ --include='*.html' $(LOCALHOST)/projects
 	rsync -avz text/homeworks/ --include='*.pdf' --include='*.html' --exclude='*.*' $(LOCALHOST)/homeworks
 
 pushremote: subdirs
@@ -39,10 +40,11 @@ pushremote: subdirs
 	rsync -avz ../css $(REMOTEHOST)
 	rsync -avz images/ $(REMOTEHOST)/images
 	rsync -avz text/*.pdf $(REMOTEHOST)/pdf/
-	rsync -avz readings/ $(REMOTEHOST)/readings
+#	rsync -avz readings/ $(REMOTEHOST)/readings
 	rsync -avz text/lectures/ --include='*.pdf' --include='*.html' --include='*.R' --include='*.Rmd' --include='*.pptx' --exclude='*.*' $(REMOTEHOST)/lectures
 	rsync -avz ../Data $(REMOTEHOST)
 #	rsync -avz src/*.R $(REMOTEHOST)/src/
+	rsync -avz projects/ --include='*.html' $(REMOTEHOST)/projects/
 	rsync -avz text/homeworks/ --include='*.pdf' --include='*.R' --include='*.html' --include='*.Rmd' --exclude='*.*' $(REMOTEHOST)/homeworks
 
 

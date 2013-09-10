@@ -1,0 +1,139 @@
+% CMSC 423 Project I: FASTA file parsing and comparing GC content
+
+In this project you will get familiar with public sequence databases and file formats,
+practice your file parsing skills, and analyze different genomes with
+simple nucleotide composition statistics. Remember:
+
+*	only python 2.7 can be used,  
+*	your code must be executable on the grace system,  
+*	only the standard python library, numpy and matplotlib can be used. Specifically, no BioPython allowed for this project.  
+*	we ask that you present an analysis comparing genome sequences, make sure you schedule enough time to do a good thorough writing job  
+
+##Part I: Background
+
+The GC content of genomes is a simple but very informative characteristic. It is defined as the fraction of 'G' or 'C' in the 
+genome sequence. Equivalently, the percentage of 'guanine' and 'cytosine' in the corresponding DNA molecules. GC content can
+affect the difficulty of sequencing an organism, differences in GC content across a single genome are related to differences
+in function of genomic regions, and analysis of data for many high-throughput assays requires modeling and controlling for GC
+content. In this project you will use GC content as a simple statistic to compare genomes.
+
+##Part II: Parse FASTA file and compute GC content
+
+The GC content of a sequence is the *proportion* of G's or C's in the sequence. For example,
+the GC content of sequence `ACGGCA` is 4/6, and the GC content of `AGAACA` is 2/6.
+
+**Specification**: Your program should parse a FASTA file, and output for each
+record in the FASTA file, the sequence identifier, and the GC content of the sequence using the format below.
+
+Some details:
+
+*	For clarifications on the FASTA format see the [Wikipedia Entry](http://en.wikipedia.org/wiki/FASTA_format)  
+*	You can assume that sequence identifier follows right after the `>` sign. If a sequence
+	doesn't follow this rule, you can exit with an error.  
+*	You can also assume that the identifier ends with the first "whitespace" character (space, tab,
+	or end-of-line)  
+*	**Interface** Your script should take the FASTA file as a command-line parameter and send 	
+	output to standard output
+
+For the example file `/class/fall2013/cmsc/423/0101/public/test.fasta`, your program `gcCalc.py` should behave as follows
+
+```{shell}
+$ python2.7 gcCalc.py /class/fall2013/cmsc/423/0101/public/test.fasta
+exact\t50.00\n
+onesub\t50.00\n
+onegap\t55.56\n
+twogap\t60.00\n
+threegap\t54.55\n
+partial\t61.54\n
+repeat\t50.00\n
+```
+
+##Part III: Compute GC content for 8 organisms
+
+The following files contain (in total) sequences from 8 different organisms.
+```
+/class/fall2013/cmsc/423/0101/public/bacteria.fasta
+/class/fall2013/cmsc/423/0101/public/Celegans_chrX.fasta
+/class/fall2013/cmsc/423/0101/public/Athaliana_chr5.fasta
+/class/fall2013/cmsc/423/0101/public/Hsapiens_chr22.fasta
+```
+
+Use your program from Part II to compute the GC content of the 8 organisms. Prepare a short writeup including a table 
+and a barplot (using the `barh` function in matplotlib) of the result of your calculation. *See below for instructions on handing in writeup*.
+
+##Part IV: Is GC content uniform (a)?
+
+In the next two parts you will find out if GC content is the same across single genomes. First, extend your program to compute
+GC content in overlapping windows of length `k`, and compute a histogram of GC content for each sequence in a FASTA file.
+
+**Specification**: Your program should parse a FASTA file, compute GC content in overlapping windows of size `k` and
+compute a histogram of GC content with `n` bins. 
+
+Details:
+
+*	The details above on FASTA format apply here as well.  
+*	**Interface** Your script should take three parameters: FASTA filename, window size `k` and number of histogram bins `n`. It should
+	output to standard output the count computed for each histogram bin.
+
+Let's use sequence `ACGGCA`, `k=2`, and `n=4` as an example:
+
+1.	The GC content of overlapping windows of size 2 are 1/2,2/2,2/2,2/2,1/2  
+2.	Since `n=4` each bin corresponds to GC content of `[0,.25), [.25,.5), [.5, .75), [.75, 1]`, and the counts for each bin are
+	0,0,2,3.
+
+For the example file `/class/fall2013/cmsc/423/0101/public/test.fasta` window size 2 and number of bins 4, your program `gcCalcW.py` should
+behave as follows:
+
+```
+$ python2.7 gcCalcW.py /class/fall2013/cmsc/423/0101/public/test.fasta 2 4
+exact\t1,0,5,1\n
+onesub\t1,0,5,1\n
+onegap\t1,0,5,2\n
+twogap\t1,0,5,3\n
+threegap\t1,0,7,2\n
+partial\t1,0,7,4\n
+repeat\t4,0,25,4\n
+```
+
+##Part V: Is GC content uniform (b)?
+
+Use your program from part IV to compute the GC content of the 8 organisms in the fasta files. Prepare a short writeup 
+including a plot of the histogram of GC content for 10 Kbp windows, using 100 bins, for each organism. Is GC content uniform,
+i.e., the same across genomes. Think about how you would answer that question treating each window as a *random sample* from
+the genome.
+
+##Part VI: Your favorite sequences.
+
+Download five sequences from `RefSeq`, compute their GC content as in part III. Prepare a short writeup including a barplot (again,
+using `barh`).
+
+##Handing in
+
+You will handin four files:
+1.	`gcCalc.py` for Part II  
+2.	`gcCalcW.py` for Part IV  
+3.	`writeup.pdf` including writeups for Parts III, V and VI.  
+
+tar and zip these three files and use the `submit` script in grace to submit.
+
+Each writeup should include for each Part
+
+	a.  A summary of what the experiment was  
+	b. A short description of your solution/implementation  
+	c. A table or plot with your findings  
+	d. A short description of your findings  
+
+##Grading
+
+Your project will be graded as follows:
+
+1.  Implementation correctness 30%  (Parts II and IV, 15% each)  
+2.  Implementation efficiency 20%  (Parts II and IV, 15% each)  
+3.  Presentation correctness 30%  (Parts III, V, 12% each, Part VI 6%)  
+4.  Presentation style 20%  (Parts III, V, 8% each, Part VI 4%)  
+
+##Questions
+
+Please post questions to the Piazza page, the TA, instructor and colleagues will answer there.  
+
+
