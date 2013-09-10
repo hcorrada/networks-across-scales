@@ -1,0 +1,14 @@
+*sublime*
+projects
+readings
+text/*.html
+text/*.pdf
+src/proj1/*.pdf
+src/proj1/*.ps
+src/proj1/*.out
+src/proj1/*.sh
+src/proj1/*sublime*
+src/proj1/*.fasta
+text/hidden_text/*.html
+text/hidden_text/*.pdf
+text/hidden_text/.tmp

@@ -20,7 +20,7 @@ Course Information
 
 *	TA: Wikum Dinalankara  
 	<wikum@cs.umd.edu>  
-	Office Hours: TBA  
+	Office Hours: Friday 12:00pm-2:00pm BSB 3119    
 
 * 	Discussion site: [https://piazza.com/class/hkw79sqktnk3sf](https://piazza.com/class/hkw79sqktnk3sf)  
 	`grace` info: [grace_howto.html](grace_howto.html)  
@@ -41,7 +41,7 @@ Readings are uploaded to canvas: [https://umd.instructure.com/courses/1030134](h
 <tbody>
 <tr><td>9/3<td>[Course Introduction](lectures/CourseIntro/CMSC423_CourseIntro.pdf)<td><td>
 <tr><td>9/5<td>[Molecular biology for computer scientists](lectures/BioIntro/CMSC423_BioIntro.pdf)<td>`Hunter:BiologyForCS.pdf`<td>
-<tr class="tr-present"><td>9/10<td>Programming for bioinformatics<td>[python tutorial](http://www.umiacs.umd.edu/~hal/courses/2011F_ML/p0/), [Ch1-2 Biopython tutorial](http://biopython.org/DIST/docs/tutorial/Tutorial.html)<td>
+<tr><td>9/10<td>[Programming for bioinformatics](lectures/BioProgramming/BioProgramming.pdf)<td>[python tutorial](http://www.umiacs.umd.edu/~hal/courses/2011F_ML/p0/), [Ch1-2 Biopython tutorial](http://biopython.org/DIST/docs/tutorial/Tutorial.html)<td>
 <tr class="tr-future"><td>9/12<td>Bioinformatics public resources<td>`pevsnerBioinf_Ch2.pdf`<td>
 <tr class="tr-future"><td>9/17<td>DNA sequencing<td>Shendure review `nextgeneration.pdf`<td>
 <tr class="tr-future"><td>9/19<td>Sequence alignment - exact matching<td>Ch 1 Gusfield book `algorithms-on-strings-trees-and-sequences.pdf`<td>
