@@ -40,11 +40,11 @@ Readings are uploaded to canvas: [https://umd.instructure.com/courses/1030134](h
 <tr><th>Date<th>Lecture Materials<th>Readings<th>Work Due
 <tbody>
 <tr><td>9/3<td>[Course Introduction](lectures/CourseIntro/CMSC423_CourseIntro.pdf)<td><td>
-<tr><td>9/5<td>[Molecular biology for computer scientists](lectures/BioIntro/CMSC423_BioIntro.pdf)<td>`Hunter:BiologyForCS.pdf`<td>
+<tr><td>9/5<td>[Molecular biology for computer scientists](lectures/BioIntro/CMSC423_BioIntro.pdf)<td>`Hunter:BiologyForCS.pdf`<td>HW1 Reading activity (in class)
 <tr><td>9/10<td>[Programming for bioinformatics](lectures/BioProgramming/BioProgramming.pdf)<td>[python tutorial](http://www.umiacs.umd.edu/~hal/courses/2011F_ML/p0/), [Ch1-2 Biopython tutorial](http://biopython.org/DIST/docs/tutorial/Tutorial.html)<td>
-<tr class="tr-future"><td>9/12<td>Bioinformatics public resources<td>`pevsnerBioinf_Ch2.pdf`<td>
-<tr class="tr-future"><td>9/17<td>DNA sequencing<td>Shendure review `nextgeneration.pdf`<td>
-<tr class="tr-future"><td>9/19<td>Sequence alignment - exact matching<td>Ch 1 Gusfield book `algorithms-on-strings-trees-and-sequences.pdf`<td>
+<tr><td>9/12<td>[Bioinformatics public resources](lectures/BioResources/BioResources.pdf)<td>`pevsnerBioinf_Ch2.pdf`<td>
+<tr class="tr-present"><td>9/17<td>DNA sequencing<td>Shendure review `nextgeneration.pdf`<td>[HW2: ScavengerHunt](lectures/BioResources/BioResources.pdf)
+<tr class="tr-present"><td>9/19<td>Sequence alignment - exact matching<td>Ch 1 Gusfield book `algorithms-on-strings-trees-and-sequences.pdf`<td>
 <tr class="tr-future"><td>9/24<td>Sequence alignment - exact matching<td>Ch2 Gusfield<td>
 <tr class="tr-future"><td>9/26<td>Data structures for efficient string querying (suffix trees)<td>Ch 5-6 Gusfield<td>Project I
 <tr class="tr-future"><td>10/1<td>Data structures for efficient string querying (suffix arrays)<td>Sec 7.14 Gusfield<td>
