@@ -1,30 +1,24 @@
 import sys
-from collections import deque
-import matplotlib.pyplot as plt
-import numpy as np
 
 def isCG(x):
 	return x in ['C', 'G']
+
+def isValid(x):
+	return x in ['A', 'C', 'G', 'T']
 
 def getIndex(cgCount, windowSize, nBins):
 	index = int(1. * nBins * cgCount / windowSize)
 	return index - 1 if index == nBins else index
 
-def getDensity(bins):
-	s = float(sum(bins))
-	dens = [x/s for x in bins]
-	assert(sum(dens) == 1.)
-	return dens
-
 def outputRes(seqId, bins):
-	print seqId,"\t", ','.join(["%d" % x for x in bins])
+	sys.stdout.write("%s\t%s\n" % (seqId, ','.join(["%d" % x for x in bins])))
 
 def calcGCWindow(file, windowSize=100, nBins=10):
 	bins = [0. for i in xrange(nBins)]
 	totalCount = 0
 	cgCount = 0
 	seqId = None
-	windowSeq = deque()
+	windowSeq = ['' for i in xrange(windowSize)]
 
 	for line in file:
 		line = line.strip()
@@ -39,34 +33,46 @@ def calcGCWindow(file, windowSize=100, nBins=10):
 			bins = [0 for i in xrange(nBins)]
 			totalCount = 0
 			cgCount = 0
-			windowSeq = deque()
+			windowSeq = ['' for i in xrange(windowSize)]
 			continue
 
-		if (len(windowSeq) < windowSize):
-			need = windowSize - len(windowSeq)
+		if (totalCount  < windowSize):
+			need = min(len(line), windowSize - totalCount)
 			for letter in line[:need]:
-				windowSeq.append(letter)
+				if not isValid(letter):
+					continue
+
+				windowSeq[totalCount] = letter
+				totalCount += 1
 				cgCount += 1 if isCG(letter) else 0
-			index = getIndex(cgCount, windowSize, nBins)
-			bins[index] += 1
-			line = line[need:]
 
-		if (len(windowSeq) < windowSize):
+			if totalCount == windowSize:
+				index = getIndex(cgCount, windowSize, nBins)
+				bins[index] += 1
+				line = line[need:]
+
+		if (totalCount < windowSize):
 			continue
-
-		assert(len(windowSeq) == windowSize)
+		
+		nextIndex = 0
 		for letter in line:
-			otherLetter = windowSeq.popleft()
+			otherLetter = windowSeq[nextIndex]
+			if not isValid(otherLetter):
+				continue
 
 			if isCG(letter) != isCG(otherLetter):
 				cgCount += 1 if not isCG(otherLetter) else -1
 
 			index = getIndex(cgCount, windowSize, nBins)
 			bins[index] += 1
-			windowSeq.append(letter)
-			
+			windowSeq[nextIndex] = letter
+			nextIndex = (nextIndex + 1) % windowSize
 
-	if seqId is not None:
+
+	if totalCount < windowSize:
+		sys.stderr.write('Not enough valid characters in sequence\n')
+
+	elif seqId is not None:
 		outputRes(seqId, bins)
 	return 0
 

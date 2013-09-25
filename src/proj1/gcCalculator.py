@@ -1,5 +1,11 @@
 import sys
 
+def isCG(x):
+	return x in ['C', 'G']
+
+def isValid(x):
+	return x in ['A', 'C', 'T', 'G']
+
 def calcGC(file):
 	totalCount = 0.
 	cgCount = 0.
@@ -20,12 +26,15 @@ def calcGC(file):
 			cgCount = 0.
 			continue
 
-		totalCount += len(line)
-		cgCount += sum([letter in ['C','G'] for letter in line])
+		totalCount += sum([isValid(letter) for letter in line])
+		cgCount += sum([isCG(letter) for letter in line])
 
-	if seqId is not None:
+	if totalCount == 0:
+		sys.stderr.write('No valid characters in sequence\n')
+
+	elif seqId is not None:
 		gcContent = 100. * cgCount / totalCount
-		print "%s\t%.2f" % (seqId, gcContent)
+		sys.stdout.write("%s\t%.2f\n" % (seqId, gcContent))
 	return 0
 
 def main(filename):

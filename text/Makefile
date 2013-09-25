@@ -3,8 +3,7 @@ SOURCES=$(wildcard *.text)
 HTMLOUT=$(patsubst %.text,%.html,$(SOURCES))
 PDFOUT=$(patsubst %.text,%.pdf,$(SOURCES))
 
-#SUBDIRS=hidden_text homeworks lectures
-SUBDIRS=hidden_text
+SUBDIRS=hidden_text homeworks
 CLEAN_SUBDIRS=$(patsubst %,clean-%,$(SUBDIRS))
 
 .PHONY: all clean subdirs clean-subdirs $(SUBDIRS) $(CLEAN_SUBDIRS)

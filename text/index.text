@@ -43,10 +43,12 @@ Readings are uploaded to canvas: [https://umd.instructure.com/courses/1030134](h
 <tr><td>9/5<td>[Molecular biology for computer scientists](lectures/BioIntro/CMSC423_BioIntro.pdf)<td>`Hunter:BiologyForCS.pdf`<td>HW1 Reading activity (in class)
 <tr><td>9/10<td>[Programming for bioinformatics](lectures/BioProgramming/BioProgramming.pdf)<td>[python tutorial](http://www.umiacs.umd.edu/~hal/courses/2011F_ML/p0/), [Ch1-2 Biopython tutorial](http://biopython.org/DIST/docs/tutorial/Tutorial.html)<td>
 <tr><td>9/12<td>[Bioinformatics public resources](lectures/BioResources/BioResources.pdf)<td>`pevsnerBioinf_Ch2.pdf`<td>
-<tr class="tr-present"><td>9/17<td>DNA sequencing<td>Shendure review `nextgeneration.pdf`<td>[HW2: ScavengerHunt](lectures/BioResources/BioResources.pdf)
-<tr class="tr-present"><td>9/19<td>Sequence alignment - exact matching<td>Ch 1 Gusfield book `algorithms-on-strings-trees-and-sequences.pdf`<td>
-<tr class="tr-future"><td>9/24<td>Sequence alignment - exact matching<td>Ch2 Gusfield<td>
-<tr class="tr-future"><td>9/26<td>Data structures for efficient string querying (suffix trees)<td>Ch 5-6 Gusfield<td>Project I
+<tr><td>9/17<td>[DNA sequencing](lectures/seqIntro/seqIntro.pdf)<td>Shendure review `nextgeneration.pdf`<td>[HW2: ScavengerHunt](lectures/BioResources/BioResources.pdf)
+<tr><td>9/19<td>[Sequence alignment - exact matching](lectures/exactMatching/zAlgorithmNotes.pdf)<td>Ch 1 Gusfield book `algorithms-on-strings-trees-and-sequences.pdf`<td>[HW3](homeworks/hw03.pdf)
+<tr><td>9/24<td>[Sequence alignment - exact matching](lectures/exactMatching/KMPNotes.pdf)<td>Ch2 Gusfield<td>
+
+<tr class="tr-present"><td>9/26<td>Data structures for efficient string querying (suffix trees)<td>Ch 5-6 Gusfield<td>Project I
+
 <tr class="tr-future"><td>10/1<td>Data structures for efficient string querying (suffix arrays)<td>Sec 7.14 Gusfield<td>
 <tr class="tr-future"><td>10/3<td>Data structures for efficient string querying (Burrows-Wheeler transform)<td>Bowtie paper `bowtie.pdf`<td>
 <tr><td>10/8<td>**Midterm I**<td><td>
@@ -119,6 +121,7 @@ to get you started:
 Other Resources
 ---------
 
+* [Carl Kingsford's lecture slides](http://cbcb.umd.edu/~carlk/bioinfo-lectures/)  
 * R/Bioconductor: [R](http://www.r-project.org) is an open-source environment for data analysis. The [Bioconductor project](http://bioconductor.org) provides a
 large number of useful libraries for high-throughput genomic data analysis. [You can browse them by task](http://www.bioconductor.org/packages/release/BiocViews.html)
 * R/Python references: [A short R guide for Python users.](http://mathesaurus.sourceforge.net/r-numpy.html) 
