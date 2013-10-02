@@ -45,35 +45,38 @@ Readings are uploaded to canvas: [https://umd.instructure.com/courses/1030134](h
 <tr><td>9/12<td>[Bioinformatics public resources](lectures/BioResources/BioResources.pdf)<td>`pevsnerBioinf_Ch2.pdf`<td>
 <tr><td>9/17<td>[DNA sequencing](lectures/seqIntro/seqIntro.pdf)<td>Shendure review `nextgeneration.pdf`<td>[HW2: ScavengerHunt](lectures/BioResources/BioResources.pdf)
 <tr><td>9/19<td>[Sequence alignment - exact matching](lectures/exactMatching/zAlgorithmNotes.pdf)<td>Ch 1 Gusfield book `algorithms-on-strings-trees-and-sequences.pdf`<td>[HW3](homeworks/hw03.pdf)
-<tr><td>9/24<td>[Sequence alignment - exact matching](lectures/exactMatching/KMPNotes.pdf)<td>Ch2 Gusfield<td>
+<tr><td>9/24<td>[Sequence alignment - exact matching](lectures/exactMatching/KMPNotes.pdf)<td>Ch2 Gusfield<td>HW4 done in class
+<tr><td>9/26<td>[Algorithms for Ultra-Large Alignment and Phylogeny Estimation](https://talks.cs.umd.edu/talks/405). Talk by [Tandy Warnow](http://www.cs.utexas.edu/~tandy/)<td><td>Project I
 
-<tr class="tr-present"><td>9/26<td>Data structures for efficient string querying (suffix trees)<td>Ch 5-6 Gusfield<td>Project I
+<tr><td>10/1<td>[Data structures for efficient string querying (keyword trees and suffix tries)](lectures/exactMatching/suffixTreeNotes.pdf)<td>Ch. 5-6, Sec 7.14 Gusfield<td>
 
-<tr class="tr-future"><td>10/1<td>Data structures for efficient string querying (suffix arrays)<td>Sec 7.14 Gusfield<td>
-<tr class="tr-future"><td>10/3<td>Data structures for efficient string querying (Burrows-Wheeler transform)<td>Bowtie paper `bowtie.pdf`<td>
+<tr><td>10/3<td>[Data structures for efficient string querying (suffix trees and arrays)](lectures/exactMatching/suffixTreeNotes.pdf)<td>Ch. 5-6, Sec 7.14 Gusfield<td>[HW05](homeworks/hw05.pdf)
+
 <tr><td>10/8<td>**Midterm I**<td><td>
 
-<tr class="tr-future"><td>10/10<td>Sequence alignment - inexact matching<td>`durbinBioSeq_Ch2.pdf`<td>
+<tr class="tr-future"><td>10/10<td>Burrows-Wheeler transform (briefly) and Sequence alignment - inexact matching<td>`durbinBioSeq_Ch2.pdf`<td>
 <tr class="tr-future"><td>10/15<td>Sequence alignment - inexact matching<td><td>
-<tr class="tr-future"><td>10/17<td>Sequence alignment - inexact matching<td>Blast paper `blast.pdf`<td>Project II
-<tr class="tr-future"><td>10/22<td>Multiple sequence alignment<td>`durbinBioSeq_Ch6.pdf`<td>
+<tr class="tr-future"><td>10/17<td>Sequence alignment - inexact matching<td>Blast paper `blast.pdf`<td>
+<tr class="tr-future"><td>10/22<td>Multiple sequence alignment<td>`durbinBioSeq_Ch6.pdf`<td>Project II
 <tr class="tr-future"><td>10/24<td>Whole genome comparison with MUMmer<td>MUMmer paper `MUMmer.pdf`<td>
 
 <tr class="tr-future"><td>10/29<td>Genome Sequence Assembly<td>[Assembly Primer](http://www.cbcb.umd.edu/research/assembly_primer.shtml),`jonesBioAlgos_Ch8.pdf`<td>
 <tr class="tr-future"><td>10/31<td>Genome Sequence Assembly<td><td>
-
 <tr><td>11/5<td>**Midterm II**<td><td>
+
 <tr class="tr-future"><td>11/7<td>Signal finding - gene finding<td><!-- durbin --><td>
 <tr class="tr-future"><td>11/12<td>Signal finding - motif analysis<td><!-- pevsner (?) --><td>
 <tr class="tr-future"><td>11/14<td>Expression analysis (feature selection and prediction)<td><!-- baldi? --><td>
 <tr class="tr-future"><td>11/19<td>Expression analysis (clustering)<td><!-- baldi? --><td>Project III
 <tr class="tr-future"><td>11/21<td>Regulatory network analysis (network modules)<td><!-- paper --><td>
 <tr class="tr-future"><td>11/26<td>Trees in genetics and phylogenetics<td><!-- waterman --><td>
+
 <tr><td>11/28<td>**No lecture: Thanksgiving recess**<td><td>
 <tr class="tr-future"><td>12/3<td>Genetic population variation<td><!-- waterman --><td>
 <tr class="tr-future"><td>12/5<td>Phylogenetic analysis<td><!-- waterman --><td>Project IV
 <tr class="tr-future"><td>12/10<td>What you missed<td><td>
 <tr class="tr-future"><td>12/12<td>Recap/review<td><td>
+<tr><td>12/16<td>**Final Exam** 8:00-10:00am<td><td>
 </table>
 
 Readings are required unless listed *in italics*.
@@ -97,7 +100,7 @@ Programming Projects
 <tr><th>Project Description<th>Date posted<th>Due date<th>
 <tbody>
 <tr class="tr-future"><td>[Project I: Parsing FASTA files and comparing GC-content](projects/projectI.html)<td>9/9<td>9/26
-<tr class="tr-future"><td>Project II: Exact matching<td>10/1<td>10/17
+<tr class="tr-future"><td>Project II: Exact matching<td>10/3<td>10/22
 <tr class="tr-future"><td>Project III: Inexact matching<td>11/8<td>11/19
 <tr class="tr-future"><td>Project IV: Classification, clustering and HMMs<td>11/19<td>12/5
 </table>
