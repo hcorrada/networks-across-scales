@@ -13,4 +13,8 @@ text/hidden_text/*.html
 text/hidden_text/*.pdf
 text/hidden_text/.tmp
 text/lectures/*/*.pdf
+text/homeworks/*.pdf
+text/homeworks/*.html
+text/*/.tmp
+
 
