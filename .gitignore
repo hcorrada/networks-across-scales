@@ -16,5 +16,5 @@ text/lectures/*/*.pdf
 text/homeworks/*.pdf
 text/homeworks/*.html
 text/*/.tmp
-
+*.pyc
 
