@@ -1,0 +1,42 @@
+% Homework 3: Exact matching warmup
+% CMSC423 Fall 2013
+% University of Maryland, CS Dept.
+
+The following string was constructed to solve an exact matching problem using the Z-algorithm (character `$` is assumed to not occur
+in the alphabet):
+
+<pre>
+ABCDABD$ABCABCDABABCDABDABDE
+<pre>
+
+Answer the following questions:
+
+1) What is the *pattern* in this case?  
+
+<pre>
+ABCDABD
+<pre>
+
+2) What is the *target* in this case?
+
+<pre>
+ABCABCDABABCDABDABDE
+<pre>
+
+3) Is there a match of the pattern in the target? If so, at which position in the target does it occur?
+
+*Yes, on position 10.*
+
+4a) (If you answered yes to #3) *Without explicitly calculating the Z-value for the matching position*, what do you expect the Z-value to be for the
+matching position?
+
+*7, the length of the pattern*
+
+4b) (If you answered no to #3) What do you expect the Z-values *for all* positions in the target to be?
+
+5) Complete the calculation of $Z$-values for the string:
+
+```shell
+ABCDABD$ABCABCDABABCDABDABDE
+x000200x30060002070002002000
+```

@@ -1,20 +1,209 @@
 % CMSC 423 Project II: Exact string query matching over a set of strings
 
-K-mer counting with the Aho-Corasick
+Posted: Oct. 3, 2013  
+Last Update: Oct. 3, 2013  
+Due: Oct. 22, 2013  
 
-Generate n k-mers randomly from FASTA file, ensure all are found in original file.
+In particular, you will implement and experiment with two algorithms for exact matching a set of patterns:
 
-Answer the following:
-1) How can you calculate the number of different k-mers occurring in a sequence using AC tree
-2) How can you find uniquely-occuring k-mers in a sequence using AC tree
+* Algorithm0: use the KMP algorithm on each pattern  
+* Aho-Corasick: the Aho-Corasick algorithm (Section 3.4 of Gusfield book).
 
-Implement functions that compute the above
+The code given for this project explicitly implements the automata formulations of matching algorithms and your job 
+will consist in constructing the appropriate automata(s) for each algorithm.
 
-For a given genome: 
-a) find the smallest value of k (kmin) for which no k-mer occurs uniquely in the sequence
-b) find the largest value of k (kmax) for which all k-mers occur uniquely in the sequence
-c) for 15 ks in [kmin, kmax] compute the proportion of k-mers that occur uniquely in the sequence
+##Provided Code
 
-Make a plot of (c)
+In directory `<public_dir>/proj2Lib` we've provided classes you will use to implement these automatas.
+The important files to look at are `ExactMatcher.py`, `NaiveMatcher.py` and `KMPMatcher.py`. These classes
+implement exact matching using the Naive Algorithm (run time $O(|T| \times |P|)$), and the automata formulation
+of the KMP algorithm as described in Section 3.3 of the Gusfield book. 
 
-Make plot for each sequences in Project I. How does this plot relate to the GC content plot of Project I.
+I may update this code as we go along, so I made it a github repository that you should clone. Run this in your personal directory
+for this project
+
+```shell
+PUBLIC_DIR=/afs/glue.umd.edu/class/fall2013/cmsc/423/0101/public
+git clone file://$PUBLIC_DIR/proj2Lib
+```
+
+This will create a proj2Lib subdirectory. Any time you work on this assignment you should pull from our repository to ensure
+you have the latest code. Run this in your personal directory for this project:
+
+```shell
+git pull
+```
+
+##Part I: Running time experiment for single pattern matching  
+
+Use the provided code to verify running times of Naive Matching and KMP algorithms.
+Use the `Celegans_chrX.fasta` file from project 1 to construct your experiment data (you can use the Biopython library to
+parse the FASTA file or write your own parser).
+
+###Measuring running time
+
+The classes provided keep track of the number of character comparisons performed during execution. You will use these to 
+analyze the runtime of the algorithms. Here is example code of how to compute preprocessing time and matching time using
+the naive algorithm
+
+```python
+from proj2Lib.NaiveMatcher import NaiveMatcher as NaiveMatcher 
+
+pattern = 'abbabbabb'
+
+target = 'abbabbabba'
+
+for i in xrange(10):
+	target += target
+
+m1 = NaiveMatcher(pattern)
+preprocessTime = m1.getTotalTime()
+
+m1.matchTarget(target)
+matchTime = m1.getTotalTime() - preprocessTime
+```
+###Experiment Design
+Your experiment design will be based on varying three parameters: 
+
+`n`: 	the length of the pattern (|P|), and   
+`m`: 	the length of the target (|T|)  
+
+To carry out your experiments, you can use the following ranges for these parameters:
+
+```shell
+n: 10, 20, ... , 100
+m: 10^1, 10^(1.5), 10^2, 10^(2.5),..., 10^5
+```
+
+Carry out two experiments:
+
+###Experiment 1:
+1. construct targets $T_1, \ldots, T_10$ of varying length (using range for `m` above),  
+2. for each target $T_i$ randomly sample a substring from $T_i$ of fixed length (say `n=20`)  as pattern $P_i$
+3. compute preprocessing time and matching time for each $T_i$ and $P_i$ pair for each algorithm  
+
+Repeat 5 times so you have 5 preprocessing and matching times for each target length.
+
+###Experiment 2:
+1. construct target $T$ of fixed length (say `m=10^4`)  
+2. randomly sample 10 substrings of $T$ of varying length (using range for `n` above)  to obtain patterns $P_i$  
+3. compute preprocessing time and matching time for each $T$ and $P_i$ pair for each algorithm   
+
+Repeat 5 times so you have 5 preprocessing and matching times for each pattern length.
+
+###Report Results
+
+Report how preprocessing time depends on target length by making a plot of preprocessing time vs. target length using 
+the times obtained from Experiment 1 above. Include a short discussion of the plot, including how it matches your expectation
+for each algorithm.
+
+Next, report how matching time depends on target length by making a plot of matching time vs. target length using the times
+obtained from Experiment 1. Again include discussion.
+
+Report on how preprocessing and matching time depend on pattern length using the times obtained from Experiment 2 by
+making 2 plots similar to the previous 2. Include discussion.
+
+##Part II: Algorithm0
+
+Implement an algorithm for matching a set of patterns against a target using the KMP algorithm. Your algorithm
+will preprocess and match each pattern independently using the KMP algorithm. File `proj2Lib.NaiveSetMatcher.py` is similar
+but uses the naive algorithm instead of the KMP algorithm, you can base your solution on that code.
+
+Call the class implementing this algorithm `KMPSetMatcher` and define it in file `proj2Lib.KMPSetMatcher.py`. Make sure
+you use the classes provided so the number of character comparisons are tracked appropriately.
+
+##Part III: Aho-Corasick
+
+Implement the Aho-Corasick algorithm described in Section 3.4 of Gusfield's book. Call the class implementing
+this algorithm `ACSetMatcher` and define it in file `proj2Lib.ACSetMatcher.py`. Again, make sure you
+use the classes provided so the number of character comparisons are tracked appropriately.
+
+A couple of notes:
+
+1. The class you use for this can inherit from `ExactMatcher` since that class is able to implement general automata (not just the
+linear automatas of the naive and KMP algorithms). You should perform the pattern set preprocessing in the object constructor similarly 
+to the `KMPMatcher` class.  
+
+2. Notice that as defined, the `matchTarget` method of the `ExactMatcher` class implements the "Algorithm AC Search" of Section 3.4.4. You
+will need to modify it slightly in your new class `ACSetMatcher` to implement the full Aho-Corasick algorithm of section 3.4.6.
+
+##Part IV: Running time experiment for pattern set matching  
+
+Use your code to verify running times of Algorithm0 and the Aho-Corasick algorithms.
+Again, use the `Celegans_chrX.fasta` file from project 1 to construct your experiment data (you can use the Biopython library to
+parse the FASTA file or write your own parser).
+
+###Measuring running time
+
+Your code should extend the provided classes appropriately so that the number of character comparisons are tracked. Use 
+that to calculate preprocessing and matching times for your new algorithms.
+
+###Experiment Design
+Your experiment design will be based on varying three parameters: 
+
+`k`: the number of patterns in the set,
+`n`: the **total** length of the patterns in the set ($\sum_i |P_i|$), and  
+`m`: the length of the target (|T|)
+
+To carry out your experiments, use the following ranges for these parameters:
+
+```shell
+k: 10,20, ..., 100  
+n: 100, 200, ... , 1000  
+m: 10^1, 10^(1.5), 10^2, 10^(2.5),..., 10^5  
+```
+Carry out three experiments:
+
+###Experiment 1, varying target length:
+1. construct targets $T_1, \ldots, T_10$ of varying length (using range for `m` above),  
+2. for each target $T_i$ randomly sample a fixed number of (say `k=20`) substrings from $T_i$ of fixed total length (say `n=600`)  as pattern  set $P_i$. 
+3. compute preprocessing time and matching time for each $T_i$ and $P_i$ pair for each algorithm  
+
+Repeat 5 times (so you have 5 preprocessing and matching times for each target length.
+
+###Experiment 2, varying total pattern length:
+1. construct target $T$ of fixed length (say `m=10^4`)  
+2. for each value of `n` above, randomly sample `k=20` substrings of $T$ to obtain pattern set $P_i$  
+3. compute preprocessing time and matching time for each $T$ and $P_i$ pair for each algorithm   
+
+Repeat 5 times so you have 5 preprocessing and matching times for each value of `n`.
+
+###Experiment 3, varying pattern set size:
+1. construct target $T$ of fixed length (say `m=10^4`)  
+2. for each value of `k` above, randomly sample `k` substrings of $T$ of fixed total length (say `n=600`) to obtain pattern set $P_i$  
+3. compute preprocessing time and matching time for each $T$ and $P_i$ pair for each algorithm   
+
+Repeat 5 times so you have 5 preprocessing and matching times for each value of `k`.
+
+Note: In step 2 of all three experiments you are constrained to sample a set of patterns of size `k` and **total** length `n`. Note that not all patterns in the set need to be of 
+the same length. Also, try to construct your sample so that some suffixes in the patterns match prefixes in some patterns. This way failure links are used in the algorithms. This is an important step, be thoughtful.
+
+###Report Results
+
+Report on the results of these three experiments as above. For example, report on how preprocessing time
+depends on target length using times from Experiment 1 above and so on.
+
+##Handing in
+
+You will handin the following:
+
+1.	Your updated `proj2Lib` directory containing updated files: `KMPSetMatcher.py` and `ACSetMatcher.py`  
+2.	All code you used to carry out your experiment  
+3.	`writeup.pdf` including the results of your experiments along with your discussion. Please include text describing your sampling procedures to
+create your experiment data.   
+
+tar and zip these three files and use the `submit` script in grace to submit. Please figure out how to copy to and from the grace system
+ahead of time so you can download your plots and upload your writeup without difficulties. Please learn how to use `scp`.
+
+##Grading
+
+Your project will be graded as follows:
+
+1.  Implementation correctness 30%  (Parts II (10%) and III (20%))  
+2.  Implementation efficiency 20%  (Parts II (5%) and III (15%))  
+3.  Experimental Setup 30%  (Parts I and IV 15% each)  
+4.  Presentation style 20%  (Your overall writeup including results from Parts I and IV)  
+
+##Questions
+
+Please post questions to the Piazza page, the TA, instructor and colleagues will answer there.  

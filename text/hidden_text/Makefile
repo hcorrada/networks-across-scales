@@ -1,10 +1,11 @@
-SOURCES=projectI.text
+SOURCES=projectI.text projectII.text
 HTMLOUT=$(patsubst %.text,%.html,$(SOURCES))
 PDFOUT=$(patsubst %.text,%.pdf,$(SOURCES))
 
 .PHONY: all clean
 
-all: $(HTMLOUT) $(PDFOUT)
+#all: $(HTMLOUT) $(PDFOUT)
+all: $(HTMLOUT)
 
 clean:
 	rm -f *.html *.pdf
