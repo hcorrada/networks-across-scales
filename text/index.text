@@ -49,23 +49,24 @@ Readings are uploaded to canvas: [https://umd.instructure.com/courses/1030134](h
 <tr><td>9/26<td>[Algorithms for Ultra-Large Alignment and Phylogeny Estimation](https://talks.cs.umd.edu/talks/405). Talk by [Tandy Warnow](http://www.cs.utexas.edu/~tandy/)<td><td>Project I
 <tr><td>10/1<td>[Data structures for efficient string querying (keyword trees and suffix tries)](lectures/exactMatching/suffixTreeNotes.pdf)<td>Ch. 5-6, Sec 7.14 Gusfield<td>
 <tr><td>10/3<td>[Data structures for efficient string querying (suffix trees and arrays)](lectures/exactMatching/suffixArrayNotes.pdf)<br>
-[MidtermI information](homeworks/midtermI_recap.pdf)<td>Ch. 5-6, Sec 7.14 Gusfield<td>[HW05](homeworks/hw05.pdf)
+[MidtermI information](homeworks/midtermI_recap.pdf)<td>Ch. 5-6, Sec 7.14 Gusfield<td>[HW05](homeworks/hw05.pdf) [solution](homeworks/hw05_ans.pdf)
 
-<tr><td>10/8<td>**Midterm I**<td><td>
+<tr><td>10/8<td>**Midterm I**<td>[Solution](homeworks/mid1_ans.pdf)<td>
 
-<tr class="tr-future"><td>10/10<td>Burrows-Wheeler transform (briefly) and Sequence alignment - inexact matching<td>`durbinBioSeq_Ch2.pdf`<td>
+<tr><td>10/10<td>[Suffix Arrays](lectures/exactMatching/suffixarrays.pdf) [Burrows-Wheeler transform](lectures/exactMatching/bwt.pdf)<td><td>
 
-<tr class="tr-future"><td>10/15<td>Sequence alignment - inexact matching<td>`durbinBioSeq_Ch2.pdf`<td>
-<tr class="tr-future"><td>10/17<td>Sequence alignment - inexact matching<td><td>
-<tr class="tr-future"><td>10/22<td>Sequence alignment - inexact matching<td>Blast paper `blast.pdf`<td>Project II
-<tr class="tr-future"><td>10/24<td>Multiple sequence alignment<td>`durbinBioSeq_Ch6.pdf`<td>
-<!--tr class="tr-future"><td>10/24<td>Whole genome comparison with MUMmer<td>MUMmer paper `MUMmer.pdf`<td-->
+<tr><td>10/15<td>[Sequence alignment - inexact matching](lectures/inexactMatching/globalalign.pdf)<td>`durbinBioSeq_Ch2.pdf`<td>
+<tr><td>10/17<td>Pattern Set Matching (Aho Corasick), Project II<td><td>[HW06](homeworks/hw06.pdf)
+<tr><td>10/22<td>[Sequence alignment - inexact matching](lectures/inexactmatching/local.pdf)<td><td>[Project II](projects/projectII.html)
+<tr class="tr-present"><td>10/24<td>Sequence alignment - inexact matching<td>Blast paper `blast.pdf`<td>
+<tr class="tr-future"><td>10/29<td>Multiple sequence alignment<td>`durbinBioSeq_Ch6.pdf`<td>
+<!-- <tr class="tr-future"><td>10/24<td>Whole genome comparison with MUMmer<td>MUMmer paper `MUMmer.pdf`<td> -->
 
-<tr class="tr-future"><td>10/29<td>Genome Sequence Assembly<td>[Assembly Primer](http://www.cbcb.umd.edu/research/assembly_primer.shtml),`jonesBioAlgos_Ch8.pdf`<td>
-<tr class="tr-future"><td>10/31<td>Genome Sequence Assembly<td><td>
-<tr><td>11/5<td>**Midterm II**<td><td>
+<tr class="tr-future"><td>10/31<td>Genome Sequence Assembly<td>[Assembly Primer](http://www.cbcb.umd.edu/research/assembly_primer.shtml),`jonesBioAlgos_Ch8.pdf`<td>
+<tr class="tr-future"><td>11/5<td>Genome Sequence Assembly<td><td>
+<tr><td>11/7<td>**Midterm II**<td><td>
 
-<tr class="tr-future"><td>11/7<td>Signal finding - gene finding<td><!-- durbin --><td>
+<!-- tr class="tr-future"><td>11/7<td>Signal finding - gene finding<td><!-- durbin --><td> -->
 <tr class="tr-future"><td>11/12<td>Signal finding - motif analysis<td><!-- pevsner (?) --><td>
 <tr class="tr-future"><td>11/14<td>Expression analysis (feature selection and prediction)<td><!-- baldi? --><td>
 <tr class="tr-future"><td>11/19<td>Expression analysis (clustering)<td><!-- baldi? --><td>Project III

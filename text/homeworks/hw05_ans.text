@@ -13,13 +13,15 @@ taro
 root
 ```
 
-![](hw5_1.pdf)
+\centerline{\includegraphics[width=2in]{../hw5_1.pdf}}
 
 2. Construct the suffix trie for the following string (show the suffix links connecting the leaves of the trie).
 
 ```
 abbaaba$
 ```
+
+\centerline{\includegraphics[width=2in]{../hw5_2.pdf}}
 
 3. $k$-mer counting: A common procedure in computational genome analysis is to characterize genomes by the distribution
 of the number of times strings of a specfic length $k$ occur in the genome. Sketch an algorithm that uses the suffix trie for
