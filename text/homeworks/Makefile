@@ -1,4 +1,4 @@
-SOURCES=hw03.text hw05.text hw03_ans.text hw05_ans.text hw06.text
+SOURCES=hw03.text hw05.text hw03_ans.text hw05_ans.text hw06.text HW08.text hw06_ans.text midtermII_recap.text HW08_ans.text HW09.text HW10.text  final_recap.text HW10_solution.text
 
 HTMLOUT=$(patsubst %.text,%.html,$(SOURCES))
 PDFOUT=$(patsubst %.text,%.pdf,$(SOURCES))

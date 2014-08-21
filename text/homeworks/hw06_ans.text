@@ -1,0 +1,17 @@
+% CMSC 423 Homework 6
+% October 15, 2013
+% Computer Science Dept. Univ. of Maryland
+
+Hand this in at lecture start time on Thursday Oct. 17.
+
+1. Exercise 2.8 from Durbin book.  
+
+Choose a different cell when more than one choice are maximal. For example in cell (1,3) one can choose a gap
+instead of matching.
+
+2. Exercise 2.9 from Durbin book. 
+
+\centerline{\includegraphics[width=2in]{../hw6_1.pdf}}
+
+
+

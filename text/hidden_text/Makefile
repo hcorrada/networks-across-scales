@@ -1,4 +1,4 @@
-SOURCES=projectI.text projectII.text
+SOURCES=projectI.text projectII.text projectIII.text projectIV.text classificationNotes.text
 HTMLOUT=$(patsubst %.text,%.html,$(SOURCES))
 PDFOUT=$(patsubst %.text,%.pdf,$(SOURCES))
 
@@ -11,7 +11,7 @@ clean:
 	rm -f *.html *.pdf
 
 %.html: %.text
-	pandoc -s --latexmathml --toc -c ../css/lecture_style.css -o $@ $<
+	pandoc -s --mathjax --toc -c ../css/lecture_style.css -o $@ $<
 
 %.pdf: %.text 
 	cd .tmp && \

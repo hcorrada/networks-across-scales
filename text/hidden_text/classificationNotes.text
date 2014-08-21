@@ -1,0 +1,97 @@
+% Final Notes on classification
+% CMSC423
+
+In this note we finalize our discussion about classification by introducing the Naive Bayes classifier as a probabilistic version of the nearest centroid classifier you are using in Project IV.
+
+### The classification setting again
+
+The setting is that we observe for each sample $i$ a set of $p$ features (gene expression in our case)
+represented in vector $x_i$, and *qualitative* outcomes (or classes) $g_i$, which can take
+values from a discrete set $G$.  In our case where our features are genomic
+measurements (gene expression for now), and that we have many more features than 
+samples (i.e. $p$ << $N$, where $N$ is the number of samples). For gene expression,
+features are real numbers, and we can think of feature space as Euclidean space.
+
+We want to learn a set of decision functions $f_g$ for each $g \in G$ and classify sample $x_i$ according to the rule
+
+$$
+\hat{g}_i = \argmax_g f_g(x_i$
+$$
+
+We want to learn these functions to minimize *expected error rate*:
+
+$$
+E_{X,G} \{\hat{g}_i \neq g_i\}
+
+### Nearest Centroids
+
+The nearest centroid classifier you are implementing in Project IV sets the decision functions using Euclidean distance. In which case $f_g(x_i) = -\mathrm{dist}(x_i,\mu_g)=\|x_i - \mu_g\|^2$, where $\mu_g$ is the centroid learned for class $g$. The classification is then choosing the nearest centroid.
+
+Like soft k-means we can use a *soft-max* function here, and instead of using Euclidean distance directly, we can use a exponentially decaying function, normalized so it is a probability function.
+
+$$
+f_g(x_i) = \frac{\exp \{- \|x_i - \mu_g \|^2 \}}{\sum_g \exp \{-\|x_i - \mu_g \|^2 \}}
+$$
+
+### The Optimal Rule
+
+Although we won't show it, the best choice for $f_g(x_i)$ to minimize expected error rate is
+the *posterior class probability* $P(G=g | x)$. Of course, we don't know this probability function, 
+but the *soft-max* function we discussed above suggests a model for this posterior probability. We can derive it using Bayes Rule and assuming a probabilistic model for gene expression in each class $g$.
+
+### The gene expression model
+
+Let's assume a normal distribution model for the expression of gene $j$ for samples in class $g$.
+Recall that the normal distribution assigns probability to a given point $x_{ij}$ (e.g., expression for gene $j$ sample $i$) using an exponentially decaying function of the point's distance to the mean$\mu_{gj}$, scaled by parameter $\sigma_j$ (we will assume this parameter is the same for every class $g$):
+
+$$
+p_{gj}(x_{ij}) \sim \exp \{ - \frac{1}{2\sigma_j^2} (x_{ij} - \mu{gj})^2 \}
+$$
+
+The next assumption we'll make is that distribution of gene expression is independent across genes. Thus the expression for gene $j$ does not affect the expression of gene $k$ and viceversa for any pair of genes $j$ and $k$. We know that biologically this is an awful assumption, but we'll make it for simplicity's sake (there are other reasons about overfitting, etc., which we're not getting into here).
+
+With both of those assumptions we can write a full probability model for gene expression of class $g$:
+
+$$
+p_g(x_i) \sim \prod_{j} \exp \{ - \frac{1}{2\sigma_j^2} (x_{ij} - \mu{gj})^2 \}
+$$
+
+Notice that if $\sigma_j^2=1$ for all genes $j$ then the log probability of this model is a function of (negative) squared Euclidean distance:
+
+$$
+\log p_g(x_i) \sim - \sum_j (x_{ij}-\mu{gj})^2 = - \|x_i - \mu_g \|^2
+$$
+
+### Using Bayes Rule
+
+We can now use Bayes' Rule to derive a formula for the *posterior probability* model we need:
+
+$$
+P(G=g | x_i) = \frac{p_g(x_i) P(G=g)}{\sum_k p_k(x_i) P(G=k)}
+$$
+
+where $P(G=g)$ is the *prior* probability of observing a sample from class $g$. In the
+Alzheimer's example, $P(G=\mathrm{severe})$ is the *prior* probability of observing a sample
+with severe Alzheimer's.
+
+Consider the case where we're only classifying between two classes, say normal and severe. The optimal rule (as we saw above) is to classify sample $x_i$ as severe when $P(G=\mathrm{severe}|x_i) > P(G=\mathrm{normal}|x_i)$. Using Bayes Rule we find that
+
+$$
+\begin{eqnarray}
+P(G=\mathrm{severe}|x_i) & > &  P(G=\mathrm{normal}) \Leftrightarrow \\
+\log \frac{P(G=\mathrm{severe}|x_i)}{P(G=\mathrm{normal})} & > & 0 \Leftrightarrow \\
+\log \frac{p_{\mathrm{severe}}(x_i)}{p_{\mathrm{normal}}(x_i) & > & \log \frac{P(G=\mathrm{normal})}{P(G=\mathrm{severe})} 
+\end{eqnarray}
+$$
+
+We can interpret the last line as "we should predict severe when the evidence we get from gene expression outweighs our prior belief".
+
+Finally, under the assumptions of independence and equi-variance $(\sigma_j^2=1$ for all $j$, we see that for the nearest centroid classifier this corresponds to biasing the distance calculation. I.e., classify severe when:
+
+$$
+dist(x_i,\mu_{\mathrm{normal}}) - dist(x_i,\mu_{\mathrm{severe}}) > \log \frac{P(G=\mathrm{normal})}{P(G=\mathrm{severe})}.
+$$
+
+We get the nearest centroid classifer again when the prior probabilities are equal and thus $\log \frac{P(G=\mathrm{normal})}{P(G=\mathrm{severe})} = 0$.
+
+Using the Bayes Rule here allows us to refine our classification rule based on the prior probability of observing samples from a given class.
