@@ -1,0 +1,17 @@
+# Site settings
+title: CMSC423 (Fall 2014)
+email: hcorrada@umiacs.umd.edu
+description: "CMSC423, Bioinformatics. University of Maryland, College Park. Department of Computer Science"
+baseurl: 
+url: "http://cbcb.umd.edu/~hcorrada/CMSC423"
+twitter_username: hcorrada
+github_username:  hcorrada
+
+pageOrder: ["/index.html", "/calendar.html", "/projects.html", "/resources.html"]
+
+# Build settings
+markdown: redcarpet
+highlighter: pygments
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+

@@ -1,0 +1,17 @@
+<div class="navigation">
+  <h3 class="applicationName"><a href="index.html">CMSC423</a></h3>
+
+  <ul class="list">
+    {% for url in site.pageOrder %}
+    {% for p in site.pages %}
+    {% if p.url == url %}
+    <li class="item" data-name="{{ p.url }}">
+    <span class="title">
+    <a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
+    </span>
+    </li>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+  </ul>
+</div>  
