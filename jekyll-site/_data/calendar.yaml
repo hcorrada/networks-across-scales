@@ -223,7 +223,7 @@
       title: Midterm II
       isexam: true
       solution:
-        release: false
+        release: true
         linkL: homeworks/mid2_ans.pdf
 -
   date: 11/14
