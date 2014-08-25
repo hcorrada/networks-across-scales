@@ -44,15 +44,15 @@
   date: 9/17
   covers:
     -
-    title: DNA sequencing
-    materials: lectures/seqIntro/seqIntro.pdf
+      title: DNA sequencing
+      materials: lectures/seqIntro/seqIntro.pdf
   readings: 
     -
       title: Shendure review 
       link: nextgeneration.pdf
   workdue: 
     - 
-      title: HW2\: ScavengerHunt
+      title: "HW2: ScavengerHunt"
       link: lectures/BioResources/BioResources.pdf
 -
   date: 9/19
@@ -75,8 +75,8 @@
   date: 9/24
   covers:
     -
-    title: Sequence alignment - exact matching
-    materials: lectures/exactMatching/KMPNotes.pdf
+      title: Sequence alignment - exact matching
+      materials: lectures/exactMatching/KMPNotes.pdf
   readings:
     -
       title: Ch2 Gusfield
@@ -271,7 +271,7 @@
   date: 11/28
   covers:
     -
-      title: No lecture: Thanksgiving recess
+      title: "No lecture: Thanksgiving recess"
 -
   date: 12/3
   covers:

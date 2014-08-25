@@ -10,6 +10,9 @@ Readings are uploaded to canvas: [https://umd.instructure.com/courses/1030134](h
 <thead>
 <tr><th>Date<th>Lecture Materials<th>Readings<th>Work Due
 <tbody>
+{% for entry in site.data.calendar %}
+<tr><td>{{ entry.date }}<td>{% for theme in entry.covers %}[{{ theme.title }}]({{ theme.link }}){% endfor %}<td><td>
+{% endfor %}
 </table>
 
 Readings are required unless listed *in italics*.
