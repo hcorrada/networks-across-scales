@@ -1,11 +1,12 @@
 ---
 layout: default
 title: CMSC423, Bioinformatic Algorithms, Databases and Tools (Fall 2014)
+logo: <img src="../img/new-cbcb-logo3_0.png"/>
 ---
 
 
-Course Information
--------------------
+##Course Information
+
 
 *	Instructor:  
 	[H&eacute;ctor Corrada Bravo](http://www.cbcb.umd.edu/~hcorrada)  
@@ -31,8 +32,7 @@ Course Information
 	Grades server: [http://grades.cs.umd.edu](http://grades.cs.umd.edu)  
 	Course readings in canvas: [https://umd.instructure.com/courses/1030134](https://umd.instructure.com/courses/1030134)
 
-Syllabus
---------
+##Syllabus
 
 The official syllabus detailing class policies, calendar and other details can be found [here](syllabus.html) [[pdf]](pdf/syllabus.pdf)
 
