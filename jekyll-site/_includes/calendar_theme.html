@@ -1,8 +1,9 @@
+<ul id="nobullet">
 {% for theme in entry.covers %}
-<a href="{{ site.baseurl }}/{{ theme.materials }}">{{ theme.title }}</a>
+<li><a href="{{ site.baseurl }}/{{ theme.materials }}">{{ theme.title }}</a>
 {% if entry.solution and entry.solution.release %}
 <a href="{{ site.baseurl }}/{{ entry.solution.link }}">solution</a>
 {% endif %}
-{% if forloop.rindex > 0 %}<br>{% endif %}
+</li>  
 {% endfor %}
-
+</ul>

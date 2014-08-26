@@ -14,7 +14,7 @@
 <thead>
 <tr><th>Date<th>Lecture Materials<th>Readings<th>Work Due
 <tbody>
-{% for entry in site.data.calendar %}
+  {% for entry in site.data.calendar %}
 <tr><td>{{ entry.date }}
        <td>{% include calendar_theme.html %}
        <td>{% include calendar_readings.html %}

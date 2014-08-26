@@ -1,4 +1,5 @@
+<ul class="nobullet">
 {% for reading in entry.readings %}
-<a href="{{ site.baseurl }}/{{ reading.link }}">{{ reading.title }}</a>
-{% if forloop.rindex > 0 %}<br>{% endif %}
+<li><a href="{{ site.baseurl }}/{{ reading.link }}">{{ reading.title }}</a></li>
 {% endfor %}
+</ul>

@@ -1,7 +1,9 @@
+<ul class="nobullet">
 {% for hw in entry.workdue %}
-<a href="{{ site.baseurl }}/{{ hw.link }}">{{ hw.title }}</a>
+<li><a href="{{ site.baseurl }}/{{ hw.link }}">{{ hw.title }}</a>
 {% if hw.solution and hw.solution.release %}
 <a href="{{ site.baseurl }}/{{ hw.solution.link }}">solution</a>
 {% endif %}
-{% if forloop.rindex >0 %}<br>{% endif %}
+</li>  
 {% endfor %}
+</ul>  
