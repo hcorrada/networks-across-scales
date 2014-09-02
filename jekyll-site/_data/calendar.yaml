@@ -5,57 +5,172 @@
       title: Course Introduction
       materials: lectures/CourseIntro/CMSC423_CourseIntro.pdf
 -
-  date: 9/5
+  date: 9/8
   covers:
     -
       title: Molecular biology for computer scientists
       materials: lectures/BioIntro/CMSC423_BioIntro.pdf
   readings: 
     -
-      title: Hunter, L., Biology for Computer Scientists
-      link: Hunter:BiologyForCS.pdf
+      title: Jones & Pevsner, Molecular Biology Primer
+      link: readings/JPch3.pdf
   workdue: 
     -
-      title: HW1 Reading activity (in class)
+      title: Reading activity (in class)
 -
   date: 9/10
+  covers:
+    - "Algorithmic Warmup: Probabilities of patterns in strings"
+  readings:
+    -
+      title: Where in the Genome Does DNA Replication Begin? 
+-
+  date: 9/15
+  covers:
+    - "Algorithmic Warmup: Skew Detection"
+  readings:
+    -
+      title: Where in the Genome Does DNA REplication Begin?
+-
+  date: 9/17
   covers:
     -
       title: Programming for bioinformatics
       materials: lectures/BioProgramming/BioProgramming.pdf
   readings: 
     -
-      title: python tutorial
-      link: http://www.umiacs.umd.edu/~hal/courses/2011F_ML/p0/
-    -
       title: Ch1-2 Biopython tutorial
       link: http://biopython.org/DIST/docs/tutorial/Tutorial.html)
 -
-  date: 9/12
+  date: 9/22
+  covers:
+    -
+      title: Brute Force Algorithms (1)
+  readings:
+    -
+      title: How Do We Sequence Antibiotics?
+-
+  date: 9/24
+  covers:
+    -
+      title: Brute Force Algorithms (2)
+  readings:
+    -
+      title: How Do We Sequence Antibiotics?
+-
+  date: 9/29
   covers:
     -
       title: Bioinformatics public resources
       materials: lectures/BioResources/BioResources.pdf
   readings:
     -
-      title: Pevsner, Bioinformatics Algorithms, Ch. 2
+      title: Jones & Pevsner, Bioinformatics Algorithms, Ch. 2
       link: pevsnerBioinf_Ch2.pdf
 -
-  date: 9/17
+  date: 10/1
   covers:
     -
-      title: DNA sequencing
-      materials: lectures/seqIntro/seqIntro.pdf
+      title: Motif Finding (1)
   readings: 
     -
-      title: Shendure review 
-      link: nextgeneration.pdf
-  workdue: 
-    - 
-      title: "HW2: ScavengerHunt"
-      link: lectures/BioResources/BioResources.pdf
+      title: Which DNA Patterns Play the Role of Molecular Clocks?
 -
-  date: 9/19
+  date: 10/6
+  covers:
+    - 
+      title: Motif Finding (2)
+  readings:
+    - 
+      title: Which DNA Patterns Play the Role of Molecular Clocks?
+    -
+      title: Nat. Biotech primer
+      link: http://www.nature.com/nbt/journal/v24/n8/full/nbt0806-959.html
+-
+  date: 10/8
+  covers:
+    -
+      title: Expression analysis (clustering)
+      materials: lectures/signalFinding/unsupervised.pdf
+  readings:
+    -
+      title: Nat. Biotech primer
+      link: http://www.nature.com/nbt/journal/v23/n12/full/nbt1205-1499.html
+-
+  date: 10/13
+  covers:
+    -
+      title: Midterm I Recap
+-
+  date: 10/15
+  covers:
+    -
+      title: Midterm I
+-
+  date: 10/20
+  covers:
+    -
+      title: Genome Assembly (1)
+  readings:
+    -
+      title: How do we assemble genomes?
+-
+  date: 10/22
+  covers:
+    -
+      title: Genome Assembly (2)
+  readings:
+    -
+      title: How do we assemble genomes?
+-
+  date: 10/27
+  covers:
+    -
+      title: Genome Assembly (3)
+  readings:
+    -
+      title: How do we assemble genomes?
+-
+  date: 10/29
+  covers:
+    -
+      title: Dynamic Programming (1)
+  readings:
+    -
+      title: How do we compare DNA sequences?
+-
+  date: 11/3
+  covers:
+    -
+      title: Dynamic Programming (2)
+  readings:
+    -
+      title: How do we compare DNA sequences?
+-
+  date: 11/5
+  covers:
+    -
+      title: Dynamic Programming (3)
+  readings:
+    -
+      title: How do we compare DNA sequences?
+-
+ date: 11/10
+ covers:
+   -
+     title: Midterm II recap
+-
+  date: 11/12
+  covers:
+    -
+      title: Midterm II
+-
+  date: 11/17
+  covers:
+    -
+      title: Combinatorial Algorithms 
+-
+  date: 11/19
   covers:
     -
       title: Sequence alignment - exact matching
@@ -72,7 +187,7 @@
         release: false
         link: homeworks/hw03_ans.pdf
 -
-  date: 9/24
+  date: 11/24
   covers:
     -
       title: Sequence alignment - exact matching
@@ -83,224 +198,27 @@
   workdue:
     title: HW4 done in class
 -
-  date:  9/26
-  covers:
-    -
-      title: Algorithms for Ultra-Large Alignment and Phylogeny Estimation
-      materials: https://talks.cs.umd.edu/talks/405 
-  workdue:
-    -
-      title: Project I
--
-  date: 10/1
-  covers:
-    -
-      title: Data structures for efficient string querying (keyword trees and suffix tries
-      materials: lectures/exactMatching/suffixTreeNotes.pdf
-  readings:
-    - 
-      title: Ch. 5-6, Sec 7.14 Gusfield
--
-  date: 10/3
-  covers:
-    -
-      title: Data structures for efficient string querying (suffix trees and arrays
-      materials: lectures/exactMatching/suffixArrayNotes.pdf
-  readings:
-    - 
-      title: MidtermI information
-      link: homeworks/midtermI_recap.pdf
-    -
-      title: Ch. 5-6, Sec 7.14 Gusfield
-  workdue:
-    -
-      title: HW05
-      link: homeworks/hw05.pdf
-      solution: 
-        release: false
-        link: homeworks/hw05_ans.pdf
--
-  date: 10/8
-  covers:
-    -
-      title: Midterm I
-      isexam: true
-      solution:
-        release: false
-        link: homeworks/mid1_ans.pdf
-
--
-  date: 10/10
-  covers:
-    -
-      title: Suffix Arrays
-      materials: lectures/exactMatching/suffixarrays.pdf
-    - 
-      title: Burrows-Wheeler transform
-      materials: lectures/exactMatching/bwt.pdf
--
-  date: 10/15
-  covers:
-    -
-      title: Sequence alignment - inexact matching
-      materials: lectures/inexactMatching/globalalign.pdf
-  readings:
-    -
-      title: Durbin, Analysis of biological sequences, Ch. 2
-      link: durbinBioSeq_Ch2.pdf
--
-  date: 10/17
-  covers:
-    -
-      title: Pattern Set Matching (Aho Corasick)
-    -
-      title: Project II
-  workdue:
-    -
-      title: HW06
-      link: homeworks/hw06.pdf
-      solution:
-        release: true
-        link: homeworks/hw06_ans.pdf
--
-  date: 10/22
-  covers:
-    -
-      title: Sequence alignment - inexact matching
-      materials: lectures/inexactMatching/local.pdf
-  workdue:
-    -
-      title: Project II
-      link: projects/projectII.html
--
-  date: 10/24
-  covers:
-    -
-      title: Sequence alignment - inexact matching
-    -
-      title: Affine Gap Penalties
-      materials: lectures/inexactMatching/gaps.pdf
-  workdue:
-    -
-      title: HW07 (in class)
--
-  date: 10/29
-  covers:
-    -
-      title: Scoring, Statistics and Heuristic Alignment Algorithms
-      materials: lectures/inexactMatching/scores.pdf
-  readings:
-    -
-      title: Blast paper
-      link: blast.pdf
--
-  date: 10/31
-  covers:
-    -
-      title: Multiple sequence alignment
-      materials: lectures/inexactMatching/msa.pdf
-  readings:
-    -
-      title: Durbin, Analysis of biological sequences, Ch. 6
-      link: durbinBioSeq_Ch6.pdf
--
-  date: 11/5
-  covers:
-    -
-      title: Midterm II review and prep
-      materials: homeworks/midtermII_recap.pdf
-  workdue:
-    -
-      title: HW08
-      link: homeworks/HW08.pdf
-      solution:
-        release: false
-        link: homeworks/HW08_ans.pdf
--
-  date: 11/7
-  covers:
-    -
-      title: Midterm II
-      isexam: true
-      solution:
-        release: true
-        linkL: homeworks/mid2_ans.pdf
--
-  date: 11/14
-  covers:
-    -
-      title: Genome Sequence Assembly
-      materials: lectures/assembly/assembly.pdf
-  workdue: 
-    -
-      title: HW09
-      link: homeworks/HW09.pdf
--
-  date: 11/19
-  covers:
-    -
-      title: Signal finding - motif analysis
-      materials: lectures/signalFinding/gibbs.pdf
-  readings:
-    -
-      title: Nat. Biotech primer
-      link: http://www.nature.com/nbt/journal/v24/n8/full/nbt0806-959.html
--
-  date: 11/21
-  covers:
-    -
-      title: Expression analysis (clustering)
-      materials: lectures/signalFinding/unsupervised.pdf
-  readings:
-    -
-      title: Nat. Biotech primer
-      link: http://www.nature.com/nbt/journal/v23/n12/full/nbt1205-1499.html
-  workdue:
-    -
-      title: Project III
-      link: projects/projectIII.html
--
   date: 11/26
   covers:
     -
-      title: No lecture
-    -
-      title: Start Project IV
-      materials: projects/projectIV.html
+      title: Combinatorial Pattern Matching
 -
-  date: 11/28
+  date: 12/1
   covers:
     -
-      title: "No lecture: Thanksgiving recess"
+      title: Combinatorial Pattern Matching
 -
   date: 12/3
   covers:
     -
-      title: Expression analysis (feature selection and prediction)
-  readings:
-    -
-      title: Deonier, et al., ch. 10
-      link: DeonierEtal_Ch10.pdf
+      title: Combinatorial Pattern Matching
 -
-  date: 12/5
+  date: 12/8
   covers:
     -
-      title: Expression analysis (feature selection and prediction
-      materials: lectures/classification/classificationNotes.html
+      title: Combinatorial Pattern Matching
 -
   date: 12/10
-  covers:
-    - 
-      title: NO LECTURE, UNIVERSITY CLOSED
-    -
-      title: Trees in genetics and phylogenetics
-      materials: lectures/trees/phylotrees.pdf
-  readings:
-    -
-      title: Deonier, et al., Ch. 12
-      materials: DeonierEtal_Ch12.pdf
--
-  date: 12/12
   covers:
     -
       title: What you missed
@@ -315,18 +233,11 @@
       solution:
         release: false
         link: homeworks/HW10_solution.pdf
-- 
-  date: 12/13
-  covers: 
-    -
-      title: NOT A LECTURE
-  workdue:
-    -
-      title: Project IV
-      link: projects/projectIV.html
 -
-  date: 12/16
+  date: 12/17
   covers:
     -
-      title: Final Exam 8:00-10:00am CSIC 1121
+      title: Final Exam
+  details:
+    1:30-3:30pm
 
