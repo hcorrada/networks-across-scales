@@ -16,18 +16,18 @@ This page and the [main course page](index.html) serve as syllabus for this clas
 	Department of Computer Science  
 	<hcorrada@umiacs.umd.edu>  
 	Office: 3114F Biomolecular Sciences Building  
-	Phone Number: 301-405-2481
+	Phone Number: 301-405-2481 
 
 *	Lecture Meeting times  
 
-	Tuesday and Thursday, 11:00am-12:15pm  
+	Monday and Wednesday, 3:30pm-4:45pm  
 	Room CSI 1121
 
-*	Office Hours: Thursday 12:30pm-1:30pm AVW 3223 and by appointment
+*	Office Hours: Friday 1:00pm-2:00pm AVW 3223 and by appointment
 
 *	TA: Wikum Dinalankara  
 	<wikum@cs.umd.edu>  
-	Office Hours: TBA 
+	Office Hours: TBD  
 
 *	Evaluation (see section below on logistics for details)
 
@@ -79,7 +79,8 @@ querying, sequence signal finding, and data clustering. They will also be able t
 * Any student eligible for and requesting reasonable academic accommodations due to a disability is requested to provide, to the instructor in office hours, a letter of accommodation from the Office of Disability Support Services (DSS) within the first two weeks of the semester. 
 * Any student who must miss a class due to religious holidays should also notify the instructor during the first two weeks of class.  
 
-###Policy on excused absences
+#### Policy on excused absences ####
+
 * Any student who needs to be excused for an absence from a single 
 lecture, recitation, or lab due to a medically necessitated absence shall:
    a) Make a reasonable attempt to inform the instructor of his/her 
@@ -104,6 +105,7 @@ diagnostic information will ever be requested.
    a) Midterm #1 - October 15 during the lecture period
    b) Midterm #2 - November 12 during the lecture period
 
-###Course evaluations
+#### Course evaluations ####
+
 Course evaluations are important and that the department and faculty
 take student feedback seriously.  Students can go to the www.courseevalum.umd.edu to complete their evaluations.

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: CMSC423, Bioinformatic Algorithms, Databases and Tools (Fall 2014)
-logo: <img src="../img/new-cbcb-logo3_0.png"/>
+logo: <img src="http://www.cbcb.umd.edu/~hcorrada/CMSC423/img/new-cbcb-logo3_0.png"/>
 ---
 
 
