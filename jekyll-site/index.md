@@ -42,9 +42,8 @@ logo: <img src="http://www.cbcb.umd.edu/~hcorrada/CMSC423/img/new-cbcb-logo3_0.p
 	  
 *   Programming exercises and problems:
 	Programming exercises and problems are integrated with the
-	textbook readings and videos. Problems are defined and solutions
-	submitted in the class'
-	[Rosalind page](http://rosalind.info/classes/152/)
+	textbook readings and videos. [More information here]({{
+	site.baseurl }}/logistics.html) 
 	
 *   Other links:	
 	We will use Piazza for official discussion and announcements: [https://piazza.com/class/hzenik658utiz](https://piazza.com/class/hzenik658utiz)  
