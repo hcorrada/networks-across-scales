@@ -19,7 +19,9 @@ to get you started:
 *   [IPy Notebook](http://ipython.org/ipython-doc/dev/interactive/htmlnotebook.html)  
 *	[An introductory video on IPy notebook by Titus Brown (starts about 2 minutes in)](http://www.youtube.com/watch?feature=player_detailpage&v=HaS4NXxL5Qc#t=138s)  
 
-You can use the 
+Python is available on the [GRACE](http://www.grace.umd.edu) system.
+[Check here for more information]({{ site.baseurl }}/grace_howto.html)
+
 Other Resources
 ---------
 

@@ -34,7 +34,7 @@ This page and the [main course page](index.html) serve as syllabus for this clas
 	*    Lecture prep work (15%): to be done before class, includes
          programming exercises and short written assignments. Graded
          as pass/fail.  
-	*	 Written homework (15%): Some will be take-home, some will be done
+	*	 Written homework (15%): some will be take-home, some will be done
          in class.  
 	*	 Programming Projects (25%)  
 	*	 Midterms (2) (20%)  

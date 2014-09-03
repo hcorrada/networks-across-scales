@@ -29,26 +29,28 @@ logo: <img src="http://www.cbcb.umd.edu/~hcorrada/CMSC423/img/new-cbcb-logo3_0.p
 
 *   Textbook information:
 	We will be using
-	[Compeau, P. and Pevsner, P., Bioinformatics Algorithms, An Active Learning Approach. Active Learning Publishers, La Jolla, CA, 2014.](http://bioinformaticsalgorithms.com/)
+	[Compeau, P. and Pevsner, P., Bioinformatics Algorithms, An Active Learning Approach. Active Learning Publishers, La Jolla, CA, 2014.]({{ site.book_url }})
 
 	This text book is accompanied by a set of video lectures that you
     can view in preparation for class discussion during class meeting times.
-	[Video playlists are available on youtube](https://www.youtube.com/user/bioinfalgorithms/playlists)
+	[Video playlists are available on youtube]({{ site.book_videos_url }})
 
 	**Class meeting times will (for the most part) not be lecture
       time**. The goal is to use class time to explore Biological and
       Algorithmic aspects of materials in depth and collaboratively
       with your peers.
 	  
-*   Programming exercises and problems:
-	Programming exercises and problems are integrated with the
-	textbook readings and videos. [More information here]({{
-	site.baseurl }}/logistics.html) 
+*  	Programming exercises and problems are integrated with the
+	textbook readings and videos. We will use the
+	[Rosalind Project](http://rosalind.info) to manage programming
+	exercises and submissions. [More information here]({{ site.baseurl }}/logistics.html) 
 	
 *   Other links:	
-	We will use Piazza for official discussion and announcements: [https://piazza.com/class/hzenik658utiz](https://piazza.com/class/hzenik658utiz)  
+	We will use Piazza for official discussion and announcements:
+	[{{ site.piazza_url }} ]({{ site.piazza_url }})  
 	Grades server: [http://grades.cs.umd.edu](http://grades.cs.umd.edu)  
-	Supplementary course readings will be posted in canvas: [https://umd.instructure.com/courses/1088932](https://umd.instructure.com/courses/1088932)  
+	Supplementary course readings will be posted in canvas:
+	[{{ site.canvas_url }}]({{ site.canvas_url }})  
 
 ##Syllabus
 

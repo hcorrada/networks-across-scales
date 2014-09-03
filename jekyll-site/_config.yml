@@ -7,7 +7,7 @@ url: "http://cbcb.umd.edu/~hcorrada/CMSC423"
 twitter_username: hcorrada
 github_username:  hcorrada
 
-pageOrder: ["/index.html", "/calendar.html", "/projects.html", "/resources.html", "/syllabus.html"]
+pageOrder: ["/index.html", "/calendar.html", "/logistics.html", "/resources.html", "/syllabus.html"]
 
 # Build settings
 markdown: redcarpet
@@ -15,3 +15,11 @@ highlighter: pygments
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 
+# my variables
+book_url: http://bioinformaticsalgorithms.com/
+book_videos_url: https://www.youtube.com/user/bioinfalgorithms/playlists
+piazza_url: https://piazza.com/class/hzenik658utiz 
+canvas_url: https://umd.instructure.com/courses/1088932
+rosalind_trial_url: http://rosalind.info/classes/152
+rosalind_final_url: http://rosalind.info/classes/156
+ 

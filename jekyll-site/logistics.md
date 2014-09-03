@@ -1,15 +1,49 @@
 ---
 layout: default
-title: Programming Projects
+title: Course Logistics
 ---
 
-<table class="table">
-<thead>
-<tr><th>Project Description<th>Date posted<th>Due date<th>
-<tbody>
-<tr><td>[Project I: Parsing FASTA files and comparing GC-content](projects/projectI.html)<td>9/9<td>9/26
-<tr><td>[Project II: Exact matching](projects/projectII.html)<td>10/3<td>10/22
-<tr><td>[Project III: Inexact matching](projects/projectIII.html)<td>11/8<td>11/21
-<tr><td>[Project IV: Clustering and classification with gene expression](projects/projectIV.html)<td>11/27<td>12/13
-</table>
+Class prep
+----------
+The [Course Calendar]({{ site.baseurl }}/calendar.html) will list
+readings (usually from [the textbook]({{ site.book_url }}), on
+occassion uploaded to [Canvas]({{ site.canvas_url }})). **You are
+required to read this material before lecture**
 
+The [Course Calendar]({{ site.baseurl }}/calendar.html) will also
+list programming exercises to **attempt** before lecture. You
+will upload attempted solutions to the [pre-lecture exercise
+Rosalind page]({{ site.rosalind_trial_url }}). 
+
+The [Course Calendar]({{ site.baseurl }}/calendar.html) will list
+any written assignments to be completed before lecture. You
+must submit these assignments **before lecture** as instructed.
+
+Programming projects
+--------------------
+
+Subsets of the programming exercises on the [final submission
+Rosalind page]({{ site.rosalind_final_url }}) will be collected into
+*programming projects*. Some additional analysis using the programs
+you write for these exercises will be assigned. Those additional
+analysis will be submitted as instructed. Full descriptions of the
+programming projects will be posted in the
+[Programming Projects course
+page]({{ site.baseurl }}/projects.html). 
+
+Written assignments
+-------------------
+
+Some written exercises will be assigned covering material we
+have discussed in class. These will be posted on the
+[Course Calendar]({{ site.baseurl }}/calendar.html) and announced on
+the class [Piazza page]({{ site.piazza_url }}).
+
+Announcements and discussion
+----------------------------
+
+We will use the [Piazza page]({{ site.piazza_url }}) for class
+announcements. Please use the [Piazza page]({{ site.piazza_url }}) for
+class discussion. Note that the Rosalind Project class pages also have
+disucssion capability. **Do not use it**, please use the
+[Piazza page]({{ site.piazza_url }}) for *all discussion*.
