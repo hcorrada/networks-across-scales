@@ -1,5 +1,5 @@
 <ul class="nobullet">
 {% for reading in entry.readings %}
-<li><a href="{{ site.baseurl }}/{{ reading.link }}">{{ reading.title }}</a></li>
+<li><a href="{% if reading.link.insite %}{{ site.baseurl }}/{% endif %}{{ reading.link.url }}">{{ reading.title }}</a></li>
 {% endfor %}
 </ul>

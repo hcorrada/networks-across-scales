@@ -8,3 +8,11 @@
     background-image: none !important;
     list-style-type: none;
 }
+
+.tr-future {
+    background-color: #E0E0EB;
+}
+
+.tr-present {
+    background-color:   #C2D1F0;
+}

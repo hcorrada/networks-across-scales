@@ -12,15 +12,27 @@
 <table class="table">
 <colgroup>
 <thead>
-<tr><th>Date<th>Lecture Materials<th>Readings<th>Work Due
+<tr><th>Date<th>Title<th>Class Prep<th>Work Due
 <tbody>
   {% for entry in site.data.calendar %}
-<tr><td>{{ entry.date }}
+<tr {% if entry.status == "present" %}class="tr-present"{% elsif entry.status == "done" %}{% else %}class="tr-future"{% endif %}><td>{{ entry.date }}
        <td>{% include calendar_theme.html %}
        <td>{% include calendar_readings.html %}
        <td>{% include calendar_workdue.html %}
 </tr>	 
 {% endfor %}
+</table>
+
+<table class="table">
+	<colgroup>
+	<thead>
+		<tr><th>Legend
+	</thead>
+	<tbody>
+		<tr class="tr-future"><td>Not ready yet
+		<tr class="tr-present"><td>Pre-lecture ready
+		<tr><td>Post-lecture ready
+	</tbody>
 </table>
 
   </article>

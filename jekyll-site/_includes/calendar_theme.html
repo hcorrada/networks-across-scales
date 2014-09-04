@@ -1,6 +1,6 @@
 <ul id="nobullet">
 {% for theme in entry.covers %}
-<li><a href="{{ site.baseurl }}/{{ theme.materials }}">{{ theme.title }}</a>
+{% if theme.materials %}<li><a href="{% if theme.materials.insite %}{{ site.baseurl }}/{% endif %}{{ theme.materials.link }}">{% endif %}{{ theme.title }}{% if theme.materials %}</a>{% endif %}
 {% if entry.solution and entry.solution.release %}
 <a href="{{ site.baseurl }}/{{ entry.solution.link }}">solution</a>
 {% endif %}

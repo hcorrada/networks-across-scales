@@ -1,6 +1,6 @@
 <ul class="nobullet">
 {% for hw in entry.workdue %}
-<li><a href="{{ site.baseurl }}/{{ hw.link }}">{{ hw.title }}</a>
+{% if hw.link %}<li><a href="{% if hw.link.insite %}{{ site.baseurl }}/{% endif %}{{ hw.link.url }}">{% endif %}{{ hw.title }}{% if hw.link %}</a>{% endif %}
 {% if hw.solution and hw.solution.release %}
 <a href="{{ site.baseurl }}/{{ hw.solution.link }}">solution</a>
 {% endif %}
