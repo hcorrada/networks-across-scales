@@ -25,7 +25,7 @@ logo: <img src="http://www.cbcb.umd.edu/~hcorrada/CMSC423/img/new-cbcb-logo3_0.p
 
 *	TA: Wikum Dinalankara  
 	<wikum@cs.umd.edu>  
-	Office Hours: TBD  
+	Office Hours: Thursday 1:00pm-3:00pm BSB 3119  
 
 *   Textbook information:
 	We will be using

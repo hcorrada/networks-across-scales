@@ -27,7 +27,7 @@ This page and the [main course page](index.html) serve as syllabus for this clas
 
 *	TA: Wikum Dinalankara  
 	<wikum@cs.umd.edu>  
-	Office Hours: TBD  
+	Office Hours: Thursday 1:00pm-3:00pm BSB 3119  
 
 *	Evaluation (see section below on logistics for details)
 
