@@ -1,21 +1,26 @@
 import sys
+import re
 
-def getGC(s):
-    cnt = 0
-    for c in s:
-        if c == "G" or c == "C":
-            cnt = cnt + 1
-    return cnt, len(s)
+class gcCounter:
+    def __init__(self, s):
+        self.theid = s
+        self.gc = 0
+        self.n = 0
+        
+    def append(self, s):
+        self.n = self.n + len(s)
+        self.gc = self.gc + len(re.sub('[AT]', '', s))
 
+    def getId(self): return self.theid
+    def getGC(self):
+        return float(self.gc) / self.n
+
+    
 filename = sys.argv[1]
 
-bestId = ''
-maxGC = 0.
-
 with open(filename, 'r') as f:
-    gc = 0
-    n = 0
-    strid = ''
+    tab = dict()
+    counter = None
     
     while True:
         s = f.readline().strip()
@@ -24,25 +29,17 @@ with open(filename, 'r') as f:
             break
         
         if s[0] == ">":
-            if n > 0:
-                gcContent = float(gc) / n
-                print strid, gcContent
-                if gcContent > maxGC:
-                    bestId = strid
-                    maxGC = gcContent
-            strid = s[1:]
-            gc = 0
-            n = 0
-        else:
-            curGC, curN = getGC(s)
-            gc = gc + curGC
-            n = n + curN
-    if n > 0:
-        gcContent = float(gc) / n
-        print strid, gcContent
-        if gcContent > maxGC:
-            bestId = strid
-            maxGC = gcContent
+            if counter is not None:
+                tab[counter.getId()] = counter.getGC()
+            counter = gcCounter(s[1:])
+            continue
+        counter.append(s)
+
+    if counter is not None:
+        tab[counter.getId()] = counter.getGC()
         
-    print bestId
-    print maxGC * 100.
+    bestid = max(tab, key=lambda x: tab[x])
+
+    print bestid
+    print tab[bestid] * 100.
+    
