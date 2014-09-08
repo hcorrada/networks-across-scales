@@ -16,12 +16,12 @@
       title: Rosalind prep Ex. 1-6
       link: {url: "http://rosalind.info/classes/152/"}
 -
-  status: present
+  status: done
   date: 9/8
   covers:
     -
       title: Molecular biology for computer scientists
-      materials: lectures/BioIntro/CMSC423_BioIntro.pdf
+      materials: {link: lectures/CMSC423_BioIntro.pdf, insite: }
   readings: 
     -
       title: Jones & Pevsner, Molecular Biology Primer
