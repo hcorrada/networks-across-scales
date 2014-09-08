@@ -33,19 +33,35 @@
     -
       title: Reading activity (in class)
 -
+  status: present
   date: 9/10
   covers:
-    - "Algorithmic Warmup: Probabilities of patterns in strings"
+    - 
+      title: "Algorithmic Warmup: Probabilities of patterns in strings"
   readings:
     -
-      title: Where in the Genome Does DNA Replication Begin? 
+      title: Compeau & Pevzner, Ch. 1, pp. 2-14, 35-43
+    -
+      title: Compeau & Pevzner, playlist 1, videos 1 and 2
+      link: {url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNFDlaNMZ1JVN73rO1a0dpn"}
+    -
+      title: Rosalind prep Ex. 11-14
+      link: {url: "http://rosalind.info/classes/152/"}
 -
+  status: present
   date: 9/15
   covers:
-    - "Algorithmic Warmup: Skew Detection"
+    - 
+      title: "Algorithmic Warmup: Skew Detection"
   readings:
     -
-      title: Where in the Genome Does DNA REplication Begin?
+      title: Compeau & Pevzner, Ch. 1, 14-34, 43-45
+    -
+      title: Compeau & Pevzner, Ch. 1, playlist 1, videos 3-5
+      link: {url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNFDlaNMZ1JVN73rO1a0dpn"}
+    -
+      title: Rosalind prep Ex. 15-18
+      link: {url: "http://rosalind.info/classes/152/"}
 -
   date: 9/17
   covers:
