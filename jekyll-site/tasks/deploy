@@ -2,4 +2,4 @@
 
 REMOTEHOST=willow.umiacs.umd.edu:/fs/www-umiacs-users/hcorrada/CMSC423
 
-jekyll build && rsync -avz --delete _site/ ${REMOTEHOST}
+jekyll build && rsync -avzp --delete _site/ ${REMOTEHOST}
