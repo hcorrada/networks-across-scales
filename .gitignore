@@ -17,4 +17,5 @@ text/homeworks/*.pdf
 text/homeworks/*.html
 text/*/.tmp
 *.pyc
-
+*~
+*.DS_Store
