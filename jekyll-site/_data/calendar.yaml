@@ -33,7 +33,7 @@
     -
       title: Reading activity (in class)
 -
-  status: present
+  status: done
   date: 9/10
   covers:
     - 
@@ -63,15 +63,15 @@
       title: Rosalind prep Ex. 15-18
       link: {url: "http://rosalind.info/classes/152/"}
 -
+  status: present
   date: 9/17
   covers:
     -
       title: Programming for bioinformatics
-      materials: lectures/BioProgramming/BioProgramming.pdf
-  readings: 
+  readings:
     -
       title: Ch1-2 Biopython tutorial
-      link: http://biopython.org/DIST/docs/tutorial/Tutorial.html)
+      link: {url: "http://biopython.org/DIST/docs/tutorial/Tutorial.html"}
 -
   date: 9/22
   covers:
