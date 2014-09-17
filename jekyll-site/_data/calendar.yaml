@@ -73,21 +73,50 @@
       title: Ch1-2 Biopython tutorial
       link: {url: "http://biopython.org/DIST/docs/tutorial/Tutorial.html"}
 -
+  status: present
+  date: 9/19
+  covers:
+    -
+      title: "NOT A LECTURE"
+  readings:
+  workdue:
+    -
+      title: Rosalind Final Submission Ex. 1-4
+      link: {url: "http://rosalind.info/classes/156"}
+-
+  status: present
   date: 9/22
   covers:
     -
-      title: Brute Force Algorithms (1)
+      title: "Brute Force Algorithms (1)"
   readings:
     -
-      title: How Do We Sequence Antibiotics?
+      title: Compeau & Pevzner, Ch. 2, 47-58
+    - 
+      title: Compeau & Pevzner, Ch. 1, playlist 2, videos 1-4
+      link: {url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFPdIS_5qv_Q3XWieobVPLlc"}
+    -
+      title: Rosalind prep Ex. 19-22
+      link: {url: "http://rosalind.info/classes/152/"}
+  workdue:
+    -
+      title: Homework 1
+      link: {url: "homeworks/homework_1.html", insite: }
 -
+  status: present
   date: 9/24
   covers:
     -
-      title: Brute Force Algorithms (2)
+      title: "Brute Force Algorithms (2)"
   readings:
     -
-      title: How Do We Sequence Antibiotics?
+      title: Compeau & Pevzner, Ch. 2, 58-80 
+    - 
+      title: Compeau & Pevzner, Ch. 1, playlist 2, videos 5-8
+      link: {url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFPdIS_5qv_Q3XWieobVPLlc"}
+    -
+      title: Rosalind prep Ex. 23-24
+      link: {url: "http://rosalind.info/classes/152/"}
 -
   date: 9/29
   covers:
