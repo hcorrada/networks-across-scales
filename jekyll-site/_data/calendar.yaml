@@ -63,11 +63,12 @@
       title: Rosalind prep Ex. 15-18
       link: {url: "http://rosalind.info/classes/152/"}
 -
-  status: present
+  status: done
   date: 9/17
   covers:
     -
       title: Programming for bioinformatics
+      materials: {link: lectures/CMSC423_BioProgramming.pdf, insite: }
   readings:
     -
       title: Ch1-2 Biopython tutorial

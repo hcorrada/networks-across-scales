@@ -19,3 +19,5 @@ text/*/.tmp
 *.pyc
 *~
 *.DS_Store
+cmsc423
+.ruby*
