@@ -74,7 +74,7 @@
       title: Ch1-2 Biopython tutorial
       link: {url: "http://biopython.org/DIST/docs/tutorial/Tutorial.html"}
 -
-  status: present
+  status: done
   date: 9/19
   covers:
     -
