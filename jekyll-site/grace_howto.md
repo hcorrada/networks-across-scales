@@ -3,9 +3,6 @@ layout: default
 title: GRACE HOWTO
 ---
 
-UNDER CONSTRUCTION
-------------------
-
 ###Logging in
 
 To log into [Grace](http://www.grace.umd.edu/) machines you 
@@ -80,6 +77,15 @@ ipython notebook --pylab=inline &
 # look for url in messages
 firefox http://127.0.0.1:8888/ &
 {% endhighlight %}
+
+In order for this to work, you have to make sure you use X11
+forwarding. E.g., ssh using
+
+{% highlight bash %}
+ssh -Y yourname@linux.grace.umd.edu
+{% endhighlight %}
+
+[This command explained](http://explainshell.com/explain?cmd=ssh+-Y+username%40linux.grace.umd.edu)
 
 ###Other useful software
 Although python is required for all programming projects, there is other
