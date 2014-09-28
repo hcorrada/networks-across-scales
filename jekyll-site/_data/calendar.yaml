@@ -94,7 +94,7 @@
     -
       title: Compeau & Pevzner, Ch. 2, 47-58
     - 
-      title: Compeau & Pevzner, Ch. 1, playlist 2, videos 1-4
+      title: Compeau & Pevzner, playlist 2, videos 1-4
       link: {url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFPdIS_5qv_Q3XWieobVPLlc"}
     -
       title: Rosalind prep Ex. 19-22
@@ -104,7 +104,7 @@
       title: Homework 1
       link: {url: "homeworks/homework_1.html", insite: }
 -
-  status: present
+  status: done
   date: 9/24
   covers:
     -
@@ -113,55 +113,83 @@
     -
       title: Compeau & Pevzner, Ch. 2, 58-80 
     - 
-      title: Compeau & Pevzner, Ch. 1, playlist 2, videos 5-8
+      title: Compeau & Pevzner, playlist 2, videos 5-8
       link: {url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFPdIS_5qv_Q3XWieobVPLlc"}
     -
       title: Rosalind prep Ex. 23-24
       link: {url: "http://rosalind.info/classes/152/"}
 -
+  status: present
   date: 9/29
   covers:
     -
       title: Bioinformatics public resources
-      materials: lectures/BioResources/BioResources.pdf
   readings:
     -
-      title: Jones & Pevsner, Bioinformatics Algorithms, Ch. 2
-      link: pevsnerBioinf_Ch2.pdf
+      title: Pevsner, Bioinformatics and Functional Genomics, Ch. 2
+      link: {url: "readings/pevsnerBioinf.pdf", insite: }
+    -
+      title: Rosalind prep. Ex 25-26
+      link: { url: "http://rosalind.info/classes/152/" }
 -
+  status: present
   date: 10/1
   covers:
     -
-      title: Motif Finding (1)
+      title: "Randomized Algorithms: Motif Finding (1)"
   readings: 
     -
-      title: Which DNA Patterns Play the Role of Molecular Clocks?
+      title: Compeau & Pevzner, Ch. 3, 83-106
+    -
+      title: Compeau & Pevzner, playlist 3, videos 1-3
+      link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFMEcdAi0yF015RgmowtsvwT" }
+    -
+      title: Rosalind prep Ex. 27-31
+      link: { url: "http://rosalind.info/classes/152" }
 -
+  status: present
   date: 10/6
   covers:
     - 
-      title: Motif Finding (2)
+      title: "Randomized Algorithms: Motif Finding (2)"
   readings:
     - 
-      title: Which DNA Patterns Play the Role of Molecular Clocks?
+      title: Compeau & Pevzner, Ch. 3., 106-121
+    - 
+      title: Compeau & Pevzner, playlist 3, videos 4-6
+      link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFMEcdAi0yF015RgmowtsvwT" }
     -
-      title: Nat. Biotech primer
-      link: http://www.nature.com/nbt/journal/v24/n8/full/nbt0806-959.html
+      title: Nat. Biotech primer (need to be on campus network to read)
+      link: {url: "http://www.nature.com/nbt/journal/v24/n8/full/nbt0806-959.html" }
+    -
+      title: Rosallind prep Ex. 32-33
+      link: { url: "http://rosalind.info/classes/152/" }
 -
   date: 10/8
   covers:
     -
       title: Expression analysis (clustering)
-      materials: lectures/signalFinding/unsupervised.pdf
   readings:
     -
       title: Nat. Biotech primer
       link: http://www.nature.com/nbt/journal/v23/n12/full/nbt1205-1499.html
 -
+  date: 10/10
+  covers:
+    -
+      title: NOT A LECTURE
+  workdue:
+    -
+      title: Rosalind Final Submission Ex. 5-8
+      link: {url: "http://rosalind.info/classes/156"} 
+-
   date: 10/13
   covers:
     -
       title: Midterm I Recap
+  workdue:
+    -
+      title: Homework 2
 -
   date: 10/15
   covers:
