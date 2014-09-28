@@ -124,10 +124,11 @@
   covers:
     -
       title: Bioinformatics public resources
+      materials: { link:  lectures/CMSC423_BioResources.pdf, insite: }
   readings:
     -
       title: Pevsner, Bioinformatics and Functional Genomics, Ch. 2
-      link: {url: "readings/pevsnerBioinf.pdf", insite: }
+      link: { url: "readings/pevsnerBioinf.pdf", insite: }
     -
       title: Rosalind prep. Ex 25-26
       link: { url: "http://rosalind.info/classes/152/" }
