@@ -8,11 +8,11 @@ def profile_probability(kmer, profile):
     return prob
 
 def most_probable_kmer(text, k, profile):
-    best_kmer = ''
-    best_probability = 0.
+    best_kmer = text[:k]
+    best_probability = profile_probability(best_kmer, profile)
 
     n = len(text)
-    for i in xrange(n-k+1):
+    for i in xrange(1, n-k+1):
         kmer = text[slice(i,i+k)]
         prob = profile_probability(kmer, profile)
         if prob >= best_probability:
