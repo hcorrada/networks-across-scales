@@ -119,7 +119,7 @@
       title: Rosalind prep Ex. 23-24
       link: {url: "http://rosalind.info/classes/152/"}
 -
-  status: present
+  status: done
   date: 9/29
   covers:
     -
@@ -132,6 +132,9 @@
     -
       title: Rosalind prep. Ex 25-26
       link: { url: "http://rosalind.info/classes/152/" }
+  workdue:
+    -
+      title: In-class exercise
 -
   status: present
   date: 10/1
