@@ -92,15 +92,18 @@ def find_one_motif(k, t, N, dna):
             return best_motifs
 
 def gibbs_sampling_search(k, t, N, dna):
-    num_starts = 20
+    num_starts = 5000
     best_motifs = find_one_motif(k, t, N, dna)
     best_score = motif_score(best_motifs)
+
     for i in xrange(1, num_starts):
         cur_motifs = find_one_motif(k, t, N, dna)
-        cur_score = best_score
+        cur_score = motif_score(cur_motifs)
+
+        print i, cur_score, best_score
         if cur_score < best_score:
             best_motifs = cur_motifs
-            cur_score = best_score
+            best_score = cur_score
     return best_motifs
 
 filename = sys.argv[1]

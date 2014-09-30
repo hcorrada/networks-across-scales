@@ -70,7 +70,6 @@ def greedy_motif_search(k, t, dna):
         for j in xrange(1, t):
             profile = make_profile(motif_set, k)
             motif_set.append(most_probable_kmer(dna[j], k, profile))
-        print motif_set
         cur_score = motif_score(motif_set)
         if cur_score < best_score:
             best_score = cur_score

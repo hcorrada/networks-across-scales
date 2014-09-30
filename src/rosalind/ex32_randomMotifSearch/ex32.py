@@ -69,7 +69,7 @@ def find_one_motif(k, t, dna):
     best_motifs = []
     motifs = []
     n = len(dna[0])
-    
+
     for i in xrange(t):
         j = random.randrange(n-k+1)
         kmer = dna[i][slice(j, j+k)]
@@ -81,6 +81,7 @@ def find_one_motif(k, t, dna):
         profile = make_profile(motifs, k)
         motifs = make_motifs(profile, dna, t, k)
         cur_score = motif_score(motifs)
+
         if cur_score < best_score:
             best_motifs = motifs
             best_score = cur_score
@@ -91,12 +92,14 @@ def random_motif_search(k, t, dna):
     n = 1000
     best_motifs = find_one_motif(k, t, dna)
     best_score = motif_score(best_motifs)
+
     for i in xrange(1, n):
         cur_motifs = find_one_motif(k, t, dna)
-        cur_score = best_score
+        cur_score = motif_score(cur_motifs)
+
         if cur_score < best_score:
             best_motifs = cur_motifs
-            cur_score = best_score
+            best_score = cur_score
     return best_motifs
 
 filename = sys.argv[1]
