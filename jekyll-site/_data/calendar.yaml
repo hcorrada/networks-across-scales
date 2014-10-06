@@ -151,7 +151,7 @@
       title: Rosalind prep Ex. 27-31
       link: { url: "http://rosalind.info/classes/152" }
 -
-  status: present
+  status: done
   date: 10/6
   covers:
     - 
@@ -173,13 +173,7 @@
   date: 10/8
   covers:
     -
-      title: Expression analysis (clustering)
-  readings:
-    -
-      title: Compeau & Pevzner, Ch. 20 (draft posted on Piazza)
-    -
-      title: Nat. Biotech primer
-      link: {url: "http://www.nature.com/nbt/journal/v23/n12/full/nbt1205-1499.html" }
+      title: "Q and A session w/ TA"
 -
   date: 10/10
   covers:
@@ -189,21 +183,33 @@
     -
       title: Rosalind Final Submission Ex. 5-8
       link: {url: "http://rosalind.info/classes/156"} 
+   -
+     title: Homework 2
 -
+  status: present
   date: 10/13
   covers:
     -
-      title: Midterm I Recap
-  workdue:
+      title: Expression analysis (clustering)
+  readings:
     -
-      title: Homework 2
+      title: Compeau & Pevzner, Ch. 20 (draft posted on Piazza)
+    -
+      title: Nat. Biotech primer
+      link: {url: "http://www.nature.com/nbt/journal/v23/n12/full/nbt1205-1499.html" }
+
 -
   date: 10/15
   covers:
     -
-      title: Midterm I
+      title: Midterm I Recap
 -
   date: 10/20
+  covers:
+    -
+      title: Midterm I
+-
+  date: 10/22
   covers:
     -
       title: Genome Assembly (1)
@@ -211,7 +217,7 @@
     -
       title: How do we assemble genomes?
 -
-  date: 10/22
+  date: 10/27
   covers:
     -
       title: Genome Assembly (2)
@@ -219,7 +225,7 @@
     -
       title: How do we assemble genomes?
 -
-  date: 10/27
+  date: 10/29
   covers:
     -
       title: Genome Assembly (3)
