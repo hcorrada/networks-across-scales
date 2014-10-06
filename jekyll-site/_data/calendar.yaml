@@ -136,7 +136,7 @@
     -
       title: In-class exercise
 -
-  status: present
+  status: done
   date: 10/1
   covers:
     -
@@ -169,14 +169,17 @@
       title: Rosallind prep Ex. 32-33
       link: { url: "http://rosalind.info/classes/152/" }
 -
+  status: present
   date: 10/8
   covers:
     -
       title: Expression analysis (clustering)
   readings:
     -
+      title: Compeau & Pevzner, Ch. 20 (draft posted on Piazza)
+    -
       title: Nat. Biotech primer
-      link: http://www.nature.com/nbt/journal/v23/n12/full/nbt1205-1499.html
+      link: {url: "http://www.nature.com/nbt/journal/v23/n12/full/nbt1205-1499.html" }
 -
   date: 10/10
   covers:
