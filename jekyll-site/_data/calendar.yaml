@@ -169,7 +169,7 @@
       title: Rosalind prep Ex. 32-33
       link: { url: "http://rosalind.info/classes/152/" }
 -
-  status: present
+  status: done
   date: 10/8
   covers:
     -
@@ -184,8 +184,6 @@
     -
       title: Rosalind Final Submission Ex. 5-8
       link: {url: "http://rosalind.info/classes/156"} 
-   -
-     title: Homework 2
 -
   status: present
   date: 10/13
@@ -194,16 +192,22 @@
       title: Expression analysis (clustering)
   readings:
     -
-      title: Compeau & Pevzner, Ch. 20 (draft posted on Piazza)
+      title: Compeau & Pevzner, Ch. 9 (draft posted on Piazza)
     -
       title: Nat. Biotech primer
       link: {url: "http://www.nature.com/nbt/journal/v23/n12/full/nbt1205-1499.html" }
-
+    - 
+     title: Rosalind prep Ex. 34-37
+     link: {url: "http://rosalind.info/class/153"}
 -
+  status: present
   date: 10/15
   covers:
     -
       title: Midterm I Recap
+  workdue:
+    -
+      title: Homework 2
 -
   date: 10/20
   covers:
