@@ -166,7 +166,7 @@
       title: Nat. Biotech primer (need to be on campus network to read)
       link: {url: "http://www.nature.com/nbt/journal/v24/n8/full/nbt0806-959.html" }
     -
-      title: Rosallind prep Ex. 32-33
+      title: Rosalind prep Ex. 32-33
       link: { url: "http://rosalind.info/classes/152/" }
 -
   status: present
@@ -175,6 +175,7 @@
     -
       title: "Q and A session w/ TA"
 -
+  status: present
   date: 10/10
   covers:
     -
