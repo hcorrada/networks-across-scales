@@ -17,8 +17,8 @@ max_population_size = 100
 alphabet = list("ACGT")
 
 first_string = 'TCGTACGGTATT'
-#exp = re.compile("T[CG]GT[ACGT]{4}T[AG][ACGT]T")
-exp = re.compile(first_string)
+exp = re.compile("T[CG]GT[ACGT]{4}T[AG][ACGT]T")
+#exp = re.compile(first_string)
 
 def reproduce(population, num_children, mutation_rate):
     new_population = []

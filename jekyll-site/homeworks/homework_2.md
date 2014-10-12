@@ -139,6 +139,25 @@ to implement this:
   population based on age (using the tuple representation above) you
   can use `population=filter(lambda x: x[0] <= max_age, population)`
 
+- To check for binding it's easiest to use the regular expression
+  library in python. The binding expression above can be used as
+  follows:
+
+{% highlight python %}
+import re
+
+# the rule:
+# match C or G in the second position
+# match A,C,G or T in positions 5-8 ([ACGT]) is the set of characters
+# that match {4} is the exact number of matches
+# match A or G in position 10
+# match A,C,G or T in position 11
+matchRE = re.compile("T[CG]GT[ACGT]{4}T[AG][ACGT]T")
+
+# this code checks if string 'kmer' binds according to the rule
+matchRE.match(kmer) is not None
+{% endhighlight %}
+
 - To randomly select 100 items from a list you can use
 
 {% highlight python %}
