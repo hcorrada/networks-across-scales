@@ -10,7 +10,7 @@ github_username:  hcorrada
 pageOrder: ["/index.html", "/calendar.html", "/logistics.html", "/resources.html", "/syllabus.html"]
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 highlighter: pygments
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]

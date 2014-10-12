@@ -17,15 +17,15 @@ Submit your answers to Problems  in the
 
 ##Entropy ##
 
-Consider length $k$ profiles estimated from a set of
-$t$ $k$-mers.
+Consider length $$k$$ profiles estimated from a set of
+$$t$$ $$k$$-mers.
 
 **Question 2.** What is the *minimum* entropy score one of these profiles
-can achieve? Provide an example set of $t=3$ $4$-mers that would
+can achieve? Provide an example set of $$t=5$$ $$4$$-mers that would
 produce a profile with minimum entropy.
 
 **Question 3.** What is the *maximum* entropy score one of these profiles
-can achieve? Provide an example set of $t=3$ $4$-mers that would
+can achieve? Provide an example set of $$t=5$$ $$4$$-mers that would
 produce a profile with maximum entropy.
 
 ## Entropy Game ##
@@ -68,7 +68,7 @@ the inidividual does not survive.
 
 Ok, now code two versions of this game: (1) a version where step 3
 (survival) is implemented, and (2) a version where step 3 is not
-implemented. I.e., in version 1, if an individual's $k$-mer does not
+implemented. I.e., in version 1, if an individual's $$k$$-mer does not
 match the above regular expression it dies, in version 2 it
 survives. Remember that at most 100 individuals are retained at the
 end of the year.
@@ -123,6 +123,44 @@ vary after you change the matching expression (don't cheat!). Now, run
 your experiment again using your new matching rule and calcualte
 entropies again. Do these results agree
 with your hypothesis? 
+
+## Notes ##
+
+The goal of this exercise is for you to understand the concept of
+entropy and how it may be a reasonable measure to use when thinking
+about the evolution of DNA sequences. So, here are some hints on how
+to implement this:
+
+- To check if a mutation should be inserted in a given position in an
+  offspring string you can use `if random.random() <= mutation.rate`  
+
+- The `filter` function is very useful to modify lists according to
+  some predicate. For example, to remove individuals from the
+  population based on age (using the tuple representation above) you
+  can use `population=filter(lambda x: x[0] <= max_age, population)`
+
+- To randomly select 100 items from a list you can use
+
+{% highlight python %}
+# this shuffles in place
+random.shuffle(population)
+population = population[:100]
+{% endhighlight %}
+
+- Remember that we define $$0 \cdot log2(0) = 0$$. You can use code
+  like this to enforce this: `numpy.log2(p) if p > 0 else 0`
+
+- Finally, you need to think about how to summarize the entropies you
+  calculate from the 10 runs you perform. The `numpy` library can be
+  helpful here, e.g., `numpy.mean`.
+
+- Remember that the easiest way to install libraries in python is to
+  use `pip`:
+
+{% highlight bash %}
+$ pip install numpy
+{% endhighlight %}
+
 
 ## How to submit ##
 
