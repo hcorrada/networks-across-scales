@@ -208,6 +208,7 @@
   workdue:
     -
       title: Homework 2
+      link: {url: "homeworks/homework_2.html", insite: }
 -
   date: 10/20
   covers:
