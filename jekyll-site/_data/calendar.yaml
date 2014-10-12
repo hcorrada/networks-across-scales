@@ -176,16 +176,6 @@
       title: "Q and A session w/ TA"
 -
   status: present
-  date: 10/10
-  covers:
-    -
-      title: NOT A LECTURE
-  workdue:
-    -
-      title: Rosalind Final Submission Ex. 5-8
-      link: {url: "http://rosalind.info/classes/156"} 
--
-  status: present
   date: 10/13
   covers:
     -
@@ -199,6 +189,16 @@
     - 
      title: Rosalind prep Ex. 34-37
      link: {url: "http://rosalind.info/class/153"}
+-
+  status: present
+  date: 10/14
+  covers:
+    -
+      title: NOT A LECTURE
+  workdue:
+    -
+      title: Rosalind Final Submission Ex. 5-8
+      link: {url: "http://rosalind.info/classes/156"} 
 -
   status: present
   date: 10/15
