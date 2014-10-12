@@ -42,16 +42,15 @@ def make_profile(motifs, k):
 def random_choice(weights):
     total_weight = sum(weights)
     nitems = len(weights)
-    limits = []
-    running_sum = 0.
     for i in xrange(nitems):
-        running_sum += weights[i]
-        limits.append(running_sum)
-
-    u = random.uniform(0, total_weight)
-    choice = 0
-    while choice < (nitems-1) and u > limits[choice]:
+        weights[i] /= total_weight
+        
+    choice = -1
+    u = random.uniform(0, 1.)
+    
+    while u >= 0:
         choice += 1
+        u -= weights[choice]
     return choice
 
 def profile_probability(kmer, profile):
@@ -79,20 +78,19 @@ def find_one_motif(k, t, N, dna):
         motifs.append(kmer)
     best_score = motif_score(best_motifs)
 
-    for i in xrange(N):
-        j = random.randrange(t)
-        cur_motifs = motifs[:j] + motifs[(j+1):]
+    for j in xrange(N):
+        i = random.randrange(t)
+        cur_motifs = motifs[:i] + motifs[(i+1):]
         profile = make_profile(cur_motifs, k)
-        motifs[j] = profile_sample(dna[j], profile, k)
+        motifs[i] = profile_sample(dna[i], profile, k)
         cur_score = motif_score(motifs)
         if cur_score < best_score:
             best_motifs = motifs
             best_score = cur_score
-        else:
-            return best_motifs
+    return best_motifs
 
 def gibbs_sampling_search(k, t, N, dna):
-    num_starts = 5000
+    num_starts = 20
     best_motifs = find_one_motif(k, t, N, dna)
     best_score = motif_score(best_motifs)
 
@@ -100,7 +98,6 @@ def gibbs_sampling_search(k, t, N, dna):
         cur_motifs = find_one_motif(k, t, N, dna)
         cur_score = motif_score(cur_motifs)
 
-        print i, cur_score, best_score
         if cur_score < best_score:
             best_motifs = cur_motifs
             best_score = cur_score
