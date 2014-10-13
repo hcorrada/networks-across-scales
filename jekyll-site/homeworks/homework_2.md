@@ -11,9 +11,16 @@ Submit your answers to Problems  in the
 [Rosalind final submission page](http://rosalind.info/classes/156/).
 **THESE ARE DUE ON TUESDAY OCT. 14**
 
-**Question 1.** Write a three or four sentences as a postmortem on the implementation
+**Question 1.** Write three or four sentences as a postmortem on the implementation
   of the two randomized algorithms. What was the biggest challenge in
   implementing and testing these algorithms? 
+
+**Note**: *Postmortem* refers to short reviews usually done after
+completion of a project to lay down lessons learned through this
+project. Implementation methods and ideas that worked, or did
+not. More info: http://blog.codinghorror.com/the-project-postmortem/
+and
+http://www.uio.no/studier/emner/matnat/ifi/INF9181/h11/undervisningsmateriale/reading-materials/Lecture-10/post-mortems.pdf
 
 ##Entropy ##
 
