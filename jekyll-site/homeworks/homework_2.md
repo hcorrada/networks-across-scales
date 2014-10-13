@@ -11,9 +11,15 @@ Submit your answers to Problems  in the
 [Rosalind final submission page](http://rosalind.info/classes/156/).
 **THESE ARE DUE ON TUESDAY OCT. 14**
 
-**Question 1.** Write a three or four sentences as a postmortem on the implementation
+**Question 1.** Write three or four sentences as a postmortem on the implementation
   of the two randomized algorithms. What was the biggest challenge in
   implementing and testing these algorithms? 
+
+**Note**: *Postmortem* refers to short reviews usually done after
+completion of a project to set down lessons learned through the
+project. Implementation methods and ideas that worked, and those that did
+not. More info: [here](http://blog.codinghorror.com/the-project-postmortem/)
+and [here](http://www.uio.no/studier/emner/matnat/ifi/INF9181/h11/undervisningsmateriale/reading-materials/Lecture-10/post-mortems.pdf).
 
 ##Entropy ##
 
@@ -146,7 +152,7 @@ to implement this:
 {% highlight python %}
 import re
 
-# the rule:
+# the rule for pattern T[C|G]GTNNNNT[A|G]NT
 # match C or G in the second position
 # match A,C,G or T in positions 5-8 ([ACGT]) is the set of characters
 # that match {4} is the exact number of matches
