@@ -96,10 +96,9 @@ mean(sqrt((heights-my_guess)^2))
 guesses <- c(60, 73)
 abline(v=guesses, lty=2)
 distances <- sapply(1:2, function(i) abs(heights-guesses[i]))
-cluster <- apply(distances, 1, which.min)
-new_guesses <- sapply(1:2, function(i) mean(heights[cluster==i]))
-abline(v=new_guesses, lty=2, col="red", lwd=1.5)
 
 z <- exp(-distances) / rowSums(exp(-distances))
 weighted_guesses <- sapply(1:2, function(i) sum(z[,i] * heights) / sum(z[,i]))
 abline(v=weighted_guesses, lty=2, col="blue", lwd=1.5)
+
+mean(sqrt((heights-rep(rev(weighted_guesses),len=n))^2))

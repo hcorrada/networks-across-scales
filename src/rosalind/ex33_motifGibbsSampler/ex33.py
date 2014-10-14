@@ -1,6 +1,8 @@
 import sys
 import random
 
+random.seed(2)
+
 alphabet = list('ACGT')
 
 def motif_score(motifs):
@@ -81,12 +83,16 @@ def find_one_motif(k, t, N, dna):
     for j in xrange(N):
         i = random.randrange(t)
         cur_motifs = motifs[:i] + motifs[(i+1):]
+        old_motif = motifs[i]
+        
         profile = make_profile(cur_motifs, k)
         motifs[i] = profile_sample(dna[i], profile, k)
         cur_score = motif_score(motifs)
         if cur_score < best_score:
             best_motifs = motifs
             best_score = cur_score
+        else:
+            motifs[i] = old_motif
     return best_motifs
 
 def gibbs_sampling_search(k, t, N, dna):
