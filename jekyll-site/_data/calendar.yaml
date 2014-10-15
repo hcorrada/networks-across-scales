@@ -179,9 +179,9 @@
   date: 10/13
   covers:
     -
-      title: "Review and clarifiaction Chs 1-3"
+      title: "Review and clarification Chs 1-3"
 -
-  status: present
+  status: done
   date: 10/14
   covers:
     -
@@ -207,10 +207,15 @@
       title: Homework 2
       link: {url: "homeworks/homework_2.html", insite: }
 -
+  status: present
   date: 10/20
   covers:
     -
       title: Midterm I
+  readings:
+    -
+      title: Midterm I study guide
+      link: { url: "docs/midtermI_recap.html", insite: }
 -
   date: 10/22
   covers:
