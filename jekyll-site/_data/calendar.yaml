@@ -175,20 +175,11 @@
     -
       title: "Q and A session w/ TA"
 -
-  status: present
+  status: done
   date: 10/13
   covers:
     -
-      title: Expression analysis (clustering)
-  readings:
-    -
-      title: Compeau & Pevzner, Ch. 9 (draft posted on Piazza)
-    -
-      title: Nat. Biotech primer
-      link: {url: "http://www.nature.com/nbt/journal/v23/n12/full/nbt1205-1499.html" }
-    - 
-     title: Rosalind prep Ex. 34-37
-     link: {url: "http://rosalind.info/class/153"}
+      title: "Review and clarifiaction Chs 1-3"
 -
   status: present
   date: 10/14
@@ -204,7 +195,13 @@
   date: 10/15
   covers:
     -
-      title: Midterm I Recap
+      title: Expression analysis (clustering)
+  readings:
+    -
+      title: Compeau & Pevzner, Ch. 9 (draft posted on Piazza)
+    - 
+     title: Rosalind prep Ex. 34-36
+     link: {url: "http://rosalind.info/classes/152"}
   workdue:
     -
       title: Homework 2
