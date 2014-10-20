@@ -191,7 +191,7 @@
       title: Rosalind Final Submission Ex. 5-8
       link: {url: "http://rosalind.info/classes/156"} 
 -
-  status: present
+  status: done
   date: 10/15
   covers:
     -
@@ -199,9 +199,6 @@
   readings:
     -
       title: Compeau & Pevzner, Ch. 9 (draft posted on Piazza)
-    - 
-     title: Rosalind prep Ex. 34-36
-     link: {url: "http://rosalind.info/classes/152"}
   workdue:
     -
       title: Homework 2
@@ -217,31 +214,61 @@
       title: Midterm I study guide
       link: { url: "docs/midtermI_recap.html", insite: }
 -
+  status: present
   date: 10/22
+  covers:
+    -
+      title: Expression analysis (clustering) continued
+  readings:
+    -
+      title: Compeau & Pevzner, Ch. 9 (draft posted on Piazza)
+    - 
+     title: Rosalind prep Ex. 34-37
+     link: {url: "http://rosalind.info/classes/152"}
+-
+  date: 10/27
   covers:
     -
       title: Genome Assembly (1)
   readings:
     -
-      title: How do we assemble genomes?
+      title: Compeau & Pevzner, Ch. 4, 129-146
+    -
+      title: Compeau & Pevzner, playlist 4, videos 1-5
+      link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNGdaeGpV8dPEeSm3AChb6L" }
+    -
+      title: Rosalind prep. Ex 38-40
+      link: { url: "http://rosalind.info/classes/152/" }
 -
-  date: 10/27
+  date: 10/29
   covers:
     -
       title: Genome Assembly (2)
   readings:
     -
-      title: How do we assemble genomes?
+      title: Compeau & Pevzner, Ch. 4, 147-162
+    -
+      title: Compeau & Pevzner, playlist 4, videos 6-9
+      link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNGdaeGpV8dPEeSm3AChb6L" }
+    -
+      title: Rosalind prep. Ex 41-42
+      link: { url: "http://rosalind.info/classes/152/" }
 -
-  date: 10/29
+  date: 11/3
   covers:
     -
       title: Genome Assembly (3)
   readings:
     -
-      title: How do we assemble genomes?
+      title: Compeau & Pevzner, Ch. 4, 162-187
+    -
+      title: Compeau & Pevzner, playlist 4, videos 10-12
+      link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNGdaeGpV8dPEeSm3AChb6L" }
+    -
+      title: Rosalind prep. Ex 43-44
+      link: { url: "http://rosalind.info/classes/152/" }
 -
-  date: 10/29
+  date: 11/5
   covers:
     -
       title: Dynamic Programming (1)
@@ -249,7 +276,7 @@
     -
       title: How do we compare DNA sequences?
 -
-  date: 11/3
+  date: 11/10
   covers:
     -
       title: Dynamic Programming (2)
@@ -257,7 +284,7 @@
     -
       title: How do we compare DNA sequences?
 -
-  date: 11/5
+  date: 11/12
   covers:
     -
       title: Dynamic Programming (3)
@@ -265,22 +292,17 @@
     -
       title: How do we compare DNA sequences?
 -
- date: 11/10
+ date: 11/17
  covers:
    -
      title: Midterm II recap
 -
-  date: 11/12
+  date: 11/19
   covers:
     -
       title: Midterm II
 -
-  date: 11/17
-  covers:
-    -
-      title: Combinatorial Algorithms 
--
-  date: 11/19
+  date: 11/24
   covers:
     -
       title: Sequence alignment - exact matching
@@ -297,7 +319,7 @@
         release: false
         link: homeworks/hw03_ans.pdf
 -
-  date: 11/24
+  date: 11/26
   covers:
     -
       title: Sequence alignment - exact matching
@@ -306,12 +328,6 @@
     -
       title: Ch2 Gusfield
   workdue:
-    title: HW4 done in class
--
-  date: 11/26
-  covers:
-    -
-      title: Combinatorial Pattern Matching
 -
   date: 12/1
   covers:
