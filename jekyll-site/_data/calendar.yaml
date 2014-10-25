@@ -196,6 +196,10 @@
   covers:
     -
       title: Expression analysis (clustering)
+      materials: { link: "lectures/CMSC423_Clustering.pdf", insite: }
+    - 
+      title: R script
+      materials: { link: "lectures/diauxic.R", insite: }
   readings:
     -
       title: Compeau & Pevzner, Ch. 9 (draft posted on Piazza)
@@ -204,7 +208,7 @@
       title: Homework 2
       link: {url: "homeworks/homework_2.html", insite: }
 -
-  status: present
+  status: done
   date: 10/20
   covers:
     -
@@ -214,11 +218,15 @@
       title: Midterm I study guide
       link: { url: "docs/midtermI_recap.html", insite: }
 -
-  status: present
+  status: done
   date: 10/22
   covers:
     -
       title: Expression analysis (clustering) continued
+      materials: { link: "lectures/CMSC423_Clustering.pdf", insite: }
+    -
+      title: R script
+      materials: { link: "lectures/diauxic.R", insite: }
   readings:
     -
       title: Compeau & Pevzner, Ch. 9 (draft posted on Piazza)
@@ -226,6 +234,7 @@
      title: Rosalind prep Ex. 34-37
      link: {url: "http://rosalind.info/classes/152"}
 -
+  status: present
   date: 10/27
   covers:
     -
