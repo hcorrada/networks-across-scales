@@ -249,6 +249,7 @@
       title: Rosalind prep. Ex 38-40
       link: { url: "http://rosalind.info/classes/152/" }
 -
+  status: present
   date: 10/29
   covers:
     -
@@ -284,6 +285,16 @@
   readings:
     -
       title: How do we compare DNA sequences?
+-
+  status: present
+  date: 11/7
+  covers:
+    -
+      title: NOT A LECTURE
+  workdue:
+    -
+      title: Rosalind Final Submission Ex. 9 and 10
+      link: {url: "http://rosalind.info/classes/156"} 
 -
   date: 11/10
   covers:
