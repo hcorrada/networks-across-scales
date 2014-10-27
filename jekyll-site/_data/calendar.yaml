@@ -239,6 +239,7 @@
   covers:
     -
       title: Genome Assembly (1)
+      materials: { link: "lectures/CMSC423_Assembly.pdf", insite: }
   readings:
     -
       title: Compeau & Pevzner, Ch. 4, 129-146
