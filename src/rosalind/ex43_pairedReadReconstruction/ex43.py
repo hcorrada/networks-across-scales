@@ -147,12 +147,8 @@ def readdat(filename):
         d = int(f.readline().strip())
         kmers = [line.strip() for line in f]
         return d, kmers
-                
-def main(filename):
-    d, kmers = readdat(filename)
-    graph = debruijnGraph(kmers)
-    path = graph.eulerian_path()
 
+def reconstruct(path, d):
     read_pair = path[0]
     text1, text2 = read_pair.split("|")
     k = len(text1) + 1
@@ -161,8 +157,14 @@ def main(filename):
         kmer1, kmer2 = read_pair.split("|")
         text1 += kmer1[-1]
         text2 += kmer2[-1]
-
-    print text1[:-(k+d)] + text2
+    return text1 + text2[-(k+d):]
+    
+def main(filename):
+    d, kmers = readdat(filename)
+    graph = debruijnGraph(kmers)
+    path = graph.eulerian_path()
+    text = reconstruct(path, d)
+    print text
     
 if __name__ == '__main__' and 'get_ipython' not in dir():
     filename = sys.argv[1]
