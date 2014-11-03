@@ -42,7 +42,7 @@ Unzip this file in your working directory, you should see the following four fil
 ## How to submit ##
 
 Submit your answers to the five questions above in writing before
-lecture on **October 15**. Include a listing of additional code you used to answer these questions (e.g., how did you read the `ebola.fa` file and checked if your assembled genome matches any of the twenty genomes there).
+lecture on **November 10**. Include a listing of additional code you used to answer these questions (e.g., how did you read the `ebola.fa` file and checked if your assembled genome matches any of the twenty genomes there).
 
 
 
