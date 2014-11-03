@@ -62,18 +62,8 @@ class Graph:
         path = [(source._id, target._id)]
         numcopies = numedges
             
-        while True:
+        while target._extensible:
             source = target
-            if source._sink or source.get_numchildren() > 1:
-                break
-            
-            target, numedges = source.peek_next_child()
-            if numedges < numcopies or target.get_numchildren() > 1:
-                break
-            
-            if numedges > numcopies:
-                break
-            
             target, _ignored = source.pop_next_child(numcopies)
             edge = (source._id, target._id)
             path.append(edge)
@@ -99,10 +89,10 @@ class Graph:
             contig, numcopies = self.get_next_contig()
         return res
 
-    def flag_sinks(self):
+    def flag_extensible(self):
         for node in self._nodes.itervalues():
-            if node.get_indegree() > node.get_outdegree():
-                node._sink = True
+            if node.get_indegree() == 1 and node.get_outdegree() == 1:
+                node._extensible = True
     
 class Node:
     def __init__(self, id):
@@ -110,11 +100,11 @@ class Node:
         self._children = defaultdict(int)
         self._outdegree = 0
         self._indegree = 0
-        self._sink = False
+        self._extensible = False
 
     def __repr__(self):
         children_strings = ["%s (%d)" % (str(child._id), numedges) for child, numedges in self._children.iteritems()]
-        return "%s -> %s: %d - %d : %s" % (self._id, ",".join(children_strings), self.get_indegree(), self.get_outdegree(), "sink" if self._sink else "")
+        return "%s -> %s: %d - %d : %s" % (self._id, ",".join(children_strings), self.get_indegree(), self.get_outdegree(), "extensible" if self._extensible else "")
 
     def get_numchildren(self):
         return sum([x > 0 for x in self._children.values()])
@@ -165,9 +155,9 @@ def readdat(filename):
 def main(filename):
     kmers = readdat(filename)
     graph = debruijnGraph(kmers)
-    graph.flag_sinks()
-    print graph
+    graph.flag_extensible()
     contigs = graph.get_contigs()
+    contigs.sort()
     print " ".join(contigs)
     
 if __name__ == '__main__' and 'get_ipython' not in dir():
