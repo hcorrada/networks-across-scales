@@ -234,7 +234,7 @@
      title: Rosalind prep Ex. 34-37
      link: {url: "http://rosalind.info/classes/152"}
 -
-  status: present
+  status: done
   date: 10/27
   covers:
     -
@@ -250,7 +250,7 @@
       title: Rosalind prep. Ex 38-40
       link: { url: "http://rosalind.info/classes/152/" }
 -
-  status: present
+  status: done
   date: 10/29
   covers:
     -
@@ -265,6 +265,7 @@
       title: Rosalind prep. Ex 41-42
       link: { url: "http://rosalind.info/classes/152/" }
 -
+  status: present
   date: 11/3
   covers:
     -
@@ -279,6 +280,7 @@
       title: Rosalind prep. Ex 43-44
       link: { url: "http://rosalind.info/classes/152/" }
 -
+  status: present
   date: 11/5
   covers:
     -
@@ -297,6 +299,7 @@
       title: Rosalind Final Submission Ex. 9 and 10
       link: {url: "http://rosalind.info/classes/156"} 
 -
+  status: present
   date: 11/10
   covers:
     -
@@ -304,6 +307,10 @@
   readings:
     -
       title: How do we compare DNA sequences?
+  workdue:
+    -
+      title: Homework 3
+      link: {url: "homeworks/homework_3.html", insite: }
 -
   date: 11/12
   covers:
