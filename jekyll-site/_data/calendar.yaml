@@ -284,10 +284,16 @@
   date: 11/5
   covers:
     -
-      title: Dynamic Programming (1)
+      title: Dynamic Programming (1): Longest common subsequence
   readings:
     -
-      title: How do we compare DNA sequences?
+      title: Compeau & Pevzner, Ch. 5 189-219
+    -
+      title: Compeau & Pevzner, playlist 5, videos 1-5
+      link: { url: https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn }
+    -
+      title: Rosalind prep. Ex 45-47
+      link: { url: "http://rosalind.info/classes/152/" }
 -
   status: present
   date: 11/7
@@ -303,22 +309,35 @@
   date: 11/10
   covers:
     -
-      title: Dynamic Programming (2)
+      title: Dynamic Programming (2): Global/Local Alignment and affine gap penalties
   readings:
     -
-      title: How do we compare DNA sequences?
+      title: Compeau & Pevzner, Ch. 5 219-235
+    -
+      title: Compeau & Pevzner, playlist 5, videos 6-8
+      link: { url: https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn }
+    -
+      title: Rosalind prep. Ex 48-50
+      link: { url: "http://rosalind.info/classes/152/" }
   workdue:
     -
       title: Homework 3
       link: {url: "homeworks/homework_3.html", insite: }
 -
+  status: present
   date: 11/12
   covers:
     -
-      title: Dynamic Programming (3)
+      title: Dynamic Programming (3): Space Efficent and Multiple Alignment
   readings:
     -
-      title: How do we compare DNA sequences?
+      title: Compeau & Pevzner, Ch. 5 236-248
+    -
+      title: Compeau & Pevzner, playlist 5, videos 9 and 10
+      link: { url: https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn }
+    -
+      title: Rosalind prep. Ex 51-52
+      link: { url: "http://rosalind.info/classes/152/" }
 -
  date: 11/17
  covers:
