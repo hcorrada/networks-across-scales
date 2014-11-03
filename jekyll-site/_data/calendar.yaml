@@ -255,6 +255,7 @@
   covers:
     -
       title: Genome Assembly (2)
+      materials: { link: "lectures/CMSC423_Assembly.pdf", insite: }
   readings:
     -
       title: Compeau & Pevzner, Ch. 4, 147-162
@@ -270,6 +271,7 @@
   covers:
     -
       title: Genome Assembly (3)
+      materials: { link: "lectures/CMSC423_Assembly.pdf", insite: }
   readings:
     -
       title: Compeau & Pevzner, Ch. 4, 162-187
@@ -284,13 +286,13 @@
   date: 11/5
   covers:
     -
-      title: Dynamic Programming (1): Longest common subsequence
+      title: "Dynamic Programming (1): Longest common subsequence"
   readings:
     -
       title: Compeau & Pevzner, Ch. 5 189-219
     -
       title: Compeau & Pevzner, playlist 5, videos 1-5
-      link: { url: https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn }
+      link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" }
     -
       title: Rosalind prep. Ex 45-47
       link: { url: "http://rosalind.info/classes/152/" }
@@ -309,13 +311,13 @@
   date: 11/10
   covers:
     -
-      title: Dynamic Programming (2): Global/Local Alignment and affine gap penalties
+      title: "Dynamic Programming (2): Global/Local Alignment and affine gap penalties"
   readings:
     -
       title: Compeau & Pevzner, Ch. 5 219-235
     -
       title: Compeau & Pevzner, playlist 5, videos 6-8
-      link: { url: https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn }
+      link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" }
     -
       title: Rosalind prep. Ex 48-50
       link: { url: "http://rosalind.info/classes/152/" }
@@ -328,13 +330,13 @@
   date: 11/12
   covers:
     -
-      title: Dynamic Programming (3): Space Efficent and Multiple Alignment
+      title: "Dynamic Programming (3): Space Efficent and Multiple Alignment"
   readings:
     -
       title: Compeau & Pevzner, Ch. 5 236-248
     -
       title: Compeau & Pevzner, playlist 5, videos 9 and 10
-      link: { url: https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn }
+      link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" }
     -
       title: Rosalind prep. Ex 51-52
       link: { url: "http://rosalind.info/classes/152/" }
