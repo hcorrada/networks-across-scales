@@ -287,6 +287,7 @@
   covers:
     -
       title: "Dynamic Programming (1): Longest common subsequence"
+      materials: { link: "lectures/CMSC423_Alignment1.pdf", insite: }
   readings:
     -
       title: Compeau & Pevzner, Ch. 5 189-219
