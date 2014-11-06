@@ -282,12 +282,18 @@
       title: Rosalind prep. Ex 43-44
       link: { url: "http://rosalind.info/classes/152/" }
 -
-  status: present
+  status: done
   date: 11/5
   covers:
     -
       title: "Dynamic Programming (1): Longest common subsequence"
       materials: { link: "lectures/CMSC423_Alignment1.pdf", insite: }
+    -
+      title: "World Series Probability Exercise (IPython Notebook)"
+      materials: { link: "lectures/WorldSeriesProbability.ipynb", insite: }
+    -
+      title: "World Series Probability Exercise (rendered notebook)"
+      materials: { link: "http://nbviewer.ipython.org/url/cbcb.umd.edu/~hcorrada/CMSC423/lectures/WorldSeriesProbability.ipynb" }
   readings:
     -
       title: Compeau & Pevzner, Ch. 5 189-219
