@@ -349,6 +349,7 @@
       title: Rosalind prep. Ex 50-51
       link: { url: "http://rosalind.info/classes/152/" }
 -
+  status: present
   date: 11/17
   covers:
     -
@@ -364,6 +365,13 @@
     -
       title: Rosalind prep. Ex 50-51
       link: { url: "http://rosalind.info/classes/152/" }
+  workdue:
+    -
+      title: Rosalind Final Submission Ex. 11 and 12
+      link: {url: "http://rosalind.info/classes/156" }
+    -
+      title: Homework 4
+      link: { url: "homeworks/homework_4.html", insite: }
 -
   date: 11/19
   covers:
