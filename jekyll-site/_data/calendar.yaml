@@ -338,7 +338,19 @@
   date: 11/12
   covers:
     -
-      title: "Dynamic Programming (3): Affine gap penalties and space efficient alignment"
+      title: "Dynamic Programming (3): Implementing dynamic programming alignment alogrithms (review)"
+  readings:
+    -
+      title: Compeau & Pevzner, Ch. 5 236-248
+    -
+      title: Compeau & Pevzner, playlist 5, video 8
+      link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" }
+-
+  status: present
+  date: 11/17
+  covers:
+    -
+      title: "Dynamic Programming (4): Space efficient and Multiple sequence alignment"
   readings:
     -
       title: Compeau & Pevzner, Ch. 5 236-248
@@ -349,22 +361,10 @@
       title: Rosalind prep. Ex 50-51
       link: { url: "http://rosalind.info/classes/152/" }
 -
-  status: present
-  date: 11/17
+  date: 11/19
   covers:
     -
-      title: "Dynamic Programming (4): Multiple sequence alignment"
-    -
-      title: Midterm II recap
-  readings:
-    -
-      title: Compeau & Pevzner, Ch. 5 236-248
-    -
-      title: Compeau & Pevzner, playlist 5, videos 9 and 10
-      link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" }
-    -
-      title: Rosalind prep. Ex 50-51
-      link: { url: "http://rosalind.info/classes/152/" }
+      title: Midterm II review
   workdue:
     -
       title: Rosalind Final Submission Ex. 11 and 12
@@ -373,27 +373,10 @@
       title: Homework 4
       link: { url: "homeworks/homework_4.html", insite: }
 -
-  date: 11/19
-  covers:
-    -
-      title: Midterm II
--
   date: 11/24
   covers:
     -
-      title: Sequence alignment - exact matching
-      materials: lectures/exactMatching/zAlgorithmNotes.pdf
-  readings:
-    -
-      title: Ch 1 Gusfield book
-      link: algorithms-on-strings-trees-and-sequences.pdf
-  workdue:
-    -
-      title: HW3
-      link: homeworks/hw03.pdf
-      solution: 
-        release: false
-        link: homeworks/hw03_ans.pdf
+      title: Midterm II
 -
   date: 11/26
   covers:
