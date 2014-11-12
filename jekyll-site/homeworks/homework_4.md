@@ -3,7 +3,7 @@ layout: default
 title: Homework 4
 ---
 
-**Due Monday Nov. 17 in class**
+**Due Monday Nov. 19 in class**
 
 ## Programming Questions ##
 
