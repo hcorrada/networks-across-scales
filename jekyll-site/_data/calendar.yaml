@@ -339,6 +339,7 @@
   covers:
     -
       title: "Dynamic Programming (3): Implementing dynamic programming alignment alogrithms (review)"
+      materials: { link: "lectures/CMSC423_affineGaps", insite: }
   readings:
     -
       title: Compeau & Pevzner, Ch. 5 236-248
