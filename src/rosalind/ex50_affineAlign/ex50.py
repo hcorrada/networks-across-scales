@@ -50,6 +50,7 @@ def affinealign(v, w, sigma, epsilon):
             # use a heap to find max choice
             # use -score since heap keeps min in root
             if i > 0:
+                # do the 'lower' matrix
                 choices = []
                 heapq.heappush(choices, (-(s_lower[i-1,j] + epsilon), 'lo'))
                 heapq.heappush(choices, (-(s_middle[i-1,j] + sigma), 'mi'))
@@ -57,6 +58,7 @@ def affinealign(v, w, sigma, epsilon):
                 s_lower[i,j] = -choice[0]
                 backtrack_lower[i,j] = choice[1]                
             if j > 0:
+                # do the 'upper matrix'
                 choices = []
                 heapq.heappush(choices, (-(s_upper[i,j-1] + epsilon), 'up'))
                 heapq.heappush(choices, (-(s_middle[i,j-1] + sigma), 'mi'))
@@ -64,6 +66,7 @@ def affinealign(v, w, sigma, epsilon):
                 s_upper[i,j] = -choice[0]
                 backtrack_upper[i,j] = choice[1]
             if i>0 and j>0:
+                # do the 'middle' matrix
                 choices = []
                 score = get_score(v[i-1], w[j-1], bl62)
                 heapq.heappush(choices, (-(s_lower[i,j]), 'lo'))
