@@ -334,12 +334,11 @@
       title: Homework 3
       link: {url: "homeworks/homework_3.html", insite: }
 -
-  status: present
+  status: done
   date: 11/12
   covers:
     -
       title: "Dynamic Programming (3): Implementing dynamic programming alignment alogrithms (review)"
-      materials: { link: "lectures/CMSC423_affineGaps", insite: }
   readings:
     -
       title: Compeau & Pevzner, Ch. 5 236-248
@@ -351,7 +350,8 @@
   date: 11/17
   covers:
     -
-      title: "Dynamic Programming (4): Space efficient and Multiple sequence alignment"
+      title: "Dynamic Programming (4): Affine gap penalities and linear space alignment"
+      materials: { link: "lectures/CMSC423_Alignment3.pdf", insite: }
   readings:
     -
       title: Compeau & Pevzner, Ch. 5 236-248
