@@ -346,7 +346,7 @@
       title: Compeau & Pevzner, playlist 5, video 8
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" }
 -
-  status: present
+  status: done
   date: 11/17
   covers:
     -
@@ -375,10 +375,15 @@
       title: Homework 4
       link: { url: "homeworks/homework_4.html", insite: }
 -
+  status: present
   date: 11/24
   covers:
     -
       title: Midterm II
+  readings:
+    -
+      title: Midterm II study guide
+      link: { url: "docs/midtermII_recap.html", insite: }
 -
   date: 11/26
   covers:
