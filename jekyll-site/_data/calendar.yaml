@@ -375,7 +375,7 @@
       title: Homework 4
       link: { url: "homeworks/homework_4.html", insite: }
 -
-  status: present
+  status: done
   date: 11/24
   covers:
     -
@@ -385,6 +385,7 @@
       title: Midterm II study guide
       link: { url: "docs/midtermII_recap.html", insite: }
 -
+  status: present
   date: 11/26
   covers:
     -
@@ -392,23 +393,53 @@
       materials: lectures/exactMatching/KMPNotes.pdf
   readings:
     -
-      title: Ch2 Gusfield
+      title: Chapter 1 and Section 2.3 of Gusfield (posted on Piazza)
   workdue:
 -
+  status: present
   date: 12/1
   covers:
     -
-      title: Combinatorial Pattern Matching
+      title: "Efficient exact string matching: Suffix Trees and Arrays"
+  readings:
+    -
+      title: Compeau & Pevzner, Ch. 7 311-325
+    -
+      title: Compeau & Pevzner, playlist 7, videos 1-3
+      link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz" }
+    -
+      title: Rosalind prep. Ex. 52-54
+      link: { url: "http://rosalind.info/classes/152/" }
 -
+  status: present
   date: 12/3
   covers:
     -
-      title: Combinatorial Pattern Matching
+      title: "Efficient exact string matching: The Burrows Wheeler Transform"
+  readings:
+    -
+      title: Compeau & Pevzner, Ch. 7 325-341
+    -
+      title: Compeau & Pevzner, playlist 7, videos 4-6
+      link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz" }
+    -
+      title: Rosalind prep. Ex 55-56
+      link: { url: "http://rosalind.info/classes/152/" }      
 -
+  status: present
   date: 12/8
   covers:
     -
-      title: Combinatorial Pattern Matching
+      title: "Efficient string matching: approximate matching with BWT"
+  readings:
+    -
+      title: Compeau & Pevzner, Ch. 7 341-351
+    -
+      title: Compeau & Pevzner, playlist 8, videos 7-10
+      link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz" }
+    -
+      title: Rosalind prep. Ex 57-58
+      link: { url: "http://rosalind.info/classes/152/" }      
 -
   date: 12/10
   covers:
@@ -418,13 +449,15 @@
     -
       title: Recap/review
       materials: homeworks/final_recap.pdf
+-
+  date: 12/12
+  covers:
+    -
+      title: THIS IS NOT A LECTURE
   workdue:
     -
-      title: HW10
-      link: homeworks/HW10.pdf
-      solution:
-        release: false
-        link: homeworks/HW10_solution.pdf
+      title: Rosalind Final Submission Ex. 13 and 14
+      link: {url: "http://rosalind.info/classes/156" }
 -
   date: 12/17
   covers:
