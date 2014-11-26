@@ -385,16 +385,11 @@
       title: Midterm II study guide
       link: { url: "docs/midtermII_recap.html", insite: }
 -
-  status: present
+  status: done
   date: 11/26
   covers:
     -
-      title: Sequence alignment - exact matching
-      materials: lectures/exactMatching/KMPNotes.pdf
-  readings:
-    -
-      title: Chapter 1 and Section 2.3 of Gusfield (posted on Piazza)
-  workdue:
+      title: LECTURE CANCELLED
 -
   status: present
   date: 12/1
