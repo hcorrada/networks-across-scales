@@ -11,11 +11,12 @@ def readdat(filename):
 
 def main(filename):
     k = 5
+    c = 5
     
     text, patterns = readdat(filename)
     text = text + '$'
     
-    bwt = BWT(text)
+    bwt = BWT(text, checkpoints=c)
     sa = PartialSuffixArray(text, k, bwt)
     
     indices = []

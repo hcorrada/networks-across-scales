@@ -1,5 +1,6 @@
-from preprocess_bwt import preprocess_bwt
+from preprocess_bwt import get_first_occurence, count_occurences, count_occurences_checkpoints
 
+# compute the bwt of given text
 def _get_bwt(text):
         # rotate text so that last character of rotation is on the appropriate position
         # i.e. the ith position has the last character of the rotation that
@@ -21,21 +22,38 @@ def _get_bwt(text):
         return ''.join(list(bwt_chars))
 
 
+# class encapsulating bwt operations
 class BWT:
-    def __init__(self, text):
-        self._bwt = _get_bwt(text)
-        self._first_occurence, self._count = preprocess_bwt(self._bwt)
+    # initialize object use a checkpoint table if checkpoints > 0
+    def __init__(self, text, checkpoints=0):
+        # compute bwt of given text
+        self._bwt = list(_get_bwt(text))
 
+        # find first occurences in first column of rotation matrix
+        self._first_occurence = get_first_occurence(self._bwt)
+
+        # get the count function
+        if checkpoints > 0:
+            # using checkpoints
+            self._count = count_occurences_checkpoints(self._bwt, checkpoints)
+        else:
+            # without checkpoints
+            self._count = count_occurences(self._bwt)
+
+    # find pointer in first column of last occurence of symbol
+    # before 'index' in last column
     def move_pointer(self, symbol, index):
         return self._first_occurence[symbol] + self._count(symbol, index)
-        
+
+    # find pointer in first column of suffix starting with
+    # symbol at index in last column
     def move_back(self, index):
         symbol = self._bwt[index]
         return self.move_pointer(symbol, index+1) - 1
 
-    # counts the number of times pattern occurs in text using
-    # first and last columns of M(text) matrix reconstructed
-    # using preprocess_bwt
+    # find range of matching rows in rotation matrix
+    # containing pattern
+    # returns (-1,-1) if no matches
     def find_matches(self, pattern):
         # have top and bottom pointers at first and last
         # row of M matrix
@@ -48,7 +66,8 @@ class BWT:
             if len(pattern) > 0: 
                 symbol = pattern[-1] # check the last symbol in pattern
                 pattern = pattern[:-1] # remove last symbol in pattern
-    
+
+                # update top and bottom pointers
                 top = self.move_pointer(symbol, top)
                 bottom = self.move_pointer(symbol, bottom + 1) - 1
             else:
