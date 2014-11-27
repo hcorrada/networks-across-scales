@@ -34,11 +34,11 @@ class PartialSuffixArray(SuffixArray):
 
     def get_match_index(self, index):
         steps = 0
-        while index not in sa_indices:
+        while index not in self._indices:
             steps += 1
-            symbol = bwt[index]
-            index = first_occurence[symbol] + count(symbol, index+1)
-        return steps + sa_values[index]
+            index = self._bwt.move_back(index)
+        index = self._indices.index(index)
+        return steps + self._values[index]
 
 
     

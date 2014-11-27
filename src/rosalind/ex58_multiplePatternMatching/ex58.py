@@ -1,6 +1,6 @@
 import sys
 from construct_bwt import BWT
-from suffix_array import SuffixArray
+from suffix_array import SuffixArray, PartialSuffixArray
 
 def readdat(filename):
     with open(filename, 'r') as f:
@@ -16,7 +16,7 @@ def main(filename):
     text = text + '$'
     
     bwt = BWT(text)
-    sa = SuffixArray(text)
+    sa = PartialSuffixArray(text, k, bwt)
     
     indices = []
     for pattern in patterns:

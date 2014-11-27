@@ -26,9 +26,13 @@ class BWT:
         self._bwt = _get_bwt(text)
         self._first_occurence, self._count = preprocess_bwt(self._bwt)
 
-    def move_back(self, symbol, index):
-            return self._first_occurence[symbol] + self._count(symbol, index)
-    
+    def move_pointer(self, symbol, index):
+        return self._first_occurence[symbol] + self._count(symbol, index)
+        
+    def move_back(self, index):
+        symbol = self._bwt[index]
+        return self.move_pointer(symbol, index+1) - 1
+
     # counts the number of times pattern occurs in text using
     # first and last columns of M(text) matrix reconstructed
     # using preprocess_bwt
@@ -45,8 +49,8 @@ class BWT:
                 symbol = pattern[-1] # check the last symbol in pattern
                 pattern = pattern[:-1] # remove last symbol in pattern
     
-                top = self.move_back(symbol, top)
-                bottom = self.move_back(symbol, bottom + 1) - 1
+                top = self.move_pointer(symbol, top)
+                bottom = self.move_pointer(symbol, bottom + 1) - 1
             else:
                 return (top,bottom)
         return (-1,-1)
