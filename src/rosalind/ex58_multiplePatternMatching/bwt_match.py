@@ -44,25 +44,4 @@ def preprocess_bwt(bwt):
 
     return first_occurence, count
 
-# counts the number of times pattern occurs in text using
-# first and last columns of M(text) matrix reconstructed
-# using preprocess_bwt
-def find_matches(pattern, first_occurence, count, n):
-    # have top and bottom pointers at first and last
-    # row of M matrix
-    top = 0
-    bottom = n - 1
-
-    # while there are rows to be checked
-    while top <= bottom:
-        # and patterns symbols to be checked
-        if len(pattern) > 0: 
-            symbol = pattern[-1] # check the last symbol in pattern
-            pattern = pattern[:-1] # remove last symbol in pattern
-
-            top = first_occurence[symbol] + count(symbol, top)
-            bottom = first_occurence[symbol] + count(symbol, bottom + 1) - 1
-        else:
-            return (top,bottom)
-    return (-1,-1)
 

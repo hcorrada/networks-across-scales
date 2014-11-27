@@ -1,7 +1,6 @@
 import sys
-from construct_bwt import get_bwt
-from bwt_match import preprocess_bwt, find_matches
-from suffix_array import make_suffix_array
+from construct_bwt import BWT
+from suffix_array import SuffixArray
 
 def readdat(filename):
     with open(filename, 'r') as f:
@@ -9,20 +8,21 @@ def readdat(filename):
         patterns = [x.strip() for x in f.readlines()]
         return text, patterns
 
+
 def main(filename):
+    k = 5
+    
     text, patterns = readdat(filename)
     text = text + '$'
-    bwt = get_bwt(text)
-    first_occurence, count = preprocess_bwt(bwt)
-
-    sa = make_suffix_array(text)
+    
+    bwt = BWT(text)
+    sa = SuffixArray(text)
     
     indices = []
     for pattern in patterns:
-        top, bottom = find_matches(pattern, first_occurence, count, len(bwt))
+        top, bottom = bwt.find_matches(pattern)
         if top != -1:
-            for i in xrange(top, bottom+1):
-                indices.append(sa[i])
+            indices += sa.get_match_indices(top, bottom)
     print ' '.join(map(str, sorted(indices)))
 
 if __name__ == '__main__' and 'get_ipython' not in dir():
