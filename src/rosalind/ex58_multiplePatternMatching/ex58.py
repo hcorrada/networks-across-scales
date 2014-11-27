@@ -1,5 +1,5 @@
 import sys
-from construct_bwt import BWT
+from bwt import BWT
 from suffix_array import SuffixArray, PartialSuffixArray
 
 def readdat(filename):

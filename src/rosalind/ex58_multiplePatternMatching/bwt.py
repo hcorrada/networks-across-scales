@@ -1,4 +1,4 @@
-from bwt_match import preprocess_bwt
+from preprocess_bwt import preprocess_bwt
 
 def _get_bwt(text):
         # rotate text so that last character of rotation is on the appropriate position
