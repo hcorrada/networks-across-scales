@@ -3,7 +3,7 @@ import sys
 # construct suffix array from given text
 def make_suffix_array(text):
     # setup list of indices
-    sa = [i for i in xrange(len(text))]
+    sa = range(len(text))
 
     # sort the indices by corresponding suffixes
     sa = sorted(sa, key=lambda i: text[i:])

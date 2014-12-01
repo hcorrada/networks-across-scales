@@ -396,6 +396,7 @@
   covers:
     -
       title: "Efficient exact string matching: Suffix Trees and Arrays"
+      materials: { link: "lectures/CMSC423_exactMatching1.pdf" }
   readings:
     -
       title: Compeau & Pevzner, Ch. 7 311-325

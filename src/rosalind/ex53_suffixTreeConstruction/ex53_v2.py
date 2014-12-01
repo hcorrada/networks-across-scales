@@ -1,5 +1,4 @@
 import sys
-from collections import deque
 
 # class representing the SuffixTree
 class SuffixTree:
@@ -45,6 +44,7 @@ class SuffixTree:
         # increase the id generator
         self._lastid += 1
 
+        # init the edge hash for new node
         self._edges[nextnode] = {}
         
         return nextnode
@@ -52,14 +52,24 @@ class SuffixTree:
     # splice a node between node and child with given label
     # split label at given length
     def splice(self, node, label, length):
+        # find the node id for child with given label
         child = self.get_child(node, label)
 
+        # get start end indices for edge label substring
         start, end = label
+
+        # this is the position in text where the new node is spliced in
         splice = start + length - 1
+
+        # add the spliced node as a child of node
+        # with spliced label
         newlabel = (start, splice)
         newnode = self.add(node, newlabel)
+
+        # now delete the existing edge
         del self._edges[node][label]
 
+        # and add edge between spliced node and child
         newlabel = (splice+1, end)
         self._edges[newnode][newlabel] = child
         return newnode
@@ -69,6 +79,8 @@ class SuffixTree:
         # start at the trie's root
         curnode = self._root
 
+        # we'll use i to walk through suffix starting
+        # at suffix index
         i = suffix_index
         while i < len(self._text):
             # get matching edge label (and length of match)
@@ -76,32 +88,61 @@ class SuffixTree:
             
             if label is None:
                 # no matching edge, create a new child
+                # label is [i,n] (n=len(text) - 1)
                 newnode = self.add(curnode, (i, len(self._text)-1))
+
+                # mark which suffix this leaf corresponds to
                 leaf_labels[newnode] = suffix_index
                 return
 
+            # get (start,end) indices of labeling substring
             start, end = label
+
+            # move pointer in suffix length positions
             i += length
+
+            # if we used up all of the label in the current edge
+            # then we set curnode to the corresponding child
+            # if there is label left over we need to splice in a new node
             curnode = self.get_child(curnode, label) if (end - start + 1) == length else self.splice(curnode, label, length)
 
+    # find an outgoing edge of node with prefix of label matching a prefix of
+    # text suffix at position 'start'
+    #
+    # if no matching prefix found, returns None,None
+    # if matching prefix found, returns edgeLabel, matchLength
+    # where matchLength is the length of matching prefix
     def get_matching_edge(self, node, start):
+        # get the first character of suffix
         c = self._text[start]
+
+        # get labels of all outgoing edges at node
         labels = self._edges[node].keys()
+
+        # and the first character of each label
         chars = [self._text[x[0]] for x in labels]
         
         if c not in chars:
+            # there is no matching first character,
+            # i.e., no matching label
             return None, None
+
+        # find the matching edge
         index = chars.index(c)
         label = labels[index]
 
+        # now let's see how long is the matching prefix
         nlabel = label[1] - label[0] + 1
         length = 1
         while length < nlabel and start+length < len(self._text) and self._text[start+length] == self._text[label[0] + length]:
             length += 1
+
+        # return the label of matching edge, and the length of the matching prefix
         return label, length
     
     # construct the tree
     def construct(self):
+        # process each suffix in order
         for i in xrange(len(self._text)):
             self.process_suffix(i)
             
@@ -114,10 +155,12 @@ class SuffixTree:
         return edges[label] if label in edges else None
 
                   
-# construct the trie from list of patterns
+# construct the suffix tree from a given text
 def make_suffix_tree(text):
-    # make an empty trie
+    # make an empty suffix tree
     tree = SuffixTree(text)
+
+    # now process the suffixes
     tree.construct()
     return tree
 
