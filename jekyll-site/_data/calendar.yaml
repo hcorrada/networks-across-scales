@@ -391,7 +391,7 @@
     -
       title: LECTURE CANCELLED
 -
-  status: present
+  status: done
   date: 12/1
   covers:
     -
@@ -412,6 +412,7 @@
   covers:
     -
       title: "Efficient exact string matching: The Burrows Wheeler Transform"
+      materials: { link: "lectures/CMSC423_exactMatching2.pdf" }      
   readings:
     -
       title: Compeau & Pevzner, Ch. 7 325-341
