@@ -1,11 +1,29 @@
 import sys
 
+def make_cmp(text):
+    n = len(text)
+    
+    def _cmp(x,y):
+        d = cmp(text[x], text[y])
+        i = x
+        j = y
+        k = 0
+        while d == 0 and k < n:
+            i = (i + 1) % n
+            j = (j + 1) % n
+
+            d = cmp(text[i], text[j])
+        return d
+    return _cmp
+                
+# construct the burrows-wheeler transform of text
 def get_bwt(text):
     # setup rotation index array
     indices = range(len(text))
 
     # sort index array by string rotations
-    indices = sorted(indices, key=lambda i: text[i:] + text[:i])
+    # uses comparison function defined above
+    indices = sorted(indices, cmp=make_cmp(text))
 
     # get the last character of each rotation
     bwt = [text[i-1] for i in indices]

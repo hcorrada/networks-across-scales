@@ -1,16 +1,25 @@
 import sys
 
 
+# make a comparison function based on suffixes of text
 def make_cmp_fn(text):
+    # comparison function, takes two suffix indices
     def mycmp(x,y):
+        # how many positions to check (length of text - largest index)
         n = len(text) - max(x,y)
+
+        # start at the first position of each suffix
         d = cmp(text[x], text[y])
         i = 1
-        
+
+        # keep going while suffixes are equal
         while d == 0 and i < n:
+            # compare characters at i'th position
             d = cmp(text[x+i], text[y+i])
             i += 1
+        # return the last comparison
         return d
+    # return the comparison function
     return mycmp
 
 # construct suffix array from given text
