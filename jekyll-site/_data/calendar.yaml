@@ -407,7 +407,7 @@
       title: Rosalind prep. Ex. 52-54
       link: { url: "http://rosalind.info/classes/152/" }
 -
-  status: present
+  status: done
   date: 12/3
   covers:
     -
@@ -423,7 +423,7 @@
       title: Rosalind prep. Ex 55-56
       link: { url: "http://rosalind.info/classes/152/" }      
 -
-  status: present
+  status: done
   date: 12/8
   covers:
     -
@@ -438,6 +438,7 @@
       title: Rosalind prep. Ex 57-58
       link: { url: "http://rosalind.info/classes/152/" }      
 -
+  status: present
   date: 12/10
   covers:
     -
@@ -447,6 +448,7 @@
       title: Recap/review
       materials: homeworks/final_recap.pdf
 -
+  status: present
   date: 12/12
   covers:
     -
@@ -455,6 +457,9 @@
     -
       title: Rosalind Final Submission Ex. 13 and 14
       link: {url: "http://rosalind.info/classes/156" }
+    -
+      title: Homework 5
+      link: { url: "homeworks/homework_5.html", insite: }
 -
   date: 12/17
   covers:

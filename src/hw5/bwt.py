@@ -1,37 +1,26 @@
 from preprocess_bwt import get_first_occurence, count_occurences, count_occurences_checkpoints
 
-# comparison function for construction
-# of burrows-wheeler transform
-def make_cmp(text):
-    n = len(text)
-    
-    def _cmp(x,y):
-        d = cmp(text[x], text[y])
-        i = x
-        j = y
-        k = 0
-        while d == 0 and k < n:
-            i = (i + 1) % n
-            j = (j + 1) % n
-
-            d = cmp(text[i], text[j])
-        return d
-    return _cmp
-
 # compute the bwt of given text
 def _get_bwt(text):
-        # setup rotation index array
-    indices = range(len(text))
+        # rotate text so that last character of rotation is on the appropriate position
+        # i.e. the ith position has the last character of the rotation that
+        # starts at the ith position in text (this is not the same order that
+        # the rotations are listed on pg. 326 of Compeau & Pevzner
+        rotated_text = text[-1] + text[:-1]
 
-    # sort index array by string rotations
-    # uses comparison function defined above
-    indices = sorted(indices, cmp=make_cmp(text))
+        # make tuples of character in bwt and the rotation it corresponds to
+        indexed_chars = zip(list(rotated_text), [i for i in xrange(len(text))])
+    
+        # sort tuples by corresponding rotations
+        # the key function return the rotated text starting at appropriate index
+        sorted_chars = sorted(indexed_chars, key=lambda x: text[x[1]:] + text[:x[1]])
 
-    # get the last character of each rotation
-    bwt = [text[i-1] for i in indices]
+        # extract the bwt characters after sorting rotations
+        bwt_chars, indices = zip(*sorted_chars)
 
-    # turn into a string and return
-    return ''.join(bwt)
+        # turn into a string and return
+        return ''.join(list(bwt_chars))
+
 
 # class encapsulating bwt operations
 class BWT:
