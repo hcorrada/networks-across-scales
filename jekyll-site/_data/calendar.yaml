@@ -443,10 +443,10 @@
   covers:
     -
       title: What you missed
-      materials: lectures/Recap/CMSC423_Recap.pdf
+  readings:
     -
-      title: Recap/review
-      materials: homeworks/final_recap.pdf
+      title: Final recap
+      link: { url: "docs/final_recap.html", insite: }
 -
   status: present
   date: 12/12
