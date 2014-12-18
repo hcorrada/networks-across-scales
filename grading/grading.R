@@ -1,11 +1,11 @@
-tab=read.csv("grades_20131218.csv",stringsAsFactors=FALSE)
+tab=read.csv("grades_20141218.csv",stringsAsFactors=FALSE)
 
 tab2=tab[,c(1,2,3,6)]
 names(tab2)=tab2[1,]
 
 tab2=tab2[-1,]
 
-ii=tab[1,] %in% c("mid1","mid2","p1","p2","p3","p4","hw","participation","final","ext")
+ii=tab[1,] %in% c("mid1","mid2","hw1","hw2","hw3","hw4","hw5","hw5_bonus", "r1","r2","r3","r4", "quiz", "part","final")
 tab3=tab[,ii]
 
 names(tab3)=tab3[1,]
@@ -14,139 +14,115 @@ tab3=tab3[-1,]
 theTab=cbind(tab2,tab3)
 
 mid1=as.integer(theTab$mid1)
-smid1=((mid1-median(mid1))/mad(mid1))
-gmid1=ifelse(smid1< -1, "D",
-  ifelse(smid1< -0.5, "C",
-         ifelse(smid1 < 0, "B-",
-                ifelse(smid1< 0.5,"B",
-                       ifelse(smid1<0.75,"B+",
-                              ifelse(smid1<1,"A-",
-                                     ifelse(smid1 < 1.2,"A", "A+")))))))
-
-cutoffs=c(-1,-0.5,0,0.5,0.75,1,1.2)
-cutoffs*mad(mid1) + median(mid1)
-
-                             
-theTab$gmid1=factor(gmid1,levels=c("D","C","B-","B","B+","A-","A","A+"))
+gmid1=ifelse(mid1 < 27, "F",
+             ifelse(mid1 < 35, "D",
+             ifelse(mid1 < 37, "D+",
+                    ifelse(mid1 < 41, "C-",
+                    ifelse(mid1 < 44, "C",
+                    ifelse(mid1 < 47, "C+",
+                           ifelse(mid1 < 50, "B-",
+                           ifelse(mid1 < 56, "B",
+                           ifelse(mid1 < 57, "B+", 
+                                  ifelse(mid1 < 60, "A-",
+                                  ifelse(mid1 < 69, "A", "A+")))))))))))
+                                  
+theTab$gmid1=factor(gmid1,levels=c("F","D-","D","D+", 
+                                   "C-", "C", "C+",
+                                   "B-","B","B+",
+                                   "A-","A","A+"))
 
 mid2=as.integer(theTab$mid2)
-smid2=((mid2-median(mid2))/mad(mid2))
+gmid2=ifelse(mid2 < 46, "F",
+             ifelse(mid2 < 51, "D",
+                    ifelse(mid2 < 56, "C-",
+                    ifelse(mid2 < 62, "C",
+                    ifelse(mid2 < 66, "C+",
+                           ifelse(mid2 < 70, "B-",
+                           ifelse(mid2 < 76, "B",        
+                           ifelse(mid2 < 81, "B+", 
+                                  ifelse(mid2 < 89, "A-",
+                                  ifelse(mid2 < 97, "A", "A+"))))))))))                                  
+theTab$gmid2=factor(gmid2,levels=c("F","D-","D","D+",
+                                   "C-","C","C+",
+                                   "B-","B","B+",
+                                   "A-","A","A+"))
 
-gmid2=ifelse(smid2< -3, "F",
-  ifelse(smid2 < -2, "D",
-  ifelse(smid2< -1, "C",
-         ifelse(smid2 < -0.5, "B-",
-                ifelse(smid2< 0,"B",
-                       ifelse(smid2<0.5,"B+",
-                              ifelse(smid2<1,"A-",
-                                     ifelse(smid2 < 1.5,"A", "A+"))))))))
-
-theTab$gmid2=factor(gmid2,levels=c("F","D","C","B-","B","B+","A-","A","A+"))
-
-cutoffs=c(-3,-2,-1,-0.5,0,0.5,1,1.5)
-cutoffs*mad(mid2) + median(mid2)
-
-scoreMap <- c(50,65,75,80,85,88,90,95,98)
+scoreMap <- c(50,60,65,68,70,75,78,80,85,88,90,95,98)
 names(scoreMap) <- levels(theTab$gmid2)
-
-theTab$smid1 <- scoreMap[as.character(theTab$gmid1)]
-theTab$smid2 <- scoreMap[as.character(theTab$gmid2)]
-
-theTab$part <- as.integer(theTab$part) * 20
-theTab$p3 <- as.integer(theTab$p3) / 40 * 100
 
 final=as.integer(theTab$final)
 sfinal <- ((final-median(final))/mad(final))
 
-gfinal=ifelse(sfinal< -3, "F",
-  ifelse(sfinal < -1.5, "D",
-  ifelse(sfinal< -.5, "C",
-         ifelse(sfinal < -0.25, "B-",
-                ifelse(sfinal< 0.25,"B",
-                       ifelse(sfinal<0.5,"B+",
-                              ifelse(sfinal<.75,"A-",
-                                     ifelse(sfinal < 1.25,"A", "A+"))))))))
-theTab$gfinal=factor(gfinal,levels=c("F","D","C","B-","B","B+","A-","A","A+"))
+
+theTab$smid1 <- scoreMap[as.character(theTab$gmid1)]
+theTab$smid2 <- scoreMap[as.character(theTab$gmid2)]
+
+gfinal=ifelse(final < 50, "F",
+              ifelse(final < 60, "D",
+                     ifelse(final < 65, "C-",
+                     ifelse(final < 70, "C",
+                     ifelse(final < 75, "C+",
+                            ifelse(final < 80, "B-",
+                            ifelse(final < 85, "B",
+                            ifelse(final < 89, "B+",
+                                   ifelse(final < 95, "A-",
+                                   ifelse(final < 100, "A", "A+"))))))))))
+
+theTab$gfinal=factor(gfinal,levels=c("F","D-","D","D+",
+  "C-","C","C+",
+  "B-","B","B+",
+  "A-","A","A+"))
+
 theTab$sfinal=scoreMap[as.character(theTab$gfinal)]
 
-# fix Sal's by hand
-theTab$p4[1] <- 73
 
-# fix P. Liu's by hand
-ii <- which(theTab$Dir == "pliu416")
-theTab$p4[ii] <- 58
+theTab$part <- as.integer(theTab$part) * 20
 
-# fix J. Wang's
-ii <- which(theTab$Dir == "jxwang")
-theTab$p3[ii] <- 100
+rosalindScores <- matrix(as.integer(as.matrix(theTab[,c("r1","r2","r3","r4")])),nc=4)
+ii <- which(theTab$Dir %in% c("dmstein", "wdefinba", "eshi", "kwang07", "jgzamora","ipersons"))
+rosalindScores[ii,1] <- rosalindScores[ii,1] + 35
 
-ii <- c("smid1","smid2","sfinal","p1","p2","p3","p4","hw","part","ext")
+rosalindPoints <- c(72, 54, 42, 6)
+rosalindGrade <- round(100*rowSums(rosalindScores) / sum(rosalindPoints))
+theTab$rosalind <- scoreMap[ifelse(rosalindGrade < 50, "C",
+                          ifelse(rosalindGrade < 80, "B", "A"))]
+
+hwScores <- matrix(as.integer(as.matrix(theTab[,c("hw1","hw2","hw3","hw4","hw5")])), nc=5)
+hwPoints <- c(36, 26, 18, 12, 6)
+hwGrade <- round(100*rowSums(hwScores) / sum(hwPoints))
+theTab$hw <- hwGrade + as.integer(theTab$hw5_bonus)
+
+theTab$squiz <- round(as.integer(theTab$quiz) / 35 * 100)
+
+ii <- c("smid1","smid2","sfinal","rosalind", "hw","part","squiz")
 
 theScores <- as.matrix(theTab[,ii])
 theScores <- matrix(as.integer(theScores),nr=nrow(theScores))
 
-
-w1 <- c(.15,.15,.2,.1,.1,.05,.05,.15,.05)
-theTab$finalGrade1 <- rowSums(sweep(theScores[,-10],2,w1,"*"))/sum(w1) + theScores[,10]
-
-w2 <- c(.125,.125,.15,.1,.1,.1,.1,.15,.05)
-theTab$finalGrade2 <- rowSums(sweep(theScores[,-10],2,w2,"*"))/sum(w2) + theScores[,10]
-
-theTab$finalGrade <- pmax(theTab$finalGrade1,theTab$finalGrade2)
+w1 <- c(.10,.10,.15,.15,.25,.1,.15)
+theTab$finalGrade <- ceiling(rowSums(sweep(theScores,2,w1,"*")))
 
 cutoffs=c(100,91.9,88,85,80,75.5,70,67,60,45,0)
 grades=cut(theTab$finalGrade,breaks=rev(cutoffs))
 levels(grades) <- c("F","D","C","C+","B-","B","B+","A-","A","A+")
 
+cutoffs2=c(100,94,87,82,79,75,70,67,60,45,0)
+grades2=cut(theTab$finalGrade,breaks=rev(cutoffs2))
+levels(grades2) <- c("F","D","C","C+","B-","B","B+","A-","A","A+")
+
+
 pdf("grades.pdf")
 o <- order(theTab$finalGrade)
 with(theTab,{
   dotchart(finalGrade[o])
-  text(finalGrade[o],seq(along=finalGrade),paste(theTab[o,1],grades[o]),cex=.5,pos=2)
+  text(finalGrade[o],seq(along=finalGrade),paste(theTab[o,1],grades2[o]),cex=.5,pos=2)
 })
-abline(v=cutoffs,lty=2)
+abline(v=cutoffs2,lty=2)
 dev.off()
 
 finalTab=data.frame(theTab[,1:4],theTab$finalGrade,grades)
-write.csv(finalTab,file="CMSC423_201301_finalGrades.csv")
-
-bigTab=data.frame(theTab[,1:4],theTab$finalGrade,grades,theTab[,c("gmid1","gmid2","gfinal","p1","p2","p3","p4","hw","part","ext")])
-write.csv(bigTab,file="CMSC423_201301_allGrades.csv")
+write.csv(finalTab,file="CMSC423_201401_finalGrades.csv")
 
 
 
 
-####
-hwTab=read.csv("hw_grades.csv",stringsAsFactors=FALSE)
-hwCols=6:15
-hwScores=as.matrix(hwTab[,hwCols])
-
-# count the number not submitted
-nMissed <- rowSums(is.na(hwScores))
-
-for (i in 2:nrow(hwScores)) {
-  isMissed <- is.na(hwScores[i,])
-
-  if (nMissed[i] < 2) {
-    # find the worst scores
-    scores <- hwScores[i,!isMissed] / hwScores[1,!isMissed]
-    nDrop <- 2-nMissed[i]
-    idxDrop <- which(!isMissed)[order(scores)[1:nDrop]]
-    hwScores[i,idxDrop] <- NA
-    next
-  }
-
-  iMissed <- which(isMissed)
-  # set all but the two highest weight missing to 0
-  iSkip <- order(hwScores[1,iMissed],decreasing=FALSE)[1:2]
-  hwScores[i,iMissed[-iSkip]] <- 0
-}
-
-hwPct <- sapply(2:nrow(hwScores), function(i) {
-  sum(hwScores[i, !is.na(hwScores[i,])]) / sum(hwScores[1,!is.na(hwScores[i,])])
-})
-
-hwGrade=cbind(hwTab[-1,c(1,3,4)], hwPct=round(100*(hwPct)))
-
-upGrade=data.frame(id=hwGrade[,3],ass="hw",hwGrade[,4],com="")
-write.table(upGrade,file="hw_upload.csv",row.names=FALSE,col.names=FALSE,sep=",",quote=FALSE)
