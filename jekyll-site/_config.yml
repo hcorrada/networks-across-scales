@@ -1,5 +1,5 @@
 # Site settings
-title: CMSC423 (Fall 2014)
+title: CMSC423 (Fall 2015)
 email: hcorrada@umiacs.umd.edu
 description: "CMSC423, Bioinformatics. University of Maryland, College Park. Department of Computer Science"
 baseurl: "/~hcorrada/CMSC423"
@@ -7,7 +7,7 @@ url: "http://cbcb.umd.edu/~hcorrada/CMSC423"
 twitter_username: hcorrada
 github_username:  hcorrada
 
-pageOrder: ["/index.html", "/calendar.html", "/logistics.html", "/resources.html", "/syllabus.html"]
+pageOrder: ["/index.html", "/logistics.html", "/resources.html", "/syllabus.html"]
 
 # Build settings
 markdown: kramdown
@@ -19,6 +19,6 @@ redcarpet:
 book_url: http://bioinformaticsalgorithms.com/
 book_videos_url: https://www.youtube.com/user/bioinfalgorithms/playlists
 piazza_url: https://piazza.com/class/hzenik658utiz
-canvas_url: https://umd.instructure.com/courses/1088932
-rosalind_trial_url: http://rosalind.info/classes/152
+elms_url: https://umd.instructure.com/courses/1088932
+rosalind_prelecture_url: http://rosalind.info/classes/152
 rosalind_final_url: http://rosalind.info/classes/156
