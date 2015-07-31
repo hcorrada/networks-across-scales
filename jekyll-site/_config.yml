@@ -7,7 +7,7 @@ url: "http://cbcb.umd.edu/~hcorrada/CMSC423"
 twitter_username: hcorrada
 github_username:  hcorrada
 
-pageOrder: ["/index.html", "/logistics.html", "/resources.html", "/syllabus.html"]
+pageOrder: ["/index.html", "/logistics.html", "/projects.html", "/resources.html", "/syllabus.html"]
 
 # Build settings
 markdown: kramdown
