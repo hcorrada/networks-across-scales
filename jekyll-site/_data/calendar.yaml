@@ -59,7 +59,6 @@
       title: Ch1-2 Biopython tutorial
       link: {url: "http://biopython.org/DIST/docs/tutorial/Tutorial.html"}
 -
-  status: done
   date: 9/17
   covers:
     -
@@ -120,7 +119,7 @@
   date: 9/25
   covers:
     -
-      title: Expression analysis (clustering)
+      title: Gene expression clustering analysis (1)
       materials: { link: "lectures/CMSC423_Clustering.pdf", insite: }
     -
       title: R script
@@ -136,7 +135,7 @@
   date: 9/29
   covers:
     -
-      title: Expression analysis (clustering) continued
+      title: Gene expression clustering analysis (2)
       materials: { link: "lectures/CMSC423_Clustering.pdf", insite: }
     -
       title: R script
@@ -292,8 +291,7 @@
       title: Midterm II study guide
       link: { url: "docs/midtermII_recap.html", insite: }
 -
-  status: done
-  date: 11/10
+  date: 11/5
   covers:
     -
       title: "Dynamic Programming (2): Global/Local Alignment and scoring matrices"
@@ -312,8 +310,7 @@
       title: Homework 3
       link: {url: "homeworks/homework_3.html", insite: }
 -
-  status: done
-  date: 11/12
+  date: 11/10
   covers:
     -
       title: "Dynamic Programming (3): Implementing dynamic programming alignment alogrithms (review)"
@@ -324,8 +321,7 @@
       title: Compeau & Pevzner, playlist 5, video 8
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" }
 -
-  status: done
-  date: 11/17
+  date: 11/12
   covers:
     -
       title: "Dynamic Programming (4): Affine gap penalities and linear space alignment"
@@ -340,17 +336,15 @@
       title: Rosalind prep. Ex 50-51
       link: { url: "http://rosalind.info/classes/152/" }
 -
-  status: done
-  date: 11/26
+  date: 11/17
   covers:
     -
-      title: LECTURE CANCELLED
+      title: "Exact string matching: z-algorithm and KMP"
 -
-  status: done
-  date: 12/1
+  date: 11/19
   covers:
     -
-      title: "Efficient exact string matching: Suffix Trees and Arrays"
+      title: "Efficient exact string matching: Suffix Trees and Arrays (1)"
       materials: { link: "lectures/CMSC423_exactMatching1.pdf" }
   readings:
     -
@@ -362,8 +356,27 @@
       title: Rosalind prep. Ex. 52-54
       link: { url: "http://rosalind.info/classes/152/" }
 -
-  status: done
-  date: 12/3
+  date: 11/24
+  covers:
+    -
+      title: "Efficient exact string matching: Suffix Trees and Arrays (2)"
+      materials: { link: "lectures/CMSC423_exactMatching1.pdf" }
+  readings:
+    -
+      title: Compeau & Pevzner, Ch. 7 311-325
+    -
+      title: Compeau & Pevzner, playlist 7, videos 1-3
+      link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz" }
+    -
+      title: Rosalind prep. Ex. 52-54
+      link: { url: "http://rosalind.info/classes/152/" }
+-
+  date: 11/26
+  covers:
+    -
+      title: "No lecture (Thanksgiving)"
+-
+  date: 12/1
   covers:
     -
       title: "Efficient exact string matching: The Burrows Wheeler Transform"
@@ -378,8 +391,7 @@
       title: Rosalind prep. Ex 55-56
       link: { url: "http://rosalind.info/classes/152/" }
 -
-  status: done
-  date: 12/8
+  date: 12/3
   covers:
     -
       title: "Efficient string matching: approximate matching with BWT"
@@ -393,21 +405,19 @@
       title: Rosalind prep. Ex 57-58
       link: { url: "http://rosalind.info/classes/152/" }
 -
-  status: present
-  date: 12/10
+  date: 12/8
   covers:
     -
-      title: What you missed
+      title: Recap and review Unit III
   readings:
     -
       title: Final recap
       link: { url: "docs/final_recap.html", insite: }
 -
-  status: present
-  date: 12/12
+  date: 12/10
   covers:
     -
-      title: THIS IS NOT A LECTURE
+      title: Computational Biology and Bioinformatics after CMSC 423
   workdue:
     -
       title: Rosalind Final Submission Ex. 13 and 14
@@ -416,7 +426,7 @@
       title: Homework 5
       link: { url: "homeworks/homework_5.html", insite: }
 -
-  date: 12/17
+  date: 12/18
   covers:
     -
       title: Final Exam (1:30-3:30pm)
