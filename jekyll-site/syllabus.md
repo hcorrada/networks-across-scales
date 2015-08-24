@@ -43,7 +43,7 @@ This page and the [main course page](index.html) serve as syllabus for this clas
 
 *   Textbook information:
 	We will be using
-	[Compeau, P. and Pevsner, P., Bioinformatics Algorithms, An Active Learning Approach. Active Learning Publishers, La Jolla, CA, 2014.](http://bioinformaticsalgorithms.com/)
+	[Compeau, P. and Pevsner, P., Bioinformatics Algorithms, An Active Learning Approach, 2nd. ed.. Active Learning Publishers, La Jolla, CA, 2015.](http://bioinformaticsalgorithms.com/)
 
 	This text book is accompanied by a set of video lectures that you
     can view in preparation for class discussion during class meeting times.

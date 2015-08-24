@@ -5,7 +5,7 @@ title: Course Logistics
 
 ##Textbook and class materials
 
-We will be using [Compeau, P. and Pevsner, P., Bioinformatics Algorithms, An Active Learning Approach. Active Learning Publishers, La Jolla, CA, 2014.]({{ site.book_url }})
+We will be using [Compeau, P. and Pevsner, P., Bioinformatics Algorithms, An Active Learning Approach, 2nd. edition. Active Learning Publishers, La Jolla, CA, 2015.]({{ site.book_url }})
 
 This text book is accompanied by a set of video lectures that you can view in preparation for class discussion during class meeting times. [Video playlists are available on youtube]({{ site.book_videos_url }})
 
