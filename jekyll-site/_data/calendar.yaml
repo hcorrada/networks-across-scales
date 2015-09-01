@@ -1,9 +1,11 @@
 -
   date: 9/1
+  status: present
   covers:
     -
       title: Course Introduction
       materials: {link: lectures/CMSC423_CourseIntro.pdf, insite: }
+
 -
   date: 9/3
   covers:
