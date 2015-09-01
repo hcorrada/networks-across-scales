@@ -8,9 +8,10 @@
   workdue:
     -
       title: Survey
-      materials: {link: 'https://myelms.umd.edu/courses/1152063/modules/items/8189278'}
+      link: {url: 'https://myelms.umd.edu/courses/1152063/modules/items/8189278'}
 -
   date: 9/3
+  status: present
   covers:
     -
       title: Molecular biology for computer scientists
@@ -18,10 +19,13 @@
   readings:
     -
       title: Jones & Pevsner, Molecular Biology Primer
-      link: {url: "readings/JPch3.pdf", insite: }
+      link: {url: "https://myelms.umd.edu/courses/1152063/modules/items/8189410" }
     -
-      title: Rosalind prep Ex. 1-10
-      link: {url: "http://rosalind.info/classes/152/"}
+      title: Reading quiz
+      link: {url: "https://myelms.umd.edu/courses/1152063/modules/items/8189490" }
+    -
+      title: Rosalind prep Ex. 1-9
+      link: {url: "http://rosalind.info/classes/232/" }
   workdue:
     -
       title: Reading activity (in class)
