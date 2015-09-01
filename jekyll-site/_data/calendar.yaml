@@ -5,7 +5,10 @@
     -
       title: Course Introduction
       materials: {link: lectures/CMSC423_CourseIntro.pdf, insite: }
-
+  workdue:
+    -
+      title: Survey
+      materials: {link: 'https://myelms.umd.edu/courses/1152063/modules/items/8189278'}
 -
   date: 9/3
   covers:
