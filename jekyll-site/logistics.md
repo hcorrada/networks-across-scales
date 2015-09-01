@@ -5,7 +5,7 @@ title: Course Logistics
 
 ##Textbook and class materials
 
-We will be using [Compeau, P. and Pevsner, P., Bioinformatics Algorithms, An Active Learning Approach, 2nd. edition. Active Learning Publishers, La Jolla, CA, 2015.]({{ site.book_url }})
+We will be using [Compeau, P. and Pevsner, P., Bioinformatics Algorithms, An Active Learning Approach, 2nd. edition, Vol. 1. Active Learning Publishers, La Jolla, CA, 2015.]({{ site.book_url }})
 
 This text book is accompanied by a set of video lectures that you can view in preparation for class discussion during class meeting times. [Video playlists are available on youtube]({{ site.book_videos_url }})
 
@@ -31,7 +31,7 @@ The [official syllabus](syllabus.html) details class policies and grading inform
 
 The [Course Calendar]({{ site.baseurl }}/index.html) will list
 readings (usually from [the textbook]({{ site.book_url }}), on
-occassion uploaded to [Canvas]({{ site.canvas_url }})). **You are
+occassion uploaded to [ELMS]({{ site.elms_url }})). **You are
 required to read this material before lecture**
 
 The [Course Calendar]({{ site.baseurl }}/index.html) will also
@@ -57,10 +57,10 @@ page]({{ site.baseurl }}/projects.html).
 ##Written assignments
 
 Some written exercises will be assigned covering material we
-have discussed in class. These will be posted on the
+have discussed in class. Some of these will be posted on the
 [Course Calendar]({{ site.baseurl }}/calendar.html) and announced on
-the class [Piazza page]({{ site.piazza_url }}). This includes in-class exercises
-that may not necessarily be announced ahead of time. See the [syllabus](syllabus.html)
+the class [Piazza page]({{ site.piazza_url }}). Other in-class exercises
+may not be announced ahead of time. See the [syllabus](syllabus.html)
 for class policies on attendance.
 
 ##Announcements and discussion
@@ -73,4 +73,4 @@ disucssion capability. **Do not use it**, please use the
 
 ##Participation grade
 
-The [course grading scheme](syllabus.html) includes a class participation grade. You can earn full credit for this in three ways: (1) lecture participation, asking questions and answering your peers quesitons, (2) piazza participation, asking and answering questions on piazza, (3) regular attendance to office hours. To earn full credit you should aim to ask or answer a question at least once every two weeks on lecture or on piazza; or attend office hours at least once a month (that can include just going to my office hours to chat about computer science, biology, science, etc.)
+The [course grading scheme](syllabus.html) includes a class participation grade. You can earn full credit for this in three ways: (1) lecture participation, asking questions and answering your peers questions, (2) piazza participation, asking and answering questions on piazza, (3) regular attendance to office hours. To earn full credit you should aim to ask or answer a question at least once every two weeks on lecture or on piazza; or attend office hours at least once a month (that can include just going to my office hours to chat about computer science, biology, science, etc.)
