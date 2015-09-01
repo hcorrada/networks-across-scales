@@ -15,7 +15,7 @@ This page and the [main course page](index.html) serve as syllabus for this clas
 	Center for Bioinformatics and Computational Biology  
 	Department of Computer Science  
 	<hcorrada@umiacs.umd.edu>  
-	Office: 3114F Biomolecular Sciences Building  
+	Office: [3114F Biomolecular Sciences Building](http://www.cbcb.umd.edu/about-us/directions)  
 	Phone Number: 301-405-2481
 
 *	Lecture Meeting times  
@@ -25,9 +25,9 @@ This page and the [main course page](index.html) serve as syllabus for this clas
 
 *	Office Hours: Friday 1:00pm-2:00pm AVW 3223 and by appointment
 
-*	TA: TBA  
-	<tba@cs.umd.edu>  
-	Office Hours: TBA  
+*	TA: Mohamed Gunady  
+	<mgunady@cs.umd.edu>  
+	Office Hours: Tuesday and Thursday 2:00pm-3:30pm [BSB 3120C](http://www.cbcb.umd.edu/about-us/directions)  
 
 *	Evaluation (see section below on logistics for details)
 
@@ -43,18 +43,18 @@ This page and the [main course page](index.html) serve as syllabus for this clas
 
 *   Textbook information:
 	We will be using
-	[Compeau, P. and Pevsner, P., Bioinformatics Algorithms, An Active Learning Approach, 2nd. ed.. Active Learning Publishers, La Jolla, CA, 2015.](http://bioinformaticsalgorithms.com/)
+	[Compeau, P. and Pevsner, P., Bioinformatics Algorithms, An Active Learning Approach, 2nd. ed., Vol. 1. Active Learning Publishers, La Jolla, CA, 2015.]( {{ site.book_url }})
 
 	This text book is accompanied by a set of video lectures that you
     can view in preparation for class discussion during class meeting times.
-	[Video playlists are available on youtube](https://www.youtube.com/user/bioinfalgorithms/playlists)
+	[Video playlists are available on youtube]( {{ site.book_videos_url }} )
 
 	**Class meeting times will (for the most part) not be lecture
       time**. The goal is to use class time to explore Biological and
       Algorithmic aspects of materials in depth and collaboratively
       with your peers.
 
-	Supplementary course readings will be posted in canvas: [https://umd.instructure.com/courses/1088932](https://umd.instructure.com/courses/1088932)  
+	Supplementary course readings will be posted in ELMS: [ {{ site.elms_url }}]({{ site.elms_url }})  
 
 ####Expected outcomes and topics covered
 
@@ -102,8 +102,8 @@ responsibilities. In addition, it must contain the name and phone number
 of the medical service provider to be used if verification is needed. No
 diagnostic information will ever be requested.
 * The Major Scheduled Grading Events for this course include:
-   a) Midterm #1 - October XX during the lecture period
-   b) Midterm #2 - November XX during the lecture period
+   a) Midterm #1 - October 6 during the lecture period
+   b) Midterm #2 - November 3 during the lecture period
 
 #### Course evaluations ####
 
