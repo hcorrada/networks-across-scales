@@ -12,7 +12,7 @@ logo: <img src="http://www.cbcb.umd.edu/~hcorrada/CMSC423/img/new-cbcb-logo3_0.p
 	Center for Bioinformatics and Computational Biology  
 	Department of Computer Science  
 	<hcorrada@umiacs.umd.edu>  
-	Office: [3114F Biomolecular Sciences Building](www.cbcb.umd.edu/about-us/directions)  
+	Office: [3114F Biomolecular Sciences Building](http://www.cbcb.umd.edu/about-us/directions)  
 	Phone Number: 301-405-2481
 
 *	Lecture Meeting times  
@@ -24,7 +24,7 @@ logo: <img src="http://www.cbcb.umd.edu/~hcorrada/CMSC423/img/new-cbcb-logo3_0.p
 
 *	TA: Mohamed Gunady  
 	<mgunady@cs.umd.edu>  
-	Office Hours: Tuesday and Thursday 2:00pm-3:30pm [BSB 3120C](www.cbcb.umd.edu/about-us/directions)
+	Office Hours: Tuesday and Thursday 2:00pm-3:30pm [BSB 3120C](http://www.cbcb.umd.edu/about-us/directions)
 
 
 ##Logistics and syllabus
