@@ -21,3 +21,5 @@ text/*/.tmp
 *.DS_Store
 cmsc423
 .ruby*
+rosalind_examples
+

@@ -29,37 +29,38 @@
     -
       title: Rosalind prep Ex. 1-9
       link: {url: "http://rosalind.info/classes/232/" }
-  workdue:
-    -
-      title: Reading activity (in class)
 -
   date: 9/8
+  status: present
   covers:
     -
       title: "Algorithmic Warmup: Probabilities of patterns in strings"
   readings:
     -
-      title: Compeau & Pevzner, Ch. 1, pp. 2-14, 35-43
+      title: Compeau & Pevzner, Ch. 1, pp. 3-13, 39-44, 52-56
     -
       title: Compeau & Pevzner, playlist 1, videos 1 and 2
       link: {url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNFDlaNMZ1JVN73rO1a0dpn"}
     -
-      title: Rosalind prep Ex. 11-14
-      link: {url: "http://rosalind.info/classes/152/"}
+      title: Reading Quiz (To be posted)
+    -
+      title: Rosalind prep Ex. 10-11
+      link: {url: "http://rosalind.info/classes/232/"}
 -
   date: 9/10
+  status: present
   covers:
     -
       title: "Algorithmic Warmup: Skew Detection"
   readings:
     -
-      title: Compeau & Pevzner, Ch. 1, 14-34, 43-45
+      title: Compeau & Pevzner, Ch. 1, 13-38, 44-51
     -
       title: Compeau & Pevzner, Ch. 1, playlist 1, videos 3-5
       link: {url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNFDlaNMZ1JVN73rO1a0dpn"}
     -
-      title: Rosalind prep Ex. 15-18
-      link: {url: "http://rosalind.info/classes/152/"}
+      title: Rosalind prep Ex. 12-13
+      link: {url: "http://rosalind.info/classes/232/"}
 -
   date: 9/15
   covers:
