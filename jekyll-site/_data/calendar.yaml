@@ -31,7 +31,7 @@
       link: {url: "http://rosalind.info/classes/232/" }
 -
   date: 9/8
-  status: present
+  status: done
   covers:
     -
       title: "Algorithmic Warmup: Probabilities of patterns in strings"
@@ -42,7 +42,8 @@
       title: Compeau & Pevzner, playlist 1, videos 1 and 2
       link: {url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNFDlaNMZ1JVN73rO1a0dpn"}
     -
-      title: Reading Quiz (To be posted)
+      title: Reading Quiz no. 2
+      link: {url: "https://myelms.umd.edu/courses/1152063/quizzes/1119894"}
     -
       title: Rosalind prep Ex. 10
       link: {url: "http://rosalind.info/classes/232/"}
@@ -58,6 +59,9 @@
     -
       title: Compeau & Pevzner, Ch. 1, playlist 1, videos 3-5
       link: {url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNFDlaNMZ1JVN73rO1a0dpn"}
+    -
+      title: Reading Quiz no. 3
+      link: { url: "https://myelms.umd.edu/courses/1152063/quizzes/1119896" }
     -
       title: Rosalind prep Ex. 11-12
       link: {url: "http://rosalind.info/classes/232/"}
