@@ -1,31 +1,31 @@
 import sys
-from collections import deque
+from collections import defaultdict
+
+def count_kmers(text, k):
+    counts = defaultdict(int)
+    n = len(text)
+    for i in xrange(n-k+1):
+        kmer = text[slice(i, i+k)]
+        counts[kmer] += 1
+    return counts
 
 def clump_finder(genome, k, L, t):
-    ind = lambda x: slice(x, x+k)
-    checked = [False] * len(genome)
+    clumps = set()
+    n = len(genome)
 
-    res = list()
-    
-    for i in xrange(len(genome) - k + 1):
-        if not checked[i]:
-            kmer = genome[ind(i)]
-            occurences = deque([i])
-            done = False
+    counts = count_kmers(genome[slice(0,L)], k)
+    for kmer, kmer_count in counts.items():
+        if kmer_count >= t:
+            clumps.add(kmer)
 
-            for j in xrange((i+1), len(genome) - k +1):
-                if not checked[j] and kmer == genome[ind(j)]:
-                    checked[j] = True
-                    if done:
-                        next
-                    while len(occurences) > 0 and occurences[0] <= j - L + 1:
-                        occurences.popleft()
-                    occurences.append(j)
-                    
-            if len(occurences) >= t:
-                res.append(kmer)
-                done = True
-    return res
+    for i in xrange(1, n - L + 1):
+        first_kmer = genome[slice(i-1, i-1+k)]
+        counts[first_kmer] -= 1
+        last_kmer = genome[slice(i+L-k, i+L)]
+        counts[last_kmer] += 1
+        if counts[last_kmer] >= t:
+            clumps.add(last_kmer)
+    return clumps
 
 filename = sys.argv[1]
 with open(filename, 'r') as f:
