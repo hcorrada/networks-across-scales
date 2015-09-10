@@ -1,12 +1,12 @@
 import sys
 
-def pattern_match(pattern, genome):
+def find_pattern(pattern, genome):
+    n = len(genome)
     k = len(pattern)
-    ind = lambda x: slice(x, x+k)
     res = list()
 
-    for i in xrange(len(genome) - k +1):
-        if genome[ind(i)] == pattern:
+    for i in xrange(n - k + 1):
+        if genome[slice(i, i + k)] == pattern:
             res.append(i)
     return res
 
@@ -14,5 +14,5 @@ filename = sys.argv[1]
 with open(filename,'r') as f:
     pattern = f.readline().strip()
     genome = f.readline().strip()
-    res = pattern_match(pattern, genome)
+    res = find_pattern(pattern, genome)
     print ' '.join(map(str, res))
