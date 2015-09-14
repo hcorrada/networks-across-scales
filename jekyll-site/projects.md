@@ -3,4 +3,4 @@ layout: default
 title: Projects
 ---
 
-COMING SOON!
+1. [Algorithmic Warmup](projects/project_1.html)
