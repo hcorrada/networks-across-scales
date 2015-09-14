@@ -67,6 +67,7 @@
       link: {url: "http://rosalind.info/classes/232/"}
 -
   date: 9/15
+  status: present
   covers:
     -
       title: Programming for bioinformatics
@@ -75,8 +76,10 @@
     -
       title: Ch1-2 Biopython tutorial
       link: {url: "http://biopython.org/DIST/docs/tutorial/Tutorial.html"}
+
 -
   date: 9/17
+  status: present
   covers:
     -
       title: Bioinformatics public resources
@@ -86,11 +89,8 @@
       title: Pevsner, Bioinformatics and Functional Genomics, Ch. 2
       link: { url: "readings/pevsnerBioinf.pdf", insite: }
     -
-      title: Rosalind prep. Ex 25-26
-      link: { url: "http://rosalind.info/classes/152/" }
-  workdue:
-    -
-      title: In-class exercise
+      title: Rosalind prep. Ex 13-14
+      link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 9/18
   covers:
