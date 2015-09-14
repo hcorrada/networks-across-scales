@@ -63,22 +63,24 @@ After doing this, the `python` command will use this installation of python2.7. 
 deactivate
 {% endhighlight %}
 
-To start [Ipython](http://ipython.org/) with matplotlib and numpy imported.
+To start [Ipython](http://ipython.org/) use
 
 {% highlight bash %}
-ipython --pylab=auto
+ipython
 {% endhighlight %}
+
+To have matplotlib and numpy accessible during the interactive session use the `%pylab` command within Ipython.
 
 Although not recommended in grace since it can be very slow (but highly recommended otherwise), you can use the IPython HTML notebook:
 
 {% highlight bash %}
-ipython notebook --pylab=inline &
+ipython notebook --matplotlib=inline &
 
 # look for url in messages
 firefox http://127.0.0.1:8888/ &
 {% endhighlight %}
 
-In order for this to work, you have to make sure you use X11
+In order for any of these to work, you have to make sure you use X11
 forwarding. E.g., ssh using
 
 {% highlight bash %}
