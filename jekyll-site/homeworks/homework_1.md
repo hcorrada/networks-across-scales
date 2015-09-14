@@ -3,18 +3,35 @@ layout: default
 title: Homework 1
 ---
 
-**Due Monday Sept. 22 in class**
+**Due Tuesday Sept. 22**
 
-## Programming Questions ##
+## Programming Exercises ##
 
-Submit your answers to Problems 1-4 in the
-[Rosalind final submission page](http://rosalind.info/classes/156/).
-**THESE ARE DUE ON FRIDAY SEPT. 19**
+Submit your answers to Problems 1-3 in the
+[Rosalind final submission page](http://rosalind.info/classes/233/).
 
-**Question 1.** For each of the 4 problems you posted, provide a
+**NOTE: THESE PROGRAMS NEED TO BE SUBMITTED TO ROSALIND BY FRIDAY 9/18 at 5:00PM**
+
+**Question 1. (10pts)** For each of the 3 solutions submitted provide a
 runtime analysis of your solution.
 For full credit, include a short description of your algorithm and
 show how you derive your answer.
+
+### Code Grading (45 pts) ###
+
+Each of the 3 Rosalind exercises will be evaluated based on correctness, efficiency and style.
+
+(1) Correctness: if you pass the Rosalind correctness check, you get full credit. Otherwise, your grade is determined by
+
+  (a) program running without error when called as `python <script.py> <input_file>` where `<input_file>` is in the format used for that problem in Rosalind;
+  (b) program reading input in the required format;  
+  (c) program printing output in correct format as described in Rosalind;  
+  (d) program implementing an algorithm that addresses the problem (i.e., you get more points if the algorithm is correct but you have a bug, e.g., with indexing)  
+
+(2) Efficiency: points are awarded for providing efficient solutions. For example, a linear algorithm will score better than a quadratic algorithm. For full credit, implement the efficient algorithms described in textbook and discussed in class.
+
+(3) Is the code in your submission clean and easy to read, with non-obvious statements
+properly commented? Are functions used appropriately for clarity and organization?
 
 ## Skew Diagrams ##
 
@@ -24,7 +41,7 @@ show how you derive your answer.
  in developing countries. Here, you will apply your new skills in a
  preliminary analysis of the genome of this pathogen.
 
-**Step 1.** Use the `BioPython` library to download the *Campylobacter
+**Step 1. (5 pts)** Use the `BioPython` library to download the *Campylobacter
   jejuni* genome from NCBI:
 
 {% highlight python %}
@@ -50,8 +67,8 @@ again to see how these objects work.
 Also see Chapter 9 of the tutorial for more info on how to obtain DNA
 sequences from NCBI.
 
-**Step 2.** Write a script to plot the skew diagram for
-  *Campylobacter jejuni*. If  you start IPython as follows:
+**Step 2. (15 pts)** Write a script to plot the skew diagram for
+  *Campylobacter jejuni*. One easy way of plotting is using pylab and IPython. If you start IPython as follows:
 
 {% highlight bash %}
 ipython --pylab=auto
@@ -64,14 +81,24 @@ you can plot with
 plot(skew)
 {% endhighlight %}
 
-**Question 2** Does this skew diagram look like the ones you've seen
+**Question 2 (10 pts)** Does this skew diagram look like the ones you've seen
 so far in book and discussion? What do you think may account for any
 differences? Where do you think is the replication origin for
   *Campylobacter jejuni*?
 
+Save your skew diagram `pdf` and include in your submission (see below).
+
+## DnaA boxes ##
+
+Use your code to find frequent words with mismatches (at most d=2 mismatches) and reverse complements to find candidate DnaA binding sequences in the oriC candidate region you found above.
+
+**Question 3 (10 pts)** Construct a table that shows for each k=3,4,5,6,7,8,9: (a) the number
+of distinct frequent words, and (b) the number of times each frequent word occurs in the genomic region.
+
+**Question 4 (5 pts)** Based on your result, write down a candidate DnaA sequence you would provide to a biologist to test. Explain why you chose this particular candidate sequence.
+
 ## How to submit ##
 
-Prepare a one page `pdf` document answering the two questions above,
-and including the skew diagram for *Campylobacter jejuni*. Include
-a listing of any additional code (besides your solutions to the Rosalind exercises) used for this part of the homework.
-Print out and handin before class on **Monday Sept. 22**.
+Prepare a writeup answering the four questions above and save as `pdf`. Submit any additional code (besides your solutions to the Rosalind exercises) used for this part of the homework.
+
+Submit to ELMS by Tuesday 9/22 9:00pm.
