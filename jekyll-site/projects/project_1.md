@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Homework 1
+title: Project 1
 ---
 
 **Due Tuesday Sept. 22**
