@@ -95,7 +95,7 @@ Use your code to find frequent words with mismatches (at most d=2 mismatches) an
 **Question 3 (10 pts)** Construct a table that shows for each k=3,4,5,6,7,8,9: (a) the number
 of distinct frequent words, and (b) the number of times each frequent word occurs in the genomic region.
 
-**Question 4 (5 pts)** Based on your result, write down a candidate DnaA sequence you would provide to a biologist to test. Explain why you chose this particular candidate sequence.
+**Question 4 (5 pts)** Based on your result, did you find a reasonable candidate DnaA sequence you would provide to a biologist to test. If so, write down the candidate sequence and explain why you chose this particular candidate sequence. If not, explain why not.
 
 ## How to submit ##
 
