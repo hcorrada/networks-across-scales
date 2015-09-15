@@ -5,6 +5,9 @@ title: Project 1
 
 **Due Tuesday Sept. 22**
 
+Posted: 9/14/15  
+Last Update: 9/14/15  
+
 ## Programming Exercises ##
 
 Submit your answers to Problems 1-3 in the
@@ -71,13 +74,15 @@ sequences from NCBI.
   *Campylobacter jejuni*. One easy way of plotting is using pylab and IPython. If you start IPython as follows:
 
 {% highlight bash %}
-ipython --pylab=auto
+ipython
 {% endhighlight %}
 
 and `skew` is the skew vector you computed for *Campylobacter jejuni*
 you can plot with
 
 {% highlight python %}
+%pylab
+
 plot(skew)
 {% endhighlight %}
 
@@ -90,7 +95,7 @@ Save your skew diagram `pdf` and include in your submission (see below).
 
 ## DnaA boxes ##
 
-Use your code to find frequent words with mismatches (at most d=2 mismatches) and reverse complements to find candidate DnaA binding sequences in the oriC candidate region you found above.
+Use your code to find most frequent words with mismatches (at most d=2 mismatches) and reverse complements to find candidate DnaA binding sequences in the oriC candidate region you found above (250bp on each side of position minimizing skew).
 
 **Question 3 (10 pts)** Construct a table that shows for each k=3,4,5,6,7,8,9: (a) the number
 of distinct frequent words, and (b) the number of times each frequent word occurs in the genomic region.
