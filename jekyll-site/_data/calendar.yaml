@@ -67,7 +67,7 @@
       link: {url: "http://rosalind.info/classes/232/"}
 -
   date: 9/15
-  status: present
+  status: done
   covers:
     -
       title: Programming for bioinformatics
@@ -89,7 +89,8 @@
       title: Pevsner, Bioinformatics and Functional Genomics, Ch. 2
       link: { url: "https://myelms.umd.edu/courses/1152063/modules/items/8213463" }
     -
-      title: Reading quiz no. 4 (COMING SOON)
+      title: Reading quiz no. 4
+      link: { url: "https://myelms.umd.edu/courses/1152063/modules/items/8217807"}
     -
       title: Rosalind prep. Ex 13-14
       link: { url: "http://rosalind.info/classes/232/" }
