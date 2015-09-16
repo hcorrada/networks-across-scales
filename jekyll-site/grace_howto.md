@@ -51,10 +51,10 @@ notebook (although it is awfully slow in grace). To access these, run:
 
 {% highlight bash %}
 # for bash
-source /afs/glue.umd.edu/class/fall2015/cmsc/423/0101/public/python2.7/bin/activate
+source /afs/glue.umd.edu/class/fall2015/cmsc/423/0101/public/python423/bin/activate
 
 # for csh
-source /afs/glue.umd.edu/class/fall2015/cmsc/423/0101/public/python2.7/bin/activate.csh
+source /afs/glue.umd.edu/class/fall2015/cmsc/423/0101/public/python423/bin/activate.csh
 {% endhighlight %}
 
 After doing this, the `python` command will use this installation of python2.7. To use the system default again use:
