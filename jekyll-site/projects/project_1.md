@@ -13,7 +13,7 @@ Last Update: 9/14/15
 Submit your answers to Problems 1-3 in the
 [Rosalind final submission page](http://rosalind.info/classes/233/).
 
-**NOTE: THESE PROGRAMS NEED TO BE SUBMITTED TO ROSALIND BY FRIDAY 9/18 at 5:00PM**
+**NOTE: THESE PROGRAMS NEED TO BE SUBMITTED TO ROSALIND BY Monday 9/21 at 5:00PM**
 
 **Question 1. (10pts)** For each of the 3 solutions submitted provide a
 runtime analysis of your solution.
