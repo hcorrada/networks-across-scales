@@ -7,7 +7,7 @@ from Bio import SeqIO
 # input:
 #   ids: a list of ids <strings>
 # output:
-#   a list of records as SeqIO objects
+#   a list of records as Seq objects
 def download_fasta_records(ids):
     Entrez.email = "hcorrada@gmail.com"
     id = ','.join(ids)
@@ -15,9 +15,19 @@ def download_fasta_records(ids):
     records = list(SeqIO.parse(handle, "fasta"))
     return records
 
+# find the shortest sequence within a list of Seq records
+# input:
+#   records: a list of Seq objects
+# output:
+#   a Seq for the record with the shortest sequence
 def find_shortest_sequence(records):
     return sorted(records, key=lambda x: len(x.seq))[0]
 
+# print a Seq record to stdout as fasta
+# input:
+#   rec: a Seq record
+# output:
+#   NONE
 def print_fasta_record(rec):
     SeqIO.write(rec, sys.stdout, "fasta")
 
