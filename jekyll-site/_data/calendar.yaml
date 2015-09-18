@@ -113,25 +113,26 @@
       title: "Randomized Algorithms: Motif Finding (1)"
   readings:
     -
-      title: Compeau & Pevzner, Ch. 2, 83-106
+      title: Compeau & Pevzner, Ch. 2, 66-90, 106-108
     -
       title: Compeau & Pevzner, playlist 3, videos 1-3
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFMEcdAi0yF015RgmowtsvwT" }
     -
-      title: Rosalind prep Ex. 27-31
-      link: { url: "http://rosalind.info/classes/152" }
+      title: Rosalind prep Ex. 15
+      link: { url: "http://rosalind.info/classes/232" }
   workdue:
     -
       title: Project 1
       link: { url: "projects/project_1.html", insite: }
 -
   date: 9/24
+  status: present
   covers:
     -
       title: "Randomized Algorithms: Motif Finding (2)"
   readings:
     -
-      title: Compeau & Pevzner, Ch. 2., 106-121
+      title: Compeau & Pevzner, Ch. 2., 90-105, 111-113
     -
       title: Compeau & Pevzner, playlist 3, videos 4-6
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFMEcdAi0yF015RgmowtsvwT" }
@@ -139,7 +140,7 @@
       title: Nat. Biotech primer (need to be on campus network to read)
       link: {url: "http://www.nature.com/nbt/journal/v24/n8/full/nbt0806-959.html" }
     -
-      title: Rosalind prep Ex. 32-33
+      title: Rosalind prep Ex. 16-17
       link: { url: "http://rosalind.info/classes/152/" }
 -
   date: 9/25
