@@ -79,7 +79,7 @@
 
 -
   date: 9/17
-  status: present
+  status: done
   covers:
     -
       title: Bioinformatics public resources
@@ -95,7 +95,7 @@
       title: Rosalind prep. Ex 13-14
       link: { url: "http://rosalind.info/classes/232/" }
 -
-  date: 9/18
+  date: 9/21
   status: present
   covers:
     -
