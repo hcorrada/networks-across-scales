@@ -107,7 +107,7 @@
       link: {url: "http://rosalind.info/classes/233"}
 -
   date: 9/22
-  status: present
+  status: done
   covers:
     -
       title: "Randomized Algorithms: Motif Finding (1)"
@@ -140,10 +140,13 @@
       title: Nat. Biotech primer (need to be on campus network to read)
       link: {url: "http://www.nature.com/nbt/journal/v24/n8/full/nbt0806-959.html" }
     -
+      title: Reading quiz no. 5
+      link: { url: "https://myelms.umd.edu/courses/1152063/quizzes/1123094?module_item_id=8225324" }
+    -
       title: Rosalind prep Ex. 16-17
       link: { url: "http://rosalind.info/classes/152/" }
 -
-  date: 9/25
+  date: 9/29
   covers:
     -
       title: Gene expression clustering analysis (1)
@@ -154,12 +157,8 @@
   readings:
     -
       title: Compeau & Pevzner, Ch. 9 (draft posted on Piazza)
-  workdue:
-    -
-      title: Homework 2
-      link: {url: "homeworks/homework_2.html", insite: }
 -
-  date: 9/29
+  date: 10/1
   covers:
     -
       title: Gene expression clustering analysis (2)
@@ -174,7 +173,7 @@
      title: Rosalind prep Ex. 34-37
      link: {url: "http://rosalind.info/classes/152"}
 -
-  date: 10/1
+  date: 10/6
   covers:
     -
       title: Recap and review Unit 1
@@ -188,7 +187,7 @@
       title: Rosalind Final Submission Ex. 5-8
       link: {url: "http://rosalind.info/classes/156"}
 -
-  date: 10/6
+  date: 10/8
   covers:
     -
       title: Midterm I
@@ -197,7 +196,7 @@
       title: Midterm I study guide
       link: { url: "docs/midtermI_recap.html", insite: }
 -
-  date: 10/8
+  date: 10/13
   covers:
     -
       title: Genome Assembly (1)
@@ -212,7 +211,7 @@
       title: Rosalind prep. Ex 38-40
       link: { url: "http://rosalind.info/classes/152/" }
 -
-  date: 10/13
+  date: 10/15
   covers:
     -
       title: Genome Assembly (2)
@@ -227,7 +226,7 @@
       title: Rosalind prep. Ex 41-42
       link: { url: "http://rosalind.info/classes/152/" }
 -
-  date: 10/15
+  date: 10/20
   covers:
     -
       title: Genome Assembly (3)
@@ -242,39 +241,7 @@
       title: Rosalind prep. Ex 43-44
       link: { url: "http://rosalind.info/classes/152/" }
 -
-  date: 10/20
-  covers:
-    -
-      title: "Brute Force Algorithms (1)"
-  readings:
-    -
-      title: Compeau & Pevzner, Ch. 2, 47-58
-    -
-      title: Compeau & Pevzner, playlist 2, videos 1-4
-      link: {url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFPdIS_5qv_Q3XWieobVPLlc"}
-    -
-      title: Rosalind prep Ex. 19-22
-      link: {url: "http://rosalind.info/classes/152/"}
-  workdue:
-    -
-      title: Homework 1
-      link: {url: "homeworks/homework_1.html", insite: }
--
   date: 10/22
-  covers:
-    -
-      title: "Brute Force Algorithms (2)"
-  readings:
-    -
-      title: Compeau & Pevzner, Ch. 2, 58-80
-    -
-      title: Compeau & Pevzner, playlist 2, videos 5-8
-      link: {url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFPdIS_5qv_Q3XWieobVPLlc"}
-    -
-      title: Rosalind prep Ex. 23-24
-      link: {url: "http://rosalind.info/classes/152/"}
--
-  date: 10/27
   covers:
     -
       title: "Dynamic Programming (1): Longest common subsequence"
@@ -295,30 +262,7 @@
       title: Rosalind prep. Ex 45-47
       link: { url: "http://rosalind.info/classes/152/" }
 -
-  date: 10/29
-  covers:
-    -
-      title: "Recap and review Unit II"
--
-  date: 10/30
-  covers:
-    -
-      title: NOT A LECTURE
-  workdue:
-    -
-      title: Rosalind Final Submission Ex. 9 and 10
-      link: {url: "http://rosalind.info/classes/156"}
--
-  date: 11/3
-  covers:
-    -
-      title: Midterm II
-  readings:
-    -
-      title: Midterm II study guide
-      link: { url: "docs/midtermII_recap.html", insite: }
--
-  date: 11/5
+  date: 10/27
   covers:
     -
       title: "Dynamic Programming (2): Global/Local Alignment and scoring matrices"
@@ -337,7 +281,7 @@
       title: Homework 3
       link: {url: "homeworks/homework_3.html", insite: }
 -
-  date: 11/10
+  date: 10/29
   covers:
     -
       title: "Dynamic Programming (3): Implementing dynamic programming alignment alogrithms (review)"
@@ -348,7 +292,7 @@
       title: Compeau & Pevzner, playlist 5, video 8
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" }
 -
-  date: 11/12
+  date: 11/3
   covers:
     -
       title: "Dynamic Programming (4): Affine gap penalities and linear space alignment"
@@ -363,12 +307,26 @@
       title: Rosalind prep. Ex 50-51
       link: { url: "http://rosalind.info/classes/152/" }
 -
-  date: 11/17
+  date: 11/5
+  covers:
+    -
+      title: "Recap and review Unit II"
+-
+  date: 11/10
+  covers:
+    -
+      title: Midterm II
+  readings:
+    -
+      title: Midterm II study guide
+      link: { url: "docs/midtermII_recap.html", insite: }
+-
+  date: 11/12
   covers:
     -
       title: "Exact string matching: z-algorithm and KMP"
 -
-  date: 11/19
+  date: 11/17
   covers:
     -
       title: "Efficient exact string matching: Suffix Trees and Arrays (1)"
@@ -383,7 +341,7 @@
       title: Rosalind prep. Ex. 52-54
       link: { url: "http://rosalind.info/classes/152/" }
 -
-  date: 11/24
+  date: 11/19
   covers:
     -
       title: "Efficient exact string matching: Suffix Trees and Arrays (2)"
@@ -398,12 +356,7 @@
       title: Rosalind prep. Ex. 52-54
       link: { url: "http://rosalind.info/classes/152/" }
 -
-  date: 11/26
-  covers:
-    -
-      title: "No lecture (Thanksgiving)"
--
-  date: 12/1
+  date: 11/24
   covers:
     -
       title: "Efficient exact string matching: The Burrows Wheeler Transform"
@@ -418,7 +371,12 @@
       title: Rosalind prep. Ex 55-56
       link: { url: "http://rosalind.info/classes/152/" }
 -
-  date: 12/3
+  date: 11/26
+  covers:
+    -
+      title: "No lecture (Thanksgiving)"
+-
+  date: 12/1
   covers:
     -
       title: "Efficient string matching: approximate matching with BWT"
@@ -431,6 +389,11 @@
     -
       title: Rosalind prep. Ex 57-58
       link: { url: "http://rosalind.info/classes/152/" }
+-
+  date: 12/3
+  covers:
+    -
+      title: TBD
 -
   date: 12/8
   covers:
