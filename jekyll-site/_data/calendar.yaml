@@ -126,7 +126,7 @@
       link: { url: "projects/project_1.html", insite: }
 -
   date: 9/24
-  status: present
+  status: done
   covers:
     -
       title: "Randomized Algorithms: Motif Finding (2)"
@@ -144,10 +144,13 @@
       link: { url: "https://myelms.umd.edu/courses/1152063/quizzes/1123094?module_item_id=8225324" }
     -
       title: Rosalind prep Ex. 16-17
-      link: { url: "http://rosalind.info/classes/152/" }
+      link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 9/29
+  status: present
   covers:
+    -
+      title: "Randomized Algorithms Concluded (Gibbs Sampling)"
     -
       title: Gene expression clustering analysis (1)
       materials: { link: "lectures/CMSC423_Clustering.pdf", insite: }
@@ -156,9 +159,17 @@
       materials: { link: "lectures/diauxic.R", insite: }
   readings:
     -
-      title: Compeau & Pevzner, Ch. 9 (draft posted on Piazza)
+      title: Compeau & Pevzner, Ch. 8 (posted on ELMS)
+      link: { url: "https://myelms.umd.edu/courses/1152063/modules/items/8227118" }
+    -
+      title: Compeau & Pevzner, playlist 8, videos 1-4
+      link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFMcC2d2CkvmdcJt2v-Np7Cz" }
+    -
+      title: Rosalind prep Ex. 18-19
+      link: { url: "http://rosalind.info/classes/232" }
 -
   date: 10/1
+  status: present
   covers:
     -
       title: Gene expression clustering analysis (2)
@@ -168,24 +179,31 @@
       materials: { link: "lectures/diauxic.R", insite: }
   readings:
     -
-      title: Compeau & Pevzner, Ch. 9 (draft posted on Piazza)
+      title: Compeau & Pevzner, Ch. 8 (posted on ELMS)
+      link: { url: "https://myelms.umd.edu/courses/1152063/modules/items/8227118" }
     -
-     title: Rosalind prep Ex. 34-37
-     link: {url: "http://rosalind.info/classes/152"}
+      title: Compeau & Pevzner, playlist 8, 5-8
+      link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFMcC2d2CkvmdcJt2v-Np7Cz" }
 -
-  date: 10/6
-  covers:
-    -
-      title: Recap and review Unit 1
--
-  date: 10/2
+  date: 10/5
+  status: present
   covers:
     -
       title: NOT A LECTURE
   workdue:
     -
-      title: Rosalind Final Submission Ex. 5-8
-      link: {url: "http://rosalind.info/classes/156"}
+      title: Rosalind Final Submission Ex. 3 and 4
+      link: {url: "http://rosalind.info/classes/233"}
+-
+  date: 10/6
+  status: present
+  covers:
+    -
+      title: Recap and review Unit 1
+  workdue:
+    -
+      title: Project 2
+      link: { url: "projects/project_2.html", insite: }
 -
   date: 10/8
   covers:
