@@ -1,44 +1,37 @@
 import sys
 import random
+import math
 
-# seed random number generator 
+# seed random number generator
 random.seed(2)
 
 # list of nucleotides
 alphabet = list('ACGT')
 
-# score a set of k-mers
-# input:
-#  a set of k-mers
-# output:
-#  the 'conservation' score
-def motif_score(motifs):
-    k = len(motifs[0])
-    t = len(motifs)
-    
-    score = 0
-    # for each position in motif (column in table of strings)
-    for i in xrange(k):
-        # count the number of times each nucleotide occurs in this position
-        # across given strings
-        count = dict.fromkeys(alphabet, 0)
-        for j in xrange(t):
-            count[motifs[j][i]] += 1
-        # find the most common (consensus) nucleotide        
-        most_common = max(count.items(), key = lambda x: x[1])[0]
-        # add the number of nucleotides that are not equal to the consensus nucleotide to the score        
-        cur_score = sum(count.values()) - count[most_common]
-        score += cur_score
+def profile_score(profile, k):
+    score = 0.
+    for j in xrange(k):
+        curmax = -1.
+        for nuc in alphabet:
+            vec = profile[nuc]
+            if vec[j] > curmax:
+                curmax = vec[j]
+        score += 1. - curmax
+
+# compute the entropy of a profile
+def profile_entropy(profile, k):
+    score = 0.
+    for j in xrange(k):
+        cur_ent = 0
+        for nuc in alphabet:
+            cur_ent += -( profile[nuc][j] * math.log(profile[nuc][j], 2) )
+        score += cur_ent
     return score
 
-# construct a profile given a set of k-mers
-# input:
-#  motifs: a set of k-mers
-#  k: k-mer length
-# output:
-#  a profile: hash table, keys are nucleotides, values are list of frequencies
-def make_profile(motifs, k):
-    t = len(motifs)
+# construct a profile using pseudocounts
+# 'indices': a list of starting indices for k-mers used to estimate profile
+def make_profile(indices, dna, k):
+    t = len(indices)
 
     # initialize profile
     profile = {}
@@ -50,9 +43,10 @@ def make_profile(motifs, k):
         # initialize counts with pseudocount = 1
         counts = dict.fromkeys(alphabet, 1.)
 
-        # add count for each motif
+        # add count for each kmer
         for j in xrange(t):
-            counts[motifs[j][i]] += 1.
+            nuc = dna[j][indices[j]+i]
+            counts[nuc] += 1.
 
         # compute probability for each nucleotide
         for nuc, count in counts.iteritems():
@@ -81,18 +75,12 @@ def random_choice(weights):
         u -= weights[choice]
     return choice
 
-# compute the probabilty of a given k-mer according to given profile
-# input:
-#  kmer: a k-mer
-#  profile: a profile
-# output:
-#  the probability
+# compute the probability of given k-mer
+# based on given profile
 def profile_probability(kmer, profile):
     prob = 1.
     k = len(kmer)
     for i in xrange(k):
-        # for each character in kmer, multiply in the probability of that nucleotide
-        # according to profile        
         prob *= profile[kmer[i]][i]
     return prob
 
@@ -102,61 +90,79 @@ def profile_probability(kmer, profile):
 #  profile: a profile
 #  k: k-mer length
 # output
-#  a randomly chosen k-mer from text, with probability given by profile
+#  a randomly chosen position within text, with probability given by profile
 def profile_sample(text, profile, k):
     n = len(text)
+
     # compute profile probability for each k-mer
     probs = [profile_probability(text[slice(i, i+k)], profile) for i in xrange(n-k+1)]
-    # randomly choose a starting position with probability proportional to probs
-    j = random_choice(probs)
-    # return chosen k-mer
-    return text[slice(j, j+k)]
 
-# one step of the gibbs sampler
+    # randomly choose a starting position with probability proportional to probs
+    index = random_choice(probs)
+
+    # return chosen k-mer index
+    return index
+
+# one run of the gibbs sampler
 # input:
 #  k: k-mer length
 #  t: number of strings in dna
 #  N: number of gibbs sampler moves to try
 #  dna: list of strings
 # output:
-#  a set lof k-mers from dna
-def find_one_motif(k, t, N, dna):
-    best_motifs = []
-    motifs = []
-    dna_len = len(dna[0])
+#  score: entropy of the best profile found
+#  profile: the best profile found
+#  indices: the starting positions of k-mers used to estimate profile
+def find_one_profile(k, t, N, dna):
+    n = len(dna[0])
 
-    # generate a set of k-mers randomly
-    for i in xrange(t):
-        j = random.randrange(dna_len-k+1)
-        kmer = dna[i][slice(j, j+k)]
-        best_motifs.append(kmer)
-        motifs.append(kmer)
-    # score them
-    best_score = motif_score(best_motifs)
+    # generate random index vector
+    indices = [random.randrange(n-k+1) for _ in xrange(t)]
+
+    # and score it
+    profile = make_profile(indices, dna, k)
+    best_score = profile_entropy(profile, k)
+    best_indices = indices
+
+    old_index = None
+    string_to_change = None
 
     # try N steps
-    for j in xrange(N):
+    for i in xrange(N):
         # choose a string in dna to resample
-        i = random.randrange(t)
+        string_to_change = random.randrange(t)
 
         # make profile from current k-mers except chosen string
-        cur_motifs = motifs[:i] + motifs[(i+1):]
-        old_motif = motifs[i]        
-        profile = make_profile(cur_motifs, k)
-        
-        # now sample a new string with probability given by profile
-        # sand score it
-        motifs[i] = profile_sample(dna[i], profile, k)
-        cur_score = motif_score(motifs)
+        cur_indices = indices[:string_to_change] + indices[(string_to_change+1):]
+        cur_dna = dna[:string_to_change] + dna[(string_to_change+1):]
+        cur_profile = make_profile(cur_indices, cur_dna, k)
 
-        # keep this new string if it improves the score
-        if cur_score < best_score:
-            best_motifs = motifs
-            best_score = cur_score
+        # now sample a new index with probability given by current profile
+        new_index = profile_sample(dna[string_to_change], cur_profile, k)
+        old_index = indices[string_to_change]
+        indices = indices[:string_to_change] + [new_index] + indices[(string_to_change+1):]
+
+        new_profile = make_profile(indices, dna, k)
+        new_score = profile_entropy(new_profile, k)
+
+        if new_score < best_score:
+            best_indices = indices
+            best_score = new_score
+            profile = new_profile
         else:
-            # it didn't improve score, so switch back to original string
-            motifs[i] = old_motif
-    return best_motifs
+            indices[string_to_change] = old_index
+
+    return best_score, profile, best_indices
+
+# get kmers starting at each index from set of
+# strings 'dna'
+def get_kmers(indices, dna, k, t):
+    kmers = [""] * t
+
+    for i in xrange(t):
+        start_index = indices[i]
+        kmers[i] = dna[i][slice(start_index, start_index + k)]
+    return kmers
 
 # gibbs sampler with multiple restarts
 #  k: k-mer length
@@ -169,20 +175,19 @@ def gibbs_sampling_search(k, t, N, dna):
     # number of restarts to try
     num_starts = 20
 
-    # run gibbs sampler once, and use the result as best motif so far
-    best_motifs = find_one_motif(k, t, N, dna)
-    best_score = motif_score(best_motifs)
+    # initialize score
+    best_score = 1. * k * t
+    best_indices = None
 
     # run gibbs sampler multiple times
-    for i in xrange(1, num_starts):
-        cur_motifs = find_one_motif(k, t, N, dna)
-        cur_score = motif_score(cur_motifs)
+    for _ in xrange(num_starts):
+        cur_score, _, cur_indices = find_one_profile(k, t, N, dna)
 
         # keep score for new motifs if they improve the score
         if cur_score < best_score:
-            best_motifs = cur_motifs
+            best_indices = cur_indices
             best_score = cur_score
-    return best_motifs
+    return get_kmers(best_indices, dna, k, t)
 
 filename = sys.argv[1]
 with open(filename, 'r') as f:

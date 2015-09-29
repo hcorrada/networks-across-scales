@@ -2,6 +2,8 @@ import sys
 import random
 import math
 
+random.seed(2)
+
 # utility structure
 alphabet = list('ACGT')
 
