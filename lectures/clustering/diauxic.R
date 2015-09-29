@@ -1,9 +1,13 @@
-library(GEOquery)
+if (!file.exists("eset.rda")) {
+  library(GEOquery)
 
-# dowload and save dataset from GEO
-gse <- "GSE28"
-eset <- getGEO(gse)[[1]]
-save(eset,file="eset.rda")
+  # dowload and save dataset from GEO
+  gse <- "GSE28"
+  eset <- getGEO(gse)[[1]]
+  save(eset,file="eset.rda")
+} else {
+  load("eset.rda")
+}
 
 # get the sample times times
 time <- as.character(pData(eset)$title)
@@ -14,10 +18,18 @@ time <- mapply(function(x,i,j) as.numeric(substr(x,i,j)), time,m1,m2)
 # order samples by time
 o <- order(time)
 x <- exprs(eset)[,o]
+time <- time[o]
 
 # remove genes with any NAs
 hasNas <- rowSums(is.na(x)) > 0
 x <- x[!hasNas,]
+geneNames <- featureData(eset)$ORF[!hasNas]
+
+# keep 500 genes with largest variance
+geneSds <- matrixStats::rowSds(x)
+o <- order(-geneSds)
+x <- x[o[1:500],]
+geneNames <- geneNames[o[1:500]]
 
 # center and scale gene data
 geneMeans <- rowMeans(x)
@@ -29,21 +41,17 @@ for (i in seq(len=nrow(x))) {
 }
 
 # plot the first gene
-matplot(sx[1,], type="b", lwd=1.4,pch=19,ylab="expression")
-abline(v=2,lty=2)
+matplot(time, sx[1,], type="b", lwd=1.4,pch=19,ylab="expression",main=geneNames[1])
 
 # plot the first ten genes
-matplot(t(sx[1:10,]),type="b", lwd=1.4,pch=19,ylab="expression")
-abline(v=2,lty=2)
+matplot(time, t(sx[1:10,]),type="b", lwd=1.4,pch=19,ylab="expression")
 
 # plot the first 100 genes
-matplot(t(sx[1:100,]),type="b", lwd=1.4,pch=19,ylab="expression")
-abline(v=2,lty=2)
+matplot(time, t(sx[1:100,]),type="b", lwd=1.4,pch=19,ylab="expression")
 
 # make a function to plot genes
 plotgene=function(x, ...) {
-  matplot(t(x),type="b", lwd=1.4,pch=19,ylab="expression", ...)
-  abline(v=2,lty=2)  
+  matplot(time, t(x),type="b", lwd=1.4,pch=19,ylab="expression", ...)
 }
 
 # let's illustrate furtherst first traversal
@@ -63,7 +71,8 @@ center1Distance <- apply(sx, 1, function(x) get_distance(x, center1))
 # choose the gene that's furthest away as second center
 center2Index <- which.max(center1Distance)
 center2 <- sx[center2Index,]
-plotgene(rbind(center2), main="center 2")
+
+plotgene(rbind(center1, center2), main="center 2")
 
 # compute distance between each gene and second center
 center2Distance <- apply(sx, 1, function(x) get_distance(x, center2))
@@ -74,7 +83,8 @@ minDistance <- apply(cbind(center1Distance, center2Distance),1,min)
 # choose the gene that's furthest away from it's closest center as third center
 center3Index <- which.max(minDistance)
 center3 <- sx[center3Index,]
-plotgene(rbind(center3), main="center 3")
+
+plotgene(rbind(center1, center2, center3), main="center 3")
 
 # compute distance to third center
 center3Distance <- apply(sx, 1, function(x) get_distance(x, center3))
@@ -95,9 +105,7 @@ for (k in seq(len=3)) {
 res=kmeans(sx, centers=6)
 
 # plot the 6 "center" genes
-for (k in seq(len=6)) {
-  plotgene(rbind(res$centers[k,]), main=paste("center", k))
-}
+plotgene(res$centers, main="kmeans centers")
 
 # plot the 6 gene clusters
 for (k in seq(len=6)) {
@@ -105,6 +113,8 @@ for (k in seq(len=6)) {
   plotgene(sx[ind,], main=paste("center", k))
 }
 
+# get gene names in first cluster
+geneNames[res$cluster == 1]
 
 #####
 # a different example of how EM and fuzzy kmeans works
