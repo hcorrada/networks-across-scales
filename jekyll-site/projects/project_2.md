@@ -6,14 +6,14 @@ title: Project 2
 **Due Tuesday October 6**
 
 Posted: 9/25/2015
-Last Update: 9/25/2015
+Last Update: 9/29/2015
 
 ## Programming Questions ##
 
 Submit your answers to Problems 4 and 5 in the
 [Rosalind final submission page](http://rosalind.info/classes/233/).
 
-**NOTE: THESE PROGRAMS NEED TO BE SUBMITTED TO ROSALIND BY Friday 10/2 at 5:00PM**
+**NOTE: THESE PROGRAMS NEED TO BE SUBMITTED TO ROSALIND BY Monday 10/5 at 5:00PM**
 
 **Question 1. (5 pts)** Write three or four sentences as a postmortem on the implementation of the two randomized algorithms. What was the biggest challenge in
   implementing and testing these algorithms?
