@@ -159,7 +159,7 @@
       title: Compeau & Pevzner, playlist 8, videos 1-4
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFMcC2d2CkvmdcJt2v-Np7Cz" }
     -
-      title: Rosalind prep Ex. 18-19
+      title: Rosalind prep Ex. 18
       link: { url: "http://rosalind.info/classes/232" }
 -
   date: 10/1
@@ -178,6 +178,10 @@
     -
       title: Compeau & Pevzner, playlist 8, 5-8
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFMcC2d2CkvmdcJt2v-Np7Cz" }
+    -
+      title: Rosalind prep Ex. 19
+      link: { url: "http://rosalind.info/classes/232" }
+
 -
   date: 10/5
   status: present
