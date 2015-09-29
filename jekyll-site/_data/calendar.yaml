@@ -147,16 +147,10 @@
       link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 9/29
-  status: present
+  status: done
   covers:
     -
       title: "Randomized Algorithms Concluded (Gibbs Sampling)"
-    -
-      title: Gene expression clustering analysis (1)
-      materials: { link: "lectures/CMSC423_Clustering.pdf", insite: }
-    -
-      title: R script
-      materials: { link: "lectures/diauxic.R", insite: }
   readings:
     -
       title: Compeau & Pevzner, Ch. 8 (posted on ELMS)
@@ -172,7 +166,7 @@
   status: present
   covers:
     -
-      title: Gene expression clustering analysis (2)
+      title: Gene expression clustering analysis (1)
       materials: { link: "lectures/CMSC423_Clustering.pdf", insite: }
     -
       title: R script
@@ -199,20 +193,27 @@
   status: present
   covers:
     -
+      title: Gene expression clustering analysis (2)
+      materials: { link: "lectures/CMSC423_Clustering.pdf", insite: }
+    -
+      title: R script
+      materials: { link: "lectures/diauxic.R", insite: }
+    -
       title: Recap and review Unit 1
+  readings:
+    -
+      title: Midterm I study guide
+      link: { url: "docs/midtermI_recap.html", insite: }
   workdue:
     -
       title: Project 2
       link: { url: "projects/project_2.html", insite: }
 -
   date: 10/8
+  status: present
   covers:
     -
       title: Midterm I
-  readings:
-    -
-      title: Midterm I study guide
-      link: { url: "docs/midtermI_recap.html", insite: }
 -
   date: 10/13
   covers:
