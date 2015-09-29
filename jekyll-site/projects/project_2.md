@@ -24,7 +24,7 @@ project. Implementation methods and ideas that worked, and those that did
 not. More info: [here](http://blog.codinghorror.com/the-project-postmortem/)
 and [here](http://www.uio.no/studier/emner/matnat/ifi/INF9181/h11/undervisningsmateriale/reading-materials/Lecture-10/post-mortems.pdf).
 
-### Code Grading (75 pts) ###
+### Code Grading (60 pts) ###
 
 Same guidelines as [Project 1](projects/projects_1.html).
 
