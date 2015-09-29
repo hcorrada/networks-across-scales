@@ -53,27 +53,30 @@ def make_profile(indices, dna, k):
             profile[nuc].append( count / ( t + len(alphabet)) )
     return profile
 
-# select item from list with probability proportional to weight
+# select index into list with probability proportional to weight
 # input:
 #  weights: a list of weights
 # output:
 #  a random selection from list
 def random_choice(weights):
     # normalize weights so they sum to 1
-    total_weight = sum(weights)
+    total_weight = 1. * sum(weights)
     nitems = len(weights)
+    probs = []
+
     for i in xrange(nitems):
-        weights[i] /= total_weight
+        probs.append(weights[i] / total_weight)
 
     # generate random number between 0 and 1
-    choice = -1
     u = random.uniform(0, 1.)
 
-    # find the chosen item
-    while u >= 0:
-        choice += 1
-        u -= weights[choice]
-    return choice
+    # find the chosen index
+    for i in xrange(nitems):
+        if u <= probs[i]:
+            break
+        u -= probs[i]
+    return i
+
 
 # compute the probability of given k-mer
 # based on given profile
