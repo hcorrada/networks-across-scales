@@ -9,7 +9,7 @@ debug = False
 
 ntimes = 10
 nyears = 100
-num_offspring = 5 
+num_offspring = 5
 mutation_rate = 1. / 15
 max_age = 10
 max_population_size = 100
@@ -54,7 +54,7 @@ def yearend(population, max_population_size):
 def calculate_entropy(population):
     k = len(population[0][1])
     t = len(population)
-    
+
     res = 0.
     for i in xrange(k):
         counts = dict.fromkeys(alphabet, 0)
@@ -65,9 +65,10 @@ def calculate_entropy(population):
     return res
 
 entropies = []
+populations = []
 for i in xrange(ntimes):
 	# age and sequence of primodial organism
-    population = [(0, first_string)] 
+    population = [(0, first_string)]
     for j in xrange(nyears):
         if debug: print len(population),
 		# five new individuals per
@@ -88,4 +89,5 @@ for i in xrange(ntimes):
         population = yearend(population, max_population_size)
         if debug: print len(population)
     entropies.append(calculate_entropy(population))
+    populations.append(population)
 print np.mean(entropies)

@@ -101,6 +101,8 @@ for (k in seq(len=3)) {
   plotgene(sx[indx,], main=paste("cluster", k))
 }
 
+plotgene(rbind(colMeans(sx[clusterIndex==1,])))
+
 # run k-means to find six centers
 res=kmeans(sx, centers=6)
 
