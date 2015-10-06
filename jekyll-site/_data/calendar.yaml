@@ -163,7 +163,7 @@
       link: { url: "http://rosalind.info/classes/232" }
 -
   date: 10/1
-  status: present
+  status: done
   covers:
     -
       title: Gene expression clustering analysis (1)
@@ -184,7 +184,7 @@
 
 -
   date: 10/5
-  status: present
+  status: done
   covers:
     -
       title: NOT A LECTURE
