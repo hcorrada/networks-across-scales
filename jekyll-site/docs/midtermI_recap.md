@@ -3,9 +3,9 @@ layout: default
 title: Midterm 1 Guide
 ---
 
-**Midterm I is on Monday Oct. 8th, at class time**
+**Midterm I is on Thursday Oct. 8th, at class time**
 
-The midterm exam will consist of: ~6-10 quick questions (multiple choice, true/false), ~5 short questions, 1 or 2 longer questions.  
+The midterm exam will consist of: ~6-10 quick questions (multiple choice, true/false), ~5 short questions, 1 or 2 longer questions. You can bring one (1) 8.5x11 (lettersize) piece of paper to the exam.
 
 It will cover the following material (this is not an exhaustive list, there may be material, especially from
 Chapter 1, that is not listed here, that may be included in the test):
