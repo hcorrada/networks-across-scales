@@ -194,7 +194,7 @@
       link: {url: "http://rosalind.info/classes/233"}
 -
   date: 10/6
-  status: present
+  status: done
   covers:
     -
       title: Gene expression clustering analysis (2)
