@@ -214,40 +214,42 @@
       link: { url: "projects/project_2.html", insite: }
 -
   date: 10/8
-  status: present
+  status: done
   covers:
     -
       title: Midterm I
 -
   date: 10/13
+  status: present
   covers:
     -
       title: Genome Assembly (1)
       materials: { link: "lectures/CMSC423_Assembly.pdf", insite: }
   readings:
     -
-      title: Compeau & Pevzner, Ch. 4, 129-146
+      title: Compeau & Pevzner, Ch. 3, 117-130, 170-178
     -
       title: Compeau & Pevzner, playlist 4, videos 1-5
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNGdaeGpV8dPEeSm3AChb6L" }
     -
-      title: Rosalind prep. Ex 38-40
-      link: { url: "http://rosalind.info/classes/152/" }
+      title: Rosalind prep. Ex 20
+      link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 10/15
+  status: present
   covers:
     -
       title: Genome Assembly (2)
       materials: { link: "lectures/CMSC423_Assembly.pdf", insite: }
   readings:
     -
-      title: Compeau & Pevzner, Ch. 4, 147-162
+      title: Compeau & Pevzner, Ch. 3, 131-149
     -
       title: Compeau & Pevzner, playlist 4, videos 6-9
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNGdaeGpV8dPEeSm3AChb6L" }
     -
-      title: Rosalind prep. Ex 41-42
-      link: { url: "http://rosalind.info/classes/152/" }
+      title: Rosalind prep. Ex 21
+      link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 10/20
   covers:
