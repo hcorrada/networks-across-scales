@@ -1,7 +1,9 @@
 ---
 title: Hamiltonian Path Exercise
-author: CMSC423 Fall 2014
-date: October 29, 2014 
+author: CMSC423 Fall 2015
+date: October 13, 2015
+fontfamily: utopia
+geometry: margin=1in
 ---
 
 Name(s):   
@@ -13,6 +15,10 @@ $$
 \{\mathtt{AGT,AAA,ACT,AAC,CTT,GTA,TTT,TAA}\}
 $$
 
-Construct the graph with 8 vertices corresponding to these 3-mers (string overlap, Hamiltonian path approach) and find a Hamiltonian path (7 edges) which visits each vertex exactly once. Does this path visit every edge of the graph? Write the reconstructed string corresponding to this Hamiltonian path.
+(a) Construct the graph with 8 vertices corresponding to these 3-mers (string overlap, Hamiltonian path approach)
+
+(b) Find a Hamiltonian path (7 edges) which visits each vertex exactly once. Does this path visit every edge of the graph?
+
+(c) Write the reconstructed string corresponding to this Hamiltonian path.
 
 **Question 2.** When using the string overlap approach, why would a pair of reads corresponding to non-overlapping positions in the genome have an edge connecting them?
