@@ -7,16 +7,9 @@ title: Homework 3
 
 ## Programming Questions ##
 
-Submit your answers to Problems 9 and 10 in the
-[Rosalind final submission page](http://rosalind.info/classes/156/).
-**THESE ARE DUE ON FRIDAY NOV.  7**
-
-## Clustering ##
-
-**Question 1**
-Prove the approximation bound for farthest-first traversal to the $$k$$-centers problem:
-
-Let $$X$$ be a solution found by FarthestFirstTraversal and $$X_{opt}$$ be the optimal solution of the $$k$$-Center Clustering Problem. Prove that $$\mathrm{MaxDistance}(\mathrm{Data},X) ≤ 2 \times \mathrm{MaxDistance}(\mathrm{Data},X_{opt})$$.
+Submit your answers to Problems 6 and 7 in the
+[Rosalind final submission page](http://rosalind.info/classes/233/).
+**THESE ARE DUE ON MONDAY NOV. 2**
 
 ## Assembly ##
 
@@ -31,18 +24,14 @@ Unzip this file in your working directory, you should see the following four fil
 
 `...AGACATCCGAACCATAGAGGATTC|CTCTATGTGCTGTGATG...`
 
-**Question 2** Assemble the ebola genome from the given reads and see if it matches any of the twenty genomes in the `ebola.fa` file. Write down the sequence name from the `ebola.fa` file that matches you assembled genome (it starts with 'KM')
+**Question 1** Assemble the ebola genome from the given reads and see if it matches any of the twenty genomes in the `ebola.fa` file. Write down the sequence name from the `ebola.fa` file that matches you assembled genome (it starts with 'KM')
 
-**Question 3** How hard is it to assemble this genome from these simulated 101 bp reads? Provide the  distribution of in-degrees and out-degrees in the DeBruijn graph for this set of reads. 
+**Question 2** How hard is it to assemble this genome from these simulated 101 bp reads? Provide the  distribution of in-degrees and out-degrees in the DeBruijn graph for this set of reads.
 
-**Question 4** Generate all 101-mers from this genome using your 'String Composition' (Problem 38 in the pre-lecture exercises). How repetitive is this genome when using 101 bp reads?
+**Question 3** Generate all 101-mers from this genome using your 'String Composition' (Problem 38 in the pre-lecture exercises). How repetitive is this genome when using 101 bp reads?
 
-**Question 5** What is the largest $$k$$ for which the $$k$$-mer composition of this genome contains at least 1 repeat.
+**Question 4** What is the largest $$k$$ for which the $$k$$-mer composition of this genome contains at least 1 repeat.
 
 ## How to submit ##
 
-Submit your answers to the five questions above in writing before
-lecture on **November 10**. Include a listing of additional code you used to answer these questions (e.g., how did you read the `ebola.fa` file and checked if your assembled genome matches any of the twenty genomes there).
-
-
-
+Writeup answers to the four questions above. Submit to ELMS along with *all* code you used to answer these questions.

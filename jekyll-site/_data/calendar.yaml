@@ -220,7 +220,7 @@
       title: Midterm I
 -
   date: 10/13
-  status: present
+  status: done
   covers:
     -
       title: Genome Assembly (1)
@@ -236,7 +236,7 @@
       link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 10/15
-  status: present
+  status: done
   covers:
     -
       title: Genome Assembly (2)
@@ -252,21 +252,23 @@
       link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 10/20
+  status: present
   covers:
     -
       title: Genome Assembly (3)
       materials: { link: "lectures/CMSC423_Assembly.pdf", insite: }
   readings:
     -
-      title: Compeau & Pevzner, Ch. 4, 162-187
+      title: Compeau & Pevzner, Ch. 3, 150-169
     -
       title: Compeau & Pevzner, playlist 4, videos 10-12
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNGdaeGpV8dPEeSm3AChb6L" }
     -
-      title: Rosalind prep. Ex 43-44
-      link: { url: "http://rosalind.info/classes/152/" }
+      title: Rosalind prep. Ex 22
+      link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 10/22
+  status: present
   covers:
     -
       title: "Dynamic Programming (1): Longest common subsequence"
@@ -279,13 +281,13 @@
       materials: { link: "http://nbviewer.ipython.org/url/cbcb.umd.edu/~hcorrada/CMSC423/lectures/WorldSeriesProbability.ipynb" }
   readings:
     -
-      title: Compeau & Pevzner, Ch. 5 189-219
+      title: Compeau & Pevzner, Ch. 5 223-253
     -
       title: Compeau & Pevzner, playlist 5, videos 1-5
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" }
     -
-      title: Rosalind prep. Ex 45-47
-      link: { url: "http://rosalind.info/classes/152/" }
+      title: Rosalind prep. Ex 23
+      link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 10/27
   covers:
@@ -317,6 +319,16 @@
       title: Compeau & Pevzner, playlist 5, video 8
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" }
 -
+  date: 11/2
+  status: present
+  covers:
+    -
+      title: THIS IS NOT A LECTURE DAY
+  workdue:
+    -
+      title: Rosalind Final Submissions 6 and 7
+      link: { url: "http://rosalind.info/classes/233" }
+-
   date: 11/3
   covers:
     -
@@ -333,9 +345,14 @@
       link: { url: "http://rosalind.info/classes/152/" }
 -
   date: 11/5
+  status: present
   covers:
     -
       title: "Recap and review Unit II"
+  workdue:
+    -
+      title: Project 3
+      link: { url: "projects/project_3.html", insite: }
 -
   date: 11/10
   covers:
