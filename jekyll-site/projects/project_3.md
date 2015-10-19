@@ -11,6 +11,10 @@ Submit your answers to Problems 6 and 7 in the
 [Rosalind final submission page](http://rosalind.info/classes/233/).
 **THESE ARE DUE ON MONDAY NOV. 2**
 
+### Code Grading (60 pts) ###
+
+Same guidelines as [Project 1](projects/projects_1.html).
+
 ## Assembly ##
 
 For this exercise you will use your code for string reconstruction using DeBruijn graphs to analyze genomes from the Ebola virus. Download data for this exercise at this URL:
@@ -24,13 +28,13 @@ Unzip this file in your working directory, you should see the following four fil
 
 `...AGACATCCGAACCATAGAGGATTC|CTCTATGTGCTGTGATG...`
 
-**Question 1** Assemble the ebola genome from the given reads and see if it matches any of the twenty genomes in the `ebola.fa` file. Write down the sequence name from the `ebola.fa` file that matches you assembled genome (it starts with 'KM')
+**Question 1** (15pts) Assemble the ebola genome from the given reads and see if it matches any of the twenty genomes in the `ebola.fa` file. Write down the sequence name from the `ebola.fa` file that matches you assembled genome (it starts with 'KM')
 
-**Question 2** How hard is it to assemble this genome from these simulated 101 bp reads? Provide the  distribution of in-degrees and out-degrees in the DeBruijn graph for this set of reads.
+**Question 2** (10 pts) How hard is it to assemble this genome from these simulated 101 bp reads? Provide the  distribution of in-degrees and out-degrees in the DeBruijn graph for this set of reads.
 
-**Question 3** Generate all 101-mers from this genome using your 'String Composition' (Problem 38 in the pre-lecture exercises). How repetitive is this genome when using 101 bp reads?
+**Question 3** (5 pts) Generate all 101-mers from this genome using your 'String Composition' (Problem 38 in the pre-lecture exercises). How repetitive is this genome when using 101 bp reads?
 
-**Question 4** What is the largest $$k$$ for which the $$k$$-mer composition of this genome contains at least 1 repeat.
+**Question 4** (10 pts) What is the largest $$k$$ for which the $$k$$-mer composition of this genome contains at least 1 repeat.
 
 ## How to submit ##
 
