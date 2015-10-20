@@ -303,10 +303,6 @@
     -
       title: Rosalind prep. Ex 48-49
       link: { url: "http://rosalind.info/classes/152/" }
-  workdue:
-    -
-      title: Homework 3
-      link: {url: "homeworks/homework_3.html", insite: }
 -
   date: 10/29
   covers:
