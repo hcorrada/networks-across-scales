@@ -1,25 +1,55 @@
 import sys
 
-class PairedLabel:
+# a class representing a node label
+# using paired kmers
+#
+# slots:
+#   _first: the first kmer in pair
+#   _second: the second kmer in pair
+class PairedKmers:
+    # initialize from string with format
+    # <first>|<second>
     def __init__(self, string):
         self._first, self._second = string.split("|")
 
+    # return string representation of label with format
+    # <first>|<second>
     def __repr__(self):
         return self._first + "|" + self._second
 
+    # return the first kmer in pair
     def first(self):
         return self._first
 
+    # return the second kmer in pair
     def second(self):
         return self._second
 
+# a class to represent nodes in a DeBruijn graph
+#
+# slots:
+#   _label: the paired k-1 mer label
+#   _targets: list of target nodes for outgoing edges
 class Node:
+    # intialize node with label and empty targets list
     def __init__(self, label):
         self._label = label
         self._targets = []
 
+    # get a string representation of node in format
+    # <label> -> <comma_separated_list_of_target_labels>
+    def __repr__(self):
+        target_labels = [target.label_string() for target in self._targets]
+        targets_string = ",".join(target_labels)
+        return self.label_string() + " -> " + targets_string
+
+    # return the node label
     def label(self):
         return self._label
+
+    # return node label as string
+    def label_string(self):
+        return self.label().__repr__()
 
 class DoubleList:
     def __init__(self, node, prev_item=None, next_item=None):
