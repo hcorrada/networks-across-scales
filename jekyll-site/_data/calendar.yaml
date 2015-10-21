@@ -296,24 +296,29 @@
       materials: { link: "lectures/CMSC423_Alignment2.pdf", insite: }
   readings:
     -
-      title: Compeau & Pevzner, Ch. 5 219-235
+      title: Compeau & Pevzner, Ch. 5 253-261, 282-287
     -
-      title: Compeau & Pevzner, playlist 5, videos 6-8
+      title: Compeau & Pevzner, playlist 5, videos 6-7
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" }
     -
-      title: Rosalind prep. Ex 48-49
-      link: { url: "http://rosalind.info/classes/152/" }
+      title: Rosalind prep. Ex 24
+      link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 10/29
   covers:
     -
-      title: "Dynamic Programming (3): Implementing dynamic programming alignment alogrithms (review)"
+      title: "Dynamic Programming (3): Implementing dynamic programming alignment algorithms"
+    -
+      title: "Affine Gap Penalties"
   readings:
     -
-      title: Compeau & Pevzner, Ch. 5 236-248
+      title: Compeau & Pevzner, Ch. 5 261-269
     -
       title: Compeau & Pevzner, playlist 5, video 8
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" }
+    -
+      title: Rosalind prep Ex. 25
+      link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 11/2
   status: present
@@ -328,17 +333,17 @@
   date: 11/3
   covers:
     -
-      title: "Dynamic Programming (4): Affine gap penalities and linear space alignment"
+      title: "Dynamic Programming (4): Linear space alignment and Multiple Sequence Alignment"
       materials: { link: "lectures/CMSC423_Alignment3.pdf", insite: }
   readings:
     -
-      title: Compeau & Pevzner, Ch. 5 236-248
+      title: Compeau & Pevzner, Ch. 5 269-282, 289-290
     -
       title: Compeau & Pevzner, playlist 5, videos 9 and 10
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" }
     -
-      title: Rosalind prep. Ex 50-51
-      link: { url: "http://rosalind.info/classes/152/" }
+      title: Rosalind prep. Ex 26
+      link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 11/5
   status: present
