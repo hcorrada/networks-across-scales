@@ -7,10 +7,19 @@ class PairedLabel:
     def __repr__(self):
         return self._first + "|" + self._second
 
+    def first(self):
+        return self._first
+
+    def second(self):
+        return self._second
+
 class Node:
     def __init__(self, label):
         self._label = label
         self._targets = []
+
+    def label(self):
+        return self._label
 
 class DoubleList:
     def __init__(self, node, prev_item=None, next_item=None):
@@ -25,8 +34,28 @@ class Path:
         self._head = None
         self._tail = None
 
+    @staticmethod
+    def _string_helper(kmers):
+        out = ""
+        for kmer in kmers:
+            if len(out) == 0:
+                out = kmer
+            else:
+                out += kmer[-1]
+        return out
+
     def get_string(self):
-        return None
+        prefix_string = self._string_helper([node.label().first() for node in self.nodes()])
+        suffix_string = self._string_helper([node.label().second() for node in self.nodes()])
+
+        n = len(prefix_string)
+        prefix_overlap = prefix_string[self._k + self._d:]
+        suffix_overlap = suffix_string[:n - self._k - self._d]
+
+        if prefix_overlap != suffix_overlap:
+            return None
+        else:
+            return prefix_string + suffix_string[-(self._k + self._d):]
 
     def is_empty(self):
         return self._head is None and self._tail is None
@@ -74,8 +103,6 @@ def readdat(filename):
 def main(filename):
     edges, k, d = readdat(filename)
     path = build_pairedend_path(edges, k, d)
-    print path
-
     string = path.get_string()
     print string
 
