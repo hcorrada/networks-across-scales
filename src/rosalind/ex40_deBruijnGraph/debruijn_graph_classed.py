@@ -93,25 +93,24 @@ class Graph:
             self.add_node(target_label)
         self[source_label].add_target(self[target_label])
 
-# make debruijn graph, i.e., k-mer overlap graph
+# build debruijn graph, i.e., k-mer overlap graph
+# from given set of kmers
+#
 # input:
 #   kmers: list of kmers
 # output:
-#   dictionary:
-#       keys: k-1 mers (edge source)
-#       values: k-mers (edge targets)
-def makeGraph(kmers):
+#   an object of class Graph
+def build_graph(kmers):
     # initalize graph object
     graph = Graph()
 
-    nkmers = len(kmers)
-    for i in xrange(nkmers):
-        kmer = kmers[i]
-        source = kmer[:-1]
-        target = kmer[1:]
+    # add an edge for each kmer in list
+    for kmer in kmers:
+        source_label = kmer[:-1]
+        target_label = kmer[1:]
 
         # use the add edge method in graph class
-        graph.add_edge(source, target)
+        graph.add_edge(source_label, target_label)
     return graph
 
 def main(filename):
@@ -120,6 +119,7 @@ def main(filename):
     graph = makeGraph(kmers)
     print graph
 
+# this is here so this plays nicely with ipython %loadpy magic
 if __name__ == '__main__' and 'get_ipython' not in dir():
     filename = sys.argv[1]
     main(filename)
