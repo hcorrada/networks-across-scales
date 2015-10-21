@@ -159,22 +159,17 @@ class Path:
         return " -> ".join([label.__repr__() for label in node_labels])
 
 # make a Path object from a list of edges
-def build_pairedend_path(edges, k, d):
+def build_pairedend_path(paired_kmers, k, d):
     # initialize path object
     path = Path(k, d)
 
-    # process edges in input
-    for edge in edges:
-        # extract source and target labels from edge
-        source_label, target_label = [PairedKmer(s.strip()) for s in edge.split("->")]
+    # create paired kmer objects from string
+    paired_kmers = map(PairedKmer, paired_kmers)
 
-        # if path is empty, source to the path
-        if path.is_empty():
-            source = Node(source_label)
-            path.append(source)
-        # append target node of edge to the path
-        target = Node(target_label)
-        path.append(target)
+    # append paired kmer objects to path object
+    for paired_kmer in paired_kmers:
+        node = Node(paired_kmer)
+        path.append(node)
 
     return path
 
@@ -182,14 +177,14 @@ def build_pairedend_path(edges, k, d):
 def readdat(filename):
     with open(filename, 'r') as f:
         k, d = [int(s) for s in f.readline().strip().split()]
-        edges = []
+        paired_kmers = []
         for line in f:
-            edges.append(line.strip())
-        return edges, k, d
+            paired_kmers.append(line.strip())
+        return paired_kmers, k, d
 
 def main(filename):
-    edges, k, d = readdat(filename)
-    path = build_pairedend_path(edges, k, d)
+    paired_kmers, k, d = readdat(filename)
+    path = build_pairedend_path(paired_kmers, k, d)
     string = path.get_string()
     print string
 

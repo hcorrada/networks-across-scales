@@ -116,7 +116,7 @@ def build_graph(kmers):
 def main(filename):
     k, text = readdat(filename)
     kmers = kmer_composition(k, text)
-    graph = makeGraph(kmers)
+    graph = build_graph(kmers)
     print graph
 
 # this is here so this plays nicely with ipython %loadpy magic
