@@ -81,13 +81,12 @@ class Graph:
     def node_degrees(self):
         degrees = defaultdict(lambda: [0,0])
         for node in self:
-            node_label = node.label().as_string()
+            node_label = node.label()
             # set out degree of node to the number of targets
             degrees[node_label][1] = node.num_targets()
 
             # increase the in degree of targets by 1
-            for target in node.targets():
-                target_label = target.label().as_string()
+            for target_label in node.target_labels():
                 degrees[target_label][0] += 1
         return degrees
 

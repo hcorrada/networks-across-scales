@@ -5,7 +5,6 @@ class DummyPath:
 def _find_start_end_nodes(g):
     # compute node degrees
     node_degrees = g.node_degrees()
-    #print node_degrees
 
     # check balance conditions
     start = end = None
