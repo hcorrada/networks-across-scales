@@ -252,7 +252,7 @@
       link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 10/20
-  status: present
+  status: done
   covers:
     -
       title: Genome Assembly (3)
@@ -268,11 +268,17 @@
       link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 10/22
-  status: present
+  status: done
   covers:
     -
       title: "Dynamic Programming (1)"
       materials: { link: "lectures/CMSC423_Alignment1.pdf", insite: }
+    -
+      title: "Win probability dynamic programming exercise"
+      materials: { link: "lectures/SerenaWilliams_WinProbability.html", insite: }
+    -
+      title: "IPython Notebook"
+      materials: { link: "lectures/SerenaWilliams_WinProbability.ipynb",insite: }
   readings:
     -
       title: Compeau & Pevzner, Ch. 5 223-253
@@ -304,6 +310,7 @@
       title: "Dynamic Programming (3): Implementing dynamic programming alignment algorithms"
     -
       title: "Affine Gap Penalties"
+      materials: { link: "lectures/CMSC423_Alignment2.pdf", insite: }
   readings:
     -
       title: Compeau & Pevzner, Ch. 5 261-269
