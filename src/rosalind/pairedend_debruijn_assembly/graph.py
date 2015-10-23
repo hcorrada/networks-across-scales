@@ -1,29 +1,35 @@
-import sys
+# a class representing a node label
+# using paired kmers
+#
+# slots:
+#   _first: the first kmer in pair
+#   _second: the second kmer in pair
+class PairedKmer:
+    # initialize from string with format
+    # <first>|<second>
+    def __init__(self, string):
+        self._first, self._second = string.split("|")
 
-# compute the kmer composition of string
-# input:
-#   k: k-mer length
-#   text: dna string
-# output:
-#   list of k-mers in text
-def kmer_composition(k, text):
-    kmers = []
-    for i in xrange(len(text) - k +1):
-        kmers.append(text[slice(i,i+k)])
-    kmers.sort()
-    return kmers
+    # return string representation of label with format
+    # <first>|<second>
+    def __repr__(self):
+        return self._first + "|" + self._second
 
-# read input from file
-# expected format:
-#   k
-#   text
-# output:
-#   tuple k, text
-def readdat(filename):
-    with open(filename, 'r') as f:
-        k = int(f.readline().strip())
-        test = f.readline().strip()
-    return k, test
+    # return the first kmer in pair
+    def first(self):
+        return self._first
+
+    # return the second kmer in pair
+    def second(self):
+        return self._second
+
+    # return the paired k-1 mer prefix
+    def prefix(self):
+        return PairedKmer(self._first[:-1], self._second[:-1])
+
+    # return the paired k-1 mer suffix
+    def suffix(self):
+        return PairedKmer(self._first[1:], self._second[1:])
 
 # a class to represent nodes in a debruijn graph
 # slots:
@@ -35,12 +41,21 @@ class Node:
         self._label = label
         self._targets = []
 
+    def label(self):
+        return self._label
+
+    def label_string(self):
+        return self._label.__repr__
+
+    def targets(self):
+        return self._targets
+
     # get a string representation of node
     # "label -> <comma_separated_list_of_target_labels>"
     def __repr__(self):
-        targets = [target._label for target in self._targets]
-        targets = ",".join(targets)
-        return self._label + " -> " + targets
+        target_labels = [target.label_string() for target in self.targets()]
+        targets_string = ",".join(targets)
+        return self._label + " -> " + targets_string
 
     # add target node to target list
     def add_target(self, target):
@@ -93,33 +108,22 @@ class Graph:
             self.add_node(target_label)
         self[source_label].add_target(self[target_label])
 
-# build debruijn graph, i.e., k-mer overlap graph
+# build paired debruijn graph, i.e., k,d-mer overlap graph
 # from given set of kmers
 #
 # input:
 #   kmers: list of kmers
 # output:
 #   an object of class Graph
-def build_graph(kmers):
+def build_graph(paired_kmers):
     # initalize graph object
     graph = Graph()
 
     # add an edge for each kmer in list
-    for kmer in kmers:
-        source_label = kmer[:-1]
-        target_label = kmer[1:]
+    for kmer in paired_kmers:
+        source_label = kmer.prefix()
+        target_label = kmer.suffix()
 
         # use the add edge method in graph class
         graph.add_edge(source_label, target_label)
     return graph
-
-def main(filename):
-    k, text = readdat(filename)
-    kmers = kmer_composition(k, text)
-    graph = build_graph(kmers)
-    print graph
-
-# this is here so this plays nicely with ipython %loadpy magic
-if __name__ == '__main__' and 'get_ipython' not in dir():
-    filename = sys.argv[1]
-    main(filename)
