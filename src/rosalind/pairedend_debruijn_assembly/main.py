@@ -1,4 +1,6 @@
 import sys
+import graph
+from pathfinder import find_eulerian_path
 
 # read input from file
 def readdat(filename):
@@ -12,17 +14,11 @@ def readdat(filename):
 def build_graph(paired_kmers):
     return None
 
-class DummyPath:
-    def get_string(self):
-        return None
-
-def find_eulerian_path(paired_kmers, k, d):
-    return DummyPath()
-
 def main(filename):
     paired_kmers, k, d = readdat(filename)
-    graph = build_graph(paired_kmers)
-    path = find_eulerian_path(paired_kmers, k, d)
+    g = graph.build_graph(paired_kmers)
+
+    path = find_eulerian_path(g)
     string = path.get_string()
     print string
 

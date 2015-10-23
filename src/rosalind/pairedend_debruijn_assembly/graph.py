@@ -7,8 +7,12 @@
 class PairedKmer:
     # initialize from string with format
     # <first>|<second>
-    def __init__(self, string):
-        self._first, self._second = string.split("|")
+    def __init__(self, string, second=None):
+        if second is None:
+            self._first, self._second = string.split("|")
+        else:
+            self._first = string
+            self._second = second
 
     # return string representation of label with format
     # <first>|<second>
@@ -45,7 +49,7 @@ class Node:
         return self._label
 
     def label_string(self):
-        return self._label.__repr__
+        return self._label.__repr__()
 
     def targets(self):
         return self._targets
@@ -54,8 +58,8 @@ class Node:
     # "label -> <comma_separated_list_of_target_labels>"
     def __repr__(self):
         target_labels = [target.label_string() for target in self.targets()]
-        targets_string = ",".join(targets)
-        return self._label + " -> " + targets_string
+        targets_string = ",".join(target_labels)
+        return self.label_string() + " -> " + targets_string
 
     # add target node to target list
     def add_target(self, target):
@@ -121,6 +125,7 @@ def build_graph(paired_kmers):
 
     # add an edge for each kmer in list
     for kmer in paired_kmers:
+        kmer = PairedKmer(kmer)
         source_label = kmer.prefix()
         target_label = kmer.suffix()
 
