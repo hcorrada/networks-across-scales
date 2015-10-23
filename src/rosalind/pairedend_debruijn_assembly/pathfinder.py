@@ -9,8 +9,8 @@ def _find_start_end_nodes(g):
 
     # check balance conditions
     start = end = None
-    for node in g.nodes():
-        in_degree, out_degree = node_degrees[node]
+    for node in g:
+        in_degree, out_degree = node_degrees[node.label()]
 
         if in_degree == out_degree:
             continue
@@ -30,11 +30,11 @@ def _find_start_end_nodes(g):
 
 def find_eulerian_path(g):
     # find start and end nodes (also checks balance conditions)
-    #result = _find_start_end_nodes(g)
-    #if result is None:
-    #    return None
+    result = _find_start_end_nodes(g)
+    if result is None:
+        return None
 
-    #start, end = result
+    start, end = result
 
     # add edge to connect start and end node
 
