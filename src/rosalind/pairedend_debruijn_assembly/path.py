@@ -7,6 +7,7 @@ class DoubleList:
         self._prev_item = prev_item
         self._next_item = next_item
 
+
 # class representing a path
 #
 # slots:
@@ -17,9 +18,7 @@ class DoubleList:
 class Path:
     # initialize given k-mer size and gap
     # set head and tail to None
-    def __init__(self, k, d):
-        self._k = k
-        self._d = d
+    def __init__(self):
         self._head = None
         self._tail = None
 
@@ -49,7 +48,7 @@ class Path:
     # get string spelled out by path of paired k-mers
     # output:
     #   string spelled out by paired-kmers in path
-    def get_string(self):
+    def get_string(self, k, d):
         # get string spelled out by first k-mer in each pair
         prefix_string = self._string_helper([node.label().first() for node in self.nodes()])
 
@@ -59,15 +58,15 @@ class Path:
         # check the overlap between prefix and suffix strings
         # is valid
         n = len(prefix_string)
-        prefix_overlap = prefix_string[self._k + self._d:]
-        suffix_overlap = suffix_string[:n - self._k - self._d]
+        prefix_overlap = prefix_string[k + d:]
+        suffix_overlap = suffix_string[:-(k + d)]
 
         if prefix_overlap != suffix_overlap:
             # invalid overlap, no string is spelled out by this path
             return None
         else:
             # valid overlap, return the string
-            return prefix_string + suffix_string[-(self._k + self._d):]
+            return prefix_string + suffix_string[-(k + d):]
 
     # return true if path is empty
     def is_empty(self):
@@ -93,12 +92,31 @@ class Path:
             # make the new item the tail of the list
             self._tail = item
 
+    def find_item(self, node):
+        cur_item = self._head
+        while cur_item is not None:
+            if cur_item._node.label() == node.label():
+                return cur_item
+            cur_item = cur_item._next_item
+        return None
+
     def stitch(self, item, other):
         if self.is_empty():
             return other
+        if item is None:
+            return self
 
-        for node in other.nodes():
-            self.append(node)            
+        # get reference to previous item on this path
+        prev_item = item._prev_item
+
+        # stick head of other path after previous item on this path
+        prev_item._next_item = other._head
+        other._head._prev_item = prev_item
+
+        # put tail of other path before this item
+        other._tail._next_item = item
+        item._prev_item = other._tail
+
         return self
 
     # a generator for nodes in the path
@@ -107,6 +125,8 @@ class Path:
         while current is not None:
             yield current._node
             current = current._next_item
+            if current == self._head:
+                current = None
 
     # a string representation of the path
     def __repr__(self):
