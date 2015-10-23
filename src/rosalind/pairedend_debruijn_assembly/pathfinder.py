@@ -36,7 +36,8 @@ def find_eulerian_path(g):
     start, end = result
 
     # add edge to connect start and end node
-
+    g.add_edge(end.label(), start.label())
+    
     # get eulerian cycle
 
     # remove extra edge
