@@ -93,6 +93,14 @@ class Path:
             # make the new item the tail of the list
             self._tail = item
 
+    def stitch(self, item, other):
+        if self.is_empty():
+            return other
+
+        for node in other.nodes():
+            self.append(node)            
+        return self
+
     # a generator for nodes in the path
     def nodes(self):
         current = self._head
