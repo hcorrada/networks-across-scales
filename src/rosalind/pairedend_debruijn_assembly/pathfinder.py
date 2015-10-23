@@ -27,6 +27,9 @@ def _find_start_end_nodes(g):
         return None
     return start, end
 
+def _find_eulerian_cycle(g):
+    return DummyPath()
+
 def find_eulerian_path(g):
     # find start and end nodes (also checks balance conditions)
     result = _find_start_end_nodes(g)
@@ -37,10 +40,11 @@ def find_eulerian_path(g):
 
     # add edge to connect start and end node
     g.add_edge(end.label(), start.label())
-    
+
     # get eulerian cycle
+    path = _find_eulerian_cycle(g)
 
     # remove extra edge
 
     # return path
-    return DummyPath()
+    return path
