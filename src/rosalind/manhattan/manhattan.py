@@ -17,7 +17,9 @@ def manhattan(n, m, down_mat, right_mat):
         for j in xrange(1, m+1):
             val_down = dp_table[i-1,j] + down_mat[i-1,j]
             val_right = dp_table[i, j-1] + right_mat[i,j-1]
-            dp_table[i,j] = np.maximum(val_down, val_right)
+            choices = np.array([val_down, val_right])
+            choice = np.argmax(choices)
+            dp_table[i,j] = choices[choice]
 
     return dp_table[n, m]
 
