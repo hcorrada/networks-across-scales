@@ -46,6 +46,7 @@ class CycleFinder:
         while self.is_available(cur_node):
             path.append(cur_node)
             cur_node = self.next_target(cur_node)
+        path.append(cur_node)
         return path
 
     def run(self):
@@ -60,7 +61,7 @@ class CycleFinder:
 
             item = cycle.find_item(node)
             print item
-            
+
             new_cycle = self.make_a_cycle(node)
             print new_cycle
             cycle = cycle.stitch(item, new_cycle)

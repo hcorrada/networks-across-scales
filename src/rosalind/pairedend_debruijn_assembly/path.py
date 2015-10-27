@@ -113,9 +113,12 @@ class Path:
         prev_item._next_item = other._head
         other._head._prev_item = prev_item
 
-        # put tail of other path before this item
-        other._tail._next_item = item
-        item._prev_item = other._tail
+        # get reference to next item on this path
+        next_item = item._next_item
+
+        # put tail of other path before next item on this path
+        next_item._prev_item = other._tail
+        other._tail._next_item = next_item
 
         return self
 
@@ -124,11 +127,12 @@ class Path:
         current = self._head
         while current is not None:
             yield current._node
-            current = current._next_item
-            if current == self._head:
+            if current == self._tail:
                 current = None
+            else:
+                current = current._next_item
 
     # a string representation of the path
     def __repr__(self):
-        node_labels = [node._label for node in self.nodes()]
-        return " -> ".join([label.__repr__() for label in node_labels])
+        node_labels = [node.label().as_string() for node in self.nodes()]
+        return " -> ".join(node_labels)
