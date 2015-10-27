@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 # class representing item in a doubly-linked list
 # we use this for path representation as a doubly-linked
 # list of nodes
@@ -21,6 +23,7 @@ class Path:
     def __init__(self):
         self._head = None
         self._tail = None
+        self._item_map = defaultdict(list)
 
     # we use this helper method when reconstructing a string
     # from a given path. Given a list of kmers, constructs a string
@@ -73,9 +76,12 @@ class Path:
         return self._head is None and self._tail is None
 
     # append node to the tail of the list
+    # add node to item map
     def append(self, node):
         # create a new item
         item = DoubleList(node)
+        self._item_map[node.label()].append(item)
+
         if self.is_empty():
             # make new item head and tail of list
             self._head = self._tail = item
@@ -93,12 +99,11 @@ class Path:
             self._tail = item
 
     def find_item(self, node):
-        cur_item = self._head
-        while cur_item is not None:
-            if cur_item._node.label() == node.label():
-                return cur_item
-            cur_item = cur_item._next_item
-        return None
+        item_map = self._item_map[node.label()]
+        if item_map is None or len(item_map) == 0:
+            return None
+        else:
+            return item_map[0]
 
     def stitch(self, item, other):
         if self.is_empty():
@@ -120,6 +125,9 @@ class Path:
         next_item._prev_item = other._tail
         other._tail._next_item = next_item
 
+        # merge item maps
+        for label, item_list in other._item_map.items():
+            self._item_map[label] += item_list
         return self
 
     # a generator for nodes in the path
