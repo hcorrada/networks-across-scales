@@ -51,10 +51,10 @@ class CycleFinder:
 
     def run(self):
         cycle = Path()
+        node_iter = iter(self._graph)
+        node = node_iter.next()
 
-        for node in self._graph:
-            if not self.is_available(node):
-                continue
+        while self.is_available(node):
 
             print "next node:"
             print node
@@ -68,4 +68,5 @@ class CycleFinder:
             print cycle
             print
 
+            node = node_iter.next()
         return cycle
