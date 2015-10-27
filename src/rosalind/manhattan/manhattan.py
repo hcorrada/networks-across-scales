@@ -2,7 +2,23 @@ import sys
 import numpy as np
 
 def manhattan(n, m, down_mat, right_mat):
-    return None
+    dp_table = np.zeros((n+1, m+1))
+    # initialize top row
+    for j in xrange(1, m+1):
+        dp_table[0,j] = dp_table[0,j-1] + right_mat[0,j-1]
+
+    # intialize left column
+    for i in xrange(1, n+1):
+        dp_table[i,0] = dp_table[i-1, 0] + down_mat[i-1, 0]
+
+    # fill-in the rest of the table, row by row
+    for i in xrange(1, n+1):
+        for j in xrange(i, m+1):
+            val_down = dp_table[i-1,j] + down_mat[i-1,j-1]
+            val_right = dp_table[i, j-1] + right_mat[i-1,j-1]
+            dp_table[i,j] = np.pmax(val_down, val_right)
+
+    return dp_table[n, m]
 
 def readdat(filename):
     with open(filename, 'r') as f:
@@ -27,7 +43,7 @@ def main(filename):
     print n, m
     print down_mat
     print right_mat
-    
+
     path_length = manhattan(n, m, down_mat, right_mat)
     print path_length
 
