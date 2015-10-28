@@ -59,15 +59,8 @@ def find_eulerian_path(g):
 
     start, end = result
 
-    print "start node"
-    print start
-
-    print "end node"
-    print end
-
     # add edge to connect start and end node
     g.add_edge(end.label(), start.label())
-    print g
 
     # get eulerian cycle
     cycle_finder = CycleFinder(g)

@@ -17,10 +17,8 @@ def readdat(filename):
 def main(filename):
     paired_kmers, k, d = readdat(filename)
     g = build_graph(paired_kmers)
-    print g
 
     path = find_eulerian_path(g)
-    print path
 
     if path is None:
         return None
