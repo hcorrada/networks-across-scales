@@ -1,4 +1,5 @@
 from cycle_finder import CycleFinder
+from cycle_generator import CycleGenerator
 
 # find nodes corresponding to start and end of the path
 # also checks for balancing conditions to find
@@ -99,14 +100,18 @@ def get_path_from_cycle(cycle, start, end):
 
     return cycle
 
-# finds an Eulerian path, if it exists, in the given
-# graph
+# preprocess graph before findign Eulerian cycle
+#
+# 1. checks balance conditions
+# 2. finds start and end nodes
+# 3. adds end->start edge
 #
 # input:
 #   g: object of class Graph
 # returns:
-#   object of class Path
-def find_eulerian_path(g):
+#   tuple if graph satisfies conditions: new_graph, start_node, end_node
+#   None otherwise
+def _preprocess_graph(g):
     # find start and end nodes
     # if balance conditions for graph are not satisfied
     # this will return None
@@ -121,6 +126,18 @@ def find_eulerian_path(g):
 
     # add edge to connect start and end nodes
     g.add_edge(end.label(), start.label())
+    return g, start, end
+
+# finds an Eulerian path, if it exists, in the given
+# graph
+#
+# input:
+#   g: object of class Graph
+# returns:
+#   object of class Path
+def find_eulerian_path(g):
+    # preprocess graph
+    g, start, end = _preprocess_graph(g)
 
     # find Eulerian cycle
     cycle_finder = CycleFinder(g)
@@ -132,3 +149,22 @@ def find_eulerian_path(g):
 
     # return path
     return path
+
+# find valid eulerian path given graph
+#
+# input:
+#   g: object of class Graph
+#   validity_func: function Path->boolean that checks if generated path is valid
+def find_valid_eulerian_path(g, validity_func):
+    g, start, end = _preprocess_graph(g)
+
+    # generate all Eulerian cycles
+    cycle_generator = CycleGenerator(g)
+    for cycle in cycle_generator:
+        # get the next candidate cycle, turn into path
+        path = get_path_from_cycle(cycle, start, end)
+        if validity_func(path):
+            # this is a valid path, so return it
+            return path
+    # couldn't find a valid path, so return None
+    return None

@@ -30,6 +30,9 @@ class Node:
     def add_target(self, target_label):
         self.target_labels().append(target_label)
 
+    def remove_target(self, target_label):
+        self.target_labels().remove(target_label)
+
     # return the number of targets for this node
     def num_targets(self):
         return len(self.target_labels())
@@ -78,6 +81,9 @@ class Graph:
             self.add_node(target_label)
         self[source_label].add_target(target_label)
 
+    def remove_edge(self, source_label, target_label):
+        self[source_label].remove_target(target_label)
+
     # compute node degrees
     # return a dictionary with node labels as keys
     # values are tuples (in_degree, out_degree)
@@ -92,6 +98,15 @@ class Graph:
             for target_label in node.target_labels():
                 degrees[target_label][0] += 1
         return degrees
+
+    # returns Nodes to precede given Node
+    def get_ancestors(self, node):
+        return [other_node for other_node in self if node.label() in other_node.target_labels()]
+
+    # return Nodes preceeded by given Node
+    def get_successors(self, node):
+        return [self[target_label] for target_label in node.target_labels()]
+
 
 # build paired debruijn graph, i.e., k,d-mer overlap graph
 # from given set of kmers
