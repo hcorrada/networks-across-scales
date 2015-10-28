@@ -1,3 +1,5 @@
+from cycle_finder import CycleFinder
+
 def _find_start_end_nodes(g):
     # compute node degrees
     node_degrees = g.node_degrees()
@@ -24,18 +26,32 @@ def _find_start_end_nodes(g):
     return start, end
 
 def get_path_from_cycle(cycle, start, end):
-    current_item = cycle._head
-    next_item = current_item._next_item
+    end_items = cycle.find_all_items(end)
 
-    while current_item._node != end and next_item._node != start:
-        current_item = next_item
-        next_item = current_item._next_item
+    start_item = None
+    end_item = None
 
-    cycle._head = next_item
-    cycle._tail = current_item
+    for item in end_items:
+        end_item = item
+        start_item = item._next_item
+
+        if start_item._node == start:
+            break
+        else:
+            start_item = None
+    assert(start_item is not None)
+    assert(end_item is not None)
+
+    cycle._tail._next_item = cycle._head._next_item
+
+    cycle._head = start_item
+    cycle._tail = end_item
+    cycle._head._prev_item = None
+    cycle._tail._next_item = None
+
     return cycle
 
-def find_eulerian_path(g, k, d):
+def find_eulerian_path(g):
     # find start and end nodes (also checks balance conditions)
     result = _find_start_end_nodes(g)
     if result is None:
@@ -43,12 +59,19 @@ def find_eulerian_path(g, k, d):
 
     start, end = result
 
+    print "start node"
+    print start
+
+    print "end node"
+    print end
+
     # add edge to connect start and end node
     g.add_edge(end.label(), start.label())
+    print g
 
     # get eulerian cycle
     cycle_finder = CycleFinder(g)
-    cycle = cycle_finder.find_cycle()
+    cycle = cycle_finder.run()
 
     # remove extra edge
     path = get_path_from_cycle(cycle, start, end)

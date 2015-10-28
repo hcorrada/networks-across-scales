@@ -19,9 +19,9 @@ def main(filename):
     g = graph.build_graph(paired_kmers)
     print g
 
-    path = find_eulerian_path(g, k, d)
+    path = find_eulerian_path(g)
     print path
-    
+
     if path is None:
         return None
 

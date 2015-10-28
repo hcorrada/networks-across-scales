@@ -62,14 +62,9 @@ class CycleFinder:
 
         while len(self._available_nodes) > 0:
             node = self._available_nodes.pop()
-            #print "next node"
-            #print node
 
             item = cycle.find_item(node)
             new_cycle = self.make_a_cycle(node)
-            #print new_cycle
 
             cycle = cycle.stitch(item, new_cycle)
-            #print cycle
-            #print
         return cycle

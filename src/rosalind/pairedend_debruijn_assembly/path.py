@@ -105,6 +105,9 @@ class Path:
         else:
             return item_map[0]
 
+    def find_all_items(self, node):
+        return self._item_map[node.label()]
+
     def stitch(self, item, other):
         if self.is_empty():
             return other
