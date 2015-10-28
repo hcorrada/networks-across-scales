@@ -11,9 +11,11 @@ class Node:
         self._label = label
         self._target_labels = []
 
+    # return label for this node
     def label(self):
         return self._label
 
+    # return list of target labels for this node
     def target_labels(self):
         return self._target_labels
 
@@ -34,7 +36,8 @@ class Node:
 
 # a class representing a Debruijn graph
 # slots:
-#   _nodes: a dictionary, keys are node labels, values are Node objects
+#   _nodes: a dictionary, keys are node labels,
+#               values are objects of class Node
 class Graph:
     # intialize with empty directory
     def __init__(self):
@@ -44,7 +47,7 @@ class Graph:
     def __contains__(self, label):
         return label in self._nodes
 
-    # return the node corresponding to given label
+    # return the node object corresponding to given label
     def __getitem__(self, label):
         return self._nodes[label]
 
@@ -54,7 +57,6 @@ class Graph:
 
     # string representation of graph
     # calls __repr__ method for each node,
-    # sorts resulting strings
     # returns newline separated strings
     def __repr__(self):
         nodes = [node.__repr__() for node in self]
@@ -62,7 +64,8 @@ class Graph:
 
     # add node to graph with given label
     # does not check if node with given label is already
-    # in the graph
+    # in the graph, that has to be done elsewhere
+    # creates a new object of class Node
     def add_node(self, label):
         self._nodes[label] = Node(label)
 
@@ -82,10 +85,10 @@ class Graph:
         degrees = defaultdict(lambda: [0,0])
         for node in self:
             node_label = node.label()
-            # set out degree of node to the number of targets
+            # set out-degree of node to the number of targets
             degrees[node_label][1] = node.num_targets()
 
-            # increase the in degree of targets by 1
+            # increase the in-degree of targets by 1
             for target_label in node.target_labels():
                 degrees[target_label][0] += 1
         return degrees

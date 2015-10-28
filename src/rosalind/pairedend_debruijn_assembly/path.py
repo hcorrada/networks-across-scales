@@ -18,13 +18,13 @@ class DoubleList:
 #   _head: first item in doubly-linked list
 #   _tail: last item in doubly_linked list
 class Path:
-    # initialize given k-mer size and gap
     # set head and tail to None
+    # and create an empty node->item map
     def __init__(self):
         self._head = None
         self._tail = None
         self._item_map = defaultdict(list)
-    
+
     # return true if path is empty
     def is_empty(self):
         return self._head is None and self._tail is None
@@ -32,7 +32,8 @@ class Path:
     # append node to the tail of the list
     # add node to item map
     def append(self, node):
-        # create a new item
+        # create a new item and add it
+        # to the node->item map
         item = DoubleList(node)
         self._item_map[node.label()].append(item)
 
@@ -52,26 +53,48 @@ class Path:
             # make the new item the tail of the list
             self._tail = item
 
+    # find item in path linked list containing given node
     def find_item(self, node):
+        # grab the list of items for the node
         item_map = self._item_map[node.label()]
         if item_map is None or len(item_map) == 0:
             return None
         else:
+            # return the first item in the list
             return item_map[0]
 
+    # return list of items in path containing
+    # given node
     def find_all_items(self, node):
         return self._item_map[node.label()]
 
+    # extend this path with other path
+    # at given item
+    #
+    # starting state:
+    #   self: self.head <-> ... <-> prev <-> item <-> next ... <-> self.tail
+    #   other: other.head <-> ... <-> other.tail
+    #
+    # after stitching we will have
+    #   self.head <-> ... <-> prev <-> other.head <-> ... <-> other.tail <-> next <-> ... <-> self.tail
     def stitch(self, item, other):
+        # if this path is empty, just
+        # return the other path
         if self.is_empty():
             return other
+
+        # if there is no place to stich the other path
+        # just return this path
         if item is None:
             return self
 
-        # get reference to previous item on this path
+        # get reference to item preceding stitch item on this path
         prev_item = item._prev_item
 
-        # stick head of other path after previous item on this path
+        # stick head of other path after preceding item on this path
+        # state after this operation
+        #   a) self.head <-> ... <-> prev <-> other.head <-> ... <-> other.tail
+        #   b) item <-> next <-> ... <-> self.tail
         prev_item._next_item = other._head
         other._head._prev_item = prev_item
 
@@ -79,6 +102,7 @@ class Path:
         next_item = item._next_item
 
         # put tail of other path before next item on this path
+        # we get final state after this operation
         next_item._prev_item = other._tail
         other._tail._next_item = next_item
 
@@ -92,6 +116,8 @@ class Path:
         current = self._head
         while current is not None:
             yield current._node
+            # make sure you stop after the tail
+            # to avoid inifite loop
             if current == self._tail:
                 current = None
             else:
