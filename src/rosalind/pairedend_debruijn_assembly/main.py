@@ -1,6 +1,8 @@
 import sys
-import graph
-from pathfinder import find_eulerian_path
+
+from graph import build_graph
+from path_finder import find_eulerian_path
+from string_builder import build_string
 
 # read input from file
 def readdat(filename):
@@ -11,12 +13,10 @@ def readdat(filename):
             paired_kmers.append(line.strip())
         return paired_kmers, k, d
 
-def build_graph(paired_kmers):
-    return None
 
 def main(filename):
     paired_kmers, k, d = readdat(filename)
-    g = graph.build_graph(paired_kmers)
+    g = build_graph(paired_kmers)
     print g
 
     path = find_eulerian_path(g)
@@ -25,7 +25,7 @@ def main(filename):
     if path is None:
         return None
 
-    string = path.get_string()
+    string = build_string(path, k, d)
     print string
 
 if __name__ == '__main__' and 'get_ipython' not in dir():

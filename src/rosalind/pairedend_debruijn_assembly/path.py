@@ -24,53 +24,7 @@ class Path:
         self._head = None
         self._tail = None
         self._item_map = defaultdict(list)
-
-    # we use this helper method when reconstructing a string
-    # from a given path. Given a list of kmers, constructs a string
-    # by taking the first k-mer in the list and appending the last
-    # character of remaining k-mers in succession
-    #
-    # input:
-    #   kmers: a list of kmers
-    #
-    # output:
-    #   string spelled out by kmer list
-    @staticmethod
-    def _string_helper(kmers):
-        out = ""
-        for kmer in kmers:
-            # use the complete kmer if it's the first
-            # i.e., when output string is empty
-            if len(out) == 0:
-                out = kmer
-            else:
-                # otherwise append last character of kmer
-                out += kmer[-1]
-        return out
-
-    # get string spelled out by path of paired k-mers
-    # output:
-    #   string spelled out by paired-kmers in path
-    def get_string(self, k, d):
-        # get string spelled out by first k-mer in each pair
-        prefix_string = self._string_helper([node.label().first() for node in self.nodes()])
-
-        # get string spelled out by second k-mer in each pair
-        suffix_string = self._string_helper([node.label().second() for node in self.nodes()])
-
-        # check the overlap between prefix and suffix strings
-        # is valid
-        n = len(prefix_string)
-        prefix_overlap = prefix_string[k + d:]
-        suffix_overlap = suffix_string[:-(k + d)]
-
-        if prefix_overlap != suffix_overlap:
-            # invalid overlap, no string is spelled out by this path
-            return None
-        else:
-            # valid overlap, return the string
-            return prefix_string + suffix_string[-(k + d):]
-
+    
     # return true if path is empty
     def is_empty(self):
         return self._head is None and self._tail is None

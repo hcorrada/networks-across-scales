@@ -1,6 +1,6 @@
 from graph import Graph
 from intlabels import IntLabel
-from pathfinder import find_eulerian_path
+from path_finder import find_eulerian_path
 
 g = Graph()
 sources=[0,1,2,3,3,6,6,7,8,9]
