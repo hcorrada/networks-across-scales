@@ -26,6 +26,7 @@ class CycleFinder:
 
         self._target_iterators = dict([(node.label(), ProbedIter(node.target_labels())) for node in self._graph])
         self._cycle_items = defaultdict(list)
+        self._available_nodes = set()
 
     def next_target(self, node):
         it = self._target_iterators[node.label()]
@@ -45,28 +46,30 @@ class CycleFinder:
         cur_node = start_node
         while self.is_available(cur_node):
             path.append(cur_node)
-            cur_node = self.next_target(cur_node)
+            next_node = self.next_target(cur_node)
+            if self.is_available(cur_node):
+                self._available_nodes.add(cur_node)
+            elif cur_node in self._available_nodes:
+                self._available_nodes.discard(cur_node)
+            cur_node = next_node
         path.append(cur_node)
         return path
 
     def run(self):
         cycle = Path()
-        node_iter = iter(self._graph)
-        node = node_iter.next()
+        node = iter(self._graph).next()
+        self._available_nodes.add(node)
 
-        while self.is_available(node):
-
-            print "next node:"
-            print node
+        while len(self._available_nodes) > 0:
+            node = self._available_nodes.pop()
+            #print "next node"
+            #print node
 
             item = cycle.find_item(node)
-            print item
-
             new_cycle = self.make_a_cycle(node)
-            print new_cycle
-            cycle = cycle.stitch(item, new_cycle)
-            print cycle
-            print
+            #print new_cycle
 
-            node = node_iter.next()
+            cycle = cycle.stitch(item, new_cycle)
+            #print cycle
+            #print
         return cycle
