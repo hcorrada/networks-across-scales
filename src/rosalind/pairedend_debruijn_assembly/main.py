@@ -1,7 +1,7 @@
 import sys
 
 from graph import build_graph
-from path_finder import find_eulerian_path
+from path_finder import find_eulerian_path, find_valid_eulerian_path
 from string_builder import build_string
 
 # read input from file
@@ -78,4 +78,4 @@ def all_paths(filename):
 # this is here to play nicely with ipython
 if __name__ == '__main__' and 'get_ipython' not in dir():
     filename = sys.argv[1]
-    single_path(filename)
+    all_paths(filename)
