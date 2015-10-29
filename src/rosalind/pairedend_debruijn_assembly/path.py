@@ -29,6 +29,12 @@ class Path:
     def is_empty(self):
         return self._head is None and self._tail is None
 
+    def num_edges(self):
+        num_nodes = 0
+        for item_list in self._item_map.itervalues():
+            num_nodes += len(item_list)
+        return num_nodes - 1
+
     # append node to the tail of the list
     # add node to item map
     def append(self, node):

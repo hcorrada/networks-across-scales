@@ -17,8 +17,8 @@ class SimpleGraphGenerator:
                 yield next_graph
             else:
                 for bypass_graph in self.get_bypass_graphs(next_graph, node_to_bypass):
-                    if self.is_connected(bypass_graph):
-                        self._all_graphs.append(bypass_graph)
+                    # check connectedness later
+                    self._all_graphs.append(bypass_graph)
 
     def is_connected(self, graph):
         return True
@@ -70,7 +70,12 @@ class SimpleGraphGenerator:
 class CycleGenerator:
     def __init__(self, g):
         self._it = SimpleGraphGenerator(g)
+        self._num_edges = g.num_edges()
 
     def __iter__(self):
         for graph in self._it:
-            yield CycleFinder(graph).run()
+            cycle = CycleFinder(graph).run()
+            # check cycle uses all edges
+#            print cycle
+            if cycle.num_edges() == self._num_edges:
+                yield cycle

@@ -1,6 +1,7 @@
 from graph import Graph
 from intlabels import IntLabel
 from cycle_generator import SimpleGraphGenerator, CycleGenerator
+from cycle_finder import CycleFinder
 
 g = Graph()
 sources=range(10) + [2,6]
@@ -19,19 +20,21 @@ print "node to bypass"
 print node_to_bypass.debug_print()
 print
 
-for new_graph in graph_generator.get_bypass_graphs(g, node_to_bypass):
-    print "next graph"
-    print new_graph.debug_print()
-    print
+new_graph = graph_generator.get_bypass_graphs(g, node_to_bypass).next()
+print "next graph"
+print new_graph.debug_print()
+print CycleFinder(new_graph).run()
 
 
 graph_generator = SimpleGraphGenerator(g)
 for graph in graph_generator:
     print "next graph:"
     print graph.debug_print()
+    cycle = CycleFinder(graph).run()
+    print cycle
     print
 
 cycle_generator = CycleGenerator(g)
 for cycle in cycle_generator:
-    print "next cycle"
-    print cycle
+   print "next cycle"
+   print cycle

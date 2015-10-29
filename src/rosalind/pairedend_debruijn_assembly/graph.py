@@ -135,6 +135,13 @@ class Graph:
                 degrees[target_id][0] += 1
         return degrees
 
+    def num_edges(self):
+        node_degrees = self.node_degrees()
+        num_edges = 0
+        for _, out_degree in node_degrees.itervalues():
+            num_edges += out_degree
+        return num_edges
+        
     # returns Nodes to precede given Node
     def get_ancestors(self, node):
         return [other_node for other_node in self if node.id() in other_node.target_ids()]
