@@ -13,10 +13,9 @@ class DoubleList:
 # class representing a path
 #
 # slots:
-#   _k: length of each part of input paired k-mers
-#   _d: gap in paired k-mers
 #   _head: first item in doubly-linked list
 #   _tail: last item in doubly_linked list
+#   _item_map: mapping from node id to item in path
 class Path:
     # set head and tail to None
     # and create an empty node->item map
@@ -29,10 +28,13 @@ class Path:
     def is_empty(self):
         return self._head is None and self._tail is None
 
+    # return the number of edges in the path
     def num_edges(self):
+        # count the number of items
         num_nodes = 0
         for item_list in self._item_map.itervalues():
             num_nodes += len(item_list)
+        # number of edges is the number of items minus 1
         return num_nodes - 1
 
     # append node to the tail of the list
@@ -59,7 +61,7 @@ class Path:
             # make the new item the tail of the list
             self._tail = item
 
-    # find item in path linked list containing given node
+    # find arbitrary item in path linked list containing given node
     def find_item(self, node):
         # grab the list of items for the node
         item_map = self._item_map[node.id()]
@@ -117,7 +119,7 @@ class Path:
             self._item_map[label] += item_list
         return self
 
-    # a generator for nodes in the path
+    # a generator for nodes along the path
     def nodes(self):
         current = self._head
         while current is not None:

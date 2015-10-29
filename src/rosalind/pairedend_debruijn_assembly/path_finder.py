@@ -2,7 +2,7 @@ from cycle_finder import CycleFinder
 from cycle_generator import CycleGenerator
 
 # find nodes corresponding to start and end of the path
-# also checks for balancing conditions to find
+# also checks for nearly balanced conditions to find
 # an Eulerian path
 #
 # the start node must have in-degree = out-degree - 1
@@ -12,7 +12,7 @@ from cycle_generator import CycleGenerator
 # input:
 #   g: object of class Graph
 # returns:
-#   tuple of nodes: start, end if conditions are satisfied
+#   tuple of nodes: start, end (if conditions are satisfied)
 #   otherwise returns None
 def _find_start_end_nodes(g):
     # compute node degrees
@@ -23,16 +23,18 @@ def _find_start_end_nodes(g):
     for node in g:
         in_degree, out_degree = node_degrees[node.id()]
 
-        # node is balanced
+        # check if node is balanced
         if in_degree == out_degree:
             continue
 
-        # this is the first end node we find
+        # check if this could be an end node and we
+        # haven't found another end node yet
         if in_degree == out_degree + 1 and end is None:
             end = node
             continue
 
-        # this is the first start node we find
+        # check if this could be a start node and we
+        # haven't found another start node yet
         if in_degree == out_degree - 1 and start is None:
             start = node
             continue
@@ -100,7 +102,7 @@ def get_path_from_cycle(cycle, start, end):
 
     return cycle
 
-# preprocess graph before findign Eulerian cycle
+# preprocess graph before finding Eulerian cycle
 #
 # 1. checks balance conditions
 # 2. finds start and end nodes
@@ -159,8 +161,7 @@ def find_valid_eulerian_path(g, validity_func):
     g, start, end = _preprocess_graph(g)
 
     # generate all Eulerian cycles
-    cycle_generator = CycleGenerator(g)
-    for cycle in cycle_generator:
+    for cycle in CycleGenerator(g):
         # get the next candidate cycle, turn into path
         path = get_path_from_cycle(cycle, start, end)
         if validity_func(path):

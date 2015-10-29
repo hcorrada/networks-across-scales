@@ -27,6 +27,7 @@ class PairedKmer:
     def __hash__(self):
         return hash(self.as_string())
 
+    # equality based on string equality
     def __eq__(self, other):
         return self.as_string() == other.as_string()
 
