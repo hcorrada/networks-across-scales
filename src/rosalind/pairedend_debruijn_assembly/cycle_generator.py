@@ -1,5 +1,6 @@
 from collections import deque
 from copy import deepcopy
+from cycle_finder import CycleFinder
 
 class SimpleGraphGenerator:
     def __init__(self, g):
@@ -10,7 +11,7 @@ class SimpleGraphGenerator:
         while len(self._all_graphs) > 0:
             next_graph = deque.pop(self._all_graphs)
             node_to_bypass = self.find_bypass_node(next_graph)
-            print node_to_bypass
+#            print node_to_bypass
 
             if node_to_bypass is None:
                 yield next_graph
@@ -19,11 +20,14 @@ class SimpleGraphGenerator:
                     if self.is_connected(bypass_graph):
                         self._all_graphs.append(bypass_graph)
 
+    def is_connected(self, graph):
+        return True
+
     def find_bypass_node(self, graph):
         node_degrees = graph.node_degrees()
 
         for node in graph:
-            in_degree, _ = node_degrees[node.label()]
+            in_degree, _ = node_degrees[node.id()]
             if in_degree > 1:
                 return node
         return None
@@ -34,24 +38,33 @@ class SimpleGraphGenerator:
 
         for ancestor in ancestors:
             for successor in successors:
-                print "making bypass"
-                print node
-                print ancestor
-                print successor
+#                print "making bypass"
+#                print node.debug_print()
+#                print ancestor.debug_print()
+#                print successor.debug_print()
 
                 new_graph = deepcopy(graph)
-                print "graph copy"
-                print new_graph
+#                print "graph copy"
+#                print new_graph.debug_print()
 
-                new_graph.remove_edge(ancestor.label(), node.label())
-                new_graph.remove_edge(node.label(), successor.label())
+                ancestor = new_graph.get_node_from_id(ancestor.id())
+                successor = new_graph.get_node_from_id(successor.id())
+                node = new_graph.get_node_from_id(node.id())
 
-                print "new graph"
-                print new_graph
+                new_graph.remove_edge(ancestor, node)
+                new_graph.remove_edge(node, successor)
 
-                new_node = node.duplicate()
-                new_graph.add_edge(ancestor.label(), new_node.label())
-                new_graph.add_edge(new_node.label(), successor.label())
+#                print "new graph"
+#                print new_graph.debug_print()
+
+                new_node = new_graph.add_node(node.label())
+#                print "new node"
+#                print new_node.debug_print()
+
+                new_graph.add_edge(ancestor, new_node)
+                new_graph.add_edge(new_node, successor)
+#                print new_graph.debug_print()
+
                 yield new_graph
 
 class CycleGenerator:

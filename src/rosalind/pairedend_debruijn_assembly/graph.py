@@ -46,15 +46,14 @@ class Node:
 
     def debug_print(self):
         me = str(self.id()) + ":" + self.label().as_string()
-        target_ids = [str(id) for id in self.target_ids()]
-        return me + " -> " + target_ids.__repr__()
+        return me + " -> " + self.target_ids().__repr__()
 
     # add target label to target list
     def add_target(self, target):
         self.targets().append(target)
 
     def remove_target(self, target):
-        self.target_ids().remove(target)
+        self.targets().remove(target)
 
     # return the number of targets for this node
     def num_targets(self):
@@ -108,6 +107,9 @@ class Graph:
         node_id = self._label_map[label][0]
         return self._nodes[node_id]
 
+    def get_node_from_id(self, node_id):
+        return self._nodes[node_id]
+
     def get_or_make_node(self, label):
         return self.get_node(label) if label in self else self.add_node(label)
 
@@ -135,11 +137,11 @@ class Graph:
 
     # returns Nodes to precede given Node
     def get_ancestors(self, node):
-        return [other_node for other_node in self if node.label() in other_node.target_labels()]
+        return [other_node for other_node in self if node.id() in other_node.target_ids()]
 
     # return Nodes preceeded by given Node
     def get_successors(self, node):
-        return [self[target_label] for target_label in node.target_labels()]
+        return node.targets()
 
 
 # build paired debruijn graph, i.e., k,d-mer overlap graph
