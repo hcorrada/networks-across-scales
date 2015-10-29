@@ -15,6 +15,7 @@ def get_score(x, y, mat):
 def output_align(backtrack, v, w, i, j):
     v_alignment = ''
     w_alignment = ''
+    
     # uses this construct to avoid
     # deep recursion limit
     while True:
@@ -54,6 +55,7 @@ def global_align(v, w, sigma):
             if i>0 and j>0:
                 score = get_score(v[i-1], w[j-1], bl62)
                 heapq.heappush(choices, (-(s[i-1,j-1] + score), 'di'))
+
             if len(choices) > 0:
                 choice = choices[0]
                 s[i,j] = -choice[0]
