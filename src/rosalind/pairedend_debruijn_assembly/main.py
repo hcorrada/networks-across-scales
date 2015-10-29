@@ -45,6 +45,8 @@ def single_path(filename):
     print string
 
 # create a function that checks path validity
+# it tries to construct a string from paired kmers
+# and returns True if it can build a valid string
 def make_validity_function(k, d):
     # try to build string from path
     # return True if successful

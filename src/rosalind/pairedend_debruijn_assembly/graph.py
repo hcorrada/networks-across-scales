@@ -3,20 +3,27 @@ from paired_kmer import PairedKmer
 
 # a class to represent nodes in a debruijn graph
 # slots:
-#   _label: the paired k-1 mer label
-#   _target_labels: list of target node labels for outgoing edges
+#   _id: integer id assigned to node
+#   _label: the node label, assumed to have a 'as_string' method
+#   _targets: list of target nodes for outgoing edges
 class Node:
-    # initialize node with label and empty targets list
+    # initialize node with label, id and empty targets list
     def __init__(self, label, id):
         self._id = id
         self._label = label
         self._targets = []
 
-    def __eq__(self, other):
-        return self._id == other._id
+    # return the id of this node
+    def id(self):
+        return self._id
 
+    # two nodes are  equal if they have the same id
+    def __eq__(self, other):
+        return self.id() == other.id()
+
+    # hash nodes based on id
     def __hash__(self):
-        return hash(self._id)
+        return hash(self.id())
 
     # return label for this node
     def label(self):
@@ -34,8 +41,6 @@ class Node:
     def target_labels(self):
         return [target.label() for target in self.targets()]
 
-    def id(self):
-        return self._id
 
     # get a string representation of node
     # "label -> <comma_separated_list_of_target_labels>"
@@ -44,14 +49,17 @@ class Node:
         targets_string = ",".join(target_labels)
         return self.label().as_string() + " -> " + targets_string
 
+    # print using ids instead of labels
     def debug_print(self):
         me = str(self.id()) + ":" + self.label().as_string()
         return me + " -> " + self.target_ids().__repr__()
 
-    # add target label to target list
+    # add target node to target list
     def add_target(self, target):
         self.targets().append(target)
 
+    # remove target nodes from target list
+    # based on target's id
     def remove_target(self, target):
         self.targets().remove(target)
 
@@ -59,15 +67,17 @@ class Node:
     def num_targets(self):
         return len(self.targets())
 
-# a class representing a Debruijn graph
+# a class representing a graph
 # slots:
-#   _nodes: a dictionary, keys are node labels,
-#               values are objects of class Node
+#   _lastid: last id assigned to a node in the graph
+#   _nodes: a dictionary of nodes, keys are id, values are objects of class Node
+#   _label_map: a dictionary, keys are node labels,
+#               values are node ids
 class Graph:
     # intialize with empty directory
     def __init__(self):
         self._lastid = -1
-        self._nodes = []
+        self._nodes = {}
         self._label_map = {}
 
     # check if node with given label is in the node dictionary
@@ -76,7 +86,7 @@ class Graph:
 
     # iterate over nodes in graph
     def __iter__(self):
-        return iter(self._nodes)
+        return self._nodes.itervalues()
 
     # string representation of graph
     # calls __repr__ method for each node,
@@ -85,6 +95,7 @@ class Graph:
         nodes = [node.__repr__() for node in self]
         return "\n".join(nodes)
 
+    # print using node ids instead of labels
     def debug_print(self):
         nodes = [node.debug_print() for node in self]
         return "\n".join(nodes)
@@ -96,20 +107,25 @@ class Graph:
     def add_node(self, label):
         self._lastid += 1
         node = Node(label, self._lastid)
-        self._nodes.append(node)
+        self._nodes[node.id()] = node
 
         if not label in self:
             self._label_map[label] = list()
         self._label_map[label].append(node.id())
         return node
 
+    # get arbitrary node in graph with given label
     def get_node(self, label):
         node_id = self._label_map[label][0]
         return self._nodes[node_id]
 
+    # get node in graph with given id
     def get_node_from_id(self, node_id):
         return self._nodes[node_id]
 
+    # get arbitrary node in graph with given label,
+    # if there is no node in graph with that label,
+    # add a new node
     def get_or_make_node(self, label):
         return self.get_node(label) if label in self else self.add_node(label)
 
@@ -117,11 +133,12 @@ class Graph:
     def add_edge(self, source, target):
         source.add_target(target)
 
+    # remove edge between given source and target nodes
     def remove_edge(self, source, target):
         source.remove_target(target)
 
     # compute node degrees
-    # return a dictionary with node labels as keys
+    # return a dictionary with node ids as keys
     # values are tuples (in_degree, out_degree)
     def node_degrees(self):
         degrees = defaultdict(lambda: [0,0])
@@ -135,14 +152,18 @@ class Graph:
                 degrees[target_id][0] += 1
         return degrees
 
+    # return the total number of edges in graph
     def num_edges(self):
+        # calculate degree for all nodes
         node_degrees = self.node_degrees()
+
+        # add them up
         num_edges = 0
         for _, out_degree in node_degrees.itervalues():
             num_edges += out_degree
         return num_edges
-        
-    # returns Nodes to precede given Node
+
+    # returns Nodes that precede given Node
     def get_ancestors(self, node):
         return [other_node for other_node in self if node.id() in other_node.target_ids()]
 
