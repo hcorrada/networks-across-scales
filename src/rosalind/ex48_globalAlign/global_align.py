@@ -9,25 +9,28 @@ from Bio.SubsMat.MatrixInfo import blosum62 as bl62
 def get_score(x, y, mat):
   return mat[(x,y)] if (x,y) in mat else mat[(y,x)]
 
-# outputs the lcs alignment given
-# backtrack 
-def outputalign(backtrack, v, w, i, j, string1, string2):
+# outputs the alignment given
+# backtrack matrix, input strings and node in table
+# to start from
+def output_align(backtrack, v, w, i, j):
+    v_alignment = ''
+    w_alignment = ''
     # uses this construct to avoid
     # deep recursion limit
     while True:
         if i==0 and j==0:
-            return string1, string2
+            return v_alignment, w_alignment
         if backtrack[i,j] == 'dn':
-            i, string1, string2 = i-1, v[i-1] + string1, '-' + string2
+            i, v_alignment, w_alignment = i-1, v[i-1] + v_alignment, '-' + w_alignment
         elif backtrack[i,j] == 'rt':
-            j, string1, string2 = j-1, '-' + string1, w[j-1] + string2
+            j, v_alignment, w_alignment = j-1, '-' + v_alignment, w[j-1] + w_alignment
         else:
-            i, j, string1, string2 = i-1, j-1, v[i-1] + string1, w[j-1] + string2
+            i, j, v_alignment, w_alignment = i-1, j-1, v[i-1] + v_alignment, w[j-1] + w_alignment
 
 # computes global alignment
 # for strings v and w using dynamic programming
 # and gap penalty sigma
-def globalalign(v, w, sigma):
+def global_align(v, w, sigma):
     nv = len(v)
     nw = len(w)
 
@@ -55,9 +58,9 @@ def globalalign(v, w, sigma):
                 choice = choices[0]
                 s[i,j] = -choice[0]
                 backtrack[i,j] = choice[1]
+
     score = s[nv, nw]
-    string1, string2 = outputalign(backtrack, v, w, nv, nw, '', '')
-    return int(score), string1, string2
+    return int(score), backtrack
 
 # read data
 def readdat(filename):
@@ -68,10 +71,11 @@ def readdat(filename):
 
 def main(filename):
     v,w  = readdat(filename)
-    score, v,w = globalalign(v, w, -5)
+    score, backtrack = global_align(v, w, -5)
+    v_alignment, w_alignment = output_align(backtrack, v, w, len(v), len(w))
     print score
-    print v
-    print w
+    print v_alignment
+    print w_alignment
 
 if __name__ == '__main__' and 'get_ipython' not in dir():
     filename = sys.argv[1]

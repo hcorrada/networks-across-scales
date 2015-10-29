@@ -11,9 +11,9 @@ def get_score(x, y, mat):
 
 # outputs the local alignment given
 # backtrack starting at node (i,j)
-def outputalign(backtrack, v, w, i, j):
+def output_align(backtrack, v, w, i, j):
     string1 = ''
-    string2 =''
+    string2 = ''
 
     # uses this construct to avoid
     # deep recursion limit
@@ -22,7 +22,7 @@ def outputalign(backtrack, v, w, i, j):
         # print string1, string2, i, j
         # HERE WAS THE TYPO (WE WROTE i==0 IN CLASS)
         if j==0:
-            # reached source
+            # reached first column
             return string1, string2
         if backtrack[i,j] == 'dn':
             # took a down edge: gap in w
@@ -98,7 +98,7 @@ def check_solution(v,va,w,wa,score):
 def main(filename):
     v,w  = readdat(filename)
     score, backtrack, (i,j) = overlap_align(v, w)
-    va, wa = outputalign(backtrack, v, w, i, j)
+    va, wa = output_align(backtrack, v, w, i, j)
     check_solution(v,va,w,wa,score)
     print score
     print va
