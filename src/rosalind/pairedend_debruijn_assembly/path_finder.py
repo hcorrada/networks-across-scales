@@ -21,7 +21,7 @@ def _find_start_end_nodes(g):
     # check balance conditions
     start = end = None
     for node in g:
-        in_degree, out_degree = node_degrees[node.label()]
+        in_degree, out_degree = node_degrees[node.id()]
 
         # node is balanced
         if in_degree == out_degree:
@@ -125,7 +125,7 @@ def _preprocess_graph(g):
     start, end = result
 
     # add edge to connect start and end nodes
-    g.add_edge(end.label(), start.label())
+    g.add_edge(end, start)
     return g, start, end
 
 # finds an Eulerian path, if it exists, in the given

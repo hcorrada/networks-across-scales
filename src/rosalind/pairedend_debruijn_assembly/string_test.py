@@ -8,11 +8,11 @@ d=2
 
 path = Path()
 
-path.append(Node(PairedKmer("GACC|GCGC")))
-path.append(Node(PairedKmer("ACCG|CGCC")))
-path.append(Node(PairedKmer("CCGA|GCCG")))
-path.append(Node(PairedKmer("CGAG|CCGG")))
-path.append(Node(PairedKmer("GAGC|CGGA")))
+path.append(Node(PairedKmer("GACC|GCGC"), 0))
+path.append(Node(PairedKmer("ACCG|CGCC"), 1))
+path.append(Node(PairedKmer("CCGA|GCCG"), 2))
+path.append(Node(PairedKmer("CGAG|CCGG"), 3))
+path.append(Node(PairedKmer("GAGC|CGGA"), 4))
 
 print path
 string = build_string(path, k, d)

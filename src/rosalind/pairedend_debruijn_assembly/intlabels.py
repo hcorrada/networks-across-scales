@@ -1,7 +1,7 @@
 class IntLabel:
     def __init__(self, i):
         self._i = i
-
+        
     def as_string(self):
         return str(self._i)
 
@@ -13,4 +13,3 @@ class IntLabel:
 
     def __repr__(self):
         return self.as_string()
-        

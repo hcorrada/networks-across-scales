@@ -7,17 +7,35 @@ from paired_kmer import PairedKmer
 #   _target_labels: list of target node labels for outgoing edges
 class Node:
     # initialize node with label and empty targets list
-    def __init__(self, label):
+    def __init__(self, label, id):
+        self._id = id
         self._label = label
-        self._target_labels = []
+        self._targets = []
+
+    def __eq__(self, other):
+        return self._id == other._id
+
+    def __hash__(self):
+        return hash(self._id)
 
     # return label for this node
     def label(self):
         return self._label
 
-    # return list of target labels for this node
+    # return list of target Node objects
+    def targets(self):
+        return self._targets
+
+    # return list of target ids for this node
+    def target_ids(self):
+        return [target.id() for target in self.targets()]
+
+    # return list of target labels
     def target_labels(self):
-        return self._target_labels
+        return [target.label() for target in self.targets()]
+
+    def id(self):
+        return self._id
 
     # get a string representation of node
     # "label -> <comma_separated_list_of_target_labels>"
@@ -26,16 +44,21 @@ class Node:
         targets_string = ",".join(target_labels)
         return self.label().as_string() + " -> " + targets_string
 
-    # add target label to target list
-    def add_target(self, target_label):
-        self.target_labels().append(target_label)
+    def debug_print(self):
+        me = str(self.id()) + ":" + self.label().as_string()
+        target_ids = [str(id) for id in self.target_ids()]
+        return me + " -> " + target_ids.__repr__()
 
-    def remove_target(self, target_label):
-        self.target_labels().remove(target_label)
+    # add target label to target list
+    def add_target(self, target):
+        self.targets().append(target)
+
+    def remove_target(self, target):
+        self.target_ids().remove(target)
 
     # return the number of targets for this node
     def num_targets(self):
-        return len(self.target_labels())
+        return len(self.targets())
 
 # a class representing a Debruijn graph
 # slots:
@@ -44,19 +67,17 @@ class Node:
 class Graph:
     # intialize with empty directory
     def __init__(self):
-        self._nodes = {}
+        self._lastid = -1
+        self._nodes = []
+        self._label_map = {}
 
     # check if node with given label is in the node dictionary
     def __contains__(self, label):
-        return label in self._nodes
-
-    # return the node object corresponding to given label
-    def __getitem__(self, label):
-        return self._nodes[label]
+        return label in self._label_map
 
     # iterate over nodes in graph
     def __iter__(self):
-        return self._nodes.itervalues()
+        return iter(self._nodes)
 
     # string representation of graph
     # calls __repr__ method for each node,
@@ -65,24 +86,37 @@ class Graph:
         nodes = [node.__repr__() for node in self]
         return "\n".join(nodes)
 
+    def debug_print(self):
+        nodes = [node.debug_print() for node in self]
+        return "\n".join(nodes)
+
     # add node to graph with given label
     # does not check if node with given label is already
     # in the graph, that has to be done elsewhere
     # creates a new object of class Node
     def add_node(self, label):
-        self._nodes[label] = Node(label)
+        self._lastid += 1
+        node = Node(label, self._lastid)
+        self._nodes.append(node)
 
-    # add an edge between nodes with given source and target labels
-    # adds nodes to graph with corresponding label if needed
-    def add_edge(self, source_label, target_label):
-        if not source_label in self:
-            self.add_node(source_label)
-        if not target_label in self:
-            self.add_node(target_label)
-        self[source_label].add_target(target_label)
+        if not label in self:
+            self._label_map[label] = list()
+        self._label_map[label].append(node.id())
+        return node
 
-    def remove_edge(self, source_label, target_label):
-        self[source_label].remove_target(target_label)
+    def get_node(self, label):
+        node_id = self._label_map[label][0]
+        return self._nodes[node_id]
+
+    def get_or_make_node(self, label):
+        return self.get_node(label) if label in self else self.add_node(label)
+
+    # add an edge between given source and target nodes
+    def add_edge(self, source, target):
+        source.add_target(target)
+
+    def remove_edge(self, source, target):
+        source.remove_target(target)
 
     # compute node degrees
     # return a dictionary with node labels as keys
@@ -90,13 +124,13 @@ class Graph:
     def node_degrees(self):
         degrees = defaultdict(lambda: [0,0])
         for node in self:
-            node_label = node.label()
+            node_id = node.id()
             # set out-degree of node to the number of targets
-            degrees[node_label][1] = node.num_targets()
+            degrees[node_id][1] = node.num_targets()
 
             # increase the in-degree of targets by 1
-            for target_label in node.target_labels():
-                degrees[target_label][0] += 1
+            for target_id in node.target_ids():
+                degrees[target_id][0] += 1
         return degrees
 
     # returns Nodes to precede given Node
@@ -125,6 +159,12 @@ def build_graph(paired_kmers):
         source_label = kmer.prefix()
         target_label = kmer.suffix()
 
+        # grab source and target nodes if they exist,
+        # if not create new nodes
+        source = graph.get_or_make_node(source_label)
+        target = graph.get_or_make_node(target_label)
+
+
         # use the add edge method in graph class
-        graph.add_edge(source_label, target_label)
+        graph.add_edge(source, target)
     return graph

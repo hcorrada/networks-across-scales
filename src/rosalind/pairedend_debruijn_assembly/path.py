@@ -35,7 +35,7 @@ class Path:
         # create a new item and add it
         # to the node->item map
         item = DoubleList(node)
-        self._item_map[node.label()].append(item)
+        self._item_map[node.id()].append(item)
 
         if self.is_empty():
             # make new item head and tail of list
@@ -56,7 +56,7 @@ class Path:
     # find item in path linked list containing given node
     def find_item(self, node):
         # grab the list of items for the node
-        item_map = self._item_map[node.label()]
+        item_map = self._item_map[node.id()]
         if item_map is None or len(item_map) == 0:
             return None
         else:
@@ -66,7 +66,7 @@ class Path:
     # return list of items in path containing
     # given node
     def find_all_items(self, node):
-        return self._item_map[node.label()]
+        return self._item_map[node.id()]
 
     # extend this path with other path
     # at given item

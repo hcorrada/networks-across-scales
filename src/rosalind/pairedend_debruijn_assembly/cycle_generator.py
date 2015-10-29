@@ -34,19 +34,24 @@ class SimpleGraphGenerator:
 
         for ancestor in ancestors:
             for successor in successors:
+                print "making bypass"
                 print node
                 print ancestor
                 print successor
 
                 new_graph = deepcopy(graph)
-                new_graph.remove_edge(ancestor, node)
-                new_graph.remove_edge(node, successor)
-
+                print "graph copy"
                 print new_graph
 
-                new_node = Node(node.label())
-                new_graph.add_edge(ancestor, new_node)
-                new_graph.add_edge(new_node, successor)
+                new_graph.remove_edge(ancestor.label(), node.label())
+                new_graph.remove_edge(node.label(), successor.label())
+
+                print "new graph"
+                print new_graph
+
+                new_node = node.duplicate()
+                new_graph.add_edge(ancestor.label(), new_node.label())
+                new_graph.add_edge(new_node.label(), successor.label())
                 yield new_graph
 
 class CycleGenerator:

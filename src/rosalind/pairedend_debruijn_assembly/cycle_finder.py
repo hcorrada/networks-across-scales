@@ -47,9 +47,9 @@ class CycleFinder:
 
         # initialized iterators (with lookahead) over out-going edges
         # of each node
-        self._target_iterators = dict([(node.label(), ProbedIter(node.target_labels())) for node in self._graph])
+        self._target_iterators = dict([(node.id(), ProbedIter(node.targets())) for node in self._graph])
 
-        # a map between nodes and items in paths being built
+        # a map between node ids and items in paths being built
         self._cycle_items = defaultdict(list)
 
         # a set of nodes with unused out-going edges
@@ -63,12 +63,11 @@ class CycleFinder:
     #   target node in a unused out-going edge
     def next_target(self, source):
         # out-going edge iterator for source node
-        it = self._target_iterators[source.label()]
+        it = self._target_iterators[source.id()]
 
         # check that there are more nodes
         if it.has_more():
-            target_label = it.next()
-            return self._graph[target_label]
+            return it.next()
         else:
             return None
 
@@ -79,7 +78,7 @@ class CycleFinder:
     #   True or False
     def is_available(self, node):
         # out-going edge iterator for node
-        it = self._target_iterators[node.label()]
+        it = self._target_iterators[node.id()]
         # check if iterator has more out-going edges
         return it.has_more()
 
