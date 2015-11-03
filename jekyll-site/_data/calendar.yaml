@@ -290,6 +290,7 @@
       link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 10/27
+  status: done
   covers:
     -
       title: "Dynamic Programming (2): Global/Local Alignment and scoring matrices"
@@ -305,6 +306,7 @@
       link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 10/29
+  status: present
   covers:
     -
       title: "Dynamic Programming (3): Implementing dynamic programming alignment algorithms"
@@ -332,6 +334,7 @@
       link: { url: "http://rosalind.info/classes/233" }
 -
   date: 11/3
+  status: present
   covers:
     -
       title: "Dynamic Programming (4): Linear space alignment and Multiple Sequence Alignment"
