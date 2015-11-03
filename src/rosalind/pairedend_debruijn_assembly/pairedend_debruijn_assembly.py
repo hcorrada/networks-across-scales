@@ -846,13 +846,20 @@ def find_valid_eulerian_path(g, validity_func):
 import sys
 
 # read input from file
+# input:
+#   filename: filename with input reads (and optionally k and d parameters in first line)
+#   k: optional k-mer length parameter
+#   d: optional gap length parameter
+#
 # returns
 #   paired_kmers: list of strings, each representing a pair of k-mers
 #   k: k-mer length in pair
 #   d: gap between k-mers in pair
-def readdat(filename):
+def readdat(filename, k=None, d=None):
     with open(filename, 'r') as f:
-        k, d = [int(s) for s in f.readline().strip().split()]
+        if k is None:
+            k, d = [int(s) for s in f.readline().strip().split()]
+
         paired_kmers = []
         for line in f:
             paired_kmers.append(line.strip())
@@ -862,7 +869,7 @@ def readdat(filename):
 # main assembler routine for single paths
 # prints assembled string, or returns None if
 # single path does not generate a valid string
-def single_path(filename):
+def single_path(filename, k, d):
     # read input from file
     paired_kmers, k, d = readdat(filename)
 
@@ -899,9 +906,9 @@ def make_validity_function(k, d):
 # main assembler routine where all possible paths
 # may be generated, it generates paths until a valid is one
 # is found, it returns None if no valid path is found
-def all_paths(filename):
+def all_paths(filename, k, d):
     # read input from file
-    paired_kmers, k, d = readdat(filename)
+    paired_kmers, k, d = readdat(filename, k, d)
 
     # build DeBruijn graph from paired kmers
     g = build_graph(paired_kmers)
@@ -921,4 +928,11 @@ def all_paths(filename):
 # this is here to play nicely with ipython
 if __name__ == '__main__' and 'get_ipython' not in dir():
     filename = sys.argv[1]
-    all_paths(filename)
+
+    # check if k and d are given in the command line
+    k = d = None
+    if len(sys.argv) > 2:
+        k = int(sys.argv[2])
+        d = int(sys.argv[3])
+
+    all_paths(filename, k, d)
