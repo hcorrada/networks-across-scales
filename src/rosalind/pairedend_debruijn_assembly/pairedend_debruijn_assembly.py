@@ -889,8 +889,8 @@ def single_path(filename, k, d):
     # this will return None
     string = build_string(path, k, d)
 
-    # print resulting string
-    print string
+    # return resulting string
+    return string
 
 # create a function that checks path validity
 # it tries to construct a string from paired kmers
@@ -923,7 +923,7 @@ def all_paths(filename, k, d):
 
     # get string from valid path
     string = build_string(path, k, d)
-    print string
+    return string
 
 # this is here to play nicely with ipython
 if __name__ == '__main__' and 'get_ipython' not in dir():
@@ -935,4 +935,5 @@ if __name__ == '__main__' and 'get_ipython' not in dir():
         k = int(sys.argv[2])
         d = int(sys.argv[3])
 
-    all_paths(filename, k, d)
+    result = all_paths(filename, k, d)
+    print result
