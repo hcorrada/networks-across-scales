@@ -26,7 +26,7 @@ def middle_edge(iv, iw, sigma, npmat, top, bottom, left, right):
     # the first half of w (up to middle)
     # and the reverse of the second half of w
     cw = iw[left:middle]
-    rw = iw[middle:right][::-1]
+    rw = iw[middle+1:right][::-1]
 
     # compute alignment scores from source (left) to middle column
     scoreleft, _ignored = scoreit(cv, cw, sigma, npmat)
@@ -44,7 +44,8 @@ def middle_edge(iv, iw, sigma, npmat, top, bottom, left, right):
     # find the middle node and edge
     node = np.argmax(scores)
     edge = backtrack[::-1][node]
-
+    print edge
+    
     # and the score of the maximal path
     score = scores[node]
 
