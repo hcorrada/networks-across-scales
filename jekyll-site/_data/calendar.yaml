@@ -354,6 +354,7 @@
   covers:
     -
       title: "Recap and review Unit II"
+      materials: { link: "docs/midterm_recapII.html", insite: }
   workdue:
     -
       title: Project 3
