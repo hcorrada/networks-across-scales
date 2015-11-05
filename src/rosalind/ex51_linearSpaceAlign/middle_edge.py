@@ -36,7 +36,7 @@ def middle_edge(iv, iw, sigma, npmat, top, bottom, left, right):
     # reversed afterwards
     # backtrack is a vector of arrows, indicating the kind of outgoing edge
     # for every node in the middle column
-    scoreright, backtrack = scoreit(rv, rw, sigma, npmat)    
+    scoreright, backtrack = scoreit(rv, rw, sigma, npmat)
 
     # reverse score from right since it was calculated on reversed strings
     scores = scoreleft + scoreright[::-1]
@@ -44,7 +44,7 @@ def middle_edge(iv, iw, sigma, npmat, top, bottom, left, right):
     # find the middle node and edge
     node = np.argmax(scores)
     edge = backtrack[::-1][node]
-    
+
     # and the score of the maximal path
     score = scores[node]
 
@@ -58,7 +58,7 @@ def middle_edge(iv, iw, sigma, npmat, top, bottom, left, right):
     top += 0 if edge == 'rt' else 1
     middle += 0 if edge == 'dn' else 1
     sink = (top,middle)
-    
+
     return source, sink, score
 
 # score alignment between v and w (as lists of indices)
@@ -74,7 +74,7 @@ def scoreit(iv, iw, sigma, npmat):
     # allocate *vector* of backtrack arrows (we only care about the backtrack
     # arrows for the last column)
     backtrack = np.zeros((nv+1,1), np.dtype('a2'))
-        
+
     # initialize first column of scoring workspace
     # using gap penalty
     workspace[:,0] = sigma * np.arange(0,nv+1)
@@ -84,7 +84,7 @@ def scoreit(iv, iw, sigma, npmat):
         # start with the right arrows
         workspace[:,1] = workspace[:,0] + sigma
         backtrack.fill('rt')
-        
+
         # now the diagonal arrows
         scores = npmat[iv,iw[j-1]]
 
@@ -98,7 +98,7 @@ def scoreit(iv, iw, sigma, npmat):
         workspace[1:,1][ind] = tmp[ind]
         backtrack[1:][ind] = 'di'
 
-        # now the down arrows        
+        # now the down arrows
         for i in xrange(1,nv+1):
             tmp = workspace[i-1,1] + sigma
             if  tmp > workspace[i,1]:
@@ -115,9 +115,9 @@ def scoreit(iv, iw, sigma, npmat):
 def main(filename):
     v, w = readdat(filename)
     iv, iw, npmat = setup(v, w, blosum62)
-    source, sink, score = middle_node(iv, iw, -5, npmat, 0, len(v), 0, len(w))
+    source, sink, score = middle_edge(iv, iw, -5, npmat, 0, len(v), 0, len(w))
     print source, sink
-    
+
 if __name__ == '__main__' and 'get_ipython' not in dir():
     filename = sys.argv[1]
     main(filename)

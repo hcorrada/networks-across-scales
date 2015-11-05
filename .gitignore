@@ -21,4 +21,5 @@ text/*/.tmp
 cmsc423
 .ruby*
 rosalind_examples
+.ipynb_checkpoints
 
