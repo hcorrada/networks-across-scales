@@ -334,10 +334,10 @@
       link: { url: "http://rosalind.info/classes/233" }
 -
   date: 11/3
-  status: present
+  status: done
   covers:
     -
-      title: "Dynamic Programming (4): Linear space alignment and Multiple Sequence Alignment"
+      title: "Dynamic Programming (4): Linear space alignment"
       materials: { link: "lectures/CMSC423_Alignment3.pdf", insite: }
   readings:
     -
