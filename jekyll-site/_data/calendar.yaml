@@ -306,7 +306,7 @@
       link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 10/29
-  status: present
+  status: done
   covers:
     -
       title: "Dynamic Programming (3): Implementing dynamic programming alignment algorithms"
@@ -324,7 +324,7 @@
       link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 11/2
-  status: present
+  status: done
   covers:
     -
       title: THIS IS NOT A LECTURE DAY
@@ -361,6 +361,7 @@
       link: { url: "projects/project_3.html", insite: }
 -
   date: 11/10
+  status: present
   covers:
     -
       title: Midterm II
