@@ -350,7 +350,7 @@
       link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 11/5
-  status: present
+  status: done
   covers:
     -
       title: "Recap and review Unit II"
@@ -360,7 +360,7 @@
       link: { url: "projects/project_3.html", insite: }
 -
   date: 11/10
-  status: present
+  status: done
   covers:
     -
       title: Midterm II
@@ -370,9 +370,20 @@
       link: { url: "docs/midtermII_recap.html", insite: }
 -
   date: 11/12
+  status: present
   covers:
     -
       title: "Exact string matching: z-algorithm and KMP"
+  readings:
+    -
+      title: "Gusfield, Algorithms for Strings, Trees and Sequences (Ch. 1 and Sec. 2.3)"
+      link: { url: "https://myelms.umd.edu/courses/1152063/modules/items/8272289" }
+    -
+      title: Rosalind prep. Ex. 27
+      link: { url: "http://rosalind.info/classes/232/" }
+    -
+      title: Reading pre-lecture quiz
+      link: { url: "https://myelms.umd.edu/courses/1152063/modules/items/8272313" }
 -
   date: 11/17
   covers:
