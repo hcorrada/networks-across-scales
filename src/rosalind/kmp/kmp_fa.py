@@ -19,7 +19,7 @@ def zalgorithm(s):
     # compare characters r to r+1 directly until the first
     # mismatch
     r = 0
-    while s[r] == s[r+1] and r < n:
+    while r < n and s[r] == s[r+1]:
         r += 1
 
     # this gives z-value for second position
@@ -31,7 +31,7 @@ def zalgorithm(s):
         if k > r:
             # compare characters directly until first mismatch
             t = 0
-            while s[t] == s[k+t] and k+t < n:
+            while k+t < n and s[t] == s[k+t]:
                 t += 1
             z[k] = t
 
@@ -69,7 +69,7 @@ def zalgorithm(s):
             # and adjust the right-most z-box (which will now start at k)
             else:
                 t = 1
-                while s[r+t] == s[len_beta + t] and r+t < n:
+                while r+t < n and s[r+t] == s[len_beta + t]:
                     t += 1
                 z[k] = len_beta + t
 
