@@ -370,7 +370,7 @@
       link: { url: "docs/midtermII_recap.html", insite: }
 -
   date: 11/12
-  status: present
+  status: done
   covers:
     -
       title: "Exact string matching: z-algorithm and KMP"
@@ -386,48 +386,48 @@
       link: { url: "https://myelms.umd.edu/courses/1152063/modules/items/8272313" }
 -
   date: 11/17
+  status: present
   covers:
     -
       title: "Efficient exact string matching: Suffix Trees and Arrays (1)"
       materials: { link: "lectures/CMSC423_exactMatching1.pdf" }
   readings:
     -
-      title: Compeau & Pevzner, Ch. 7 311-325
+      title: Compeau & Pevzner, Ch. 9 121-135
     -
       title: Compeau & Pevzner, playlist 7, videos 1-3
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz" }
-    -
-      title: Rosalind prep. Ex. 52-54
-      link: { url: "http://rosalind.info/classes/152/" }
 -
   date: 11/19
+  status: present
   covers:
     -
       title: "Efficient exact string matching: Suffix Trees and Arrays (2)"
       materials: { link: "lectures/CMSC423_exactMatching1.pdf" }
   readings:
     -
-      title: Compeau & Pevzner, Ch. 7 311-325
+      title: Compeau & Pevzner, Ch. 9 121-135
     -
       title: Compeau & Pevzner, playlist 7, videos 1-3
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz" }
     -
-      title: Rosalind prep. Ex. 52-54
+      title: Rosalind prep. Ex. 28-29
       link: { url: "http://rosalind.info/classes/152/" }
 -
   date: 11/24
+  status: present
   covers:
     -
       title: "Efficient exact string matching: The Burrows Wheeler Transform"
       materials: { link: "lectures/CMSC423_exactMatching2.pdf" }
   readings:
     -
-      title: Compeau & Pevzner, Ch. 7 325-341
+      title: Compeau & Pevzner, Ch. 9 136-147
     -
       title: Compeau & Pevzner, playlist 7, videos 4-6
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz" }
     -
-      title: Rosalind prep. Ex 55-56
+      title: Rosalind prep. Ex 30
       link: { url: "http://rosalind.info/classes/152/" }
 -
   date: 11/26
@@ -436,17 +436,18 @@
       title: "No lecture (Thanksgiving)"
 -
   date: 12/1
+  status: present
   covers:
     -
       title: "Efficient string matching: approximate matching with BWT"
   readings:
     -
-      title: Compeau & Pevzner, Ch. 7 341-351
+      title: Compeau & Pevzner, Ch. 7 148-162
     -
       title: Compeau & Pevzner, playlist 8, videos 7-10
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz" }
     -
-      title: Rosalind prep. Ex 57-58
+      title: Rosalind prep. Ex 31
       link: { url: "http://rosalind.info/classes/152/" }
 -
   date: 12/3
