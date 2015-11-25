@@ -386,7 +386,7 @@
       link: { url: "https://myelms.umd.edu/courses/1152063/modules/items/8272313" }
 -
   date: 11/17
-  status: present
+  status: done
   covers:
     -
       title: "Efficient exact string matching: Suffix Trees and Arrays (1)"
@@ -412,7 +412,7 @@
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz" }
     -
       title: Rosalind prep. Ex. 28-29
-      link: { url: "http://rosalind.info/classes/152/" }
+      link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 11/24
   status: present
@@ -428,7 +428,7 @@
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz" }
     -
       title: Rosalind prep. Ex 30
-      link: { url: "http://rosalind.info/classes/152/" }
+      link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 11/26
   covers:
@@ -448,7 +448,7 @@
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz" }
     -
       title: Rosalind prep. Ex 31
-      link: { url: "http://rosalind.info/classes/152/" }
+      link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 12/3
   covers:

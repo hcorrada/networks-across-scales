@@ -1,7 +1,7 @@
 ---
 title: Suffix Trie/Tree/Array Exercise
-author: CMSC423 Fall 2014
-date: December 1, 2014 
+author: CMSC423 Fall 2015
+date: November 17, 2014 
 ---
 
 Name(s):   
@@ -18,4 +18,3 @@ UID(s):
 **Question 5.** Construct the **suffix array** for the same string.
 
 **Question 6.** Same as Question 3, but use a suffix array.
-
