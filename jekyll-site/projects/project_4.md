@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Homework 5
+title: Project 4
 ---
 
 **Due Friday Dec. 12**
@@ -13,7 +13,7 @@ Submit your answer to Problems 13 and 14 in the
 ## SNP Finding (this is a bonus, extra 10% on final HW grade) ##
 
 Use your code for multiple, approximate pattern matching (Rosalind final submission # 14) to analyze sequences for the [neuraminidase Influenza gene (NA)](http://en.wikipedia.org/wiki/Influenza_neuraminidase) of
-two H1N1 Human Influenza strains. 
+two H1N1 Human Influenza strains.
 
 This `fasta` file contains a reference sequence you will use as target:
 
@@ -50,16 +50,16 @@ for read in reads:
 	# assumes positions is a list (even if only a single match is found)
 	# with matching positions
 	positions = find_approximate_matches(read, bwt, d)
-	
+
 	# add to pileup object
 	p.insert(positions, read)
 
 # prints out mismatching positions
-# output is: 
-# (<position>, <reference_character>, [(<variant_character>, 
+# output is:
+# (<position>, <reference_character>, [(<variant_character>,
 # <num_times_aligned>)])
 # argument filters mismatch by frequency in which variant character
-# is observe, e.g., .01 means variant character has to be seen at least 
+# is observe, e.g., .01 means variant character has to be seen at least
 # once for every algined base
 p.print_mismatches(.01)
 {% endhighlight %}
@@ -70,5 +70,3 @@ where positions are indices in text where a match for `read` was found.
 
 Submit your answer to this question, along with any additional code you used to answer it by email
 to **both** `hcorrada@cs.umd.edu` and `wikum@cs.umd.edu` by 5pm, December 12.
-
-
