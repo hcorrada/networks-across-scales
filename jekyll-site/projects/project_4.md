@@ -3,7 +3,7 @@ layout: default
 title: Project 4
 ---
 
-**Due Friday Dec. 12**
+**Due Thrusday Dec. 11**
 
 ## Programming Questions ##
 
