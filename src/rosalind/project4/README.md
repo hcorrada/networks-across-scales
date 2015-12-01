@@ -15,7 +15,7 @@ indices = am.get_matches(pattern, d)
 
 File `rosalind_approximate_match.py` uses this interface to solve the
 Rosalind problem on approximate matching
-
+sr  
 ## Design
 
 `ApproximateMatcher`: computes bwt and suffix array (to make this most space efficient

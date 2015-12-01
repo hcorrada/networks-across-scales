@@ -399,7 +399,7 @@
       link: { url: "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz" }
 -
   date: 11/19
-  status: present
+  status: done
   covers:
     -
       title: "Efficient exact string matching: Suffix Trees and Arrays (2)"
@@ -415,7 +415,7 @@
       link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 11/24
-  status: present
+  status: done
   covers:
     -
       title: "Efficient exact string matching: The Burrows Wheeler Transform"
@@ -439,7 +439,8 @@
   status: present
   covers:
     -
-      title: "Efficient string matching: approximate matching with BWT"
+      title: "Efficient string matching with BWT"
+      materials: { link: "lectures/CMSC423_exactMatching2.pdf" }
   readings:
     -
       title: Compeau & Pevzner, Ch. 7 148-162
@@ -468,13 +469,19 @@
   covers:
     -
       title: Computational Biology and Bioinformatics after CMSC 423
+-
+  date: 12/11
+  status: present
+  covers:
+    -
+      title: THIS IS NOT A LECTURE DAY
   workdue:
     -
-      title: Rosalind Final Submission Ex. 13 and 14
-      link: {url: "http://rosalind.info/classes/156" }
+      title: Rosalind Final Submission Ex. 8
+      link: {url: "http://rosalind.info/classes/233" }
     -
-      title: Homework 5
-      link: { url: "homeworks/homework_5.html", insite: }
+      title: Project 4
+      link: { url: "projects/project_4.html", insite: }
 -
   date: 12/18
   covers:

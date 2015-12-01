@@ -11,7 +11,7 @@ from seed_and_check import SeedChecker
 class ApproximateMatcher:
     def __init__(self, target):
         self._text = target + '$'
-        self._bwt = BWT(self._text)
+        self._bwt = BWT(target=self._text)
 
     # return indices in target that contain
     # matches of string pattern with up to d
@@ -24,6 +24,7 @@ class ApproximateMatcher:
         for seed, seed_index in seed_checker.enumerate():
             # find exact matches of seed using BWT
             indices = self._bwt.get_matches(seed)
+
             # add candidate approximate matches based on
             # seed exact matches
             seed_checker.add_candidates(indices, seed_index)

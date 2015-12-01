@@ -13,7 +13,23 @@ from preprocess_bwt import _get_first_occurence_fn, _get_count_fn
 #       bwt: string containing the Burrows-Wheeler transform of text
 #       suffix_array: the suffix array of text
 def _construct(text):
-    return text, range(len(text))
+    # rotate text so that last character of rotation is on the appropriate position
+    # i.e. the ith position has the last character of the rotation that
+    # starts at the ith position in text (this is not the same order that
+    # the rotations are listed on pg. 326 of Compeau & Pevzner
+    rotated_text = text[-1] + text[:-1]
+
+    # make tuples of character in bwt and the rotation it corresponds to
+    indexed_chars = zip(list(rotated_text), [i for i in xrange(len(text))])
+
+    # sort tuples by corresponding rotations
+    # the key function return the rotated text starting at appropriate index
+    sorted_chars = sorted(indexed_chars, key=lambda x: text[x[1]:] + text[:x[1]])
+
+    # extract the bwt characters after sorting rotations
+    bwt_chars, indices = zip(*sorted_chars)
+    bwt = ''.join(list(bwt_chars))
+    return bwt, indices
 
 # wrapper for the processing functions used to compute
 # auxiliary data structures for efficient BWT matching
@@ -44,10 +60,16 @@ def _preprocess_bwt(bwt):
 #   `bwt.count(symbol, position)` returns the number of occurrences of symbol
 #       up to given position in BWT of target string
 class BWT:
-    def __init__(self, target):
+    def __init__(self, target=None):
         self._text = target
-        self._bwt, self._suffix_array = _construct(self._text)
-        self.first_occurence, self.count = _preprocess_bwt(self._bwt)
+        self._bwt = None
+        self._suffix_array = None
+        if target is not None:
+            self._bwt, self._suffix_array = _construct(self._text)
+        self.first_occurence = None
+        self.count = None
+        if target is not None:
+            self.first_occurence, self.count = _preprocess_bwt(self._bwt)
 
     # THIS IS A STUB, YOU NEED TO IMPLEMENT THIS
     #
@@ -68,7 +90,12 @@ class BWT:
 
         # return matching indices based on top and bottom pointers
         # YOU NEED TO FILL THIS IN
-        return []
+        return self._suffix_array[top:(bottom+1)]
+
+    # find pointer in first column of last occurence of symbol
+    # before 'index' in last column
+    def _move_pointer(self, symbol, index):
+        return self.first_occurence(symbol) + self.count(symbol, index)
 
     # THIS IS A STUB, YOU NEED TO IMPLEMENT THIS
     #
@@ -83,4 +110,21 @@ class BWT:
     #       sorted rotations table that start with exact matches to query string
     #       returns (-1, -1) if no matches are found
     def _get_matching_rows(self, pattern):
+        # have top and bottom pointers at first and last
+        # row of M matrix
+        top = 0
+        bottom = len(self._bwt) - 1
+
+        # while there are rows to be checked
+        while top <= bottom:
+            # and patterns symbols to be checked
+            if len(pattern) > 0:
+                symbol = pattern[-1] # check the last symbol in pattern
+                pattern = pattern[:-1] # remove last symbol in pattern
+
+                # update top and bottom pointers
+                top = self._move_pointer(symbol, top)
+                bottom = self._move_pointer(symbol, bottom + 1) - 1
+            else:
+                return (top,bottom)
         return (-1, -1)

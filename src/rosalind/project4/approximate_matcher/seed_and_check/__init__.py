@@ -13,7 +13,26 @@
 #       seeds: array of strings, contains seed non-overlapping k-mers obtained from pattern
 #       k: overlapping k-mer length
 def _make_seeds(pattern, d):
-    return [], 0
+    n = len(pattern)
+    k = n / (d + 1)
+
+    # split pattern into d + 1 seeds each of at least length k
+    seeds = []
+    while len(pattern) >= k:
+        seeds.append(pattern[:k])
+        pattern = pattern[k:]
+
+    # check corner case where we made one too many seeds
+    if len(seeds) > d+1:
+        last = seeds[-1]
+        seeds = seeds[:-1]
+        seeds[-1] += last
+
+    # add any remaining characters to last seed
+    if len(pattern) > 0:
+        seeds[-1] += pattern
+    return seeds, k
+
 
 # THIS IS A STUB, YOU NEED TO IMPLEMENT THIS
 #
@@ -24,7 +43,14 @@ def _make_seeds(pattern, d):
 #   target: string, target string
 #   d: minimum number of mismatches
 def _within_edit_distance(pattern, target, d):
-    return False
+    n = len(pattern)
+    num_mismatches = 0
+    i = 0
+
+    while i < len(target) and i < n and num_mismatches <= d:
+        num_mismatches += 1 if pattern[i] != target[i] else 0
+        i += 1
+    return num_mismatches <= d and i == n
 
 # class encapsulating the seed-and-check strategy
 # for approximate matching

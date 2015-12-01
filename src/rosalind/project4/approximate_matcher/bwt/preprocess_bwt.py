@@ -15,10 +15,14 @@ import numpy as np
 #   location of symbol in first column of rotation matrix for bwt
 def _get_first_occurence_fn(bwt):
     first_occurences = dict()
+
     # find first occurrence of each symbol in the
     # first column of rotation table
-
-    # YOU NEED TO FILL THIS IN
+    bwt = sorted(bwt) # sort bwt
+    for i in xrange(len(bwt)):
+        symbol = bwt[i]
+        if symbol not in first_occurences:
+            first_occurences[symbol] = i
 
     # return function that returns first occurrence
     # for a given symbol
@@ -38,26 +42,32 @@ def _get_first_occurence_fn(bwt):
 #   such that f(symbol, position) gives the number of occurences
 #   of symbol up to given position in bwt
 def _get_count_fn(bwt):
-    # figure out symbols occuring in bwt
+    # figure out symbols occuring in text
     counter = defaultdict(int)
-    for c in bwt:
-        counter[c] += 1
+    for symbol in bwt:
+        counter[symbol] += 1
     symbols = counter.keys()
 
     # allocate count table
     count = np.zeros((len(bwt)+1, len(symbols)), dtype=np.int32)
 
     # fill in count table with running count
-    # of occurence counts, at the end
+    # of occurences, at the end
     # count[position, index] has the number of
     # occurrences in bwt up to `position` of symbol
     # corresponding to column `index`, see below
-
-    # YOU NEED TO FILL THIS IN
+    for i in xrange(len(bwt)):
+        symbol = bwt[i]
+        vec = np.array(count[i,])
+        index = symbols.index(symbol)
+        # increase running count for symbol
+        vec[index] += 1
+        count[i+1,:] = vec
 
     # return function that return precomputed count
     # i.e., number of occurrences of `symbol`
     # up to `position` in bwt
+    # function that return precomputed count
     def fn(symbol, position):
         index = symbols.index(symbol)
         return count[position, index]
