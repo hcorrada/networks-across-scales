@@ -437,7 +437,7 @@
       title: "No lecture (Thanksgiving)"
 -
   date: 12/1
-  status: present
+  status: done
   covers:
     -
       title: "Efficient string matching with BWT"
@@ -453,7 +453,7 @@
       link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 12/3
-  status: present
+  status: done
   covers:
     -
       title: The BWT in practice
