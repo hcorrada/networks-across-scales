@@ -431,6 +431,7 @@
       link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 11/26
+  status: done
   covers:
     -
       title: "No lecture (Thanksgiving)"
@@ -452,9 +453,22 @@
       link: { url: "http://rosalind.info/classes/232/" }
 -
   date: 12/3
+  status: present
   covers:
     -
-      title: TBD
+      title: The BWT in practice
+      materials: { link: "lectures/CMSC423_exactMatching3.pdf" }
+  readings:
+    -
+      title: Langmeand and Salzberg, "Fast gapped-read alignment with Bowtie 2"
+      link: { url: "http://www.nature.com/nmeth/journal/v9/n4/full/nmeth.1923.html" }
+    -
+      title: Simpson and Durbin, "Efficient de novo assembly of large genomes using compressed data structures"
+      link: { url: "http://genome.cshlp.org/content/22/3/549.full" }
+    -
+      title: Simpson and Durbin, "Efficient construction of an assembly string graph using the FM-index"
+      link: { url: "http://bioinformatics.oxfordjournals.org/content/26/12/i367.abstract"}
+
 -
   date: 12/8
   covers:
