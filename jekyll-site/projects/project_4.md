@@ -3,7 +3,7 @@ layout: default
 title: Project 4
 ---
 
-**Due Thrusday Dec. 11**
+**Due Friday Dec. 11**
 
 You will implement approximate string matching using a
 seed-and-check strategy based on exact matching using the
