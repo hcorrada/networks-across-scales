@@ -73,7 +73,7 @@ for read in reads:
 # argument filters mismatch by frequency in which variant character
 # is observe, e.g., .01 means variant character has to be seen at least
 # once for every 10 aligned nucleotides
-p.print_mismatches(.01)
+pileup.print_mismatches(.01)
 {% endhighlight %}
 
 where positions are indices in reference where a match for `read` was found.
