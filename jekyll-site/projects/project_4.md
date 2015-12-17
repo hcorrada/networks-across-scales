@@ -56,6 +56,7 @@ from approximate_matcher import ApproximateMatcher
 # initialize object
 am = ApproximateMatcher(reference)
 pileup = PileUp(reference)
+d = 3
 
 for read in reads:
 	# find matching positions for a given read
@@ -72,7 +73,7 @@ for read in reads:
 # <num_times_aligned>)])
 # argument filters mismatch by frequency in which variant character
 # is observe, e.g., .01 means variant character has to be seen at least
-# once for every 10 aligned nucleotides
+# once for every 100 aligned nucleotides
 pileup.print_mismatches(.01)
 {% endhighlight %}
 
