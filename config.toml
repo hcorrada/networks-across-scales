@@ -38,9 +38,8 @@ googleAnalytics = ""
     	code = "Roboto Mono"
 
  [params.links]
-      elms   = "https://myelms.umd.edu/courses/1177854"
-      piazza = "https://piazza.com/class/ije6l0thr383ii"
-
+      elms   = "https://myelms.umd.edu/courses/1218381"
+      piazza = "https://piazza.com/class/iybyz4l8fqs2bl"
 [social]
 	twitter = "hcorrada"
 	github  = "hcorrada"
