@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Resources on CMSC320 Introduction to Data Science</title>
-    <link>http://www.hcbravo.org/IntroDataSci/resources/</link>
-    <description>Recent content in Resources on CMSC320 Introduction to Data Science</description>
+    <title>Resources on CMSC423: Bioinformatic Algorithms Databases and Tools (Spring 2017)</title>
+    <link>http://www.hcbravo.org/cmsc423/resources/</link>
+    <description>Recent content in Resources on CMSC423: Bioinformatic Algorithms Databases and Tools (Spring 2017)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 29 Aug 2016 08:54:37 -0400</lastBuildDate>
-    <atom:link href="http://www.hcbravo.org/IntroDataSci/resources/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.hcbravo.org/cmsc423/resources/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>CMSC320 Resources</title>
-      <link>http://www.hcbravo.org/IntroDataSci/resources/</link>
+      <link>http://www.hcbravo.org/cmsc423/resources/</link>
       <pubDate>Mon, 29 Aug 2016 08:54:37 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/IntroDataSci/resources/</guid>
+      <guid>http://www.hcbravo.org/cmsc423/resources/</guid>
       <description>
 
 &lt;h2 id=&#34;r&#34;&gt;R&lt;/h2&gt;
@@ -36,7 +36,7 @@
 of packages providing analysis tools and datasets we will use throughout the semester. You
 can read more about Rocker in &lt;a href=&#34;http://dirk.eddelbuettel.com/blog/2014/10/23/&#34;&gt;this introduction&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Instructions on how to setup are found &lt;a href=&#34;http://www.hcbravo.org/IntroDataSci/
+&lt;p&gt;Instructions on how to setup are found &lt;a href=&#34;http://www.hcbravo.org/cmsc423/
 homeworks/rocker/&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;other-resources&#34;&gt;Other Resources&lt;/h2&gt;
@@ -69,6 +69,7 @@ dataset portal maintained by CMU.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml&#34;&gt;NYC Taxi ride data&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://rddj.info&#34;&gt;Resources for data journalism with R&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://ropengov.github.io/&#34;&gt;Algorithms and datasets for computational social science and digital humanities&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.facebook.com/posts/596471193873876/open-population-datasets-and-open-challenges/&#34;&gt;Open population datasets&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

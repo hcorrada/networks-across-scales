@@ -1,13 +1,13 @@
 ---
 date: 2016-08-28T17:13:09-04:00
-title: "CMSC320: Introduction to Data Science"
+title: "CMSC423: Bioinformatic Algorithms, Databases and Tools"
 type: index
 ---
 
 ## Course Information
 
-**CMSC320: Introduction to Data Science**  
-**Fall 2016**
+**CMSC423: Bioinformatic Algorithms, Databases and Tools**  
+**Spring 2017**
 
 *	Instructor:  
     [H&eacute;ctor Corrada Bravo](http://www.cbcb.umd.edu/~hcorrada)  
@@ -17,7 +17,7 @@ type: index
     Office: [3114F Biomolecular Sciences Building](https://www.cbcb.umd.edu/about-us/directions)  
 
 *	Lecture Meeting Times    
-    Monday and Wendesday, 2:00pm-3:15pm, CSI 3117  
+    Tuesday and Thursday, 9:30am-10:45am, CSI 1122  
 
 ## Links
 
