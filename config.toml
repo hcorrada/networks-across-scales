@@ -1,6 +1,6 @@
-baseurl = "http://www.hcbravo.org/IntroDataSci/"
+baseurl = "http://www.hcbravo.org/cmsc423/"
 languageCode = "en-us"
-title = "CMSC320 Introduction to Data Science"
+title = "CMSC423: Bioinformatic Algorithms Databases and Tools (Spring 2017)"
 theme = "hugo-material-docs"
 metadataformat = "yaml"
 canonifyurls = true
@@ -10,12 +10,12 @@ googleAnalytics = ""
 [params]
 	# General information
 	author = "Héctor Corrada Bravo"
-	description = "Data Science course at the University of Maryland Department of Computer Science"
+	description = "Introductor bioinformatics course, Department of Computer Science, University of Maryland"
 	copyright = "Released under the MIT license"
 
 	# Repository
 	provider = "GitHub"
-	repo_url = "https://github.com/hcorrada/IntroDataSci.git"
+	repo_url = "https://github.com/hcorrada/cmsc423.git"
 
 	logo = "images/logo.png"
 	favicon = ""
@@ -54,11 +54,6 @@ googleAnalytics = ""
 	name   = "Logistics"
 	url    = "logistics/"
 	weight = 10
-
-[[menu.main]]
-	name   = "Lecture Notes"
-	url    = "lecture-note/"
-	weight = 20
 
 [[menu.main]]
 	name   = "Resources"
