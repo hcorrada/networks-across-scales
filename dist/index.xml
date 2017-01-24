@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CMSC320 Introduction to Data Science</title>
+    <link>http://www.hcbravo.org/IntroDataSci/</link>
+    <description>Recent content on CMSC320 Introduction to Data Science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Nov 2016 06:12:58 -0500</lastBuildDate>
+    <atom:link href="http://www.hcbravo.org/IntroDataSci/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Dimensionality Reduction</title>
+      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/pca/</link>
+      <pubDate>Mon, 28 Nov 2016 06:12:58 -0500</pubDate>
+      
+      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/pca/</guid>
+      <description>&lt;p&gt;Exploratory Data Analysis of high-dimensional data using dimensionality reduction.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;pca/&#34;&gt;Lecture Notes&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Project 3: Classification and Regression</title>
+      <link>http://www.hcbravo.org/IntroDataSci/projects/project3/</link>
+      <pubDate>Tue, 22 Nov 2016 13:04:21 -0500</pubDate>
+      
+      <guid>http://www.hcbravo.org/IntroDataSci/projects/project3/</guid>
+      <description>
+
+&lt;p&gt;This project has two parts:&lt;/p&gt;
+
+&lt;p&gt;a. &lt;a href=&#34;gapminder/&#34;&gt;Regression&lt;/a&gt;&lt;br /&gt;
+  b. &lt;a href=&#34;classification/&#34;&gt;Classification&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Follow instructions on each of these two to complete your project.&lt;/p&gt;
+
+&lt;p&gt;DUE Dec 2, 2016&lt;/p&gt;
+
+&lt;h2 id=&#34;submission&#34;&gt;Submission&lt;/h2&gt;
+
+&lt;p&gt;Prepare and knit a single Rmarkdown file that includes submission information described in each of the two project parts above.&lt;/p&gt;
+
+&lt;p&gt;All axes in plots should be labeled in an informative manner. Your answers to any question that refers to a plot should include both (a) a text description of your plot, and (b) a sentence or two of interpretation as it relates to the question asked.&lt;/p&gt;
+
+&lt;p&gt;Submit to ELMS at &lt;a href=&#34;https://myelms.umd.edu/courses/1199381/assignments/4270814&#34;&gt;https://myelms.umd.edu/courses/1199381/assignments/4270814&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;group-work&#34;&gt;Group work&lt;/h3&gt;
+
+&lt;p&gt;Working in groups in this project is encouraged but not required. If working on a group: (1) groups can be of 2 or 3 people, (2) a single group member will submit the group&amp;rsquo;s writeup, (3) in all cases, names of peers who worked in the group should be included in the writeup.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;IMPORTANT INFORMATION&lt;/strong&gt;: Please fill this form: &lt;a href=&#34;https://goo.gl/forms/wYDC5KnUUmdVeMif2&#34;&gt;https://goo.gl/forms/wYDC5KnUUmdVeMif2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;As with all group work, and reflective of academic ethics code, there is an expectation that all group members will contribute equally in design, implementation and reporting of this work. If any student feels this expectation was not met when working on this project, they should contact the instructor team who will handle the situation as expediently and fairly as possible.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Evaluation</title>
+      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/evaluation/</link>
+      <pubDate>Wed, 16 Nov 2016 08:09:08 -0500</pubDate>
+      
+      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/evaluation/</guid>
+      <description>&lt;p&gt;How to use sampling methods to evaluate statistical models&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;Evaluation/&#34;&gt;Lecture notes&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Learning at scale</title>
+      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/large_scale/</link>
+      <pubDate>Wed, 09 Nov 2016 09:34:07 -0500</pubDate>
+      
+      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/large_scale/</guid>
+      <description>&lt;p&gt;Systems and algorithms for data summarization and learning on large datasets&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;sgd/&#34;&gt;Lecture notes on Stochastic Gradient Descent&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tree-based methods</title>
+      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/tree_methods/</link>
+      <pubDate>Mon, 07 Nov 2016 03:34:33 -0500</pubDate>
+      
+      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/tree_methods/</guid>
+      <description>
+
+&lt;p&gt;Regression and Decision Trees. Random Forests.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;TreeMethods/&#34;&gt;Lecture Notes&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;resources&#34;&gt;Resources&lt;/h1&gt;
+
+&lt;p&gt;ISLR Ch. 8&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linear models for regression and classification</title>
+      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/linear_models/</link>
+      <pubDate>Wed, 26 Oct 2016 06:12:26 -0400</pubDate>
+      
+      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/linear_models/</guid>
+      <description>
+
+&lt;p&gt;Basic models for regression and classification&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;linear_regression/&#34;&gt;Lecture Notes: Simple linear regression&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;multiple_linear_regression/&#34;&gt;Lecture Notes: Multiple linear regression&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;linear_classification/&#34;&gt;Lecture Notes: Linear models for classification&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ISLR, Ch. 3 and 4&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Zumel &amp;amp; Mount Ch. 7&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Statistical Learning</title>
+      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/statlearn/</link>
+      <pubDate>Mon, 10 Oct 2016 09:42:48 -0400</pubDate>
+      
+      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/statlearn/</guid>
+      <description>
+
+&lt;p&gt;Introduction to randomness, distributions, inference and testing&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;IntroStatLearn/&#34;&gt;Lecture Notes: Distributions, Inference and Testing&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.openintro.org/stat/textbook.php?stat_book=isrs&#34;&gt;Intro Stat with Randomization and Simulation&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.openintro.org/stat/textbook.php?stat_book=os&#34;&gt;OpenIntro Statistics&lt;/a&gt;  - &lt;a href=&#34;http://www.amazon.com/Cartoon-Guide-Statistics-Larry-Gonick/dp/0062731025&#34;&gt;Cartoon guide to Statistics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Exploratory Data Analysis (EDA)</title>
+      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/eda/</link>
+      <pubDate>Tue, 27 Sep 2016 18:46:11 -0400</pubDate>
+      
+      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/eda/</guid>
+      <description>
+
+&lt;p&gt;Visualization and summarization methods for effective
+data exploration.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;visualization_eda/&#34;&gt;Lecture Notes: Data visualization for EDA&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;eda_summary_stats/&#34;&gt;Lecture Notes: Data summarization for EDA&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;transformations/&#34;&gt;Lecture Notes: Data transformations&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;missing_data/&#34;&gt;Lecture Notes: Handling missing data&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.hcbravo.org/IntroDataSci/misc/derivative_cheat_sheet.pdf&#34;&gt;Derivative review&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://myelms.umd.edu/courses/1199381
+/files/44629545&#34;&gt;Zumen &amp;amp; Mount Ch. 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://r4ds.had.co.nz/exploratory-data-analysis.html&#34;&gt;R for Data Science Ch. 7&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.rstudio.com/wp-content/uploads/2015/12/ggplot2-cheatsheet-2.0.pdf&#34;&gt;ggplot2 cheatsheet&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/ggplot2-Elegant-Graphics-Data-Analysis/dp/0387981403&#34;&gt;ggplot2 textbook&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Modeling and tidying data</title>
+      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/datamodels/</link>
+      <pubDate>Mon, 26 Sep 2016 11:42:11 -0400</pubDate>
+      
+      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/datamodels/</guid>
+      <description>
+
+&lt;p&gt;How to get data into shape before analysis&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;DataModels/&#34;&gt;Lecture notes: Data models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;tidy_data/&#34;&gt;Lecture notes: Tidy data&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;readings-and-resources&#34;&gt;Readings and resources&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.jstatsoft.org/index.php/jss/article/view/v059i10/v59i10.pdf&#34;&gt;H. Wickham (2014). Tidy data. &lt;em&gt;Journal of Statistical Software&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://r4ds.had.co.nz/&#34;&gt;H. Wickham (2016). R for Data Science&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data Wrangling</title>
+      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/wrangling/</link>
+      <pubDate>Sun, 18 Sep 2016 15:00:57 -0400</pubDate>
+      
+      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/wrangling/</guid>
+      <description>
+
+&lt;p&gt;Data management and manipulation&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;wrangling_dplyr/&#34;&gt;Data wrangling with &lt;code&gt;dplyr&lt;/code&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;wrangling_sql/&#34;&gt;Data wrangling with SQL&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Introduction to &lt;code&gt;dplyr&lt;/code&gt;: &lt;a href=&#34;http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html&#34;&gt;http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dplyr&lt;/code&gt; Cheatsheet: &lt;a href=&#34;http://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf&#34;&gt;http://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Best Practices</title>
+      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/best_practices/</link>
+      <pubDate>Wed, 14 Sep 2016 13:17:30 -0400</pubDate>
+      
+      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/best_practices/</guid>
+      <description>&lt;p&gt;Tips for organizing and managing data science projects&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;BestPractices.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Measurement and data types</title>
+      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/datatypes/</link>
+      <pubDate>Fri, 09 Sep 2016 11:57:48 -0400</pubDate>
+      
+      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/datatypes/</guid>
+      <description>&lt;p&gt;Examples of data sets, data types and measurements&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;DataTypes/&#34;&gt;Lecture Notes&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Setting up R</title>
+      <link>http://www.hcbravo.org/IntroDataSci/homeworks/rocker/</link>
+      <pubDate>Wed, 31 Aug 2016 00:05:51 -0400</pubDate>
+      
+      <guid>http://www.hcbravo.org/IntroDataSci/homeworks/rocker/</guid>
+      <description>
+
+&lt;p&gt;For class we will be using R, Rstudio and git. You can download and install each using the &lt;a href=&#34;#downloads&#34;&gt;links below&lt;/a&gt;. However, you can instead use &lt;a href=&#34;https://github.com/rocker-org/rocker&#34;&gt;Rocker&lt;/a&gt;, a project built on top of
+&lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt; to manage your software installation. We&amp;rsquo;ve setup a container that will provide you with a working installation of R, and the Rstudio IDE, along with a lot
+of packages providing analysis tools and datasets we will use throughout the semester. You
+can read more about Rocker in &lt;a href=&#34;http://dirk.eddelbuettel.com/blog/2014/10/23/&#34;&gt;this introduction&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;downloads&#34;&gt;Downloads&lt;/h1&gt;
+
+&lt;p&gt;If you would rather download and maintain your own software environment, download tools from these links:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://cran.r-project.org&#34;&gt;R&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.rstudio.com/wp-signup.php?new=rstudio.wpengine.com&#34;&gt;Rstudio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://help.github.com/articles/set-up-git/&#34;&gt;git&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;setting-up-docker&#34;&gt;Setting up Docker&lt;/h1&gt;
+
+&lt;p&gt;These instructions are essentially following &lt;a href=&#34;https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image&#34;&gt;this document&lt;/a&gt; and have been tested mainly on Mac OSX.
+Install &lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt; according to the instructions &lt;a href=&#34;https://docs.docker.com/installation/&#34;&gt;for your system&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To check that docker works:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker run hello-world
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;setting-up-the-course-docker-image&#34;&gt;Setting up the course Docker image&lt;/h1&gt;
+
+&lt;p&gt;We will be working from a docker image that extends the &lt;code&gt;ropensci&lt;/code&gt;
+container provided by the &lt;a href=&#34;https://github.com/rocker-org/rocker&#34;&gt;Rocker project&lt;/a&gt;.  It includes a a working installation of R, and the Rstudio IDE, along with many
+packages providing analysis tools and datasets we will use throughout the course. You can read more about Rocker in &lt;a href=&#34;http://dirk.eddelbuettel.com/blog/2014/10/23/&#34;&gt;this introduction&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This command will start an instance of this image.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker run -d -p 8787:8787 -v ${PWD}:/home/rstudio --name ids hcorrada/idsdocker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will take a while the first time you download it. After the download &lt;code&gt;Rstudio Server&lt;/code&gt; will start (invisibly).&lt;/p&gt;
+
+&lt;p&gt;A couple of things to note:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;We will use Rstudio server through the web browser. The command &lt;code&gt;-p 8787:8787&lt;/code&gt; tells docker where you&amp;rsquo;re going to point your browser to run it.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Docker runs on a virtual machine, we would like to be able to share files in your local machine with this virtual machine. The &lt;code&gt;-v&lt;/code&gt; flag does that. Here &lt;code&gt;${PWD}&lt;/code&gt; corresponds to the current path in your local machine that will be mapped to the home directory in the docker virtual machine running rstudio (it is good practice to have a dedicated directory in your local machine where you do all work for this class mounted to the Docker container). You can read more about this &lt;a href=&#34;https://github.com/rocker-org/rocker/wiki/Sharing-files-with-host-machine&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;It may also be possible that your personal computer does not, by default, allow the creation of virtual machines. The process of changing this setting is easy to do but will depend on your computer. The general idea is that you want to open your BIOS settings from start-up and change the virtualization setting there. As a general heuristic for doing so is &lt;a href=&#34;https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Virtualization/sect-Virtualization-Troubleshooting-Enabling_Intel_VT_and_AMD_V_virtualization_hardware_extensions_in_BIOS.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We name the instance &lt;code&gt;ids&lt;/code&gt; so we can refer to it in other commands later on.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&#34;starting-rstudio&#34;&gt;Starting Rstudio&lt;/h1&gt;
+
+&lt;p&gt;You will use Rstudio through your web browser. First, you need to know what is the address of your virtual machine. Users of &lt;code&gt;Docker for Mac&lt;/code&gt; and &lt;code&gt;Docker for Windows&lt;/code&gt; should be able to use the localhost address (&lt;code&gt;http://127.0.0.1:8787&lt;/code&gt;). In other cases, you can find the address of the virtual machine by typing this in a terminal window:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker-machine ip default
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If, for example, this returned &lt;code&gt;192.168.59.103&lt;/code&gt; then we can open Rstudio by pointing our web browser to &lt;code&gt;http://192.168.59.103:8787&lt;/code&gt; (remember we used port &lt;code&gt;8787&lt;/code&gt; when we started the image).&lt;/p&gt;
+
+&lt;p&gt;Sign-in with username &lt;code&gt;rstudio&lt;/code&gt; and password &lt;code&gt;rstudio&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;try-it-out&#34;&gt;Try it out&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code&gt;Rstudio&lt;/code&gt; IDE is divided into multiple panes. R is an interactive environment for data analysis.
+An interactive R session runs in the &lt;strong&gt;Console&lt;/strong&gt; pane in Rstudio. You can enter R commands there:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;&amp;gt; Sys.Date()
+&amp;gt; data(cars)
+&amp;gt; View(cars)
+&amp;gt; plot(cars$dist, cars$speed)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The last command will make a scatter plot on the &lt;strong&gt;Plots&lt;/strong&gt; pane.&lt;/p&gt;
+
+&lt;h1 id=&#34;stopping-the-container&#34;&gt;Stopping the container&lt;/h1&gt;
+
+&lt;p&gt;To stop and remove the running docker container, write:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;docker stop ids
+docker rm ids
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;updating-the-image&#34;&gt;Updating the image&lt;/h1&gt;
+
+&lt;p&gt;When the image is updated to include new data or software you can use the following commands to pull the updated image and restart the docker container:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# pull updated version of image
+docker pull hcorrada/idsdocker
+
+# stop and remove the running container
+docker stop ids
+docker rm ids
+
+# now restart the docker container with the updated image
+docker run -d -p 8787:8787 -v ${PWD}:/home/rstudio --name ids hcorrada/idsdocker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;dockerfile&#34;&gt;Dockerfile&lt;/h1&gt;
+
+&lt;p&gt;The Dockerfile defining the class image is hosted on Github here: &lt;a href=&#34;https://github.com/hcorrada/idsDocker&#34;&gt;https://github.com/hcorrada/idsDocker&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;permissions&#34;&gt;Permissions&lt;/h1&gt;
+
+&lt;p&gt;Advanced Note: you don&amp;rsquo;t need to use &lt;code&gt;sudo&lt;/code&gt; on Mac OSX. Linux users might want to add their user to the docker group to avoid having to use sudo. To do so, just run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo usermod -a -G docker &amp;lt;username&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You may need to login again to refresh your group membership.&lt;/p&gt;
+
+&lt;h1 id=&#34;git&#34;&gt;Git&lt;/h1&gt;
+
+&lt;p&gt;The course docker image also includes &lt;code&gt;git&lt;/code&gt; a &lt;em&gt;version control&lt;/em&gt; program we will use during the course. You will download &lt;em&gt;all&lt;/em&gt; course materials using &lt;code&gt;git&lt;/code&gt; and be able to update any changes I make along the way.&lt;/p&gt;
+
+&lt;p&gt;Version control will also be useful for reproducibility of your data analyses, also for sharing your analyses and contributing with collaborators.&lt;/p&gt;
+
+&lt;p&gt;To get started we will create a new Rstudio project by clicking on &lt;code&gt;File-&amp;gt;New Project...&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;and selecting &lt;code&gt;Version Control&lt;/code&gt; to build the project from our course materials.&lt;/p&gt;
+
+&lt;p&gt;Select &lt;code&gt;Git&lt;/code&gt; and enter the course repositories URL:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/hcorrada/IntroDataSci.git&#34;&gt;https://github.com/hcorrada/IntroDataSci.git&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This will download all the course materials to your current directory.&lt;/p&gt;
+
+&lt;p&gt;One more thing: we are using the &lt;code&gt;gh-pages&lt;/code&gt; branch to keep track of our materials. Go to the &lt;code&gt;Git&lt;/code&gt; tab on Rstudio and on the branch dropdown (it should show &lt;code&gt;master&lt;/code&gt; at first), select &lt;code&gt;origin/gh-pages&lt;/code&gt;. Ok, now we&amp;rsquo;re done.&lt;/p&gt;
+
+&lt;p&gt;We will later see more information on how to use &lt;code&gt;git&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;getting-and-aws-ec2-instance-up-and-running&#34;&gt;Getting and AWS EC2 instance up and running&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://aws.amazon.com&#34;&gt;AWS (Amazon Web Services)&lt;/a&gt; provides Elastic Compute Cloud (EC2) as a service that allows users to perform cloud computing (for a cost) without the cost of setting up the actual hardware necessary. For any of you familiar with MapReduce or Spark, EC2 instances are the way Amazon facilitates users interaction with those big data processing environments.&lt;/p&gt;
+
+&lt;p&gt;Without further ado, here are the instructions:&lt;/p&gt;
+
+&lt;h3 id=&#34;important-you-will-need-to-do-this-before-anything-else&#34;&gt;IMPORTANT; YOU WILL NEED TO DO THIS BEFORE ANYTHING ELSE:&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Go to &lt;a href=&#34;http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/get-set-up-for-amazon-ec2.html#sign-up-for-aws&#34;&gt;http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/get-set-up-for-amazon-ec2.html#sign-up-for-aws&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Create an AWS account. In order to do this you will need to provide a phone number and a credit card. The phone number will be used to get a pin number and the credit card will receive a $1 charge that will be removed. While the accounts we will be setting up are free, Amazon charges for these products and will charge your account if you go over the 750 hour limit they provide. You can set up usage alarms at &lt;a href=&#34;http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-alarms.html&#34;&gt;http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-alarms.html&lt;/a&gt; in order to avoid going over your limit and being charged.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Create and IAM user and follow the instructions for creating a group for administrators.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Create a key pair and be sure to keep your private key somewhere safe. Something you may need to do is change the permissions on the private key (for those of you using linux this would be &lt;code&gt;chmod 400 name_of_the_private_key.pem)&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;once-you-ve-created-a-an-account-and-an-iam-user-follow-these-instructions&#34;&gt;ONCE YOU&amp;rsquo;VE CREATED A AN ACCOUNT AND AN IAM USER FOLLOW THESE INSTRUCTIONS:&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Sign into your AWS account and configure a t2.micro instance for launch.  When choosing the AMI, note that these instructions cover Rocker setup for Amazon Linux AMI and Ubuntu Server 14.04 AMI. REQUIRED: While configuring your EC2 instance for launch, add these inbound rules for the security group you selected:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Type: &amp;ldquo;SSH&amp;rdquo;, Protocol: TCP, Port Range: 22, Source: my address (this will need to be updated when your local machine ip address changes)&lt;/li&gt;
+&lt;li&gt;Type: &amp;ldquo;SSH&amp;rdquo;: &amp;ldquo;custom TCP rule&amp;rdquo;, Protocol: TCP, port 8787, Source: my address (this will need to be updated when your local machine ip address changes)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Connect to your EC2 instance.  The EC2 Management Console provides the user name, host name, and SSH command after right clicking on an instance and choosing &amp;ldquo;Connect&amp;rdquo;. The easiest way to ssh into your EC2 instance is in docker. From docker run the command &lt;code&gt;ssh -i &amp;quot;name_of_EC2_instance&amp;quot; ec2-user@ec2-54-209-79-237.compute-1.amazonaws.com&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;If using an Amazon Linux AMI, install Docker as follows: &lt;a href=&#34;http://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html#install_docker&#34;&gt;http://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html#install_docker&lt;/a&gt; . If using an Ubuntu Server 14.04 AMI, install docker as follows starting with the &amp;ldquo;Install&amp;rdquo; heading (Half way down the page): &lt;a href=&#34;https://docs.docker.com/engine/installation/linux/ubuntulinux/&#34;&gt;https://docs.docker.com/engine/installation/linux/ubuntulinux/&lt;/a&gt;. IMPORTANT: the above OS refers to the OS of the AMI.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Run:&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ docker run -d -p 8787:8787 -v ${PWD}:/home/rstudio --name ids hcorrada/idsdocker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;to-start-rstudio&#34;&gt;To start Rstudio&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Determine your EC2 instance public ip address.  This is accessible from the EC2 Management Console.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;On your local machine, point your browser to &lt;code&gt;http://&amp;lt;ec2 instance public ip address&amp;gt;:8787&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Sign-in with username rstudio and password rstudio. Continue with &lt;a href=&#34;#try-it-out&#34;&gt;Try it out&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>R for Data Science Primer</title>
+      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/rintro/</link>
+      <pubDate>Tue, 30 Aug 2016 22:23:52 -0400</pubDate>
+      
+      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/rintro/</guid>
+      <description>
+
+&lt;p&gt;An introduction to the R programming language and data analysis environment&lt;/p&gt;
+
+&lt;p&gt;Part I: (&lt;a href=&#34;RIntro_lab/&#34;&gt;html&lt;/a&gt;) (&lt;a href=&#34;RIntro_lab.Rmd&#34;&gt;Rmarkdown&lt;/a&gt;)&lt;br /&gt;
+Part II: (&lt;a href=&#34;RIntro_lab2/&#34;&gt;html&lt;/a&gt;) (&lt;a href=&#34;RIntro_lab2.Rmd&#34;&gt;Rmarkdown&lt;/a&gt;)&lt;br /&gt;
+Part III: A short note about pipes (&lt;a href=&#34;pipes/&#34;&gt;html&lt;/a&gt;) (&lt;a href=&#34;pipes.Rmd&#34;&gt;Rmarkdown&lt;/a&gt;)&lt;/p&gt;
+
+&lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.hcbravo.org/IntroDataSci/
+resources/#r&#34;&gt;Course resource page&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Zumen &amp;amp; Mount, Appendix A&lt;/li&gt;
+&lt;li&gt;Wickham, H. &lt;a href=&#34;http://adv-r.had.co.nz/&#34;&gt;Advanced R&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://rmarkdown.rstudio.com/&#34;&gt;Rmarkdown&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CMSC320 Calendar</title>
+      <link>http://www.hcbravo.org/IntroDataSci/calendar/</link>
+      <pubDate>Tue, 30 Aug 2016 10:13:51 -0400</pubDate>
+      
+      <guid>http://www.hcbravo.org/IntroDataSci/calendar/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

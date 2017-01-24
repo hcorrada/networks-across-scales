@@ -1,0 +1,78 @@
+baseurl = "http://www.hcbravo.org/IntroDataSci/"
+languageCode = "en-us"
+title = "CMSC320 Introduction to Data Science"
+theme = "hugo-material-docs"
+metadataformat = "yaml"
+canonifyurls = true
+# Enable Google Analytics by entering your tracking id
+googleAnalytics = ""
+
+[params]
+	# General information
+	author = "Héctor Corrada Bravo"
+	description = "Data Science course at the University of Maryland Department of Computer Science"
+	copyright = "Released under the MIT license"
+
+	# Repository
+	provider = "GitHub"
+	repo_url = "https://github.com/hcorrada/IntroDataSci.git"
+
+	logo = "images/logo.png"
+	favicon = ""
+
+	permalink = "#"
+
+	# Custom assets
+	custom_css = []
+	custom_js  = []
+
+	# Syntax highlighting theme
+	highlight_css  = ""
+
+	[params.palette]
+    	primary = "deep-orange"
+    	accent  = "blue"
+
+ [params.font]
+    	text = "Roboto"
+    	code = "Roboto Mono"
+
+ [params.links]
+      elms   = "https://myelms.umd.edu/courses/1177854"
+      piazza = "https://piazza.com/class/ije6l0thr383ii"
+
+[social]
+	twitter = "hcorrada"
+	github  = "hcorrada"
+
+[[menu.main]]
+  name = "Calendar"
+  url  = "calendar/"
+  weight = 5
+
+[[menu.main]]
+	name   = "Logistics"
+	url    = "logistics/"
+	weight = 10
+
+[[menu.main]]
+	name   = "Lecture Notes"
+	url    = "lecture-note/"
+	weight = 20
+
+[[menu.main]]
+	name   = "Resources"
+	url    = "resources/"
+	weight = 30
+
+[[menu.main]]
+	name   = "Projects"
+	url    = "projects/"
+	weight = 40
+
+
+[blackfriday]
+	smartypants	= true
+	fractions = true
+	smartDashes = true
+	plainIDAnchors = true

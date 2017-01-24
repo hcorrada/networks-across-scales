@@ -1,0 +1,109 @@
+[01-introduction]
+title  = "Introduction"
+excerpt  = "What is Data Science"
+url  = "introduction"
+hide  = false
+
+[02-rintro]
+title  = "R for Data Science primer"
+excerpt  = "An introduction to the R programming language and data analysis environment"
+url  = "rintro"
+hide  = false
+
+[03-preliminaries]
+title  = "Measurement and data types"
+excerpt  = "Examples of data sets, data types and measurements"
+url  = "datatypes"
+hide  = false
+
+[04-best_practices]
+title  = "Best practices for Data Science projects"
+excerpt  = "Tips for organizing and managing data science projects"
+url  = "best_practices"
+hide  = false
+
+[05-wrangling]
+title = "Data Wrangling"
+excerpt = "Data management and manipulation"
+url = "wrangling"
+hide = false
+
+[06-tidy]
+title = "Tidy data and data models"
+excerpt = "How to get data into shape before analysis"
+url = "datamodels"
+hide = false
+
+
+[07-eda]
+title = "Exploratory Data Analysis"
+excerpt = "Data visualization and summarization"
+url = "eda"
+hide = false
+
+[08-mapreduce]
+title = "Data summarization and aggregation at scale"
+excerpt = "Systems for large scale data processing"
+url = "mapreduce"
+hide = true
+
+[09-statlearn]
+title  = "Introduction to Statistical Learning"
+excerpt = "Introduction to randomness, distributions, inference and testing"
+url = "statlearn"
+hide = false
+
+[10-linear_models]
+title = "Linear models for regression and classification"
+excerpt = "Basic models for regression and classification"
+url = "linear_models"
+hide = false
+
+[11-large_scale]
+title = "Analysis at scale"
+excerpt = "Systems and algorithms for learning on large datasets"
+url = "large_scale"
+hide = false
+
+[12-tree_methods]
+title = "Tree-based learning methods"
+excerpt = "Decision and regression trees and random forests."
+url = "tree_methods"
+hide = false
+
+[13-svms]
+title = "The support vector machine and KNN"
+excerpt = "Linear and non-linear regression and classification with support vector machines and KNN"
+url = "svms"
+hide = false
+
+[14-evaluation]
+title = "Evaluating model performance via resampling"
+excerpt = "How to use sampling methods to evaluate statistical models"
+url = "evaluation"
+hide = false
+
+
+[15-pca]
+title = "Unsupervised learning methods"
+excerpt = "Exploratory Data Analysis of high-dimensional data using dimensionality reduction"
+url = "pca"
+hide = false
+
+[16-sentiment]
+title = "Text mining and sentiment analysis"
+excerpt = "Basics of text mining and sentiment analysis"
+url = "sentiment"
+hide = true
+
+[17-presentation]
+title = "Communicating results of data analyses"
+excerpt = "How to use narrative and visualization to communicate results of data analysis"
+url = "presentation"
+hide = true
+
+[18-interactive]
+title = "Web-based interactive visualization"
+excerpt = "Building web applications for interactive and exploratory data analysis and presentation"
+url = "interactive"
+hide = true
