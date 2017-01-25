@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Logistics on CMSC320 Introduction to Data Science</title>
-    <link>http://www.hcbravo.org/IntroDataSci/logistics/</link>
-    <description>Recent content in Logistics on CMSC320 Introduction to Data Science</description>
+    <title>Logistics on CMSC423: Bioinformatic Algorithms Databases and Tools (Spring 2017)</title>
+    <link>http://www.hcbravo.org/cmsc423/logistics/</link>
+    <description>Recent content in Logistics on CMSC423: Bioinformatic Algorithms Databases and Tools (Spring 2017)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 29 Aug 2016 05:41:03 -0400</lastBuildDate>
-    <atom:link href="http://www.hcbravo.org/IntroDataSci/logistics/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.hcbravo.org/cmsc423/logistics/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Logistics</title>
-      <link>http://www.hcbravo.org/IntroDataSci/logistics/</link>
+      <link>http://www.hcbravo.org/cmsc423/logistics/</link>
       <pubDate>Mon, 29 Aug 2016 05:41:03 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/IntroDataSci/logistics/</guid>
+      <guid>http://www.hcbravo.org/cmsc423/logistics/</guid>
       <description>
 
-&lt;p&gt;This page constiutes the official syllabus for this class.&lt;/p&gt;
+&lt;p&gt;This page constitutes the official syllabus for this class.&lt;/p&gt;
 
 &lt;h2 id=&#34;course-information&#34;&gt;Course Information&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;Introduction to Data Science&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;CMSC320 Fall 2016&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bioinformatic tools, algorithms and databases&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;CMSC423 Spring 2017&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Lecture Meeting Times&lt;br /&gt;
-Monday and Wednesday, 2:00pm-3:15pm, CSI 3117&lt;/p&gt;&lt;/li&gt;
+Tuesday and Thursday, 9:30pm-10:45pm, CSI 1122&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Instructor:&lt;br /&gt;
 &lt;a href=&#34;http://www.cbcb.umd.edu/~hcorrada&#34;&gt;H&amp;eacute;ctor Corrada Bravo&lt;/a&gt;&lt;br /&gt;
@@ -40,77 +40,112 @@ Phone Number: 301-405-2481&lt;br /&gt;
 &lt;li&gt;&lt;p&gt;Communication:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;For course related questions, use &lt;a href=&#34;https://piazza.com/class/isg1noi5k0765h
+&lt;li&gt;For course related questions, use &lt;a href=&#34;https://piazza.com/class/iybyz4l8fqs2bl
 &#34;&gt;Piazza&lt;/a&gt; as indicated below.&lt;br /&gt;&lt;/li&gt;
 &lt;li&gt;For any other communication (e.g., absences accomodations etc.) email me including &lt;code&gt;[CMSC320]&lt;/code&gt; in the message subject.&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;TAs:&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;TA:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Virinchi Srinivas (Graduate)&lt;br /&gt;
-&lt;a href=&#34;mailto:virinchimnm@gmail.com&#34;&gt;virinchimnm@gmail.com&lt;/a&gt;&lt;br /&gt;
-Office Hours: Wednesday 10-12&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Nolan Crane (Undergraduate)&lt;br /&gt;
-&lt;a href=&#34;mailto:ncrane@umd.edu&#34;&gt;ncrane@umd.edu&lt;/a&gt;&lt;br /&gt;
-Office Hours: Thursdays 2-3&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Anant Dalela (Undergraduate)&lt;br /&gt;
-&lt;a href=&#34;mailto:adalela@umd.edu&#34;&gt;adalela@umd.edu&lt;/a&gt;&lt;br /&gt;
-Office Hours: Thursdays 3-4&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Aya Ismail
+&lt;a href=&#34;mailto:asalam@umd.edu&#34;&gt;asalam@umd.edu&lt;/a&gt;&lt;br /&gt;
+Office Hours: TBD&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;We will use the class Piazza site &lt;a href=&#34;https://piazza.com/class/isg1noi5k0765h
-&#34;&gt;https://piazza.com/class/isg1noi5k0765h
-&lt;/a&gt; for questions, dicussion and announcements. Assignments and grades for the class will be posted to the class ELMS site: &lt;a href=&#34;https://myelms.umd.edu/courses/1199381
-&#34;&gt;https://myelms.umd.edu/courses/1199381
+&lt;p&gt;We will use the class Piazza site &lt;a href=&#34;https://piazza.com/class/iybyz4l8fqs2bl
+&#34;&gt;https://piazza.com/class/iybyz4l8fqs2bl
+&lt;/a&gt; for questions, discussion and announcements. Assignments and grades for the class will be posted to the class ELMS site: &lt;a href=&#34;https://myelms.umd.edu/courses/1218381
+&#34;&gt;https://myelms.umd.edu/courses/1218381
 &lt;/a&gt;.
 In case of an extended emergency closure, announcements on policy and procedures will be posted to Piazza.&lt;/p&gt;
 
 &lt;h2 id=&#34;textbook-and-resources&#34;&gt;Textbook and Resources:&lt;/h2&gt;
 
-&lt;p&gt;There is no required textbook, the &lt;a href=&#34;http://www.hcbravo.org/IntroDataSci/
-/lecture-notes/&#34;&gt;lecture notes&lt;/a&gt; will serve as the primary material. However, we will be drawing heavily from these sources:&lt;/p&gt;
+&lt;p&gt;We will be using &lt;a href=&#34;http://bioinformaticsalgorithms.com/
+&#34;&gt;Compeau, P. and Pevsner, P., Bioinformatics Algorithms, An Active Learning Approach, 2nd. edition, Vols. 1 and 2. Active Learning Publishers, La Jolla, CA, 2015.&lt;/a&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.manning.com/zumel/&#34;&gt;N. Zumel and J. Mount. Practical Data Science with R. Manning Publications Co. 2014&lt;/a&gt;.&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www-bcf.usc.edu/~gareth/ISL/&#34;&gt;G. James, D. Witten, T. Hastie and R. Tibshirani. Introduction to Statistical Learning with Applications in R. Springer 2013.&lt;/a&gt;. A free PDF of this book can be downloaded at their site.&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.wiley.com/WileyCDA/WileyTitle/productCd-111887613X.html&#34;&gt;EMC Education Services. Data Science &amp;amp; Big Analytics: Discovering, Analyzing, Visualizing and Presenting Data. Wiley, 2015&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;This text book is accompanied by a set of video lectures that you can view in preparation for class discussion during class meeting times. &lt;a href=&#34;https://www.youtube.com/user/bioinfalgorithms/playlists
+&#34;&gt;Video playlists are available on youtube&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Additional readings will be posted in ELMS &lt;a href=&#34;https://myelms.umd.edu/courses/1199381
-&#34;&gt;https://myelms.umd.edu/courses/1199381
-&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Class meeting times will (for the most part) not be lecture time&lt;/strong&gt;. The goal is to use class time to explore Biological and Algorithmic aspects of materials in depth and collaboratively with your peers.&lt;/p&gt;
 
-&lt;p&gt;Additional class resources are listed &lt;a href=&#34;http://www.hcbravo.org/IntroDataSci/
-/resources/&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Programming exercises and problems are integrated with the
+    textbook readings and videos. We will use the
+    &lt;a href=&#34;http://rosalind.info&#34;&gt;Rosalind Project&lt;/a&gt; to manage programming
+    exercises and submissions. More information below.&lt;/p&gt;
 
-&lt;h2 id=&#34;course-description-goals-and-expectations&#34;&gt;Course Description, Goals and Expectations&lt;/h2&gt;
+&lt;h2 id=&#34;expected-outcomes-and-topics-covered&#34;&gt;Expected outcomes and topics covered&lt;/h2&gt;
 
-&lt;p&gt;Data science encapsulates the interdisciplinary activities required to
- create data-centric products and applications that address specific
- scientific, socio-political or business questions.
- It has drawn tremendous attention from both academia and industry and
- is making deep inroads in industry, government, health and journalism.&lt;/p&gt;
+&lt;p&gt;At the end of this course, students will be able to describe,
+implement and analyze algorithms that solve fundamental problems in
+biological sequence analysis: sequence alignment and assembly, string
+querying, sequence signal finding, and data clustering. They will also be able to identify and use appropriate publicly available resources, both data and tools, to perform common bioinformatics tasks.&lt;/p&gt;
 
-&lt;p&gt;This course focuses on (i) data management systems, (i) exploratory and statistical data analysis,
-(ii) data and information visualization, and (iv) the presentation
-and communication of analysis results.
-It will be centered around case studies and projects drawing extensively from applications.&lt;/p&gt;
+&lt;h2 id=&#34;expectations-for-students&#34;&gt;Expectations for Students&lt;/h2&gt;
 
-&lt;h3 id=&#34;expected-outcomes&#34;&gt;Expected outcomes&lt;/h3&gt;
+&lt;h3 id=&#34;class-prep&#34;&gt;Class prep&lt;/h3&gt;
 
-&lt;p&gt;1) Students will be able to create specific requirements for a
-data-centric application used to address a specific problem or
-question&lt;br /&gt;
-2) Students will be able to identify and select appropriate tools:
-language, libraries and data resources, to meet specific requirements
-for a data-centric application&lt;br /&gt;
-3) Students will be able to build and disseminate a data-centric
-application from a set of specific requirements using existing tools,
-libraries, data resources and publishing mechanisms.&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&#34;http://www.hcbravo.org/cmsc423/
+/calendar/index.html&#34;&gt;Course Calendar&lt;/a&gt; will list
+readings (usually from &lt;a href=&#34;http://bioinformaticsalgorithms.com/
+&#34;&gt;the textbook&lt;/a&gt;, on
+occassion uploaded to &lt;a href=&#34;https://myelms.umd.edu/courses/1218381
+&#34;&gt;ELMS&lt;/a&gt;). &lt;strong&gt;You are
+required to read this material before lecture&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;expectations-for-students&#34;&gt;Expectations for Students&lt;/h3&gt;
+&lt;p&gt;The &lt;a href=&#34;http://www.hcbravo.org/cmsc423/
+/calendar/index.html&#34;&gt;Course Calendar&lt;/a&gt; will also
+list programming exercises to &lt;strong&gt;attempt&lt;/strong&gt; before lecture. You
+will upload attempted solutions to the &lt;a href=&#34;http://rosalind.info/classes/400/
+&#34;&gt;pre-lecture exercise
+Rosalind page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://www.hcbravo.org/cmsc423/
+/calendar/index.html&#34;&gt;Course Calendar&lt;/a&gt; will list
+any quizzes or written assignments to be completed before lecture. You
+must submit these assignments &lt;strong&gt;before lecture&lt;/strong&gt; as instructed.&lt;/p&gt;
+
+&lt;h3 id=&#34;programming-projects&#34;&gt;Programming projects&lt;/h3&gt;
+
+&lt;p&gt;Programming exercises on the &lt;a href=&#34;http://rosalind.info/classes/401/
+&#34;&gt;final submission
+Rosalind page&lt;/a&gt; will be collected into
+&lt;em&gt;programming projects&lt;/em&gt;. Some additional analysis using the programs
+you write for these exercises will be assigned. Those additional
+analysis will be submitted as instructed. Full descriptions of the
+programming projects will be posted in the
+&lt;a href=&#34;http://www.hcbravo.org/cmsc423/
+/index/projects.html&#34;&gt;Programming Projects course
+page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;written-assignments&#34;&gt;Written assignments&lt;/h3&gt;
+
+&lt;p&gt;Some written exercises will be assigned covering material we
+have discussed in class. Some of these will be posted on the
+&lt;a href=&#34;http://www.hcbravo.org/cmsc423/
+/calendar/index.html&#34;&gt;Course Calendar&lt;/a&gt; and announced on
+the class &lt;a href=&#34;https://piazza.com/class/iybyz4l8fqs2bl
+&#34;&gt;Piazza page&lt;/a&gt;. Other in-class exercises
+may not be announced ahead of time. See below
+for class policies on attendance.&lt;/p&gt;
+
+&lt;h3 id=&#34;announcements-and-discussion&#34;&gt;Announcements and discussion&lt;/h3&gt;
+
+&lt;p&gt;We will use the &lt;a href=&#34;https://piazza.com/class/iybyz4l8fqs2bl
+&#34;&gt;Piazza page&lt;/a&gt; for class
+announcements. Please use the &lt;a href=&#34;https://piazza.com/class/iybyz4l8fqs2bl
+&#34;&gt;Piazza page&lt;/a&gt; for
+class discussion. Note that the Rosalind Project class pages also have
+discussion capability. &lt;strong&gt;Do not use it&lt;/strong&gt;, please use the
+&lt;a href=&#34;{{ site.piazza_url }}&#34;&gt;Piazza page&lt;/a&gt; for &lt;em&gt;all discussion&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;participation-grade&#34;&gt;Participation grade&lt;/h3&gt;
+
+&lt;p&gt;The &lt;a href=&#34;syllabus.html&#34;&gt;course grading scheme&lt;/a&gt; includes a class participation grade. You can earn full credit for this in three ways: (1) lecture participation, asking questions and answering your peers questions, (2) piazza participation, asking and answering questions on piazza, (3) regular attendance to office hours. To earn full credit you should aim to ask or answer a question at least once every two weeks on lecture or on piazza; or attend office hours at least once a month (that can include just going to my office hours to chat about computer science, biology, science, etc.)&lt;/p&gt;
+
+&lt;h3 id=&#34;other-policies&#34;&gt;Other policies&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;There will be reading assignments. Students are expected to have read the material &lt;strong&gt;before&lt;/strong&gt; class.&lt;br /&gt;&lt;/li&gt;
@@ -123,45 +158,18 @@ student must write and/or program solutions independently.&lt;br /&gt;&lt;/li&gt
 express consent and permission from the instructor is a violation of
 academic integrity policy.&lt;br /&gt;&lt;/li&gt;
 &lt;li&gt;Cell phone usage is &lt;strong&gt;prohibited&lt;/strong&gt; during lecture, laptop use will be allowed to the extent that students &lt;strong&gt;demonstrably&lt;/strong&gt; use it to follow along an in-class analysis or demonstration.&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;You can earn full credit for class participation in three ways:&lt;br /&gt;
-(1) lecture participation, asking questions and answering your peers questions,&lt;br /&gt;
-(2) piazza participation, asking and answering questions on piazza,&lt;br /&gt;
-(3) regular attendance to office hours.&lt;br /&gt;
-To earn full credit you should aim to ask or answer a question at least once every two weeks on lecture or on piazza; or attend office hours at least once a month (this can include just going to my office hours to chat about computer science, data, science, software engineering, etc.).&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&#34;grading-procedures&#34;&gt;Grading Procedures&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Projects (35%)&lt;/li&gt;
-&lt;li&gt;In-class work (15%)&lt;/li&gt;
-&lt;li&gt;Written homework (20%)&lt;/li&gt;
-&lt;li&gt;Midterm exam (10%)&lt;/li&gt;
-&lt;li&gt;Final exam (15%)&lt;/li&gt;
+&lt;li&gt;Lecture prep work (15%): to be done before class, includes programming exercises and short written assignments.&lt;/li&gt;
+&lt;li&gt;Written homework (15%): some will be take-home, some will be done in class.&lt;/li&gt;
+&lt;li&gt;Programming projects (25%)&lt;/li&gt;
+&lt;li&gt;Midterms (2) (20%)&lt;/li&gt;
+&lt;li&gt;Final (20%)&lt;/li&gt;
 &lt;li&gt;Class participation (5%)&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h3 id=&#34;tentative-course-schedule&#34;&gt;Tentative Course Schedule&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Preliminaries:
-What is Data Science? Who is a Data Scientist? The scope of Data Science: the open data movement, science, business, government, education, sport, and more. Introduction to the R data analysis environment. Formulating data-centric answers to scientific, business and social questions. Best practices: organizing projects, managing collaborations and expectations.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Data Management Principles:
-Data scraping, tidying, cleaning and summarization. Basics of database systems and SQL. Exploratory Data Analysis. Exploration at scale: introduction to map reduce.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Computational and Statistical Data Analysis:
-From exploration to inference: statistical and probabilistic models. Linear modeling: regression and prediction. Introduction to Machine Learning: unsupervised methods, SVMs, tree-based methods&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Data Mining:
-Regression and prediction at scale. Mining time series and data streams.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Communicating with data:
-Writing with and about data: communicating the result of a data analysis. Information visualization, visualizing for an audience. Putting it together: interactive data dissemination on the web (d3.js and related technologies).&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Consult the &lt;a href=&#34;http://www.hcbravo.org/IntroDataSci/
-&#34;&gt;class home page&lt;/a&gt; for an up-to-date course schedule.&lt;/p&gt;
 
 &lt;h2 id=&#34;university-policies-and-resources&#34;&gt;University Policies and Resources&lt;/h2&gt;
 

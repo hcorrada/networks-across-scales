@@ -2,216 +2,221 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/</loc>
+    <lastmod>2017-01-25T08:54:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.hcbravo.org/cmsc423/resources/grace_howto/</loc>
+    <lastmod>2017-01-25T08:54:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/pca/</loc>
     <lastmod>2016-11-28T06:12:58-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/pca/</loc>
-    <lastmod>2016-11-28T06:12:58-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/projects/project3/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/projects/project3/</loc>
     <lastmod>2016-11-22T13:04:21-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/evaluation/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/evaluation/</loc>
     <lastmod>2016-11-16T08:09:08-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/large_scale/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/large_scale/</loc>
     <lastmod>2016-11-09T09:34:07-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/tree_methods/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/tree_methods/</loc>
     <lastmod>2016-11-07T03:34:33-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/linear_models/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/linear_models/</loc>
     <lastmod>2016-10-26T06:12:26-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/statlearn/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/statlearn/</loc>
     <lastmod>2016-10-10T09:42:48-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/eda/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/eda/</loc>
     <lastmod>2016-09-27T18:46:11-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/datamodels/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/datamodels/</loc>
     <lastmod>2016-09-26T11:42:11-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/wrangling/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/wrangling/</loc>
     <lastmod>2016-09-18T15:00:57-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/best_practices/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/best_practices/</loc>
     <lastmod>2016-09-14T13:17:30-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/datatypes/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/datatypes/</loc>
     <lastmod>2016-09-09T11:57:48-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/homeworks/rocker/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/homeworks/rocker/</loc>
     <lastmod>2016-08-31T00:05:51-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/rintro/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/rintro/</loc>
     <lastmod>2016-08-30T22:23:52-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/calendar/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/calendar/</loc>
     <lastmod>2016-08-30T10:13:51-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/introduction/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/introduction/</loc>
     <lastmod>2016-08-29T08:59:01-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/projects/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/projects/</loc>
     <lastmod>2016-08-29T08:54:44-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/resources/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/resources/</loc>
     <lastmod>2016-08-29T08:54:37-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/logistics/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/logistics/</loc>
     <lastmod>2016-08-29T05:41:03-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/</loc>
     <lastmod>2016-08-28T17:13:09-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/datamodels/DataModels/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/datamodels/DataModels/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/datamodels/tidy_data/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/datamodels/tidy_data/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/datatypes/DataTypes/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/datatypes/DataTypes/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/eda/eda_summary_stats/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/eda/eda_summary_stats/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/eda/missing_data/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/eda/missing_data/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/eda/transformations/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/eda/transformations/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/eda/visualization_eda/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/eda/visualization_eda/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/evaluation/Evaluation/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/evaluation/Evaluation/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/large_scale/sgd/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/large_scale/sgd/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/linear_models/linear_classification/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/linear_models/linear_classification/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/linear_models/linear_regression/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/linear_models/linear_regression/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/linear_models/multiple_linear_regression/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/linear_models/multiple_linear_regression/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/pca/pca/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/pca/pca/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/rintro/RIntro_lab/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/rintro/RIntro_lab/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/rintro/RIntro_lab2/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/rintro/RIntro_lab2/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/rintro/pipes/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/rintro/pipes/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/statlearn/IntroStatLearn/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/statlearn/IntroStatLearn/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/svms/SVM/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/svms/SVM/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/tree_methods/TreeMethods/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/tree_methods/TreeMethods/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/wrangling/wrangling_dplyr/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/wrangling/wrangling_dplyr/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/wrangling/wrangling_sql/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/wrangling/wrangling_sql/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/projects/Project1/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/projects/Project1/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/projects/Project2/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/projects/Project2/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/projects/Project4/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/projects/Project4/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/projects/project3/classification/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/projects/project3/classification/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/projects/project3/gapminder/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/projects/project3/gapminder/</loc>
   </url>
   
   <url>
-    <loc>http://www.hcbravo.org/IntroDataSci/lecture-note/svms/</loc>
+    <loc>http://www.hcbravo.org/cmsc423/lecture-note/svms/</loc>
   </url>
   
 </urlset>

@@ -1,20 +1,135 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CMSC320 Introduction to Data Science</title>
-    <link>http://www.hcbravo.org/IntroDataSci/</link>
-    <description>Recent content on CMSC320 Introduction to Data Science</description>
+    <title>CMSC423: Bioinformatic Algorithms Databases and Tools (Spring 2017)</title>
+    <link>http://www.hcbravo.org/cmsc423/</link>
+    <description>Recent content on CMSC423: Bioinformatic Algorithms Databases and Tools (Spring 2017)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Nov 2016 06:12:58 -0500</lastBuildDate>
-    <atom:link href="http://www.hcbravo.org/IntroDataSci/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Jan 2017 08:54:14 -0500</lastBuildDate>
+    <atom:link href="http://www.hcbravo.org/cmsc423/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GRACE HOWTO</title>
+      <link>http://www.hcbravo.org/cmsc423/resources/grace_howto/</link>
+      <pubDate>Wed, 25 Jan 2017 08:54:14 -0500</pubDate>
+      
+      <guid>http://www.hcbravo.org/cmsc423/resources/grace_howto/</guid>
+      <description>
+
+&lt;h2 id=&#34;logging-in&#34;&gt;Logging in&lt;/h2&gt;
+
+&lt;p&gt;To log into &lt;a href=&#34;http://www.grace.umd.edu/&#34;&gt;Grace&lt;/a&gt; machines you
+should use an &lt;a href=&#34;http://en.wikipedia.org/wiki/Secure_Shell&#34;&gt;SSH&lt;/a&gt;
+client. (SSH client is a program that runs on your system. For most
+*NIX machines just type ssh in the terminal. In windows you can use
+&lt;a href=&#34;http://en.wikipedia.org/wiki/PuTTY&amp;quot;&amp;gt;PuTTY&#34;&gt;PuTTY&lt;/a&gt;). You should
+be able to log in using your university &lt;a href=&#34;http://www.oit.umd.edu/password/&#34;&gt;directory ID and password&lt;/a&gt;. There are Solaris and Linux servers accessible
+to you but we strongly recommend that you &lt;strong&gt;only use Linux machines&lt;/strong&gt;
+so for example you should type &lt;code&gt;ssh yourname@linux.grace.umd.edu&lt;/code&gt;
+.&lt;/p&gt;
+
+&lt;h2 id=&#34;class-directory&#34;&gt;Class directory&lt;/h2&gt;
+
+&lt;p&gt;The class directory is
+&lt;code&gt;/afs/glue.umd.edu/class/fall2017/cmsc/423/0101&lt;/code&gt;. Within the
+&lt;code&gt;student&lt;/code&gt; sub-directory, each of you should already have a
+directory set up. This is where you should do all your work. The
+&lt;code&gt;public&lt;/code&gt; directory will contain common files that you might
+need for projects or assignments.&lt;/p&gt;
+
+&lt;h2 id=&#34;editing-programs&#34;&gt;Editing programs&lt;/h2&gt;
+
+&lt;p&gt;You can either write your programs locally and then transfer them
+to the servers (using &lt;a href=&#34;http://en.wikipedia.org/wiki/Secure_copy&#34;&gt;&lt;code&gt;scp&lt;/code&gt;&lt;/a&gt;
+or other SSH file transfer tool like &lt;a href=&#34;http://en.wikipedia.org/wiki/WinSCP&#34;&gt;WinSCP&lt;/a&gt;
+for Windows) or just simply edit and compile the programs directly on
+the servers. As you need to make sure that your code compiles and
+runs on the servers anyway &lt;em&gt;I recommend that you do everything on
+the servers&lt;/em&gt;. You can write the programs with the editor of your
+choice but I recommend a simple editor like &lt;a href=&#34;http://en.wikipedia.org/wiki/Emacs&#34;&gt;&lt;code&gt;emacs&lt;/code&gt;&lt;/a&gt;,
+&lt;a href=&#34;http://en.wikipedia.org/wiki/Vim_(text_editor)&#34;&gt;&lt;code&gt;vim&lt;/code&gt;&lt;/a&gt;,
+&lt;code&gt;nano&lt;/code&gt; etc.&lt;/p&gt;
+
+&lt;h2 id=&#34;python&#34;&gt;Python&lt;/h2&gt;
+
+&lt;p&gt;We require that you &lt;a href=&#34;index.html#python&#34;&gt;python&lt;/a&gt; for all programming
+projects in class.
+There are a number of versions available in grace, but we ask that you use version 2.7
+for your work. To run it in grace use command &lt;code&gt;python2.7&lt;/code&gt;. We will use the &lt;code&gt;numpy&lt;/code&gt;,
+&lt;code&gt;Bio&lt;/code&gt; and &lt;code&gt;matplotlib&lt;/code&gt; libraries in class. These are all available in grace. Programming
+project descriptions will include any information about extra libraries if needed.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;ve installed a couple of other useful packages, namely IPython and the ability to use the IPython
+notebook (although it is awfully slow in grace). To access these, run:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# for bash
+source /afs/glue.umd.edu/class/fall2015/cmsc/423/0101/public/python423/bin/activate
+
+# for csh
+source /afs/glue.umd.edu/class/fall2015/cmsc/423/0101/public/python423/bin/activate.csh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After doing this, the &lt;code&gt;python&lt;/code&gt; command will use this installation of python2.7. To use the system default again use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;deactivate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To start &lt;a href=&#34;http://ipython.org/&#34;&gt;Ipython&lt;/a&gt; use&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ipython
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To have matplotlib and numpy accessible during the interactive session use the `` command within Ipython.&lt;/p&gt;
+
+&lt;p&gt;Although not recommended in grace since it can be very slow (but highly recommended otherwise), you can use the IPython HTML notebook:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ipython notebook --matplotlib=inline &amp;amp;
+
+# look for url in messages
+firefox http://127.0.0.1:8888/ &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In order for any of these to work, you have to make sure you use X11
+forwarding. E.g., ssh using&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ssh -Y yourname@linux.grace.umd.edu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://explainshell.com/explain?cmd=ssh+-Y+username%40linux.grace.umd.edu&#34;&gt;This command explained&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;###Other useful software
+Although python is required for all programming projects, there is other
+software available. GNU C and C++ (&lt;code&gt;gcc&lt;/code&gt; and &lt;code&gt;g++&lt;/code&gt;) compilers are
+installed on all these machines.&lt;/p&gt;
+
+&lt;p&gt;Other popular software is already available on these servers. Type
+&lt;code&gt;tap&lt;/code&gt; to see a list of available applications. For example, you
+can type &lt;code&gt;tap java6&lt;/code&gt; to use Sun java compiler and runtime
+environment (&lt;code&gt;javac&lt;/code&gt; and &lt;code&gt;javac&lt;/code&gt;) and &lt;code&gt;tap R&lt;/code&gt; to
+use the &lt;a href=&#34;http://en.wikipedia.org/wiki/R_(programming_language)&#34;&gt;R&lt;/a&gt;
+statistical computing environment. Scripting language interpreters for
+Perl and Ruby are also available.&lt;/p&gt;
+
+&lt;p&gt;If you have any questions do not hesitate to send the TA an email
+with CMSC423 in the subject.&lt;/p&gt;
+
+&lt;p&gt;###More information&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.itsc.umd.edu/&#34;&gt;OIT Knowledge Base&lt;/a&gt;. Search for &lt;code&gt;116375&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.cs.umd.edu/~larry/new-OIT-cluster-info.html&#34;&gt;OIT Class Cluster info for CS faculty and instructors&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.glue.umd.edu/afs/glue.umd.edu/system/info/olh/&#34;&gt;General Grace online help&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Dimensionality Reduction</title>
-      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/pca/</link>
+      <link>http://www.hcbravo.org/cmsc423/lecture-note/pca/</link>
       <pubDate>Mon, 28 Nov 2016 06:12:58 -0500</pubDate>
       
-      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/pca/</guid>
+      <guid>http://www.hcbravo.org/cmsc423/lecture-note/pca/</guid>
       <description>&lt;p&gt;Exploratory Data Analysis of high-dimensional data using dimensionality reduction.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;pca/&#34;&gt;Lecture Notes&lt;/a&gt;&lt;/p&gt;
@@ -23,10 +138,10 @@
     
     <item>
       <title>Project 3: Classification and Regression</title>
-      <link>http://www.hcbravo.org/IntroDataSci/projects/project3/</link>
+      <link>http://www.hcbravo.org/cmsc423/projects/project3/</link>
       <pubDate>Tue, 22 Nov 2016 13:04:21 -0500</pubDate>
       
-      <guid>http://www.hcbravo.org/IntroDataSci/projects/project3/</guid>
+      <guid>http://www.hcbravo.org/cmsc423/projects/project3/</guid>
       <description>
 
 &lt;p&gt;This project has two parts:&lt;/p&gt;
@@ -58,10 +173,10 @@
     
     <item>
       <title>Evaluation</title>
-      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/evaluation/</link>
+      <link>http://www.hcbravo.org/cmsc423/lecture-note/evaluation/</link>
       <pubDate>Wed, 16 Nov 2016 08:09:08 -0500</pubDate>
       
-      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/evaluation/</guid>
+      <guid>http://www.hcbravo.org/cmsc423/lecture-note/evaluation/</guid>
       <description>&lt;p&gt;How to use sampling methods to evaluate statistical models&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;Evaluation/&#34;&gt;Lecture notes&lt;/a&gt;&lt;/p&gt;
@@ -70,10 +185,10 @@
     
     <item>
       <title>Learning at scale</title>
-      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/large_scale/</link>
+      <link>http://www.hcbravo.org/cmsc423/lecture-note/large_scale/</link>
       <pubDate>Wed, 09 Nov 2016 09:34:07 -0500</pubDate>
       
-      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/large_scale/</guid>
+      <guid>http://www.hcbravo.org/cmsc423/lecture-note/large_scale/</guid>
       <description>&lt;p&gt;Systems and algorithms for data summarization and learning on large datasets&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;sgd/&#34;&gt;Lecture notes on Stochastic Gradient Descent&lt;/a&gt;&lt;/p&gt;
@@ -82,10 +197,10 @@
     
     <item>
       <title>Tree-based methods</title>
-      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/tree_methods/</link>
+      <link>http://www.hcbravo.org/cmsc423/lecture-note/tree_methods/</link>
       <pubDate>Mon, 07 Nov 2016 03:34:33 -0500</pubDate>
       
-      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/tree_methods/</guid>
+      <guid>http://www.hcbravo.org/cmsc423/lecture-note/tree_methods/</guid>
       <description>
 
 &lt;p&gt;Regression and Decision Trees. Random Forests.&lt;/p&gt;
@@ -100,10 +215,10 @@
     
     <item>
       <title>Linear models for regression and classification</title>
-      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/linear_models/</link>
+      <link>http://www.hcbravo.org/cmsc423/lecture-note/linear_models/</link>
       <pubDate>Wed, 26 Oct 2016 06:12:26 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/linear_models/</guid>
+      <guid>http://www.hcbravo.org/cmsc423/lecture-note/linear_models/</guid>
       <description>
 
 &lt;p&gt;Basic models for regression and classification&lt;/p&gt;
@@ -123,10 +238,10 @@
     
     <item>
       <title>Introduction to Statistical Learning</title>
-      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/statlearn/</link>
+      <link>http://www.hcbravo.org/cmsc423/lecture-note/statlearn/</link>
       <pubDate>Mon, 10 Oct 2016 09:42:48 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/statlearn/</guid>
+      <guid>http://www.hcbravo.org/cmsc423/lecture-note/statlearn/</guid>
       <description>
 
 &lt;p&gt;Introduction to randomness, distributions, inference and testing&lt;/p&gt;
@@ -144,10 +259,10 @@
     
     <item>
       <title>Exploratory Data Analysis (EDA)</title>
-      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/eda/</link>
+      <link>http://www.hcbravo.org/cmsc423/lecture-note/eda/</link>
       <pubDate>Tue, 27 Sep 2016 18:46:11 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/eda/</guid>
+      <guid>http://www.hcbravo.org/cmsc423/lecture-note/eda/</guid>
       <description>
 
 &lt;p&gt;Visualization and summarization methods for effective
@@ -161,8 +276,8 @@ data exploration.&lt;/p&gt;
 &lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.hcbravo.org/IntroDataSci/misc/derivative_cheat_sheet.pdf&#34;&gt;Derivative review&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://myelms.umd.edu/courses/1199381
+&lt;li&gt;&lt;a href=&#34;http://www.hcbravo.org/cmsc423/misc/derivative_cheat_sheet.pdf&#34;&gt;Derivative review&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://myelms.umd.edu/courses/1218381
 /files/44629545&#34;&gt;Zumen &amp;amp; Mount Ch. 3&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://r4ds.had.co.nz/exploratory-data-analysis.html&#34;&gt;R for Data Science Ch. 7&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.rstudio.com/wp-content/uploads/2015/12/ggplot2-cheatsheet-2.0.pdf&#34;&gt;ggplot2 cheatsheet&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
@@ -173,10 +288,10 @@ data exploration.&lt;/p&gt;
     
     <item>
       <title>Modeling and tidying data</title>
-      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/datamodels/</link>
+      <link>http://www.hcbravo.org/cmsc423/lecture-note/datamodels/</link>
       <pubDate>Mon, 26 Sep 2016 11:42:11 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/datamodels/</guid>
+      <guid>http://www.hcbravo.org/cmsc423/lecture-note/datamodels/</guid>
       <description>
 
 &lt;p&gt;How to get data into shape before analysis&lt;/p&gt;
@@ -197,10 +312,10 @@ data exploration.&lt;/p&gt;
     
     <item>
       <title>Data Wrangling</title>
-      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/wrangling/</link>
+      <link>http://www.hcbravo.org/cmsc423/lecture-note/wrangling/</link>
       <pubDate>Sun, 18 Sep 2016 15:00:57 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/wrangling/</guid>
+      <guid>http://www.hcbravo.org/cmsc423/lecture-note/wrangling/</guid>
       <description>
 
 &lt;p&gt;Data management and manipulation&lt;/p&gt;
@@ -219,10 +334,10 @@ data exploration.&lt;/p&gt;
     
     <item>
       <title>Best Practices</title>
-      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/best_practices/</link>
+      <link>http://www.hcbravo.org/cmsc423/lecture-note/best_practices/</link>
       <pubDate>Wed, 14 Sep 2016 13:17:30 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/best_practices/</guid>
+      <guid>http://www.hcbravo.org/cmsc423/lecture-note/best_practices/</guid>
       <description>&lt;p&gt;Tips for organizing and managing data science projects&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;BestPractices.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/p&gt;
@@ -231,10 +346,10 @@ data exploration.&lt;/p&gt;
     
     <item>
       <title>Measurement and data types</title>
-      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/datatypes/</link>
+      <link>http://www.hcbravo.org/cmsc423/lecture-note/datatypes/</link>
       <pubDate>Fri, 09 Sep 2016 11:57:48 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/datatypes/</guid>
+      <guid>http://www.hcbravo.org/cmsc423/lecture-note/datatypes/</guid>
       <description>&lt;p&gt;Examples of data sets, data types and measurements&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;DataTypes/&#34;&gt;Lecture Notes&lt;/a&gt;&lt;/p&gt;
@@ -243,10 +358,10 @@ data exploration.&lt;/p&gt;
     
     <item>
       <title>Setting up R</title>
-      <link>http://www.hcbravo.org/IntroDataSci/homeworks/rocker/</link>
+      <link>http://www.hcbravo.org/cmsc423/homeworks/rocker/</link>
       <pubDate>Wed, 31 Aug 2016 00:05:51 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/IntroDataSci/homeworks/rocker/</guid>
+      <guid>http://www.hcbravo.org/cmsc423/homeworks/rocker/</guid>
       <description>
 
 &lt;p&gt;For class we will be using R, Rstudio and git. You can download and install each using the &lt;a href=&#34;#downloads&#34;&gt;links below&lt;/a&gt;. However, you can instead use &lt;a href=&#34;https://github.com/rocker-org/rocker&#34;&gt;Rocker&lt;/a&gt;, a project built on top of
@@ -428,10 +543,10 @@ docker run -d -p 8787:8787 -v ${PWD}:/home/rstudio --name ids hcorrada/idsdocker
     
     <item>
       <title>R for Data Science Primer</title>
-      <link>http://www.hcbravo.org/IntroDataSci/lecture-note/rintro/</link>
+      <link>http://www.hcbravo.org/cmsc423/lecture-note/rintro/</link>
       <pubDate>Tue, 30 Aug 2016 22:23:52 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/IntroDataSci/lecture-note/rintro/</guid>
+      <guid>http://www.hcbravo.org/cmsc423/lecture-note/rintro/</guid>
       <description>
 
 &lt;p&gt;An introduction to the R programming language and data analysis environment&lt;/p&gt;
@@ -443,22 +558,13 @@ Part III: A short note about pipes (&lt;a href=&#34;pipes/&#34;&gt;html&lt;/a&gt
 &lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.hcbravo.org/IntroDataSci/
+&lt;li&gt;&lt;a href=&#34;http://www.hcbravo.org/cmsc423/
 resources/#r&#34;&gt;Course resource page&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Zumen &amp;amp; Mount, Appendix A&lt;/li&gt;
 &lt;li&gt;Wickham, H. &lt;a href=&#34;http://adv-r.had.co.nz/&#34;&gt;Advanced R&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://rmarkdown.rstudio.com/&#34;&gt;Rmarkdown&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>CMSC320 Calendar</title>
-      <link>http://www.hcbravo.org/IntroDataSci/calendar/</link>
-      <pubDate>Tue, 30 Aug 2016 10:13:51 -0400</pubDate>
-      
-      <guid>http://www.hcbravo.org/IntroDataSci/calendar/</guid>
-      <description></description>
     </item>
     
   </channel>
