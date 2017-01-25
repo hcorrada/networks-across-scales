@@ -6,70 +6,162 @@
     <description>Recent content in Resources on CMSC423: Bioinformatic Algorithms Databases and Tools (Spring 2017)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Aug 2016 08:54:37 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 25 Jan 2017 08:54:14 -0500</lastBuildDate>
     <atom:link href="http://www.hcbravo.org/cmsc423/resources/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>CMSC320 Resources</title>
+      <title>GRACE HOWTO</title>
+      <link>http://www.hcbravo.org/cmsc423/resources/grace_howto/</link>
+      <pubDate>Wed, 25 Jan 2017 08:54:14 -0500</pubDate>
+      
+      <guid>http://www.hcbravo.org/cmsc423/resources/grace_howto/</guid>
+      <description>
+
+&lt;h2 id=&#34;logging-in&#34;&gt;Logging in&lt;/h2&gt;
+
+&lt;p&gt;To log into &lt;a href=&#34;http://www.grace.umd.edu/&#34;&gt;Grace&lt;/a&gt; machines you
+should use an &lt;a href=&#34;http://en.wikipedia.org/wiki/Secure_Shell&#34;&gt;SSH&lt;/a&gt;
+client. (SSH client is a program that runs on your system. For most
+*NIX machines just type ssh in the terminal. In windows you can use
+&lt;a href=&#34;http://en.wikipedia.org/wiki/PuTTY&amp;quot;&amp;gt;PuTTY&#34;&gt;PuTTY&lt;/a&gt;). You should
+be able to log in using your university &lt;a href=&#34;http://www.oit.umd.edu/password/&#34;&gt;directory ID and password&lt;/a&gt;. There are Solaris and Linux servers accessible
+to you but we strongly recommend that you &lt;strong&gt;only use Linux machines&lt;/strong&gt;
+so for example you should type &lt;code&gt;ssh yourname@linux.grace.umd.edu&lt;/code&gt;
+.&lt;/p&gt;
+
+&lt;h2 id=&#34;class-directory&#34;&gt;Class directory&lt;/h2&gt;
+
+&lt;p&gt;The class directory is
+&lt;code&gt;/afs/glue.umd.edu/class/fall2017/cmsc/423/0101&lt;/code&gt;. Within the
+&lt;code&gt;student&lt;/code&gt; sub-directory, each of you should already have a
+directory set up. This is where you should do all your work. The
+&lt;code&gt;public&lt;/code&gt; directory will contain common files that you might
+need for projects or assignments.&lt;/p&gt;
+
+&lt;h2 id=&#34;editing-programs&#34;&gt;Editing programs&lt;/h2&gt;
+
+&lt;p&gt;You can either write your programs locally and then transfer them
+to the servers (using &lt;a href=&#34;http://en.wikipedia.org/wiki/Secure_copy&#34;&gt;&lt;code&gt;scp&lt;/code&gt;&lt;/a&gt;
+or other SSH file transfer tool like &lt;a href=&#34;http://en.wikipedia.org/wiki/WinSCP&#34;&gt;WinSCP&lt;/a&gt;
+for Windows) or just simply edit and compile the programs directly on
+the servers. As you need to make sure that your code compiles and
+runs on the servers anyway &lt;em&gt;I recommend that you do everything on
+the servers&lt;/em&gt;. You can write the programs with the editor of your
+choice but I recommend a simple editor like &lt;a href=&#34;http://en.wikipedia.org/wiki/Emacs&#34;&gt;&lt;code&gt;emacs&lt;/code&gt;&lt;/a&gt;,
+&lt;a href=&#34;http://en.wikipedia.org/wiki/Vim_(text_editor)&#34;&gt;&lt;code&gt;vim&lt;/code&gt;&lt;/a&gt;,
+&lt;code&gt;nano&lt;/code&gt; etc.&lt;/p&gt;
+
+&lt;h2 id=&#34;python&#34;&gt;Python&lt;/h2&gt;
+
+&lt;p&gt;We require that you &lt;a href=&#34;index.html#python&#34;&gt;python&lt;/a&gt; for all programming
+projects in class.
+There are a number of versions available in grace, but we ask that you use version 2.7
+for your work. To run it in grace use command &lt;code&gt;python2.7&lt;/code&gt;. We will use the &lt;code&gt;numpy&lt;/code&gt;,
+&lt;code&gt;Bio&lt;/code&gt; and &lt;code&gt;matplotlib&lt;/code&gt; libraries in class. These are all available in grace. Programming
+project descriptions will include any information about extra libraries if needed.&lt;/p&gt;
+
+&lt;p&gt;We&amp;rsquo;ve installed a couple of other useful packages, namely IPython and the ability to use the IPython
+notebook (although it is awfully slow in grace). To access these, run:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# for bash
+source /afs/glue.umd.edu/class/fall2015/cmsc/423/0101/public/python423/bin/activate
+
+# for csh
+source /afs/glue.umd.edu/class/fall2015/cmsc/423/0101/public/python423/bin/activate.csh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After doing this, the &lt;code&gt;python&lt;/code&gt; command will use this installation of python2.7. To use the system default again use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;deactivate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To start &lt;a href=&#34;http://ipython.org/&#34;&gt;Ipython&lt;/a&gt; use&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ipython
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To have matplotlib and numpy accessible during the interactive session use the `` command within Ipython.&lt;/p&gt;
+
+&lt;p&gt;Although not recommended in grace since it can be very slow (but highly recommended otherwise), you can use the IPython HTML notebook:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ipython notebook --matplotlib=inline &amp;amp;
+
+# look for url in messages
+firefox http://127.0.0.1:8888/ &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In order for any of these to work, you have to make sure you use X11
+forwarding. E.g., ssh using&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ssh -Y yourname@linux.grace.umd.edu
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://explainshell.com/explain?cmd=ssh+-Y+username%40linux.grace.umd.edu&#34;&gt;This command explained&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;###Other useful software
+Although python is required for all programming projects, there is other
+software available. GNU C and C++ (&lt;code&gt;gcc&lt;/code&gt; and &lt;code&gt;g++&lt;/code&gt;) compilers are
+installed on all these machines.&lt;/p&gt;
+
+&lt;p&gt;Other popular software is already available on these servers. Type
+&lt;code&gt;tap&lt;/code&gt; to see a list of available applications. For example, you
+can type &lt;code&gt;tap java6&lt;/code&gt; to use Sun java compiler and runtime
+environment (&lt;code&gt;javac&lt;/code&gt; and &lt;code&gt;javac&lt;/code&gt;) and &lt;code&gt;tap R&lt;/code&gt; to
+use the &lt;a href=&#34;http://en.wikipedia.org/wiki/R_(programming_language)&#34;&gt;R&lt;/a&gt;
+statistical computing environment. Scripting language interpreters for
+Perl and Ruby are also available.&lt;/p&gt;
+
+&lt;p&gt;If you have any questions do not hesitate to send the TA an email
+with CMSC423 in the subject.&lt;/p&gt;
+
+&lt;p&gt;###More information&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.itsc.umd.edu/&#34;&gt;OIT Knowledge Base&lt;/a&gt;. Search for &lt;code&gt;116375&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.cs.umd.edu/~larry/new-OIT-cluster-info.html&#34;&gt;OIT Class Cluster info for CS faculty and instructors&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.glue.umd.edu/afs/glue.umd.edu/system/info/olh/&#34;&gt;General Grace online help&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CMSC Resources</title>
       <link>http://www.hcbravo.org/cmsc423/resources/</link>
       <pubDate>Mon, 29 Aug 2016 08:54:37 -0400</pubDate>
       
       <guid>http://www.hcbravo.org/cmsc423/resources/</guid>
       <description>
 
-&lt;h2 id=&#34;r&#34;&gt;R&lt;/h2&gt;
+&lt;h2 id=&#34;python&#34;&gt;Python&lt;/h2&gt;
+
+&lt;p&gt;We will be using &lt;a href=&#34;http://www.python.org/&#34;&gt;Python&lt;/a&gt; for all programming projects. Here are some resources
+to get you started:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.r-project.org&#34;&gt;R&lt;/a&gt; is an open-source environment for data analysis.&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;The &lt;a href=&#34;http://www.rstudio.com/ide&#34;&gt;RStudio&lt;/a&gt; IDE is highly recommended. The &lt;a href=&#34;http://www.revolutionanalytics.com/academic-and-public-service-programs&#34;&gt;Revolution IDE&lt;/a&gt; is also very good, only Linux and Windows.&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://swirlstats.com/&#34;&gt;swirl&lt;/a&gt; is an interactive R (and general data analysis) tutorial&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.datacamp.com/courses/free-introduction-to-r&#34;&gt;Data Camp&lt;/a&gt; has a nice short online course introducing R&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;R Task Views: The &lt;a href=&#34;http://cran.r-project.org/web/views/MachineLearning.html&#34;&gt;Machine Learning&lt;/a&gt; and &lt;a href=&#34;http://cran.r-project.org/web/views/Optimization.html&#34;&gt;Optimization&lt;/a&gt; Task Views list useful packages in R we may use.&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;R/Matlab references: &lt;a href=&#34;http://mathesaurus.sourceforge.net/octave-r.html&#34;&gt;A short R guide for Matlab users.&lt;/a&gt; &lt;a href=&#34;http://cran.r-project.org/doc/contrib/Hiebeler-matlabR.pdf&#34;&gt;A longer one.&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;R/Python references: &lt;a href=&#34;http://mathesaurus.sourceforge.net/r-numpy.html&#34;&gt;A short R guide for Python users.&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.umiacs.umd.edu/~hal/courses/2011F_ML/p0/&#34;&gt;Short tutorial by Hal Daume&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.python.org/tutorial/&#34;&gt;Python Tutorial&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.python.org/index.html&#34;&gt;Python Docs&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://scipy.org/Tentative_NumPy_Tutorial&#34;&gt;Numpy Tutorial (tentative)&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.scipy.org/doc/numpy/user/&#34;&gt;Numpy User&amp;rsquo;s Guide&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.scipy.org/doc/&#34;&gt;Scipy docs&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ipython.org/ipython-doc/stable/index.html&#34;&gt;IPython docs&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://jupyter.org/&#34;&gt;Jupyter notebooks&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;docker&#34;&gt;Docker&lt;/h2&gt;
-
-&lt;p&gt;We will use &lt;a href=&#34;https://github.com/rocker-org/rocker&#34;&gt;Rocker&lt;/a&gt;, a project built on top of
-&lt;a href=&#34;https://www.docker.com/&#34;&gt;Docker&lt;/a&gt; to manage our software installation. This will provide you with a working installation of R, and the Rstudio IDE, along with a lot
-of packages providing analysis tools and datasets we will use throughout the semester. You
-can read more about Rocker in &lt;a href=&#34;http://dirk.eddelbuettel.com/blog/2014/10/23/&#34;&gt;this introduction&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Instructions on how to setup are found &lt;a href=&#34;http://www.hcbravo.org/cmsc423/
-homeworks/rocker/&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Python is available on the &lt;a href=&#34;http://www.grace.umd.edu&#34;&gt;GRACE&lt;/a&gt; system.
+ &lt;a href=&#34;grace_howto/index.html&#34;&gt;Check here for more information&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;other-resources&#34;&gt;Other Resources&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://rstudio.org&#34;&gt;Rstudio&lt;/a&gt; has made some very nice cheatsheets for
-a number of workflows and tools we&amp;rsquo;ll look at this semester. You can find them here: &lt;a href=&#34;https://www.rstudio.com/resources/cheatsheets/&#34;&gt;https://www.rstudio.com/resources/cheatsheets/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;You can find a nice list of free data science books here: &lt;a href=&#34;http://www.wzchen.com/data-science-books/&#34;&gt;http://www.wzchen.com/data-science-books/&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;data-repositories&#34;&gt;Data Repositories&lt;/h2&gt;
-
-&lt;p&gt;The Docker container you will install will contain access to a large number of data repositories.
-We will list additional ones here as we go along.&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.kaggle.com/&#34;&gt;Kaggle&lt;/a&gt;: is a site hosting data competitions. It&amp;rsquo;s a great source of
-datasets, questions and tutorials.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.kaggle.com/datasets&#34;&gt;Kaggle Datasets&lt;/a&gt; a new repository in Kaggle specifically for datasets, including code and scripts by users to get analyses on these datasets started.&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.data.gov/&#34;&gt;data.gov&lt;/a&gt;: The U.S. goverment&amp;rsquo;s open data portal&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.gapminder.org/data/&#34;&gt;Gapminder&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.who.int/gho/database/en/&#34;&gt;Global Health Observatory&lt;/a&gt;: World Health Organization&amp;rsquo;s data repository.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://archive.ics.uci.edu/ml/&#34;&gt;UCI Machine Learning Repository&lt;/a&gt;: contains many datasets useful for testing and benchmarking learning algorithms.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://lib.stat.cmu.edu/&#34;&gt;StatLib&lt;/a&gt;: Statistical software and
-dataset portal maintained by CMU.&lt;/li&gt;
-&lt;li&gt;Another large list of repositories: &lt;a href=&#34;http://www.inside-r.org/howto/finding-data-internet&#34;&gt;http://www.inside-r.org/howto/finding-data-internet&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Yet another list of public datasets:
-&lt;a href=&#34;https://github.com/caesar0301/awesome-public-datasets&#34;&gt;https://github.com/caesar0301/awesome-public-datasets&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;And yet another list of public datasets: &lt;a href=&#34;http://blog.bigml.com/list-of-public-data-sources-fit-for-machine-learning/#national_governments&#34;&gt;http://blog.bigml.com/list-of-public-data-sources-fit-for-machine-learning/#national_governments&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://insideairbnb.com/get-the-data.html&#34;&gt;Airbnb data&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml&#34;&gt;NYC Taxi ride data&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://rddj.info&#34;&gt;Resources for data journalism with R&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://ropengov.github.io/&#34;&gt;Algorithms and datasets for computational social science and digital humanities&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://code.facebook.com/posts/596471193873876/open-population-datasets-and-open-challenges/&#34;&gt;Open population datasets&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://cbcb.umd.edu/~carlk/bioinfo-lectures/&#34;&gt;Carl Kingsford&amp;rsquo;s lecture slides&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;R/Bioconductor: &lt;a href=&#34;http://www.r-project.org&#34;&gt;R&lt;/a&gt; is an open-source environment for data analysis. The &lt;a href=&#34;http://bioconductor.org&#34;&gt;Bioconductor project&lt;/a&gt; provides a
+large number of useful libraries for high-throughput genomic data analysis. &lt;a href=&#34;http://www.bioconductor.org/packages/release/BiocViews.html&#34;&gt;You can browse them by task&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;R/Python references: &lt;a href=&#34;http://mathesaurus.sourceforge.net/r-numpy.html&#34;&gt;A short R guide for Python users.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.nature.com/scitable&#34;&gt;Scitable&lt;/a&gt; is an excellent resource provided by the journal &lt;em&gt;Nature&lt;/em&gt; providing introductory reading material on most of the topics in biology/genetics/medicine we
+discuss in class.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.openintro.org/stat/online.php&#34;&gt;Diez, Barr and Cetinkaya-Rundel. OpenIntro Statistics. 2011&lt;/a&gt; A good introductory Statistics textbook. &lt;a href=&#34;http://www.openintro.org/stat/downloads.php&#34;&gt;You can download it here.&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.youtube.com/user/RafalabChannel?feature=watch&#34;&gt;Rafael Irizarry&amp;rsquo;s lecture videos&lt;/a&gt; are good to watch.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
