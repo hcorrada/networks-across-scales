@@ -25,5 +25,3 @@ Check the [calendar page](calendar/) for up-to-date course calendar.
 Check the [logistics page](logistics/) for more information, including the official syllabus.  
 Grades and assignments posted in [ELMS]({{< elmurl >}}).  
 Discussion and questions in [Piazza]({{< piazzaurl >}}).
-
-

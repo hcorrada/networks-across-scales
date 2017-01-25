@@ -3,16 +3,16 @@ date: 2016-08-29T05:41:03-04:00
 title: Logistics
 ---
 
-This page constiutes the official syllabus for this class.
+This page constitutes the official syllabus for this class.
 
 ## Course Information
 
-**Introduction to Data Science**  
-**CMSC320 Fall 2016**  
+**Bioinformatic tools, algorithms and databases**  
+**CMSC423 Spring 2017**  
 
 
 *	Lecture Meeting Times    
-    Monday and Wednesday, 2:00pm-3:15pm, CSI 3117  
+    Tuesday and Thursday, 9:30pm-10:45pm, CSI 1122
 
 *	Instructor:  
     [H&eacute;ctor Corrada Bravo](http://www.cbcb.umd.edu/~hcorrada)  
@@ -25,59 +25,87 @@ This page constiutes the official syllabus for this class.
 * Communication:  
     - For course related questions, use [Piazza]({{< piazzaurl >}}) as indicated below.  
     - For any other communication (e.g., absences accomodations etc.) email me including `[CMSC320]` in the message subject.  
-*	TAs:
-    - Virinchi Srinivas (Graduate)  
-      <virinchimnm@gmail.com>  
-      Office Hours: Wednesday 10-12   
-    - Nolan Crane (Undergraduate)  
-      <ncrane@umd.edu>  
-      Office Hours: Thursdays 2-3  
-    - Anant Dalela (Undergraduate)  
-      <adalela@umd.edu>  
-      Office Hours: Thursdays 3-4  
+*	TA:
+    - Aya Ismail 
+      <asalam@umd.edu>  
+      Office Hours: TBD
 
-We will use the class Piazza site [{{< piazzaurl >}}]({{< piazzaurl >}}) for questions, dicussion and announcements. Assignments and grades for the class will be posted to the class ELMS site: [{{< elmurl >}}]({{< elmurl >}}).
+We will use the class Piazza site [{{< piazzaurl >}}]({{< piazzaurl >}}) for questions, discussion and announcements. Assignments and grades for the class will be posted to the class ELMS site: [{{< elmurl >}}]({{< elmurl >}}).
 In case of an extended emergency closure, announcements on policy and procedures will be posted to Piazza.
 
 ## Textbook and Resources:
 
-There is no required textbook, the [lecture notes]({{< baseurl >}}/lecture-notes/) will serve as the primary material. However, we will be drawing heavily from these sources:
+We will be using [Compeau, P. and Pevsner, P., Bioinformatics Algorithms, An Active Learning Approach, 2nd. edition, Vols. 1 and 2. Active Learning Publishers, La Jolla, CA, 2015.]({{< bookurl >}})
 
-*  [N. Zumel and J. Mount. Practical Data Science with R. Manning Publications Co. 2014](http://www.manning.com/zumel/).   
-*  [G. James, D. Witten, T. Hastie and R. Tibshirani. Introduction to Statistical Learning with Applications in R. Springer 2013.](http://www-bcf.usc.edu/~gareth/ISL/). A free PDF of this book can be downloaded at their site.  
-*  [EMC Education Services. Data Science & Big Analytics: Discovering, Analyzing, Visualizing and Presenting Data. Wiley, 2015](http://www.wiley.com/WileyCDA/WileyTitle/productCd-111887613X.html)
+This text book is accompanied by a set of video lectures that you can view in preparation for class discussion during class meeting times. [Video playlists are available on youtube]({{< videourl >}})
 
-Additional readings will be posted in ELMS [{{< elmurl >}}]({{< elmurl >}}).
+**Class meeting times will (for the most part) not be lecture time**. The goal is to use class time to explore Biological and Algorithmic aspects of materials in depth and collaboratively with your peers.
 
-Additional class resources are listed [here]({{< baseurl >}}/resources/)
+Programming exercises and problems are integrated with the
+	textbook readings and videos. We will use the
+	[Rosalind Project](http://rosalind.info) to manage programming
+	exercises and submissions. More information below.
+
+## Expected outcomes and topics covered
+
+At the end of this course, students will be able to describe,
+implement and analyze algorithms that solve fundamental problems in
+biological sequence analysis: sequence alignment and assembly, string
+querying, sequence signal finding, and data clustering. They will also be able to identify and use appropriate publicly available resources, both data and tools, to perform common bioinformatics tasks.
 
 
-## Course Description, Goals and Expectations
+## Expectations for Students
 
-Data science encapsulates the interdisciplinary activities required to
- create data-centric products and applications that address specific
- scientific, socio-political or business questions.
- It has drawn tremendous attention from both academia and industry and
- is making deep inroads in industry, government, health and journalism.
 
-This course focuses on (i) data management systems, (i) exploratory and statistical data analysis,
-(ii) data and information visualization, and (iv) the presentation
-and communication of analysis results.
-It will be centered around case studies and projects drawing extensively from applications.
+### Class prep
 
-### Expected outcomes
+The [Course Calendar]({{< baseurl >}}/calendar/index.html) will list
+readings (usually from [the textbook]({{< bookurl >}}), on
+occassion uploaded to [ELMS]({{< elmurl >}})). **You are
+required to read this material before lecture**
 
-1) Students will be able to create specific requirements for a
-data-centric application used to address a specific problem or
-question  
-2) Students will be able to identify and select appropriate tools:
-language, libraries and data resources, to meet specific requirements
-for a data-centric application  
-3) Students will be able to build and disseminate a data-centric
-application from a set of specific requirements using existing tools,
-libraries, data resources and publishing mechanisms.  
+The [Course Calendar]({{< baseurl >}}/calendar/index.html) will also
+list programming exercises to **attempt** before lecture. You
+will upload attempted solutions to the [pre-lecture exercise
+Rosalind page]({{< rosalind_prelecture_url >}}).
 
-### Expectations for Students
+The [Course Calendar]({{< baseurl >}}/calendar/index.html) will list
+any quizzes or written assignments to be completed before lecture. You
+must submit these assignments **before lecture** as instructed.
+
+### Programming projects
+
+Programming exercises on the [final submission
+Rosalind page]({{< rosalind_final_url >}}) will be collected into
+*programming projects*. Some additional analysis using the programs
+you write for these exercises will be assigned. Those additional
+analysis will be submitted as instructed. Full descriptions of the
+programming projects will be posted in the
+[Programming Projects course
+page]({{< baseurl >}}/index/projects.html).
+
+### Written assignments
+
+Some written exercises will be assigned covering material we
+have discussed in class. Some of these will be posted on the
+[Course Calendar]({{< baseurl >}}/calendar/index.html) and announced on
+the class [Piazza page]({{< piazzaurl >}}). Other in-class exercises
+may not be announced ahead of time. See below 
+for class policies on attendance.
+
+### Announcements and discussion
+
+We will use the [Piazza page]({{< piazzaurl >}}) for class
+announcements. Please use the [Piazza page]({{< piazzaurl >}}) for
+class discussion. Note that the Rosalind Project class pages also have
+discussion capability. **Do not use it**, please use the
+[Piazza page]({{ site.piazza_url }}) for *all discussion*.
+
+### Participation grade
+
+The [course grading scheme](syllabus.html) includes a class participation grade. You can earn full credit for this in three ways: (1) lecture participation, asking questions and answering your peers questions, (2) piazza participation, asking and answering questions on piazza, (3) regular attendance to office hours. To earn full credit you should aim to ask or answer a question at least once every two weeks on lecture or on piazza; or attend office hours at least once a month (that can include just going to my office hours to chat about computer science, biology, science, etc.)
+
+### Other policies
 
 * There will be reading assignments. Students are expected to have read the material **before** class.  
 * Students are expected to attend lectures. Active participation is expected. There will be graded work done in class.  
@@ -89,40 +117,15 @@ libraries, data resources and publishing mechanisms.
   express consent and permission from the instructor is a violation of
   academic integrity policy.  
 * Cell phone usage is **prohibited** during lecture, laptop use will be allowed to the extent that students **demonstrably** use it to follow along an in-class analysis or demonstration.  
-* You can earn full credit for class participation in three ways:   
-    (1) lecture participation, asking questions and answering your peers questions,   
-    (2) piazza participation, asking and answering questions on piazza,   
-    (3) regular attendance to office hours.   
-    To earn full credit you should aim to ask or answer a question at least once every two weeks on lecture or on piazza; or attend office hours at least once a month (this can include just going to my office hours to chat about computer science, data, science, software engineering, etc.).
 
 ### Grading Procedures 
 
-* Projects (35%)
-* In-class work (15%)
-* Written homework (20%)
-* Midterm exam (10%)
-* Final exam (15%)
+* Lecture prep work (15%): to be done before class, includes programming exercises and short written assignments.
+* Written homework (15%): some will be take-home, some will be done in class.
+* Programming projects (25%)
+* Midterms (2) (20%)
+* Final (20%)
 * Class participation (5%)
-
-
-### Tentative Course Schedule
-
-- Preliminaries:
-  What is Data Science? Who is a Data Scientist? The scope of Data Science: the open data movement, science, business, government, education, sport, and more. Introduction to the R data analysis environment. Formulating data-centric answers to scientific, business and social questions. Best practices: organizing projects, managing collaborations and expectations.
-
-- Data Management Principles:
-  Data scraping, tidying, cleaning and summarization. Basics of database systems and SQL. Exploratory Data Analysis. Exploration at scale: introduction to map reduce.
-
-- Computational and Statistical Data Analysis:
-  From exploration to inference: statistical and probabilistic models. Linear modeling: regression and prediction. Introduction to Machine Learning: unsupervised methods, SVMs, tree-based methods
-
-- Data Mining:
-  Regression and prediction at scale. Mining time series and data streams.
-
-- Communicating with data:
-  Writing with and about data: communicating the result of a data analysis. Information visualization, visualizing for an audience. Putting it together: interactive data dissemination on the web (d3.js and related technologies).
-
-Consult the [class home page]({{< baseurl >}}) for an up-to-date course schedule.
 
 ## University Policies and Resources
 
