@@ -19,8 +19,6 @@ to get you started:
 *	[IPython docs](http://ipython.org/ipython-doc/stable/index.html)  
 *   [Jupyter notebooks](http://jupyter.org/)
 
-Python is available on the [GRACE](http://www.grace.umd.edu) system.
- [Check here for more information](grace_howto/index.html)
 
 Other Resources
 ---------
