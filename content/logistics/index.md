@@ -28,7 +28,7 @@ This page constitutes the official syllabus for this class.
 *	TA:
     - Aya Ismail 
       <asalam@umd.edu>  
-      Office Hours: TBD
+      Office Hours: Tuesdays and Thursdays 2:30-4:30
 
 We will use the class Piazza site [{{< piazzaurl >}}]({{< piazzaurl >}}) for questions, discussion and announcements. Assignments and grades for the class will be posted to the class ELMS site: [{{< elmurl >}}]({{< elmurl >}}).
 In case of an extended emergency closure, announcements on policy and procedures will be posted to Piazza.
@@ -103,7 +103,7 @@ discussion capability. **Do not use it**, please use the
 
 ### Participation grade
 
-The [course grading scheme](syllabus.html) includes a class participation grade. You can earn full credit for this in three ways: (1) lecture participation, asking questions and answering your peers questions, (2) piazza participation, asking and answering questions on piazza, (3) regular attendance to office hours. To earn full credit you should aim to ask or answer a question at least once every two weeks on lecture or on piazza; or attend office hours at least once a month (that can include just going to my office hours to chat about computer science, biology, science, etc.)
+The course grading scheme (see below) includes a class participation grade. You can earn full credit for this in three ways: (1) lecture participation, asking questions and answering your peers questions, (2) piazza participation, asking and answering questions on piazza, (3) regular attendance to office hours. To earn full credit you should aim to ask or answer a question at least once every two weeks on lecture or on piazza; or attend office hours at least once a month (that can include just going to my office hours to chat about computer science, biology, science, etc.)
 
 ### Other policies
 

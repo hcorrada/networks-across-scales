@@ -6,8 +6,27 @@
     <description>Recent content in Resources on CMSC423: Bioinformatic Algorithms Databases and Tools (Spring 2017)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Aug 2016 08:54:37 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 25 Jan 2017 08:54:37 -0800</lastBuildDate>
     <atom:link href="http://www.hcbravo.org/cmsc423/resources/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CMSC Resources</title>
+      <link>http://www.hcbravo.org/cmsc423/resources/Howtobiopython/</link>
+      <pubDate>Wed, 25 Jan 2017 08:54:37 -0800</pubDate>
+      
+      <guid>http://www.hcbravo.org/cmsc423/resources/Howtobiopython/</guid>
+      <description>
+
+&lt;h2 id=&#34;install-biopython&#34;&gt;Install Biopython&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download and install &lt;a href=&#34;https://www.python.org/downloads/&#34;&gt;Python 2.7&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Download and install &lt;a href=&#34;https://www.continuum.io/downloads/&#34;&gt;Anaconda&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Use the following commad to install biopython:&lt;br /&gt;
+  &lt;code&gt;conda install -c anaconda biopython=1.68&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>CMSC Resources</title>
@@ -36,6 +55,8 @@ to get you started:&lt;/p&gt;
 &lt;h2 id=&#34;other-resources&#34;&gt;Other Resources&lt;/h2&gt;
 
 &lt;ul&gt;
+&lt;li&gt;To install &lt;a href=&#34;http://www.hcbravo.org/cmsc423/
+/resources/Howtobiopython.html&#34;&gt;Bipython&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://cbcb.umd.edu/~carlk/bioinfo-lectures/&#34;&gt;Carl Kingsford&amp;rsquo;s lecture slides&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;li&gt;R/Bioconductor: &lt;a href=&#34;http://www.r-project.org&#34;&gt;R&lt;/a&gt; is an open-source environment for data analysis. The &lt;a href=&#34;http://bioconductor.org&#34;&gt;Bioconductor project&lt;/a&gt; provides a
 large number of useful libraries for high-throughput genomic data analysis. &lt;a href=&#34;http://www.bioconductor.org/packages/release/BiocViews.html&#34;&gt;You can browse them by task&lt;/a&gt;&lt;/li&gt;
