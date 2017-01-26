@@ -24,11 +24,11 @@ This page constitutes the official syllabus for this class.
     **Office Hours:** Friday 1:00pm-2:00pm AVW 3223 and by appointment
 * Communication:  
     - For course related questions, use [Piazza]({{< piazzaurl >}}) as indicated below.  
-    - For any other communication (e.g., absences accomodations etc.) email me including `[CMSC320]` in the message subject.  
+    - For any other communication (e.g., absences accomodations etc.) email me including `[CMSC423]` in the message subject.  
 *	TA:
     - Aya Ismail 
       <asalam@umd.edu>  
-      Office Hours: Tuesdays and Thursdays 2:30-4:30
+      Office Hours: Tuesdays and Thursdays 2:30-4:30 AVW 4101 
 
 We will use the class Piazza site [{{< piazzaurl >}}]({{< piazzaurl >}}) for questions, discussion and announcements. Assignments and grades for the class will be posted to the class ELMS site: [{{< elmurl >}}]({{< elmurl >}}).
 In case of an extended emergency closure, announcements on policy and procedures will be posted to Piazza.
