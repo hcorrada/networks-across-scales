@@ -23,7 +23,7 @@ to get you started:
 
 Other Resources
 ---------
-* To install [Bipython]({{< baseurl >}}/resources/Howtobiopython.html)
+* To install [Bipython](howto-biopython/index.html)
 * [Carl Kingsford's lecture slides](http://cbcb.umd.edu/~carlk/bioinfo-lectures/)  
 * R/Bioconductor: [R](http://www.r-project.org) is an open-source environment for data analysis. The [Bioconductor project](http://bioconductor.org) provides a
 large number of useful libraries for high-throughput genomic data analysis. [You can browse them by task](http://www.bioconductor.org/packages/release/BiocViews.html)

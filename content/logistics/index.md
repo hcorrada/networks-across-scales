@@ -84,6 +84,11 @@ programming projects will be posted in the
 [Programming Projects course
 page]({{< baseurl >}}/projects/index.html).
 
+### Python
+
+We require that you use Python 2.7 for all programming assignments. Please 
+see [this guide to installing BioPython]({{< baseurl >}}/resources/howto-biopython/index.html).
+
 ### Written assignments
 
 Some written exercises will be assigned covering material we
