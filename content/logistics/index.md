@@ -82,7 +82,7 @@ you write for these exercises will be assigned. Those additional
 analysis will be submitted as instructed. Full descriptions of the
 programming projects will be posted in the
 [Programming Projects course
-page]({{< baseurl >}}/index/projects.html).
+page]({{< baseurl >}}//projects/).
 
 ### Written assignments
 
