@@ -20,9 +20,10 @@ to get you started:
 *   [Jupyter notebooks](http://jupyter.org/)
 
 
+
 Other Resources
 ---------
-
+* To install [Bipython]({{< baseurl >}}/resources/Howtobiopython.html)
 * [Carl Kingsford's lecture slides](http://cbcb.umd.edu/~carlk/bioinfo-lectures/)  
 * R/Bioconductor: [R](http://www.r-project.org) is an open-source environment for data analysis. The [Bioconductor project](http://bioconductor.org) provides a
 large number of useful libraries for high-throughput genomic data analysis. [You can browse them by task](http://www.bioconductor.org/packages/release/BiocViews.html)
