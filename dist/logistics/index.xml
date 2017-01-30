@@ -2,10 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Logistics on CMSC423: Bioinformatic Algorithms Databases and Tools (Spring 2017)</title>
-    <link>http://www.hcbravo.org/cmsc423/logistics/</link>
+    <link>http://www.hcbravo.org/cmsc423/logistics/index.xml</link>
     <description>Recent content in Logistics on CMSC423: Bioinformatic Algorithms Databases and Tools (Spring 2017)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Released under the MIT license</copyright>
     <lastBuildDate>Mon, 29 Aug 2016 05:41:03 -0400</lastBuildDate>
     <atom:link href="http://www.hcbravo.org/cmsc423/logistics/index.xml" rel="self" type="application/rss+xml" />
     
@@ -42,7 +43,7 @@ Phone Number: 301-405-2481&lt;br /&gt;
 &lt;ul&gt;
 &lt;li&gt;For course related questions, use &lt;a href=&#34;https://piazza.com/class/iybyz4l8fqs2bl
 &#34;&gt;Piazza&lt;/a&gt; as indicated below.&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;For any other communication (e.g., absences accomodations etc.) email me including &lt;code&gt;[CMSC320]&lt;/code&gt; in the message subject.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;For any other communication (e.g., absences accomodations etc.) email me including &lt;code&gt;[CMSC423]&lt;/code&gt; in the message subject.&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;TA:&lt;/p&gt;
@@ -50,7 +51,7 @@ Phone Number: 301-405-2481&lt;br /&gt;
 &lt;ul&gt;
 &lt;li&gt;Aya Ismail
 &lt;a href=&#34;mailto:asalam@umd.edu&#34;&gt;asalam@umd.edu&lt;/a&gt;&lt;br /&gt;
-Office Hours: Tuesdays and Thursdays 2:30-4:30&lt;/li&gt;
+Office Hours: Tuesdays and Thursdays 2:30-4:30 AVW 4101&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 

@@ -2,11 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.hcbravo.org/cmsc423/</loc>
-    <lastmod>2017-01-25T08:54:37-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.hcbravo.org/cmsc423/resources/howto-biopython/</loc>
     <lastmod>2017-01-25T08:54:37-08:00</lastmod>
   </url>
@@ -64,6 +59,42 @@
   
   <url>
     <loc>http://www.hcbravo.org/cmsc423/projects/project3/gapminder/</loc>
+  </url>
+  
+  <url>
+    <loc>http://www.hcbravo.org/cmsc423/</loc>
+    <lastmod>2017-01-25T08:54:37-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hcbravo.org/cmsc423/calendar/</loc>
+    <lastmod>2016-08-30T10:13:51-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hcbravo.org/cmsc423/homeworks/</loc>
+    <lastmod>2016-08-31T00:05:51-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hcbravo.org/cmsc423/logistics/</loc>
+    <lastmod>2016-08-29T05:41:03-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hcbravo.org/cmsc423/projects/</loc>
+    <lastmod>2016-11-22T13:04:21-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.hcbravo.org/cmsc423/resources/</loc>
+    <lastmod>2017-01-25T08:54:37-08:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

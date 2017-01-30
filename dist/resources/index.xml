@@ -2,10 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Resources on CMSC423: Bioinformatic Algorithms Databases and Tools (Spring 2017)</title>
-    <link>http://www.hcbravo.org/cmsc423/resources/</link>
+    <link>http://www.hcbravo.org/cmsc423/resources/index.xml</link>
     <description>Recent content in Resources on CMSC423: Bioinformatic Algorithms Databases and Tools (Spring 2017)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Released under the MIT license</copyright>
     <lastBuildDate>Wed, 25 Jan 2017 08:54:37 -0800</lastBuildDate>
     <atom:link href="http://www.hcbravo.org/cmsc423/resources/index.xml" rel="self" type="application/rss+xml" />
     
