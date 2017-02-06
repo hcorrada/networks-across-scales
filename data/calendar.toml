@@ -34,6 +34,7 @@ date = "2/2"
 
 [[day03.covers]]
 title = "Algorithmic Warmup: Probabilities of patterns in strings"
+notes = "lectures/Pattern Probabilities.pdf"
 
 [[day03.prep]]
 title = "Compeau & Pevzner, Vol. 1, Ch. 1, pp. 3-13, 39-44, 52-56"
@@ -48,57 +49,71 @@ link = "https://myelms.umd.edu/courses/1152063/quizzes/1119894"
 
 [[day03.prep]]
 title =  "Rosalind prep Ex. 10"
-link = "http://rosalind.info/classes/232/"
+link = "http://rosalind.info/classes/400/"
 
 [day04]
 date = "2/7"
 
 [[day04.covers]]
-title = "Algorithmic Warmup: Probabilities of patterns in strings"
+title = "Algorithmic Warmup: Skew Detection"
+
+[[day04.prep]]
+title = "Compeau & Pevzner, Vol. 1, Ch. 1, 13-38, 44-51"
+
+[[day04.prep]]
+title = "Compeau & Pevzner, Ch. 1, playlist 1, videos 3-5"
+link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNFDlaNMZ1JVN73rO1a0dpn"
+
+[[day04.prep]]
+title = "Reading Quiz no. 3"
+link = "https://myelms.umd.edu/courses/1218381/assignments/4362566"
+
+[[day04.prep]]
+title = "Rosalind prep Ex. 11"
+link = "http://rosalind.info/classes/400/"
 
 [day05]
 date = "2/9"
 
 [[day05.covers]]
-title = "Algorithmic Warmup: Skew Detection"
+title = "Programming for bioinformatics"
 
 [day06]
 date = "2/14"
 
 [[day06.covers]]
-title = "Programming for bioinformatics"
-
+title = "Bioinformatics public resources"
 
 # I am not here this day
 [day07]
 date = "2/16"
 
 [[day07.covers]]
-title = "Bioinformatics public resources"
+title = "Brute Force Algorithms (1): Mass Spectrometry"
 
 [day08]
 date = "2/21"
 
 [[day08.covers]]
-title = "Brute Force Algorithms (1): Mass Spectrometry"
+title = "Brute Force Algorithms (2): Mass Spectrometry"
 
 [day09]
 date = "2/23"
 
 [[day09.covers]]
-title = "Brute Force Algorithms (2): Mass Spectrometry"
+title = "Randomized Algorithms (1): Motif Finding"
 
 [day10]
 date = "2/28"
 
 [[day10.covers]]
-title = "Randomized Algorithms (1): Motif Finding"
+title = "Randomized Algorithms (2): Motif Finding"
 
 [day11]
 date = "3/2"
 
 [[day11.covers]]
-title = "Randomized Algorithms (2): Motif Finding"
+title = "Randomized Algorithms (3): Motif Finding"
 
 [day12]
 date = "3/7"
