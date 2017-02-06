@@ -34,7 +34,7 @@ date = "2/2"
 
 [[day03.covers]]
 title = "Algorithmic Warmup: Probabilities of patterns in strings"
-notes = "lectures/Pattern Probabilities.pdf"
+notes = "lectures/Pattern Probabilties.pdf"
 
 [[day03.prep]]
 title = "Compeau & Pevzner, Vol. 1, Ch. 1, pp. 3-13, 39-44, 52-56"
