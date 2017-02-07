@@ -7,7 +7,7 @@ title: Project 1
 
 Posted: 2/07/16  
 
-## Programming Exercises ##
+## Part 1: Programming Exercises ##
 
 Submit your answers to Problems 1-3 in the
 [Rosalind final submission page](http://rosalind.info/classes/401/).
@@ -19,7 +19,7 @@ runtime analysis of your solution.
 For full credit, include a short description of your algorithm and
 show how you derive your answer.
 
-### Code Grading (45 pts) ###
+**Code Grading (45 pts)**
 
 Each of the 3 Rosalind exercises will be evaluated based on correctness, efficiency and style.
 
@@ -35,7 +35,7 @@ Each of the 3 Rosalind exercises will be evaluated based on correctness, efficie
 (3) Is the code in your submission clean and easy to read, with non-obvious statements
 properly commented? Are functions used appropriately for clarity and organization?
 
-## Skew Diagrams ##
+## Part 2: Skew Diagrams ##
 
 *Campylobacter jejuni* is a well-known bacterial pathogen, recently
  found
@@ -92,7 +92,7 @@ differences? Where do you think is the replication origin for
 
 Save your skew diagram `pdf` and include in your submission (see below).
 
-## DnaA boxes ##
+## Part 3: DnaA boxes ##
 
 Use your code to find most frequent words with mismatches (at most d=2 mismatches) and reverse complements to find candidate DnaA binding sequences in the oriC candidate region you found above (250bp on each side of position minimizing skew).
 
