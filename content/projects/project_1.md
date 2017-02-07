@@ -1,19 +1,18 @@
 ---
-layout: default
+date: 2017-02-07
 title: Project 1
 ---
 
-**Due Tuesday Sept. 22**
+**Due Monday Feb. 20**
 
-Posted: 9/14/15  
-Last Update: 9/14/15  
+Posted: 2/07/16  
 
 ## Programming Exercises ##
 
 Submit your answers to Problems 1-3 in the
-[Rosalind final submission page](http://rosalind.info/classes/233/).
+[Rosalind final submission page](http://rosalind.info/classes/401/).
 
-**NOTE: THESE PROGRAMS NEED TO BE SUBMITTED TO ROSALIND BY Monday 9/21 at 5:00PM**
+**NOTE: THESE PROGRAMS NEED TO BE SUBMITTED TO ROSALIND BY Monday 02/20 at 11:59PM**
 
 **Question 1. (10pts)** For each of the 3 solutions submitted provide a
 runtime analysis of your solution.
@@ -106,4 +105,4 @@ of distinct frequent words, and (b) the number of times each frequent word occur
 
 Prepare a writeup answering the four questions above and save as `pdf`. Submit any additional code (besides your solutions to the Rosalind exercises) used for this part of the homework.
 
-Submit to ELMS by Tuesday 9/22 9:00pm.
+Submit to ELMS by Monday 2/20 11:59pm.
