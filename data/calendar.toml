@@ -78,6 +78,14 @@ date = "2/9"
 [[day05.covers]]
 title = "Programming for bioinformatics"
 
+[[day05.prep]]
+title = "Ch. 1-2 Biopython tutorial"
+link = "http://biopython.org/DIST/docs/tutorial/Tutorial.html"
+
+[[day05.prep]]
+title = "Rosalind prep Ex. 12"
+link = "http://rosalind.info/classes/400"
+
 [day06]
 date = "2/14"
 
