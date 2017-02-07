@@ -5,8 +5,6 @@ title: Project 1
 
 **Due Monday Feb. 20**
 
-Posted: 2/07/16  
-
 ## Part 1: Programming Exercises ##
 
 Submit your answers to Problems 1-3 in the
@@ -23,16 +21,15 @@ show how you derive your answer.
 
 Each of the 3 Rosalind exercises will be evaluated based on correctness, efficiency and style.
 
-(1) Correctness: if you pass the Rosalind correctness check, you get full credit. Otherwise, your grade is determined by
+1. Correctness: if you pass the Rosalind correctness check, you get full credit. Otherwise, your grade is determined by
+	* Program running without error when called as `python <script.py> <input_file>` where `<input_file>` is in the format used for that problem in Rosalind.
+	* Program reading input in the required format.  
+	* Program printing output in correct format as described in Rosalind.  
+	* Program implementing an algorithm that addresses the problem (i.e., you get more points if the algorithm is correct but you have a bug, e.g., with indexing)  
 
-  (a) program running without error when called as `python <script.py> <input_file>` where `<input_file>` is in the format used for that problem in Rosalind;
-  (b) program reading input in the required format;  
-  (c) program printing output in correct format as described in Rosalind;  
-  (d) program implementing an algorithm that addresses the problem (i.e., you get more points if the algorithm is correct but you have a bug, e.g., with indexing)  
+2. Efficiency: points are awarded for providing efficient solutions. For example, a linear algorithm will score better than a quadratic algorithm. For full credit, implement the efficient algorithms described in textbook and discussed in class.
 
-(2) Efficiency: points are awarded for providing efficient solutions. For example, a linear algorithm will score better than a quadratic algorithm. For full credit, implement the efficient algorithms described in textbook and discussed in class.
-
-(3) Is the code in your submission clean and easy to read, with non-obvious statements
+3. Is the code in your submission clean and easy to read, with non-obvious statements
 properly commented? Are functions used appropriately for clarity and organization?
 
 ## Part 2: Skew Diagrams ##
@@ -46,7 +43,7 @@ properly commented? Are functions used appropriately for clarity and organizatio
 **Step 1. (5 pts)** Use the `BioPython` library to download the *Campylobacter
   jejuni* genome from NCBI:
 
-{% highlight python %}
+```
 from Bio import Entrez, SeqIO
 Entrez.email = "me@example.com"
 campy_id = "AL111168.1"
@@ -60,7 +57,7 @@ handle.close()
 
 # write sequence to fasta file (so you don't have to request again)
 SeqIO.write(record, "campy.fa", "fasta")
-{% endhighlight %}
+```
 
 Variable `record` is a `SeqIO` object containing the *Campylobacter
 jejuni* genome. Check
@@ -72,18 +69,17 @@ sequences from NCBI.
 **Step 2. (15 pts)** Write a script to plot the skew diagram for
   *Campylobacter jejuni*. One easy way of plotting is using pylab and IPython. If you start IPython as follows:
 
-{% highlight bash %}
+```
 ipython
-{% endhighlight %}
+```
 
 and `skew` is the skew vector you computed for *Campylobacter jejuni*
 you can plot with
 
-{% highlight python %}
+```
 %pylab
-
 plot(skew)
-{% endhighlight %}
+```
 
 **Question 2 (10 pts)** Does this skew diagram look like the ones you've seen
 so far in book and discussion? What do you think may account for any
@@ -105,4 +101,4 @@ of distinct frequent words, and (b) the number of times each frequent word occur
 
 Prepare a writeup answering the four questions above and save as `pdf`. Submit any additional code (besides your solutions to the Rosalind exercises) used for this part of the homework.
 
-Submit to ELMS by Monday 2/20 11:59pm.
+Submit to ELMS by Monday 02/20 11:59pm.
