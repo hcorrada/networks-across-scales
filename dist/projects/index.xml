@@ -7,61 +7,54 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
-    <lastBuildDate>Mon, 29 Aug 2016 08:54:44 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 07 Feb 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://www.hcbravo.org/cmsc423/projects/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>CMSC423 Projects</title>
-      <link>http://www.hcbravo.org/cmsc423/projects/</link>
-      <pubDate>Mon, 29 Aug 2016 08:54:44 -0400</pubDate>
-      
-      <guid>http://www.hcbravo.org/cmsc423/projects/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;COMING SOON&lt;/strong&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Project 1</title>
+      <title>Project 1: Finding origin of DNA replication in a bacterial genome</title>
       <link>http://www.hcbravo.org/cmsc423/projects/project_1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 07 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.hcbravo.org/cmsc423/projects/project_1/</guid>
       <description>
 
-&lt;p&gt;&lt;strong&gt;Due Tuesday Sept. 22&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Due: Monday Feb. 20, 2017&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;Posted: Feb 9, 2017&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;Last Update: Feb 9, 2017&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Posted: 9/14/15&lt;br /&gt;
-Last Update: 9/14/15&lt;/p&gt;
-
-&lt;h2 id=&#34;programming-exercises&#34;&gt;Programming Exercises&lt;/h2&gt;
+&lt;h1 id=&#34;part-1-programming-exercises&#34;&gt;Part 1: Programming Exercises&lt;/h1&gt;
 
 &lt;p&gt;Submit your answers to Problems 1-3 in the
-&lt;a href=&#34;http://rosalind.info/classes/233/&#34;&gt;Rosalind final submission page&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;http://rosalind.info/classes/401/&#34;&gt;Rosalind final submission page&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;NOTE: THESE PROGRAMS NEED TO BE SUBMITTED TO ROSALIND BY Monday &lt;sup&gt;9&lt;/sup&gt;&amp;frasl;&lt;sub&gt;21&lt;/sub&gt; at 5:00PM&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE: THESE PROGRAMS NEED TO BE SUBMITTED TO ROSALIND BY Monday 02/20 at 11:59PM&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Question 1. (10pts)&lt;/strong&gt; For each of the 3 solutions submitted provide a
 runtime analysis of your solution.
 For full credit, include a short description of your algorithm and
 show how you derive your answer.&lt;/p&gt;
 
-&lt;h3 id=&#34;code-grading-45-pts&#34;&gt;Code Grading (45 pts)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Code Grading (45 pts)&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Each of the 3 Rosalind exercises will be evaluated based on correctness, efficiency and style.&lt;/p&gt;
 
-&lt;p&gt;(1) Correctness: if you pass the Rosalind correctness check, you get full credit. Otherwise, your grade is determined by&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Correctness: if you pass the Rosalind correctness check, you get full credit. Otherwise, your grade is determined by&lt;/p&gt;
 
-&lt;p&gt;(a) program running without error when called as &lt;code&gt;python &amp;lt;script.py&amp;gt; &amp;lt;input_file&amp;gt;&lt;/code&gt; where &lt;code&gt;&amp;lt;input_file&amp;gt;&lt;/code&gt; is in the format used for that problem in Rosalind;
-  (b) program reading input in the required format;&lt;br /&gt;
-  &amp;copy; program printing output in correct format as described in Rosalind;&lt;br /&gt;
-  (d) program implementing an algorithm that addresses the problem (i.e., you get more points if the algorithm is correct but you have a bug, e.g., with indexing)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Program running without error when called as &lt;code&gt;python &amp;lt;script.py&amp;gt; &amp;lt;input_file&amp;gt;&lt;/code&gt; where &lt;code&gt;&amp;lt;input_file&amp;gt;&lt;/code&gt; is in the format used for that problem in Rosalind.&lt;/li&gt;
+&lt;li&gt;Program reading input in the required format.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Program printing output in correct format as described in Rosalind.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Program implementing an algorithm that addresses the problem (i.e., you get more points if the algorithm is correct but you have a bug, e.g., with indexing)&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 
-&lt;p&gt;(2) Efficiency: points are awarded for providing efficient solutions. For example, a linear algorithm will score better than a quadratic algorithm. For full credit, implement the efficient algorithms described in textbook and discussed in class.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Efficiency: points are awarded for providing efficient solutions. For example, a linear algorithm will score better than a quadratic algorithm. For full credit, implement the efficient algorithms described in textbook and discussed in class.&lt;/p&gt;&lt;/li&gt;
 
-&lt;p&gt;(3) Is the code in your submission clean and easy to read, with non-obvious statements
-properly commented? Are functions used appropriately for clarity and organization?&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Is the code in your submission clean and easy to read, with non-obvious statements
+properly commented? Are functions used appropriately for clarity and organization?&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;h2 id=&#34;skew-diagrams&#34;&gt;Skew Diagrams&lt;/h2&gt;
+&lt;h1 id=&#34;part-2-skew-diagrams&#34;&gt;Part 2: Skew Diagrams&lt;/h1&gt;
 
 &lt;p&gt;&lt;em&gt;Campylobacter jejuni&lt;/em&gt; is a well-known bacterial pathogen, recently
  found
@@ -72,24 +65,20 @@ properly commented? Are functions used appropriately for clarity and organizatio
 &lt;p&gt;&lt;strong&gt;Step 1. (5 pts)&lt;/strong&gt; Use the &lt;code&gt;BioPython&lt;/code&gt; library to download the &lt;em&gt;Campylobacter
   jejuni&lt;/em&gt; genome from NCBI:&lt;/p&gt;
 
-&lt;p&gt;{% highlight python %}
-from Bio import Entrez, SeqIO
-Entrez.email = &amp;ldquo;me@example.com&amp;rdquo;
-campy_id = &amp;ldquo;AL111168.1&amp;rdquo;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from Bio import Entrez, SeqIO
+Entrez.email = &amp;quot;me@example.com&amp;quot;
+campy_id = &amp;quot;AL111168.1&amp;quot;
 
-&lt;h1 id=&#34;open-an-url-handle-for-query&#34;&gt;open an url handle for query&lt;/h1&gt;
+# open an url handle for query
+handle = Entrez.efetch(db=&amp;quot;nucleotide&amp;quot;, id=campy_id, rettype=&amp;quot;gb&amp;quot;, retmode=&amp;quot;text&amp;quot;)
 
-&lt;p&gt;handle = Entrez.efetch(db=&amp;ldquo;nucleotide&amp;rdquo;, id=campy_id, rettype=&amp;ldquo;gb&amp;rdquo;, retmode=&amp;ldquo;text&amp;rdquo;)&lt;/p&gt;
+# read query result records
+record = SeqIO.read(handle, &amp;quot;genbank&amp;quot;)
+handle.close()
 
-&lt;h1 id=&#34;read-query-result-records&#34;&gt;read query result records&lt;/h1&gt;
-
-&lt;p&gt;record = SeqIO.read(handle, &amp;ldquo;genbank&amp;rdquo;)
-handle.close()&lt;/p&gt;
-
-&lt;h1 id=&#34;write-sequence-to-fasta-file-so-you-don-t-have-to-request-again&#34;&gt;write sequence to fasta file (so you don&amp;rsquo;t have to request again)&lt;/h1&gt;
-
-&lt;p&gt;SeqIO.write(record, &amp;ldquo;campy.fa&amp;rdquo;, &amp;ldquo;fasta&amp;rdquo;)
-{% endhighlight %}&lt;/p&gt;
+# write sequence to fasta file (so you don&#39;t have to request again)
+SeqIO.write(record, &amp;quot;campy.fa&amp;quot;, &amp;quot;fasta&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Variable &lt;code&gt;record&lt;/code&gt; is a &lt;code&gt;SeqIO&lt;/code&gt; object containing the &lt;em&gt;Campylobacter
 jejuni&lt;/em&gt; genome. Check
@@ -101,40 +90,50 @@ sequences from NCBI.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Step 2. (15 pts)&lt;/strong&gt; Write a script to plot the skew diagram for
   &lt;em&gt;Campylobacter jejuni&lt;/em&gt;. One easy way of plotting is using pylab and IPython. If you start IPython as follows:&lt;/p&gt;
 
-&lt;p&gt;{% highlight bash %}
-ipython
-{% endhighlight %}&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ipython
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;and &lt;code&gt;skew&lt;/code&gt; is the skew vector you computed for &lt;em&gt;Campylobacter jejuni&lt;/em&gt;
 you can plot with&lt;/p&gt;
 
-&lt;p&gt;{% highlight python %}
-%pylab&lt;/p&gt;
-
-&lt;p&gt;plot(skew)
-{% endhighlight %}&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;%pylab
+plot(skew)
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong&gt;Question 2 (10 pts)&lt;/strong&gt; Does this skew diagram look like the ones you&amp;rsquo;ve seen
 so far in book and discussion? What do you think may account for any
-differences? Where do you think is the replication origin for
-  &lt;em&gt;Campylobacter jejuni&lt;/em&gt;?&lt;/p&gt;
+differences? Where do you think replication origin for
+  &lt;em&gt;Campylobacter jejuni&lt;/em&gt; is located?&lt;/p&gt;
 
-&lt;p&gt;Save your skew diagram &lt;code&gt;pdf&lt;/code&gt; and include in your submission (see below).&lt;/p&gt;
+&lt;p&gt;Save your skew diagram &lt;code&gt;pdf&lt;/code&gt; or other image file and include in your submission (see below).&lt;/p&gt;
 
-&lt;h2 id=&#34;dnaa-boxes&#34;&gt;DnaA boxes&lt;/h2&gt;
+&lt;h1 id=&#34;part-3-dnaa-boxes&#34;&gt;Part 3: DnaA boxes&lt;/h1&gt;
 
 &lt;p&gt;Use your code to find most frequent words with mismatches (at most d=2 mismatches) and reverse complements to find candidate DnaA binding sequences in the oriC candidate region you found above (250bp on each side of position minimizing skew).&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Question 3 (10 pts)&lt;/strong&gt; Construct a table that shows for each k=3,4,5,6,7,8,9: (a) the number
-of distinct frequent words, and (b) the number of times each frequent word occurs in the genomic region.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Question 3 (10 pts)&lt;/strong&gt; Construct a table that shows for each k=3,4,5,6,7,8,9:&lt;br /&gt;
+(a) the number of distinct frequent words, and&lt;br /&gt;
+(b) the number of times each frequent word occurs in the genomic region.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Question 4 (5 pts)&lt;/strong&gt; Based on your result, did you find a reasonable candidate DnaA sequence you would provide to a biologist to test. If so, write down the candidate sequence and explain why you chose this particular candidate sequence. If not, explain why not.&lt;/p&gt;
 
-&lt;h2 id=&#34;how-to-submit&#34;&gt;How to submit&lt;/h2&gt;
+&lt;h1 id=&#34;how-to-submit&#34;&gt;How to submit&lt;/h1&gt;
 
-&lt;p&gt;Prepare a writeup answering the four questions above and save as &lt;code&gt;pdf&lt;/code&gt;. Submit any additional code (besides your solutions to the Rosalind exercises) used for this part of the homework.&lt;/p&gt;
+&lt;p&gt;Prepare a writeup answering the four questions above and save as &lt;code&gt;pdf&lt;/code&gt;. Submit any additional code (besides your solutions to the Rosalind exercises) used for this part of the homework. I highly recommend working with a &lt;code&gt;Jupyter&lt;/code&gt; notebook, exporting the notebook as &lt;code&gt;pdf&lt;/code&gt; and submitting that.&lt;/p&gt;
 
-&lt;p&gt;Submit to ELMS by Tuesday &lt;sup&gt;9&lt;/sup&gt;&amp;frasl;&lt;sub&gt;22&lt;/sub&gt; 9:00pm.&lt;/p&gt;
+&lt;p&gt;Submit to ELMS by Monday 02/20 11:59pm here: &lt;a href=&#34;https://myelms.umd.edu/courses/1218381/assignments/4362579&#34;&gt;https://myelms.umd.edu/courses/1218381/assignments/4362579&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CMSC423 Projects</title>
+      <link>http://www.hcbravo.org/cmsc423/projects/</link>
+      <pubDate>Mon, 29 Aug 2016 08:54:44 -0400</pubDate>
+      
+      <guid>http://www.hcbravo.org/cmsc423/projects/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Project 1: &lt;a href=&#34;project_1/&#34;&gt;Finding the origin of DNA replication in a bacterial genome&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
