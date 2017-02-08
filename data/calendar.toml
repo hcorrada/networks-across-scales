@@ -77,6 +77,7 @@ date = "2/9"
 
 [[day05.covers]]
 title = "Programming for bioinformatics"
+notes = "lectures/CMSC423_BioProgramming.pdf"
 
 [[day05.prep]]
 title = "Ch. 1-2 Biopython tutorial"
