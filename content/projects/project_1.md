@@ -1,42 +1,38 @@
 ---
-layout: default
+date: 2017-02-07
 title: Project 1
 ---
 
-**Due Tuesday Sept. 22**
+**Due Monday Feb. 20**
 
-Posted: 9/14/15  
-Last Update: 9/14/15  
-
-## Programming Exercises ##
+## Part 1: Programming Exercises ##
 
 Submit your answers to Problems 1-3 in the
-[Rosalind final submission page](http://rosalind.info/classes/233/).
+[Rosalind final submission page](http://rosalind.info/classes/401/).
 
-**NOTE: THESE PROGRAMS NEED TO BE SUBMITTED TO ROSALIND BY Monday 9/21 at 5:00PM**
+**NOTE: THESE PROGRAMS NEED TO BE SUBMITTED TO ROSALIND BY Monday 02/20 at 11:59PM**
 
 **Question 1. (10pts)** For each of the 3 solutions submitted provide a
 runtime analysis of your solution.
 For full credit, include a short description of your algorithm and
 show how you derive your answer.
 
-### Code Grading (45 pts) ###
+**Code Grading (45 pts)**
 
 Each of the 3 Rosalind exercises will be evaluated based on correctness, efficiency and style.
 
-(1) Correctness: if you pass the Rosalind correctness check, you get full credit. Otherwise, your grade is determined by
+1. Correctness: if you pass the Rosalind correctness check, you get full credit. Otherwise, your grade is determined by
+	* Program running without error when called as `python <script.py> <input_file>` where `<input_file>` is in the format used for that problem in Rosalind.
+	* Program reading input in the required format.  
+	* Program printing output in correct format as described in Rosalind.  
+	* Program implementing an algorithm that addresses the problem (i.e., you get more points if the algorithm is correct but you have a bug, e.g., with indexing)  
 
-  (a) program running without error when called as `python <script.py> <input_file>` where `<input_file>` is in the format used for that problem in Rosalind;
-  (b) program reading input in the required format;  
-  (c) program printing output in correct format as described in Rosalind;  
-  (d) program implementing an algorithm that addresses the problem (i.e., you get more points if the algorithm is correct but you have a bug, e.g., with indexing)  
+2. Efficiency: points are awarded for providing efficient solutions. For example, a linear algorithm will score better than a quadratic algorithm. For full credit, implement the efficient algorithms described in textbook and discussed in class.
 
-(2) Efficiency: points are awarded for providing efficient solutions. For example, a linear algorithm will score better than a quadratic algorithm. For full credit, implement the efficient algorithms described in textbook and discussed in class.
-
-(3) Is the code in your submission clean and easy to read, with non-obvious statements
+3. Is the code in your submission clean and easy to read, with non-obvious statements
 properly commented? Are functions used appropriately for clarity and organization?
 
-## Skew Diagrams ##
+## Part 2: Skew Diagrams ##
 
 *Campylobacter jejuni* is a well-known bacterial pathogen, recently
  found
@@ -47,7 +43,7 @@ properly commented? Are functions used appropriately for clarity and organizatio
 **Step 1. (5 pts)** Use the `BioPython` library to download the *Campylobacter
   jejuni* genome from NCBI:
 
-{% highlight python %}
+```
 from Bio import Entrez, SeqIO
 Entrez.email = "me@example.com"
 campy_id = "AL111168.1"
@@ -61,7 +57,7 @@ handle.close()
 
 # write sequence to fasta file (so you don't have to request again)
 SeqIO.write(record, "campy.fa", "fasta")
-{% endhighlight %}
+```
 
 Variable `record` is a `SeqIO` object containing the *Campylobacter
 jejuni* genome. Check
@@ -73,18 +69,17 @@ sequences from NCBI.
 **Step 2. (15 pts)** Write a script to plot the skew diagram for
   *Campylobacter jejuni*. One easy way of plotting is using pylab and IPython. If you start IPython as follows:
 
-{% highlight bash %}
+```
 ipython
-{% endhighlight %}
+```
 
 and `skew` is the skew vector you computed for *Campylobacter jejuni*
 you can plot with
 
-{% highlight python %}
+```
 %pylab
-
 plot(skew)
-{% endhighlight %}
+```
 
 **Question 2 (10 pts)** Does this skew diagram look like the ones you've seen
 so far in book and discussion? What do you think may account for any
@@ -93,7 +88,7 @@ differences? Where do you think is the replication origin for
 
 Save your skew diagram `pdf` and include in your submission (see below).
 
-## DnaA boxes ##
+## Part 3: DnaA boxes ##
 
 Use your code to find most frequent words with mismatches (at most d=2 mismatches) and reverse complements to find candidate DnaA binding sequences in the oriC candidate region you found above (250bp on each side of position minimizing skew).
 
@@ -106,4 +101,4 @@ of distinct frequent words, and (b) the number of times each frequent word occur
 
 Prepare a writeup answering the four questions above and save as `pdf`. Submit any additional code (besides your solutions to the Rosalind exercises) used for this part of the homework.
 
-Submit to ELMS by Tuesday 9/22 9:00pm.
+Submit to ELMS by Monday 02/20 11:59pm.
