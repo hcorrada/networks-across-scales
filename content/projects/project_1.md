@@ -1,11 +1,13 @@
 ---
 date: 2017-02-07
-title: Project 1
+title: "Project 1: Finding origin of DNA replication in a bacterial genome"
 ---
 
-**Due Monday Feb. 20**
+**Due: Monday Feb. 20, 2017**  
+**Posted: Feb 9, 2017**   
+**Last Update: Feb 9, 2017** 
 
-## Part 1: Programming Exercises ##
+# Part 1: Programming Exercises #
 
 Submit your answers to Problems 1-3 in the
 [Rosalind final submission page](http://rosalind.info/classes/401/).
@@ -32,7 +34,7 @@ Each of the 3 Rosalind exercises will be evaluated based on correctness, efficie
 3. Is the code in your submission clean and easy to read, with non-obvious statements
 properly commented? Are functions used appropriately for clarity and organization?
 
-## Part 2: Skew Diagrams ##
+# Part 2: Skew Diagrams #
 
 *Campylobacter jejuni* is a well-known bacterial pathogen, recently
  found
@@ -83,22 +85,23 @@ plot(skew)
 
 **Question 2 (10 pts)** Does this skew diagram look like the ones you've seen
 so far in book and discussion? What do you think may account for any
-differences? Where do you think is the replication origin for
-  *Campylobacter jejuni*?
+differences? Where do you think replication origin for
+  *Campylobacter jejuni* is located?
 
-Save your skew diagram `pdf` and include in your submission (see below).
+Save your skew diagram `pdf` or other image file and include in your submission (see below).
 
-## Part 3: DnaA boxes ##
+# Part 3: DnaA boxes #
 
 Use your code to find most frequent words with mismatches (at most d=2 mismatches) and reverse complements to find candidate DnaA binding sequences in the oriC candidate region you found above (250bp on each side of position minimizing skew).
 
-**Question 3 (10 pts)** Construct a table that shows for each k=3,4,5,6,7,8,9: (a) the number
-of distinct frequent words, and (b) the number of times each frequent word occurs in the genomic region.
+**Question 3 (10 pts)** Construct a table that shows for each k=3,4,5,6,7,8,9:   
+(a) the number of distinct frequent words, and   
+(b) the number of times each frequent word occurs in the genomic region.  
 
 **Question 4 (5 pts)** Based on your result, did you find a reasonable candidate DnaA sequence you would provide to a biologist to test. If so, write down the candidate sequence and explain why you chose this particular candidate sequence. If not, explain why not.
 
-## How to submit ##
+# How to submit #
 
-Prepare a writeup answering the four questions above and save as `pdf`. Submit any additional code (besides your solutions to the Rosalind exercises) used for this part of the homework.
+Prepare a writeup answering the four questions above and save as `pdf`. Submit any additional code (besides your solutions to the Rosalind exercises) used for this part of the homework. I highly recommend working with a `Jupyter` notebook, exporting the notebook as `pdf` and submitting that.
 
-Submit to ELMS by Monday 02/20 11:59pm.
+Submit to ELMS by Monday 02/20 11:59pm here: https://myelms.umd.edu/courses/1218381/assignments/4362579
