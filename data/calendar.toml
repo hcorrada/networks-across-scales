@@ -1,3 +1,7 @@
+#########
+# Course Introduction and Molecular Biology Review
+
+#### DAY 1
 [day01]
 date = "1/26"
 
@@ -9,6 +13,7 @@ notes = "lectures/CMSC423_CourseIntro.pdf"
 title = "Survey"
 link = "https://myelms.umd.edu/courses/1218381/modules/items/8829688"
 
+#### DAY 2
 [day02]
 date = "1/31"
 
@@ -28,6 +33,11 @@ link = "https://myelms.umd.edu/courses/1218381/modules/items/8829693"
 title = "Rosalind prep Ex. 1-9"
 link = "http://rosalind.info/classes/400/"
 
+#############
+# Algorithmic Warmup
+#
+
+#### DAY 3
 # I am not here this day
 [day03]
 date = "2/2"
@@ -51,6 +61,7 @@ link = "https://myelms.umd.edu/courses/1152063/quizzes/1119894"
 title =  "Rosalind prep Ex. 10"
 link = "http://rosalind.info/classes/400/"
 
+#### DAY 4
 [day04]
 date = "2/7"
 
@@ -72,6 +83,10 @@ link = "https://myelms.umd.edu/courses/1218381/assignments/4362566"
 title = "Rosalind prep Ex. 11"
 link = "http://rosalind.info/classes/400/"
 
+##################
+# Resources and databases
+
+#### DAY 5
 [day05]
 date = "2/9"
 
@@ -87,73 +102,109 @@ link = "http://biopython.org/DIST/docs/tutorial/Tutorial.html"
 title = "Rosalind prep Ex. 12"
 link = "http://rosalind.info/classes/400"
 
+#### DAY 6
 [day06]
 date = "2/14"
 
 [[day06.covers]]
 title = "Bioinformatics public resources"
 
+#####################
+# Motif Finding
+#
+
+#### DAY 7
+
 # I am not here this day
 [day07]
 date = "2/16"
 
 [[day07.covers]]
-title = "Brute Force Algorithms (1): Mass Spectrometry"
+title = "Randomized Algorithms (1): Motif Finding"
+
+##### SUBMIT PROJECT 1
+[day07a]
+date = "2/20"
+
+[[day07.covers]]
+title = "THIS IS NOT A LECTURE DAY"
+
+[[day07.workdue]]
+title = "Project 1: Finding the origin of DNA replication in a bacterial genome"
+link = "projects/project_1"
+
+#### DAY 8
 
 [day08]
 date = "2/21"
 
 [[day08.covers]]
-title = "Brute Force Algorithms (2): Mass Spectrometry"
+title = "Randomized Algorithms (2): Motif Finding"
+
+#### DAY 9
 
 [day09]
 date = "2/23"
 
 [[day09.covers]]
-title = "Randomized Algorithms (1): Motif Finding"
+title = "Randomized Algorithms (3): Motif Finding"
 
+#######################
+# Gene Expression Clustering
+
+#### DAY 10
 [day10]
 date = "2/28"
 
 [[day10.covers]]
-title = "Randomized Algorithms (2): Motif Finding"
+title = "EM Algorithm: Gene Expression Analysis (1)"
 
+#### DAY 11
 [day11]
 date = "3/2"
 
 [[day11.covers]]
-title = "Randomized Algorithms (3): Motif Finding"
+title = "EM Algorithm: Gene Expression Analysis (2)"
 
+#### DAY 12
 [day12]
 date = "3/7"
 
 [[day12.covers]]
-title = "EM Algorithm: Gene Expression Analysis (1)"
+title = "Hidden Markov Models (1)"
 
+#### DAY 13
 [day13]
 date = "3/9"
 
 [[day13.covers]]
-title = "EM Algorithm: Gene Expression Analysis (2)"
+title = "Hidden Markov Models (2)"
 
+#### DAY 14
 [day14]
 date = "3/14"
 
 [[day14.covers]]
 title = "Unit I Recap and Review"
 
+#### DAY 15
 [day15]
 date = "3/16"
 
 [[day15.covers]]
 title = "Midterm I"
 
+###################
+# Spring Break
+
+#### DAY 16
 [day16]
 date = "3/21"
 
 [[day16.covers]]
 title = "No Algorithms (1): SPRING BREAK"
 
+#### DAY 17
 [day17]
 date = "3/23"
 
