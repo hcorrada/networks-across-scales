@@ -109,6 +109,17 @@ date = "2/14"
 [[day06.covers]]
 title = "Bioinformatics public resources"
 
+[[day06.prep]]
+title = "Pevsner, Ch. 2 (posted on ELMS shortly)"
+
+[[day06.prep]]
+title = "Rosalind prep Exs. 13-14"
+link = "http://rosalind.info/classes/400"
+
+[[day06.prep]]
+title = "Reading Quiz No. 4"
+link = "https://myelms.umd.edu/courses/1218381/modules/items/8829703"
+
 #####################
 # Motif Finding
 #
@@ -126,10 +137,10 @@ title = "Randomized Algorithms (1): Motif Finding"
 [day07a]
 date = "2/20"
 
-[[day07.covers]]
+[[day07a.covers]]
 title = "THIS IS NOT A LECTURE DAY"
 
-[[day07.workdue]]
+[[day07a.workdue]]
 title = "Project 1: Finding the origin of DNA replication in a bacterial genome"
 link = "projects/project_1"
 
