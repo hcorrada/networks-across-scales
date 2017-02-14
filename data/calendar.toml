@@ -108,6 +108,7 @@ date = "2/14"
 
 [[day06.covers]]
 title = "Bioinformatics public resources"
+notes = "lectures/CMSC423_BioResources.pdf"
 
 [[day06.prep]]
 title = "Pevsner, Ch. 2"
