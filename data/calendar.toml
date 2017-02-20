@@ -167,6 +167,21 @@ date = "2/21"
 [[day08.covers]]
 title = "Randomized Algorithms (2): Motif Finding"
 
+[[day08.prep]]
+title = "Compeau & Pevzner, Ch. 2., 90-105, 111-113"
+
+[[day08.prep]]
+title = "Compeau & Pevzner, playlist 3, videos 4-6"
+link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFMEcdAi0yF015RgmowtsvwT"
+
+[[day08.prep]]
+title = "Rosalind prep Ex. 16-17"
+link = "http://rosalind.info/classes/400"
+
+[[day08.prep]]
+title = "Reading quiz no. 5"
+link = "https://myelms.umd.edu/courses/1218381/modules/items/8829708"
+
 #### DAY 9
 
 [day09]
