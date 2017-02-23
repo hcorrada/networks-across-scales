@@ -207,6 +207,16 @@ date = "3/2"
 [[day11.covers]]
 title = "EM Algorithm: Gene Expression Analysis (2)"
 
+[day11a]
+date = "3/6"
+
+[[day11a.covers]]
+title = "THIS IS NOT A LECTURE DAY"
+
+[[day11a.workdue]]
+title = "Project 2: Motif finding and the EM algorithm"
+link = "projects/project_2"
+
 #### DAY 12
 [day12]
 date = "3/7"

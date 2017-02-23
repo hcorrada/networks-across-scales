@@ -7,8 +7,204 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
-    <lastBuildDate>Tue, 07 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Feb 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://www.hcbravo.org/cmsc423/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Project 2: Gibbs Sampling, EM and evolution</title>
+      <link>http://www.hcbravo.org/cmsc423/projects/project_2/</link>
+      <pubDate>Thu, 23 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.hcbravo.org/cmsc423/projects/project_2/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Due Monday March 6&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Posted: 2/23/2017&lt;br /&gt;
+Last Update: 2/23/2017&lt;/p&gt;
+
+&lt;h2 id=&#34;programming-questions&#34;&gt;Programming Questions&lt;/h2&gt;
+
+&lt;p&gt;Submit your answers to Problems 4 and 5 in the
+&lt;a href=&#34;http://rosalind.info/classes/401/&#34;&gt;Rosalind final submission page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Question 1. (5 pts)&lt;/strong&gt; Write three or four sentences as a postmortem on the implementation of the two algorithms. What was the biggest challenge in
+  implementing and testing these algorithms?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: &lt;em&gt;Postmortem&lt;/em&gt; refers to short reviews usually done after
+completion of a project to set down lessons learned through the
+project. Implementation methods and ideas that worked, and those that did
+not. More info: &lt;a href=&#34;http://blog.codinghorror.com/the-project-postmortem/&#34;&gt;here&lt;/a&gt;
+and &lt;a href=&#34;http://www.uio.no/studier/emner/matnat/ifi/INF9181/h11/undervisningsmateriale/reading-materials/Lecture-10/post-mortems.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;code-grading-60-pts&#34;&gt;Code Grading (60 pts)&lt;/h3&gt;
+
+&lt;p&gt;Same guidelines as &lt;a href=&#34;http://www.hcbravo.org/cmsc423/
+/projects/project_1&#34;&gt;Project 1&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;entropy&#34;&gt;Entropy&lt;/h2&gt;
+
+&lt;p&gt;Consider length \(k\) profiles estimated from a set of
+\(t\) \(k\)-mers using pseudo-counts.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Question 2. (5 pts)&lt;/strong&gt; What is the &lt;em&gt;minimum&lt;/em&gt; entropy score one of these profiles
+can achieve? Provide an example set of \(t=7\) \(4\)-mers that would
+produce a profile with minimum entropy.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Question 3. (5 pts)&lt;/strong&gt; What is the &lt;em&gt;maximum&lt;/em&gt; entropy score one of these profiles can achieve? Provide an example set of \(t=7\) \(4\)-mers that would produce a profile with maximum entropy.&lt;/p&gt;
+
+&lt;h2 id=&#34;entropy-game&#34;&gt;Entropy Game&lt;/h2&gt;
+
+&lt;p&gt;I mentioned in class that the reason we would use (low) entropy and
+self-similarity as a score in motif finding is that evolution would
+produce low entropy profiles for DNA binding proteins that
+perform important biological processess (e.g., TFs that regulate
+circadian genes). In this exercise you will conduct a simulation study to explore this
+idea.&lt;/p&gt;
+
+&lt;p&gt;Suppose we have a brand new fictional universe with the first ever
+living thing: a single cell, single gene organism that the only thing it does,
+besides reproducing itself, is produce a DNA binding protein (HcbP) that induces expression of itself, and
+that&amp;rsquo;s how it keeps itself alive (it&amp;rsquo;s a stretch I know). Suppose that
+the following 12-mer is the sequence of DNA where the protein binds:
+&lt;code&gt;TCGTACGGTATT&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now let&amp;rsquo;s play the following evolution game:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Evolution for this organism works as follows:&lt;br /&gt;
+a. every year each individual in the population reproduces five times (see how reproduction works in step 2) to produce five offspring.&lt;br /&gt;
+b. each individual only survives for 10 years, and&lt;br /&gt;
+c. at the end of the year at most 100 of the individuals that made it to the end of the year are randomly selected to continue living on to the next year.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Reproduction: we represent an individual strictly by the 12-mer in
+the HcbP binding site. When an individual reproduces each position of the offspring&amp;rsquo;s 12-mer is randomly mutated with probability &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;15&lt;/sub&gt; to a different nucleotide.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Survival: remember that binding of HcbP is essential for survival
+of this organism. Turns out that HcbP can bind to sequences that
+satisfy the following: &lt;code&gt;T[C|G]GTNNNNT[A|G]NT&lt;/code&gt;, this representation
+means: in position 2 either &lt;code&gt;C&lt;/code&gt; or &lt;code&gt;G&lt;/code&gt; allows binding, in positions
+with &lt;code&gt;N&lt;/code&gt; any base allows binding. You can think of this as a &lt;code&gt;regular
+expression&lt;/code&gt;  and a match allows binding. However, no match means
+the individual does not survive. (See below for more on regular expressions).&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Ok, now code two versions of this game:&lt;br /&gt;
+  (1) a version where step 3 (survival) is implemented, and&lt;br /&gt;
+  (2) a version where step 3 is not implemented.&lt;/p&gt;
+
+&lt;p&gt;I.e., in version 1, if an individual&amp;rsquo;s 12-mer does not
+match the above regular expression it dies, in version 2 it
+survives. Remember that at most 100 individuals are retained at the
+end of the year.&lt;/p&gt;
+
+&lt;p&gt;Run each version of your game 10 times for 100 years each time and
+calculate the entropy of the profile corresponding to the surviving population. The outer loop will look something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;nruns = 10
+nyears = 100
+num_offspring = 5
+mutation_rate = 1. / 15
+max_age = 10
+max_population_size = 100
+
+entropies = []
+for i in xrange(nruns):
+	# age and sequence of primodial organism
+	population = [(0, &#39;TCGTACGGTATT&#39;)]
+	for j in xrange(nyears):
+		# five new individuals per
+		# individual in the population, with random mutations at each
+		# position with given probability
+		population = reproduce(population, num_offspring, mutation_rate)
+
+	    # remove members of the population with non-binding sequence
+		# (only in version 1 of the game)
+		population = remove_nonbinding(population)
+
+	    # remove members of the population that are too old (10 years old)
+		population = remove_elders(population, max_age)
+
+        # increase the age of each individual and keep at most 100
+        #  individuals, choose randomly if populations is larger that 100
+		population = yearend(population, max_population_size)
+	entropies.append(calculate_entropy(population))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Question 4 (15 pts)&lt;/strong&gt;. Are the entropies generated by two versions of the
+game different? Are the entropies more or less similar the longer you run the simulation (&lt;code&gt;nyears&lt;/code&gt;).
+Make a plot or table that shows how entropies differ.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Question 5. (10 pts)&lt;/strong&gt; How does the matching regular expression for the
+binding site affect the
+difference in resulting entropies? For instance, you can change the number of positions where matching
+doesn&amp;rsquo;t matter, or change the choice of nucleotides that allow binding.&lt;/p&gt;
+
+&lt;p&gt;(a) Suggest a change to the binding regular expression and a
+hypothesis of how the entropies for the two versions of the game will
+vary after you change the matching expression.&lt;/p&gt;
+
+&lt;p&gt;(b) Now, run your experiment again using your new matching rule and calculate
+entropies again. Do these results agree with your hypothesis?&lt;/p&gt;
+
+&lt;h2 id=&#34;notes&#34;&gt;Notes&lt;/h2&gt;
+
+&lt;p&gt;The goal of this exercise is for you to understand the concept of
+entropy and how it may be a reasonable measure to use when thinking
+about the evolution of DNA sequences. So, here are some hints on how
+to implement this:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;To check if a mutation should be inserted in a given position in an
+offspring string you can use &lt;code&gt;if random.random() &amp;lt;= mutation.rate&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The &lt;code&gt;filter&lt;/code&gt; function is very useful to modify lists according to
+some predicate. For example, to remove individuals from the
+population based on age (using the tuple representation above) you
+can use &lt;code&gt;population=filter(lambda x: x[0] &amp;lt;= max_age, population)&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;To check for binding it&amp;rsquo;s easiest to use the regular expression
+library in python. The binding expression above can be used as
+follows:&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+# the rule for pattern T[C|G]GTNNNNT[A|G]NT
+# match C or G in the second position
+# match A,C,G or T in positions 5-8 ([ACGT]) is the set of characters
+# that match {4} is the exact number of matches
+# match A or G in position 10
+# match A,C,G or T in position 11
+matchRE = re.compile(&amp;quot;T[CG]GT[ACGT]{4}T[AG][ACGT]T&amp;quot;)
+
+# this code checks if string &#39;kmer&#39; binds according to the rule
+matchRE.match(kmer) is not None
+{% endhighlight %}
+
+- To randomly select 100 items from a list you can use
+
+{% highlight python %}
+# this shuffles in place
+random.shuffle(population)
+population = population[:100]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Remember that we define \(0 \cdot \log_2(0) = 0\). You can use code
+like this to enforce this: &lt;code&gt;numpy.log2(p) if p &amp;gt; 0 else 0&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Finally, you need to think about how to summarize the entropies you
+calculate from the 10 runs you perform. The &lt;code&gt;numpy&lt;/code&gt; library can be
+helpful here, e.g., &lt;code&gt;numpy.mean&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;how-to-submit&#34;&gt;How to submit&lt;/h2&gt;
+
+&lt;p&gt;Submit your answers to the five questions above in writing as a pdf to ELMS. Submit along with your entropy game code.
+Again, using a &lt;code&gt;jupyter&lt;/code&gt; notebook is encouraged.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Project 1: Finding origin of DNA replication in a bacterial genome</title>
@@ -133,6 +329,7 @@ differences? Where do you think replication origin for
       <guid>http://www.hcbravo.org/cmsc423/projects/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;Project 1: &lt;a href=&#34;project_1/&#34;&gt;Finding the origin of DNA replication in a bacterial genome&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Project 2: &lt;a href=&#34;project_2/&#34;&gt;Motif Finding and the EM algorithm&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
