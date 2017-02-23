@@ -162,11 +162,11 @@ matchRE = re.compile("T[CG]GT[ACGT]{4}T[AG][ACGT]T")
 
 # this code checks if string 'kmer' binds according to the rule
 matchRE.match(kmer) is not None
-{% endhighlight %}
+~~~
 
 - To randomly select 100 items from a list you can use
 
-{% highlight python %}
+~~~python
 # this shuffles in place
 random.shuffle(population)
 population = population[:100]
