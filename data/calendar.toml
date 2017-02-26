@@ -200,6 +200,17 @@ date = "2/28"
 [[day10.covers]]
 title = "EM Algorithm: Gene Expression Analysis (1)"
 
+[[day10.prep]]
+title = "Compeau & Pevzner, Ch. 8" 
+
+[[day10.prep]]
+title = "Compeau & Pevzner, playlist 8, 5-8"
+url = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFMcC2d2CkvmdcJt2v-Np7Cz"
+
+[[day10.prep]]
+title = "Rosalind prep Ex. 18"
+url = "http://rosalind.info/classes/232"
+
 #### DAY 11
 [day11]
 date = "3/2"
