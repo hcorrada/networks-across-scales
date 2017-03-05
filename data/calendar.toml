@@ -218,36 +218,36 @@ date = "3/2"
 [[day11.covers]]
 title = "EM Algorithm: Gene Expression Analysis (2)"
 
-[day11a]
-date = "3/6"
-
-[[day11a.covers]]
-title = "THIS IS NOT A LECTURE DAY"
-
-[[day11a.workdue]]
-title = "Project 2: Motif finding and the EM algorithm"
-link = "projects/project_2"
-
 #### DAY 12
 [day12]
 date = "3/7"
 
 [[day12.covers]]
-title = "Hidden Markov Models (1)"
+title = "Recap and Review"
+
+[day12a]
+date = "3/8"
+
+[[day12a.covers]]
+title = "THIS IS NOT A LECTURE DAY"
+
+[[day12a.workdue]]
+title = "Project 2: Motif finding and the EM algorithm"
+link = "projects/project_2"
 
 #### DAY 13
 [day13]
 date = "3/9"
 
 [[day13.covers]]
-title = "Hidden Markov Models (2)"
+title = "Hidden Markov Models (1)"
 
 #### DAY 14
 [day14]
 date = "3/14"
 
 [[day14.covers]]
-title = "Unit I Recap and Review"
+title = "Hidden Markov Models (2)"
 
 #### DAY 15
 [day15]
