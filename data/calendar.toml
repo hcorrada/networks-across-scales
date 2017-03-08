@@ -205,11 +205,11 @@ title = "Compeau & Pevzner, Ch. 8"
 
 [[day10.prep]]
 title = "Compeau & Pevzner, playlist 8, 5-8"
-url = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFMcC2d2CkvmdcJt2v-Np7Cz"
+link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFMcC2d2CkvmdcJt2v-Np7Cz"
 
 [[day10.prep]]
 title = "Rosalind prep Ex. 18"
-url = "http://rosalind.info/classes/232"
+link = "http://rosalind.info/classes/400"
 
 #### DAY 11
 [day11]
@@ -240,14 +240,25 @@ link = "projects/project_2"
 date = "3/9"
 
 [[day13.covers]]
-title = "Hidden Markov Models (1)"
+title = "Brute Force Algorithms for Peptide Sequencing (1)"
+
+[[day13.prep]]
+title = "Compeau & Pevzner, Ch. 4, p. 182-197"
+
+[[day13.prep]]
+title = "Compeau & Pevzner, playlist 8, videos 1-5"
+link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFPdIS_5qv_Q3XWieobVPLlc"
+
+[[day13.prep]]
+title = "Rosalind prep Ex. 19"
+link = "http://rosalind.info/classes/400"
 
 #### DAY 14
 [day14]
 date = "3/14"
 
 [[day14.covers]]
-title = "Hidden Markov Models (2)"
+title = "Brute Force Algorithms for Peptide Sequencing (2)"
 
 #### DAY 15
 [day15]
