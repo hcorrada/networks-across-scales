@@ -258,6 +258,9 @@ link = "http://rosalind.info/classes/400"
 date = "3/14"
 
 [[day14.covers]]
+title = "Campus closed: no lecture"
+
+[[day14.covers]]
 title = "Brute Force Algorithms for Peptide Sequencing (2)"
 
 
