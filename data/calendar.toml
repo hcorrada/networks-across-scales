@@ -272,7 +272,7 @@ title = "Compeau & Pevzner, playlist 4, videos 6-10"
 link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFPdIS_5qv_Q3XWieobVPLlc"
 
 [[day14.prep]]
-title = "Rosalind prep Ex. 20"
+title = "Rosalind prep Ex. 20 (extra credit)"
 link = "http://rosalind.info/classes/400"
 
 #### DAY 15
@@ -305,17 +305,50 @@ date = "3/28"
 [[day18.covers]]
 title = "Graph Algorithms (1): Genome Assembly"
 
+[[day18.prep]]
+title = "Compeau & Pevzner, Ch. 3, 117-130, 170-178"
+
+[[day18.prep]]
+title = "Compeau & Pevzner, playlist 3, videos 1-5"
+link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNGdaeGpV8dPEeSm3AChb6L" 
+
+[[day18.prep]]
+title = "Rosalind prep. Ex 21"
+link = "http://rosalind.info/classes/400/"
+
 [day19]
 date = "3/30"
 
 [[day19.covers]]
 title = "Graph Algorithms (2): Genome Assembly"
 
+[[day19.prep]]
+title = "Compeau & Pevzner, Ch. 3, 131-149"
+
+[[day19.prep]]
+title = "Compeau & Pevzner, playlist 4, videos 6-9"
+link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNGdaeGpV8dPEeSm3AChb6L" 
+
+[[day19.prep]]
+title = "Rosalind prep. Ex 22"
+link = "http://rosalind.info/classes/400/"
+
 [day20]
 date = "4/4"
 
 [[day20.covers]]
 title = "Graph Algorithms (3): Genome Assembly"
+
+[[day20.prep]]
+title = "Compeau & Pevzner, Ch. 3, 150-169"
+
+[[day20.prep]]
+title = "Compeau & Pevzner, playlist 4, videos 10-12"
+link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNGdaeGpV8dPEeSm3AChb6L" 
+
+[[day20.prep]]
+title = "Rosalind prep. Ex 23"
+link = "http://rosalind.info/classes/232/"
 
 [day21]
 date = "4/6"
