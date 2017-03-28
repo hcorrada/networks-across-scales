@@ -28,7 +28,7 @@ This page constitutes the official syllabus for this class.
 *	TA:
     - Aya Ismail 
       <asalam@umd.edu>  
-      Office Hours: Tuesdays and Thursdays 1:15-3:15 AVW 4101 
+      Office Hours: Tuesdays at 1:15-3:15 pm and Wednesday at 12:00-2:00 pm AVW 4101 
 
 We will use the class Piazza site [{{< piazzaurl >}}]({{< piazzaurl >}}) for questions, discussion and announcements. Assignments and grades for the class will be posted to the class ELMS site: [{{< elmurl >}}]({{< elmurl >}}).
 In case of an extended emergency closure, announcements on policy and procedures will be posted to Piazza.
