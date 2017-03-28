@@ -1,7 +1,6 @@
 ---
 title: Hamiltonian Path Exercise
-author: CMSC423 Fall 2015
-date: October 13, 2015
+author: CMSC423 
 fontfamily: utopia
 geometry: margin=1in
 ---
