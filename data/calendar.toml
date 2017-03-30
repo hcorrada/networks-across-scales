@@ -304,6 +304,7 @@ date = "3/28"
 
 [[day18.covers]]
 title = "Graph Algorithms (1): Genome Assembly"
+link = "lectures/CMSC423_Assembly.pdf"
 
 [[day18.prep]]
 title = "Compeau & Pevzner, Ch. 3, 117-130, 170-178"
@@ -375,7 +376,7 @@ date = "4/18"
 title = "Unit II Recap and Review"
 
 [day25]
-date = "4/19"
+date = "4/20"
 
 [[day25.covers]]
 title = "Midterm II"
