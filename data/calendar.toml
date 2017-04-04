@@ -375,6 +375,10 @@ date = "4/18"
 [[day24.covers]]
 title = "Unit II Recap and Review"
 
+[[day24.workdue]]
+title = "Project 3: Assembly and alignment"
+link = "projects/project_3"
+
 [day25]
 date = "4/20"
 
