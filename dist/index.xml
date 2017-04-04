@@ -323,6 +323,56 @@ differences? Where do you think replication origin for
     </item>
     
     <item>
+      <title>Project 3: Genome Assembly and String Alignment</title>
+      <link>http://www.hcbravo.org/cmsc423/projects/project_3/</link>
+      <pubDate>Tue, 07 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.hcbravo.org/cmsc423/projects/project_3/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Due: Tuesday April 18&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;Posted: April 4, 2017&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;Last Update: April 4, 2017&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;programming-questions&#34;&gt;Programming Questions&lt;/h2&gt;
+
+&lt;p&gt;Submit your answers to Problems 6 and 7 in the
+&lt;a href=&#34;http://rosalind.info/classes/401/&#34;&gt;Rosalind final submission page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;code-grading-60-pts&#34;&gt;Code Grading (60 pts)&lt;/h3&gt;
+
+&lt;p&gt;Same guidelines as &lt;a href=&#34;projects/projects_1/&#34;&gt;Project 1&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;assembly&#34;&gt;Assembly&lt;/h2&gt;
+
+&lt;p&gt;For this exercise you will use your code for string reconstruction using DeBruijn graphs to analyze genomes from the Ebola virus. Download data for this exercise at this URL:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://cbcb.umd.edu/~hcorrada/CMSC423/downloads/hw3data.zip&#34;&gt;http://cbcb.umd.edu/~hcorrada/CMSC423/downloads/hw3data.zip&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Unzip this file in your working directory, you should see the following four files:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ebola.fa&lt;/code&gt;: This FASTA file contains assembled genomes from twenty different patients sampled during the 2014 ebola outbreak. These are a subset of the genomes analyzed as part of the sequencing effort described in this Science paper: &lt;a href=&#34;http://www.sciencemag.org/content/345/6202/1369.full&#34;&gt;http://www.sciencemag.org/content/345/6202/1369.full&lt;/a&gt;. This effort was chronicled in this New Yorker piece: &lt;a href=&#34;http://www.newyorker.com/magazine/2014/10/27/ebola-wars&#34;&gt;http://www.newyorker.com/magazine/2014/10/27/ebola-wars&lt;/a&gt;. All data related to this effort can be obtained from the NCBI &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/bioproject/257197&#34;&gt;http://www.ncbi.nlm.nih.gov/bioproject/257197&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mystery_paired_200.txt&lt;/code&gt;: Simulated paired-end reads with \(d=200\) from the same genome. Both files containing paired-end reads use the format in Rosalind:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;...AGACATCCGAACCATAGAGGATTC|CTCTATGTGCTGTGATG...&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Question 1&lt;/strong&gt; (15pts) Assemble the ebola genome from the given reads and see if it matches any of the twenty genomes in the &lt;code&gt;ebola.fa&lt;/code&gt; file. Write down the sequence name from the &lt;code&gt;ebola.fa&lt;/code&gt; file that matches you assembled genome (it starts with &amp;lsquo;KM&amp;rsquo;)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Question 2&lt;/strong&gt; (10 pts) How hard is it to assemble this genome from these simulated 101 bp paired-end reads? Provide the  distribution of in-degrees and out-degrees in the DeBruijn graph for this set of reads.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Question 3&lt;/strong&gt; (5 pts) Generate all 101-mers from this genome using your &amp;lsquo;String Composition&amp;rsquo; (Problem 21 in the pre-lecture exercises). How repetitive is this genome when using 101 bp reads?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Question 4&lt;/strong&gt; (10 pts) What is the largest \(k\) for which the \(k\)-mer composition of this genome contains at least 1 repeat.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-to-submit&#34;&gt;How to submit&lt;/h2&gt;
+
+&lt;p&gt;Writeup answers to the four questions above. Submit to ELMS along with &lt;em&gt;all&lt;/em&gt; code you used to answer these questions.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>CMSC Resources</title>
       <link>http://www.hcbravo.org/cmsc423/resources/howto-biopython/</link>
       <pubDate>Wed, 25 Jan 2017 08:54:37 -0800</pubDate>
@@ -629,7 +679,7 @@ Phone Number: 301-405-2481&lt;br /&gt;
 &lt;ul&gt;
 &lt;li&gt;Aya Ismail
 &lt;a href=&#34;mailto:asalam@umd.edu&#34;&gt;asalam@umd.edu&lt;/a&gt;&lt;br /&gt;
-Office Hours: Tuesdays and Thursdays 1:15-3:15 AVW 4101&lt;/li&gt;
+Office Hours: Tuesdays at 1:15-3:15 pm and Wednesday at 12:00-2:00 pm AVW 4101&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
