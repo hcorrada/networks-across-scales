@@ -357,6 +357,17 @@ date = "4/6"
 [[day21.covers]]
 title = "Dynamic Programming (1): Sequence Alignment"
 
+[[day21.prep]]
+title = "Compeau & Pevzner, Ch. 5 223-253"
+
+[[day21.prep]]
+title = "Compeau & Pevzner, playlist 5, videos 1-5"
+link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" 
+
+[[day21.prep]]
+title = "Rosalind prep. Ex 24"
+link = "http://rosalind.info/classes/400/"
+
 [day22]
 date = "4/11"
 
