@@ -391,6 +391,17 @@ date = "4/13"
 [[day23.covers]]
 title = "Dynamic Programming (3): Sequence Alignment"
 
+[[day23.prep]]
+title = "Compeau & Pevzner, Ch. 5 261-282, 289-290"
+
+[[day23.prep]]
+title = "Compeau & Pevzner, playlist 5, videos 8-10"
+link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" 
+
+[[day23.prep]]
+title = "Rosalind prep. Ex 26"
+link =  "http://rosalind.info/classes/400/"
+
 [day24]
 date = "4/18"
 
