@@ -332,7 +332,7 @@ differences? Where do you think replication origin for
 
 &lt;p&gt;&lt;strong&gt;Due: Tuesday April 18&lt;/strong&gt;&lt;br /&gt;
 &lt;strong&gt;Posted: April 4, 2017&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;Last Update: April 4, 2017&lt;/strong&gt;&lt;/p&gt;
+&lt;strong&gt;Last Update: April 16, 2017&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;programming-questions&#34;&gt;Programming Questions&lt;/h2&gt;
 
@@ -353,7 +353,7 @@ differences? Where do you think replication origin for
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;ebola.fa&lt;/code&gt;: This FASTA file contains assembled genomes from twenty different patients sampled during the 2014 ebola outbreak. These are a subset of the genomes analyzed as part of the sequencing effort described in this Science paper: &lt;a href=&#34;http://www.sciencemag.org/content/345/6202/1369.full&#34;&gt;http://www.sciencemag.org/content/345/6202/1369.full&lt;/a&gt;. This effort was chronicled in this New Yorker piece: &lt;a href=&#34;http://www.newyorker.com/magazine/2014/10/27/ebola-wars&#34;&gt;http://www.newyorker.com/magazine/2014/10/27/ebola-wars&lt;/a&gt;. All data related to this effort can be obtained from the NCBI &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/bioproject/257197&#34;&gt;http://www.ncbi.nlm.nih.gov/bioproject/257197&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;mystery_paired_200.txt&lt;/code&gt;: Simulated paired-end reads with \(d=200\) from the same genome. Both files containing paired-end reads use the format in Rosalind:&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mystery_paired_200.txt&lt;/code&gt;: Simulated paired-end reads with \(d=200\) from the same genome. This file containing paired-end reads uses the format in Rosalind:&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;code&gt;...AGACATCCGAACCATAGAGGATTC|CTCTATGTGCTGTGATG...&lt;/code&gt;&lt;/p&gt;
