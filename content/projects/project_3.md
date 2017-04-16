@@ -5,7 +5,7 @@ title: "Project 3: Genome Assembly and String Alignment"
 
 **Due: Tuesday April 18**  
 **Posted: April 4, 2017**  
-**Last Update: April 4, 2017**  
+**Last Update: April 16, 2017**  
 
 
 
@@ -27,7 +27,7 @@ For this exercise you will use your code for string reconstruction using DeBruij
 Unzip this file in your working directory, you should see the following four files:
 
 - `ebola.fa`: This FASTA file contains assembled genomes from twenty different patients sampled during the 2014 ebola outbreak. These are a subset of the genomes analyzed as part of the sequencing effort described in this Science paper: [http://www.sciencemag.org/content/345/6202/1369.full](http://www.sciencemag.org/content/345/6202/1369.full). This effort was chronicled in this New Yorker piece: [http://www.newyorker.com/magazine/2014/10/27/ebola-wars](http://www.newyorker.com/magazine/2014/10/27/ebola-wars). All data related to this effort can be obtained from the NCBI [http://www.ncbi.nlm.nih.gov/bioproject/257197](http://www.ncbi.nlm.nih.gov/bioproject/257197).
-- `mystery_paired_200.txt`: Simulated paired-end reads with \\(d=200\\) from the same genome. Both files containing paired-end reads use the format in Rosalind:
+- `mystery_paired_200.txt`: Simulated paired-end reads with \\(d=200\\) from the same genome. This file containing paired-end reads uses the format in Rosalind:
 
 `...AGACATCCGAACCATAGAGGATTC|CTCTATGTGCTGTGATG...`
 
