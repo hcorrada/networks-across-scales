@@ -424,6 +424,18 @@ date = "4/25"
 [[day26.covers]]
 title = "Exact string matching: z-algorithm and KMP"
 
+[[day26.prep]]
+title = "Gusfield, Algorithms for Strings, Trees and Sequences (Ch. 1 and Sec. 2.3)"
+link = "https://myelms.umd.edu/courses/1218381/files/45872471"
+
+[[day26.prep]]
+title = "Rosalind prep. Ex. 27"
+link = "http://rosalind.info/classes/400/" 
+
+[[day26.prep]]
+title = "Reading pre-lecture quiz"
+link = "https://myelms.umd.edu/courses/1218381/modules/items/8829719"
+
 [day27]
 date = "4/27"
 
