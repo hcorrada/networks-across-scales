@@ -457,19 +457,41 @@ link = "http://rosalind.info/classes/400/"
 date = "5/2"
 
 [[day28.covers]]
-title = "Efficient exact string matching: Suffix Trees and Arrays (2)"
+title = "Efficient exact string matching: Burrows-Wheeler Transform (1)"
+
+[[day28.prep]]
+title = "Compeau & Pevzner, Ch. 9 136-147"
+
+[[day28.prep]]
+title = "Compeau & Pevzner, playlist 7, videos 4-6"
+link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz"
+
+[[day28.prep]]
+title = "Rosalind prep. Ex 29"
+link = "http://rosalind.info/classes/400/"
 
 [day29]
 date = "5/4"
 
 [[day29.covers]]
-title = "Efficient exact string matching: Burrows-Wheeler Transform (1)"
+title = "Efficient exact string matching: Burrows-Wheeler Transform (2)"
+
+[[day29.prep]]
+title = "Compeau & Pevzner, Ch. 7 148-162"
+
+[[day29.prep]]
+title = "Compeau & Pevzner, playlist 8, videos 7-10"
+link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz"
+
+[[day29.prep]]
+title = "Rosalind prep. Ex 30"
+link = "http://rosalind.info/classes/400/" 
 
 [day30]
 date = "5/9"
 
 [[day30.covers]]
-title = "Efficient exact string matching: Burrows-Wheeler Transform (2)"
+title = "The BWT in practice"
 
 [day31]
 date = "5/11"
