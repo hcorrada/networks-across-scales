@@ -501,6 +501,10 @@ date = "5/11"
 [[day31.covers]]
 title = "Unit III Recap and Review"
 
+[[day31.workdue]]
+title = "Project 4: SNP finding"
+link = "projects/project_4"
+
 [day32]
 date = "5/15"
 
