@@ -7,8 +7,110 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
-    <lastBuildDate>Thu, 23 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 May 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://www.hcbravo.org/cmsc423/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Project 4: SNP finding</title>
+      <link>http://www.hcbravo.org/cmsc423/projects/project_4/</link>
+      <pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.hcbravo.org/cmsc423/projects/project_4/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Due: Thursday May 11, 2017&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;Posted: May 2, 2017&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;Last Update: May 2, 2017&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;You will implement approximate string matching using a
+seed-and-check strategy based on exact matching using the
+Burrows-Wheeler transform. We are providing starter code
+to get you going. Instructions on implementation and code are here:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gitlab.umiacs.umd.edu/hcorrada/cmsc423_project4&#34;&gt;https://gitlab.umiacs.umd.edu/hcorrada/cmsc423_project4&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I highly, highly recommend that you use &lt;a href=&#34;https://git-scm.com/book/en/v1/Getting-Started&#34;&gt;&lt;code&gt;git&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;To get code you will be using for this project using git:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone https://gitlab.umiacs.umd.edu/hcorrada/cmsc423_project4.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will create a &lt;code&gt;project4&lt;/code&gt; directory with all code and data required for this project.&lt;/p&gt;
+
+&lt;h2 id=&#34;programming-questions&#34;&gt;Programming Questions&lt;/h2&gt;
+
+&lt;p&gt;Check and submit your solution to Final Rosalind Problem 8
+&lt;a href=&#34;http://rosalind.info/classes/401/&#34;&gt;Rosalind final submission page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Instructions on how to prepare your solution are given in
+&lt;a href=&#34;https://gitlab.umiacs.umd.edu/hcorrada/cmsc423_project4&#34;&gt;project code repository&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;snp-finding&#34;&gt;SNP Finding&lt;/h2&gt;
+
+&lt;p&gt;Use your code  to analyze sequences for the &lt;a href=&#34;http://en.wikipedia.org/wiki/Influenza_neuraminidase&#34;&gt;neuraminidase Influenza gene (NA)&lt;/a&gt; of
+two H1N1 Human Influenza strains.&lt;/p&gt;
+
+&lt;p&gt;There are two FASTA files in directory &lt;code&gt;data&lt;/code&gt; of the project repository. The &lt;code&gt;reference.fa&lt;/code&gt; file contains a reference sequence you will use as the target string for approximate exact matching. The &lt;code&gt;reads.fa&lt;/code&gt; file contains 50 bp reads you will use as queries. Use your approximate matching BWT solution to align reads to reference allowing up to 3 mismatches.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Question 1&lt;/strong&gt;. A specific mutation (H275Y) in the NA gene confers resistance to &lt;a href=&#34;http://en.wikipedia.org/wiki/Neuraminidase_inhibitors&#34;&gt;Oseltamivir&lt;/a&gt;, making
+the drug &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/pubmed/22837199&#34;&gt;less effective&lt;/a&gt;. A note about nomenclature: the code H275Y
+encodes a substitution in position 275 (1-based indexing), changing aminoacid H (Histidine) to Y (Tyrosine).&lt;/p&gt;
+
+&lt;p&gt;Do the reads correspond to a gene sequence with this mutation? How can you tell?&lt;/p&gt;
+
+&lt;h3 id=&#34;notes&#34;&gt;Notes:&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;As we&amp;rsquo;ve done so far use the &lt;code&gt;Biopython&lt;/code&gt; to read and import &lt;code&gt;fasta&lt;/code&gt; files.&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;pileup.py&lt;/code&gt; script in the project repository can help you answer this question.
+You can get a list of mismatches found in reads, and the number of times each kind of mismatch is observed in each position as follows:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from pileup import PileUp
+from approximate_matcher import ApproximateMatcher
+
+# initialize object
+am = ApproximateMatcher(reference)
+pileup = PileUp(reference)
+d = 3
+
+for read in reads:
+	# find approximate matching positions for a given read
+	# assumes positions is a list (even if only a single match is found)
+	# with matching positions
+	positions = am.get_matches(read, d)
+	if len(positions) &amp;gt; 0:
+		# add to pileup object
+		pileup.insert(positions, read)
+
+# next statement prints out mismatching positions
+# output is:
+# (&amp;lt;position&amp;gt;, &amp;lt;reference_character&amp;gt;, [(&amp;lt;variant_character&amp;gt;,
+# &amp;lt;num_times_aligned&amp;gt;)])
+# argument filters mismatch by frequency in which variant character
+# is observed, e.g., .01 means variant character has to be seen at least
+# once for every 100 aligned nucleotides
+pileup.print_mismatches(.01)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;where positions are indices in the reference string where an approximate match for &lt;code&gt;read&lt;/code&gt; was found.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-to-submit&#34;&gt;How to submit&lt;/h2&gt;
+
+&lt;p&gt;On ELMS you will submit two things&lt;/p&gt;
+
+&lt;p&gt;(1) A &lt;code&gt;diff&lt;/code&gt; of your solution and the original code posted by us. Using git you can do this as follows
+once you have committed all your code changes in directory &lt;code&gt;approximate_matcher&lt;/code&gt;. Note that you do not need to change code outside of this directory to solve the Rosalind problem:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git diff origin/master approximate_matcher &amp;gt; project4_bwt_code.patch
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Submit file &lt;code&gt;project4_bwt_code.patch&lt;/code&gt; on ELMS&lt;/p&gt;
+
+&lt;p&gt;(2) An IPython notebook exported as pdf or html containing your answer to Question 1 above along with code used to answer it. You have to use your approximate matching code from part I to match reads to the reference, otherwise, you are free to use Biopython as needed to answer this question. E.g., to do DNA-&amp;gt;aminoacid translation.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Project 2: Gibbs Sampling, EM and evolution</title>
@@ -382,6 +484,7 @@ differences? Where do you think replication origin for
 &lt;li&gt;Project 1: &lt;a href=&#34;project_1/&#34;&gt;Finding the origin of DNA replication in a bacterial genome&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Project 2: &lt;a href=&#34;project_2/&#34;&gt;Motif Finding and the EM algorithm&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Project 3: &lt;a href=&#34;project_3/&#34;&gt;Genome Assembly and String Alignment&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Project 4: &lt;a href=&#34;project_4/&#34;&gt;SNP finding&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
