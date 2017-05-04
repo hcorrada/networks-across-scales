@@ -460,6 +460,7 @@ date = "5/2"
 
 [[day28.covers]]
 title = "Efficient exact string matching: Burrows-Wheeler Transform (1)"
+notes = "lectures/CMSC423_BWT.pdf"
 
 [[day28.prep]]
 title = "Compeau & Pevzner, Ch. 9 136-147"
