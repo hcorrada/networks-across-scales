@@ -30,8 +30,8 @@ googleAnalytics = ""
 	highlight_css  = ""
 
 	[params.palette]
-    	primary = "deep-orange"
-    	accent  = "blue"
+    	primary = "light-blue"
+    	accent  = "orange"
 
  [params.font]
     	text = "Roboto"
@@ -54,10 +54,10 @@ googleAnalytics = ""
 	url    = "logistics/"
 	weight = 10
 
-[[menu.main]]
-	name   = "Resources"
-	url    = "resources/"
-	weight = 30
+#[[menu.main]]
+	#name   = "Resources"
+	#url    = "resources/"
+	#weight = 30
 
 [[menu.main]]
 	name   = "Projects"

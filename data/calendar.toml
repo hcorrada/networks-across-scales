@@ -1,525 +1,500 @@
 #########
-# Course Introduction and Molecular Biology Review
+# Course Introduction 
 
 #### DAY 1
 [day01]
-date = "1/26"
+date = "8/29"
 
 [[day01.covers]]
 title = "Course Introduction"
-notes = "lectures/CMSC423_CourseIntro.pdf" 
+#notes = "lectures/CMSC423_CourseIntro.pdf" 
 
 [[day01.workdue]]
-title = "Survey"
-link = "https://myelms.umd.edu/courses/1218381/modules/items/8829688"
+#title = "Survey"
+#link = "https://myelms.umd.edu/courses/1218381/modules/items/8829688"
+
+###########################
+# Network Preliminaries
+# Structure and Properties
+#
+#
 
 #### DAY 2
 [day02]
-date = "1/31"
+date = "8/31"
 
 [[day02.covers]]
-title = "Molecular biology for computer scientists"
-notes = "lectures/CMSC423_BioIntro.pdf"
+title = "Network Preliminaries"
+#notes = "lectures/CMSC423_BioIntro.pdf"
 
 [[day02.prep]]
-title = "Jones & Pevsner, Molecular Biology Primer"
-link = "https://myelms.umd.edu/courses/1218381/modules/items/8829692"
+#title = "Jones & Pevsner, Molecular Biology Primer"
+#link = "https://myelms.umd.edu/courses/1218381/modules/items/8829692"
 
 [[day02.prep]]
-title = "Reading quiz No. 1"
-link = "https://myelms.umd.edu/courses/1218381/modules/items/8829693"
+#title = "Reading quiz No. 1"
+#link = "https://myelms.umd.edu/courses/1218381/modules/items/8829693"
 
 [[day02.prep]]
-title = "Rosalind prep Ex. 1-9"
-link = "http://rosalind.info/classes/400/"
-
-#############
-# Algorithmic Warmup
-#
+#title = "Rosalind prep Ex. 1-9"
+#link = "http://rosalind.info/classes/400/"
 
 #### DAY 3
-# I am not here this day
 [day03]
-date = "2/2"
+date = "9/5"
 
 [[day03.covers]]
-title = "Algorithmic Warmup: Probabilities of patterns in strings"
-notes = "lectures/Pattern Probabilties.pdf"
+title = "Measures of Network Structure and Other Properties"
+#notes = "lectures/Pattern Probabilties.pdf"
 
 [[day03.prep]]
-title = "Compeau & Pevzner, Vol. 1, Ch. 1, pp. 3-13, 39-44, 52-56"
+#title = "Compeau & Pevzner, Vol. 1, Ch. 1, pp. 3-13, 39-44, 52-56"
 
 [[day03.prep]]
-title = "Compeau & Pevzner, playlist 1, videos 1 and 2"
-link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNFDlaNMZ1JVN73rO1a0dpn"
+#title = "Compeau & Pevzner, playlist 1, videos 1 and 2"
+#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNFDlaNMZ1JVN73rO1a0dpn"
 
 [[day03.prep]]
-title = "Reading Quiz no. 2"
-link = "https://myelms.umd.edu/courses/1152063/quizzes/1119894"
+#title = "Reading Quiz no. 2"
+#link = "https://myelms.umd.edu/courses/1152063/quizzes/1119894"
 
 [[day03.prep]]
-title =  "Rosalind prep Ex. 10"
-link = "http://rosalind.info/classes/400/"
+#title =  "Rosalind prep Ex. 10"
+#link = "http://rosalind.info/classes/400/"
+
+##################
+# Networks in Molecular Biology
 
 #### DAY 4
 [day04]
-date = "2/7"
+date = "9/7"
 
 [[day04.covers]]
-title = "Algorithmic Warmup: Skew Detection"
+title = "Networks in Molecular Biology"
 
 [[day04.prep]]
-title = "Compeau & Pevzner, Vol. 1, Ch. 1, 13-38, 44-51"
+#title = "Compeau & Pevzner, Vol. 1, Ch. 1, 13-38, 44-51"
 
 [[day04.prep]]
-title = "Compeau & Pevzner, Ch. 1, playlist 1, videos 3-5"
-link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNFDlaNMZ1JVN73rO1a0dpn"
+#title = "Compeau & Pevzner, Ch. 1, playlist 1, videos 3-5"
+#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNFDlaNMZ1JVN73rO1a0dpn"
 
 [[day04.prep]]
-title = "Reading Quiz no. 3"
-link = "https://myelms.umd.edu/courses/1218381/assignments/4362566"
+#title = "Reading Quiz no. 3"
+#link = "https://myelms.umd.edu/courses/1218381/assignments/4362566"
 
 [[day04.prep]]
-title = "Rosalind prep Ex. 11"
-link = "http://rosalind.info/classes/400/"
-
-##################
-# Resources and databases
+#title = "Rosalind prep Ex. 11"
+#link = "http://rosalind.info/classes/400/"
 
 #### DAY 5
 [day05]
-date = "2/9"
+date = "9/12"
 
 [[day05.covers]]
-title = "Programming for bioinformatics"
-notes = "lectures/CMSC423_BioProgramming.pdf"
+title = "Data Project Lightning Talks"
+#notes = "lectures/CMSC423_BioProgramming.pdf"
 
 [[day05.prep]]
-title = "Ch. 1-2 Biopython tutorial"
-link = "http://biopython.org/DIST/docs/tutorial/Tutorial.html"
+#title = "Ch. 1-2 Biopython tutorial"
+#link = "http://biopython.org/DIST/docs/tutorial/Tutorial.html"
 
 [[day05.prep]]
-title = "Rosalind prep Ex. 12"
-link = "http://rosalind.info/classes/400"
+#title = "Rosalind prep Ex. 12"
+#link = "http://rosalind.info/classes/400"
+
+########################
+# Models of Network Structure and Dynamics
+#
 
 #### DAY 6
 [day06]
-date = "2/14"
+date = "9/14"
 
 [[day06.covers]]
-title = "Bioinformatics public resources"
-notes = "lectures/CMSC423_BioResources.pdf"
+title = "Random Networks I"
+#notes = "lectures/CMSC423_BioResources.pdf"
 
 [[day06.prep]]
-title = "Pevsner, Ch. 2"
-link = "https://myelms.umd.edu/courses/1218381/modules/items/8853435"
+#title = "Pevsner, Ch. 2"
+#link = "https://myelms.umd.edu/courses/1218381/modules/items/8853435"
 
 [[day06.prep]]
-title = "Rosalind prep Exs. 13-14"
-link = "http://rosalind.info/classes/400"
+#title = "Rosalind prep Exs. 13-14"
+#link = "http://rosalind.info/classes/400"
 
 [[day06.prep]]
-title = "Reading Quiz No. 4"
-link = "https://myelms.umd.edu/courses/1218381/modules/items/8829703"
+#title = "Reading Quiz No. 4"
+#link = "https://myelms.umd.edu/courses/1218381/modules/items/8829703"
 
-#####################
-# Motif Finding
-#
 
 #### DAY 7
-
-# I am not here this day
 [day07]
-date = "2/16"
+date = "9/19"
 
 [[day07.covers]]
-title = "Randomized Algorithms (1): Motif Finding"
-notes = "lectures/Motif_finding.pdf"
+title = "Random Networks II"
+#notes = "lectures/Motif_finding.pdf"
 
 [[day07.prep]]
-title = "Compeau & Pevzner, Vol. 1, Ch. 2, 66-90, 106-108"
+#title = "Compeau & Pevzner, Vol. 1, Ch. 2, 66-90, 106-108"
 
 [[day07.prep]]
-title = "Compeau & Pevzner, playlist 3, videos 1-3"
-link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFMEcdAi0yF015RgmowtsvwT"
+#title = "Compeau & Pevzner, playlist 3, videos 1-3"
+#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFMEcdAi0yF015RgmowtsvwT"
 
 
 [[day07.prep]]
-title = "Rosalind prep Ex. 15"
-link = "http://rosalind.info/classes/400"
-
-##### SUBMIT PROJECT 1
-[day07a]
-date = "2/20"
-
-[[day07a.covers]]
-title = "THIS IS NOT A LECTURE DAY"
-
-[[day07a.workdue]]
-title = "Project 1: Finding the origin of DNA replication in a bacterial genome"
-link = "projects/project_1"
+#title = "Rosalind prep Ex. 15"
+#link = "http://rosalind.info/classes/400"
 
 #### DAY 8
 
 [day08]
-date = "2/21"
+date = "9/21"
 
 [[day08.covers]]
-title = "Randomized Algorithms (2): Motif Finding"
+title = "Ecological Networks"
 
 [[day08.prep]]
-title = "Compeau & Pevzner, Ch. 2., 90-106, 111-114"
+#title = "Compeau & Pevzner, Ch. 2., 90-106, 111-114"
 
 [[day08.prep]]
-title = "Compeau & Pevzner, playlist 3, videos 4-6"
-link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFMEcdAi0yF015RgmowtsvwT"
+#title = "Compeau & Pevzner, playlist 3, videos 4-6"
+#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFMEcdAi0yF015RgmowtsvwT"
 
 [[day08.prep]]
-title = "Rosalind prep Ex. 16-17"
-link = "http://rosalind.info/classes/400"
+#title = "Rosalind prep Ex. 16-17"
+#link = "http://rosalind.info/classes/400"
 
 [[day08.prep]]
-title = "Reading quiz no. 5"
-link = "https://myelms.umd.edu/courses/1218381/modules/items/8829708"
+#title = "Reading quiz no. 5"
+#link = "https://myelms.umd.edu/courses/1218381/modules/items/8829708"
 
 #### DAY 9
 
 [day09]
-date = "2/23"
+date = "9/26"
 
 [[day09.covers]]
-title = "Randomized Algorithms (3): Motif Finding"
-
-#######################
-# Gene Expression Clustering
+title = "Dynamical Networks I"
 
 #### DAY 10
 [day10]
-date = "2/28"
+date = "9/28"
 
 [[day10.covers]]
-title = "EM Algorithm: Gene Expression Analysis (1)"
+title = "Dynamical Networks II"
 
 [[day10.prep]]
-title = "Compeau & Pevzner, Ch. 8" 
+#title = "Compeau & Pevzner, Ch. 8" 
 
 [[day10.prep]]
-title = "Compeau & Pevzner, playlist 8, 5-8"
-link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFMcC2d2CkvmdcJt2v-Np7Cz"
+#title = "Compeau & Pevzner, playlist 8, 5-8"
+#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFMcC2d2CkvmdcJt2v-Np7Cz"
 
 [[day10.prep]]
-title = "Rosalind prep Ex. 18"
-link = "http://rosalind.info/classes/400"
+#title = "Rosalind prep Ex. 18"
+#link = "http://rosalind.info/classes/400"
 
 #### DAY 11
 [day11]
-date = "3/2"
+date = "10/3"
 
 [[day11.covers]]
-title = "EM Algorithm: Gene Expression Analysis (2)"
+title = "Unit Closing: State-of-the-art Paper Presentations"
 
 #### DAY 12
 [day12]
-date = "3/7"
+date = "10/5"
 
 [[day12.covers]]
-title = "Recap and Review"
-
-[day12a]
-date = "3/8"
-
-[[day12a.covers]]
-title = "THIS IS NOT A LECTURE DAY"
-
-[[day12a.workdue]]
-title = "Project 2: Motif finding and the EM algorithm"
-link = "projects/project_2"
+title = "Data Project Updates 1-1"
 
 #### DAY 13
 [day13]
-date = "3/9"
+date = "10/10"
 
 [[day13.covers]]
-title = "Brute Force Algorithms for Peptide Sequencing (1)"
+title = "Data Project Updates 1-2"
 
 [[day13.prep]]
-title = "Compeau & Pevzner, Ch. 4, p. 182-197"
+#title = "Compeau & Pevzner, Ch. 4, p. 182-197"
 
 [[day13.prep]]
-title = "Compeau & Pevzner, playlist 4, videos 1-5"
-link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFPdIS_5qv_Q3XWieobVPLlc"
+#title = "Compeau & Pevzner, playlist 4, videos 1-5"
+#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFPdIS_5qv_Q3XWieobVPLlc"
 
 [[day13.prep]]
-title = "Rosalind prep Ex. 19"
-link = "http://rosalind.info/classes/400"
+#title = "Rosalind prep Ex. 19"
+#link = "http://rosalind.info/classes/400"
+
+#################
+# Statistics over Networks
+#
 
 #### DAY 14
 [day14]
-date = "3/14"
+date = "10/12"
 
 [[day14.covers]]
-title = "Campus closed: no lecture"
-
-[[day14.covers]]
-title = "Brute Force Algorithms for Peptide Sequencing (2)"
+title = "Neuronal Networks"
 
 
 [[day14.prep]]
-title = "Compeau & Pevzner, Ch. 4, p. 197-221"
+#title = "Compeau & Pevzner, Ch. 4, p. 197-221"
 
 [[day14.prep]]
-title = "Compeau & Pevzner, playlist 4, videos 6-10"
-link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFPdIS_5qv_Q3XWieobVPLlc"
+#title = "Compeau & Pevzner, playlist 4, videos 6-10"
+#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFPdIS_5qv_Q3XWieobVPLlc"
 
 [[day14.prep]]
-title = "Rosalind prep Ex. 20 (extra credit)"
-link = "http://rosalind.info/classes/400"
+#title = "Rosalind prep Ex. 20 (extra credit)"
+#link = "http://rosalind.info/classes/400"
 
 #### DAY 15
 [day15]
-date = "3/16"
+date = "10/17"
 
 [[day15.covers]]
-title = "Midterm I"
-
-###################
-# Spring Break
+title = "Statistical Inference with Networked Data I"
 
 #### DAY 16
 [day16]
-date = "3/21"
+date = "10/19"
 
 [[day16.covers]]
-title = "No Algorithms (1): SPRING BREAK"
+title = "Statistical Inference with Networked Data II"
 
 #### DAY 17
 [day17]
-date = "3/23"
+date = "10/24"
 
 [[day17.covers]]
-title = "No Algorithms (2): SPRING BREAK"
+title = "Learning with Network Data I"
 
 [day18]
-date = "3/28"
+date = "10/26"
 
 [[day18.covers]]
-title = "Graph Algorithms (1): Genome Assembly"
-notes = "lectures/CMSC423_Assembly.pdf"
+title = "Learning with Network Data II"
+#notes = "lectures/CMSC423_Assembly.pdf"
 
 [[day18.prep]]
-title = "Compeau & Pevzner, Ch. 3, 117-130, 170-178"
+#title = "Compeau & Pevzner, Ch. 3, 117-130, 170-178"
 
 [[day18.prep]]
-title = "Compeau & Pevzner, playlist 3, videos 1-5"
-link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNGdaeGpV8dPEeSm3AChb6L" 
+#title = "Compeau & Pevzner, playlist 3, videos 1-5"
+#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNGdaeGpV8dPEeSm3AChb6L" 
 
 [[day18.prep]]
-title = "Rosalind prep. Ex 21"
-link = "http://rosalind.info/classes/400/"
+#title = "Rosalind prep. Ex 21"
+#link = "http://rosalind.info/classes/400/"
 
 [day19]
-date = "3/30"
+date = "10/31" 
 
 [[day19.covers]]
-title = "Graph Algorithms (2): Genome Assembly"
+title = "Learning Networks from Data"
 
 [[day19.prep]]
-title = "Compeau & Pevzner, Ch. 3, 131-149"
+#title = "Compeau & Pevzner, Ch. 3, 131-149"
 
 [[day19.prep]]
-title = "Compeau & Pevzner, playlist 4, videos 6-9"
-link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNGdaeGpV8dPEeSm3AChb6L" 
+#title = "Compeau & Pevzner, playlist 4, videos 6-9"
+#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNGdaeGpV8dPEeSm3AChb6L" 
 
 [[day19.prep]]
-title = "Rosalind prep. Ex 22"
-link = "http://rosalind.info/classes/400/"
+#title = "Rosalind prep. Ex 22"
+#link = "http://rosalind.info/classes/400/"
 
+# I am not here
 [day20]
-date = "4/4"
+date = "11/2"
 
 [[day20.covers]]
-title = "Graph Algorithms (3): Genome Assembly"
+title = "Unit Closing: State-of-the-art Paper Presentations"
 
 [[day20.prep]]
-title = "Compeau & Pevzner, Ch. 3, 150-169"
+#title = "Compeau & Pevzner, Ch. 3, 150-169"
 
 [[day20.prep]]
-title = "Compeau & Pevzner, playlist 4, videos 10-12"
-link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNGdaeGpV8dPEeSm3AChb6L" 
+#title = "Compeau & Pevzner, playlist 4, videos 10-12"
+#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNGdaeGpV8dPEeSm3AChb6L" 
 
 [[day20.prep]]
-title = "Rosalind prep. Ex 23"
-link = "http://rosalind.info/classes/400/"
+#title = "Rosalind prep. Ex 23"
+#link = "http://rosalind.info/classes/400/"
 
 [day21]
-date = "4/6"
+date = "11/7"
 
 [[day21.covers]]
-title = "Dynamic Programming (1): Sequence Alignment"
+title = "Network Visualization I"
 
 [[day21.prep]]
-title = "Compeau & Pevzner, Ch. 5 223-253"
+#title = "Compeau & Pevzner, Ch. 5 223-253"
 
 [[day21.prep]]
-title = "Compeau & Pevzner, playlist 5, videos 1-5"
-link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" 
+#title = "Compeau & Pevzner, playlist 5, videos 1-5"
+#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" 
 
 [[day21.prep]]
-title = "Rosalind prep. Ex 24"
-link = "http://rosalind.info/classes/400/"
+#title = "Rosalind prep. Ex 24"
+#link = "http://rosalind.info/classes/400/"
 
 [day22]
-date = "4/11"
+date = "11/9"
 
 [[day22.covers]]
-title = "Dynamic Programming (2): Sequence Alignment"
+title = "Network Visualization II"
 
 [[day22.prep]]
-title = "Compeau & Pevzner, Ch. 5 253-261, 282-287"
+#title = "Compeau & Pevzner, Ch. 5 253-261, 282-287"
 
 [[day22.prep]]
-title = "Compeau & Pevzner, playlist 5, videos 6-7"
-link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" 
+#title = "Compeau & Pevzner, playlist 5, videos 6-7"
+#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" 
 
 [[day22.prep]]
-title = "Rosalind prep. Ex 25"
-link =  "http://rosalind.info/classes/400/" 
+#title = "Rosalind prep. Ex 25"
+#link =  "http://rosalind.info/classes/400/" 
 
 [day23]
-date = "4/13"
+date = "11/14"
 
 [[day23.covers]]
-title = "Dynamic Programming (3): Sequence Alignment"
+title = "Dynamic visualization of networks"
 
 [[day23.prep]]
-title = "Compeau & Pevzner, Ch. 5 261-282, 289-290"
+#title = "11/16"
 
 [[day23.prep]]
-title = "Compeau & Pevzner, playlist 5, videos 8-10"
-link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" 
+#title = "Compeau & Pevzner, playlist 5, videos 8-10"
+#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNmbPEsMoxb5dM5qtRaVShn" 
 
 [[day23.prep]]
-title = "Rosalind prep. Ex 26"
-link =  "http://rosalind.info/classes/400/"
+#title = "Rosalind prep. Ex 26"
+#link =  "http://rosalind.info/classes/400/"
 
 [day24]
-date = "4/18"
+date = "11/16"
 
 [[day24.covers]]
-title = "Unit II Recap and Review"
+title = "Unit Closing: State-of-the-art Paper Presentations"
 
 [[day24.workdue]]
-title = "Project 3: Assembly and alignment"
-link = "projects/project_3"
+#title = "Project 3: Assembly and alignment"
+#link = "projects/project_3"
 
 [day25]
-date = "4/20"
+date = "11/21"
 
 [[day25.covers]]
-title = "Midterm II"
+title = "Data Project Updates 2-1"
 
 [day26]
-date = "4/25"
+date = "11/28"
 
 [[day26.covers]]
-title = "Exact string matching: z-algorithm and KMP"
-notes = "lectures/CMSC423_ZAlgorithmKMP.pdf"
+title = "Data Project Updates 2-2"
+#notes = "lectures/CMSC423_ZAlgorithmKMP.pdf"
 
 [[day26.prep]]
-title = "Gusfield, Algorithms for Strings, Trees and Sequences (Ch. 1 and Sec. 2.3)"
-link = "https://myelms.umd.edu/courses/1218381/files/45872471"
+#title = "Gusfield, Algorithms for Strings, Trees and Sequences (Ch. 1 and Sec. 2.3)"
+#link = "https://myelms.umd.edu/courses/1218381/files/45872471"
 
 [[day26.prep]]
-title = "Rosalind prep. Ex. 27"
-link = "http://rosalind.info/classes/400/" 
+#title = "Rosalind prep. Ex. 27"
+#link = "http://rosalind.info/classes/400/" 
 
 [[day26.prep]]
-title = "Reading pre-lecture quiz"
-link = "https://myelms.umd.edu/courses/1218381/modules/items/8829719"
+#title = "Reading pre-lecture quiz"
+#link = "https://myelms.umd.edu/courses/1218381/modules/items/8829719"
 
 [day27]
-date = "4/27"
+date = "11/30"
 
 [[day27.covers]]
-title = "Efficient exact string matching: Suffix Trees and Arrays"
-notes = "lectures/CMSC423_ExactMatching1.pdf"
+title = "Advanced Topics (Student Choice) I"
+#notes = "lectures/CMSC423_ExactMatching1.pdf"
 
 [[day27.prep]]
-title = "Compeau & Pevzner, Ch. 9 121-135"
+#title = "Compeau & Pevzner, Ch. 9 121-135"
 
 [[day27.prep]]
-title = "Compeau & Pevzner, playlist 9, videos 1-3" 
-link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz"
+#title = "Compeau & Pevzner, playlist 9, videos 1-3" 
+#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz"
 
 [[day27.prep]]
-title = "Rosalind prep. Ex. 28"
-link = "http://rosalind.info/classes/400/"
+#title = "Rosalind prep. Ex. 28"
+#link = "http://rosalind.info/classes/400/"
 
 [day28]
-date = "5/2"
+date = "12/5"
 
 [[day28.covers]]
-title = "Efficient exact string matching: Burrows-Wheeler Transform (1)"
-notes = "lectures/CMSC423_BWT.pdf"
+title = "Advanced Topics (Student Choice) II"
+#notes = "lectures/CMSC423_BWT.pdf"
 
 [[day28.prep]]
-title = "Compeau & Pevzner, Ch. 9 136-147"
+#title = "Compeau & Pevzner, Ch. 9 136-147"
 
 [[day28.prep]]
-title = "Compeau & Pevzner, playlist 9, videos 4-6"
-link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz"
+#title = "Compeau & Pevzner, playlist 9, videos 4-6"
+#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz"
 
 [[day28.prep]]
-title = "Rosalind prep. Ex 29"
-link = "http://rosalind.info/classes/400/"
+#title = "Rosalind prep. Ex 29"
+#link = "http://rosalind.info/classes/400/"
 
 [day29]
-date = "5/4"
+date = "12/7"
 
 [[day29.covers]]
-title = "Efficient exact string matching: Burrows-Wheeler Transform (2)"
+title = "Closing and Perspectives"
 
 [[day29.prep]]
-title = "Compeau & Pevzner, Ch. 9 148-162"
+#title = "Compeau & Pevzner, Ch. 9 148-162"
 
 [[day29.prep]]
-title = "Compeau & Pevzner, playlist 9, videos 7-10"
-link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz"
+#title = "Compeau & Pevzner, playlist 9, videos 7-10"
+#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz"
 
 [[day29.prep]]
-title = "Rosalind prep. Ex 30"
-link = "http://rosalind.info/classes/400/" 
+#title = "Rosalind prep. Ex 30"
+#link = "http://rosalind.info/classes/400/" 
 
-[day30]
-date = "5/9"
+#[day30]
+#date = "5/9"
 
-[[day30.covers]]
-title = "A few state of the art ideas"
+#[[day30.covers]]
+#title = "A few state of the art ideas"
 
-[[day30.prep]]
-title = 'Simpson and Durbin, "Efficient construction of an assembly string graph using the FM-index"'
-link = "http://bioinformatics.oxfordjournals.org/content/26/12/i367.abstract"
+#[[day30.prep]]
+#title = 'Simpson and Durbin, "Efficient construction of an assembly string graph using the FM-index"'
+#link = "http://bioinformatics.oxfordjournals.org/content/26/12/i367.abstract"
 
-[[day30.prep]]
-title = 'Patro, et al., "Sailfish enables alignment-free isoform quantification from RNA-seq reads using lightweight algorithms"'
-link = "http://www.nature.com/nbt/journal/v32/n5/full/nbt.2862.html"
+#[[day30.prep]]
+#title = 'Patro, et al., "Sailfish enables alignment-free isoform quantification from RNA-seq reads using lightweight algorithms"'
+#link = "http://www.nature.com/nbt/journal/v32/n5/full/nbt.2862.html"
 
-[[day30.prep]]
-title = 'Ondov, et al., "Mash: fast genome and metagenome distance estimation using MinHash"'
-link = "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0997-x"
+#[[day30.prep]]
+#title = 'Ondov, et al., "Mash: fast genome and metagenome distance estimation using MinHash"'
+#link = "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0997-x"
 
-[day31]
-date = "5/11"
+#[day31]
+#date = "5/11"
 
-[[day31.covers]]
-title = "Unit III Recap and Review"
+#[[day31.covers]]
+#title = "Unit III Recap and Review"
 
-[[day31.workdue]]
-title = "Project 4: SNP finding"
-link = "projects/project_4"
+#[[day31.workdue]]
+#title = "Project 4: SNP finding"
+#link = "projects/project_4"
 
-[day32]
-date = "5/15"
+#[day32]
+#date = "5/15"
 
-[[day32.covers]]
-title = "FINAL EXAM (8a-10a)"
+#[[day32.covers]]
+#title = "FINAL EXAM (8a-10a)"
