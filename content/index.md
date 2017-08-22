@@ -1,12 +1,14 @@
 ---
 date: 2016-08-28T17:13:09-04:00
-title: "CMSC423: Bioinformatic Algorithms, Databases and Tools"
+title: "CMSC828O: Computational and Mathematical Analysis of Biological Networks across Scales"
+
+
 type: index
 ---
 
 ## Course Information
 
-**CMSC423: Bioinformatic Algorithms, Databases and Tools**  
+**CMSC828O: Computational and Mathematical Analysis of Biological Networks Across Scales**  
 **Spring 2017**
 
 *	Instructor:  

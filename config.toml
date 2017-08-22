@@ -1,6 +1,6 @@
-baseurl = "http://www.hcbravo.org/cmsc423/"
+baseurl = "http://www.hcbravo.org/networks-across-scales/"
 languageCode = "en-us"
-title = "CMSC423: Bioinformatic Algorithms Databases and Tools (Spring 2017)"
+title = "CMSC828O: Networks Across Scales (Fall 2017)"
 theme = "hugo-material-docs"
 metadataformat = "yaml"
 canonifyurls = true
@@ -10,12 +10,12 @@ googleAnalytics = ""
 [params]
 	# General information
 	author = "Héctor Corrada Bravo"
-	description = "Introductor bioinformatics course, Department of Computer Science, University of Maryland"
+	description = "Analysis tools for biological networks across scales (COMBINE NRT course), Department of Computer Science, University of Maryland"
 	copyright = "Released under the MIT license"
 
 	# Repository
 	provider = "GitHub"
-	repo_url = "https://github.com/hcorrada/cmsc423.git"
+	repo_url = "https://github.com/hcorrada/networks-across-scales.git"
 
 	logo = "images/logo.png"
 	favicon = ""
@@ -38,8 +38,8 @@ googleAnalytics = ""
     	code = "Roboto Mono"
 
  [params.links]
-      elms   = "https://myelms.umd.edu/courses/1218381"
-      piazza = "https://piazza.com/class/iybyz4l8fqs2bl"
+      elms   = ""
+      piazza = ""
 [social]
 	twitter = "hcorrada"
 	github  = "hcorrada"
