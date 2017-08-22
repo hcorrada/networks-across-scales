@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Logistics - CMSC828O: Networks Across Scales (Fall 2017)</title>
+    <title>Project 4: SNP finding - CMSC828O: Networks Across Scales (Fall 2017)</title>
     <meta name="generator" content="Hugo 0.24" />
 
     
     <meta name="description" content="Analysis tools for biological networks across scales (COMBINE NRT course), Department of Computer Science, University of Maryland">
     
-    <link rel="canonical" href="http://www.hcbravo.org/networks-across-scales/logistics/">
+    <link rel="canonical" href="http://www.hcbravo.org/networks-across-scales/projects/project_4/">
     
     <meta name="author" content="Héctor Corrada Bravo">
     
 
-    <meta property="og:url" content="http://www.hcbravo.org/networks-across-scales/logistics/">
+    <meta property="og:url" content="http://www.hcbravo.org/networks-across-scales/projects/project_4/">
     <meta property="og:title" content="CMSC828O: Networks Across Scales (Fall 2017)">
     <meta property="og:image" content="http://www.hcbravo.org/networks-across-scales/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="CMSC828O: Networks Across Scales (Fall 2017)">
@@ -97,7 +97,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Logistics
+        Project 4: SNP finding
       </div>
     </div>
 
@@ -190,14 +190,11 @@
 
 
 
-<a class="current" title="Logistics" href="http://www.hcbravo.org/networks-across-scales/logistics/">
+<a  title="Logistics" href="http://www.hcbravo.org/networks-across-scales/logistics/">
 	
 	Logistics
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
   
@@ -256,110 +253,101 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Logistics </h1>
+			<h1>Project 4: SNP finding </h1>
 
 			
 
-<p>This page and the <a href="http://www.hcbravo.org/networks-across-scales/
-/calendar/index.html">Course Calendar</a> constitute the official syllabus for this class.</p>
+<p><strong>Due: Thursday May 11, 2017</strong><br />
+<strong>Posted: May 2, 2017</strong><br />
+<strong>Last Update: May 2, 2017</strong></p>
 
-<h2 id="course-information">Course Information</h2>
+<p>You will implement approximate string matching using a
+seed-and-check strategy based on exact matching using the
+Burrows-Wheeler transform. We are providing starter code
+to get you going. Instructions on implementation and code are here:</p>
 
-<p><strong>Computational and Mathematical Analysis of Biological Networks Across Scales</strong><br />
-<strong>CMSC828O Fall 2017</strong></p>
+<p><a href="https://gitlab.umiacs.umd.edu/hcorrada/cmsc423_project4">https://gitlab.umiacs.umd.edu/hcorrada/cmsc423_project4</a></p>
 
-<ul>
-<li><p>Lecture Meeting Times<br />
-Tuesday and Thursday, 9:30am-10:45am, CSI 1122</p></li>
+<p>I highly, highly recommend that you use <a href="https://git-scm.com/book/en/v1/Getting-Started"><code>git</code></a></p>
 
-<li><p>Instructor:<br />
-<a href="http://www.cbcb.umd.edu/~hcorrada">H&eacute;ctor Corrada Bravo</a><br />
-Center for Bioinformatics and Computational Biology<br />
-Department of Computer Science<br />
-<a href="mailto:hcorrada@umiacs.umd.edu">hcorrada@umiacs.umd.edu</a><br />
-Office: 3114F Biomolecular Sciences Building<br />
-Phone Number: 301-405-2481<br />
-<strong>Office Hours:</strong> Friday 1:00pm-2:00pm AVW 3223 and by appointment</p></li>
+<p>To get code you will be using for this project using git:</p>
 
-<li><p>Communication:</p>
+<pre><code class="language-bash">git clone https://gitlab.umiacs.umd.edu/hcorrada/cmsc423_project4.git
+</code></pre>
 
-<ul>
-<li>For course related questions, use <a href="https://piazza.com/class/iybyz4l8fqs2bl
-">Piazza</a> as indicated below.<br /></li>
-<li>For any other communication (e.g., absences accomodations etc.) email me including <code>[CMSC828O]</code> in the message subject.<br /></li>
-</ul></li>
-</ul>
+<p>This will create a <code>project4</code> directory with all code and data required for this project.</p>
 
-<p>We will use the class Piazza site <a href="https://piazza.com/class/iybyz4l8fqs2bl
-">https://piazza.com/class/iybyz4l8fqs2bl
-</a> for questions, discussion and announcements. Assignments and grades for the class will be posted to the class ELMS site: <a href="https://myelms.umd.edu/courses/1218381
-">https://myelms.umd.edu/courses/1218381
-</a>.
-In case of an extended emergency closure, announcements on policy and procedures will be posted to Piazza.</p>
+<h2 id="programming-questions">Programming Questions</h2>
 
-<h2 id="textbook-and-resources">Textbook and Resources:</h2>
+<p>Check and submit your solution to Final Rosalind Problem 8
+<a href="http://rosalind.info/classes/401/">Rosalind final submission page</a>.</p>
 
-<p>There is no textbook used in the class. Readings will be posted in the <a href="http://www.hcbravo.org/networks-across-scales/
-/calendar/index.html">Course Calendar</a>.</p>
+<p>Instructions on how to prepare your solution are given in
+<a href="https://gitlab.umiacs.umd.edu/hcorrada/cmsc423_project4">project code repository</a>.</p>
 
-<h2 id="expected-outcomes-and-topics-covered">Expected outcomes and topics covered</h2>
+<h2 id="snp-finding">SNP Finding</h2>
 
-<p>At the end of this course, students will be able to describe,
-implement and analyze algorithms that solve fundamental problems in
-biological network analysis: descriptive summaries of network structure and properties, probabilistic and dynamical network models, statistical models for networked data and network visualization. They will also be able to apply these methods to data in networks from biological applications: molecular, neuronal and ecological networks by completing a semester-long project.</p>
+<p>Use your code  to analyze sequences for the <a href="http://en.wikipedia.org/wiki/Influenza_neuraminidase">neuraminidase Influenza gene (NA)</a> of
+two H1N1 Human Influenza strains.</p>
 
-<h2 id="expectations-for-students">Expectations for Students</h2>
+<p>There are two FASTA files in directory <code>data</code> of the project repository. The <code>reference.fa</code> file contains a reference sequence you will use as the target string for approximate exact matching. The <code>reads.fa</code> file contains 50 bp reads you will use as queries. Use your approximate matching BWT solution to align reads to reference allowing up to 3 mismatches.</p>
 
-<h3 id="class-prep">Class prep</h3>
+<p><strong>Question 1</strong>. A specific mutation (H275Y) in the NA gene confers resistance to <a href="http://en.wikipedia.org/wiki/Neuraminidase_inhibitors">Oseltamivir</a>, making
+the drug <a href="http://www.ncbi.nlm.nih.gov/pubmed/22837199">less effective</a>. A note about nomenclature: the code H275Y
+encodes a substitution in position 275 (1-based indexing), changing aminoacid H (Histidine) to Y (Tyrosine).</p>
 
-<p>The <a href="http://www.hcbravo.org/networks-across-scales/
-/calendar/index.html">Course Calendar</a> will list
-readings usually uploaded to <a href="https://myelms.umd.edu/courses/1218381
-">ELMS</a>). <strong>You are
-required to read this material before lecture</strong></p>
+<p>Do the reads correspond to a gene sequence with this mutation? How can you tell?</p>
 
-<h3 id="presentations">Presentations</h3>
+<h3 id="notes">Notes:</h3>
 
-<p>Students will present frequently during class. Groups will present project updates as it pertains to the analytical methods discussed throughout the semester. Students will also present papers discussing state-of-the-art methods in each of the course units.</p>
+<ol>
+<li>As we&rsquo;ve done so far use the <code>Biopython</code> to read and import <code>fasta</code> files.</li>
+<li>The <code>pileup.py</code> script in the project repository can help you answer this question.
+You can get a list of mismatches found in reads, and the number of times each kind of mismatch is observed in each position as follows:</li>
+</ol>
 
-<h3 id="announcements-and-discussion">Announcements and discussion</h3>
+<pre><code class="language-python">from pileup import PileUp
+from approximate_matcher import ApproximateMatcher
 
-<p>We will use the <a href="https://piazza.com/class/iybyz4l8fqs2bl
-">Piazza page</a> for class
-announcements. Please use the <a href="https://piazza.com/class/iybyz4l8fqs2bl
-">Piazza page</a> for
-<em>all discussion</em>.</p>
+# initialize object
+am = ApproximateMatcher(reference)
+pileup = PileUp(reference)
+d = 3
 
-<h3 id="other-policies">Other policies</h3>
+for read in reads:
+	# find approximate matching positions for a given read
+	# assumes positions is a list (even if only a single match is found)
+	# with matching positions
+	positions = am.get_matches(read, d)
+	if len(positions) &gt; 0:
+		# add to pileup object
+		pileup.insert(positions, read)
 
-<ul>
-<li>There will be reading assignments. Students are expected to have read the material <strong>before</strong> class.<br /></li>
-<li>Students are expected to attend lectures. Active participation is expected. There will be graded work done in class.<br /></li>
-<li>Students will be expected to present project progress reports and papers during class.</li>
-<li>Assignments are to be handed-in electronically or in class as instructed on their due date. Late assignments will not be accepted.<br />
-Students may discuss homeworks and projects in groups. However, each
-student must write and/or program solutions independently.<br /></li>
-<li>Cell phone usage is <strong>prohibited</strong> during lecture, laptop use will be allowed to the extent that students <strong>demonstrably</strong> use it to follow along an in-class analysis or demonstration.<br /></li>
-</ul>
+# next statement prints out mismatching positions
+# output is:
+# (&lt;position&gt;, &lt;reference_character&gt;, [(&lt;variant_character&gt;,
+# &lt;num_times_aligned&gt;)])
+# argument filters mismatch by frequency in which variant character
+# is observed, e.g., .01 means variant character has to be seen at least
+# once for every 100 aligned nucleotides
+pileup.print_mismatches(.01)
+</code></pre>
 
-<h3 id="grading-procedures">Grading Procedures</h3>
+<p>where positions are indices in the reference string where an approximate match for <code>read</code> was found.</p>
 
-<ul>
-<li>Data project milestone submissions (30%, divided between multiple milestone submissions)<br /></li>
-<li>Final data project submission (15%)<br /></li>
-<li>Paper presentations (20%)<br /></li>
-<li>Participation and discussion (10%)<br /></li>
-<li>Written homeworks (25%)<br /></li>
-</ul>
+<h2 id="how-to-submit">How to submit</h2>
 
-<h2 id="university-policies-and-resources">University Policies and Resources</h2>
+<p>On ELMS you will submit two things</p>
 
-<p>Policies relevant to Undergraduate Courses are found here: <a href="http://ugst.umd.edu/courserelatedpolicies.html">http://ugst.umd.edu/courserelatedpolicies.html</a>. Topics that are addressed in these various policies include academic integrity, student and instructor conduct, accessibility and accommodations, attendance and excused absences, grades and appeals, copyright and intellectual property.</p>
+<p>(1) A <code>diff</code> of your solution and the original code posted by us. Using git you can do this as follows
+once you have committed all your code changes in directory <code>approximate_matcher</code>. Note that you do not need to change code outside of this directory to solve the Rosalind problem:</p>
 
-<h2 id="course-evaluations">Course evaluations</h2>
+<pre><code class="language-bash">git diff origin/master approximate_matcher &gt; project4_bwt_code.patch
+</code></pre>
 
-<p>Course evaluations are important and that the department and faculty
-take student feedback seriously.  Students can go to <a href="http://www.courseevalum.umd.edu">http://www.courseevalum.umd.edu</a> to complete their evaluations.</p>
+<p>Submit file <code>project4_bwt_code.patch</code> on ELMS</p>
+
+<p>(2) An IPython notebook exported as pdf or html containing your answer to Question 1 above along with code used to answer it. You have to use your approximate matching code from part I to match reads to the reference, otherwise, you are free to use Biopython as needed to answer this question. E.g., to do DNA-&gt;aminoacid translation.</p>
 
 
 			<aside class="copyright" role="note">
@@ -378,34 +366,18 @@ take student feedback seriously.  Students can go to <a href="http://www.coursee
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="http://www.hcbravo.org/networks-across-scales/resources/" title="CMSC Resources">
-        <span class="direction">
-          Previous
-        </span>
-        <div class="page">
-          <div class="button button-previous" role="button" aria-label="Previous">
-            <i class="icon icon-back"></i>
-          </div>
-          <div class="stretch">
-            <div class="title">
-              CMSC Resources
-            </div>
-          </div>
-        </div>
-      </a>
-  
   </div>
 
   <div class="next">
   
-      <a href="http://www.hcbravo.org/networks-across-scales/" title="CMSC828O: Computational and Mathematical Analysis of Biological Networks across Scales">
+      <a href="http://www.hcbravo.org/networks-across-scales/projects/project_2/" title="Project 2: Gibbs Sampling, EM and evolution">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              CMSC828O: Computational and Mathematical Analysis of Biological Networks across Scales
+              Project 2: Gibbs Sampling, EM and evolution
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Logistics - CMSC828O: Networks Across Scales (Fall 2017)</title>
+    <title>Project 2: Gibbs Sampling, EM and evolution - CMSC828O: Networks Across Scales (Fall 2017)</title>
     <meta name="generator" content="Hugo 0.24" />
 
     
     <meta name="description" content="Analysis tools for biological networks across scales (COMBINE NRT course), Department of Computer Science, University of Maryland">
     
-    <link rel="canonical" href="http://www.hcbravo.org/networks-across-scales/logistics/">
+    <link rel="canonical" href="http://www.hcbravo.org/networks-across-scales/projects/project_2/">
     
     <meta name="author" content="Héctor Corrada Bravo">
     
 
-    <meta property="og:url" content="http://www.hcbravo.org/networks-across-scales/logistics/">
+    <meta property="og:url" content="http://www.hcbravo.org/networks-across-scales/projects/project_2/">
     <meta property="og:title" content="CMSC828O: Networks Across Scales (Fall 2017)">
     <meta property="og:image" content="http://www.hcbravo.org/networks-across-scales/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="CMSC828O: Networks Across Scales (Fall 2017)">
@@ -97,7 +97,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Logistics
+        Project 2: Gibbs Sampling, EM and evolution
       </div>
     </div>
 
@@ -190,14 +190,11 @@
 
 
 
-<a class="current" title="Logistics" href="http://www.hcbravo.org/networks-across-scales/logistics/">
+<a  title="Logistics" href="http://www.hcbravo.org/networks-across-scales/logistics/">
 	
 	Logistics
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
   
@@ -256,110 +253,196 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Logistics </h1>
+			<h1>Project 2: Gibbs Sampling, EM and evolution </h1>
 
 			
 
-<p>This page and the <a href="http://www.hcbravo.org/networks-across-scales/
-/calendar/index.html">Course Calendar</a> constitute the official syllabus for this class.</p>
+<p><strong>Due Monday March 6</strong></p>
 
-<h2 id="course-information">Course Information</h2>
+<p>Posted: 2/23/2017<br />
+Last Update: 2/23/2017</p>
 
-<p><strong>Computational and Mathematical Analysis of Biological Networks Across Scales</strong><br />
-<strong>CMSC828O Fall 2017</strong></p>
+<h2 id="programming-questions">Programming Questions</h2>
+
+<p>Submit your answers to Problems 4 and 5 in the
+<a href="http://rosalind.info/classes/401/">Rosalind final submission page</a>.</p>
+
+<p><strong>Question 1. (5 pts)</strong> Write three or four sentences as a postmortem on the implementation of the two algorithms. What was the biggest challenge in
+  implementing and testing these algorithms?</p>
+
+<p><strong>Note</strong>: <em>Postmortem</em> refers to short reviews usually done after
+completion of a project to set down lessons learned through the
+project. Implementation methods and ideas that worked, and those that did
+not. More info: <a href="http://blog.codinghorror.com/the-project-postmortem/">here</a>
+and <a href="http://www.uio.no/studier/emner/matnat/ifi/INF9181/h11/undervisningsmateriale/reading-materials/Lecture-10/post-mortems.pdf">here</a>.</p>
+
+<h3 id="code-grading-60-pts">Code Grading (60 pts)</h3>
+
+<p>Same guidelines as <a href="http://www.hcbravo.org/networks-across-scales/
+/projects/project_1">Project 1</a>.</p>
+
+<h2 id="entropy">Entropy</h2>
+
+<p>Consider length \(k\) profiles estimated from a set of
+\(t\) \(k\)-mers using pseudo-counts.</p>
+
+<p><strong>Question 2. (5 pts)</strong> What is the <em>minimum</em> entropy score one of these profiles
+can achieve? Provide an example set of \(t=7\) \(4\)-mers that would
+produce a profile with minimum entropy.</p>
+
+<p><strong>Question 3. (5 pts)</strong> What is the <em>maximum</em> entropy score one of these profiles can achieve? Provide an example set of \(t=7\) \(4\)-mers that would produce a profile with maximum entropy.</p>
+
+<h2 id="entropy-game">Entropy Game</h2>
+
+<p>I mentioned in class that the reason we would use (low) entropy and
+self-similarity as a score in motif finding is that evolution would
+produce low entropy profiles for DNA binding proteins that
+perform important biological processess (e.g., TFs that regulate
+circadian genes). In this exercise you will conduct a simulation study to explore this
+idea.</p>
+
+<p>Suppose we have a brand new fictional universe with the first ever
+living thing: a single cell, single gene organism that the only thing it does,
+besides reproducing itself, is produce a DNA binding protein (HcbP) that induces expression of itself, and
+that&rsquo;s how it keeps itself alive (it&rsquo;s a stretch I know). Suppose that
+the following 12-mer is the sequence of DNA where the protein binds:
+<code>TCGTACGGTATT</code>.</p>
+
+<p>Now let&rsquo;s play the following evolution game:</p>
+
+<ol>
+<li><p>Evolution for this organism works as follows:<br />
+a. every year each individual in the population reproduces five times (see how reproduction works in step 2) to produce five offspring.<br />
+b. each individual only survives for 10 years, and<br />
+c. at the end of the year at most 100 of the individuals that made it to the end of the year are randomly selected to continue living on to the next year.</p></li>
+
+<li><p>Reproduction: we represent an individual strictly by the 12-mer in
+the HcbP binding site. When an individual reproduces each position of the offspring&rsquo;s 12-mer is randomly mutated with probability <sup>1</sup>&frasl;<sub>15</sub> to a different nucleotide.</p></li>
+
+<li><p>Survival: remember that binding of HcbP is essential for survival
+of this organism. Turns out that HcbP can bind to sequences that
+satisfy the following: <code>T[C|G]GTNNNNT[A|G]NT</code>, this representation
+means: in position 2 either <code>C</code> or <code>G</code> allows binding, in positions
+with <code>N</code> any base allows binding. You can think of this as a <code>regular
+expression</code>  and a match allows binding. However, no match means
+the individual does not survive. (See below for more on regular expressions).</p></li>
+</ol>
+
+<p>Ok, now code two versions of this game:<br />
+  (1) a version where step 3 (survival) is implemented, and<br />
+  (2) a version where step 3 is not implemented.</p>
+
+<p>I.e., in version 1, if an individual&rsquo;s 12-mer does not
+match the above regular expression it dies, in version 2 it
+survives. Remember that at most 100 individuals are retained at the
+end of the year.</p>
+
+<p>Run each version of your game 10 times for 100 years each time and
+calculate the entropy of the profile corresponding to the surviving population. The outer loop will look something like this:</p>
+
+<pre><code class="language-python">nruns = 10
+nyears = 100
+num_offspring = 5
+mutation_rate = 1. / 15
+max_age = 10
+max_population_size = 100
+
+entropies = []
+for i in xrange(nruns):
+	# age and sequence of primodial organism
+	population = [(0, 'TCGTACGGTATT')]
+	for j in xrange(nyears):
+		# five new individuals per
+		# individual in the population, with random mutations at each
+		# position with given probability
+		population = reproduce(population, num_offspring, mutation_rate)
+
+	    # remove members of the population with non-binding sequence
+		# (only in version 1 of the game)
+		population = remove_nonbinding(population)
+
+	    # remove members of the population that are too old (10 years old)
+		population = remove_elders(population, max_age)
+
+        # increase the age of each individual and keep at most 100
+        #  individuals, choose randomly if populations is larger that 100
+		population = yearend(population, max_population_size)
+	entropies.append(calculate_entropy(population))
+</code></pre>
+
+<p><strong>Question 4 (15 pts)</strong>. Are the entropies generated by two versions of the
+game different? Are the entropies more or less similar the longer you run the simulation (<code>nyears</code>).
+Make a plot or table that shows how entropies differ.</p>
+
+<p><strong>Question 5. (10 pts)</strong> How does the matching regular expression for the
+binding site affect the
+difference in resulting entropies? For instance, you can change the number of positions where matching
+doesn&rsquo;t matter, or change the choice of nucleotides that allow binding.</p>
+
+<p>(a) Suggest a change to the binding regular expression and a
+hypothesis of how the entropies for the two versions of the game will
+vary after you change the matching expression.</p>
+
+<p>(b) Now, run your experiment again using your new matching rule and calculate
+entropies again. Do these results agree with your hypothesis?</p>
+
+<h2 id="notes">Notes</h2>
+
+<p>The goal of this exercise is for you to understand the concept of
+entropy and how it may be a reasonable measure to use when thinking
+about the evolution of DNA sequences. So, here are some hints on how
+to implement this:</p>
 
 <ul>
-<li><p>Lecture Meeting Times<br />
-Tuesday and Thursday, 9:30am-10:45am, CSI 1122</p></li>
+<li><p>To check if a mutation should be inserted in a given position in an
+offspring string you can use <code>if random.random() &lt;= mutation.rate</code></p></li>
 
-<li><p>Instructor:<br />
-<a href="http://www.cbcb.umd.edu/~hcorrada">H&eacute;ctor Corrada Bravo</a><br />
-Center for Bioinformatics and Computational Biology<br />
-Department of Computer Science<br />
-<a href="mailto:hcorrada@umiacs.umd.edu">hcorrada@umiacs.umd.edu</a><br />
-Office: 3114F Biomolecular Sciences Building<br />
-Phone Number: 301-405-2481<br />
-<strong>Office Hours:</strong> Friday 1:00pm-2:00pm AVW 3223 and by appointment</p></li>
+<li><p>The <code>filter</code> function is very useful to modify lists according to
+some predicate. For example, to remove individuals from the
+population based on age (using the tuple representation above) you
+can use <code>population=filter(lambda x: x[0] &lt;= max_age, population)</code></p></li>
 
-<li><p>Communication:</p>
-
-<ul>
-<li>For course related questions, use <a href="https://piazza.com/class/iybyz4l8fqs2bl
-">Piazza</a> as indicated below.<br /></li>
-<li>For any other communication (e.g., absences accomodations etc.) email me including <code>[CMSC828O]</code> in the message subject.<br /></li>
-</ul></li>
+<li><p>To check for binding it&rsquo;s easiest to use the regular expression
+library in python. The binding expression above can be used as
+follows:</p></li>
 </ul>
 
-<p>We will use the class Piazza site <a href="https://piazza.com/class/iybyz4l8fqs2bl
-">https://piazza.com/class/iybyz4l8fqs2bl
-</a> for questions, discussion and announcements. Assignments and grades for the class will be posted to the class ELMS site: <a href="https://myelms.umd.edu/courses/1218381
-">https://myelms.umd.edu/courses/1218381
-</a>.
-In case of an extended emergency closure, announcements on policy and procedures will be posted to Piazza.</p>
+<pre><code class="language-python">import re
 
-<h2 id="textbook-and-resources">Textbook and Resources:</h2>
+# the rule for pattern T[C|G]GTNNNNT[A|G]NT
+# match C or G in the second position
+# match A,C,G or T in positions 5-8 ([ACGT]) is the set of characters
+# that match {4} is the exact number of matches
+# match A or G in position 10
+# match A,C,G or T in position 11
+matchRE = re.compile(&quot;T[CG]GT[ACGT]{4}T[AG][ACGT]T&quot;)
 
-<p>There is no textbook used in the class. Readings will be posted in the <a href="http://www.hcbravo.org/networks-across-scales/
-/calendar/index.html">Course Calendar</a>.</p>
-
-<h2 id="expected-outcomes-and-topics-covered">Expected outcomes and topics covered</h2>
-
-<p>At the end of this course, students will be able to describe,
-implement and analyze algorithms that solve fundamental problems in
-biological network analysis: descriptive summaries of network structure and properties, probabilistic and dynamical network models, statistical models for networked data and network visualization. They will also be able to apply these methods to data in networks from biological applications: molecular, neuronal and ecological networks by completing a semester-long project.</p>
-
-<h2 id="expectations-for-students">Expectations for Students</h2>
-
-<h3 id="class-prep">Class prep</h3>
-
-<p>The <a href="http://www.hcbravo.org/networks-across-scales/
-/calendar/index.html">Course Calendar</a> will list
-readings usually uploaded to <a href="https://myelms.umd.edu/courses/1218381
-">ELMS</a>). <strong>You are
-required to read this material before lecture</strong></p>
-
-<h3 id="presentations">Presentations</h3>
-
-<p>Students will present frequently during class. Groups will present project updates as it pertains to the analytical methods discussed throughout the semester. Students will also present papers discussing state-of-the-art methods in each of the course units.</p>
-
-<h3 id="announcements-and-discussion">Announcements and discussion</h3>
-
-<p>We will use the <a href="https://piazza.com/class/iybyz4l8fqs2bl
-">Piazza page</a> for class
-announcements. Please use the <a href="https://piazza.com/class/iybyz4l8fqs2bl
-">Piazza page</a> for
-<em>all discussion</em>.</p>
-
-<h3 id="other-policies">Other policies</h3>
+# this code checks if string 'kmer' binds according to the rule
+matchRE.match(kmer) is not None
+</code></pre>
 
 <ul>
-<li>There will be reading assignments. Students are expected to have read the material <strong>before</strong> class.<br /></li>
-<li>Students are expected to attend lectures. Active participation is expected. There will be graded work done in class.<br /></li>
-<li>Students will be expected to present project progress reports and papers during class.</li>
-<li>Assignments are to be handed-in electronically or in class as instructed on their due date. Late assignments will not be accepted.<br />
-Students may discuss homeworks and projects in groups. However, each
-student must write and/or program solutions independently.<br /></li>
-<li>Cell phone usage is <strong>prohibited</strong> during lecture, laptop use will be allowed to the extent that students <strong>demonstrably</strong> use it to follow along an in-class analysis or demonstration.<br /></li>
+<li>To randomly select 100 items from a list you can use</li>
 </ul>
 
-<h3 id="grading-procedures">Grading Procedures</h3>
+<pre><code class="language-python"># this shuffles in place
+random.shuffle(population)
+population = population[:100]
+</code></pre>
 
 <ul>
-<li>Data project milestone submissions (30%, divided between multiple milestone submissions)<br /></li>
-<li>Final data project submission (15%)<br /></li>
-<li>Paper presentations (20%)<br /></li>
-<li>Participation and discussion (10%)<br /></li>
-<li>Written homeworks (25%)<br /></li>
+<li><p>Remember that we define \(0 \cdot \log_2(0) = 0\). You can use code
+like this to enforce this: <code>numpy.log2(p) if p &gt; 0 else 0</code></p></li>
+
+<li><p>Finally, you need to think about how to summarize the entropies you
+calculate from the 10 runs you perform. The <code>numpy</code> library can be
+helpful here, e.g., <code>numpy.mean</code>.</p></li>
 </ul>
 
-<h2 id="university-policies-and-resources">University Policies and Resources</h2>
+<h2 id="how-to-submit">How to submit</h2>
 
-<p>Policies relevant to Undergraduate Courses are found here: <a href="http://ugst.umd.edu/courserelatedpolicies.html">http://ugst.umd.edu/courserelatedpolicies.html</a>. Topics that are addressed in these various policies include academic integrity, student and instructor conduct, accessibility and accommodations, attendance and excused absences, grades and appeals, copyright and intellectual property.</p>
-
-<h2 id="course-evaluations">Course evaluations</h2>
-
-<p>Course evaluations are important and that the department and faculty
-take student feedback seriously.  Students can go to <a href="http://www.courseevalum.umd.edu">http://www.courseevalum.umd.edu</a> to complete their evaluations.</p>
+<p>Submit your answers to the five questions above in writing as a pdf to ELMS. Submit along with your entropy game code.
+Again, using a <code>jupyter</code> notebook is encouraged.</p>
 
 
 			<aside class="copyright" role="note">
@@ -378,7 +461,7 @@ take student feedback seriously.  Students can go to <a href="http://www.coursee
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="http://www.hcbravo.org/networks-across-scales/resources/" title="CMSC Resources">
+      <a href="http://www.hcbravo.org/networks-across-scales/projects/project_4/" title="Project 4: SNP finding">
         <span class="direction">
           Previous
         </span>
@@ -388,7 +471,7 @@ take student feedback seriously.  Students can go to <a href="http://www.coursee
           </div>
           <div class="stretch">
             <div class="title">
-              CMSC Resources
+              Project 4: SNP finding
             </div>
           </div>
         </div>
@@ -398,14 +481,14 @@ take student feedback seriously.  Students can go to <a href="http://www.coursee
 
   <div class="next">
   
-      <a href="http://www.hcbravo.org/networks-across-scales/" title="CMSC828O: Computational and Mathematical Analysis of Biological Networks across Scales">
+      <a href="http://www.hcbravo.org/networks-across-scales/projects/project_1/" title="Project 1: Finding origin of DNA replication in a bacterial genome">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              CMSC828O: Computational and Mathematical Analysis of Biological Networks across Scales
+              Project 1: Finding origin of DNA replication in a bacterial genome
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

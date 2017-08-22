@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Logistics - CMSC828O: Networks Across Scales (Fall 2017)</title>
+    <title>Project 3: Genome Assembly and String Alignment - CMSC828O: Networks Across Scales (Fall 2017)</title>
     <meta name="generator" content="Hugo 0.24" />
 
     
     <meta name="description" content="Analysis tools for biological networks across scales (COMBINE NRT course), Department of Computer Science, University of Maryland">
     
-    <link rel="canonical" href="http://www.hcbravo.org/networks-across-scales/logistics/">
+    <link rel="canonical" href="http://www.hcbravo.org/networks-across-scales/projects/project_3/">
     
     <meta name="author" content="Héctor Corrada Bravo">
     
 
-    <meta property="og:url" content="http://www.hcbravo.org/networks-across-scales/logistics/">
+    <meta property="og:url" content="http://www.hcbravo.org/networks-across-scales/projects/project_3/">
     <meta property="og:title" content="CMSC828O: Networks Across Scales (Fall 2017)">
     <meta property="og:image" content="http://www.hcbravo.org/networks-across-scales/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="CMSC828O: Networks Across Scales (Fall 2017)">
@@ -97,7 +97,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Logistics
+        Project 3: Genome Assembly and String Alignment
       </div>
     </div>
 
@@ -190,14 +190,11 @@
 
 
 
-<a class="current" title="Logistics" href="http://www.hcbravo.org/networks-across-scales/logistics/">
+<a  title="Logistics" href="http://www.hcbravo.org/networks-across-scales/logistics/">
 	
 	Logistics
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
   
@@ -256,110 +253,49 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Logistics </h1>
+			<h1>Project 3: Genome Assembly and String Alignment </h1>
 
 			
 
-<p>This page and the <a href="http://www.hcbravo.org/networks-across-scales/
-/calendar/index.html">Course Calendar</a> constitute the official syllabus for this class.</p>
+<p><strong>Due: Tuesday April 18</strong><br />
+<strong>Posted: April 4, 2017</strong><br />
+<strong>Last Update: April 16, 2017</strong></p>
 
-<h2 id="course-information">Course Information</h2>
+<h2 id="programming-questions">Programming Questions</h2>
 
-<p><strong>Computational and Mathematical Analysis of Biological Networks Across Scales</strong><br />
-<strong>CMSC828O Fall 2017</strong></p>
+<p>Submit your answers to Problems 6 and 7 in the
+<a href="http://rosalind.info/classes/401/">Rosalind final submission page</a>.</p>
 
-<ul>
-<li><p>Lecture Meeting Times<br />
-Tuesday and Thursday, 9:30am-10:45am, CSI 1122</p></li>
+<h3 id="code-grading-60-pts">Code Grading (60 pts)</h3>
 
-<li><p>Instructor:<br />
-<a href="http://www.cbcb.umd.edu/~hcorrada">H&eacute;ctor Corrada Bravo</a><br />
-Center for Bioinformatics and Computational Biology<br />
-Department of Computer Science<br />
-<a href="mailto:hcorrada@umiacs.umd.edu">hcorrada@umiacs.umd.edu</a><br />
-Office: 3114F Biomolecular Sciences Building<br />
-Phone Number: 301-405-2481<br />
-<strong>Office Hours:</strong> Friday 1:00pm-2:00pm AVW 3223 and by appointment</p></li>
+<p>Same guidelines as <a href="projects/projects_1/">Project 1</a>.</p>
 
-<li><p>Communication:</p>
+<h2 id="assembly">Assembly</h2>
+
+<p>For this exercise you will use your code for string reconstruction using DeBruijn graphs to analyze genomes from the Ebola virus. Download data for this exercise at this URL:</p>
+
+<p><a href="http://cbcb.umd.edu/~hcorrada/CMSC423/downloads/hw3data.zip">http://cbcb.umd.edu/~hcorrada/CMSC423/downloads/hw3data.zip</a></p>
+
+<p>Unzip this file in your working directory, you should see the following four files:</p>
 
 <ul>
-<li>For course related questions, use <a href="https://piazza.com/class/iybyz4l8fqs2bl
-">Piazza</a> as indicated below.<br /></li>
-<li>For any other communication (e.g., absences accomodations etc.) email me including <code>[CMSC828O]</code> in the message subject.<br /></li>
-</ul></li>
+<li><code>ebola.fa</code>: This FASTA file contains assembled genomes from twenty different patients sampled during the 2014 ebola outbreak. These are a subset of the genomes analyzed as part of the sequencing effort described in this Science paper: <a href="http://www.sciencemag.org/content/345/6202/1369.full">http://www.sciencemag.org/content/345/6202/1369.full</a>. This effort was chronicled in this New Yorker piece: <a href="http://www.newyorker.com/magazine/2014/10/27/ebola-wars">http://www.newyorker.com/magazine/2014/10/27/ebola-wars</a>. All data related to this effort can be obtained from the NCBI <a href="http://www.ncbi.nlm.nih.gov/bioproject/257197">http://www.ncbi.nlm.nih.gov/bioproject/257197</a>.</li>
+<li><code>mystery_paired_200.txt</code>: Simulated paired-end reads with \(d=200\) from the same genome. This file containing paired-end reads uses the format in Rosalind:</li>
 </ul>
 
-<p>We will use the class Piazza site <a href="https://piazza.com/class/iybyz4l8fqs2bl
-">https://piazza.com/class/iybyz4l8fqs2bl
-</a> for questions, discussion and announcements. Assignments and grades for the class will be posted to the class ELMS site: <a href="https://myelms.umd.edu/courses/1218381
-">https://myelms.umd.edu/courses/1218381
-</a>.
-In case of an extended emergency closure, announcements on policy and procedures will be posted to Piazza.</p>
+<p><code>...AGACATCCGAACCATAGAGGATTC|CTCTATGTGCTGTGATG...</code></p>
 
-<h2 id="textbook-and-resources">Textbook and Resources:</h2>
+<p><strong>Question 1</strong> (15pts) Assemble the ebola genome from the given reads and see if it matches any of the twenty genomes in the <code>ebola.fa</code> file. Write down the sequence name from the <code>ebola.fa</code> file that matches you assembled genome (it starts with &lsquo;KM&rsquo;)</p>
 
-<p>There is no textbook used in the class. Readings will be posted in the <a href="http://www.hcbravo.org/networks-across-scales/
-/calendar/index.html">Course Calendar</a>.</p>
+<p><strong>Question 2</strong> (10 pts) How hard is it to assemble this genome from these simulated 101 bp paired-end reads? Provide the  distribution of in-degrees and out-degrees in the DeBruijn graph for this set of reads.</p>
 
-<h2 id="expected-outcomes-and-topics-covered">Expected outcomes and topics covered</h2>
+<p><strong>Question 3</strong> (5 pts) Generate all 101-mers from this genome using your &lsquo;String Composition&rsquo; (Problem 21 in the pre-lecture exercises). How repetitive is this genome when using 101 bp reads?</p>
 
-<p>At the end of this course, students will be able to describe,
-implement and analyze algorithms that solve fundamental problems in
-biological network analysis: descriptive summaries of network structure and properties, probabilistic and dynamical network models, statistical models for networked data and network visualization. They will also be able to apply these methods to data in networks from biological applications: molecular, neuronal and ecological networks by completing a semester-long project.</p>
+<p><strong>Question 4</strong> (10 pts) What is the largest \(k\) for which the \(k\)-mer composition of this genome contains at least 1 repeat.</p>
 
-<h2 id="expectations-for-students">Expectations for Students</h2>
+<h2 id="how-to-submit">How to submit</h2>
 
-<h3 id="class-prep">Class prep</h3>
-
-<p>The <a href="http://www.hcbravo.org/networks-across-scales/
-/calendar/index.html">Course Calendar</a> will list
-readings usually uploaded to <a href="https://myelms.umd.edu/courses/1218381
-">ELMS</a>). <strong>You are
-required to read this material before lecture</strong></p>
-
-<h3 id="presentations">Presentations</h3>
-
-<p>Students will present frequently during class. Groups will present project updates as it pertains to the analytical methods discussed throughout the semester. Students will also present papers discussing state-of-the-art methods in each of the course units.</p>
-
-<h3 id="announcements-and-discussion">Announcements and discussion</h3>
-
-<p>We will use the <a href="https://piazza.com/class/iybyz4l8fqs2bl
-">Piazza page</a> for class
-announcements. Please use the <a href="https://piazza.com/class/iybyz4l8fqs2bl
-">Piazza page</a> for
-<em>all discussion</em>.</p>
-
-<h3 id="other-policies">Other policies</h3>
-
-<ul>
-<li>There will be reading assignments. Students are expected to have read the material <strong>before</strong> class.<br /></li>
-<li>Students are expected to attend lectures. Active participation is expected. There will be graded work done in class.<br /></li>
-<li>Students will be expected to present project progress reports and papers during class.</li>
-<li>Assignments are to be handed-in electronically or in class as instructed on their due date. Late assignments will not be accepted.<br />
-Students may discuss homeworks and projects in groups. However, each
-student must write and/or program solutions independently.<br /></li>
-<li>Cell phone usage is <strong>prohibited</strong> during lecture, laptop use will be allowed to the extent that students <strong>demonstrably</strong> use it to follow along an in-class analysis or demonstration.<br /></li>
-</ul>
-
-<h3 id="grading-procedures">Grading Procedures</h3>
-
-<ul>
-<li>Data project milestone submissions (30%, divided between multiple milestone submissions)<br /></li>
-<li>Final data project submission (15%)<br /></li>
-<li>Paper presentations (20%)<br /></li>
-<li>Participation and discussion (10%)<br /></li>
-<li>Written homeworks (25%)<br /></li>
-</ul>
-
-<h2 id="university-policies-and-resources">University Policies and Resources</h2>
-
-<p>Policies relevant to Undergraduate Courses are found here: <a href="http://ugst.umd.edu/courserelatedpolicies.html">http://ugst.umd.edu/courserelatedpolicies.html</a>. Topics that are addressed in these various policies include academic integrity, student and instructor conduct, accessibility and accommodations, attendance and excused absences, grades and appeals, copyright and intellectual property.</p>
-
-<h2 id="course-evaluations">Course evaluations</h2>
-
-<p>Course evaluations are important and that the department and faculty
-take student feedback seriously.  Students can go to <a href="http://www.courseevalum.umd.edu">http://www.courseevalum.umd.edu</a> to complete their evaluations.</p>
+<p>Writeup answers to the four questions above. Submit to ELMS along with <em>all</em> code you used to answer these questions.</p>
 
 
 			<aside class="copyright" role="note">
@@ -378,7 +314,7 @@ take student feedback seriously.  Students can go to <a href="http://www.coursee
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="http://www.hcbravo.org/networks-across-scales/resources/" title="CMSC Resources">
+      <a href="http://www.hcbravo.org/networks-across-scales/projects/project_1/" title="Project 1: Finding origin of DNA replication in a bacterial genome">
         <span class="direction">
           Previous
         </span>
@@ -388,7 +324,7 @@ take student feedback seriously.  Students can go to <a href="http://www.coursee
           </div>
           <div class="stretch">
             <div class="title">
-              CMSC Resources
+              Project 1: Finding origin of DNA replication in a bacterial genome
             </div>
           </div>
         </div>
@@ -398,14 +334,14 @@ take student feedback seriously.  Students can go to <a href="http://www.coursee
 
   <div class="next">
   
-      <a href="http://www.hcbravo.org/networks-across-scales/" title="CMSC828O: Computational and Mathematical Analysis of Biological Networks across Scales">
+      <a href="http://www.hcbravo.org/networks-across-scales/resources/howto-biopython/" title="CMSC Resources">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              CMSC828O: Computational and Mathematical Analysis of Biological Networks across Scales
+              CMSC Resources
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
