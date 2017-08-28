@@ -1,5 +1,5 @@
 ---
-title: "Interactive visual and computational exploratory analysis of epigenetic data"
+title: "Biological Networks Across Scales: Course Overview"
 author: "Héctor Corrada Bravo"
 company: "University of Maryland"
 date: "`r Sys.Date()`"
@@ -19,7 +19,7 @@ count: false
 
 .banner[![](img/head.png)]
 
-.title[Interactive, visual and statistical exploratory analysis of epigenomic data]
+.title[Biological Networks Across Scales: Course Overview]
 
 .author[Héctor Corrada Bravo]
 
