@@ -1,0 +1,62 @@
+---
+title: "Interactive visual and computational exploratory analysis of epigenetic data"
+author: "Héctor Corrada Bravo"
+company: "University of Maryland"
+date: "`r Sys.Date()`"
+css: ["custom.css"]
+output: 
+  xaringan::moon_reader:
+    lib_dir: libs
+    seal: false
+    includes:
+      after_body: "custom.html"
+    nature:
+      ratio: "16:9"
+---
+
+class: title-slide, center, middle
+count: false
+
+.banner[![](img/epiviz.png)]
+
+.title[Interactive, visual and statistical exploratory analysis of epigenomic data]
+
+.author[Héctor Corrada Bravo]
+
+.other-info[
+University of Maryland, College Park, USA  
+Fannie Mae: `r Sys.Date()`
+]
+
+.logo[![](img/logo.png)]
+
+---
+class: split-50
+exclude: true
+
+## What does my group do?
+
+.column[
+Study the **molecular** basis of *variation* in development and disease
+
+
+Using **high-throughput** experimental methods  
+]
+
+.column[.image-80[![](img/stickmen.png)]]
+
+---
+
+## Perspectives
+
+- Collaborative computational and visual analysis
+
+--
+- Effective visual methods to explore hierarchical organization of (epi)-genome
+
+--
+- Deeper integration of statistically-informed visualization
+
+--
+- Visualization-informed statistical analysis
+
