@@ -1,388 +1,82 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on CMSC423: Bioinformatic Algorithms Databases and Tools (Spring 2017)</title>
-    <link>http://www.hcbravo.org/cmsc423/projects/index.xml</link>
-    <description>Recent content in Projects on CMSC423: Bioinformatic Algorithms Databases and Tools (Spring 2017)</description>
+    <title>Projects on CMSC828O: Networks Across Scales (Fall 2017)</title>
+    <link>http://www.hcbravo.org/networks-across-scales/projects/</link>
+    <description>Recent content in Projects on CMSC828O: Networks Across Scales (Fall 2017)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
-    <lastBuildDate>Thu, 23 Feb 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://www.hcbravo.org/cmsc423/projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://www.hcbravo.org/networks-across-scales/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Project 4: SNP finding</title>
+      <link>http://www.hcbravo.org/networks-across-scales/projects/project_4/</link>
+      <pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.hcbravo.org/networks-across-scales/projects/project_4/</guid>
+      <description>Due: Thursday May 11, 2017
+Posted: May 2, 2017
+Last Update: May 2, 2017
+You will implement approximate string matching using a seed-and-check strategy based on exact matching using the Burrows-Wheeler transform. We are providing starter code to get you going. Instructions on implementation and code are here:
+https://gitlab.umiacs.umd.edu/hcorrada/cmsc423_project4
+I highly, highly recommend that you use git
+To get code you will be using for this project using git:</description>
+    </item>
     
     <item>
       <title>Project 2: Gibbs Sampling, EM and evolution</title>
-      <link>http://www.hcbravo.org/cmsc423/projects/project_2/</link>
+      <link>http://www.hcbravo.org/networks-across-scales/projects/project_2/</link>
       <pubDate>Thu, 23 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.hcbravo.org/cmsc423/projects/project_2/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;Due Monday March 6&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Posted: 2/23/2017&lt;br /&gt;
-Last Update: 2/23/2017&lt;/p&gt;
-
-&lt;h2 id=&#34;programming-questions&#34;&gt;Programming Questions&lt;/h2&gt;
-
-&lt;p&gt;Submit your answers to Problems 4 and 5 in the
-&lt;a href=&#34;http://rosalind.info/classes/401/&#34;&gt;Rosalind final submission page&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Question 1. (5 pts)&lt;/strong&gt; Write three or four sentences as a postmortem on the implementation of the two algorithms. What was the biggest challenge in
-  implementing and testing these algorithms?&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: &lt;em&gt;Postmortem&lt;/em&gt; refers to short reviews usually done after
-completion of a project to set down lessons learned through the
-project. Implementation methods and ideas that worked, and those that did
-not. More info: &lt;a href=&#34;http://blog.codinghorror.com/the-project-postmortem/&#34;&gt;here&lt;/a&gt;
-and &lt;a href=&#34;http://www.uio.no/studier/emner/matnat/ifi/INF9181/h11/undervisningsmateriale/reading-materials/Lecture-10/post-mortems.pdf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;code-grading-60-pts&#34;&gt;Code Grading (60 pts)&lt;/h3&gt;
-
-&lt;p&gt;Same guidelines as &lt;a href=&#34;http://www.hcbravo.org/cmsc423/
-/projects/project_1&#34;&gt;Project 1&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;entropy&#34;&gt;Entropy&lt;/h2&gt;
-
-&lt;p&gt;Consider length \(k\) profiles estimated from a set of
-\(t\) \(k\)-mers using pseudo-counts.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Question 2. (5 pts)&lt;/strong&gt; What is the &lt;em&gt;minimum&lt;/em&gt; entropy score one of these profiles
-can achieve? Provide an example set of \(t=7\) \(4\)-mers that would
-produce a profile with minimum entropy.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Question 3. (5 pts)&lt;/strong&gt; What is the &lt;em&gt;maximum&lt;/em&gt; entropy score one of these profiles can achieve? Provide an example set of \(t=7\) \(4\)-mers that would produce a profile with maximum entropy.&lt;/p&gt;
-
-&lt;h2 id=&#34;entropy-game&#34;&gt;Entropy Game&lt;/h2&gt;
-
-&lt;p&gt;I mentioned in class that the reason we would use (low) entropy and
-self-similarity as a score in motif finding is that evolution would
-produce low entropy profiles for DNA binding proteins that
-perform important biological processess (e.g., TFs that regulate
-circadian genes). In this exercise you will conduct a simulation study to explore this
-idea.&lt;/p&gt;
-
-&lt;p&gt;Suppose we have a brand new fictional universe with the first ever
-living thing: a single cell, single gene organism that the only thing it does,
-besides reproducing itself, is produce a DNA binding protein (HcbP) that induces expression of itself, and
-that&amp;rsquo;s how it keeps itself alive (it&amp;rsquo;s a stretch I know). Suppose that
-the following 12-mer is the sequence of DNA where the protein binds:
-&lt;code&gt;TCGTACGGTATT&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now let&amp;rsquo;s play the following evolution game:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Evolution for this organism works as follows:&lt;br /&gt;
-a. every year each individual in the population reproduces five times (see how reproduction works in step 2) to produce five offspring.&lt;br /&gt;
-b. each individual only survives for 10 years, and&lt;br /&gt;
-c. at the end of the year at most 100 of the individuals that made it to the end of the year are randomly selected to continue living on to the next year.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Reproduction: we represent an individual strictly by the 12-mer in
-the HcbP binding site. When an individual reproduces each position of the offspring&amp;rsquo;s 12-mer is randomly mutated with probability &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;15&lt;/sub&gt; to a different nucleotide.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Survival: remember that binding of HcbP is essential for survival
-of this organism. Turns out that HcbP can bind to sequences that
-satisfy the following: &lt;code&gt;T[C|G]GTNNNNT[A|G]NT&lt;/code&gt;, this representation
-means: in position 2 either &lt;code&gt;C&lt;/code&gt; or &lt;code&gt;G&lt;/code&gt; allows binding, in positions
-with &lt;code&gt;N&lt;/code&gt; any base allows binding. You can think of this as a &lt;code&gt;regular
-expression&lt;/code&gt;  and a match allows binding. However, no match means
-the individual does not survive. (See below for more on regular expressions).&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Ok, now code two versions of this game:&lt;br /&gt;
-  (1) a version where step 3 (survival) is implemented, and&lt;br /&gt;
-  (2) a version where step 3 is not implemented.&lt;/p&gt;
-
-&lt;p&gt;I.e., in version 1, if an individual&amp;rsquo;s 12-mer does not
-match the above regular expression it dies, in version 2 it
-survives. Remember that at most 100 individuals are retained at the
-end of the year.&lt;/p&gt;
-
-&lt;p&gt;Run each version of your game 10 times for 100 years each time and
-calculate the entropy of the profile corresponding to the surviving population. The outer loop will look something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;nruns = 10
-nyears = 100
-num_offspring = 5
-mutation_rate = 1. / 15
-max_age = 10
-max_population_size = 100
-
-entropies = []
-for i in xrange(nruns):
-	# age and sequence of primodial organism
-	population = [(0, &#39;TCGTACGGTATT&#39;)]
-	for j in xrange(nyears):
-		# five new individuals per
-		# individual in the population, with random mutations at each
-		# position with given probability
-		population = reproduce(population, num_offspring, mutation_rate)
-
-	    # remove members of the population with non-binding sequence
-		# (only in version 1 of the game)
-		population = remove_nonbinding(population)
-
-	    # remove members of the population that are too old (10 years old)
-		population = remove_elders(population, max_age)
-
-        # increase the age of each individual and keep at most 100
-        #  individuals, choose randomly if populations is larger that 100
-		population = yearend(population, max_population_size)
-	entropies.append(calculate_entropy(population))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;Question 4 (15 pts)&lt;/strong&gt;. Are the entropies generated by two versions of the
-game different? Are the entropies more or less similar the longer you run the simulation (&lt;code&gt;nyears&lt;/code&gt;).
-Make a plot or table that shows how entropies differ.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Question 5. (10 pts)&lt;/strong&gt; How does the matching regular expression for the
-binding site affect the
-difference in resulting entropies? For instance, you can change the number of positions where matching
-doesn&amp;rsquo;t matter, or change the choice of nucleotides that allow binding.&lt;/p&gt;
-
-&lt;p&gt;(a) Suggest a change to the binding regular expression and a
-hypothesis of how the entropies for the two versions of the game will
-vary after you change the matching expression.&lt;/p&gt;
-
-&lt;p&gt;(b) Now, run your experiment again using your new matching rule and calculate
-entropies again. Do these results agree with your hypothesis?&lt;/p&gt;
-
-&lt;h2 id=&#34;notes&#34;&gt;Notes&lt;/h2&gt;
-
-&lt;p&gt;The goal of this exercise is for you to understand the concept of
-entropy and how it may be a reasonable measure to use when thinking
-about the evolution of DNA sequences. So, here are some hints on how
-to implement this:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;To check if a mutation should be inserted in a given position in an
-offspring string you can use &lt;code&gt;if random.random() &amp;lt;= mutation.rate&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;The &lt;code&gt;filter&lt;/code&gt; function is very useful to modify lists according to
-some predicate. For example, to remove individuals from the
-population based on age (using the tuple representation above) you
-can use &lt;code&gt;population=filter(lambda x: x[0] &amp;lt;= max_age, population)&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;To check for binding it&amp;rsquo;s easiest to use the regular expression
-library in python. The binding expression above can be used as
-follows:&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
-
-# the rule for pattern T[C|G]GTNNNNT[A|G]NT
-# match C or G in the second position
-# match A,C,G or T in positions 5-8 ([ACGT]) is the set of characters
-# that match {4} is the exact number of matches
-# match A or G in position 10
-# match A,C,G or T in position 11
-matchRE = re.compile(&amp;quot;T[CG]GT[ACGT]{4}T[AG][ACGT]T&amp;quot;)
-
-# this code checks if string &#39;kmer&#39; binds according to the rule
-matchRE.match(kmer) is not None
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;To randomly select 100 items from a list you can use&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# this shuffles in place
-random.shuffle(population)
-population = population[:100]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Remember that we define \(0 \cdot \log_2(0) = 0\). You can use code
-like this to enforce this: &lt;code&gt;numpy.log2(p) if p &amp;gt; 0 else 0&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Finally, you need to think about how to summarize the entropies you
-calculate from the 10 runs you perform. The &lt;code&gt;numpy&lt;/code&gt; library can be
-helpful here, e.g., &lt;code&gt;numpy.mean&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;how-to-submit&#34;&gt;How to submit&lt;/h2&gt;
-
-&lt;p&gt;Submit your answers to the five questions above in writing as a pdf to ELMS. Submit along with your entropy game code.
-Again, using a &lt;code&gt;jupyter&lt;/code&gt; notebook is encouraged.&lt;/p&gt;
-</description>
+      <guid>http://www.hcbravo.org/networks-across-scales/projects/project_2/</guid>
+      <description>Due Monday March 6
+Posted: 2/23/2017
+Last Update: 2/23/2017
+Programming Questions Submit your answers to Problems 4 and 5 in the Rosalind final submission page.
+Question 1. (5 pts) Write three or four sentences as a postmortem on the implementation of the two algorithms. What was the biggest challenge in implementing and testing these algorithms?
+Note: Postmortem refers to short reviews usually done after completion of a project to set down lessons learned through the project.</description>
     </item>
     
     <item>
       <title>Project 1: Finding origin of DNA replication in a bacterial genome</title>
-      <link>http://www.hcbravo.org/cmsc423/projects/project_1/</link>
+      <link>http://www.hcbravo.org/networks-across-scales/projects/project_1/</link>
       <pubDate>Tue, 07 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.hcbravo.org/cmsc423/projects/project_1/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;Due: Monday Feb. 20, 2017&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;Posted: Feb 9, 2017&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;Last Update: Feb 9, 2017&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;part-1-programming-exercises&#34;&gt;Part 1: Programming Exercises&lt;/h1&gt;
-
-&lt;p&gt;Submit your answers to Problems 1-3 in the
-&lt;a href=&#34;http://rosalind.info/classes/401/&#34;&gt;Rosalind final submission page&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTE: THESE PROGRAMS NEED TO BE SUBMITTED TO ROSALIND BY Monday 02/20 at 11:59PM&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Question 1. (10pts)&lt;/strong&gt; For each of the 3 solutions submitted provide a
-runtime analysis of your solution.
-For full credit, include a short description of your algorithm and
-show how you derive your answer.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Code Grading (45 pts)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Each of the 3 Rosalind exercises will be evaluated based on correctness, efficiency and style.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Correctness: if you pass the Rosalind correctness check, you get full credit. Otherwise, your grade is determined by&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Program running without error when called as &lt;code&gt;python &amp;lt;script.py&amp;gt; &amp;lt;input_file&amp;gt;&lt;/code&gt; where &lt;code&gt;&amp;lt;input_file&amp;gt;&lt;/code&gt; is in the format used for that problem in Rosalind.&lt;/li&gt;
-&lt;li&gt;Program reading input in the required format.&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Program printing output in correct format as described in Rosalind.&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Program implementing an algorithm that addresses the problem (i.e., you get more points if the algorithm is correct but you have a bug, e.g., with indexing)&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Efficiency: points are awarded for providing efficient solutions. For example, a linear algorithm will score better than a quadratic algorithm. For full credit, implement the efficient algorithms described in textbook and discussed in class.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Is the code in your submission clean and easy to read, with non-obvious statements
-properly commented? Are functions used appropriately for clarity and organization?&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&#34;part-2-skew-diagrams&#34;&gt;Part 2: Skew Diagrams&lt;/h1&gt;
-
-&lt;p&gt;&lt;em&gt;Campylobacter jejuni&lt;/em&gt; is a well-known bacterial pathogen, recently
- found
- &lt;a href=&#34;http://genomebiology.com/2014/15/6/R76&#34;&gt;to be associated with childhood dysentery&lt;/a&gt;
- in developing countries. Here, you will apply your new skills in a
- preliminary analysis of the genome of this pathogen.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Step 1. (5 pts)&lt;/strong&gt; Use the &lt;code&gt;BioPython&lt;/code&gt; library to download the &lt;em&gt;Campylobacter
-  jejuni&lt;/em&gt; genome from NCBI:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;from Bio import Entrez, SeqIO
-Entrez.email = &amp;quot;me@example.com&amp;quot;
-campy_id = &amp;quot;AL111168.1&amp;quot;
-
-# open an url handle for query
-handle = Entrez.efetch(db=&amp;quot;nucleotide&amp;quot;, id=campy_id, rettype=&amp;quot;gb&amp;quot;, retmode=&amp;quot;text&amp;quot;)
-
-# read query result records
-record = SeqIO.read(handle, &amp;quot;genbank&amp;quot;)
-handle.close()
-
-# write sequence to fasta file (so you don&#39;t have to request again)
-SeqIO.write(record, &amp;quot;campy.fa&amp;quot;, &amp;quot;fasta&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Variable &lt;code&gt;record&lt;/code&gt; is a &lt;code&gt;SeqIO&lt;/code&gt; object containing the &lt;em&gt;Campylobacter
-jejuni&lt;/em&gt; genome. Check
-&lt;a href=&#34;http://biopython.org/DIST/docs/tutorial/Tutorial.html&#34;&gt;Chapter 2 of the Biopython tutorial&lt;/a&gt;
-again to see how these objects work.
-Also see Chapter 9 of the tutorial for more info on how to obtain DNA
-sequences from NCBI.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Step 2. (15 pts)&lt;/strong&gt; Write a script to plot the skew diagram for
-  &lt;em&gt;Campylobacter jejuni&lt;/em&gt;. One easy way of plotting is using pylab and IPython. If you start IPython as follows:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ipython
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;and &lt;code&gt;skew&lt;/code&gt; is the skew vector you computed for &lt;em&gt;Campylobacter jejuni&lt;/em&gt;
-you can plot with&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;%pylab
-plot(skew)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;Question 2 (10 pts)&lt;/strong&gt; Does this skew diagram look like the ones you&amp;rsquo;ve seen
-so far in book and discussion? What do you think may account for any
-differences? Where do you think replication origin for
-  &lt;em&gt;Campylobacter jejuni&lt;/em&gt; is located?&lt;/p&gt;
-
-&lt;p&gt;Save your skew diagram &lt;code&gt;pdf&lt;/code&gt; or other image file and include in your submission (see below).&lt;/p&gt;
-
-&lt;h1 id=&#34;part-3-dnaa-boxes&#34;&gt;Part 3: DnaA boxes&lt;/h1&gt;
-
-&lt;p&gt;Use your code to find most frequent words with mismatches (at most d=2 mismatches) and reverse complements to find candidate DnaA binding sequences in the oriC candidate region you found above (250bp on each side of position minimizing skew).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Question 3 (10 pts)&lt;/strong&gt; Construct a table that shows for each k=3,4,5,6,7,8,9:&lt;br /&gt;
-(a) the number of distinct frequent words, and&lt;br /&gt;
-(b) the number of times each frequent word occurs in the genomic region.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Question 4 (5 pts)&lt;/strong&gt; Based on your result, did you find a reasonable candidate DnaA sequence you would provide to a biologist to test. If so, write down the candidate sequence and explain why you chose this particular candidate sequence. If not, explain why not.&lt;/p&gt;
-
-&lt;h1 id=&#34;how-to-submit&#34;&gt;How to submit&lt;/h1&gt;
-
-&lt;p&gt;Prepare a writeup answering the four questions above and save as &lt;code&gt;pdf&lt;/code&gt;. Submit any additional code (besides your solutions to the Rosalind exercises) used for this part of the homework. I highly recommend working with a &lt;code&gt;Jupyter&lt;/code&gt; notebook, exporting the notebook as &lt;code&gt;pdf&lt;/code&gt; and submitting that.&lt;/p&gt;
-
-&lt;p&gt;Submit to ELMS by Monday 02/20 11:59pm here: &lt;a href=&#34;https://myelms.umd.edu/courses/1218381/assignments/4362579&#34;&gt;https://myelms.umd.edu/courses/1218381/assignments/4362579&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://www.hcbravo.org/networks-across-scales/projects/project_1/</guid>
+      <description>Due: Monday Feb. 20, 2017
+Posted: Feb 9, 2017
+Last Update: Feb 9, 2017
+Part 1: Programming Exercises Submit your answers to Problems 1-3 in the Rosalind final submission page.
+NOTE: THESE PROGRAMS NEED TO BE SUBMITTED TO ROSALIND BY Monday 02/20 at 11:59PM
+Question 1. (10pts) For each of the 3 solutions submitted provide a runtime analysis of your solution. For full credit, include a short description of your algorithm and show how you derive your answer.</description>
     </item>
     
     <item>
       <title>Project 3: Genome Assembly and String Alignment</title>
-      <link>http://www.hcbravo.org/cmsc423/projects/project_3/</link>
+      <link>http://www.hcbravo.org/networks-across-scales/projects/project_3/</link>
       <pubDate>Tue, 07 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.hcbravo.org/cmsc423/projects/project_3/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;Due: Tuesday April 18&lt;/strong&gt;
-&lt;strong&gt;Posted: April 4, 2017&lt;/strong&gt;
-&lt;strong&gt;Last Update: April 4, 2017&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;programming-questions&#34;&gt;Programming Questions&lt;/h2&gt;
-
-&lt;p&gt;Submit your answers to Problems 6 and 7 in the
-&lt;a href=&#34;http://rosalind.info/classes/401/&#34;&gt;Rosalind final submission page&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;code-grading-60-pts&#34;&gt;Code Grading (60 pts)&lt;/h3&gt;
-
-&lt;p&gt;Same guidelines as &lt;a href=&#34;projects/projects_1/&#34;&gt;Project 1&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;assembly&#34;&gt;Assembly&lt;/h2&gt;
-
-&lt;p&gt;For this exercise you will use your code for string reconstruction using DeBruijn graphs to analyze genomes from the Ebola virus. Download data for this exercise at this URL:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://cbcb.umd.edu/~hcorrada/CMSC423/downloads/hw3data.zip&#34;&gt;http://cbcb.umd.edu/~hcorrada/CMSC423/downloads/hw3data.zip&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Unzip this file in your working directory, you should see the following four files:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;ebola.fa&lt;/code&gt;: This FASTA file contains assembled genomes from twenty different patients sampled during the 2014 ebola outbreak. These are a subset of the genomes analyzed as part of the sequencing effort described in this Science paper: &lt;a href=&#34;http://www.sciencemag.org/content/345/6202/1369.full&#34;&gt;http://www.sciencemag.org/content/345/6202/1369.full&lt;/a&gt;. This effort was chronicled in this New Yorker piece: &lt;a href=&#34;http://www.newyorker.com/magazine/2014/10/27/ebola-wars&#34;&gt;http://www.newyorker.com/magazine/2014/10/27/ebola-wars&lt;/a&gt;. All data related to this effort can be obtained from the NCBI &lt;a href=&#34;http://www.ncbi.nlm.nih.gov/bioproject/257197&#34;&gt;http://www.ncbi.nlm.nih.gov/bioproject/257197&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;mystery_paired_200.txt&lt;/code&gt;: Simulated paired-end reads with $$d=200$$ from the same genome. Both files containing paired-end reads use the format in Rosalind:&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;code&gt;...AGACATCCGAACCATAGAGGATTC|CTCTATGTGCTGTGATG...&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Question 1&lt;/strong&gt; (15pts) Assemble the ebola genome from the given reads and see if it matches any of the twenty genomes in the &lt;code&gt;ebola.fa&lt;/code&gt; file. Write down the sequence name from the &lt;code&gt;ebola.fa&lt;/code&gt; file that matches you assembled genome (it starts with &amp;lsquo;KM&amp;rsquo;)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Question 2&lt;/strong&gt; (10 pts) How hard is it to assemble this genome from these simulated 101 bp paired-end reads? Provide the  distribution of in-degrees and out-degrees in the DeBruijn graph for this set of reads.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Question 3&lt;/strong&gt; (5 pts) Generate all 101-mers from this genome using your &amp;lsquo;String Composition&amp;rsquo; (Problem 20 in the pre-lecture exercises). How repetitive is this genome when using 101 bp reads?&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Question 4&lt;/strong&gt; (10 pts) What is the largest $$k$$ for which the $$k$$-mer composition of this genome contains at least 1 repeat.&lt;/p&gt;
-
-&lt;h2 id=&#34;how-to-submit&#34;&gt;How to submit&lt;/h2&gt;
-
-&lt;p&gt;Writeup answers to the four questions above. Submit to ELMS along with &lt;em&gt;all&lt;/em&gt; code you used to answer these questions.&lt;/p&gt;
-</description>
+      <guid>http://www.hcbravo.org/networks-across-scales/projects/project_3/</guid>
+      <description>Due: Tuesday April 18
+Posted: April 4, 2017
+Last Update: April 16, 2017
+Programming Questions Submit your answers to Problems 6 and 7 in the Rosalind final submission page.
+Code Grading (60 pts) Same guidelines as Project 1.
+Assembly For this exercise you will use your code for string reconstruction using DeBruijn graphs to analyze genomes from the Ebola virus. Download data for this exercise at this URL:
+http://cbcb.umd.edu/~hcorrada/CMSC423/downloads/hw3data.zip</description>
     </item>
     
     <item>
       <title>CMSC423 Projects</title>
-      <link>http://www.hcbravo.org/cmsc423/projects/</link>
+      <link>http://www.hcbravo.org/networks-across-scales/projects/</link>
       <pubDate>Mon, 29 Aug 2016 08:54:44 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/cmsc423/projects/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;Project 1: &lt;a href=&#34;project_1/&#34;&gt;Finding the origin of DNA replication in a bacterial genome&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Project 2: &lt;a href=&#34;project_2/&#34;&gt;Motif Finding and the EM algorithm&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://www.hcbravo.org/networks-across-scales/projects/</guid>
+      <description>COMING SOON</description>
     </item>
     
   </channel>

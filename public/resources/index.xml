@@ -1,72 +1,45 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Resources on CMSC423: Bioinformatic Algorithms Databases and Tools (Spring 2017)</title>
-    <link>http://www.hcbravo.org/cmsc423/resources/index.xml</link>
-    <description>Recent content in Resources on CMSC423: Bioinformatic Algorithms Databases and Tools (Spring 2017)</description>
+    <title>Resources on CMSC828O: Networks Across Scales (Fall 2017)</title>
+    <link>http://www.hcbravo.org/networks-across-scales/resources/</link>
+    <description>Recent content in Resources on CMSC828O: Networks Across Scales (Fall 2017)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
     <lastBuildDate>Wed, 25 Jan 2017 08:54:37 -0800</lastBuildDate>
-    <atom:link href="http://www.hcbravo.org/cmsc423/resources/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://www.hcbravo.org/networks-across-scales/resources/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>CMSC Resources</title>
-      <link>http://www.hcbravo.org/cmsc423/resources/howto-biopython/</link>
+      <link>http://www.hcbravo.org/networks-across-scales/resources/howto-biopython/</link>
       <pubDate>Wed, 25 Jan 2017 08:54:37 -0800</pubDate>
       
-      <guid>http://www.hcbravo.org/cmsc423/resources/howto-biopython/</guid>
-      <description>
-
-&lt;h2 id=&#34;install-biopython&#34;&gt;Install Biopython&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Download and install &lt;a href=&#34;https://www.python.org/downloads/&#34;&gt;Python 2.7&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Download and install &lt;a href=&#34;https://www.continuum.io/downloads/&#34;&gt;Anaconda&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;Use the following commad to install biopython:&lt;br /&gt;
-  &lt;code&gt;conda install -c anaconda biopython=1.68&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://www.hcbravo.org/networks-across-scales/resources/howto-biopython/</guid>
+      <description> Install Biopython  Download and install Python 2.7
+ Download and install Anaconda
+ Use the following commad to install biopython:
+conda install -c anaconda biopython=1.68  </description>
     </item>
     
     <item>
       <title>CMSC Resources</title>
-      <link>http://www.hcbravo.org/cmsc423/resources/</link>
+      <link>http://www.hcbravo.org/networks-across-scales/resources/</link>
       <pubDate>Mon, 29 Aug 2016 08:54:37 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/cmsc423/resources/</guid>
-      <description>
-
-&lt;h2 id=&#34;python&#34;&gt;Python&lt;/h2&gt;
-
-&lt;p&gt;We will be using &lt;a href=&#34;http://www.python.org/&#34;&gt;Python&lt;/a&gt; for all programming projects. Here are some resources
-to get you started:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.umiacs.umd.edu/~hal/courses/2011F_ML/p0/&#34;&gt;Short tutorial by Hal Daume&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://docs.python.org/tutorial/&#34;&gt;Python Tutorial&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://docs.python.org/index.html&#34;&gt;Python Docs&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://scipy.org/Tentative_NumPy_Tutorial&#34;&gt;Numpy Tutorial (tentative)&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://docs.scipy.org/doc/numpy/user/&#34;&gt;Numpy User&amp;rsquo;s Guide&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://docs.scipy.org/doc/&#34;&gt;Scipy docs&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://ipython.org/ipython-doc/stable/index.html&#34;&gt;IPython docs&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://jupyter.org/&#34;&gt;Jupyter notebooks&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;other-resources&#34;&gt;Other Resources&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;To install &lt;a href=&#34;howto-biopython/index.html&#34;&gt;Bipython&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://cbcb.umd.edu/~carlk/bioinfo-lectures/&#34;&gt;Carl Kingsford&amp;rsquo;s lecture slides&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;R/Bioconductor: &lt;a href=&#34;http://www.r-project.org&#34;&gt;R&lt;/a&gt; is an open-source environment for data analysis. The &lt;a href=&#34;http://bioconductor.org&#34;&gt;Bioconductor project&lt;/a&gt; provides a
-large number of useful libraries for high-throughput genomic data analysis. &lt;a href=&#34;http://www.bioconductor.org/packages/release/BiocViews.html&#34;&gt;You can browse them by task&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;R/Python references: &lt;a href=&#34;http://mathesaurus.sourceforge.net/r-numpy.html&#34;&gt;A short R guide for Python users.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.nature.com/scitable&#34;&gt;Scitable&lt;/a&gt; is an excellent resource provided by the journal &lt;em&gt;Nature&lt;/em&gt; providing introductory reading material on most of the topics in biology/genetics/medicine we
-discuss in class.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.openintro.org/stat/online.php&#34;&gt;Diez, Barr and Cetinkaya-Rundel. OpenIntro Statistics. 2011&lt;/a&gt; A good introductory Statistics textbook. &lt;a href=&#34;http://www.openintro.org/stat/downloads.php&#34;&gt;You can download it here.&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.youtube.com/user/RafalabChannel?feature=watch&#34;&gt;Rafael Irizarry&amp;rsquo;s lecture videos&lt;/a&gt; are good to watch.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://www.hcbravo.org/networks-across-scales/resources/</guid>
+      <description>Python We will be using Python for all programming projects. Here are some resources to get you started:
+ Short tutorial by Hal Daume
+ Python Tutorial
+ Python Docs
+ Numpy Tutorial (tentative)
+ Numpy User&amp;rsquo;s Guide
+ Scipy docs
+ IPython docs
+ Jupyter notebooks  Other Resources  To install Bipython Carl Kingsford&amp;rsquo;s lecture slides
+ R/Bioconductor: R is an open-source environment for data analysis. The Bioconductor project provides a large number of useful libraries for high-throughput genomic data analysis.</description>
     </item>
     
   </channel>
