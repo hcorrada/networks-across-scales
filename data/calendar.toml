@@ -7,7 +7,7 @@ date = "8/29"
 
 [[day01.covers]]
 title = "Course Introduction"
-#notes = "lectures/CMSC423_CourseIntro.pdf" 
+notes = "lectures/CMSC828O_course-intro.pdf" 
 
 ###########################
 # Network Preliminaries
@@ -21,7 +21,7 @@ date = "8/31"
 
 [[day02.covers]]
 title = "Network Preliminaries"
-#notes = "lectures/CMSC423_BioIntro.pdf"
+#notes = "lectures/CMSC828O_course-intro.pdf"
 
 [[day02.prep]]
 title = "Barabasi, Ch. 1 and 2"
@@ -30,10 +30,6 @@ title = "Barabasi, Ch. 1 and 2"
 [[day02.prep]]
 title = "Newman, Ch. 5 and 6"
 #link = "https://myelms.umd.edu/courses/1218381/modules/items/8829693"
-
-[[day02.prep]]
-#title = "Rosalind prep Ex. 1-9"
-#link = "http://rosalind.info/classes/400/"
 
 [[day02.workdue]]
 title = "Survey"
