@@ -31,7 +31,12 @@ In case of an extended emergency closure, announcements on policy and procedures
 
 ## Textbook and Resources:
 
-There is no textbook used in the class. Readings will be posted in the [Course Calendar]({{< baseurl >}}/calendar/index.html).
+We will refer to the following two textbooks frequently:
+
+- Newman, M.E.J. (2010) _Networks, An Introduction_. Oxford University Press. [Amazon](https://www.amazon.com/Networks-Introduction-Mark-Newman/dp/0199206651/ref=pd_bxgy_14_img_2?_encoding=UTF8&psc=1&refRID=Z4KKMKQBBRDZB7092JB9i)  - Barabasi, et al. (2016) _Network Science_. Cambridge University Press. [Book Site](http://barabasi.com/networksciencebook/)
+
+
+Other readings will be posted in the [Course Calendar]({{< baseurl >}}/calendar/index.html).
 
 ## Expected outcomes and topics covered
 
@@ -46,7 +51,7 @@ biological network analysis: descriptive summaries of network structure and prop
 ### Class prep
 
 The [Course Calendar]({{< baseurl >}}/calendar/index.html) will list
-readings usually uploaded to [ELMS]({{< elmurl >}})). **You are
+readings (uploaded to [ELMS]({{< elmurl >}})). **You are
 required to read this material before lecture**
 
 ### Presentations

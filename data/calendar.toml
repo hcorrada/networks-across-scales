@@ -9,10 +9,6 @@ date = "8/29"
 title = "Course Introduction"
 #notes = "lectures/CMSC423_CourseIntro.pdf" 
 
-[[day01.workdue]]
-#title = "Survey"
-#link = "https://myelms.umd.edu/courses/1218381/modules/items/8829688"
-
 ###########################
 # Network Preliminaries
 # Structure and Properties
@@ -28,16 +24,20 @@ title = "Network Preliminaries"
 #notes = "lectures/CMSC423_BioIntro.pdf"
 
 [[day02.prep]]
-#title = "Jones & Pevsner, Molecular Biology Primer"
+title = "Barabasi, Ch. 1 and 2"
 #link = "https://myelms.umd.edu/courses/1218381/modules/items/8829692"
 
 [[day02.prep]]
-#title = "Reading quiz No. 1"
+title = "Newman, Ch. 5 and 6"
 #link = "https://myelms.umd.edu/courses/1218381/modules/items/8829693"
 
 [[day02.prep]]
 #title = "Rosalind prep Ex. 1-9"
 #link = "http://rosalind.info/classes/400/"
+
+[[day02.workdue]]
+title = "Survey"
+link = "https://myelms.umd.edu/courses/1227944/quizzes/1212820"
 
 #### DAY 3
 [day03]
@@ -154,7 +154,7 @@ title = "Random Networks II"
 date = "9/21"
 
 [[day08.covers]]
-title = "Ecological Networks"
+title = "Cellular Networks"
 
 [[day08.prep]]
 #title = "Compeau & Pevzner, Ch. 2., 90-106, 111-114"
@@ -238,8 +238,7 @@ title = "Data Project Updates 1-2"
 date = "10/12"
 
 [[day14.covers]]
-title = "Neuronal Networks"
-
+title = "Ecological Networks"
 
 [[day14.prep]]
 #title = "Compeau & Pevzner, Ch. 4, p. 197-221"

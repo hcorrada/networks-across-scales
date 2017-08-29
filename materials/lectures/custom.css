@@ -73,6 +73,7 @@ h1, h2, h3 {
 .image-100 img {width: 100%;}
 
 body .large {font-size: 140%;}
+body .small {font-size: 70%;}
 
 .remark-slide-content .source {
   float: right;
@@ -84,3 +85,4 @@ body .large {font-size: 140%;}
 .survey_table tr {
   font-size: 120%;
 }
+

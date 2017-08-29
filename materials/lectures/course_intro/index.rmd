@@ -47,16 +47,166 @@ Using **high-throughput** experimental methods
 
 ---
 
-## Perspectives
+## Course Information
 
-- Collaborative computational and visual analysis
+### Course webpage
 
---
-- Effective visual methods to explore hierarchical organization of (epi)-genome
+- http://www.hcbravo.org/networks-across-scales/
+- Shortened: http://bit.ly/hcb-nas
 
---
-- Deeper integration of statistically-informed visualization
+### Other sites
 
---
-- Visualization-informed statistical analysis
+- **ELMS**: Grades, assignments, readings, etc.
+- **Piazza**: Discussion and any other communication
+- Links in course webpage
+
+
+---
+class: middle, center
+
+
+.image-70[![](img/head.png)]
+
+---
+class: middle, center
+
+## A Molecular Pathway
+
+```{r pathway_setup, echo=FALSE}
+library(graphite)
+library(stringr)
+library(magrittr)
+library(Rgraphviz)
+```
+
+```{r pathway_compute, echo=FALSE, cache=TRUE, warnings=FALSE, message=FALSE}
+p <- pathways("hsapiens", "reactome")
+pathname <- names(p) %>% str_subset("Metal") %>% extract(1)
+pg <- p[[pathname]] %>% 
+  convertIdentifiers("symbol") %>% 
+  pathwayGraph() %>%
+  layoutGraph()
+
+```
+
+```{r pathway_plot, echo=FALSE, fig.height=4, fig.width=10}
+graph.par(list(nodes=list(fontsize=32,lty="dotted")))
+renderGraph(pg)
+```
+
+.small[`r pathname`]
+
+---
+
+## Course Components
+
+- Network Analysis Methods
+- Biological Networks
+- Data Projects
+
+---
+class: split-50
+
+## Networks Analysis Methods
+
+.column[
+Module 1: Network Properties and Characteristics
+]
+
+.column[
+```{r, echo=FALSE, fig.width=5, fig.height=4}
+renderGraph(pg)
+```
+]
+
+---
+class: split-50
+
+## Networks Analysis Methods
+
+.column[
+Module 2: Network Models  
+
+_Networks as representation of systems_  
+]
+
+.column[
+```{r, echo=FALSE, fig.width=5, fig.height=4}
+renderGraph(pg)
+```
+]
+
+---
+class: split-50
+
+## Networks Analysis Methods
+
+.column[
+Module 3: Statistical Analysis of Networked Data  
+
+_Networks as representation of (in)-dependence_
+]
+
+.column[
+```{r, echo=FALSE, fig.width=5, fig.height=4}
+renderGraph(pg)
+```
+]
+
+---
+class: split-50
+
+## Networks Analysis Methods
+
+.column[
+Module 4: Network Visualization
+]
+
+.column[
+```{r, echo=FALSE, fig.width=5, fig.height=4}
+renderGraph(pg)
+```
+]
+
+---
+
+## Biological Networks
+
+Student-led Presentations
+
+.center[.image-60[![](img/head.png)]]
+
+---
+
+## Molecular Networks
+
+```{r, echo=FALSE, fig.width=9, fig.height=4.5, fig.align="center"}
+renderGraph(pg)
+```
+
+---
+
+## Cellular Networks
+
+.center[.image-40[![](img/connectome.jpg)]]
+
+.source[http://rstb.royalsocietypublishing.org/content/369/1653/20130527]
+
+---
+
+## Ecological Networks
+
+.center[![](img/gut.jpg)]
+
+.source[https://doi.org/10.1038/nature09944]
+---
+
+## Data Projects
+
+Semester-long projects
+
+- Data from Biological Networks
+- Apply Methodology as we go along
+- Milestone presentations (and submissions)
+- Submit final report
 
