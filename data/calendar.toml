@@ -46,15 +46,15 @@ title = "Measures of Network Structure and Other Properties"
 [[day03.prep]]
 title = "Newman, Ch. 7"
 
-[[day03.prep]]
+#[[day03.prep]]
 #title = "Compeau & Pevzner, playlist 1, videos 1 and 2"
 #link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNFDlaNMZ1JVN73rO1a0dpn"
 
-[[day03.prep]]
+#[[day03.prep]]
 #title = "Reading Quiz no. 2"
 #link = "https://myelms.umd.edu/courses/1152063/quizzes/1119894"
 
-[[day03.prep]]
+#[[day03.prep]]
 #title =  "Rosalind prep Ex. 10"
 #link = "http://rosalind.info/classes/400/"
 
@@ -82,6 +82,13 @@ title = "Networks in Molecular Biology"
 [[day04.prep]]
 #title = "Rosalind prep Ex. 11"
 #link = "http://rosalind.info/classes/400/"
+
+[day04a]
+date = "9/8"
+
+[[day04a.workdue]]
+title = "Homework: Network Statistics"
+link = "homeworks/network_stats/"
 
 #### DAY 5
 [day05]
