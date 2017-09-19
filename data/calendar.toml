@@ -131,6 +131,13 @@ title = "Cellular Networks"
 #title = "Reading quiz no. 5"
 #link = "https://myelms.umd.edu/courses/1218381/modules/items/8829708"
 
+[day08a]
+date = "9/25"
+
+[[day08a.workdue]]
+title = "Homework 2: Network Models"
+link = "homeworks/network_models/"
+
 #### DAY 9
 
 [day09]
