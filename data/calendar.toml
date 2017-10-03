@@ -186,7 +186,7 @@ title = "Data Project Updates"
 date = "10/12"
 
 [[day14.covers]]
-title = "Presentations: Ecological Networks"
+title = "Statistical Inference with Networked Data I"
 
 [[day14.prep]]
 #title = "Compeau & Pevzner, Ch. 4, p. 197-221"
@@ -204,16 +204,16 @@ title = "Presentations: Ecological Networks"
 date = "10/17"
 
 [[day15.covers]]
-title = "Statistical Inference with Networked Data I"
-
+title = "Statistical Inference with Networked Data II"
 #### DAY 16
 [day16]
 date = "10/19"
 
 [[day16.covers]]
-title = "Statistical Inference with Networked Data II"
+title = "Presentations: Ecological Networks"
 
 #### DAY 17
+
 [day17]
 date = "10/24"
 
