@@ -35,7 +35,7 @@ We will refer to the following two textbooks frequently:
 
 - Newman, M.E.J. (2010) _Networks, An Introduction_. Oxford University Press. [Amazon](https://www.amazon.com/Networks-Introduction-Mark-Newman/dp/0199206651/ref=pd_bxgy_14_img_2?_encoding=UTF8&psc=1&refRID=Z4KKMKQBBRDZB7092JB9i)
 - Barabasi, et al. (2016) _Network Science_. Cambridge University Press. [Book Site](http://barabasi.com/networksciencebook/)
-
+- Kolaczyk and Csardi (2014) _Statistical Analysis of Network Data with R_. Springer. [Amazon](https://www.amazon.com/Statistical-Analysis-Network-Data-Use/dp/1493909827/ref=pd_lpo_sbs_14_t_1?_encoding=UTF8&psc=1&refRID=JVA5EYS5TPS6G0SZ9197) [ELMS](https://umd.instructure.com/courses/1227944/files)
 
 Other readings will be posted in the [Course Calendar]({{< baseurl >}}/calendar/index.html).
 

@@ -46,18 +46,6 @@ title = "Measures of Network Structure and Other Properties"
 [[day03.prep]]
 title = "Newman, Ch. 7"
 
-#[[day03.prep]]
-#title = "Compeau & Pevzner, playlist 1, videos 1 and 2"
-#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNFDlaNMZ1JVN73rO1a0dpn"
-
-#[[day03.prep]]
-#title = "Reading Quiz no. 2"
-#link = "https://myelms.umd.edu/courses/1152063/quizzes/1119894"
-
-#[[day03.prep]]
-#title =  "Rosalind prep Ex. 10"
-#link = "http://rosalind.info/classes/400/"
-
 ##################
 # Networks in Molecular Biology
 
@@ -166,14 +154,14 @@ date = "10/10"
 [[day13.covers]]
 title = "Data Project Updates"
 
-[[day13.prep]]
+#[[day13.prep]]
 #title = "Compeau & Pevzner, Ch. 4, p. 182-197"
 
-[[day13.prep]]
+#[[day13.prep]]
 #title = "Compeau & Pevzner, playlist 4, videos 1-5"
 #link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFPdIS_5qv_Q3XWieobVPLlc"
 
-[[day13.prep]]
+#[[day13.prep]]
 #title = "Rosalind prep Ex. 19"
 #link = "http://rosalind.info/classes/400"
 
@@ -189,13 +177,13 @@ date = "10/12"
 title = "Statistical Inference with Networked Data I"
 
 [[day14.prep]]
-#title = "Compeau & Pevzner, Ch. 4, p. 197-221"
+title = "SAND Ch. 6"
 
-[[day14.prep]]
+#[[day14.prep]]
 #title = "Compeau & Pevzner, playlist 4, videos 6-10"
 #link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFPdIS_5qv_Q3XWieobVPLlc"
 
-[[day14.prep]]
+#[[day14.prep]]
 #title = "Rosalind prep Ex. 20 (extra credit)"
 #link = "http://rosalind.info/classes/400"
 
@@ -205,6 +193,10 @@ date = "10/17"
 
 [[day15.covers]]
 title = "Statistical Inference with Networked Data II"
+
+[[day15.prep]]
+title = "SAND Ch. 8"
+
 #### DAY 16
 [day16]
 date = "10/19"
