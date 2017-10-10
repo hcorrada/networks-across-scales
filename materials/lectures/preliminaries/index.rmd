@@ -1,0 +1,255 @@
+---
+title: "Network Preliminaries"
+author: "Héctor Corrada Bravo"
+company: "University of Maryland"
+date: "`r Sys.Date()`"
+css: ["custom.css"]
+output: 
+  xaringan::moon_reader:
+    lib_dir: libs
+    seal: false
+    includes:
+      after_body: "custom.html"
+    nature:
+      ratio: "16:9"
+---
+
+class: title-slide, center, middle
+count: false
+
+.banner[![](img/head.png)]
+
+.title[Network Preliminaries]
+
+.author[Héctor Corrada Bravo]
+
+.other-info[
+University of Maryland, College Park, USA  
+CMSC828O `r Sys.Date()`
+]
+
+.logo[![](img/logo.png)]
+
+---
+class: split-50
+exclude: true
+
+## What does my group do?
+
+.column[
+Study the **molecular** basis of *variation* in development and disease
+
+
+Using **high-throughput** experimental methods  
+]
+
+.column[.image-80[![](img/stickmen.png)]]
+
+---
+class: split-50
+
+## Genetic Interaction Network
+
+.column[.image-90[![](img/boonelab_network.png)]]
+
+.column[
+- Yeast high-throuput double-knockdown assay
+- ~5000 genes
+- ~800k interactions
+]
+
+.source[Costanzo et al. (2016) Science. DOI: 10.1126/science.aaf1420]
+
+```{r libsetup, echo=FALSE}
+library(readr)
+library(dplyr)
+library(tidyverse)
+```
+
+```{r read_data, cache=TRUE, echo=FALSE, message=FALSE}
+mat <- read_tsv("data/Data File S2. Raw genetic interaction datasets: Matrix format/SGA_NxN_clustered.cdt")
+```
+
+```{r setup_data, cache=TRUE, echo=FALSE, message=FALSE}
+amat <- mat %>%
+  slice(-(1:5)) %>%
+  select(starts_with("dma")) %>%
+  type_convert() %>%
+  as.matrix()
+amat <- 1 * (abs(amat) > 0.2)
+
+coldata <- mat %>%
+  slice(1:5) %>%
+  select(GID, starts_with("dma")) %>%
+  slice(2) %>% select(-1) %>%
+  gather(dma, orf, starts_with("dma"))
+  
+
+row_orf <- mat %>%
+  slice(-(1:5)) %>%
+  pull(ORF)
+
+m <- match(row_orf, coldata$orf)
+rows_to_use <- !is.na(m)
+cols_to_use <- m[rows_to_use]
+
+amat <- amat[rows_to_use, cols_to_use]
+
+rownames(amat) <- row_orf[rows_to_use]
+colnames(amat) <- coldata$orf[cols_to_use]
+diag(amat) <- 0
+amat[is.na(amat)] <- 0
+amat <- ceiling(0.5 * (amat + t(amat)))
+
+num_vertices <- nrow(amat)
+num_edges <- sum(amat)
+degrees <- rowSums(amat)
+ave_degree <- 2 * num_edges / num_vertices
+density <- ave_degree / (num_vertices - 1)
+```
+
+---
+
+## Genetic Interaction Network
+
+- Number of vertices: `r num_vertices`  
+- Number of edges: `r num_edges`
+
+---
+
+## Genetic Interaction Network
+
+```{r stats, echo=FALSE, cache=TRUE}
+degree_count <- table(degrees)
+degree_dist <- degree_count / num_vertices
+```
+
+```{r plot_deg, echo=FALSE}
+hist(degrees, nc=50, main="Degree Distribution",xlab="Degree")
+```
+
+Average degree: `r ave_degree`
+Density: `r density`
+
+---
+
+## Degree Distribution
+
+```{r plot_loglog, echo=FALSE}
+degs <- as.integer(names(degree_count))
+plot(log(degs), log(degree_dist), pch=19,
+     main="log/log degree distribution",
+     xlab=expression(log(k)), ylab=expression(log(p[k])))
+```
+
+
+---
+
+## Distance Distribution
+
+```{r floyd_warshal, cache=TRUE, echo=FALSE}
+fw_dists <- function(amat) {
+  nvertices <- nrow(amat)
+  dmat <- matrix(Inf, nvertices, nvertices)
+  diag(dmat) <- 0
+  dmat[amat == 1] <- 1
+  
+  for (k in seq_len(nvertices)) {
+    cat(".")
+    dk <- outer(dmat[,k],dmat[k,],FUN="+")
+    switch <- dmat > dk
+    dmat[switch] <- dk[switch]
+  }
+  cat("\n")
+  dmat
+}
+
+dmat <- fw_dists(amat)
+```
+
+```{r dmat_dist, echo=FALSE}
+dist_tab <- data_frame(dist=dmat[upper.tri(dmat, diag=FALSE)]) %>%
+  group_by(dist) %>%
+  summarize(freq=n()) %>%
+  mutate(pdist=freq / sum(freq))
+```
+
+```{r plot_dist, echo=FALSE}
+dist_tab%>%
+  ggplot(aes(dist, log(pdist))) +
+    geom_point() +
+    scale_x_continuous(breaks=seq(0,20,2))
+```
+
+---
+
+# Clustering Coefficient
+
+```{r clust_coef, cache=TRUE, echo=FALSE}
+cc <- vector("numeric", num_vertices)
+
+for (i in seq_len(num_vertices)) {
+  ki <- degrees[i]
+  denom <- ki * (ki-1) / 2
+  neighbors <- which(amat[,i] > 0)
+  mi <- sum(amat[neighbors, neighbors]) / 2
+  cc[i] <- mi / denom
+}
+
+cc_dat <- data_frame(degree=degrees, cc=cc) %>%
+  group_by(degree) %>%
+  summarize(ck=mean(cc))
+```
+
+```{r cc_plot, echo=FALSE}
+cc_dat %>%
+  filter(degree>1) %>%
+  ggplot(aes(degree, ck)) +
+    geom_point(na.rm=TRUE) +
+    scale_x_log10(
+      breaks = scales::trans_breaks("log10", function(x) 10^x),
+      labels = scales::trans_format("log10", scales::math_format(10^.x))) +
+    scale_y_log10(
+      breaks = scales::trans_breaks("log10", function(x) 10^x),
+      labels = scales::trans_format("log10", scales::math_format(10^.x)))
+```
+
+
+```{r cumdist}
+cum_dist_distr <- sapply(seq_len(length(degree_dist))-1, function(i) sum(degree_dist[-(1:i)]))
+plot(log10(degs), log10(cum_dist_distr))
+```
+
+```{r estimation}
+kmin <- 10
+degs <- sort(degs[degs>0])
+mle <- function(kmin, degs) {
+  N <- length(degs)
+  lratio <- log(degs) - log(kmin)
+  1 + N / (sum(lratio))
+}
+
+unique_degs <- unique(degs)
+mles <- sapply(unique_degs, mle, degs=degs)
+plot(mles)
+```
+
+```{r divergence}
+which_mles_to_keep <- mles>2
+mles_kept <- mles[which_mles_to_keep]
+
+power_law_prob <- function(gamma, degs) {
+  w <- degs ^ (-gamma)
+  p <- w / sum(w)
+}
+
+divergence <- function(gamma, degs, degree_dist) {
+  S <- cumsum(degree_dist)
+  p <- power_law_prob(gamma, degs)
+  P <- cumsum(p)
+  max(abs(P-S))
+}
+
+divs <- sapply(mles_kept, divergence, degs=unique_degs, degree_dist[-1])
+plot(unique_degs[which_mles_to_keep], divs)
+```
