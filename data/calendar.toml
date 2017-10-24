@@ -195,7 +195,7 @@ date = "10/17"
 title = "Statistical Inference with Networked Data II"
 
 [[day15.prep]]
-title = "SAND Ch. 8"
+title = "SAND Ch. 6"
 
 #### DAY 16
 [day16]
@@ -212,40 +212,28 @@ date = "10/24"
 [[day17.covers]]
 title = "Learning with Network Data I"
 
+[[day17.prep]]
+title = "SAND ch. 8"
+
 [day18]
 date = "10/26"
 
 [[day18.covers]]
-title = "Learning with Network Data II"
+title = "Learning Networks from Data I"
 #notes = "lectures/CMSC423_Assembly.pdf"
 
 [[day18.prep]]
-#title = "Compeau & Pevzner, Ch. 3, 117-130, 170-178"
+title = "SAND ch. 7"
 
-[[day18.prep]]
-#title = "Compeau & Pevzner, playlist 3, videos 1-5"
-#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNGdaeGpV8dPEeSm3AChb6L" 
-
-[[day18.prep]]
-#title = "Rosalind prep. Ex 21"
-#link = "http://rosalind.info/classes/400/"
 
 [day19]
 date = "10/31" 
 
 [[day19.covers]]
-title = "Learning Networks from Data"
+title = "Learning Networks from Data II"
 
-[[day19.prep]]
+#[[day19.prep]]
 #title = "Compeau & Pevzner, Ch. 3, 131-149"
-
-[[day19.prep]]
-#title = "Compeau & Pevzner, playlist 4, videos 6-9"
-#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFNGdaeGpV8dPEeSm3AChb6L" 
-
-[[day19.prep]]
-#title = "Rosalind prep. Ex 22"
-#link = "http://rosalind.info/classes/400/"
 
 # I am not here
 [day20]
