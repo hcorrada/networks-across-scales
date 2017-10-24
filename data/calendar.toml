@@ -235,6 +235,13 @@ title = "Learning Networks from Data II"
 #[[day19.prep]]
 #title = "Compeau & Pevzner, Ch. 3, 131-149"
 
+[day19a]
+date = "11/1"
+
+[[day19a.workdue]]
+title = "Homework 3: Statistical Analysis of Network Data"
+link = "homeworks/stat_models/"
+
 # I am not here
 [day20]
 date = "11/2"
