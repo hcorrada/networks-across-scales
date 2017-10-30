@@ -219,21 +219,20 @@ title = "SAND ch. 8"
 date = "10/26"
 
 [[day18.covers]]
-title = "Learning Networks from Data I"
-#notes = "lectures/CMSC423_Assembly.pdf"
+title = "Learning with Network Data II"
 
 [[day18.prep]]
-title = "SAND ch. 7"
+title = "SAND ch. 8"
 
 
 [day19]
 date = "10/31" 
 
 [[day19.covers]]
-title = "Learning Networks from Data II"
+title = "Learning Networks from Data"
 
-#[[day19.prep]]
-#title = "Compeau & Pevzner, Ch. 3, 131-149"
+[[day19.prep]]
+title = "SAND ch. 7"
 
 [day19a]
 date = "11/1"
