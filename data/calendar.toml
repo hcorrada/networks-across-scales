@@ -272,8 +272,13 @@ date = "11/14"
 [[day23.covers]]
 title = "Network Visualization II"
 
-#[[day23.prep]]
-#title = "11/16"
+[[day23.prep]]
+title = "Simple Algorithms for Network Visualization: A Tutorial"
+link = "http://profs.etsmtl.ca/mmcguffin/research/2012-mcguffin-simpleNetVis/mcguffin-2012-simpleNetVis.pdf"
+
+[[day23.prep]]
+title = "Visual Analysis of Large Graphs: State-of-the-Art and Future Research Challenges"
+link = "https://hal.inria.fr/hal-00712779/document"
 
 [day24]
 date = "11/16"
