@@ -24,7 +24,7 @@ googleAnalytics = ""
 
 	# Custom assets
 	custom_css = []
-	custom_js  = []
+	custom_js  = ["https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"]
 
 	# Syntax highlighting theme
 	highlight_css  = ""

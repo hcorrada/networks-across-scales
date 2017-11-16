@@ -302,6 +302,13 @@ date = "11/28"
 [[day25.covers]]
 title = "Unit Closing: State-of-the-art Paper Presentations"
 
+[day25a]
+date = "11/29"
+
+[[day25a.workdue]]
+title = "Homework 4: Network Structure Inference"
+link = "homeworks/net_structure/"
+
 [day26]
 date = "11/30"
 

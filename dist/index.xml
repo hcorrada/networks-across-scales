@@ -7,10 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
-    <lastBuildDate>Tue, 24 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.hcbravo.org/networks-across-scales/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Homework: Network Structure Inference</title>
+      <link>http://www.hcbravo.org/networks-across-scales/homeworks/net_structure/</link>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.hcbravo.org/networks-across-scales/homeworks/net_structure/</guid>
+      <description>DUE: Wednesday 11/29/2017
+Posted: 11/16/2017
+Last Update: 11/16/2017
+Data Download timeseries data derived from the ADHD-200 resting fMRI samples (http://fcon_1000.projects.nitrc.org/indi/adhd200/).
+http://www.hcbravo.org/networks-across-scales/ data/roi_timeseries.csv.
+The data consists of standardized measurements over 176 time points of 39 regions of interest (ROI). The rows of the data correspond to the 39 regions, the first column contains a label indicating the name of the brain ROI, with the remaining columns corresponding to the fMRI timeseries.</description>
+    </item>
     
     <item>
       <title>Homework: Statistical Analysis of Network Data</title>
