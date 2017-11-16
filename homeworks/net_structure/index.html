@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>CMSC423 Projects - CMSC828O: Networks Across Scales (Fall 2017)</title>
+    <title>Homework: Network Structure Inference - CMSC828O: Networks Across Scales (Fall 2017)</title>
     <meta name="generator" content="Hugo 0.24" />
 
     
     <meta name="description" content="Analysis tools for biological networks across scales (COMBINE NRT course), Department of Computer Science, University of Maryland">
     
-    <link rel="canonical" href="http://www.hcbravo.org/networks-across-scales/projects/">
+    <link rel="canonical" href="http://www.hcbravo.org/networks-across-scales/homeworks/net_structure/">
     
     <meta name="author" content="Héctor Corrada Bravo">
     
 
-    <meta property="og:url" content="http://www.hcbravo.org/networks-across-scales/projects/">
+    <meta property="og:url" content="http://www.hcbravo.org/networks-across-scales/homeworks/net_structure/">
     <meta property="og:title" content="CMSC828O: Networks Across Scales (Fall 2017)">
     <meta property="og:image" content="http://www.hcbravo.org/networks-across-scales/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="CMSC828O: Networks Across Scales (Fall 2017)">
@@ -97,7 +97,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        CMSC423 Projects
+        Homework: Network Structure Inference
       </div>
     </div>
 
@@ -208,14 +208,11 @@
 
 
 
-<a class="current" title="Projects" href="http://www.hcbravo.org/networks-across-scales/projects/">
+<a  title="Projects" href="http://www.hcbravo.org/networks-across-scales/projects/">
 	
 	Projects
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
   
@@ -256,9 +253,90 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>CMSC423 Projects </h1>
+			<h1>Homework: Network Structure Inference </h1>
 
-			<p>COMING SOON</p>
+			
+
+<p><strong>DUE</strong>: Wednesday 11/29/2017<br />
+<strong>Posted</strong>: 11/16/2017<br />
+<strong>Last Update</strong>: 11/16/2017</p>
+
+<h2 id="data">Data</h2>
+
+<p>Download timeseries data derived from the ADHD-200 resting fMRI samples (<a href="http://fcon_1000.projects.nitrc.org/indi/adhd200/">http://fcon_1000.projects.nitrc.org/indi/adhd200/</a>).</p>
+
+<p><a href="http://www.hcbravo.org/networks-across-scales/
+/data/roi_timeseries.csv">http://www.hcbravo.org/networks-across-scales/
+data/roi_timeseries.csv</a>.</p>
+
+<p>The data consists of standardized measurements over 176 time points of 39 regions of interest (ROI). The rows of the data correspond to the 39 regions, the first column contains a label indicating the name of the brain ROI, with the remaining columns corresponding to the fMRI timeseries.</p>
+
+<p><img src="ts.png" alt="" /></p>
+
+<h2 id="correlation-network">Correlation Network</h2>
+
+<p>Build a correlation network from the timeseries data as follows:</p>
+
+<ul>
+<li>Compute correlation (Pearson) $\hat{\rho_{ij}}$ for every pair of ROIs</li>
+<li>Use Fisher&rsquo;s transform to compute a $z$-value from the estimated correlation</li>
+</ul>
+
+<p>$$
+z<em>{ij} = \frac{1}{2} \log{\frac{(1+\hat{\rho}</em>{ij})}{(1-\hat{\rho_{ij}})}}
+$$</p>
+
+<ul>
+<li><p>Compute a $p$-value for the hypothesis test of no correlation between each pair of regions using a normal distribution with mean 0 and variance $1/(n-3)$ with $n$ the number of timepoints (see SAND CH. 7).</p></li>
+
+<li><p>Use a multiple testing correction procedure to derive a final list of network edges.</p></li>
+</ul>
+
+<h2 id="partial-correlation-network">Partial Correlation Network</h2>
+
+<p>Next, build a partial correlation network from the timeseries data. Use partial correlations between ROIs $i$ and $j$ as follows:</p>
+
+<ul>
+<li><p>For every ROI $k \neq i$ and $k \neq j$, compute partial correlation $\hat{\rho_{ij|k}}$ as the correlation between vectors $r_i$ and $r_j$, where $r_i$ are the residuals of linear model $x_i = b_0 + b_1 x_k$ where $x_i$ and $x_k$ are the timeseries for ROIs $i$ and $k$ respectively.</p></li>
+
+<li><p>Compute a $p$-value $p_{ij|k}$ for the hypothesis test of no correlation between $i$ and $j$ (now conditioned on $k$) using Fisher&rsquo;s transformation and a normal distribution with mean $0$ and variance $1/(n-1-3)$.</p></li>
+
+<li><p>Combine the $p$-values for $i$ and $j$ using the Wille rule</p></li>
+</ul>
+
+<p>$$
+p<em>{ij} = \max { p</em>{ij|k} }
+$$</p>
+
+<ul>
+<li>Use a multiple testing correction procedure as above to derive the final list of network edges</li>
+</ul>
+
+<h2 id="graphical-lasso">Graphical Lasso</h2>
+
+<p>Implement (or use a library) the graphical lasso procedure to estimate a sparse inverse covariance matrix with entries $\omega_{ij}$.</p>
+
+<ul>
+<li><p>Recall that the sparse inverse covariance estimate depends on a penalty parameter $\lambda$. Build at least two networks with $lambda$ values that return a very sparse and a very dense network. Additionally, choose a model selection criterion (see SAND Ch.7 pg. 128 for initial ideas), and use the network derived with the optimal $\lambda$ as defined by your chosen criterion.</p></li>
+
+<li><p>Note, you can derive partial correlation coefficients for $i$ and $j$ from the inverse covariance matrix as</p></li>
+</ul>
+
+<p>$$
+\hat{\rho<em>{ij|V{ij}}} = \frac{-\omega</em>{ij}}{\sqrt{\omega<em>{ii}\omega</em>{jj}}}
+$$</p>
+
+<h2 id="discussion">Discussion</h2>
+
+<ol>
+<li><p>Compare the networks derived from these procedures using relevant network structure statistics, e.g., vertex degree distribution. Support with appropriate figures.</p></li>
+
+<li><p>Provide a qualitative comparison of the derived networks. E.g., are there brain ROIs that are consistently linked in all networks?</p></li>
+</ol>
+
+<h2 id="submission">Submission</h2>
+
+<p>Submit a writeup describing your methods (e.g., multiple testing correction procedure used, etc.) and discussion. Include code as an appendix, or within the writeup if using jupyter notebook, Rmarkdown or similar.</p>
 
 
 			<aside class="copyright" role="note">
@@ -277,34 +355,18 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="http://www.hcbravo.org/networks-across-scales/calendar/" title="CMSC828O Calendar">
-        <span class="direction">
-          Previous
-        </span>
-        <div class="page">
-          <div class="button button-previous" role="button" aria-label="Previous">
-            <i class="icon icon-back"></i>
-          </div>
-          <div class="stretch">
-            <div class="title">
-              CMSC828O Calendar
-            </div>
-          </div>
-        </div>
-      </a>
-  
   </div>
 
   <div class="next">
   
-      <a href="http://www.hcbravo.org/networks-across-scales/resources/" title="CMSC Resources">
+      <a href="http://www.hcbravo.org/networks-across-scales/homeworks/stat_models/" title="Homework: Statistical Analysis of Network Data">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              CMSC Resources
+              Homework: Statistical Analysis of Network Data
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
