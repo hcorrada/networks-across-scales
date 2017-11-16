@@ -66,6 +66,8 @@
     </style>
 
     
+    <link rel="stylesheet" href="http://www.hcbravo.org/networks-across-scales/mathjax.css">
+    
     <script src="http://www.hcbravo.org/networks-across-scales/javascripts/modernizr.js"></script>
 
     
@@ -527,8 +529,6 @@ Again, using a <code>jupyter</code> notebook is encouraged.</p>
 
     <script src="http://www.hcbravo.org/networks-across-scales/javascripts/application.js"></script>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
 
     <script>
       /* Add headers to scrollspy */
@@ -573,7 +573,31 @@ Again, using a <code>jupyter</code> notebook is encouraged.</p>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+              inlineMath: [['$', '$'], ['\\(', '\\)']],
+              displayMath: [['$$', '$$'], ['\[', '\]']],
+              processEscapes: true,
+              processEnvironments: true,
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+              TeX: { equationNumbers: { autoNumber: "AMS" },
+                     extensions: ["AMSmath.js", "AMSsymbols.js"] }
+          }
+      });
+  </script>
+
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Queue(function() {
+       var all = MathJax.Hub.getAllJax();
+       //for (i = 0; i &lt; all.length; i++) {
+      //     all[i].SourceElement().parentNode.className += ' has-jax';
+      // }
+   })
+  </script>
+
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </body>
+
 </html>
 
