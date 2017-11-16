@@ -266,8 +266,14 @@ title = "Network Visualization I"
 [[day22.prep]]
 title = "SAND ch. 3"
 
-[day23]
+[day22a]
 date = "11/14"
+
+[[day22a.covers]]
+title = "No lecture"
+
+[day23]
+date = "11/16"
 
 [[day23.covers]]
 title = "Network Visualization II"
@@ -281,7 +287,7 @@ title = "Visual Analysis of Large Graphs: State-of-the-Art and Future Research C
 link = "https://hal.inria.fr/hal-00712779/document"
 
 [day24]
-date = "11/16"
+date = "11/21"
 
 [[day24.covers]]
 title = "Dynamic visualization of networks"
@@ -291,13 +297,13 @@ title = "Dynamic visualization of networks"
 #link = "projects/project_3"
 
 [day25]
-date = "11/21"
+date = "11/28"
 
 [[day25.covers]]
 title = "Unit Closing: State-of-the-art Paper Presentations"
 
 [day26]
-date = "11/28"
+date = "11/30"
 
 [[day26.covers]]
 title = "Data Project Updates 2-1"
@@ -316,7 +322,7 @@ title = "Data Project Updates 2-1"
 #link = "https://myelms.umd.edu/courses/1218381/modules/items/8829719"
 
 [day27]
-date = "11/30"
+date = "12/5"
 
 [[day27.covers]]
 title = "Data Project Updates 2-2"
@@ -333,23 +339,12 @@ title = "Data Project Updates 2-2"
 #title = "Rosalind prep. Ex. 28"
 #link = "http://rosalind.info/classes/400/"
 
-[day28]
-date = "12/5"
+#[day28]
+#date = "12/5"
 
-[[day28.covers]]
-title = "Advanced Topics (Student Choice)"
+#[[day28.covers]]
+#title = "Advanced Topics (Student Choice)"
 #notes = "lectures/CMSC423_BWT.pdf"
-
-[[day28.prep]]
-#title = "Compeau & Pevzner, Ch. 9 136-147"
-
-[[day28.prep]]
-#title = "Compeau & Pevzner, playlist 9, videos 4-6"
-#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz"
-
-[[day28.prep]]
-#title = "Rosalind prep. Ex 29"
-#link = "http://rosalind.info/classes/400/"
 
 [day29]
 date = "12/7"
