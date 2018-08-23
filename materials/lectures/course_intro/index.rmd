@@ -72,7 +72,7 @@ class: middle, center
 
 ## A Molecular Pathway
 
-```{r pathway_setup, echo=FALSE}
+```{r pathway_setup, echo=FALSE, message=FALSE}
 library(graphite)
 library(stringr)
 library(magrittr)
@@ -210,3 +210,21 @@ Semester-long projects
 - Milestone presentations (and submissions)
 - Submit final report
 
+---
+class: split-50
+
+## COMBINE Training Program
+
+.column[
+.center[.image-50[![](img/COMBINElogoSquare_WhiteBG.png)]]
+http://combine.umd.edu
+]
+
+.column[
+- NSF funded training grant in biological networks 
+- Two courses: this one, course in research and science communication (Girvan/Serrano)
+- Fellows from many research areas
+- Training programs are **FANTASTIC**
+  - Cohort
+  - Focus
+]
