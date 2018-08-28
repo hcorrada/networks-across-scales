@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>CMSC828O: Networks Across Scales (Fall 2018)</title>
-    <meta name="generator" content="Hugo 0.47.1" />
+    <title>Homework: Statistical Analysis of Network Data - CMSC828O: Networks Across Scales (Fall 2018)</title>
+    <meta name="generator" content="Hugo 0.24" />
 
     
     <meta name="description" content="Analysis tools for biological networks across scales (COMBINE NRT course), Department of Computer Science, University of Maryland">
     
-    <link rel="canonical" href="http://www.hcbravo.org/networks-across-scales/">
+    <link rel="canonical" href="http://www.hcbravo.org/networks-across-scales/homeworks/stat_models/">
     
     <meta name="author" content="Héctor Corrada Bravo">
     
 
-    <meta property="og:url" content="http://www.hcbravo.org/networks-across-scales/">
+    <meta property="og:url" content="http://www.hcbravo.org/networks-across-scales/homeworks/stat_models/">
     <meta property="og:title" content="CMSC828O: Networks Across Scales (Fall 2018)">
     <meta property="og:image" content="http://www.hcbravo.org/networks-across-scales/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="CMSC828O: Networks Across Scales (Fall 2018)">
@@ -71,9 +71,6 @@
     <script src="http://www.hcbravo.org/networks-across-scales/javascripts/modernizr.js"></script>
 
     
-    <link href="http://www.hcbravo.org/networks-across-scales/index.xml" rel="alternate" type="application/rss+xml" title="CMSC828O: Networks Across Scales (Fall 2018)" />
-    <link href="http://www.hcbravo.org/networks-across-scales/index.xml" rel="feed" type="application/rss+xml" title="CMSC828O: Networks Across Scales (Fall 2018)" />
-    
 
   </head>
   <body class="palette-primary-light-blue palette-accent-orange">
@@ -102,7 +99,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        CMSC828O: Networks Across Scales (Fall 2018)
+        Homework: Statistical Analysis of Network Data
       </div>
     </div>
 
@@ -263,38 +260,42 @@
 
 	<article class="article">
 		<div class="wrapper">
+			<h1>Homework: Statistical Analysis of Network Data </h1>
+
 			
-				<h1>CMSC828O: Computational and Mathematical Analysis of Biological Networks across Scales </h1>
 
-				
+<p><strong>DUE</strong>: Wednesday 11/1/2017, 11:59pm<br />
+<strong>Posted</strong>: 10/24/2017<br />
+<strong>Last Update</strong>: 10/24/2017</p>
 
-<h2 id="course-information">Course Information</h2>
+<p>We will use ecological network data from the paper &ldquo;How Structured is the Entangled Bank?&hellip;&rdquo; by Kefi et al. <a href="http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002527">http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002527</a>. This paper used Stochastic Block Models to analyze both trophic and non-trophic species interaction networks. Your goal in this homework is to (a) partially replicate some of the analyses in the paper, and reanalyze this data using other statistical methods for analysis.</p>
 
-<p><strong>CMSC828O: Computational and Mathematical Analysis of Biological Networks Across Scales</strong><br />
-<strong>Spring 2018</strong></p>
+<h2 id="data">Data</h2>
+
+<p>Data for the trophic and non-trophic networks along with species metadata is available for download <a href="http://datadryad.org/resource/doi:10.5061/dryad.b4vg0">http://datadryad.org/resource/doi:10.5061/dryad.b4vg0</a>. Download the adjacency matrix for the trophic network and species metadata.</p>
+
+<h2 id="stochastic-block-models">Stochastic Block Models</h2>
+
+<p>Fit a stochastic block model to the trophic network. You can use the <code>mixer</code> R package as described in SAND Ch. 6. for this task. Alternatively, you can use any appropriate implementation of the EM algorithm and a suitable model selection criterion (AIC, BIC, or ICL) to perform this task.</p>
+
+<p>Report on the resulting structure of the class membership probability distributions of the species. Comment on how your result relates to the results reported in the paper. Is there any correlation between class membership and metadata reported for these species?</p>
+
+<h2 id="exponential-random-graph-models">Exponential Random Graph Models</h2>
+
+<p>Fit an ERGM to the trophic network. You should use the <code>ergm</code> R package as described in SAND Ch. 6 for this task. Fit a model that includes both network metrics and metadata covariates.</p>
 
 <ul>
-<li><p>Instructor:<br />
-<a href="http://www.cbcb.umd.edu/~hcorrada">H&eacute;ctor Corrada Bravo</a><br />
-Center for Bioinformatics and Computational Biology<br />
-Department of Computer Science<br />
-<a href="mailto:hcorrada@umiacs.umd.edu">hcorrada@umiacs.umd.edu</a><br />
-Office: <a href="https://www.cbcb.umd.edu/about-us/directions">3114F Biomolecular Sciences Building</a></p></li>
+<li><p>Do any of the metadata have a significant effect in the log odds of edge presence in this network?</p></li>
 
-<li><p>Lecture Meeting Times<br />
-Tuesday and Thursday, 9:30am-10:45am, CSI 3118</p></li>
+<li><p>How does this result depend on your choice of network metric included in the model. To answer this question fit a model with a different set of network metrics as covariate and compare to the previous result.</p></li>
 </ul>
 
-<h2 id="links">Links</h2>
+<p>For both of these make sure to include an analysis of goodness of fit as part of your discussion.</p>
 
-<p>Check the <a href="calendar/">calendar page</a> for up-to-date course calendar.<br />
-Check the <a href="logistics/">logistics page</a> for more information, including the official syllabus.<br />
-Grades and assignments posted in <a href="https://umd.instructure.com/courses/1247019
-">ELMS</a>.<br />
-Discussion and questions in <a href="https://piazza.com/class/jldiw9ttj5223l
-">Piazza</a>.</p>
+<h2 id="submission">Submission</h2>
 
-			
+<p>Submit a pdf including code and answers to questions above to ELMS.</p>
+
 
 			<aside class="copyright" role="note">
 				

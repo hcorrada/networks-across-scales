@@ -1,7 +1,7 @@
 baseurl = "http://www.hcbravo.org/networks-across-scales/"
 languageCode = "en-us"
 title = "CMSC828O: Networks Across Scales (Fall 2018)"
-theme = ["hcb-course", "hugo-material-docs"]
+theme = "hugo-material-docs"
 metadataformat = "yaml"
 canonifyurls = true
 # Enable Google Analytics by entering your tracking id

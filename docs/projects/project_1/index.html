@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>CMSC828O: Networks Across Scales (Fall 2018)</title>
-    <meta name="generator" content="Hugo 0.47.1" />
+    <title>Project 1: Finding origin of DNA replication in a bacterial genome - CMSC828O: Networks Across Scales (Fall 2018)</title>
+    <meta name="generator" content="Hugo 0.24" />
 
     
     <meta name="description" content="Analysis tools for biological networks across scales (COMBINE NRT course), Department of Computer Science, University of Maryland">
     
-    <link rel="canonical" href="http://www.hcbravo.org/networks-across-scales/">
+    <link rel="canonical" href="http://www.hcbravo.org/networks-across-scales/projects/project_1/">
     
     <meta name="author" content="Héctor Corrada Bravo">
     
 
-    <meta property="og:url" content="http://www.hcbravo.org/networks-across-scales/">
+    <meta property="og:url" content="http://www.hcbravo.org/networks-across-scales/projects/project_1/">
     <meta property="og:title" content="CMSC828O: Networks Across Scales (Fall 2018)">
     <meta property="og:image" content="http://www.hcbravo.org/networks-across-scales/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="CMSC828O: Networks Across Scales (Fall 2018)">
@@ -71,9 +71,6 @@
     <script src="http://www.hcbravo.org/networks-across-scales/javascripts/modernizr.js"></script>
 
     
-    <link href="http://www.hcbravo.org/networks-across-scales/index.xml" rel="alternate" type="application/rss+xml" title="CMSC828O: Networks Across Scales (Fall 2018)" />
-    <link href="http://www.hcbravo.org/networks-across-scales/index.xml" rel="feed" type="application/rss+xml" title="CMSC828O: Networks Across Scales (Fall 2018)" />
-    
 
   </head>
   <body class="palette-primary-light-blue palette-accent-orange">
@@ -102,7 +99,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        CMSC828O: Networks Across Scales (Fall 2018)
+        Project 1: Finding origin of DNA replication in a bacterial genome
       </div>
     </div>
 
@@ -263,38 +260,115 @@
 
 	<article class="article">
 		<div class="wrapper">
+			<h1>Project 1: Finding origin of DNA replication in a bacterial genome </h1>
+
 			
-				<h1>CMSC828O: Computational and Mathematical Analysis of Biological Networks across Scales </h1>
 
-				
+<p><strong>Due: Monday Feb. 20, 2017</strong><br />
+<strong>Posted: Feb 9, 2017</strong><br />
+<strong>Last Update: Feb 9, 2017</strong></p>
 
-<h2 id="course-information">Course Information</h2>
+<h1 id="part-1-programming-exercises">Part 1: Programming Exercises</h1>
 
-<p><strong>CMSC828O: Computational and Mathematical Analysis of Biological Networks Across Scales</strong><br />
-<strong>Spring 2018</strong></p>
+<p>Submit your answers to Problems 1-3 in the
+<a href="http://rosalind.info/classes/401/">Rosalind final submission page</a>.</p>
+
+<p><strong>NOTE: THESE PROGRAMS NEED TO BE SUBMITTED TO ROSALIND BY Monday 02/20 at 11:59PM</strong></p>
+
+<p><strong>Question 1. (10pts)</strong> For each of the 3 solutions submitted provide a
+runtime analysis of your solution.
+For full credit, include a short description of your algorithm and
+show how you derive your answer.</p>
+
+<p><strong>Code Grading (45 pts)</strong></p>
+
+<p>Each of the 3 Rosalind exercises will be evaluated based on correctness, efficiency and style.</p>
+
+<ol>
+<li><p>Correctness: if you pass the Rosalind correctness check, you get full credit. Otherwise, your grade is determined by</p>
 
 <ul>
-<li><p>Instructor:<br />
-<a href="http://www.cbcb.umd.edu/~hcorrada">H&eacute;ctor Corrada Bravo</a><br />
-Center for Bioinformatics and Computational Biology<br />
-Department of Computer Science<br />
-<a href="mailto:hcorrada@umiacs.umd.edu">hcorrada@umiacs.umd.edu</a><br />
-Office: <a href="https://www.cbcb.umd.edu/about-us/directions">3114F Biomolecular Sciences Building</a></p></li>
+<li>Program running without error when called as <code>python &lt;script.py&gt; &lt;input_file&gt;</code> where <code>&lt;input_file&gt;</code> is in the format used for that problem in Rosalind.</li>
+<li>Program reading input in the required format.<br /></li>
+<li>Program printing output in correct format as described in Rosalind.<br /></li>
+<li>Program implementing an algorithm that addresses the problem (i.e., you get more points if the algorithm is correct but you have a bug, e.g., with indexing)<br /></li>
+</ul></li>
 
-<li><p>Lecture Meeting Times<br />
-Tuesday and Thursday, 9:30am-10:45am, CSI 3118</p></li>
-</ul>
+<li><p>Efficiency: points are awarded for providing efficient solutions. For example, a linear algorithm will score better than a quadratic algorithm. For full credit, implement the efficient algorithms described in textbook and discussed in class.</p></li>
 
-<h2 id="links">Links</h2>
+<li><p>Is the code in your submission clean and easy to read, with non-obvious statements
+properly commented? Are functions used appropriately for clarity and organization?</p></li>
+</ol>
 
-<p>Check the <a href="calendar/">calendar page</a> for up-to-date course calendar.<br />
-Check the <a href="logistics/">logistics page</a> for more information, including the official syllabus.<br />
-Grades and assignments posted in <a href="https://umd.instructure.com/courses/1247019
-">ELMS</a>.<br />
-Discussion and questions in <a href="https://piazza.com/class/jldiw9ttj5223l
-">Piazza</a>.</p>
+<h1 id="part-2-skew-diagrams">Part 2: Skew Diagrams</h1>
 
-			
+<p><em>Campylobacter jejuni</em> is a well-known bacterial pathogen, recently
+ found
+ <a href="http://genomebiology.com/2014/15/6/R76">to be associated with childhood dysentery</a>
+ in developing countries. Here, you will apply your new skills in a
+ preliminary analysis of the genome of this pathogen.</p>
+
+<p><strong>Step 1. (5 pts)</strong> Use the <code>BioPython</code> library to download the <em>Campylobacter
+  jejuni</em> genome from NCBI:</p>
+
+<pre><code>from Bio import Entrez, SeqIO
+Entrez.email = &quot;me@example.com&quot;
+campy_id = &quot;AL111168.1&quot;
+
+# open an url handle for query
+handle = Entrez.efetch(db=&quot;nucleotide&quot;, id=campy_id, rettype=&quot;gb&quot;, retmode=&quot;text&quot;)
+
+# read query result records
+record = SeqIO.read(handle, &quot;genbank&quot;)
+handle.close()
+
+# write sequence to fasta file (so you don't have to request again)
+SeqIO.write(record, &quot;campy.fa&quot;, &quot;fasta&quot;)
+</code></pre>
+
+<p>Variable <code>record</code> is a <code>SeqIO</code> object containing the <em>Campylobacter
+jejuni</em> genome. Check
+<a href="http://biopython.org/DIST/docs/tutorial/Tutorial.html">Chapter 2 of the Biopython tutorial</a>
+again to see how these objects work.
+Also see Chapter 9 of the tutorial for more info on how to obtain DNA
+sequences from NCBI.</p>
+
+<p><strong>Step 2. (15 pts)</strong> Write a script to plot the skew diagram for
+  <em>Campylobacter jejuni</em>. One easy way of plotting is using pylab and IPython. If you start IPython as follows:</p>
+
+<pre><code>ipython
+</code></pre>
+
+<p>and <code>skew</code> is the skew vector you computed for <em>Campylobacter jejuni</em>
+you can plot with</p>
+
+<pre><code>%pylab
+plot(skew)
+</code></pre>
+
+<p><strong>Question 2 (10 pts)</strong> Does this skew diagram look like the ones you&rsquo;ve seen
+so far in book and discussion? What do you think may account for any
+differences? Where do you think replication origin for
+  <em>Campylobacter jejuni</em> is located?</p>
+
+<p>Save your skew diagram <code>pdf</code> or other image file and include in your submission (see below).</p>
+
+<h1 id="part-3-dnaa-boxes">Part 3: DnaA boxes</h1>
+
+<p>Use your code to find most frequent words with mismatches (at most d=2 mismatches) and reverse complements to find candidate DnaA binding sequences in the oriC candidate region you found above (250bp on each side of position minimizing skew).</p>
+
+<p><strong>Question 3 (10 pts)</strong> Construct a table that shows for each k=3,4,5,6,7,8,9:<br />
+(a) the number of distinct frequent words, and<br />
+(b) the number of times each frequent word occurs in the genomic region.</p>
+
+<p><strong>Question 4 (5 pts)</strong> Based on your result, did you find a reasonable candidate DnaA sequence you would provide to a biologist to test. If so, write down the candidate sequence and explain why you chose this particular candidate sequence. If not, explain why not.</p>
+
+<h1 id="how-to-submit">How to submit</h1>
+
+<p>Prepare a writeup answering the four questions above and save as <code>pdf</code>. Submit any additional code (besides your solutions to the Rosalind exercises) used for this part of the homework. I highly recommend working with a <code>Jupyter</code> notebook, exporting the notebook as <code>pdf</code> and submitting that.</p>
+
+<p>Submit to ELMS by Monday 02/20 11:59pm here: <a href="https://myelms.umd.edu/courses/1218381/assignments/4362579">https://myelms.umd.edu/courses/1218381/assignments/4362579</a></p>
+
 
 			<aside class="copyright" role="note">
 				

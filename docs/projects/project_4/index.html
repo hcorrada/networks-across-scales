@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>CMSC828O: Networks Across Scales (Fall 2018)</title>
-    <meta name="generator" content="Hugo 0.47.1" />
+    <title>Project 4: SNP finding - CMSC828O: Networks Across Scales (Fall 2018)</title>
+    <meta name="generator" content="Hugo 0.24" />
 
     
     <meta name="description" content="Analysis tools for biological networks across scales (COMBINE NRT course), Department of Computer Science, University of Maryland">
     
-    <link rel="canonical" href="http://www.hcbravo.org/networks-across-scales/">
+    <link rel="canonical" href="http://www.hcbravo.org/networks-across-scales/projects/project_4/">
     
     <meta name="author" content="Héctor Corrada Bravo">
     
 
-    <meta property="og:url" content="http://www.hcbravo.org/networks-across-scales/">
+    <meta property="og:url" content="http://www.hcbravo.org/networks-across-scales/projects/project_4/">
     <meta property="og:title" content="CMSC828O: Networks Across Scales (Fall 2018)">
     <meta property="og:image" content="http://www.hcbravo.org/networks-across-scales/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="CMSC828O: Networks Across Scales (Fall 2018)">
@@ -71,9 +71,6 @@
     <script src="http://www.hcbravo.org/networks-across-scales/javascripts/modernizr.js"></script>
 
     
-    <link href="http://www.hcbravo.org/networks-across-scales/index.xml" rel="alternate" type="application/rss+xml" title="CMSC828O: Networks Across Scales (Fall 2018)" />
-    <link href="http://www.hcbravo.org/networks-across-scales/index.xml" rel="feed" type="application/rss+xml" title="CMSC828O: Networks Across Scales (Fall 2018)" />
-    
 
   </head>
   <body class="palette-primary-light-blue palette-accent-orange">
@@ -102,7 +99,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        CMSC828O: Networks Across Scales (Fall 2018)
+        Project 4: SNP finding
       </div>
     </div>
 
@@ -263,38 +260,102 @@
 
 	<article class="article">
 		<div class="wrapper">
-			
-				<h1>CMSC828O: Computational and Mathematical Analysis of Biological Networks across Scales </h1>
-
-				
-
-<h2 id="course-information">Course Information</h2>
-
-<p><strong>CMSC828O: Computational and Mathematical Analysis of Biological Networks Across Scales</strong><br />
-<strong>Spring 2018</strong></p>
-
-<ul>
-<li><p>Instructor:<br />
-<a href="http://www.cbcb.umd.edu/~hcorrada">H&eacute;ctor Corrada Bravo</a><br />
-Center for Bioinformatics and Computational Biology<br />
-Department of Computer Science<br />
-<a href="mailto:hcorrada@umiacs.umd.edu">hcorrada@umiacs.umd.edu</a><br />
-Office: <a href="https://www.cbcb.umd.edu/about-us/directions">3114F Biomolecular Sciences Building</a></p></li>
-
-<li><p>Lecture Meeting Times<br />
-Tuesday and Thursday, 9:30am-10:45am, CSI 3118</p></li>
-</ul>
-
-<h2 id="links">Links</h2>
-
-<p>Check the <a href="calendar/">calendar page</a> for up-to-date course calendar.<br />
-Check the <a href="logistics/">logistics page</a> for more information, including the official syllabus.<br />
-Grades and assignments posted in <a href="https://umd.instructure.com/courses/1247019
-">ELMS</a>.<br />
-Discussion and questions in <a href="https://piazza.com/class/jldiw9ttj5223l
-">Piazza</a>.</p>
+			<h1>Project 4: SNP finding </h1>
 
 			
+
+<p><strong>Due: Thursday May 11, 2017</strong><br />
+<strong>Posted: May 2, 2017</strong><br />
+<strong>Last Update: May 2, 2017</strong></p>
+
+<p>You will implement approximate string matching using a
+seed-and-check strategy based on exact matching using the
+Burrows-Wheeler transform. We are providing starter code
+to get you going. Instructions on implementation and code are here:</p>
+
+<p><a href="https://gitlab.umiacs.umd.edu/hcorrada/cmsc423_project4">https://gitlab.umiacs.umd.edu/hcorrada/cmsc423_project4</a></p>
+
+<p>I highly, highly recommend that you use <a href="https://git-scm.com/book/en/v1/Getting-Started"><code>git</code></a></p>
+
+<p>To get code you will be using for this project using git:</p>
+
+<pre><code class="language-bash">git clone https://gitlab.umiacs.umd.edu/hcorrada/cmsc423_project4.git
+</code></pre>
+
+<p>This will create a <code>project4</code> directory with all code and data required for this project.</p>
+
+<h2 id="programming-questions">Programming Questions</h2>
+
+<p>Check and submit your solution to Final Rosalind Problem 8
+<a href="http://rosalind.info/classes/401/">Rosalind final submission page</a>.</p>
+
+<p>Instructions on how to prepare your solution are given in
+<a href="https://gitlab.umiacs.umd.edu/hcorrada/cmsc423_project4">project code repository</a>.</p>
+
+<h2 id="snp-finding">SNP Finding</h2>
+
+<p>Use your code  to analyze sequences for the <a href="http://en.wikipedia.org/wiki/Influenza_neuraminidase">neuraminidase Influenza gene (NA)</a> of
+two H1N1 Human Influenza strains.</p>
+
+<p>There are two FASTA files in directory <code>data</code> of the project repository. The <code>reference.fa</code> file contains a reference sequence you will use as the target string for approximate exact matching. The <code>reads.fa</code> file contains 50 bp reads you will use as queries. Use your approximate matching BWT solution to align reads to reference allowing up to 3 mismatches.</p>
+
+<p><strong>Question 1</strong>. A specific mutation (H275Y) in the NA gene confers resistance to <a href="http://en.wikipedia.org/wiki/Neuraminidase_inhibitors">Oseltamivir</a>, making
+the drug <a href="http://www.ncbi.nlm.nih.gov/pubmed/22837199">less effective</a>. A note about nomenclature: the code H275Y
+encodes a substitution in position 275 (1-based indexing), changing aminoacid H (Histidine) to Y (Tyrosine).</p>
+
+<p>Do the reads correspond to a gene sequence with this mutation? How can you tell?</p>
+
+<h3 id="notes">Notes:</h3>
+
+<ol>
+<li>As we&rsquo;ve done so far use the <code>Biopython</code> to read and import <code>fasta</code> files.</li>
+<li>The <code>pileup.py</code> script in the project repository can help you answer this question.
+You can get a list of mismatches found in reads, and the number of times each kind of mismatch is observed in each position as follows:</li>
+</ol>
+
+<pre><code class="language-python">from pileup import PileUp
+from approximate_matcher import ApproximateMatcher
+
+# initialize object
+am = ApproximateMatcher(reference)
+pileup = PileUp(reference)
+d = 3
+
+for read in reads:
+	# find approximate matching positions for a given read
+	# assumes positions is a list (even if only a single match is found)
+	# with matching positions
+	positions = am.get_matches(read, d)
+	if len(positions) &gt; 0:
+		# add to pileup object
+		pileup.insert(positions, read)
+
+# next statement prints out mismatching positions
+# output is:
+# (&lt;position&gt;, &lt;reference_character&gt;, [(&lt;variant_character&gt;,
+# &lt;num_times_aligned&gt;)])
+# argument filters mismatch by frequency in which variant character
+# is observed, e.g., .01 means variant character has to be seen at least
+# once for every 100 aligned nucleotides
+pileup.print_mismatches(.01)
+</code></pre>
+
+<p>where positions are indices in the reference string where an approximate match for <code>read</code> was found.</p>
+
+<h2 id="how-to-submit">How to submit</h2>
+
+<p>On ELMS you will submit two things</p>
+
+<p>(1) A <code>diff</code> of your solution and the original code posted by us. Using git you can do this as follows
+once you have committed all your code changes in directory <code>approximate_matcher</code>. Note that you do not need to change code outside of this directory to solve the Rosalind problem:</p>
+
+<pre><code class="language-bash">git diff origin/master approximate_matcher &gt; project4_bwt_code.patch
+</code></pre>
+
+<p>Submit file <code>project4_bwt_code.patch</code> on ELMS</p>
+
+<p>(2) An IPython notebook exported as pdf or html containing your answer to Question 1 above along with code used to answer it. You have to use your approximate matching code from part I to match reads to the reference, otherwise, you are free to use Biopython as needed to answer this question. E.g., to do DNA-&gt;aminoacid translation.</p>
+
 
 			<aside class="copyright" role="note">
 				

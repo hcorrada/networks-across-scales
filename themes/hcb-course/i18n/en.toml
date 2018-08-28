@@ -1,3 +1,0 @@
-[wordCount]
-other = "{{ .WordCount }} words"
-
