@@ -146,6 +146,15 @@ conda install -c anaconda biopython=1.68  </description>
     </item>
     
     <item>
+      <title>CMSC828O Calendar</title>
+      <link>http://www.hcbravo.org/networks-across-scales/calendar/</link>
+      <pubDate>Tue, 30 Aug 2016 10:13:51 -0400</pubDate>
+      
+      <guid>http://www.hcbravo.org/networks-across-scales/calendar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>CMSC828O Projects</title>
       <link>http://www.hcbravo.org/networks-across-scales/projects/</link>
       <pubDate>Mon, 29 Aug 2016 08:54:44 -0400</pubDate>

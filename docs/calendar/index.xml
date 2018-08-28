@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CMSC828O Calendar on CMSC828O: Networks Across Scales (Fall 2018)</title>
+    <title>Calendars on CMSC828O: Networks Across Scales (Fall 2018)</title>
     <link>http://www.hcbravo.org/networks-across-scales/calendar/</link>
-    <description>Recent content in CMSC828O Calendar on CMSC828O: Networks Across Scales (Fall 2018)</description>
+    <description>Recent content in Calendars on CMSC828O: Networks Across Scales (Fall 2018)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
@@ -11,6 +11,15 @@
     
 	<atom:link href="http://www.hcbravo.org/networks-across-scales/calendar/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CMSC828O Calendar</title>
+      <link>http://www.hcbravo.org/networks-across-scales/calendar/</link>
+      <pubDate>Tue, 30 Aug 2016 10:13:51 -0400</pubDate>
+      
+      <guid>http://www.hcbravo.org/networks-across-scales/calendar/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
