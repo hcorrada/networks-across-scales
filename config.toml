@@ -38,8 +38,9 @@ googleAnalytics = ""
     	code = "Roboto Mono"
 
  [params.links]
-      elms   = ""
-      piazza = ""
+      elms   = "https://umd.instructure.com/courses/1247019"
+      piazza = "https://piazza.com/class/jldiw9ttj5223l"
+
 [social]
 	twitter = "hcorrada"
 	github  = "hcorrada"
