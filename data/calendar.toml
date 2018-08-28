@@ -3,7 +3,7 @@
 
 #### DAY 1
 [day01]
-date = "8/29"
+date = "8/28"
 
 [[day01.covers]]
 title = "Course Introduction"
@@ -17,7 +17,7 @@ notes = "lectures/CMSC828O_course-intro.pdf"
 
 #### DAY 2
 [day02]
-date = "8/31"
+date = "8/30"
 
 [[day02.covers]]
 title = "Network Preliminaries"
@@ -33,11 +33,11 @@ title = "Newman, Ch. 5 and 6"
 
 [[day02.workdue]]
 title = "Survey"
-link = "https://myelms.umd.edu/courses/1227944/quizzes/1212820"
+link = "https://umd.instructure.com/courses/1247019/quizzes/1248952"
 
 #### DAY 3
 [day03]
-date = "9/5"
+date = "9/4"
 
 [[day03.covers]]
 title = "Measures of Network Structure and Other Properties"
@@ -51,13 +51,13 @@ title = "Newman, Ch. 7"
 
 #### DAY 4
 [day04]
-date = "9/7"
+date = "9/6"
 
 [[day04.covers]]
 title = "Presentations: Networks in Molecular Biology"
 
 [day04a]
-date = "9/8"
+date = "9/7"
 
 [[day04a.workdue]]
 title = "Homework: Network Statistics"
@@ -65,7 +65,7 @@ link = "homeworks/network_stats/"
 
 #### DAY 5
 [day05]
-date = "9/12"
+date = "9/11"
 
 [[day05.covers]]
 title = "Data Project Lightning Talks"
@@ -76,7 +76,7 @@ title = "Data Project Lightning Talks"
 
 #### DAY 6
 [day06]
-date = "9/14"
+date = "9/13"
 
 [[day06.covers]]
 title = "Random Networks I"
@@ -87,7 +87,7 @@ title = "Barabasi, Ch. 3 and 4"
 
 #### DAY 7
 [day07]
-date = "9/19"
+date = "9/18"
 
 [[day07.covers]]
 title = "Random Networks II"
@@ -99,14 +99,14 @@ title = "Barabasi, Ch. 5 and 6"
 #### DAY 8
 
 [day08]
-date = "9/21"
+date = "9/20"
 
 [[day08.covers]]
 title = "Presentations: Cellular Networks"
 
 
 [day08a]
-date = "9/25"
+date = "9/24"
 
 [[day08a.workdue]]
 title = "Homework 2: Network Models"
@@ -115,7 +115,7 @@ link = "homeworks/network_models/"
 #### DAY 9
 
 [day09]
-date = "9/26"
+date = "9/25"
 
 [[day09.covers]]
 title = "Dynamical Networks I"
@@ -125,7 +125,7 @@ title = "Barabasi, Ch. 8"
 
 #### DAY 10
 [day10]
-date = "9/28"
+date = "9/27"
 
 [[day10.covers]]
 title = "Dynamical Networks II"
@@ -135,21 +135,22 @@ title = "Barabasi, Ch. 10"
 
 #### DAY 11
 [day11]
-date = "10/3"
+date = "10/2"
 
 [[day11.covers]]
 title = "Unit Closing: State-of-the-art Paper Presentations"
 
 #### DAY 12
 [day12]
-date = "10/5"
+date = "10/4"
 
 [[day12.covers]]
-title = "No Class"
+title = "Unit Closing: State-of-the-art Paper Presentations"
 
 #### DAY 13
+# OUT IN COLOMBIA
 [day13]
-date = "10/10"
+date = "10/9"
 
 [[day13.covers]]
 title = "Data Project Updates"
@@ -170,8 +171,9 @@ title = "Data Project Updates"
 #
 
 #### DAY 14
+# OUT IN COLOMBIA
 [day14]
-date = "10/12"
+date = "10/11"
 
 [[day14.covers]]
 title = "Statistical Inference with Networked Data I"
@@ -189,7 +191,7 @@ title = "SAND Ch. 6"
 
 #### DAY 15
 [day15]
-date = "10/17"
+date = "10/16"
 
 [[day15.covers]]
 title = "Statistical Inference with Networked Data II"
@@ -199,7 +201,7 @@ title = "SAND Ch. 6"
 
 #### DAY 16
 [day16]
-date = "10/19"
+date = "10/18"
 
 [[day16.covers]]
 title = "Presentations: Ecological Networks"
@@ -207,7 +209,7 @@ title = "Presentations: Ecological Networks"
 #### DAY 17
 
 [day17]
-date = "10/24"
+date = "10/23"
 
 [[day17.covers]]
 title = "Learning with Network Data I"
@@ -216,7 +218,7 @@ title = "Learning with Network Data I"
 title = "SAND ch. 8"
 
 [day18]
-date = "10/26"
+date = "10/25"
 
 [[day18.covers]]
 title = "Learning with Network Data II"
@@ -226,7 +228,7 @@ title = "SAND ch. 8"
 
 
 [day19]
-date = "10/31" 
+date = "10/30" 
 
 [[day19.covers]]
 title = "Learning Networks from Data"
@@ -235,30 +237,29 @@ title = "Learning Networks from Data"
 title = "SAND ch. 7"
 
 [day19a]
-date = "11/1"
+date = "10/31"
 
 [[day19a.workdue]]
 title = "Homework 3: Statistical Analysis of Network Data"
 link = "homeworks/stat_models/"
 
-# I am not here
 [day20]
-date = "11/2"
+date = "11/1"
 
 [[day20.covers]]
-title = "No Class"
+title = "Unit Closing: State-of-the-art Paper Presentations"
 
 [day21]
-date = "11/7"
+date = "11/6"
 
 [[day21.covers]]
 title = "Unit Closing: State-of-the-art Paper Presentations"
 
 #[[day21.prep]]
 #title = "Compeau & Pevzner, Ch. 5 223-253"
-
+# OUT FOR CSHL
 [day22]
-date = "11/9"
+date = "11/8"
 
 [[day22.covers]]
 title = "Network Visualization I"
@@ -267,16 +268,16 @@ title = "Network Visualization I"
 title = "SAND ch. 3"
 
 [day22a]
-date = "11/14"
+date = "11/13"
 
 [[day22a.covers]]
-title = "No lecture"
+title = "Network Visualization II"
 
 [day23]
-date = "11/16"
+date = "11/15"
 
 [[day23.covers]]
-title = "Network Visualization II"
+title = "Network Visualization III"
 
 [[day23.prep]]
 title = "Simple Algorithms for Network Visualization: A Tutorial"
@@ -287,7 +288,7 @@ title = "Visual Analysis of Large Graphs: State-of-the-Art and Future Research C
 link = "https://hal.inria.fr/hal-00712779/document"
 
 [day24]
-date = "11/21"
+date = "11/20"
 
 [[day24.covers]]
 title = "Dynamic visualization of networks"
@@ -297,20 +298,20 @@ title = "Dynamic visualization of networks"
 #link = "projects/project_3"
 
 [day25]
-date = "11/28"
+date = "11/27"
 
 [[day25.covers]]
 title = "Unit Closing: State-of-the-art Paper Presentations"
 
 [day25a]
-date = "11/29"
+date = "11/28"
 
 [[day25a.workdue]]
 title = "Homework 4: Network Structure Inference"
 link = "homeworks/net_structure/"
 
 [day26]
-date = "11/30"
+date = "11/29"
 
 [[day26.covers]]
 title = "Data Project Updates 2-1"
@@ -329,7 +330,7 @@ title = "Data Project Updates 2-1"
 #link = "https://myelms.umd.edu/courses/1218381/modules/items/8829719"
 
 [day27]
-date = "12/5"
+date = "12/4"
 
 [[day27.covers]]
 title = "Data Project Updates 2-2"
@@ -354,7 +355,7 @@ title = "Data Project Updates 2-2"
 #notes = "lectures/CMSC423_BWT.pdf"
 
 [day29]
-date = "12/7"
+date = "12/6"
 
 [[day29.covers]]
 title = "Closing and Perspectives"
