@@ -1,0 +1,3 @@
+[wordCount]
+other = "{{ .WordCount }} words"
+
