@@ -160,11 +160,16 @@ graph <- as_tbl_graph(highschool)
 graph %>%
   activate(edges) %>%
   filter(year == 1958) %>%
+  mutate(single_edge = !edge_is_mutual() & !edge_is_multiple()) %>%
+  filter(single_edge) %>% 
+  activate(nodes) %>%
+  mutate(connected = !node_is_isolated()) %>%
+  filter(connected) %>%
   ggraph(layout="kk") +
     geom_edge_fan() +
     geom_node_point(size=3) +
     theme_graph(foreground=NA) +
-    ggtitle("Directed graph")
+    ggtitle("Unirected graph")
 ```
 ]
 
@@ -189,7 +194,7 @@ graph %>%
     geom_edge_fan(arrow=arrow(length=unit(0.15,"inches"))) +
     geom_node_point(size=3) +
     theme_graph(foreground=NA) +
-    ggtitle("Undirected graph")
+    ggtitle("Directed graph")
 ```
 ]
 
@@ -284,10 +289,15 @@ _Distance_ $d_{ij}$: length of **shortest** path betwen vertices $i$ and $j$.
 graph %>%
   activate(edges) %>%
   filter(year == 1958) %>%
+  mutate(single_edge = !edge_is_mutual() & !edge_is_multiple()) %>%
+  filter(single_edge) %>% 
+  activate(nodes) %>%
+  mutate(connected = !node_is_isolated()) %>%
+  filter(connected) %>%
   ggraph(layout="kk") +
     geom_edge_fan() +
     geom_node_point(size=3) +
-    theme_graph(foreground=NA) 
+    theme_graph(foreground=NA)
 ```
 ]
 ---
@@ -306,10 +316,15 @@ _Diameter_: longest shortest path $\max_{ij} d_{ij}$
 graph %>%
   activate(edges) %>%
   filter(year == 1958) %>%
+  mutate(single_edge = !edge_is_mutual() & !edge_is_multiple()) %>%
+  filter(single_edge) %>% 
+  activate(nodes) %>%
+  mutate(connected = !node_is_isolated()) %>%
+  filter(connected) %>%
   ggraph(layout="kk") +
     geom_edge_fan() +
     geom_node_point(size=3) +
-    theme_graph(foreground=NA) 
+    theme_graph(foreground=NA)
 ```
 ]
 
@@ -329,6 +344,11 @@ On the board: average path length
 graph %>%
   activate(edges) %>%
   filter(year == 1958) %>%
+  mutate(single_edge = !edge_is_mutual() & !edge_is_multiple()) %>%
+  filter(single_edge) %>% 
+  activate(nodes) %>%
+  mutate(connected = !node_is_isolated()) %>%
+  filter(connected) %>%
   ggraph(layout="kk") +
     geom_edge_fan() +
     geom_node_point(size=3) +
