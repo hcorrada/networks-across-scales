@@ -239,6 +239,34 @@ Average degree: `r ave_degree`
 Density: `r density`
 
 ---
+layout: true
+
+## (On the board)
+
+---
+
+
+Number of edges using degrees (undirected)
+
+$$
+m = \frac{1}{2} \sum_{i=1}^n k_i
+$$
+
+Number of edges using degrees (directed)
+
+$$m = \sum_{i=1}^n k_i^{\textrm{in}} = \sum_{i=1}^n k_i^{\textrm{out}}$$
+
+---
+
+Average degree
+
+$$c = \frac{1}{n} \sum_{i=1}^n k_i$$
+
+Density
+
+$$\rho=\frac{m}{\binom{n}{2}} = \frac{2m}{n(n-1)} = \frac{c}{n-1} \approx \frac{c}{n}$$
+
+---
 layout: false
 class: split-50
 
@@ -263,6 +291,16 @@ degree_dist <- degree_count / num_vertices
 hist(degrees, nc=50, main="Degree Distribution",xlab="Degree")
 ```
 ]
+
+---
+
+## (On the board)
+
+Degree distribution
+
+$$p_k = \frac{n_k}{n}$$
+
+$n_k$: number of nodes in graph with degree $k$
 
 ---
 
@@ -358,6 +396,14 @@ graph %>%
 
 ---
 
+## (On the board)
+
+Average path length
+
+$$\overline{d}=\frac{1}{n(n-1)} \sum_{i,j;i\neq j} d_{ij}$$
+
+---
+
 ## Distance Distribution
 
 ```{r floyd_warshal, cache=TRUE, echo=FALSE, results="hide"}
@@ -435,6 +481,17 @@ One last quantity of interest: how dense is the neighborhood around vertex $i$?
 Do the genes that interact with me also interact with each other?
 
 Definition on the board
+
+---
+
+## (On the board)
+
+Clustering coefficient
+
+$$c_i = \frac{2m_i}{k_i(k_i-1)}$$
+
+$m_i$: number of edges between neighbors of vertex $i$
+
 
 ---
 
