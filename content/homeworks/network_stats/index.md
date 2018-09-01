@@ -4,9 +4,9 @@ date: "2017-09-02"
 ---
 
 
-**DUE**: Friday 9/8/2017, 11:59pm  
-**Posted**: 9/3/2017  
-**Last Update**: 9/3/2017
+**DUE**: Friday 9/7/2017, 11:59pm  
+**Posted**: 9/1/2017  
+**Last Update**: 9/1/2017
 
 ## Data 
 
