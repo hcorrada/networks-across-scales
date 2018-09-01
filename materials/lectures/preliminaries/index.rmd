@@ -50,17 +50,35 @@ class: split-50
 
 ## Genetic Interaction Network
 
+.column[
+- Yeast high-throuput double-knockdown assay
+- ~5000 genes
+- ~800k interactions
+
+http://www.geneticinteractions.org/
+]
+
 .column[.image-90[![](img/boonelab_network.png)]]
+.source[Costanzo et al. (2016) Science. DOI: 10.1126/science.aaf1420]  
+
+---
+class: split-50
+
+## Genetic Interaction Network
 
 .column[
 - Yeast high-throuput double-knockdown assay
 - ~5000 genes
 - ~800k interactions
+
+http://www.geneticinteractions.org/
 ]
 
-.source[Costanzo et al. (2016) Science. DOI: 10.1126/science.aaf1420]
+.column[.image-70[![](img/robot.jpg)]]
+.source[Costanzo et al. (2016) Science. DOI: 10.1126/science.aaf1420]  
 
-```{r libsetup, echo=FALSE}
+
+```{r libsetup, echo=FALSE, message=FALSE, warning=FALSE}
 library(readr)
 library(dplyr)
 library(tidyverse)
@@ -113,41 +131,216 @@ density <- ave_degree / (num_vertices - 1)
 ## Genetic Interaction Network
 
 - Number of vertices: `r num_vertices`  
-- Number of edges: `r num_edges`
+- Number of edges: `r format(num_edges, big.mark=",")`
+
+---
+layout: true
+
+## Preliminaries
+
+---
+class: split-40
+
+.column[
+**Network**: abstraction of _entities_ and their interactions  
+**Graph**: mathematical representation
+
+_vertices_: nodes  
+_edges_: links
+]
+
+.column[
+
+```{r toygraph, echo=FALSE, message=FALSE, fig.width=6}
+library(tidygraph)
+library(ggraph)
+
+graph <- as_tbl_graph(highschool)
+
+graph %>%
+  activate(edges) %>%
+  filter(year == 1958) %>%
+  ggraph(layout="kk") +
+    geom_edge_fan() +
+    geom_node_point(size=3) +
+    theme_graph(foreground=NA) +
+    ggtitle("Directed graph")
+```
+]
+
+---
+class: split-40
+
+.column[
+**Network**: abstraction of _entities_ and their interactions  
+**Graph**: mathematical representation
+
+_vertices_: nodes  
+_edges_: links
+]
+
+.column[
+
+```{r toygraph2, echo=FALSE, message=FALSE, fig.width=6}
+graph %>%
+  activate(edges) %>%
+  filter(year == 1958) %>%
+  ggraph(layout="kk") +
+    geom_edge_fan(arrow=arrow(length=unit(0.15,"inches"))) +
+    geom_node_point(size=3) +
+    theme_graph(foreground=NA) +
+    ggtitle("Undirected graph")
+```
+]
+
+---
+layout: true
+
+## Network statistics: notation
 
 ---
 
-## Genetic Interaction Network
+Number of vertices: $n$
 
+In our example: _number of genes_
+
+--
+
+Number of edges: $m$
+
+In our example: _number of genetic interactions_
+
+--
+
+Degree of vertex $i$: $k_i$
+
+_Number of genetic interactions for gene $i$_
+
+---
+
+On the board:
+
+- Calculate number of edges $m$ using degrees $k_i$
+  (for both directed and undirected networks)
+  
+- Calculate _average degree_ $c$
+- Calculate _density_ $\rho$
+
+--
+
+In our example:
+
+Average degree: `r ave_degree`  
+Density: `r density`
+
+---
+layout: false
+class: split-50
+
+## Degree distribution
+
+.column[
+Fundamental analytical tool to characterize networks
+
+$p_k$: probability randomly chosen vertex has degree $k$
+
+On the board: how to calculate $p_k$ and how to calculate average
+degree $c$ using degree distribution.
+]
+
+.column[
 ```{r stats, echo=FALSE, cache=TRUE}
 degree_count <- table(degrees)
 degree_dist <- degree_count / num_vertices
 ```
 
-```{r plot_deg, echo=FALSE}
+```{r plot_deg, echo=FALSE, fig.width=5}
 hist(degrees, nc=50, main="Degree Distribution",xlab="Degree")
 ```
-
-Average degree: `r ave_degree`
-Density: `r density`
+]
 
 ---
 
 ## Degree Distribution
 
-```{r plot_loglog, echo=FALSE}
+```{r plot_loglog, echo=FALSE, fig.align="center"}
 degs <- as.integer(names(degree_count))
 plot(log(degs), log(degree_dist), pch=19,
      main="log/log degree distribution",
      xlab=expression(log(k)), ylab=expression(log(p[k])))
 ```
 
+---
+class: split-40
+
+## Paths and Distances
+
+.column[
+_Distance_ $d_{ij}$: length of **shortest** path betwen vertices $i$ and $j$.
+]
+
+.column[
+```{r toy3, echo=FALSE, fig.width=6}
+graph %>%
+  activate(edges) %>%
+  filter(year == 1958) %>%
+  ggraph(layout="kk") +
+    geom_edge_fan() +
+    geom_node_point(size=3) +
+    theme_graph(foreground=NA) 
+```
+]
+---
+class: split-40
+
+## Paths and Distances
+
+.column[
+_Distance_ $d_{ij}$: length of **shortest** path betwen vertices $i$ and $j$.
+
+_Diameter_: longest shortest path $\max_{ij} d_{ij}$
+]
+
+.column[
+```{r toy4, echo=FALSE, fig.width=6}
+graph %>%
+  activate(edges) %>%
+  filter(year == 1958) %>%
+  ggraph(layout="kk") +
+    geom_edge_fan() +
+    geom_node_point(size=3) +
+    theme_graph(foreground=NA) 
+```
+]
+
+---
+class: split-40
+
+## Paths and Distances
+
+.column[
+_Distance_ $d_{ij}$: length of **shortest** path betwen vertices $i$ and $j$.
+
+On the board: average path length
+]
+
+.column[
+```{r toy5, echo=FALSE, fig.width=6}
+graph %>%
+  activate(edges) %>%
+  filter(year == 1958) %>%
+  ggraph(layout="kk") +
+    geom_edge_fan() +
+    geom_node_point(size=3) +
+    theme_graph(foreground=NA) 
+```
+]
 
 ---
 
 ## Distance Distribution
 
-```{r floyd_warshal, cache=TRUE, echo=FALSE}
+```{r floyd_warshal, cache=TRUE, echo=FALSE, results="hide"}
 fw_dists <- function(amat) {
   nvertices <- nrow(amat)
   dmat <- matrix(Inf, nvertices, nvertices)
@@ -155,27 +348,27 @@ fw_dists <- function(amat) {
   dmat[amat == 1] <- 1
   
   for (k in seq_len(nvertices)) {
-    cat(".")
+#    cat(".")
     dk <- outer(dmat[,k],dmat[k,],FUN="+")
     switch <- dmat > dk
     dmat[switch] <- dk[switch]
   }
-  cat("\n")
+#  cat("\n")
   dmat
 }
 
 dmat <- fw_dists(amat)
 ```
 
-```{r dmat_dist, echo=FALSE}
+```{r dmat_dist, echo=FALSE, eval=TRUE}
 dist_tab <- data_frame(dist=dmat[upper.tri(dmat, diag=FALSE)]) %>%
   group_by(dist) %>%
   summarize(freq=n()) %>%
   mutate(pdist=freq / sum(freq))
 ```
 
-```{r plot_dist, echo=FALSE}
-dist_tab%>%
+```{r plot_dist, echo=FALSE, eval=TRUE, fig.align="center"}
+dist_tab %>%
   ggplot(aes(dist, log(pdist))) +
     geom_point() +
     scale_x_continuous(breaks=seq(0,20,2))
@@ -183,9 +376,51 @@ dist_tab%>%
 
 ---
 
+# Distances and paths
+
+By convention: if there is no path between vertices $i$ and $j$ then $d_{ij}=\infty$
+
+--
+
+_Vertices_ $i$ and $j$ are _connected_ if $d_{ij} < \infty$
+
+--
+
+_Graph_ is connected if $d_{ij} < \infty$ for all $i$, $j$
+
+--
+
+_Components_ maximal subset of connected components
+
+---
+
+# Components
+
+```{r disconnected, echo=FALSE, fig.align="center"}
+graph %>%
+  activate(edges) %>%
+  filter(year == 1957) %>%
+  ggraph(layout="kk") +
+    geom_edge_fan() +
+    geom_node_point(size=3) +
+    theme_graph(foreground=NA) 
+```
+
+---
+
 # Clustering Coefficient
 
-```{r clust_coef, cache=TRUE, echo=FALSE}
+One last quantity of interest: how dense is the neighborhood around vertex $i$?
+
+Do the genes that interact with me also interact with each other?
+
+Definition on the board
+
+---
+
+# Clustering coefficient
+
+```{r clust_coef, cache=TRUE, echo=FALSE, fig.align=TRUE}
 cc <- vector("numeric", num_vertices)
 
 for (i in seq_len(num_vertices)) {
@@ -201,7 +436,7 @@ cc_dat <- data_frame(degree=degrees, cc=cc) %>%
   summarize(ck=mean(cc))
 ```
 
-```{r cc_plot, echo=FALSE}
+```{r cc_plot, echo=FALSE, fig.align="center"}
 cc_dat %>%
   filter(degree>1) %>%
   ggplot(aes(degree, ck)) +
@@ -214,13 +449,106 @@ cc_dat %>%
       labels = scales::trans_format("log10", scales::math_format(10^.x)))
 ```
 
+---
+class: split-50
 
-```{r cumdist}
+# Adjacency Matrix
+
+.column[
+```{r toy6, echo=FALSE, fig.width=6}
+graph %>%
+  activate(edges) %>%
+  filter(year == 1958) %>%
+  ggraph(layout="kk") +
+    geom_edge_fan() +
+#    geom_node_point(size=3) +
+    geom_node_label(aes(label=name)) +
+    theme_graph(foreground=NA) 
+```
+]
+
+.column[
+```{r adjplot, echo=FALSE, fig.align="center", fig.width=5}
+graph %>% 
+  activate(edges) %>% 
+  filter(year==1958) %>% 
+  as_data_frame() %>% 
+  ggplot(aes(x=from,y=to)) + 
+    geom_raster() +
+    theme(axis.text=element_blank(),
+          axis.title=element_blank(),
+          axis.ticks=element_blank())
+```
+]
+
+---
+class: split-50
+
+# Adjacency Matrix
+
+.column[
+On the board:
+  - Definition
+  - Computing degree with adj. matrix
+  - Computing num. edges $m$ with adj. matrix
+  - Computing paths with adj. matrix
+]
+
+.column[
+```{r adjplot3, echo=FALSE, fig.align="center", fig.width=5}
+graph %>% 
+  activate(edges) %>% 
+  filter(year==1958) %>% 
+  as_data_frame() %>% 
+  ggplot(aes(x=from,y=to)) + 
+    geom_raster() +
+    theme(axis.text=element_blank(),
+          axis.title=element_blank(),
+          axis.ticks=element_blank())
+```
+]
+
+---
+class: split-50
+exclude: true
+
+# Components
+
+.column[
+```{r toy7, echo=FALSE, fig.width=6}
+graph %>%
+  activate(edges) %>%
+  filter(year == 1957) %>%
+  ggraph(layout="kk") +
+    geom_edge_fan() +
+#    geom_node_point(size=3) +
+    geom_node_label(aes(label=name)) +
+    theme_graph(foreground=NA) 
+```
+]
+
+.column[
+```{r adjplot2, echo=FALSE, fig.align="center", fig.width=5}
+graph %>% 
+  activate(edges) %>% 
+  filter(year==1957) %>% 
+  as_data_frame() %>% 
+  ggplot(aes(x=from,y=to)) + 
+    geom_raster() +
+    theme(axis.text=element_blank(),
+          axis.title=element_blank(),
+          axis.ticks=element_blank())
+```
+]
+
+---
+
+```{r cumdist, eval=FALSE, echo=FALSE}
 cum_dist_distr <- sapply(seq_len(length(degree_dist))-1, function(i) sum(degree_dist[-(1:i)]))
 plot(log10(degs), log10(cum_dist_distr))
 ```
 
-```{r estimation}
+```{r estimation, eval=FALSE, echo=FALSE}
 kmin <- 10
 degs <- sort(degs[degs>0])
 mle <- function(kmin, degs) {
@@ -234,7 +562,7 @@ mles <- sapply(unique_degs, mle, degs=degs)
 plot(mles)
 ```
 
-```{r divergence}
+```{r divergence, eval=FALSE, echo=FALSE}
 which_mles_to_keep <- mles>2
 mles_kept <- mles[which_mles_to_keep]
 

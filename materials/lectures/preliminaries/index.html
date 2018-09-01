@@ -4,8 +4,9 @@
     <title>Network Preliminaries</title>
     <meta charset="utf-8">
     <meta name="author" content="Héctor Corrada Bravo" />
-    <meta name="date" content="2017-09-05" />
-    <link href="libs/remark-css-0.0.1/example.css" rel="stylesheet" />
+    <meta name="date" content="2018-08-30" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
   <body>
@@ -23,7 +24,7 @@ count: false
 
 .other-info[
 University of Maryland, College Park, USA  
-CMSC828O 2017-09-05
+CMSC828O 2018-08-30
 ]
 
 .logo[![](img/logo.png)]
@@ -48,15 +49,33 @@ class: split-50
 
 ## Genetic Interaction Network
 
+.column[
+- Yeast high-throuput double-knockdown assay
+- ~5000 genes
+- ~800k interactions
+
+http://www.geneticinteractions.org/
+]
+
 .column[.image-90[![](img/boonelab_network.png)]]
+.source[Costanzo et al. (2016) Science. DOI: 10.1126/science.aaf1420]  
+
+---
+class: split-50
+
+## Genetic Interaction Network
 
 .column[
 - Yeast high-throuput double-knockdown assay
 - ~5000 genes
 - ~800k interactions
+
+http://www.geneticinteractions.org/
 ]
 
-.source[Costanzo et al. (2016) Science. DOI: 10.1126/science.aaf1420]
+.column[.image-70[![](img/robot.jpg)]]
+.source[Costanzo et al. (2016) Science. DOI: 10.1126/science.aaf1420]  
+
 
 
 
@@ -69,53 +88,265 @@ class: split-50
 ## Genetic Interaction Network
 
 - Number of vertices: 2803  
-- Number of edges: 6.7268\times 10^{4}
+- Number of edges: 67,268
+
+---
+layout: true
+
+## Preliminaries
+
+---
+class: split-40
+
+.column[
+**Network**: abstraction of _entities_ and their interactions  
+**Graph**: mathematical representation
+
+_vertices_: nodes  
+_edges_: links
+]
+
+.column[
+
+&lt;img src="index_files/figure-html/toygraph-1.png" width="576" /&gt;
+]
+
+---
+class: split-40
+
+.column[
+**Network**: abstraction of _entities_ and their interactions  
+**Graph**: mathematical representation
+
+_vertices_: nodes  
+_edges_: links
+]
+
+.column[
+
+&lt;img src="index_files/figure-html/toygraph2-1.png" width="576" /&gt;
+]
+
+---
+layout: true
+
+## Network statistics: notation
 
 ---
 
-## Genetic Interaction Network
+Number of vertices: `\(n\)`
 
+In our example: _number of genes_
 
+--
 
-&lt;img src="index_files/figure-html/plot_deg-1.png" width="672" /&gt;
+Number of edges: `\(m\)`
 
-Average degree: 47.9971459
+In our example: _number of genetic interactions_
+
+--
+
+Degree of vertex `\(i\)`: `\(k_i\)`
+
+_Number of genetic interactions for gene `\(i\)`_
+
+---
+
+On the board:
+
+- Calculate number of edges `\(m\)` using degrees `\(k_i\)`
+  (for both directed and undirected networks)
+  
+- Calculate _average degree_ `\(c\)`
+- Calculate _density_ `\(\rho\)`
+
+--
+
+In our example:
+
+Average degree: 47.9971459  
 Density: 0.0171296
+
+---
+layout: false
+class: split-50
+
+## Degree distribution
+
+.column[
+Fundamental analytical tool to characterize networks
+
+`\(p_k\)`: probability randomly chosen vertex has degree `\(k\)`
+
+On the board: how to calculate `\(p_k\)` and how to calculate average
+degree `\(c\)` using degree distribution.
+]
+
+.column[
+
+
+&lt;img src="index_files/figure-html/plot_deg-1.png" width="480" /&gt;
+]
 
 ---
 
 ## Degree Distribution
 
-&lt;img src="index_files/figure-html/plot_loglog-1.png" width="672" /&gt;
+&lt;img src="index_files/figure-html/plot_loglog-1.png" width="672" style="display: block; margin: auto;" /&gt;
 
+---
+class: split-40
+
+## Paths and Distances
+
+.column[
+_Distance_ `\(d_{ij}\)`: length of **shortest** path betwen vertices `\(i\)` and `\(j\)`.
+]
+
+.column[
+&lt;img src="index_files/figure-html/toy3-1.png" width="576" /&gt;
+]
+---
+class: split-40
+
+## Paths and Distances
+
+.column[
+_Distance_ `\(d_{ij}\)`: length of **shortest** path betwen vertices `\(i\)` and `\(j\)`.
+
+_Diameter_: longest shortest path `\(\max_{ij} d_{ij}\)`
+]
+
+.column[
+&lt;img src="index_files/figure-html/toy4-1.png" width="576" /&gt;
+]
+
+---
+class: split-40
+
+## Paths and Distances
+
+.column[
+_Distance_ `\(d_{ij}\)`: length of **shortest** path betwen vertices `\(i\)` and `\(j\)`.
+
+On the board: average path length
+]
+
+.column[
+&lt;img src="index_files/figure-html/toy5-1.png" width="576" /&gt;
+]
 
 ---
 
 ## Distance Distribution
 
 
-```
-## ...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
-```
 
 
 
-&lt;img src="index_files/figure-html/plot_dist-1.png" width="672" /&gt;
+&lt;img src="index_files/figure-html/plot_dist-1.png" width="672" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Distances and paths
+
+By convention: if there is no path between vertices `\(i\)` and `\(j\)` then `\(d_{ij}=\infty\)`
+
+--
+
+_Vertices_ `\(i\)` and `\(j\)` are _connected_ if `\(d_{ij} &lt; \infty\)`
+
+--
+
+_Graph_ is connected if `\(d_{ij} &lt; \infty\)` for all `\(i\)`, `\(j\)`
+
+--
+
+_Components_ maximal subset of connected components
+
+---
+
+# Components
+
+&lt;img src="index_files/figure-html/disconnected-1.png" width="672" style="display: block; margin: auto;" /&gt;
 
 ---
 
 # Clustering Coefficient
 
+One last quantity of interest: how dense is the neighborhood around vertex `\(i\)`?
+
+Do the genes that interact with me also interact with each other?
+
+Definition on the board
+
+---
+
+# Clustering coefficient
 
 
-&lt;img src="index_files/figure-html/cc_plot-1.png" width="672" /&gt;
+
+&lt;img src="index_files/figure-html/cc_plot-1.png" width="672" style="display: block; margin: auto;" /&gt;
+
+---
+class: split-50
+
+# Adjacency Matrix
+
+.column[
+&lt;img src="index_files/figure-html/toy6-1.png" width="576" /&gt;
+]
+
+.column[
+&lt;img src="index_files/figure-html/adjplot-1.png" width="480" style="display: block; margin: auto;" /&gt;
+]
+
+---
+class: split-50
+
+# Adjacency Matrix
+
+.column[
+On the board:
+  - Definition
+  - Computing degree with adj. matrix
+  - Computing num. edges `\(m\)` with adj. matrix
+  - Computing paths with adj. matrix
+]
+
+.column[
+&lt;img src="index_files/figure-html/adjplot3-1.png" width="480" style="display: block; margin: auto;" /&gt;
+]
+
+---
+class: split-50
+exclude: true
+
+# Components
+
+.column[
+&lt;img src="index_files/figure-html/toy7-1.png" width="576" /&gt;
+]
+
+.column[
+&lt;img src="index_files/figure-html/adjplot2-1.png" width="480" style="display: block; margin: auto;" /&gt;
+]
+
+---
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
 "ratio": "16:9"
 });
-if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {window.dispatchEvent(new Event('resize'));});
-(function() {var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler"); if (!r) return; s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }"; d.head.appendChild(s);})();</script>
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
 <script>
 remark.macros['scale'] = function (percentage) {
   var url = this;
@@ -123,12 +354,23 @@ remark.macros['scale'] = function (percentage) {
 };
 </script>
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
   }
-});
+})();
 </script>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
