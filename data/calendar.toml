@@ -21,7 +21,7 @@ date = "8/30"
 
 [[day02.covers]]
 title = "Network Preliminaries"
-#notes = "lectures/CMSC828O_course-intro.pdf"
+notes = "lectures/cmsc828o_preliminaries.pdf"
 
 [[day02.prep]]
 title = "Barabasi, Ch. 1 and 2"
