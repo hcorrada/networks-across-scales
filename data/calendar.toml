@@ -41,7 +41,11 @@ date = "9/4"
 
 [[day03.covers]]
 title = "Measures of Network Structure and Other Properties"
-#notes = "lectures/Pattern Probabilties.pdf"
+notes = "lectures/cmsc828o_preliminaries.pdf"
+
+[[day03.covers]]
+title = "Tidygraph and ggraph"
+notes = "misc/tidygraph.nb.html"
 
 [[day03.prep]]
 title = "Newman, Ch. 7"
