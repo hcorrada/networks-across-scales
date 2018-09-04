@@ -151,25 +151,28 @@ _edges_: links
 
 .column[
 
-```{r toygraph, echo=FALSE, message=FALSE, fig.width=6}
+```{r toygraph, echo=FALSE, message=FALSE}
 library(tidygraph)
 library(ggraph)
 
 graph <- as_tbl_graph(highschool)
 
-graph %>%
+graph_1958 <- graph %>%
   activate(edges) %>%
-  filter(year == 1958) %>%
-  mutate(single_edge = !edge_is_mutual() & !edge_is_multiple()) %>%
-  filter(single_edge) %>% 
-  activate(nodes) %>%
-  mutate(connected = !node_is_isolated()) %>%
-  filter(connected) %>%
+  filter(year == 1958)
+
+undirected_graph_1958 <- graph_1958 %>%
+  convert(to_undirected) %>%
+  convert(to_simple)
+```
+
+```{r plot_undirected, echo=FALSE, fig.width=6}
+undirected_graph %>%
   ggraph(layout="kk") +
     geom_edge_fan() +
     geom_node_point(size=3) +
     theme_graph(foreground=NA) +
-    ggtitle("Unirected graph")
+    ggtitle("Undirected graph")
 ```
 ]
 
@@ -187,9 +190,7 @@ _edges_: links
 .column[
 
 ```{r toygraph2, echo=FALSE, message=FALSE, fig.width=6}
-graph %>%
-  activate(edges) %>%
-  filter(year == 1958) %>%
+graph_1958 %>%
   ggraph(layout="kk") +
     geom_edge_fan(arrow=arrow(length=unit(0.15,"inches"))) +
     geom_node_point(size=3) +
@@ -324,18 +325,12 @@ _Distance_ $d_{ij}$: length of **shortest** path betwen vertices $i$ and $j$.
 
 .column[
 ```{r toy3, echo=FALSE, fig.width=6}
-graph %>%
-  activate(edges) %>%
-  filter(year == 1958) %>%
-  mutate(single_edge = !edge_is_mutual() & !edge_is_multiple()) %>%
-  filter(single_edge) %>% 
-  activate(nodes) %>%
-  mutate(connected = !node_is_isolated()) %>%
-  filter(connected) %>%
+undirected_plot_1958 <- undirected_graph_1958 %>%
   ggraph(layout="kk") +
     geom_edge_fan() +
     geom_node_point(size=3) +
     theme_graph(foreground=NA)
+undirected_plot_1958
 ```
 ]
 ---
@@ -351,18 +346,7 @@ _Diameter_: longest shortest path $\max_{ij} d_{ij}$
 
 .column[
 ```{r toy4, echo=FALSE, fig.width=6}
-graph %>%
-  activate(edges) %>%
-  filter(year == 1958) %>%
-  mutate(single_edge = !edge_is_mutual() & !edge_is_multiple()) %>%
-  filter(single_edge) %>% 
-  activate(nodes) %>%
-  mutate(connected = !node_is_isolated()) %>%
-  filter(connected) %>%
-  ggraph(layout="kk") +
-    geom_edge_fan() +
-    geom_node_point(size=3) +
-    theme_graph(foreground=NA)
+undirected_plot_1958
 ```
 ]
 
@@ -379,18 +363,7 @@ On the board: average path length
 
 .column[
 ```{r toy5, echo=FALSE, fig.width=6}
-graph %>%
-  activate(edges) %>%
-  filter(year == 1958) %>%
-  mutate(single_edge = !edge_is_mutual() & !edge_is_multiple()) %>%
-  filter(single_edge) %>% 
-  activate(nodes) %>%
-  mutate(connected = !node_is_isolated()) %>%
-  filter(connected) %>%
-  ggraph(layout="kk") +
-    geom_edge_fan() +
-    geom_node_point(size=3) +
-    theme_graph(foreground=NA) 
+undirected_plot_1958
 ```
 ]
 
@@ -466,6 +439,8 @@ _Components_ maximal subset of connected components
 graph %>%
   activate(edges) %>%
   filter(year == 1957) %>%
+  convert(to_undirected) %>%
+  convert(to_simple) %>%
   ggraph(layout="kk") +
     geom_edge_fan() +
     geom_node_point(size=3) +
@@ -532,29 +507,48 @@ class: split-50
 # Adjacency Matrix
 
 .column[
-```{r toy6, echo=FALSE, fig.width=6}
-graph %>%
+```{r toy6, echo=FALSE, fig.width=6,eval=FALSE}
+undirected_graph <- graph %>%
   activate(edges) %>%
   filter(year == 1958) %>%
+  mutate(single_edge = !edge_is_mutual() & !edge_is_multiple()) %>%
+  filter(single_edge) %>% 
+  activate(nodes) %>%
+  mutate(connected = !node_is_isolated()) %>%
+  filter(connected) 
+
+undirected_graph %>%
   ggraph(layout="kk") +
     geom_edge_fan() +
-#    geom_node_point(size=3) +
-    geom_node_label(aes(label=name)) +
-    theme_graph(foreground=NA) 
+    geom_node_point(size=3) +
+    theme_graph(foreground=NA) +
+    ggtitle("Undirected graph")
+```
+
+```{r toy61, echo=FALSE, fig.width=6}
+undirected_plot_1958 +
+  ggtitle("Undirected graph")
 ```
 ]
 
 .column[
-```{r adjplot, echo=FALSE, fig.align="center", fig.width=5}
-graph %>% 
-  activate(edges) %>% 
-  filter(year==1958) %>% 
-  as_data_frame() %>% 
-  ggplot(aes(x=from,y=to)) + 
+```{r adjplot2, echo=FALSE, fig.align="center", fig.width=5}
+undirected_amat_plot_1958 <- undirected_graph_1958 %>%
+  igraph::as_adj() %>%
+  as.matrix() %>%
+  as_data_frame() %>%
+  rowid_to_column(var="row") %>%
+  gather("column", "edge", -row) %>%
+  mutate(column=as.integer(column)) %>%
+  mutate(edge=as.integer(edge)) %>%
+  ggplot(aes(x=row,y=column,fill=factor(edge))) +
     geom_raster() +
+    scale_fill_manual(values=c("white","black")) +
     theme(axis.text=element_blank(),
           axis.title=element_blank(),
-          axis.ticks=element_blank())
+          axis.ticks=element_blank(),
+          legend.position="none")
+undirected_amat_plot_1958
 ```
 ]
 
@@ -573,88 +567,220 @@ On the board:
 
 .column[
 ```{r adjplot3, echo=FALSE, fig.align="center", fig.width=5}
-graph %>% 
-  activate(edges) %>% 
-  filter(year==1958) %>% 
-  as_data_frame() %>% 
-  ggplot(aes(x=from,y=to)) + 
-    geom_raster() +
-    theme(axis.text=element_blank(),
-          axis.title=element_blank(),
-          axis.ticks=element_blank())
+undirected_amat_plot_1958
 ```
 ]
+---
+class: split-50
+
+# Adjacency Matrix
+
+.column[
+```{r toy8, echo=FALSE, fig.width=6,eval=TRUE}
+graph_1958 %>%
+  ggraph(layout="kk") +
+    geom_edge_fan(arrow=arrow(length=unit(0.15,"inches"))) +
+    geom_node_point(size=3) +
+    theme_graph(foreground=NA) +
+    ggtitle("Directed graph")
+```
+]
+
+.column[
+```{r adjplot4, echo=FALSE, fig.align="center", fig.width=5,eval=TRUE}
+graph_1958 %>% 
+  igraph::as_adj() %>%
+  as.matrix() %>%
+  as_data_frame() %>%
+  rowid_to_column(var="row") %>%
+  gather("column", "edge", -row) %>%
+  mutate(column=as.integer(column)) %>%
+  mutate(edge=as.integer(edge)) %>%
+  ggplot(aes(x=row,y=column,fill=factor(edge))) +
+    geom_raster() +
+    scale_fill_manual(values=c("white","black")) +
+    theme(axis.text=element_blank(),
+          axis.title=element_blank(),
+          axis.ticks=element_blank(),
+          legend.position="none")
+```
+]
+
+---
+layout: true
+
+---
+
+## Weighted networks
+
+Edges are assigned a weight indicating quantitative property of interaction
+
+--
+
+- Strength of genetic interaction (evidence from experiment)
+
+- Rates in a metabolic network
+
+- Spatial distance in an ecological network
+
+---
+
+Adjacency matrix contains weights instead of 0/1 entries
+
+--
+
+Path lengths are the sum of edge weights in a path
+
+---
+
+## Hypergraphs
+
+Edges connect more than two vertices
+
+![](img/hypergraph.png)
+
+.source[https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000385]
 
 ---
 class: split-50
-exclude: true
 
-# Components
+## Trees
 
 .column[
-```{r toy7, echo=FALSE, fig.width=6}
-graph %>%
-  activate(edges) %>%
-  filter(year == 1957) %>%
-  ggraph(layout="kk") +
-    geom_edge_fan() +
-#    geom_node_point(size=3) +
-    geom_node_label(aes(label=name)) +
-    theme_graph(foreground=NA) 
-```
+_Acyclic graphs_
+
+Single path between any pair of vertices
 ]
 
 .column[
-```{r adjplot2, echo=FALSE, fig.align="center", fig.width=5}
-graph %>% 
-  activate(edges) %>% 
-  filter(year==1957) %>% 
-  as_data_frame() %>% 
-  ggplot(aes(x=from,y=to)) + 
-    geom_raster() +
-    theme(axis.text=element_blank(),
-          axis.title=element_blank(),
-          axis.ticks=element_blank())
+![](img/tree.png)
+]
+
+.source[https://www.sciencedirect.com/science/article/pii/S0981942817304321]
+
+---
+
+## Bipartite Networks
+
+
+.center.middle.image-70[![](img/reaction.png)]
+
+.source[https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000385]
+
+---
+
+## Bipartite Networks
+
+We use an _Incidence Matrix_ $B$ instead of _Adjacency Matrix_
+
+(On the board): definition
+
+---
+
+## Bipartite Networks
+
+### Projections
+
+_vertex projection_: $P_{ij}$, num. of groups in which vertices $i$ and $j$ co-occur
+
+_group projection_: $P'_{ij}$, num. of members groups $i$ and $j$ share
+
+--
+
+(On the board)
+
+$$P=B^TB$$
+
+$$P'=BB^T$$
+
+---
+class: split-40
+
+## Centrality
+
+
+.column[
+What are the _important_ nodes in the network? 
+
+What are _central_ nodes in the network?
+]
+
+.column[
+```{r centrality, echo=FALSE, fig.width=6,eval=TRUE}
+undirected_graph_1958 %>%
+  activate(nodes) %>% 
+  mutate(centrality = centrality_eigen()) %>%
+  ggraph(layout="kk") +
+    geom_edge_fan() +
+    geom_node_point(aes(size=centrality)) +
+    theme_graph(foreground=NA)
 ```
 ]
 
 ---
 
-```{r cumdist, eval=FALSE, echo=FALSE}
-cum_dist_distr <- sapply(seq_len(length(degree_dist))-1, function(i) sum(degree_dist[-(1:i)]))
-plot(log10(degs), log10(cum_dist_distr))
+## Centrality
+
+### Undirected Graphs
+- Eigenvalue Centrality
+
+### Directed Graphs
+- Katz Centrality
+- Pagerank
+
+---
+class:split-50
+
+## Centrality
+
+.column[
+```{r deg_centrality, fig.width=5, echo=FALSE,eval=TRUE}
+undirected_graph_1958 %>%
+  activate(nodes) %>% 
+  mutate(degree_centrality = centrality_degree()) %>%
+  ggraph(layout="kk") +
+    geom_edge_fan() +
+    geom_node_point(aes(size=degree_centrality)) +
+    theme_graph(foreground=NA)
 ```
+]
 
-```{r estimation, eval=FALSE, echo=FALSE}
-kmin <- 10
-degs <- sort(degs[degs>0])
-mle <- function(kmin, degs) {
-  N <- length(degs)
-  lratio <- log(degs) - log(kmin)
-  1 + N / (sum(lratio))
-}
-
-unique_degs <- unique(degs)
-mles <- sapply(unique_degs, mle, degs=degs)
-plot(mles)
+.column[
+```{r eig_centrality, fig.width=5, echo=FALSE,eval=TRUE}
+undirected_graph_1958 %>%
+  activate(nodes) %>% 
+  mutate(eigen_centrality = centrality_eigen()) %>%
+  ggraph(layout="kk") +
+    geom_edge_fan() +
+    geom_node_point(aes(size=eigen_centrality)) +
+    theme_graph(foreground=NA)
 ```
+]
+---
+layout: true
 
-```{r divergence, eval=FALSE, echo=FALSE}
-which_mles_to_keep <- mles>2
-mles_kept <- mles[which_mles_to_keep]
+## Resources
 
-power_law_prob <- function(gamma, degs) {
-  w <- degs ^ (-gamma)
-  p <- w / sum(w)
-}
+---
 
-divergence <- function(gamma, degs, degree_dist) {
-  S <- cumsum(degree_dist)
-  p <- power_law_prob(gamma, degs)
-  P <- cumsum(p)
-  max(abs(P-S))
-}
+### Cross-language
+igraph: http://igraph.org/
 
-divs <- sapply(mles_kept, divergence, degs=unique_degs, degree_dist[-1])
-plot(unique_degs[which_mles_to_keep], divs)
-```
+---
+
+### R
+
+Workhorses: 
+- [`igraph`](https://cran.r-project.org/web/packages/igraph/index.html)
+- [`Rgraphviz`](https://www.bioconductor.org/packages/release/bioc/html/Rgraphviz.html)
+
+Tidyverse (https://tidyverse.org):
+- [`tidygraph`](https://cran.r-project.org/web/packages/tidygraph/index.html)
+- [`ggraph`](https://cran.r-project.org/web/packages/ggraph/index.html)
+
+---
+
+### Python
+
+- [`igraph`](http://igraph.org/python/doc/tutorial/tutorial.html)
+- [`networkx`](https://networkx.github.io/)

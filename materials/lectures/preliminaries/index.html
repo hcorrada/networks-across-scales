@@ -4,7 +4,7 @@
     <title>Network Preliminaries</title>
     <meta charset="utf-8">
     <meta name="author" content="Héctor Corrada Bravo" />
-    <meta name="date" content="2018-09-01" />
+    <meta name="date" content="2018-09-04" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
@@ -24,7 +24,7 @@ count: false
 
 .other-info[
 University of Maryland, College Park, USA  
-CMSC828O 2018-09-01
+CMSC828O 2018-09-04
 ]
 
 .logo[![](img/logo.png)]
@@ -108,7 +108,9 @@ _edges_: links
 
 .column[
 
-&lt;img src="index_files/figure-html/toygraph-1.png" width="576" /&gt;
+
+
+&lt;img src="index_files/figure-html/plot_undirected-1.png" width="576" /&gt;
 ]
 
 ---
@@ -351,11 +353,13 @@ class: split-50
 # Adjacency Matrix
 
 .column[
-&lt;img src="index_files/figure-html/toy6-1.png" width="576" /&gt;
+
+
+&lt;img src="index_files/figure-html/toy61-1.png" width="576" /&gt;
 ]
 
 .column[
-&lt;img src="index_files/figure-html/adjplot-1.png" width="480" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/adjplot2-1.png" width="480" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
@@ -374,22 +378,173 @@ On the board:
 .column[
 &lt;img src="index_files/figure-html/adjplot3-1.png" width="480" style="display: block; margin: auto;" /&gt;
 ]
+---
+class: split-50
+
+# Adjacency Matrix
+
+.column[
+&lt;img src="index_files/figure-html/toy8-1.png" width="576" /&gt;
+]
+
+.column[
+&lt;img src="index_files/figure-html/adjplot4-1.png" width="480" style="display: block; margin: auto;" /&gt;
+]
+
+---
+layout: true
+
+---
+
+## Weighted networks
+
+Edges are assigned a weight indicating quantitative property of interaction
+
+--
+
+- Strength of genetic interaction (evidence from experiment)
+
+- Rates in a metabolic network
+
+- Spatial distance in an ecological network
+
+---
+
+Adjacency matrix contains weights instead of 0/1 entries
+
+--
+
+Path lengths are the sum of edge weights in a path
+
+---
+
+## Hypergraphs
+
+Edges connect more than two vertices
+
+![](img/hypergraph.png)
+
+.source[https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000385]
 
 ---
 class: split-50
-exclude: true
 
-# Components
+## Trees
 
 .column[
-&lt;img src="index_files/figure-html/toy7-1.png" width="576" /&gt;
+_Acyclic graphs_
+
+Single path between any pair of vertices
 ]
 
 .column[
-&lt;img src="index_files/figure-html/adjplot2-1.png" width="480" style="display: block; margin: auto;" /&gt;
+![](img/tree.png)
+]
+
+.source[https://www.sciencedirect.com/science/article/pii/S0981942817304321]
+
+---
+
+## Bipartite Networks
+
+
+.center.middle.image-70[![](img/reaction.png)]
+
+.source[https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000385]
+
+---
+
+## Bipartite Networks
+
+We use an _Incidence Matrix_ `\(B\)` instead of _Adjacency Matrix_
+
+(On the board): definition
+
+---
+
+## Bipartite Networks
+
+### Projections
+
+_vertex projection_: `\(P_{ij}\)`, num. of groups in which vertices `\(i\)` and `\(j\)` co-occur
+
+_group projection_: `\(P'_{ij}\)`, num. of members groups `\(i\)` and `\(j\)` share
+
+--
+
+(On the board)
+
+`$$P=B^TB$$`
+
+`$$P'=BB^T$$`
+
+---
+class: split-40
+
+## Centrality
+
+
+.column[
+What are the _important_ nodes in the network? 
+
+What are _central_ nodes in the network?
+]
+
+.column[
+&lt;img src="index_files/figure-html/centrality-1.png" width="576" /&gt;
 ]
 
 ---
+
+## Centrality
+
+### Undirected Graphs
+- Eigenvalue Centrality
+
+### Directed Graphs
+- Katz Centrality
+- Pagerank
+
+---
+class:split-50
+
+## Centrality
+
+.column[
+&lt;img src="index_files/figure-html/deg_centrality-1.png" width="480" /&gt;
+]
+
+.column[
+&lt;img src="index_files/figure-html/eig_centrality-1.png" width="480" /&gt;
+]
+---
+layout: true
+
+## Resources
+
+---
+
+### Cross-language
+igraph: http://igraph.org/
+
+---
+
+### R
+
+Workhorses: 
+- [`igraph`](https://cran.r-project.org/web/packages/igraph/index.html)
+- [`Rgraphviz`](https://www.bioconductor.org/packages/release/bioc/html/Rgraphviz.html)
+
+Tidyverse (https://tidyverse.org):
+- [`tidygraph`](https://cran.r-project.org/web/packages/tidygraph/index.html)
+- [`ggraph`](https://cran.r-project.org/web/packages/ggraph/index.html)
+
+---
+
+### Python
+
+- [`igraph`](http://igraph.org/python/doc/tutorial/tutorial.html)
+- [`networkx`](https://networkx.github.io/)
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
