@@ -60,45 +60,45 @@ date = "9/6"
 [[day04.covers]]
 title = "Presentations: Networks in Molecular Biology"
 
-[day04a]
-date = "9/7"
-
-[[day04a.workdue]]
-title = "Homework: Network Statistics"
-link = "homeworks/network_stats/"
-
 #### DAY 5
+########################
+# Models of Network Structure and Dynamics
+#
+
 [day05]
 date = "9/11"
 
 [[day05.covers]]
-title = "Data Project Lightning Talks"
+title = "Random Networks I"
+#notes = "lectures/CMSC423_BioResources.pdf"
 
-########################
-# Models of Network Structure and Dynamics
-#
+[[day05.prep]]
+title = "Barabasi, Ch. 3 and 4"
+
+[day05a]
+date = "9/12"
+
+[[day05a.workdue]]
+title = "Homework: Network Statistics"
+link = "homeworks/network_stats/"
 
 #### DAY 6
 [day06]
 date = "9/13"
 
 [[day06.covers]]
-title = "Random Networks I"
-#notes = "lectures/CMSC423_BioResources.pdf"
+title = "Random Networks II"
+#notes = "lectures/Motif_finding.pdf"
 
 [[day06.prep]]
-title = "Barabasi, Ch. 3 and 4"
+title = "Barabasi, Ch. 5 and 6"
 
 #### DAY 7
 [day07]
 date = "9/18"
 
 [[day07.covers]]
-title = "Random Networks II"
-#notes = "lectures/Motif_finding.pdf"
-
-[[day07.prep]]
-title = "Barabasi, Ch. 5 and 6"
+title = "Data Project Lightning Talks"
 
 #### DAY 8
 
@@ -106,15 +106,10 @@ title = "Barabasi, Ch. 5 and 6"
 date = "9/20"
 
 [[day08.covers]]
-title = "Presentations: Cellular Networks"
+title = "Dynamical Networks I"
 
-
-[day08a]
-date = "9/24"
-
-[[day08a.workdue]]
-title = "Homework 2: Network Models"
-link = "homeworks/network_models/"
+[[day08.prep]]
+title = "Barabasi, Ch. 8"
 
 #### DAY 9
 
@@ -122,10 +117,15 @@ link = "homeworks/network_models/"
 date = "9/25"
 
 [[day09.covers]]
-title = "Dynamical Networks I"
+title = "Presentations: Cellular Networks"
 
-[[day09.prep]]
-title = "Barabasi, Ch. 8"
+
+[day09a]
+date = "9/28"
+
+[[day09a.workdue]]
+title = "Homework 2: Network Models"
+link = "homeworks/network_models/"
 
 #### DAY 10
 [day10]
