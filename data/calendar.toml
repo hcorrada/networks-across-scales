@@ -106,10 +106,10 @@ title = "Data Project Lightning Talks"
 date = "9/20"
 
 [[day08.covers]]
-title = "Dynamical Networks I"
+title = "Random Networks III"
 
 [[day08.prep]]
-title = "Barabasi, Ch. 8"
+title = "Barabasi, Ch. 6"
 
 #### DAY 9
 
@@ -119,56 +119,51 @@ date = "9/25"
 [[day09.covers]]
 title = "Presentations: Cellular Networks"
 
-
-[day09a]
-date = "9/28"
-
-[[day09a.workdue]]
-title = "Homework 2: Network Models"
-link = "homeworks/network_models/"
-
 #### DAY 10
 [day10]
 date = "9/27"
 
 [[day10.covers]]
-title = "Dynamical Networks II"
-
-[[day10.prep]]
-title = "Barabasi, Ch. 10"
+title = "Unit Closing: State-of-the-art Paper Presentations, Random Networks"
 
 #### DAY 11
 [day11]
 date = "10/2"
 
 [[day11.covers]]
-title = "Unit Closing: State-of-the-art Paper Presentations"
+title = "Dynamical Networks I"
+
+[[day11.prep]]
+title = "Barabasi, Ch. 8"
+
+
+### Homework 2
+[day11a]
+date = "10/3"
+
+[[day11a.workdue]]
+title = "Homework 2: Network Models"
+link = "homeworks/network_models/"
 
 #### DAY 12
 [day12]
 date = "10/4"
 
 [[day12.covers]]
-title = "Unit Closing: State-of-the-art Paper Presentations"
+title = "Dynamical Networks II"
+
+[[day12.covers]]
+title = "Unit Closing: State-of-the-art Paper Presentations, Dynamical Networks"
+
+[[day12.prep]]
+title = "Barabasi, Ch. 10"
 
 #### DAY 13
-# OUT IN COLOMBIA
 [day13]
 date = "10/9"
 
 [[day13.covers]]
 title = "Data Project Updates"
-
-#[[day13.prep]]
-#title = "Compeau & Pevzner, Ch. 4, p. 182-197"
-
-#[[day13.prep]]
-#title = "Compeau & Pevzner, playlist 4, videos 1-5"
-#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFPdIS_5qv_Q3XWieobVPLlc"
-
-#[[day13.prep]]
-#title = "Rosalind prep Ex. 19"
-#link = "http://rosalind.info/classes/400"
 
 #################
 # Statistics over Networks

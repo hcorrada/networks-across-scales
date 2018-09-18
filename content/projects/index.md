@@ -5,9 +5,9 @@ title: CMSC828O Projects
 
 Throughout the semester, you will be working as a group analyzing a network dataset of your choice. The goal is to apply appropriate methodology as we cover it during the semester. 
 
-Group membership is listed on piazza: https://piazza.com/class/j6we70mrh8a4su?cid=12
+Group membership is listed on piazza: https://piazza.com/class/jldiw9ttj5223l?cid=12
 
-## Data Project Lightning Talks: 9/12
+## Data Project Lightning Talks: 9/18
 
 Prepare 5-6 minutes to introduce your group project. Please include
  
@@ -23,7 +23,7 @@ Prepare 5-6 minutes to introduce your group project. Please include
 
 4. Which methods do you foresee being most applicable (e.g., random network models, network dynamical models, learning over models, inference over networks, visualization), and why?)
 
-## Project Update Presentations: 10/10
+## Project Update Presentations: 10/9
 
 Prepare 5-6 minutes to update the class on your work. The focus of this presentation is the application of the analysis methods we saw in the first module: network structure, models of network evolution, robustness, dynamics of processes over networks.
  
