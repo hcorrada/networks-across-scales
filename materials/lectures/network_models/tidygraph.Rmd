@@ -1,0 +1,107 @@
+---
+title: "Tidygraph example"
+output:
+  html_document:
+    df_print: paged
+  html_notebook: default
+  pdf_document: default
+editor_options:
+  chunk_output_type: inline
+---
+
+Load libraries and data
+
+```{r setup}
+library(tidygraph)
+library(ggraph)
+
+# annotate highschool graph example
+# as a tidygraph
+data(highschool)
+graph <- as_tbl_graph(highschool)
+```
+
+Plot the graph as is
+
+```{r plotgraph}
+graph %>%
+  ggraph(layout="kk") +
+  geom_edge_fan(arrow=arrow()) +
+  geom_node_point() +
+  theme_graph(foreground=NA)
+```
+
+Print the graph object
+
+```{r}
+graph
+```
+
+Use edge color to indicate year
+
+```{r edgecolor}
+graph %>%
+  ggraph(layout="kk") +
+    geom_edge_fan(aes(color=factor(year)), arrow=arrow()) +
+    geom_node_point() +
+    theme_graph(foreground=NA)
+```
+
+Let's only look at the 1958 subgraph
+
+```{r subgraph}
+graph %>%
+  activate(edges) %>%
+  filter(year == 1958) %>%
+  ggraph(layout="kk") +
+    geom_edge_fan(aes(color=factor(year)), arrow=arrow()) +
+    geom_node_point() +
+    theme_graph(foreground=NA)
+```
+
+Convert graph to undirected and plot
+
+```{r undirected}
+undirected_graph <- graph %>%
+  convert(to_undirected) %>%
+  convert(to_simple)
+  
+undirected_graph  %>%
+    ggraph(layout="kk") +
+    geom_edge_fan() +
+    geom_node_point() +
+    theme_graph(foreground=NA)
+```
+
+Compute degree of each vertex 
+
+```{r deg_centrality}
+undirected_graph <- undirected_graph %>%
+  activate(nodes) %>%
+  mutate(degree=centrality_degree())
+undirected_graph
+```
+
+Plot with 
+node size proportional to degree
+
+```{r plot_degree}
+undirected_graph %>%
+   ggraph(layout="kk") +
+    geom_edge_fan() +
+    geom_node_point(aes(size=degree)) +
+    theme_graph(foreground=NA)
+```
+
+Let's do the same with eigenvalue centrality
+
+```{r eig_centrality}
+undirected_graph %>%
+  activate(nodes) %>%
+  mutate(centrality=centrality_eigen()) %>%
+  ggraph(layout="kk") +
+    geom_edge_fan() +
+    geom_node_point(aes(size=centrality)) +
+    theme_graph(foreground=NA)
+```
+
