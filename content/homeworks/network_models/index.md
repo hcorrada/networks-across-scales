@@ -5,7 +5,7 @@ date: "2017-09-02"
 
 **DUE**: Wednesday 10/3/2018, 11:59pm  
 **Posted**: 9/20/2018  
-**Last Update**: 9/20/2018
+**Last Update**: 9/28/2018
 
 In our previous homework you generated the degree distribution of a genetic interaction network:
 
@@ -15,7 +15,7 @@ In our previous homework you generated the degree distribution of a genetic inte
 
 ## Fitting the degree distribution
 
-Use a network analysis library to estimate the degree coefficient under a power-law model for the genetic interaction network.
+Use a network analysis library to estimate the degree exponent under a power-law model for the genetic interaction network.
 
 **Question 2**:
 
