@@ -152,9 +152,6 @@ date = "10/4"
 [[day12.covers]]
 title = "Dynamical Networks II"
 
-[[day12.covers]]
-title = "Unit Closing: State-of-the-art Paper Presentations, Dynamical Networks"
-
 [[day12.prep]]
 title = "Barabasi, Ch. 10"
 
@@ -163,7 +160,13 @@ title = "Barabasi, Ch. 10"
 date = "10/9"
 
 [[day13.covers]]
-title = "Data Project Updates"
+title = "Dynamical Networks III"
+
+[[day13.covers]]
+title = "Unit Closing: State-of-the-art Paper Presentations, Dynamical Networks"
+
+[[day13.prep]]
+title = "Newman 6.13, 18.2"
 
 #################
 # Statistics over Networks
@@ -175,10 +178,7 @@ title = "Data Project Updates"
 date = "10/11"
 
 [[day14.covers]]
-title = "Statistical Inference with Networked Data I"
-
-[[day14.prep]]
-title = "SAND Ch. 6"
+title = "No Lecture, Project Update Work"
 
 #[[day14.prep]]
 #title = "Compeau & Pevzner, playlist 4, videos 6-10"
@@ -193,34 +193,29 @@ title = "SAND Ch. 6"
 date = "10/16"
 
 [[day15.covers]]
-title = "Statistical Inference with Networked Data II"
-
-[[day15.prep]]
-title = "SAND Ch. 6"
+title = "Data Project Updates"
 
 #### DAY 16
 [day16]
 date = "10/18"
 
 [[day16.covers]]
-title = "Presentations: Ecological Networks"
+title = "Statistical Inference with Networked Data"
 
-#### DAY 17
+[[day16.prep]]
+title = "SAND Ch. 6"
 
 [day17]
 date = "10/23"
 
 [[day17.covers]]
-title = "Learning with Network Data I"
-
-[[day17.prep]]
-title = "SAND ch. 8"
+title = "Presentations: Ecological Networks"
 
 [day18]
 date = "10/25"
 
 [[day18.covers]]
-title = "Learning with Network Data II"
+title = "Learning with Network Data"
 
 [[day18.prep]]
 title = "SAND ch. 8"
