@@ -7,7 +7,7 @@ Throughout the semester, you will be working as a group analyzing a network data
 
 Group membership is listed on piazza: https://piazza.com/class/jldiw9ttj5223l?cid=12
 
-## Data Project Lightning Talks: 9/18
+## Data Project Lightning Talks: 
 
 Prepare 5-6 minutes to introduce your group project. Please include
  
@@ -23,17 +23,17 @@ Prepare 5-6 minutes to introduce your group project. Please include
 
 4. Which methods do you foresee being most applicable (e.g., random network models, network dynamical models, learning over models, inference over networks, visualization), and why?)
 
-## Project Update Presentations: 10/9
+## Project Update Presentations: 
 
-Prepare 5-6 minutes to update the class on your work. The focus of this presentation is the application of the analysis methods we saw in the first module: network structure, models of network evolution, robustness, dynamics of processes over networks.
+Prepare 10 minutes to update the class on your work. The focus of this presentation is the application of the analysis methods we saw in the first module: network structure, models of network evolution, robustness, dynamics of processes over networks.
  
  Choose a research question appropriate for your application/dataset that can be addressed by one or more of these methods. The use appropriate methods to carry analyze your dataset to address your research question.
   
-  In the presentation, report the research question you are addressing (background and significance), the methodology you chose to apply (reasoning behind your methodological choices), results (including a discussion of the implications of your result).
+  In the presentation, report 1) a short overview/reminder of your dataset and project, 2) the research question you are addressing (background and significance), the methodology you chose to apply (reasoning behind your methodological choices), results (including a discussion of the implications of your result).
    
-   Mind you, the presentations are short, so it is best to concentrate on as succinct a research question as possible.
+   Mind you, the presentations are short (10 minutes + questions), so it is best to concentrate on as succinct a research question as possible.
 
-## Project Update Presentations: 11/30 and 12/5
+## Final Project Presentations: 
 
 For the final presentation prepare 20 minutes presenting a completed analysis of your dataset addressing your research question(s) of choice. You will need to repeat some things from previous presentations:
 
