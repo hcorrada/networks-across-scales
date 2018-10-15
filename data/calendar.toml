@@ -200,26 +200,22 @@ title = "Data Project Updates"
 date = "10/18"
 
 [[day16.covers]]
-title = "Statistical Inference with Networked Data"
-
-[[day16.prep]]
-title = "SAND Ch. 6"
+title = "Data Project Updates"
 
 [day17]
 date = "10/23"
 
 [[day17.covers]]
-title = "Presentations: Ecological Networks"
+title = "Statistical Inference with Networked Data"
+
+[[day17.prep]]
+title = "SAND Ch. 6"
 
 [day18]
 date = "10/25"
 
 [[day18.covers]]
-title = "Learning with Network Data"
-
-[[day18.prep]]
-title = "SAND ch. 8"
-
+title = "Presentations: Ecological Networks"
 
 [day19]
 date = "10/30" 
@@ -230,24 +226,27 @@ title = "Learning Networks from Data"
 [[day19.prep]]
 title = "SAND ch. 7"
 
-[day19a]
-date = "10/31"
-
-[[day19a.workdue]]
-title = "Homework 3: Statistical Analysis of Network Data"
-link = "homeworks/stat_models/"
-
 [day20]
 date = "11/1"
 
 [[day20.covers]]
-title = "Unit Closing: State-of-the-art Paper Presentations"
+title = "Learning with Network Data"
+
+[[day20.prep]]
+title = "SAND ch. 8"
+
+[day20a]
+date = "11/5"
+
+[[day20a.workdue]]
+title = "Homework 3: Statistical Analysis of Network Data"
+link = "homeworks/stat_models/"
 
 [day21]
 date = "11/6"
 
 [[day21.covers]]
-title = "Unit Closing: State-of-the-art Paper Presentations"
+title = "Unit Closing: State-of-the-art Paper Presentations: ML and Stat Inference"
 
 #[[day21.prep]]
 #title = "Compeau & Pevzner, Ch. 5 223-253"
