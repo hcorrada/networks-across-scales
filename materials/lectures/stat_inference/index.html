@@ -4,12 +4,15 @@
     <title>Statistical Analysis of Network Data</title>
     <meta charset="utf-8">
     <meta name="author" content="Héctor Corrada Bravo" />
-    <meta name="date" content="2017-10-11" />
-    <link href="libs/remark-css-0.0.1/example.css" rel="stylesheet" />
+    <meta name="date" content="2018-10-23" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
+
+
 
 
 class: title-slide, center, middle
@@ -23,7 +26,7 @@ count: false
 
 .other-info[
 University of Maryland, College Park, USA  
-CMSC828O 2017-10-11
+CMSC828O 2018-10-23
 ]
 
 .logo[![](img/logo.png)]
@@ -44,24 +47,32 @@ Using **high-throughput** experimental methods
 .column[.image-80[![](img/stickmen.png)]]
 
 ---
+layout: true
 
 ## Statistical Analysis
 
+---
+
 In this next unit we will look at methods that approach network analysis from a statistical inference perspective. 
 
-In particular we will look at two general notions
+---
+
+In particular we will look at three statistical inference and learning tasks over networks
 
 - Analyzing edges between vertices as a stochastic process over which we can make statistical inferences
+
+- Constructing networks from observational data
 
 - Analyzing a process (e.g., diffusion) over a network in a statistical manner
 
 ---
+layout: false
 
-## Statistical Analysis
+## Spatial effects in ecological networks
 
-Let' start with an example
+.center.middle[![](img/spatial.png)]
 
-I NEED DATA
+.source[https://doi.org/10.1016/j.prevetmed.2014.01.013]
 
 ---
 layout: true
@@ -70,27 +81,321 @@ layout: true
 
 ---
 
-Extension to random graph models we saw in previous section
+In ER random graph model edge probabilities were independent of vertex characterisitics.
 
-Previously edge probabilities were (more or less) independent of vertex characterisitics.
+Now assume vertices have measured attributes. 
 
-Assume vertices have measured attributes, what is the effect of these attributes in network formation. Specifically in edge occurence.
-
----
-
-THE MODEL
+Question: what is the effect of these attributes in network formation, specifically in edge occurence.
 
 ---
 
-THE INFERENCE
+Denote `\(Y\)` as adjacency matrix of graph `\(G\)` over `\(n\)` elements
+
+Denote `\(X\)` as matrix of vertex attributes.
+
+We want to determine `\(P(Y_{ij}=1|Y_{-(ij)}=y_{-(ij)}, x_i, x_j, L(G))\)`
+
+where `\(L(G)\)` is a measure of structure of graph `\(G\)` and `\(y_{-(ij)}\)` is the _configuration_ of edges other than edge `\(i\sim j\)`
+
+---
+class: split-50
+
+We can motivate ERGM model from regression (where outcome `\(Y\)` is continuous)
+
+.column[
+`$$E[Y_i|x_i] = \sum_{j=1}^p \beta_j x_{ij} = \beta'x_i$$`
+]
+
+.column[
+.center[![](img/lr.png)]
+]
+
+---
+class: split-50
+
+We turn into a probabilistic model as
+
+.column[
+`$$Y=\beta'x_i + \epsilon$$`
+
+`$$\epsilon \sim N(0,\sigma^2)$$`
+]
+
+.column[
+.center[![](img/lr.png)]
+]
 
 ---
 
-AN EXAMPLE
+For _binary_ outcome `\(Y\)` we use _logistic regression_
+
+.center[![](img/logis.png)]
+
+`$$\log\frac{P(Y_i=1|x_i)}{1-P(Y_i=1|x_i)} = \beta'x_i$$`
+
+Which corresponds to a Bernoulli model of `\(P(Y_i=1|x_i)\)`.
 
 ---
 
-GOODNESS OF FIT
+The outcome of interest in the ERGM model is the _presence_ of edge `\(y_{ij}=1\)`.
+
+Use a Bernoulli model with `\(y_{ij}\)` as the outcome.
+
+With vertex attributes and graph structural measure as predictors.
+
+---
+
+Model 1: the ER model
+
+`$$\log \frac{P(Y_{ij}=1|Y_{-(ij)}=y_{-(ij)})}{P(Y_{ij}=0|Y_{-(ij)}=y_{-(ij)})} = \theta$$`
+
+Thinking of logistic regression: model is a _constant_, independent of rest of graph structure, independent of vertex attributes
+
+---
+
+To fit models we need a _likelihood_, i.e., probability of observed graph, given parameters (in this case `\(\theta\)`)
+
+--
+
+Write `\(P(Y_{ij}=1|...)\)` as `\(p\)`, then likelihood is given by
+
+`$$\mathcal{L}(\theta;y) = \prod_{ij} p^{y_{ij}}(1-p)^{(1-y_{ij})}$$`
+---
+
+(Exercise)
+
+`$$\mathcal{L}(\theta;y)=\frac{1}{\kappa}\exp\{\theta L(y)\}$$`
+
+where `\(L(y)\)` is the number of edges in the graph.
+
+This is the formulation given in reading!
+
+---
+class: split-30
+
+.column[
+
+```
+## Observations: 36
+## Variables: 9
+## $ name      &lt;chr&gt; "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9"...
+## $ Seniority &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1...
+## $ Status    &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1...
+## $ Gender    &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1...
+## $ Office    &lt;int&gt; 1, 1, 2, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 3, 1, 1, 2...
+## $ Years     &lt;int&gt; 31, 32, 13, 31, 31, 29, 29, 28, 25, 25, 23, 24, 22, ...
+## $ Age       &lt;int&gt; 64, 62, 67, 59, 59, 55, 63, 53, 53, 53, 50, 52, 57, ...
+## $ Practice  &lt;int&gt; 1, 2, 1, 2, 1, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 2, 2, 1...
+## $ School    &lt;int&gt; 1, 1, 1, 3, 2, 1, 3, 3, 1, 3, 1, 2, 2, 1, 3, 1, 1, 2...
+```
+]
+
+&lt;img src="index_files/figure-html/unnamed-chunk-2-1.png" width="576" style="display: block; margin: auto;" /&gt;
+
+---
+class: split-70
+
+.column[
+
+```r
+library(ergm)
+A &lt;- get.adjacency(lazega)
+lazega.s &lt;- network::as.network(as.matrix(A), directed=FALSE)
+ergm.bern.fit &lt;- ergm(lazega.s ~ edges)
+ergm.bern.fit
+```
+
+```
+## 
+## MLE Coefficients:
+##  edges  
+## -1.499
+```
+]
+
+.column[
+
+
+So `\(\theta=-1.5\)`
+
+and thus `\(p=0.183\)`
+]
+
+
+---
+
+
+
+&lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" width="1152" style="display: block; margin: auto;" /&gt;&lt;img src="index_files/figure-html/unnamed-chunk-6-2.png" width="1152" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: split-50
+
+The ER model is not appropriate, let's extend with more graph statistics.
+
+.column[
+![](img/kstar.png)
+
+`\(S_k(y)\)`: number of `\(k\)`-stars
+]
+
+.column[
+.center[![](img/tris.png)]
+`\(T_k(y)\)`: number of `\(k\)`-triangles 
+]
+
+---
+
+In practice, instead of adding terms for structural statistics at all values of `\(k\)`, they are combined into a single term
+
+For example _alternating `\(k\)`-star counts_
+
+`$$\mathrm{AKS}_{\lambda}(y) = \sum_{k=2}^{N_v-1} (-1)^k \frac{S_k(y)}{\lambda^{k-2}}$$`
+
+`\(\lambda\)` is a parameter that controls decay of influence of larger `\(k\)` terms. Treat as a hyper-parameter of model
+
+---
+
+Another example is _geometrically weighted degree count_
+
+`$$\mathrm{GWD}_{\gamma}(y) = \sum_{d=0}^{N_v-1} e^{-\gamma d}N_d(y)$$`
+
+There is a good amount of literature on definitions and properties of suitable terms to summarize graph structure in these models
+
+---
+
+In addition we want to adjust edge probabilities based on vertex attributes
+
+For edge `\(i \sim j\)`, `\(i\)` may have attribute that increases degree (e.g., seniority)
+
+Or, `\(i\)` and `\(j\)` have attributes that _together_ increase edge probability (e.g., spatial distance in an ecological network)
+
+---
+
+We can add attribute terms to the ERGM model accordingly. E.g.,
+
+- Main effects: `\(h(x_i,x_j)=x_i + x_j\)`
+- Categorical interaction (match): `\(h(x_i,x_j)=I(x_i == x_j)\)`
+- Numeric interaction: `\(h(x_i,x_j)=(x_i-x_j)^2\)`
+
+---
+
+
+
+A full ERGM model for this data:
+
+
+```r
+lazega.ergm &lt;- formula(lazega.s ~ edges + gwesp(log(3), fixed=TRUE) +
+  nodemain("Seniority") +
+  nodemain("Practice") +                         
+  match("Practice") +
+  match("Gender") +
+  match("Office"))
+```
+
+
+
+---
+
+
+```
+## # A tibble: 1 x 5
+##   independence iterations logLik   AIC   BIC
+##   &lt;lgl&gt;             &lt;int&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 FALSE                 2  -230.  474.  505.
+```
+
+---
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; term &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; estimate &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; std.error &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; mcmc.error &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; p.value &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; edges &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -7.0126525 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7030685 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; gwesp.fixed.1.09861228866811 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5906030 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0866729 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; nodecov.Seniority &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0247161 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0063578 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0001013 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; nodecov.Practice &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3960366 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1042741 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0001458 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; nodematch.Practice &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7694967 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1961173 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000872 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; nodematch.Gender &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7374215 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2463944 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0027639 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; nodematch.Office &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.1654418 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1905383 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+
+&lt;img src="index_files/figure-html/unnamed-chunk-9-1.png" width="1152" style="display: block; margin: auto;" /&gt;&lt;img src="index_files/figure-html/unnamed-chunk-9-2.png" width="1152" style="display: block; margin: auto;" /&gt;
+
+---
+
+A few more points:
+
+The general formulation for ERGM is
+
+`$$P_{\theta}(Y=y) = \frac{1}{\kappa} \exp \left\{ \sum_H g_H(y) \right\}$$`
+
+where `\(H\)` represents possible _configurations_ of possible edges among a subset of vertices in graph
+
+`\(g_H(y) = \prod_{y_{ij}\in H} y_{ij}=1\)` if configuration `\(H\)` occurs in graph
+
+---
+
+This brings about some complications since it's infeasible to define function over all possible configurations
+
+Instead, collapse configurations into groups based on certain properties, and count the number of times these properties are satisfied in graph
+
+Even then, computing normalization term `\(\kappa\)` is also infeasible, therefore use sampling methods (MCMC) for estimation
 
 ---
 layout: true
@@ -99,53 +404,86 @@ layout: true
 
 ---
 
-Clustering vertices
+.center.middle[![](img/sbm.png)]
 
-Edge probability depends on class/cluster membership of vertices
-
----
-
-MODEL
+.source[https://doi.org/10.1371/journal.pbio.1002527]
 
 ---
 
-INFERENCE
+Method to cluster vertices in graph
+
+Assume that each vertex belongs to one of `\(Q\)` classes
+
+Then probability of edge `\(i \sim j\)` depends on class/cluster membership of vertices `\(i\)` and `\(j\)`
 
 ---
 
-EXAMPLE
+### Clustered ERGM model
 
+If we knew vertex classes, e.g., `\(i\)` belongs to class `\(q\)` and `\(j\)` belongs to class `\(r\)`
 
----
-
-GOODNESS OF FIT
-
----
-layout: true
-
-## Latent Network Models
+`$$\log\frac{P(Y_{ij}=1|Y_{-(ij)}=y_{-(ij)})}{P(Y_{ij}=0|Y_{-(ij)}=y_{-(ij)})} = \theta_{qr}$$`
 
 ---
 
-Extension to include attributes.
+### Clustered ERGM model
 
-Drawn from SNA literature to model homophily
+Likelihood is then
 
----
+`$$\mathcal{L}(\theta;y) = \frac{1}{\kappa} \exp \{ \sum_{qr} \theta_{qr} L_{qr}(y) \}$$`
 
-MODEL
+with `\(L_{qr}(y)\)` the number of edges `\(i \sim j\)` where `\(i\)` in class `\(q\)` and `\(j\)` in class `\(r\)` 
 
----
-
-INFERENCE
+(a model like `g~match(class)` in ERGM)
 
 ---
 
-EXAMPLE
+However, suppose we don't know vertex class assignments...
+
+SBM is a probabilistic method where we maximize likelihood of this model, assuming class assignments are unobserved
 
 ---
 
-GOODNESS OF FIT (do we even have it?)
+.image-70.center.middle[![](img/gmm.png)]
+
+---
+
+Ingredients:
+
+- `\(Y_{ij}\)` edge `\(i \sim j\)` (binary)
+- `\(z_{iq}\)` indicator for vertex `\(i\)` class `\(q\)` (binary)
+- `\(\alpha_q\)` prior for class `\(q\)` `\(p(z_{iq}=1) = \alpha_q\)`
+- `\(\pi_{qr}\)`: probability of edge `\(i \sim j\)` where `\(i\)` in class `\(q\)` and `\(j\)` in class `\(r\)`
+
+---
+
+With this we can write again a likelihood
+
+`$$\mathcal{L}(\theta;y,z)=\sum_i\sum_q z_{iq} \log \alpha_q + \frac{1}{2} \sum_{i\neq j}\sum_{q\neq r} z_{iq}z_{jr}b(y_{ij};\pi_{qr})$$`
+
+with `\(b(y,\pi)=\pi^y(1-\pi)^{(1-y)}\)`
+
+---
+
+Like similar models (e.g., Gaussian mixture model, Latent Dirichlet Allocation) can't optimize this directly
+
+Instead EM algorithm used:
+  - Initialize parameters `\(\theta\)`
+  - Repeat until "convergence":
+    - Compute `\(\gamma_{iq}=E\{z_{iq} | y; \theta\}=p(z_{iq}| y; \theta)\)`
+    - Maximize likelihood w.r.t. `\(\theta\)` plugging in `\(\gamma_{iq}\)` for `\(z_{iq}\)`.
+
+---
+
+Like similar models need to determine number of classes (clusters) and select using some model selection criterion
+
+- AIC
+- BIC
+- Integrated Classification Likelihood
+
+---
+
+.image-60.center.middle[![](img/sbm_res.png)]
 
 ---
 layout: true
@@ -154,27 +492,64 @@ layout: true
 
 ---
 
-These last two models are related to community finding methods that are not statistical.
+If we think of class as _community_ we can see relationship with non-probabilistically community finding methods (e.g., Newman-Girvan)
 
-E.g., Newman-Girvan
+.center[![](img/ng.png)]
 
 ---
-
+exclude: true
 NEWMAN-GIRVAN algorithm
 
 ---
+exclude: true
 
 COMPARISON TO LATENT AND SBM MODELS
 
 Cite the Bickel paper:
 http://www.pnas.org/content/106/50/21068.full
+
+
+---
+layout: false
+
+## Summary
+
+Slightly different way of thinking probabilistically about networks
+
+Define probabilistic model over network configurations
+
+Parameterize model using network structural properties and vertex properties
+
+Perform inference/analysis on resulting parameters
+
+Can also extend classical clustering methodology to this setting
+
+---
+exclude: true
+layout: true
+
+## Latent Network Models
+
+---
+exclude: true
+
+Extension to include attributes.
+
+Drawn from SNA literature to model homophily
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
 "ratio": "16:9"
 });
-if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {window.dispatchEvent(new Event('resize'));});
-(function() {var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler"); if (!r) return; s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }"; d.head.appendChild(s);})();</script>
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
 <script>
 remark.macros['scale'] = function (percentage) {
   var url = this;
@@ -182,12 +557,23 @@ remark.macros['scale'] = function (percentage) {
 };
 </script>
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
   }
-});
+})();
 </script>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
