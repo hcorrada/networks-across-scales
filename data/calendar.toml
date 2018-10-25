@@ -207,6 +207,7 @@ date = "10/23"
 
 [[day17.covers]]
 title = "Statistical Inference with Networked Data"
+notes = "lectures/stat_inference.pdf"
 
 [[day17.prep]]
 title = "SAND Ch. 6"
