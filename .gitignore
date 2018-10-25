@@ -3,3 +3,5 @@ deploy.sh
 dist
 *cache
 scratch
+*.ppt*
+
