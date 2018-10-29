@@ -4,7 +4,7 @@
     <title>Statistical Analysis of Network Data</title>
     <meta charset="utf-8">
     <meta name="author" content="Héctor Corrada Bravo" />
-    <meta name="date" content="2018-10-25" />
+    <meta name="date" content="2018-10-29" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
@@ -26,7 +26,7 @@ count: false
 
 .other-info[
 University of Maryland, College Park, USA  
-CMSC828O 2018-10-25
+CMSC828O 2018-10-29
 ]
 
 .logo[![](img/logo.png)]
@@ -73,6 +73,8 @@ layout: false
 .center.middle[![](img/spatial.png)]
 
 .source[https://doi.org/10.1016/j.prevetmed.2014.01.013]
+
+
 
 ---
 layout: true
@@ -190,7 +192,7 @@ class: split-30
 ```
 ]
 
-&lt;img src="index_files/figure-html/unnamed-chunk-2-1.png" width="576" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-4-1.png" width="576" style="display: block; margin: auto;" /&gt;
 
 ---
 class: split-70
@@ -226,7 +228,7 @@ and thus `\(p=0.183\)`
 
 
 
-&lt;img src="index_files/figure-html/unnamed-chunk-6-1.png" width="1152" style="display: block; margin: auto;" /&gt;&lt;img src="index_files/figure-html/unnamed-chunk-6-2.png" width="1152" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" width="1152" style="display: block; margin: auto;" /&gt;&lt;img src="index_files/figure-html/unnamed-chunk-8-2.png" width="1152" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -375,7 +377,7 @@ lazega.ergm &lt;- formula(lazega.s ~ edges + gwesp(log(3), fixed=TRUE) +
 ---
 
 
-&lt;img src="index_files/figure-html/unnamed-chunk-9-1.png" width="1152" style="display: block; margin: auto;" /&gt;&lt;img src="index_files/figure-html/unnamed-chunk-9-2.png" width="1152" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-11-1.png" width="1152" style="display: block; margin: auto;" /&gt;&lt;img src="index_files/figure-html/unnamed-chunk-11-2.png" width="1152" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -496,6 +498,9 @@ If we think of class as _community_ we can see relationship with non-probabilist
 
 .center[![](img/ng.png)]
 
+See http://www.pnas.org/content/106/50/21068.full
+for comparison of these methods
+
 ---
 exclude: true
 NEWMAN-GIRVAN algorithm
@@ -536,6 +541,202 @@ exclude: true
 Extension to include attributes.
 
 Drawn from SNA literature to model homophily
+
+
+
+
+
+---
+layout: true
+
+## Learning Network Structure
+---
+
+How to find network structure from observational data (e.g., gene expression)
+  
+.center.image-70[![](img/yeast_struct.png)]
+
+---
+
+### Correlation Networks
+
+The simplest approach: compute correlation between observations, if correlation high, add an edge
+
+ADD FIGURE HERE OF TWO TIME SERIES
+
+---
+
+Assume data `\(y_i=\{y_{i1}, y_{i2}, \ldots, y_{iT}\}\)` (e.g., gene expression of gene `\(i\)` in `\(T\)` different conditions) and `\(y_j\)`
+
+Important quantity 1: the _covariance_ of `\(y_i\)` and `\(y_j\)`
+
+`$$\sigma_{ij} = \frac{1}{T}\sum_{t=1}^T (y_{it}-\overline{y}_i)(y_{jt}-\overline{y}_j)$$`
+
+
+---
+
+Important quantity 1: the _covariance_ of `\(y_i\)` and `\(y_j\)`
+
+`$$\sigma_{ij} = \frac{1}{T} \sum_{t=1}^T (y_{it}-\overline{y}_i)(y_{jt}-\overline{y}_j)$$`
+
+How do `\(y_i\)` and `\(y_j\)` vary around their means?
+
+---
+
+We can estimate `\(\sigma_{ij}\)` from data by plugging in the mean of `\(y_i\)` and `\(y_j\)`. 
+
+We would notate the estimate as `\(\hat{\sigma}_{ij}\)`. 
+
+In the following, `\(\sigma_{ij}\)` often means `\(\hat{\sigma}_{ij}\)`, it should follow from context.
+
+---
+
+We often need to compare quantities across different entities in system, e.g., genes, so we want to remove _scale_
+
+_Pearson's Correlation_: 
+
+`$$\rho_{ij} = \frac{\sigma_{ij}}{\sigma_{ii}\sigma_{jj}}$$`
+With `\(\sigma_{ii}\)` the standard deviation of `\(y_i\)`:
+
+`$$\sigma_{ii} = \sqrt{\frac{1}{T} \sum_{i=1}^T (y_{it}-\overline{y}_i)}$$`
+
+---
+
+Note Pearson Correlation is between -1 and 1, it is hard to perform inference on bounded quantities, so one more transformation.
+
+Fisher's transformation
+
+`$$z{ij} = \tanh^{-1}(\rho_{ij}) = \frac{1}{2}\log \frac{1+\rho_{ij}}{1-\rho_{ij}}$$`
+
+---
+class: split-40
+
+.column[
+Edge inference: hypothesis test
+
+`$$H_0=\rho_{ij}=0 \; H_A=\rho_{ij} \neq 0$$`
+
+Compute `\(P\)`-value `\(p_{ij}\)` from `\(N(0,\sqrt{1/(T-3)})\)`
+]
+
+.column.center.image-90[![](img/corr.png)]
+
+---
+
+Perform hypothesis test for every _pair_ of entities, i.e., possible edge  `\(i~j\)`
+
+We would compute `\(P\)`-value for each possible edge
+
+When performing many independent tests, `\(P\)`-values no longer have our intended interpretation
+
+---
+
+### Multiple Hypothesis Testing
+
+|     | Called Significant | Not Called Significant | Total |
+|-----|--------------------|------------------------|-------|
+| Null True | `\(V\)` | `\(m_0-V\)` | `\(m_0\)` |
+| Altern. True | `\(S\)` | `\(m_1-S\)` | `\(m_1\)` |
+| Total | `\(R\)` | `\(m-R\)` | `\(m\)` |
+
+Note: `\(m\)` total tests
+
+---
+
+### Error rates
+
+**Family-wise error rate** (FWER): the probability of at least one Type I error (false positive) `\(\mathrm{FWER}=\Pr(V\geq 1)\)`
+
+We use Bonferroni procedure to control FWER. 
+
+If testing at level `\(\alpha\)` (e.g., `\(\alpha=0.05\)`), only include egdes for which `\(P\)`-value `\(p_{ij} \leq \alpha/m\)`
+
+---
+
+### Error rates
+
+**False Discovery Rate** (FDR): rate that false discoveries occur `\(\mathrm{FDR}=\mathbf{E}(V/R; R&gt;0)Pr(R&gt;0)\)`
+
+We use Benjamini-Hochberg procedure to control FDR. 
+
+Construct list of edges at FDR level `\(\beta\)` (e.g. `\(\beta=0.1\)`) if `\(p_{(k)} \leq \frac{k}{m} \beta\)`, where `\(p_{(k)}\)` is the `\(p\)`-value for the `\(k\)`-th largest `\(p\)`-value.
+
+Note: there are other more precise FDR controlling procedures (esp. `\(q\)`-values)
+
+---
+
+### The problem with Pearson's correlation
+
+Consider the following networks, where absence of edge corresponds to true _conditional independence_ between vertices in graph
+
+.image-80.center[![](img/partial.png)]
+
+In all three of these, Pearson's correlation test with `\(\rho_{ij}\)` is likely statistically significant.
+
+---
+
+Let's extend the way we think about the situation. First consider covariance _matrix_ for `\(i\)`, `\(j\)` and `\(k\)`
+
+`$$\Sigma = \left( \begin{matrix}
+\sigma_{ii}^2 &amp; \sigma_{ij} &amp; \sigma_{ik} \\
+\sigma_{ji} &amp; \sigma_{jj}^2 &amp; \sigma_{jk} \\
+\sigma_{ki} &amp; \sigma_{kj} &amp; \sigma_{kk}^2 
+\end{matrix} \right)$$`
+
+---
+
+We can then think about the covariance of `\(i\)` and `\(j\)` _conditioned_ on `\(k\)`
+
+`$$\Sigma_{ij|k} = \left( \begin{matrix} 
+\sigma_{ii}^2 &amp; \sigma_{ij} \\
+\sigma_{ji} &amp; \sigma_{jj}^2
+\end{matrix} \right) - \sigma_{kk}^{-2}
+\left( \begin{matrix}
+\sigma_{ik}^2 &amp; \sigma_{ik}\sigma_{jk} \\
+\sigma_{ik}\sigma_{jk} &amp; \sigma_{jk}^2
+\end{matrix} \right)$$`
+
+How do `\(y_i\)` and `\(y_j\)` co-vary around their _conditional_ means `\(E(y_i|y_k)\)` and `\(E(y_j|y_k)\)`
+
+---
+
+### Partial correlation networks
+
+This leads to the concept of partial correlation (which we can derive from the conditional covariance)
+
+`$$\rho_{ij|k} = \frac{\rho_{ij} - \rho_{ik}\rho_{jk}}{\sqrt{(1-\rho_{ik}^2)}\sqrt{(1-\rho_{jk}^2)}}$$`
+
+
+---
+
+### Partial correlation networks
+
+What's the test now? No edge if `\(i\)` and `\(j\)` are conditionally independent (there is some `\(k\)` such that `\(\rho_{ij|k}=0\)`) 
+
+Formally:
+`$$H_0: \; \rho_{ij|k} = 0 \textrm{ for some } k \in V_{\backslash \{i,j\}}$$`
+`$$H_A: \; \rho_{ij|k} \neq 0 \textrm{ for all } k$$`
+---
+
+### Partial correlation networks
+
+To determine edge `\(i \sim j\)` compute `\(P\)`-value `\(p_{ij}\)` as 
+
+`$$p_{ij} = \max \{ p_{ij|k}: \; k \in V_{\backslash \{i,j\}} \}$$`
+
+where `\(p_{ij|k}\)` is a `\(P\)`-value computed from (transformed) partial correlation `\(\rho_{ij|k}\)`
+
+Use multiple testing correction as before
+
+---
+
+### Problems with partial correlation networks
+
+For every edge, must compute partial correlation wrt. every other vertex
+
+Compound hypothesis tests like the above are harder to control for multiple testing (i.e., correction mentioned above is not quite right)
+
+The dependence structure they represent is unclear
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({

@@ -77,423 +77,201 @@ layout: false
 
 .source[https://doi.org/10.1016/j.prevetmed.2014.01.013]
 
----
-layout: true
-
-## Exponential Random Graph Models
-
----
-
-In ER random graph model edge probabilities were independent of vertex characterisitics.
-
-Now assume vertices have measured attributes. 
-
-Question: what is the effect of these attributes in network formation, specifically in edge occurence.
-
----
-
-Denote $Y$ as adjacency matrix of graph $G$ over $n$ elements
-
-Denote $X$ as matrix of vertex attributes.
-
-We want to determine $P(Y_{ij}=1|Y_{-(ij)}=y_{-(ij)}, x_i, x_j, L(G))$
-
-where $L(G)$ is a measure of structure of graph $G$ and $y_{-(ij)}$ is the _configuration_ of edges other than edge $i\sim j$
-
----
-class: split-50
-
-We can motivate ERGM model from regression (where outcome $Y$ is continuous)
-
-.column[
-$$E[Y_i|x_i] = \sum_{j=1}^p \beta_j x_{ij} = \beta'x_i$$
-]
-
-.column[
-.center[![](img/lr.png)]
-]
-
----
-class: split-50
-
-We turn into a probabilistic model as
-
-.column[
-$$Y=\beta'x_i + \epsilon$$
-
-$$\epsilon \sim N(0,\sigma^2)$$
-]
-
-.column[
-.center[![](img/lr.png)]
-]
-
----
-
-For _binary_ outcome $Y$ we use _logistic regression_
-
-.center[![](img/logis.png)]
-
-$$\log\frac{P(Y_i=1|x_i)}{1-P(Y_i=1|x_i)} = \beta'x_i$$
-
-Which corresponds to a Bernoulli model of $P(Y_i=1|x_i)$.
-
----
-
-The outcome of interest in the ERGM model is the _presence_ of edge $y_{ij}=1$.
-
-Use a Bernoulli model with $y_{ij}$ as the outcome.
-
-With vertex attributes and graph structural measure as predictors.
-
----
-
-Model 1: the ER model
-
-$$\log \frac{P(Y_{ij}=1|Y_{-(ij)}=y_{-(ij)})}{P(Y_{ij}=0|Y_{-(ij)}=y_{-(ij)})} = \theta$$
-
-Thinking of logistic regression: model is a _constant_, independent of rest of graph structure, independent of vertex attributes
-
----
-
-To fit models we need a _likelihood_, i.e., probability of observed graph, given parameters (in this case $\theta$)
-
---
-
-Write $P(Y_{ij}=1|...)$ as $p$, then likelihood is given by
-
-$$\mathcal{L}(\theta;y) = \prod_{ij} p^{y_{ij}}(1-p)^{(1-y_{ij})}$$
----
-
-(Exercise)
-
-$$\mathcal{L}(\theta;y)=\frac{1}{\kappa}\exp\{\theta L(y)\}$$
-
-where $L(y)$ is the number of edges in the graph.
-
-This is the formulation given in reading!
-
----
-class: split-30
-
-.column[
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-library(sand)
-library(tidygraph)
-library(ggraph)
-library(tidyverse)
-
-data(lazega)
-lazega <- upgrade_graph(lazega)
-lazega_tbl <- as_tbl_graph(lazega)
-as_data_frame(lazega_tbl, what="vertices") %>%
-  glimpse()
-```
-]
-
-```{r, echo=FALSE, fig.width=6, fig.height=5, fig.align="center"}
-lazega_tbl %>%
-  ggraph(layout="kk") +
-    geom_edge_fan() +
-    geom_node_point(aes(color=factor(Practice)), size=5) +
-    theme_graph(foreground=NULL)
+```{r, child='stat_inference.rmd'}
 ```
 
----
-class: split-70
-
-.column[
-```{r, echo=TRUE, message=FALSE}
-library(ergm)
-A <- get.adjacency(lazega)
-lazega.s <- network::as.network(as.matrix(A), directed=FALSE)
-ergm.bern.fit <- ergm(lazega.s ~ edges)
-ergm.bern.fit
-```
-]
-
-.column[
-```{r, echo=FALSE}
-theta <- ergm.bern.fit$coef[1]
-p_er <- plogis(theta)
+```{r, eval=FALSE, child='net_structure.rmd'}
 ```
 
-So $\theta=`r format(theta,digits=3)`$
-
-and thus $p=`r format(p_er, digits=3)`$
-]
-
-
----
-
-```{r, echo=FALSE}
-gof.lazega.bern <- gof(ergm.bern.fit)
-```
-
-```{r, echo=FALSE, fig.width=12, fig.height=6, fig.align="center"}
-oldpar <- par(mfrow=c(1,3),oma=c(0.5,2,1,0.5))
-plot(gof.lazega.bern)
-```
-
-
----
-class: split-50
-
-The ER model is not appropriate, let's extend with more graph statistics.
-
-.column[
-![](img/kstar.png)
-
-$S_k(y)$: number of $k$-stars
-]
-
-.column[
-.center[![](img/tris.png)]
-$T_k(y)$: number of $k$-triangles 
-]
-
----
-
-In practice, instead of adding terms for structural statistics at all values of $k$, they are combined into a single term
-
-For example _alternating $k$-star counts_
-
-$$\mathrm{AKS}_{\lambda}(y) = \sum_{k=2}^{N_v-1} (-1)^k \frac{S_k(y)}{\lambda^{k-2}}$$
-
-$\lambda$ is a parameter that controls decay of influence of larger $k$ terms. Treat as a hyper-parameter of model
-
----
-
-Another example is _geometrically weighted degree count_
-
-$$\mathrm{GWD}_{\gamma}(y) = \sum_{d=0}^{N_v-1} e^{-\gamma d}N_d(y)$$
-
-There is a good amount of literature on definitions and properties of suitable terms to summarize graph structure in these models
-
----
-
-In addition we want to adjust edge probabilities based on vertex attributes
-
-For edge $i \sim j$, $i$ may have attribute that increases degree (e.g., seniority)
-
-Or, $i$ and $j$ have attributes that _together_ increase edge probability (e.g., spatial distance in an ecological network)
-
----
-
-We can add attribute terms to the ERGM model accordingly. E.g.,
-
-- Main effects: $h(x_i,x_j)=x_i + x_j$
-- Categorical interaction (match): $h(x_i,x_j)=I(x_i == x_j)$
-- Numeric interaction: $h(x_i,x_j)=(x_i-x_j)^2$
-
----
-
-```{r setattrs, echo=FALSE}
-v.attrs <- get.data.frame(lazega, what="vertices")
-
-lazega.s <- network::set.vertex.attribute(lazega.s, "Office", v.attrs$Office)
-lazega.s <- network::set.vertex.attribute(lazega.s, "Practice", v.attrs$Practice)
-lazega.s <- network::set.vertex.attribute(lazega.s, "Gender", v.attrs$Gender)
-lazega.s <- network::set.vertex.attribute(lazega.s, "Seniority", v.attrs$Seniority)
-```
-
-A full ERGM model for this data:
-
-```{r setmodel, dependson=c("setattrs")}
-lazega.ergm <- formula(lazega.s ~ edges + gwesp(log(3), fixed=TRUE) +
-  nodemain("Seniority") +
-  nodemain("Practice") +                         
-  match("Practice") +
-  match("Gender") +
-  match("Office"))
-```
-
-```{r fitergm, echo=FALSE, dependson=c("setmodel")}
-set.seed(42)
-lazega.ergm.fit <- ergm(lazega.ergm)      
-```
-
----
-
-```{r, echo=FALSE, dependson=c("fitergm")}
-library(broom)
-glance(lazega.ergm.fit)
-```
-
----
-
-```{r, echo=FALSE, dependson=c("fitergm")}
-tidy(lazega.ergm.fit) %>%
-  knitr::kable("html")
-```
-
----
-```{r gofergm, echo=FALSE, dependson=c("fitergm")}
-gof.lazega.ergm <- gof(lazega.ergm.fit)
-```
-
-```{r, echo=FALSE, fig.width=12, fig.height=6, fig.align="center", dependson=c("gofergm")}
-oldpar <- par(mfrow=c(1,3),oma=c(0.5,2,1,0.5))
-plot(gof.lazega.ergm)
-```
-
----
-
-A few more points:
-
-The general formulation for ERGM is
-
-$$P_{\theta}(Y=y) = \frac{1}{\kappa} \exp \left\{ \sum_H g_H(y) \right\}$$
-
-where $H$ represents possible _configurations_ of possible edges among a subset of vertices in graph
-
-$g_H(y) = \prod_{y_{ij}\in H} y_{ij}=1$ if configuration $H$ occurs in graph
-
----
-
-This brings about some complications since it's infeasible to define function over all possible configurations
-
-Instead, collapse configurations into groups based on certain properties, and count the number of times these properties are satisfied in graph
-
-Even then, computing normalization term $\kappa$ is also infeasible, therefore use sampling methods (MCMC) for estimation
 
 ---
 layout: true
 
-## Stochastic Block Models
+## Learning Network Structure
+---
+
+How to find network structure from observational data (e.g., gene expression)
+  
+.center.image-70[![](img/yeast_struct.png)]
 
 ---
 
-.center.middle[![](img/sbm.png)]
+### Correlation Networks
 
-.source[https://doi.org/10.1371/journal.pbio.1002527]
+The simplest approach: compute correlation between observations, if correlation high, add an edge
 
----
-
-Method to cluster vertices in graph
-
-Assume that each vertex belongs to one of $Q$ classes
-
-Then probability of edge $i \sim j$ depends on class/cluster membership of vertices $i$ and $j$
+ADD FIGURE HERE OF TWO TIME SERIES
 
 ---
 
-### Clustered ERGM model
+Assume data $y_i=\{y_{i1}, y_{i2}, \ldots, y_{iT}\}$ (e.g., gene expression of gene $i$ in $T$ different conditions) and $y_j$
 
-If we knew vertex classes, e.g., $i$ belongs to class $q$ and $j$ belongs to class $r$
+Important quantity 1: the _covariance_ of $y_i$ and $y_j$
 
-$$\log\frac{P(Y_{ij}=1|Y_{-(ij)}=y_{-(ij)})}{P(Y_{ij}=0|Y_{-(ij)}=y_{-(ij)})} = \theta_{qr}$$
-
----
-
-### Clustered ERGM model
-
-Likelihood is then
-
-$$\mathcal{L}(\theta;y) = \frac{1}{\kappa} \exp \{ \sum_{qr} \theta_{qr} L_{qr}(y) \}$$
-
-with $L_{qr}(y)$ the number of edges $i \sim j$ where $i$ in class $q$ and $j$ in class $r$ 
-
-(a model like `g~match(class)` in ERGM)
-
----
-
-However, suppose we don't know vertex class assignments...
-
-SBM is a probabilistic method where we maximize likelihood of this model, assuming class assignments are unobserved
-
----
-
-.image-70.center.middle[![](img/gmm.png)]
-
----
-
-Ingredients:
-
-- $Y_{ij}$ edge $i \sim j$ (binary)
-- $z_{iq}$ indicator for vertex $i$ class $q$ (binary)
-- $\alpha_q$ prior for class $q$ $p(z_{iq}=1) = \alpha_q$
-- $\pi_{qr}$: probability of edge $i \sim j$ where $i$ in class $q$ and $j$ in class $r$
-
----
-
-With this we can write again a likelihood
-
-$$\mathcal{L}(\theta;y,z)=\sum_i\sum_q z_{iq} \log \alpha_q + \frac{1}{2} \sum_{i\neq j}\sum_{q\neq r} z_{iq}z_{jr}b(y_{ij};\pi_{qr})$$
-
-with $b(y,\pi)=\pi^y(1-\pi)^{(1-y)}$
-
----
-
-Like similar models (e.g., Gaussian mixture model, Latent Dirichlet Allocation) can't optimize this directly
-
-Instead EM algorithm used:
-  - Initialize parameters $\theta$
-  - Repeat until "convergence":
-    - Compute $\gamma_{iq}=E\{z_{iq} | y; \theta\}=p(z_{iq}| y; \theta)$
-    - Maximize likelihood w.r.t. $\theta$ plugging in $\gamma_{iq}$ for $z_{iq}$.
-
----
-
-Like similar models need to determine number of classes (clusters) and select using some model selection criterion
-
-- AIC
-- BIC
-- Integrated Classification Likelihood
-
----
-
-.image-60.center.middle[![](img/sbm_res.png)]
-
----
-layout: true
-
-## Communities
-
----
-
-If we think of class as _community_ we can see relationship with non-probabilistically community finding methods (e.g., Newman-Girvan)
-
-.center[![](img/ng.png)]
-
----
-exclude: true
-NEWMAN-GIRVAN algorithm
-
----
-exclude: true
-
-COMPARISON TO LATENT AND SBM MODELS
-
-Cite the Bickel paper:
-http://www.pnas.org/content/106/50/21068.full
+$$\sigma_{ij} = \frac{1}{T}\sum_{t=1}^T (y_{it}-\overline{y}_i)(y_{jt}-\overline{y}_j)$$
 
 
 ---
-layout: false
 
-## Summary
+Important quantity 1: the _covariance_ of $y_i$ and $y_j$
 
-Slightly different way of thinking probabilistically about networks
+$$\sigma_{ij} = \frac{1}{T} \sum_{t=1}^T (y_{it}-\overline{y}_i)(y_{jt}-\overline{y}_j)$$
 
-Define probabilistic model over network configurations
-
-Parameterize model using network structural properties and vertex properties
-
-Perform inference/analysis on resulting parameters
-
-Can also extend classical clustering methodology to this setting
+How do $y_i$ and $y_j$ vary around their means?
 
 ---
-exclude: true
-layout: true
 
-## Latent Network Models
+We can estimate $\sigma_{ij}$ from data by plugging in the mean of $y_i$ and $y_j$. 
+
+We would notate the estimate as $\hat{\sigma}_{ij}$. 
+
+In the following, $\sigma_{ij}$ often means $\hat{\sigma}_{ij}$, it should follow from context.
 
 ---
-exclude: true
 
-Extension to include attributes.
+We often need to compare quantities across different entities in system, e.g., genes, so we want to remove _scale_
 
-Drawn from SNA literature to model homophily
+_Pearson's Correlation_: 
 
+$$\rho_{ij} = \frac{\sigma_{ij}}{\sigma_{ii}\sigma_{jj}}$$
+With $\sigma_{ii}$ the standard deviation of $y_i$:
+
+$$\sigma_{ii} = \sqrt{\frac{1}{T} \sum_{i=1}^T (y_{it}-\overline{y}_i)}$$
+
+---
+
+Note Pearson Correlation is between -1 and 1, it is hard to perform inference on bounded quantities, so one more transformation.
+
+Fisher's transformation
+
+$$z{ij} = \tanh^{-1}(\rho_{ij}) = \frac{1}{2}\log \frac{1+\rho_{ij}}{1-\rho_{ij}}$$
+
+---
+class: split-40
+
+.column[
+Edge inference: hypothesis test
+
+$$H_0=\rho_{ij}=0 \; H_A=\rho_{ij} \neq 0$$
+
+Compute $P$-value $p_{ij}$ from $N(0,\sqrt{1/(T-3)})$
+]
+
+.column.center.image-90[![](img/corr.png)]
+
+---
+
+Perform hypothesis test for every _pair_ of entities, i.e., possible edge  $i~j$
+
+We would compute $P$-value for each possible edge
+
+When performing many independent tests, $P$-values no longer have our intended interpretation
+
+---
+
+### Multiple Hypothesis Testing
+
+|     | Called Significant | Not Called Significant | Total |
+|-----|--------------------|------------------------|-------|
+| Null True | $V$ | $m_0-V$ | $m_0$ |
+| Altern. True | $S$ | $m_1-S$ | $m_1$ |
+| Total | $R$ | $m-R$ | $m$ |
+
+Note: $m$ total tests
+
+---
+
+### Error rates
+
+**Family-wise error rate** (FWER): the probability of at least one Type I error (false positive) $\mathrm{FWER}=\Pr(V\geq 1)$
+
+We use Bonferroni procedure to control FWER. 
+
+If testing at level $\alpha$ (e.g., $\alpha=0.05$), only include egdes for which $P$-value $p_{ij} \leq \alpha/m$
+
+---
+
+### Error rates
+
+**False Discovery Rate** (FDR): rate that false discoveries occur $\mathrm{FDR}=\mathbf{E}(V/R; R>0)Pr(R>0)$
+
+We use Benjamini-Hochberg procedure to control FDR. 
+
+Construct list of edges at FDR level $\beta$ (e.g. $\beta=0.1$) if $p_{(k)} \leq \frac{k}{m} \beta$, where $p_{(k)}$ is the $p$-value for the $k$-th largest $p$-value.
+
+Note: there are other more precise FDR controlling procedures (esp. $q$-values)
+
+---
+
+### The problem with Pearson's correlation
+
+Consider the following networks, where absence of edge corresponds to true _conditional independence_ between vertices in graph
+
+.image-80.center[![](img/partial.png)]
+
+In all three of these, Pearson's correlation test with $\rho_{ij}$ is likely statistically significant.
+
+---
+
+Let's extend the way we think about the situation. First consider covariance _matrix_ for $i$, $j$ and $k$
+
+$$\Sigma = \left( \begin{matrix}
+\sigma_{ii}^2 & \sigma_{ij} & \sigma_{ik} \\
+\sigma_{ji} & \sigma_{jj}^2 & \sigma_{jk} \\
+\sigma_{ki} & \sigma_{kj} & \sigma_{kk}^2 
+\end{matrix} \right)$$
+
+---
+
+We can then think about the covariance of $i$ and $j$ _conditioned_ on $k$
+
+$$\Sigma_{ij|k} = \left( \begin{matrix} 
+\sigma_{ii}^2 & \sigma_{ij} \\
+\sigma_{ji} & \sigma_{jj}^2
+\end{matrix} \right) - \sigma_{kk}^{-2}
+\left( \begin{matrix}
+\sigma_{ik}^2 & \sigma_{ik}\sigma_{jk} \\
+\sigma_{ik}\sigma_{jk} & \sigma_{jk}^2
+\end{matrix} \right)$$
+
+How do $y_i$ and $y_j$ co-vary around their _conditional_ means $E(y_i|y_k)$ and $E(y_j|y_k)$
+
+---
+
+### Partial correlation networks
+
+This leads to the concept of partial correlation (which we can derive from the conditional covariance)
+
+$$\rho_{ij|k} = \frac{\rho_{ij} - \rho_{ik}\rho_{jk}}{\sqrt{(1-\rho_{ik}^2)}\sqrt{(1-\rho_{jk}^2)}}$$
+
+
+---
+
+### Partial correlation networks
+
+What's the test now? No edge if $i$ and $j$ are conditionally independent (there is some $k$ such that $\rho_{ij|k}=0$) 
+
+Formally:
+$$H_0: \; \rho_{ij|k} = 0 \textrm{ for some } k \in V_{\backslash \{i,j\}}$$
+$$H_A: \; \rho_{ij|k} \neq 0 \textrm{ for all } k$$
+---
+
+### Partial correlation networks
+
+To determine edge $i \sim j$ compute $P$-value $p_{ij}$ as 
+
+$$p_{ij} = \max \{ p_{ij|k}: \; k \in V_{\backslash \{i,j\}} \}$$
+
+where $p_{ij|k}$ is a $P$-value computed from (transformed) partial correlation $\rho_{ij|k}$
+
+Use multiple testing correction as before
+
+---
+
+### Problems with partial correlation networks
+
+For every edge, must compute partial correlation wrt. every other vertex
+
+Compound hypothesis tests like the above are harder to control for multiple testing (i.e., correction mentioned above is not quite right)
+
+The dependence structure they represent is unclear
