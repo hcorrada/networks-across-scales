@@ -100,8 +100,6 @@ How to find network structure from observational data (e.g., gene expression)
 
 The simplest approach: compute correlation between observations, if correlation high, add an edge
 
-ADD FIGURE HERE OF TWO TIME SERIES
-
 ---
 
 Assume data $y_i=\{y_{i1}, y_{i2}, \ldots, y_{iT}\}$ (e.g., gene expression of gene $i$ in $T$ different conditions) and $y_j$
@@ -275,3 +273,177 @@ For every edge, must compute partial correlation wrt. every other vertex
 Compound hypothesis tests like the above are harder to control for multiple testing (i.e., correction mentioned above is not quite right)
 
 The dependence structure they represent is unclear
+
+---
+
+Here we turn to a very powerful abstraction, thinking of graphs as a way of describing the _joint_ distribution of gene expression measurements (Probabilistic Graphical Models).
+
+---
+layout: true
+
+## Graphical Models
+
+---
+
+Consider each _complete vector_ of expression measurements at each time $\mathbf{y}$
+
+Suppose some _conditional independence_ properties hold for some variables in $\mathbf{y}$, 
+  - Example: variable $y_2$ and $y_3$ are independent given _remaining_ variables in $\mathbf{y}$
+  
+---
+
+We can encode these conditional independence properties in a graph.
+
+.center[![](img/lilgraph.png)]
+
+---
+
+Hammersley-Clifford theorem: all probability distributions that satisfy conditional independence properties in a graph can be written as
+
+$$P(\mathbf{y})=\frac{1}{Z}\exp \{ \sum_{c\in C} f_c(\mathbf{y}_c) \}$$
+
+$C$ is the set of all _cliques_ in a graph, $c$ a specific clique and $\mathbf{y_c}$ the variables in the clique.
+
+---
+
+The probability distribution is determined by the choice of potential functions $f_c$. Example: 
+
+1. $f_c(y_i) = -\frac{1}{2} \tau_{ii}y_i^2$  
+2. $f_c(\{y_i,y_j\}) = -\frac{1}{2} \tau_{ij}y_iy_j$  
+3. $f_c(\mathbf{y_c}) = 0$ for $|y_c| \geq 3$
+
+---
+layout: true
+
+## Graphical Gaussian Models
+
+---
+class: split-50
+
+Define matrix $\Sigma^{-1}$ as
+
+.column[
+1. $\Sigma_{ij}^{-1} = \tau_{ij}$ if there is an edge between $y_i$ and $y_j$  
+
+2. $\Sigma_{ij}^{-1} = 0$ otherwise
+
+$$\Sigma^{-1} = \left( \begin{matrix}
+\tau_{11}^2 & \tau_{12} & 0 & \tau_{14} \\
+\tau_{12} & \tau_{22}^2 & \tau_{23} & 0 \\
+0 & \tau_{23} & \tau_{33}^2 & \tau_{34} \\
+\tau_{14} & 0 & \tau_{34} & \tau_{44}^2
+\end{matrix} \right)$$
+
+]
+
+.column[
+.center[![](img\lilgraph.png)]
+]
+---
+
+With this in place, we can say that $\mathbf{y}$ is distributed as _multivariate_ normal distribution $N(0,\Sigma)$.
+
+**Connection to partial correlation:** We can think about distribution of $y_i$ and $y_j$ conditioned on the rest of the graph $V_{\backslash \{i,j\}}$ and the (partial) correlation of $y_i$ and $y_j$ under this distribution
+
+$$\rho_{ij|V_{\backslash \{i,j\}}} = - \frac{\tau_{ij}}{\tau_{ii}\tau_{jj}}$$
+
+---
+layout: true
+
+## Sparse Inverse Covariance
+
+---
+
+With this framework in place we can now think of network structure inference.
+
+Main idea: given draws from multivariate distribution $\mathbf{y}$ (i.e., expression vector at each time point), 
+
+Estimate a _sparse_ inverse correlation matrix, get graph from the pattern of 0's in the estimated matrix
+
+.source[Banerjee, et al. ICML 2006, JMLR 2008, Friedman Biostatistics 2007]
+
+---
+
+Maximum Likelihood estimate of inverse covariance is given by solution to
+
+$$\max_{X \succ 0} \log \det X - (SX)$$
+
+$S$ is the estimated sample covariance matrix
+
+$$S=\sum_{t=1}^T \mathbf{y_t}\mathbf{y_t}'$$
+
+(Yuck)
+
+---
+
+We can induce zeros in the solution using a penalized likelihood estimate
+
+$$\max_{X \succ 0} \log \det X - (SX) - \lambda \|X\|_1$$
+
+where $$\|X\|_1 = \sum_{ij} X_{ij}$$
+
+(Yuckier)
+
+---
+class: split-50
+
+### Block-coordinate ascent
+
+Solve by maximizing one column of matrix at a time (edges for each variable, e.g., $x_{12}$ below)
+
+$$\min_{\beta} \frac{1}{2} \|X_{11}^{1/2}\beta - z\|^2 + \lambda \|\beta\|_1$$
+
+with $z=W_{11}^{1/2}s_{12}$ and
+
+.column[
+$$X=\left( \begin{matrix} 
+X_{11} & x_{12} \\
+x_{12} & x_{22}
+\end{matrix} \right)$$
+]
+
+.column[
+$$S=\left( \begin{matrix} 
+S_{11} & s_{12} \\
+s_{12} & s_{22}
+\end{matrix} \right)$$
+]
+
+---
+
+### Block-coordinate ascent
+
+Solve by maximizing one column of matrix at a time (edges for each variable, e.g., $x_{12}$ below)
+
+$$\min_{\beta} \frac{1}{2} \|X_{11}^{1/2}\beta - z\|^2 + \lambda \|\beta\|_1$$
+
+Solution is then $x_{12} = W_{11}\beta$
+
+(This is l1-regularized least squares, easy to solve, not yucky at all)
+
+---
+
+### Block-coordinate ascent
+
+Solve by maximizing one column of matrix at a time (edges for each variable, e.g., $x_{12}$ below)
+
+$$\min_{\beta} \frac{1}{2} \|X_{11}^{1/2}\beta - z\|^2 + \lambda \|\beta\|_1$$
+
+Iterate over columns of matrix until $\beta$ converges (or even better, until objective function converges)
+
+---
+layout: false
+
+## Summary
+
+Using Gaussian Graphical Model representation
+
+- multivariate normal probability over a sparse graph
+- take resulting graph as e.g., _gene network_
+
+Use sparsity-inducing regularization (l1-norm)
+
+Block-coordinate ascent method leads to l1-regularized regression at each step
+
+- Can use efficient coordinate descent (soft-thresholding) to solve regression problem
+

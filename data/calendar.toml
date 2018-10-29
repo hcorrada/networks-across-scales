@@ -256,22 +256,23 @@ title = "Unit Closing: State-of-the-art Paper Presentations: ML and Stat Inferen
 date = "11/8"
 
 [[day22.covers]]
-title = "Network Visualization I"
+title = "Guest Lecture: Max Leiserson"
 
-[[day22.prep]]
-title = "SAND ch. 3"
 
 [day22a]
 date = "11/13"
 
 [[day22a.covers]]
-title = "Network Visualization II"
+title = "Network Visualization I"
+
+[[day22a.prep]]
+title = "SAND ch. 3"
 
 [day23]
 date = "11/15"
 
 [[day23.covers]]
-title = "Network Visualization III"
+title = "Network Visualization II"
 
 [[day23.prep]]
 title = "Simple Algorithms for Network Visualization: A Tutorial"
