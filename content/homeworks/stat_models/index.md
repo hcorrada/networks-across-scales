@@ -3,9 +3,9 @@ title: "Homework: Statistical Analysis of Network Data"
 date: "2017-10-24"
 ---
 
-**DUE**: Wednesday 11/7/2018, 11:59pm  
+**DUE**: Monday 11/5/2018, 11:59pm  
 **Posted**: 10/25/2018  
-**Last Update**: 10/24/2018  
+**Last Update**: 10/30/2018  
 
 
 We will use ecological network data from the paper "How Structured is the Entangled Bank?..." by Kefi et al. http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002527. This paper used Stochastic Block Models to analyze both trophic and non-trophic species interaction networks. Your goal in this homework is to (a) partially replicate some of the analyses in the paper, and reanalyze this data using other statistical methods for analysis. 
@@ -17,7 +17,9 @@ Data for the trophic and non-trophic networks along with species metadata is ava
 
 ## Stochastic Block Models
 
-Fit a stochastic block model to the trophic network. You can use the `mixer` R package as described in SAND Ch. 6. for this task. Alternatively, you can use any appropriate implementation of the EM algorithm and a suitable model selection criterion (AIC, BIC, or ICL). In Python, you can use the `graph-tool` https://graph-tool.skewed.de/. More information about SBM and extensions found here: https://graph-tool.skewed.de/static/doc/demos/inference/inference.html#the-stochastic-block-model-sbm.  
+Fit a stochastic block model to the trophic network. You can use the `mixer` R package as described in SAND Ch. 6. for this task. Alternatively, you can use any appropriate implementation of the EM algorithm and a suitable model selection criterion (AIC, BIC, or ICL). **UPDATE: The `mixer` package is not available for R 3.5, use package `blockmodels` instead.**
+
+In Python, you can use the `graph-tool` https://graph-tool.skewed.de/. More information about SBM and extensions found here: https://graph-tool.skewed.de/static/doc/demos/inference/inference.html#the-stochastic-block-model-sbm.  
 
 Report on the resulting structure of the class membership probability distributions of the species. Comment on how your result relates to the results reported in the paper. Is there any correlation between class membership and vertex attributes reported for these species? One way to answer the latter is to perform a regression analysis modeling vertex attributes dependent on class membership, taking the most likely class label for each species.
 

@@ -264,9 +264,9 @@
 
 			
 
-<p><strong>DUE</strong>: Wednesday 11/7/2018, 11:59pm<br />
+<p><strong>DUE</strong>: Monday 11/5/2018, 11:59pm<br />
 <strong>Posted</strong>: 10/25/2018<br />
-<strong>Last Update</strong>: 10/24/2018</p>
+<strong>Last Update</strong>: 10/30/2018</p>
 
 <p>We will use ecological network data from the paper &ldquo;How Structured is the Entangled Bank?&hellip;&rdquo; by Kefi et al. <a href="http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002527">http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002527</a>. This paper used Stochastic Block Models to analyze both trophic and non-trophic species interaction networks. Your goal in this homework is to (a) partially replicate some of the analyses in the paper, and reanalyze this data using other statistical methods for analysis.</p>
 
@@ -276,7 +276,9 @@
 
 <h2 id="stochastic-block-models">Stochastic Block Models</h2>
 
-<p>Fit a stochastic block model to the trophic network. You can use the <code>mixer</code> R package as described in SAND Ch. 6. for this task. Alternatively, you can use any appropriate implementation of the EM algorithm and a suitable model selection criterion (AIC, BIC, or ICL). In Python, you can use the <code>graph-tool</code> <a href="https://graph-tool.skewed.de/">https://graph-tool.skewed.de/</a>. More information about SBM and extensions found here: <a href="https://graph-tool.skewed.de/static/doc/demos/inference/inference.html#the-stochastic-block-model-sbm">https://graph-tool.skewed.de/static/doc/demos/inference/inference.html#the-stochastic-block-model-sbm</a>.</p>
+<p>Fit a stochastic block model to the trophic network. You can use the <code>mixer</code> R package as described in SAND Ch. 6. for this task. Alternatively, you can use any appropriate implementation of the EM algorithm and a suitable model selection criterion (AIC, BIC, or ICL). <strong>UPDATE: The <code>mixer</code> package is not available for R 3.5, use package <code>blockmodels</code> instead.</strong></p>
+
+<p>In Python, you can use the <code>graph-tool</code> <a href="https://graph-tool.skewed.de/">https://graph-tool.skewed.de/</a>. More information about SBM and extensions found here: <a href="https://graph-tool.skewed.de/static/doc/demos/inference/inference.html#the-stochastic-block-model-sbm">https://graph-tool.skewed.de/static/doc/demos/inference/inference.html#the-stochastic-block-model-sbm</a>.</p>
 
 <p>Report on the resulting structure of the class membership probability distributions of the species. Comment on how your result relates to the results reported in the paper. Is there any correlation between class membership and vertex attributes reported for these species? One way to answer the latter is to perform a regression analysis modeling vertex attributes dependent on class membership, taking the most likely class label for each species.</p>
 
