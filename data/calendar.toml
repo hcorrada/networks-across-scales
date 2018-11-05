@@ -232,10 +232,7 @@ title = "SAND ch. 7"
 date = "11/1"
 
 [[day20.covers]]
-title = "Learning with Network Data"
-
-[[day20.prep]]
-title = "SAND ch. 8"
+title = "No lecture, work on HW3"
 
 [day20a]
 date = "11/5"
@@ -248,7 +245,10 @@ link = "homeworks/stat_models/"
 date = "11/6"
 
 [[day21.covers]]
-title = "Unit Closing: State-of-the-art Paper Presentations: ML and Stat Inference"
+title = "Learning with Network Data"
+
+[[day21.prep]]
+title = "SAND ch. 8"
 
 #[[day21.prep]]
 #title = "Compeau & Pevzner, Ch. 5 223-253"
@@ -259,21 +259,17 @@ date = "11/8"
 [[day22.covers]]
 title = "Guest Lecture: Max Leiserson"
 
-
 [day22a]
 date = "11/13"
 
 [[day22a.covers]]
-title = "Network Visualization I"
-
-[[day22a.prep]]
-title = "SAND ch. 3"
+title = "Unit Closing: State-of-the-art Paper Presentations: ML and Stat Inference"
 
 [day23]
 date = "11/15"
 
 [[day23.covers]]
-title = "Network Visualization II"
+title = "Network Visualization"
 
 [[day23.prep]]
 title = "Simple Algorithms for Network Visualization: A Tutorial"
@@ -282,6 +278,9 @@ link = "http://profs.etsmtl.ca/mmcguffin/research/2012-mcguffin-simpleNetVis/mcg
 [[day23.prep]]
 title = "Visual Analysis of Large Graphs: State-of-the-Art and Future Research Challenges"
 link = "https://hal.inria.fr/hal-00712779/document"
+
+#[[day22a.prep]]
+#title = "SAND ch. 3"
 
 [day24]
 date = "11/20"
