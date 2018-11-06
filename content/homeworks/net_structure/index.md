@@ -57,6 +57,8 @@ Implement (or use a library) the graphical lasso procedure to estimate a sparse 
 
 - Note, you can derive partial correlation coefficients for $i$ and $j$ from the inverse covariance matrix as
 
+You can find implementations of the graphical lasso in R package `glmnet` and in python module `sklearn.covariance`.
+
 <div>
 $$
 \hat{\rho}_{ij|V\setminus\{i,j\}} = \frac{-\omega_{ij}}{\sqrt{\omega_{ii}\omega_{jj}}}

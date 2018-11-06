@@ -72,6 +72,35 @@
 
     
 
+    <script type="text/javascript" async
+src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config({
+    tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+    extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+    });
+    MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
   </head>
   <body class="palette-primary-light-blue palette-accent-orange">
 
@@ -329,6 +358,8 @@ $$
 
 <li><p>Note, you can derive partial correlation coefficients for $i$ and $j$ from the inverse covariance matrix as</p></li>
 </ul>
+
+<p>You can find implementations of the graphical lasso in R package <code>glmnet</code> and in python module <code>sklearn.covariance</code>.</p>
 
 <div>
 $$
