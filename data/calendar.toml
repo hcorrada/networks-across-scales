@@ -246,6 +246,7 @@ date = "11/6"
 
 [[day21.covers]]
 title = "Learning with Network Data"
+notes = "lectures/graph_kernel_regression.pdf"
 
 [[day21.prep]]
 title = "SAND ch. 8"
