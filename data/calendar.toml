@@ -271,6 +271,7 @@ date = "11/15"
 
 [[day23.covers]]
 title = "Network Visualization"
+notes = "lectures/network_vis_muzner.pdf"
 
 [[day23.prep]]
 title = "Simple Algorithms for Network Visualization: A Tutorial"
@@ -288,6 +289,7 @@ date = "11/20"
 
 [[day24.covers]]
 title = "Dynamic visualization of networks"
+notes = "lectures/network_vis_muzner.pdf"
 
 #[[day24.workdue]]
 #title = "Project 3: Assembly and alignment"
