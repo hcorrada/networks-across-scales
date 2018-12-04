@@ -315,18 +315,6 @@ date = "11/29"
 title = "Data Project Updates 2-1"
 #notes = "lectures/CMSC423_ZAlgorithmKMP.pdf"
 
-[[day26.prep]]
-#title = "Gusfield, Algorithms for Strings, Trees and Sequences (Ch. 1 and Sec. 2.3)"
-#link = "https://myelms.umd.edu/courses/1218381/files/45872471"
-
-[[day26.prep]]
-#title = "Rosalind prep. Ex. 27"
-#link = "http://rosalind.info/classes/400/" 
-
-[[day26.prep]]
-#title = "Reading pre-lecture quiz"
-#link = "https://myelms.umd.edu/courses/1218381/modules/items/8829719"
-
 [day27]
 date = "12/4"
 
@@ -334,71 +322,17 @@ date = "12/4"
 title = "Data Project Updates 2-2"
 #notes = "lectures/CMSC423_ExactMatching1.pdf"
 
-[[day27.prep]]
-#title = "Compeau & Pevzner, Ch. 9 121-135"
-
-[[day27.prep]]
-#title = "Compeau & Pevzner, playlist 9, videos 1-3" 
-#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz"
-
-[[day27.prep]]
-#title = "Rosalind prep. Ex. 28"
-#link = "http://rosalind.info/classes/400/"
-
-#[day28]
-#date = "12/5"
-
-#[[day28.covers]]
-#title = "Advanced Topics (Student Choice)"
-#notes = "lectures/CMSC423_BWT.pdf"
-
-[day29]
+[day28]
 date = "12/6"
 
-[[day29.covers]]
+[[day28.covers]]
 title = "Closing and Perspectives"
 
-[[day29.prep]]
-#title = "Compeau & Pevzner, Ch. 9 148-162"
-
-[[day29.prep]]
-#title = "Compeau & Pevzner, playlist 9, videos 7-10"
-#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFP-q0Ig_GdjWohbC9C3f8tz"
-
-[[day29.prep]]
-#title = "Rosalind prep. Ex 30"
-#link = "http://rosalind.info/classes/400/" 
-
-#[day30]
-#date = "5/9"
+[day30]
+date = "12/13"
 
 #[[day30.covers]]
 #title = "A few state of the art ideas"
 
-#[[day30.prep]]
-#title = 'Simpson and Durbin, "Efficient construction of an assembly string graph using the FM-index"'
-#link = "http://bioinformatics.oxfordjournals.org/content/26/12/i367.abstract"
-
-#[[day30.prep]]
-#title = 'Patro, et al., "Sailfish enables alignment-free isoform quantification from RNA-seq reads using lightweight algorithms"'
-#link = "http://www.nature.com/nbt/journal/v32/n5/full/nbt.2862.html"
-
-#[[day30.prep]]
-#title = 'Ondov, et al., "Mash: fast genome and metagenome distance estimation using MinHash"'
-#link = "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0997-x"
-
-#[day31]
-#date = "5/11"
-
-#[[day31.covers]]
-#title = "Unit III Recap and Review"
-
-#[[day31.workdue]]
-#title = "Project 4: SNP finding"
-#link = "projects/project_4"
-
-#[day32]
-#date = "5/15"
-
-#[[day32.covers]]
-#title = "FINAL EXAM (8a-10a)"
+[[day30.workdue]]
+title = "Final project submissions"
