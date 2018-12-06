@@ -61,7 +61,7 @@ III. *Results*.
 
 IV. *Discussion and conclusion*: What are the implications of the results you obtained and open questions not addressed in your analysis
 
-## Final Submission 12/14
+## Final Submission 
 
-Prepare a writeup following the same structure as above and submit as pdf.
+Prepare a writeup following the same structure as above and submit as pdf. Further information on guidelines [here](/misc/final_project.pdf)
 
