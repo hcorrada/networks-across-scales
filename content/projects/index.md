@@ -5,7 +5,7 @@ title: CMSC828O Projects
 
 Throughout the semester, you will be working as a group analyzing a network dataset of your choice. The goal is to apply appropriate methodology as we cover it during the semester. 
 
-Group membership is listed on piazza: https://piazza.com/class/jldiw9ttj5223l?cid=12
+Group membership is listed on piazza: LINK HERE
 
 ## Data Project Lightning Talks: 
 
