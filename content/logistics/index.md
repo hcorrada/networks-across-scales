@@ -8,23 +8,23 @@ This page and the [Course Calendar]({{< baseurl >}}/calendar/index.html) constit
 ## Course Information
 
 **Computational and Mathematical Analysis of Biological Networks Across Scales**  
-**CMSC828O Fall 2018**  
+**CMSC828O Fall 2019**  
 
 
 *	Lecture Meeting Times    
-    Tuesday and Thursday, 9:30am-10:45am, CSI 3118
+    Monday and Wednesday, 3:30pm-4:45pm, CSIC 1121
 
 *	Instructor:  
     [H&eacute;ctor Corrada Bravo](http://www.cbcb.umd.edu/~hcorrada)  
     Center for Bioinformatics and Computational Biology  
     Department of Computer Science  
     <hcorrada@umiacs.umd.edu>  
-    Office: 3114F Biomolecular Sciences Building  
+    Office: 3226 Iribe  
     Phone Number: 301-405-2481  
-    **Office Hours:** Friday 1:00pm-2:00pm AVW 3223 and by appointment
+    **Office Hours:** Friday 1:00pm-2:00pm and by appointment
 * Communication:  
     - For course related questions, use [Piazza]({{< piazzaurl >}}) as indicated below.  
-    - For any other communication (e.g., absences accomodations etc.) email me including `[CMSC828O]` in the message subject.  
+    - For any other communication (e.g., absences accomodations etc.) email me through ELMS.  
 
 We will use the class Piazza site [{{< piazzaurl >}}]({{< piazzaurl >}}) for questions, discussion and announcements. Assignments and grades for the class will be posted to the class ELMS site: [{{< elmurl >}}]({{< elmurl >}}).
 In case of an extended emergency closure, announcements on policy and procedures will be posted to Piazza.
