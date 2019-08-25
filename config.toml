@@ -1,6 +1,6 @@
 baseurl = "http://www.hcbravo.org/networks-across-scales/"
 languageCode = "en-us"
-title = "CMSC828O: Networks Across Scales (Fall 2018)"
+title = "CMSC828O: Networks Across Scales (Fall 2019)"
 theme = "hugo-material-docs"
 metadataformat = "yaml"
 canonifyurls = true
