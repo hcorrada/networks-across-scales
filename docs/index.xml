@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CMSC828O: Networks Across Scales (Fall 2018)</title>
+    <title>CMSC828O: Networks Across Scales (Fall 2019)</title>
     <link>http://www.hcbravo.org/networks-across-scales/</link>
-    <description>Recent content on CMSC828O: Networks Across Scales (Fall 2018)</description>
+    <description>Recent content on CMSC828O: Networks Across Scales (Fall 2019)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
@@ -147,7 +147,7 @@ conda install -c anaconda biopython=1.68  </description>
     </item>
     
     <item>
-      <title>CMSC828O Calendar</title>
+      <title>CMSC828O Calendar (Fall 2019)</title>
       <link>http://www.hcbravo.org/networks-across-scales/calendar/</link>
       <pubDate>Tue, 30 Aug 2016 10:13:51 -0400</pubDate>
       
@@ -162,7 +162,7 @@ conda install -c anaconda biopython=1.68  </description>
       
       <guid>http://www.hcbravo.org/networks-across-scales/projects/</guid>
       <description>Throughout the semester, you will be working as a group analyzing a network dataset of your choice. The goal is to apply appropriate methodology as we cover it during the semester.
-Group membership is listed on piazza: https://piazza.com/class/jldiw9ttj5223l?cid=12
+Group membership is listed on piazza: LINK COMING SOON
 Data Project Lightning Talks: Prepare 5-6 minutes to introduce your group project. Please include
  Who is in the group (including your background)
  What data you plan to work with (as well as you have defined this by Tuesday).</description>
@@ -194,17 +194,19 @@ Data Project Lightning Talks: Prepare 5-6 minutes to introduce your group projec
       <guid>http://www.hcbravo.org/networks-across-scales/logistics/</guid>
       <description>This page and the Course Calendar constitute the official syllabus for this class.
 Course Information Computational and Mathematical Analysis of Biological Networks Across Scales
-CMSC828O Fall 2018
+CMSC828O Fall 2019
  Lecture Meeting Times
-Tuesday and Thursday, 9:30am-10:45am, CSI 3118
+Monday and Wednesday, 3:30pm-4:45pm, CSIC 1121
  Instructor:
 H&amp;eacute;ctor Corrada Bravo
 Center for Bioinformatics and Computational Biology
 Department of Computer Science
 hcorrada@umiacs.umd.edu
-Office: 3114F Biomolecular Sciences Building
+Office: 3226 Iribe
 Phone Number: 301-405-2481
-Office Hours: Friday 1:00pm-2:00pm AVW 3223 and by appointment</description>
+Office Hours: Friday 1:00pm-2:00pm and by appointment
+ Communication:
+ For course related questions, use Piazza as indicated below.</description>
     </item>
     
     <item>
@@ -214,15 +216,15 @@ Office Hours: Friday 1:00pm-2:00pm AVW 3223 and by appointment</description>
       
       <guid>http://www.hcbravo.org/networks-across-scales/</guid>
       <description>Course Information CMSC828O: Computational and Mathematical Analysis of Biological Networks Across Scales
-Spring 2018
+Fall 2019
  Instructor:
 H&amp;eacute;ctor Corrada Bravo
 Center for Bioinformatics and Computational Biology
 Department of Computer Science
 hcorrada@umiacs.umd.edu
-Office: 3114F Biomolecular Sciences Building
+Office: 3226 Iribe
  Lecture Meeting Times
-Tuesday and Thursday, 9:30am-10:45am, CSI 3118
+Monday and Wednesday, 3:30pm-4:45pm, CSIC 1121
   Links Check the calendar page for up-to-date course calendar.
 Check the logistics page for more information, including the official syllabus.
 Grades and assignments posted in ELMS.</description>
