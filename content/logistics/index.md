@@ -31,7 +31,7 @@ In case of an extended emergency closure, announcements on policy and procedures
 
 ## Textbook and Resources:
 
-We will refer to the following two textbooks frequently:
+We will refer to the following textbooks frequently:
 
 - Newman, M.E.J. (2010) _Networks, An Introduction_. Oxford University Press. [Amazon](https://www.amazon.com/Networks-Introduction-Mark-Newman/dp/0199206651/ref=pd_bxgy_14_img_2?_encoding=UTF8&psc=1&refRID=Z4KKMKQBBRDZB7092JB9i)
 - Barabasi, et al. (2016) _Network Science_. Cambridge University Press. [Book Site](http://barabasi.com/networksciencebook/)

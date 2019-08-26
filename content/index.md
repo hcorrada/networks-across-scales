@@ -9,7 +9,7 @@ type: index
 ## Course Information
 
 **CMSC828O: Computational and Mathematical Analysis of Biological Networks Across Scales**  
-**Spring 2019**
+**Fall 2019**
 
 *	Instructor:  
     [H&eacute;ctor Corrada Bravo](http://www.cbcb.umd.edu/~hcorrada)  
