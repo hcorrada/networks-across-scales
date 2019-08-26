@@ -72,14 +72,14 @@ class: middle, center
 
 ## A Molecular Pathway
 
-```{r pathway_setup, echo=FALSE, message=FALSE}
+```{r pathway_setup, echo=FALSE, message=FALSE, warning=FALSE}
 library(graphite)
 library(stringr)
 library(magrittr)
 library(Rgraphviz)
 ```
 
-```{r pathway_compute, echo=FALSE, cache=TRUE, warnings=FALSE, message=FALSE}
+```{r pathway_compute, echo=FALSE, cache=TRUE, warning=FALSE, message=FALSE}
 p <- pathways("hsapiens", "reactome")
 pathname <- names(p) %>% str_subset("Metal") %>% extract(1)
 pg <- p[[pathname]] %>% 
@@ -89,7 +89,7 @@ pg <- p[[pathname]] %>%
 
 ```
 
-```{r pathway_plot, echo=FALSE, fig.height=4, fig.width=10}
+```{r pathway_plot, echo=FALSE, fig.height=5, fig.width=11}
 graph.par(list(nodes=list(fontsize=32,lty="dotted")))
 renderGraph(pg)
 ```
