@@ -167,7 +167,7 @@ undirected_graph_1958 <- graph_1958 %>%
 ```
 
 ```{r plot_undirected, echo=FALSE, fig.width=6}
-undirected_graph %>%
+undirected_graph_1958 %>%
   ggraph(layout="kk") +
     geom_edge_fan() +
     geom_node_point(size=3) +
@@ -400,7 +400,7 @@ dmat <- fw_dists(amat)
 ```
 
 ```{r dmat_dist, echo=FALSE, eval=TRUE}
-dist_tab <- data_frame(dist=dmat[upper.tri(dmat, diag=FALSE)]) %>%
+dist_tab <- tibble(dist=dmat[upper.tri(dmat, diag=FALSE)]) %>%
   group_by(dist) %>%
   summarize(freq=n()) %>%
   mutate(pdist=freq / sum(freq))
@@ -409,7 +409,7 @@ dist_tab <- data_frame(dist=dmat[upper.tri(dmat, diag=FALSE)]) %>%
 ```{r plot_dist, echo=FALSE, eval=TRUE, fig.align="center"}
 dist_tab %>%
   ggplot(aes(dist, log(pdist))) +
-    geom_point() +
+    geom_point(size=2.7) +
     scale_x_continuous(breaks=seq(0,20,2))
 ```
 
@@ -532,7 +532,7 @@ undirected_plot_1958 +
 ]
 
 .column[
-```{r adjplot2, echo=FALSE, fig.align="center", fig.width=5}
+```{r adjplot2, echo=FALSE, fig.align="center", fig.width=5,warning=FALSE}
 undirected_amat_plot_1958 <- undirected_graph_1958 %>%
   igraph::as_adj() %>%
   as.matrix() %>%
@@ -566,7 +566,7 @@ On the board:
 ]
 
 .column[
-```{r adjplot3, echo=FALSE, fig.align="center", fig.width=5}
+```{r adjplot3, echo=FALSE, fig.align="center", fig.width=5, warning=FALSE}
 undirected_amat_plot_1958
 ```
 ]
@@ -587,7 +587,7 @@ graph_1958 %>%
 ]
 
 .column[
-```{r adjplot4, echo=FALSE, fig.align="center", fig.width=5,eval=TRUE}
+```{r adjplot4, echo=FALSE, fig.align="center", fig.width=5,eval=TRUE, warning=FALSE}
 graph_1958 %>% 
   igraph::as_adj() %>%
   as.matrix() %>%
@@ -706,7 +706,7 @@ What are _central_ nodes in the network?
 ]
 
 .column[
-```{r centrality, echo=FALSE, fig.width=6,eval=TRUE}
+```{r centrality, echo=FALSE, fig.width=8,eval=TRUE}
 undirected_graph_1958 %>%
   activate(nodes) %>% 
   mutate(centrality = centrality_eigen()) %>%
@@ -734,7 +734,7 @@ class:split-50
 ## Centrality
 
 .column[
-```{r deg_centrality, fig.width=5, echo=FALSE,eval=TRUE}
+```{r deg_centrality, fig.width=6, echo=FALSE,eval=TRUE}
 undirected_graph_1958 %>%
   activate(nodes) %>% 
   mutate(degree_centrality = centrality_degree()) %>%
@@ -746,7 +746,7 @@ undirected_graph_1958 %>%
 ]
 
 .column[
-```{r eig_centrality, fig.width=5, echo=FALSE,eval=TRUE}
+```{r eig_centrality, fig.width=6, echo=FALSE,eval=TRUE}
 undirected_graph_1958 %>%
   activate(nodes) %>% 
   mutate(eigen_centrality = centrality_eigen()) %>%
