@@ -4,7 +4,7 @@
     <title>Network Preliminaries</title>
     <meta charset="utf-8" />
     <meta name="author" content="Héctor Corrada Bravo" />
-    <meta name="date" content="2019-08-25" />
+    <meta name="date" content="2019-08-28" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
@@ -24,7 +24,7 @@ count: false
 
 .other-info[
 University of Maryland, College Park, USA  
-CMSC828O 2019-08-25
+CMSC828O 2019-08-28
 ]
 
 .logo[![](img/logo.png)]
@@ -322,7 +322,7 @@ _Components_ maximal subset of connected components
 
 # Clustering Coefficient
 
-One last quantity of interest: how dense is the neighborhood around vertex `\(i\)`?
+One more quantity of interest: how dense is the neighborhood around vertex `\(i\)`?
 
 Do the genes that interact with me also interact with each other?
 
@@ -517,6 +517,65 @@ class:split-50
 .column[
 ![](index_files/figure-html/eig_centrality-1.png)&lt;!-- --&gt;
 ]
+
+---
+layout: true
+
+## Betweenness
+
+---
+class: split-40
+
+.column[
+What are the _important_ edges in the network? 
+
+What are edges that may connect clusters of nodes in the network?
+]
+
+.column[
+![](index_files/figure-html/betweenness-1.png)&lt;!-- --&gt;
+]
+
+---
+class: split-40
+
+.column[
+Girvan-Newman Algorithm - hierarchical method to
+partition nodes into communities using edge betweenness
+]
+
+.column[
+![](index_files/figure-html/gn-1.png)&lt;!-- --&gt;
+]
+
+---
+layout: true
+
+## Girvan-Newman Algorithm
+
+---
+
+Two phases:
+
+  Phase One: Compute betweenness for every edge  
+  Phase Two: Discover communities by removing _high_ betweenness edges (similar to hierarchical clustering)
+
+---
+
+### Calculating Betweenness
+
+Formally, `\(\mathrm{betweenness}(e)\)`: fraction of node pairs `\((x,y)\)` where shortest path crossess edge `\(e\)`
+
+For each node `\(x\)`, use breadth-first-search to count number of shortest paths through each edge in graph
+
+Sum result across nodes, and divide by two
+
+---
+
+### Example
+
+![](img/graph.png)
+
 ---
 layout: true
 
@@ -525,7 +584,16 @@ layout: true
 ---
 
 ### Cross-language
-igraph: http://igraph.org/
+
+igraph: http://igraph.org/  
+Boost Graph Library: https://www.boost.org/doc/libs/1_71_0/libs/graph/doc/
+
+---
+
+### Python
+
+- [`igraph`](http://igraph.org/python/doc/tutorial/tutorial.html)
+- [`networkx`](https://networkx.github.io/)
 
 ---
 
@@ -541,10 +609,111 @@ Tidyverse (https://tidyverse.org):
 
 ---
 
-### Python
+For data analysis it is helpful to think in terms of rectangular datasets
 
-- [`igraph`](http://igraph.org/python/doc/tutorial/tutorial.html)
-- [`networkx`](https://networkx.github.io/)
+For networks, we need to have two distinct
+tables to represent this data. 
+
+- One table represents entities and their attributes:
+
+
+```
+## # A tibble: 70 x 2
+##    name  .tidygraph_node_index
+##    &lt;chr&gt;                 &lt;int&gt;
+##  1 1                         1
+##  2 2                         2
+##  3 3                         3
+##  4 4                         4
+##  5 5                         5
+##  6 6                         6
+##  7 7                         7
+##  8 8                         8
+##  9 9                         9
+## 10 11                       10
+## # … with 60 more rows
+```
+
+---
+
+- Second table to represent edges and their attributes:
+
+
+```
+## # A tibble: 202 x 4
+##     from    to .tidygraph_edge_index .orig_data      
+##    &lt;int&gt; &lt;int&gt; &lt;list&gt;                &lt;list&gt;          
+##  1     1    14 &lt;int [2]&gt;             &lt;tibble [2 × 3]&gt;
+##  2     1    16 &lt;int [1]&gt;             &lt;tibble [1 × 3]&gt;
+##  3     1    20 &lt;int [1]&gt;             &lt;tibble [1 × 3]&gt;
+##  4     1    21 &lt;int [1]&gt;             &lt;tibble [1 × 3]&gt;
+##  5     2     9 &lt;int [1]&gt;             &lt;tibble [1 × 3]&gt;
+##  6     2    21 &lt;int [1]&gt;             &lt;tibble [1 × 3]&gt;
+##  7     4     5 &lt;int [2]&gt;             &lt;tibble [2 × 3]&gt;
+##  8     4    10 &lt;int [2]&gt;             &lt;tibble [2 × 3]&gt;
+##  9     4    15 &lt;int [1]&gt;             &lt;tibble [1 × 3]&gt;
+## 10     4    18 &lt;int [2]&gt;             &lt;tibble [2 × 3]&gt;
+## # … with 192 more rows
+```
+
+---
+layout: true
+
+## Network-derived attributes
+
+---
+
+Besides attributes measured for each node, we have seen we can derive 
+node and edge attributes based on the structure of the network.
+
+For instance, we can compute the _degree_ of a node, that is, the number of edges incident to the node. 
+
+---
+
+
+```
+## # A tibble: 70 x 3
+##    name  .tidygraph_node_index degree
+##    &lt;chr&gt;                 &lt;int&gt;  &lt;dbl&gt;
+##  1 1                         1      4
+##  2 2                         2      2
+##  3 3                         3      0
+##  4 4                         4      5
+##  5 5                         5      5
+##  6 6                         6      5
+##  7 7                         7      3
+##  8 8                         8      5
+##  9 9                         9      6
+## 10 11                       10      5
+## # … with 60 more rows
+```
+
+---
+class: split-50
+
+The distribution of newly created attributes are fundamental analytical tools to characterize networks.
+
+.column[
+```r
+undirected_graph_1958 %&gt;%
+  activate(nodes) %&gt;%
+  as_tibble() %&gt;%
+  group_by(degree) %&gt;%
+  summarize(n=n()) %&gt;%
+  ungroup() %&gt;%
+  mutate(num_nodes = sum(n)) %&gt;%
+  mutate(deg_prop = n / num_nodes) %&gt;%
+  ggplot(aes(x=log(degree), y=log(deg_prop))) +
+    geom_point() +
+    labs(title="Degree distribution of transaction network",
+         x="Degree (log)",
+         y="Proportion of nodes (log)")
+```
+]
+
+.column[
+&lt;img src="index_files/figure-html/plot_deg2-1.png" style="display: block; margin: auto;" /&gt;
+]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

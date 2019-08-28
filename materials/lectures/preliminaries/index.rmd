@@ -451,7 +451,7 @@ graph %>%
 
 # Clustering Coefficient
 
-One last quantity of interest: how dense is the neighborhood around vertex $i$?
+One more quantity of interest: how dense is the neighborhood around vertex $i$?
 
 Do the genes that interact with me also interact with each other?
 
@@ -756,6 +756,85 @@ undirected_graph_1958 %>%
     theme_graph(foreground=NA)
 ```
 ]
+
+---
+layout: true
+
+## Betweenness
+
+---
+class: split-40
+
+.column[
+What are the _important_ edges in the network? 
+
+What are edges that may connect clusters of nodes in the network?
+]
+
+.column[
+```{r betweenness, echo=FALSE, fig.width=6,eval=TRUE}
+undirected_graph_1958 %>%
+  activate(edges) %>% 
+  mutate(betweenness = centrality_edge_betweenness()) %>%
+  ggraph(layout="kk") +
+    geom_edge_fan(aes(width=betweenness)) +
+    scale_edge_width_continuous(range=c(0,2)) +
+    geom_node_point(size=3) +
+    theme_graph(foreground=NA)
+```
+]
+
+---
+class: split-40
+
+.column[
+Girvan-Newman Algorithm - hierarchical method to
+partition nodes into communities using edge betweenness
+]
+
+.column[
+```{r gn, echo=FALSE, fig.width=6, eval=TRUE}
+undirected_graph_1958 %>%
+  activate(edges) %>%
+  mutate(betweenness=centrality_edge_betweenness()) %>%
+  activate(nodes) %>%
+  mutate(group = factor(group_edge_betweenness())) %>%
+  ggraph(layout="kk") +
+    geom_edge_fan(aes(width=betweenness)) +
+    scale_edge_width_continuous(range=c(0,2)) +
+    geom_node_point(aes(color=group), size=3) +
+    theme_graph(foreground=NA)
+```
+]
+
+---
+layout: true
+
+## Girvan-Newman Algorithm
+
+---
+
+Two phases:
+
+  Phase One: Compute betweenness for every edge  
+  Phase Two: Discover communities by removing _high_ betweenness edges (similar to hierarchical clustering)
+
+---
+
+### Calculating Betweenness
+
+Formally, $\mathrm{betweenness}(e)$: fraction of node pairs $(x,y)$ where shortest path crossess edge $e$
+
+For each node $x$, use breadth-first-search to count number of shortest paths through each edge in graph
+
+Sum result across nodes, and divide by two
+
+---
+
+### Example
+
+![](img/graph.png)
+
 ---
 layout: true
 
@@ -764,7 +843,16 @@ layout: true
 ---
 
 ### Cross-language
-igraph: http://igraph.org/
+
+igraph: http://igraph.org/  
+Boost Graph Library: https://www.boost.org/doc/libs/1_71_0/libs/graph/doc/
+
+---
+
+### Python
+
+- [`igraph`](http://igraph.org/python/doc/tutorial/tutorial.html)
+- [`networkx`](https://networkx.github.io/)
 
 ---
 
@@ -780,7 +868,90 @@ Tidyverse (https://tidyverse.org):
 
 ---
 
-### Python
+For data analysis it is helpful to think in terms of rectangular datasets
 
-- [`igraph`](http://igraph.org/python/doc/tutorial/tutorial.html)
-- [`networkx`](https://networkx.github.io/)
+For networks, we need to have two distinct
+tables to represent this data. 
+
+- One table represents entities and their attributes:
+
+```{r graph_nodes, echo=FALSE}
+ undirected_graph_1958 %>%
+  activate(nodes) %>%
+  as_tibble()
+```
+
+---
+
+- Second table to represent edges and their attributes:
+
+```{r graph_edges, echo=FALSE}
+undirected_graph_1958 %>%
+  activate(edges) %>%
+  as_tibble()
+```
+
+---
+layout: true
+
+## Network-derived attributes
+
+---
+
+Besides attributes measured for each node, we have seen we can derive 
+node and edge attributes based on the structure of the network.
+
+For instance, we can compute the _degree_ of a node, that is, the number of edges incident to the node. 
+
+---
+
+```{r node_add_degree, echo=FALSE}
+undirected_graph_1958 <- undirected_graph_1958 %<>%
+  activate(nodes) %>%
+  mutate(degree = centrality_degree())
+
+undirected_graph_1958 %>%
+  activate(nodes) %>%
+  as_tibble
+```
+
+---
+class: split-50
+
+The distribution of newly created attributes are fundamental analytical tools to characterize networks.
+
+.column[
+```r
+undirected_graph_1958 %>%
+  activate(nodes) %>%
+  as_tibble() %>%
+  group_by(degree) %>%
+  summarize(n=n()) %>%
+  ungroup() %>%
+  mutate(num_nodes = sum(n)) %>%
+  mutate(deg_prop = n / num_nodes) %>%
+  ggplot(aes(x=log(degree), y=log(deg_prop))) +
+    geom_point() +
+    labs(title="Degree distribution of transaction network",
+         x="Degree (log)",
+         y="Proportion of nodes (log)")
+```
+]
+
+.column[
+```{r plot_deg2, echo=FALSE, eval=TRUE,fig.align='center',fig.width=6, fig.height=5}
+undirected_graph_1958 %>%
+  activate(nodes) %>%
+  as_tibble() %>%
+  group_by(degree) %>%
+  summarize(n=n()) %>%
+  ungroup() %>%
+  mutate(num_nodes = sum(n)) %>%
+  mutate(deg_prop = n / num_nodes) %>%
+  ggplot(aes(x=log(degree), y=log(deg_prop))) +
+    geom_point() +
+    labs(title="Degree distribution of transaction network",
+         x="Degree (log)",
+         y="Proportion of nodes (log)")
+```
+]
