@@ -56,7 +56,8 @@ title = "Newman, Ch. 7"
 date = "9/9"
 
 [[day04.covers]]
-title = "Presentations: Networks in Molecular Biology"
+title = "Random Networks I"
+#notes = "lectures/CMSC423_BioResources.pdf"
 
 #### DAY 5
 ########################
@@ -67,8 +68,7 @@ title = "Presentations: Networks in Molecular Biology"
 date = "9/11"
 
 [[day05.covers]]
-title = "Random Networks I"
-#notes = "lectures/CMSC423_BioResources.pdf"
+title = "Presentations: Networks in Molecular Biology"
 
 [[day05.prep]]
 title = "Barabasi, Ch. 3 and 4"
