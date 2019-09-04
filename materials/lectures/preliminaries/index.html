@@ -4,9 +4,9 @@
     <title>Network Preliminaries</title>
     <meta charset="utf-8" />
     <meta name="author" content="Héctor Corrada Bravo" />
-    <meta name="date" content="2019-08-28" />
-    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <meta name="date" content="2019-09-04" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
   <body>
@@ -24,7 +24,7 @@ count: false
 
 .other-info[
 University of Maryland, College Park, USA  
-CMSC828O 2019-08-28
+CMSC828O 2019-09-04
 ]
 
 .logo[![](img/logo.png)]
@@ -564,11 +564,41 @@ Two phases:
 
 ### Calculating Betweenness
 
-Formally, `\(\mathrm{betweenness}(e)\)`: fraction of node pairs `\((x,y)\)` where shortest path crossess edge `\(e\)`
+Formally, `\(\mathrm{betweenness}(e)\)`: fraction of vertex pairs `\((x,y)\)` where shortest path crossess edge `\(e\)`
 
-For each node `\(x\)`, use breadth-first-search to count number of shortest paths through each edge in graph
+Path Counting: For each vertex `\(x\)`, use breadth-first-search to count number of shortest paths through each edge `\(e\)` in graph between `\(x\)` and every other vertex `\(y\)`.
 
-Sum result across nodes, and divide by two
+Sum result across vertices for each edge `\(e\)`, and divide by two
+
+Presentation from _Mining Massive Datasets_ Leskovec, et al. http://mmds.org/ (Ch. 10)
+
+---
+
+### Counting Paths
+
+Algorithm (starting from node `\(x\)`)
+
+1. Construct breadth-first search tree
+2. (Root-&gt;Leaf) Label each vertex `\(v\)` with the number of shortest paths between `\(x\)` and `\(v\)`: sum of labels of parents 
+3. (Leaf-&gt;Root) Count the (weighted) number of shortest paths that go through each edge: next slide
+
+---
+
+### Counting Paths
+
+Step 3, counting number of shortest paths through each edge
+
+a. Leafs `\(v\)` in search tree get a _credit_ of `\(C_v=1\)`
+
+b. Incoming edge `\(e_i=(y_i,v)\)` to vertex `\(v\)` in search tree gets _credit_ `\(C_{e_i}=C_v * \frac{p_i}{\sum_j p_j}\)` 
+  - `\(p_i\)`: number of shortest paths between `\(x\)` and `\(y_i\)` (computed in Step 2)
+  - sum `\(\sum_j\)` is over parents of `\(v\)` 
+
+---
+
+### Counting Paths
+
+c. Non-leaf vertex `\(v\)` gets credit `\(C_v = 1 + \sum_j e_j\)` where sum `\(j\)` is over outgoing edges `\(e_j\)` in search tree
 
 ---
 
