@@ -4,9 +4,9 @@ date: "2017-09-02"
 ---
 
 
-**DUE**: Friday 9/7/2017, 11:59pm  
+**DUE**: Friday 9/13/2017, 11:59pm  
 **Posted**: 9/1/2017  
-**Last Update**: 9/1/2017
+**Last Update**: 9/4/2017
 
 ## Data 
 
@@ -117,6 +117,6 @@ amat <- amat[rows_to_use, cols_to_use]
 diag(amat) <- 0
 amat[is.na(amat)] <- 0
 
-# make the adjacency matrix diagonal
+# make the adjacency matrix symmetric
 amat <- ceiling(0.5 * (amat + t(amat)))
 ```

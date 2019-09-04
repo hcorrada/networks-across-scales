@@ -73,6 +73,12 @@ title = "Presentations: Networks in Molecular Biology"
 [[day05.prep]]
 title = "Barabasi, Ch. 3 and 4"
 
+[day05a]
+date = "9/13"
+
+[[day05a.workdue]]
+title = "Homework 1: Network Statistics"
+link = "homeworks/network_stats/"
 
 #### DAY 6
 [day06]
@@ -84,10 +90,6 @@ title = "Random Networks II"
 
 [[day06.prep]]
 title = "Barabasi, Ch. 5 and 6"
-
-[[day06.workdue]]
-title = "Homework 1: Network Statistics"
-link = "homeworks/network_stats/"
 
 #### DAY 7
 [day07]

@@ -293,9 +293,9 @@ src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLor
 
 			
 
-<p><strong>DUE</strong>: Friday 9/7/2017, 11:59pm<br />
+<p><strong>DUE</strong>: Friday 9/13/2017, 11:59pm<br />
 <strong>Posted</strong>: 9/1/2017<br />
-<strong>Last Update</strong>: 9/1/2017</p>
+<strong>Last Update</strong>: 9/4/2017</p>
 
 <h2 id="data">Data</h2>
 
@@ -417,7 +417,7 @@ amat &lt;- amat[rows_to_use, cols_to_use]
 diag(amat) &lt;- 0
 amat[is.na(amat)] &lt;- 0
 
-# make the adjacency matrix diagonal
+# make the adjacency matrix symmetric
 amat &lt;- ceiling(0.5 * (amat + t(amat)))
 </code></pre>
 

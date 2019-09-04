@@ -60,9 +60,9 @@ Question 2:
       <pubDate>Sat, 02 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.hcbravo.org/networks-across-scales/homeworks/network_stats/</guid>
-      <description>DUE: Friday 9/7/2017, 11:59pm
+      <description>DUE: Friday 9/13/2017, 11:59pm
 Posted: 9/1/2017
-Last Update: 9/1/2017
+Last Update: 9/4/2017
 Data Obtain data for the year genetic interaction network at http://thecellmap.org/costanzo2016/. Download data in matrix format from http://thecellmap.org/costanzo2016/data_files/Raw%20genetic%20interaction%20datasets:%20Matrix%20format.zip, and after unzipping use file Data File S2. Raw genetic interaction datasets: Matrix format/SGA_NxN_clustered.cdt This is a tab-separated value file with the following format:
  The first five rows contain metadata. Rows six to the end contain interaction data The first six columns also contain metadata.</description>
     </item>
