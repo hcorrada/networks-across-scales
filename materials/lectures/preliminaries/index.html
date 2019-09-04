@@ -638,6 +638,7 @@ Tidyverse (https://tidyverse.org):
 - [`ggraph`](https://cran.r-project.org/web/packages/ggraph/index.html)
 
 ---
+class: split-50
 
 For data analysis it is helpful to think in terms of rectangular datasets
 
@@ -646,6 +647,15 @@ tables to represent this data.
 
 - One table represents entities and their attributes:
 
+.column[
+```r 
+ undirected_graph_1958 %&gt;%
+  activate(nodes) %&gt;%
+  as_tibble()
+```
+]
+
+.column[
 
 ```
 ## # A tibble: 70 x 2
@@ -663,11 +673,22 @@ tables to represent this data.
 ## 10 11                       10
 ## # … with 60 more rows
 ```
+]
 
 ---
+class: split-50
 
 - Second table to represent edges and their attributes:
 
+.column[
+```r
+undirected_graph_1958 %&gt;%
+  activate(edges) %&gt;%
+  as_tibble()
+```
+]
+
+.column[
 
 ```
 ## # A tibble: 202 x 4
@@ -685,6 +706,7 @@ tables to represent this data.
 ## 10     4    18 &lt;int [2]&gt;             &lt;tibble [2 × 3]&gt;
 ## # … with 192 more rows
 ```
+]
 
 ---
 layout: true
@@ -699,7 +721,21 @@ node and edge attributes based on the structure of the network.
 For instance, we can compute the _degree_ of a node, that is, the number of edges incident to the node. 
 
 ---
+class: split-50
 
+.column[
+```r
+undirected_graph_1958 &lt;- undirected_graph_1958 %&gt;%
+  activate(nodes) %&gt;%
+  mutate(degree = centrality_degree())
+
+undirected_graph_1958 %&gt;%
+  activate(nodes) %&gt;%
+  as_tibble
+```
+]
+
+.column[
 
 ```
 ## # A tibble: 70 x 3
@@ -717,7 +753,7 @@ For instance, we can compute the _degree_ of a node, that is, the number of edge
 ## 10 11                       10      5
 ## # … with 60 more rows
 ```
-
+]
 ---
 class: split-50
 

@@ -897,6 +897,7 @@ Tidyverse (https://tidyverse.org):
 - [`ggraph`](https://cran.r-project.org/web/packages/ggraph/index.html)
 
 ---
+class: split-50
 
 For data analysis it is helpful to think in terms of rectangular datasets
 
@@ -905,21 +906,42 @@ tables to represent this data.
 
 - One table represents entities and their attributes:
 
+.column[
+```r 
+ undirected_graph_1958 %>%
+  activate(nodes) %>%
+  as_tibble()
+```
+]
+
+.column[
 ```{r graph_nodes, echo=FALSE}
  undirected_graph_1958 %>%
   activate(nodes) %>%
   as_tibble()
 ```
+]
 
 ---
+class: split-50
 
 - Second table to represent edges and their attributes:
 
+.column[
+```r
+undirected_graph_1958 %>%
+  activate(edges) %>%
+  as_tibble()
+```
+]
+
+.column[
 ```{r graph_edges, echo=FALSE}
 undirected_graph_1958 %>%
   activate(edges) %>%
   as_tibble()
 ```
+]
 
 ---
 layout: true
@@ -934,9 +956,11 @@ node and edge attributes based on the structure of the network.
 For instance, we can compute the _degree_ of a node, that is, the number of edges incident to the node. 
 
 ---
+class: split-50
 
-```{r node_add_degree, echo=FALSE}
-undirected_graph_1958 <- undirected_graph_1958 %<>%
+.column[
+```r
+undirected_graph_1958 <- undirected_graph_1958 %>%
   activate(nodes) %>%
   mutate(degree = centrality_degree())
 
@@ -944,7 +968,19 @@ undirected_graph_1958 %>%
   activate(nodes) %>%
   as_tibble
 ```
+]
 
+.column[
+```{r node_add_degree, echo=FALSE}
+undirected_graph_1958 <- undirected_graph_1958 %>%
+  activate(nodes) %>%
+  mutate(degree = centrality_degree())
+
+undirected_graph_1958 %>%
+  activate(nodes) %>%
+  as_tibble
+```
+]
 ---
 class: split-50
 
@@ -980,7 +1016,7 @@ undirected_graph_1958 %>%
   mutate(deg_prop = n / num_nodes) %>%
   ggplot(aes(x=log(degree), y=log(deg_prop))) +
     geom_point() +
-    labs(title="Degree distribution of transaction network",
+    labs(title="Degree distribution of friendship network",
          x="Degree (log)",
          y="Proportion of nodes (log)")
 ```
