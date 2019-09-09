@@ -6,7 +6,7 @@ date: "2017-09-02"
 
 **DUE**: Friday 9/13/2017, 11:59pm  
 **Posted**: 9/1/2017  
-**Last Update**: 9/4/2017
+**Last Update**: 9/9/2017
 
 ## Data 
 
@@ -27,10 +27,13 @@ For simplicity, let's make a few transformations to turn this into the adjacency
   - Ensure the diagonal of the matrix is 0
   - Set missing entries to 0
 
-- Use only genes with entries in both rows and columns (that is, they were used both as queries and arrays). Use ORF ids to match rows and columns.
+- Use only genes with entries in both rows and columns (that is, they were used both as queries and arrays**. Use ORF ids to match rows and columns.
 - Make the adjacency matrix symmetric. 
 
 There is R code at the end of this page to perform all of these steps. Feel free to use this as you wish as part of your submission.
+
+**Note:** You can use libraries like `igraph` to answer all questions below _except_ in the case you are taking this course as a "core requirement" course in Computer Science.
+In that case, you _have_ to implement solutions as described below (look for label _Core_).
 
 ## Exercises
 
@@ -45,7 +48,9 @@ There is R code at the end of this page to perform all of these steps. Feel free
   b) a log-log plot of the degree distribution   
   
 
-3. Compute the distance (length of shortest paths) between every pair of nodes. You have a few options here:
+3. Compute the distance (length of shortest paths) between every pair of nodes. 
+
+_Core_: You have to implement an algorithm to calculate all pair-wise distances. You have a few options here:
 
   - For each vertex in the network, use breadth-first search to compute distance to every other node
   - Use the Floyd-Warshall algorithm https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm
@@ -56,7 +61,9 @@ There is R code at the end of this page to perform all of these steps. Feel free
   b) the network diameter  
   c) a plot of the distance distribution (simiar to 2.18 a in Barabasi textbook)
   
-5. Is the network connected? How many components are there? Here you have a few options as well
+5. Is the network connected? How many components are there? 
+
+_Core_: You have to implement one of these two solutions: 
 
   - Use BFS (Box 2.6 of Barabasi)
   - Use the eigenvalues of the graph Laplacian (Section 16.3.2 of Newman textbook)
