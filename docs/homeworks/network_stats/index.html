@@ -345,35 +345,27 @@ d) density</p></li>
 a) a histogram of degrees,<br />
 b) a log-log plot of the degree distribution</p></li>
 
-<li><p>Compute the distance (length of shortest paths) between every pair of nodes.</p></li>
-</ol>
-
-<p><em>Core</em>: You have to implement an algorithm to calculate all pair-wise distances. You have a few options here:</p>
+<li><p>Compute the distance (length of shortest paths) between every pair of nodes. <em>Core</em>: You have to implement an algorithm to calculate all pair-wise distances. You have a few options here:</p>
 
 <ul>
 <li>For each vertex in the network, use breadth-first search to compute distance to every other node</li>
 <li>Use the Floyd-Warshall algorithm <a href="https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm">https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm</a></li>
 <li>Section 10.3 of the Newman textbook discusses more options</li>
-</ul>
+</ul></li>
 
-<ol>
 <li><p>Report:<br />
 a) the average distance<br />
 b) the network diameter<br />
 c) a plot of the distance distribution (simiar to 2.18 a in Barabasi textbook)</p></li>
 
-<li><p>Is the network connected? How many components are there?</p></li>
-</ol>
-
-<p><em>Core</em>: You have to implement one of these two solutions:</p>
+<li><p>Is the network connected? How many components are there? <em>Core</em>: You have to implement one of these two solutions:</p>
 
 <ul>
 <li>Use BFS (Box 2.6 of Barabasi)</li>
 <li>Use the eigenvalues of the graph Laplacian (Section 16.3.2 of Newman textbook)</li>
-</ul>
+</ul></li>
 
-<ol>
-<li>Compute the clustering coefficient for each vertex in the network. Make a log-log plot of average clustering coefficient as a function of vertex degree (Image 2.18 b of Barabasi)</li>
+<li><p>Compute the clustering coefficient for each vertex in the network. Make a log-log plot of average clustering coefficient as a function of vertex degree (Image 2.18 b of Barabasi)</p></li>
 </ol>
 
 <h2 id="what-to-turn-in">What to turn in</h2>

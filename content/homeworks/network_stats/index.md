@@ -48,10 +48,7 @@ In that case, you _have_ to implement solutions as described below (look for lab
   b) a log-log plot of the degree distribution   
   
 
-3. Compute the distance (length of shortest paths) between every pair of nodes. 
-
-_Core_: You have to implement an algorithm to calculate all pair-wise distances. You have a few options here:
-
+3. Compute the distance (length of shortest paths) between every pair of nodes. _Core_: You have to implement an algorithm to calculate all pair-wise distances. You have a few options here:
   - For each vertex in the network, use breadth-first search to compute distance to every other node
   - Use the Floyd-Warshall algorithm https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm
   - Section 10.3 of the Newman textbook discusses more options
@@ -61,10 +58,7 @@ _Core_: You have to implement an algorithm to calculate all pair-wise distances.
   b) the network diameter  
   c) a plot of the distance distribution (simiar to 2.18 a in Barabasi textbook)
   
-5. Is the network connected? How many components are there? 
-
-_Core_: You have to implement one of these two solutions: 
-
+5. Is the network connected? How many components are there? _Core_: You have to implement one of these two solutions: 
   - Use BFS (Box 2.6 of Barabasi)
   - Use the eigenvalues of the graph Laplacian (Section 16.3.2 of Newman textbook)
 
