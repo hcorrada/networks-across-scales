@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Random Networks</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Héctor Corrada Bravo" />
+    <meta name="date" content="2019-09-09" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+class: title-slide, center, middle
+count: false
+
+.banner[![](img/head.png)]
+
+.title[Random Networks]
+
+.author[Héctor Corrada Bravo]
+
+.other-info[
+University of Maryland, College Park, USA  
+CMSC828O 2019-09-09
+]
+
+.logo[![](img/logo.png)]
+
+---
+class: split-50
+exclude: true
+
+## What does my group do?
+
+.column[
+Study the **molecular** basis of *variation* in development and disease
+
+
+Using **high-throughput** experimental methods  
+]
+
+.column[.image-80[![](img/stickmen.png)]]
+
+---
+
+## The core of data analysis
+
+Given observations (entities), and their characteristics (attributes)
+
+Understand how those characteristics are _distributed_ in the population
+
+- means, variances, empirical distributions
+- data generative models with parameters
+
+Hope we can infer something useful about that population from the understanding of the distribution of characteristics
+
+---
+
+## Thinking of networks in terms of data analysis
+
+One way of thinking about networks:
+
+- Entities and their characteristics (nodes and their attributes)
+- Interactions and their characteristics (edges and their attributes)
+
+How is the _presence or absence of interactions_ distributed in the population?
+
+---
+
+## Presence/absence models
+
+Consider the analysis of a binary attribute in the population.
+
+E.g., is gene PTEN expressed in normal breast cells?
+
+What is a model we tend to use? Suppose the gene is expressed in `\(p\)` cells in the
+population.
+
+I take a sample of `\(N\)` cells, measure how many express PTEN.
+
+---
+
+## Presence/absence models
+
+If we do this sampling experiment many times, we expect to see Binomial distribution
+
+`$$Y \sim Bin(N,p)$$`
+
+&lt;img src="index_files/figure-html/unnamed-chunk-1-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Presence/absence models
+
+What is our expectation for `\(Y\)`?
+Variance?
+
+--
+
+For very large `\(N\)`, same distribution is well approximated by `\(Y\sim\mathrm{Poisson}(\lambda=pN)\)`
+
+---
+
+## Presence/absence models
+
+&lt;img src="index_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Presence/absence models
+
+We can follow a similar idea to model presence/absence of an _interaction_ in the network
+
+Given a network over `\(N\)` entities (vertices)
+
+What is the population of interest? All possible pairwise interactions
+
+---
+
+## Presence/absence models
+
+Assumptions:
+
+Fraction `\(p\)` of interactions actually occur in the population
+
+The observed edges is a _realization_ of random occurrences in measurement of those interactions
+
+How can we model the number of edges in a network?
+
+---
+
+## Presence/absence models
+
+`\(Y \sim Bin(N(N-1/2), p)\)`
+
+&lt;img src="index_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Presence/absence models
+
+What if we ask this question _one node at a time_?
+
+If proportion `\(p\)` of interactions actually occur in the population, then 
+what is the distribution of the number of interactions (edges) for a single node?
+
+---
+
+## Presence/absence models
+
+`\(k_i \sim Bin(N-1,p)\)`
+
+&lt;img src="index_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Important observations
+
+Expected degree is `\(p(N-1)\)`. 
+
+--
+
+One reasonable estimate from data would be `\(&lt;k&gt;\)` (average degree)
+
+---
+class: split-50
+
+## Important observations
+
+.column[
+- Degrees concentrated around expectation
+- Low degree and high degree nodes rare
+]
+.column[
+&lt;img src="index_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Important observations
+
+Back to Poisson
+
+`\(k_i \sim \mathrm{Pois(&lt;k&gt;)}\)`
+
+`\(p_k=P(k_i=k)=e^{-&lt;k&gt;}\frac{&lt;k&gt;}{k!}\)`
+
+---
+
+## Important observations
+
+.center[![](img/pois.png)]
+
+---
+
+## ER network model
+
+_Erdos-Renyi_ Construct a network with `\(N\)` vertices given parameter `\(p\)` by connecting vertices with probability `\(p\)`
+
+---
+
+## ER model
+
+Emmergence of connected component
+
+.center[![](img/er.png)]
+
+
+---
+
+## ER model
+
+Small world
+
+.center[![](img/smallworld.png)]
+
+---
+
+## ER model
+
+Clustering coefficient?
+
+On the board
+
+---
+
+## ER model
+
+How well does this model fit data?
+
+.image-40.center[![](img/plot_loglog-1.png)]
+
+---
+
+## ER model
+
+How well does this model fit data?
+
+.center[![](img/erfit.png)]
+
+---
+
+## Power law
+
+We see that exponential decay of high-degree probability does not fit data well.
+
+Log-log plot suggests a linear relationship
+
+`\(\log p_k \approx -\gamma \times k\)`
+
+`\(p_k \approx k^{-\gamma}\)`
+
+---
+
+## Power law
+
+.image-50[.center[![](img/power1.png)]]
+
+---
+
+## Power law
+
+.center[![](img/power2.png)]
+
+---
+
+## Power law (ultra-small world)
+
+.image-50[.center[![](img/ultrasmall.png)]]
+
+---
+
+## Power law (scale-free)
+
+.image-70[.center[![](img/scalefree.png)]]
+
+---
+
+## Power Law
+
+Generative random model for ER (poisson, random) network was straightforward
+
+Next topics:
+- Why scale-free?
+- Fitting power law networks to data
+- Generative random model for power law networks
+- More sophisticated models to fit empirical data closer
+- Biologically-plausible random models (evolution/fitness etc.)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+<script>
+remark.macros['scale'] = function (percentage) {
+  var url = this;
+  return '<img src="' + url + '" style=width: ' + percentage + '"/>';
+};
+</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -59,6 +59,9 @@ date = "9/9"
 title = "Random Networks I"
 #notes = "lectures/CMSC423_BioResources.pdf"
 
+[[day04.prep]]
+title = "Barabasi, Ch. 3 and 4"
+
 #### DAY 5
 ########################
 # Models of Network Structure and Dynamics
@@ -69,9 +72,6 @@ date = "9/11"
 
 [[day05.covers]]
 title = "Presentations: Networks in Molecular Biology"
-
-[[day05.prep]]
-title = "Barabasi, Ch. 3 and 4"
 
 [day05a]
 date = "9/13"

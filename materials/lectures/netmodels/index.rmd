@@ -1,5 +1,5 @@
 ---
-title: "Network Preliminaries"
+title: "Random Networks"
 author: "Héctor Corrada Bravo"
 company: "University of Maryland"
 date: "`r Sys.Date()`"
@@ -19,7 +19,7 @@ count: false
 
 .banner[![](img/head.png)]
 
-.title[Network Preliminaries]
+.title[Random Networks]
 
 .author[Héctor Corrada Bravo]
 
@@ -46,978 +46,260 @@ Using **high-throughput** experimental methods
 .column[.image-80[![](img/stickmen.png)]]
 
 ---
-class: split-50
 
-## Genetic Interaction Network
+## The core of data analysis
 
-.column[
-- Yeast high-throuput double-knockdown assay
-- ~5000 genes
-- ~800k interactions
+Given observations (entities), and their characteristics (attributes)
 
-http://www.geneticinteractions.org/
-]
+Understand how those characteristics are _distributed_ in the population
 
-.column[.image-90[![](img/boonelab_network.png)]]
-.source[Costanzo et al. (2016) Science. DOI: 10.1126/science.aaf1420]  
+- means, variances, empirical distributions
+- data generative models with parameters
+
+Hope we can infer something useful about that population from the understanding of the distribution of characteristics
 
 ---
-class: split-50
 
-## Genetic Interaction Network
+## Thinking of networks in terms of data analysis
 
-.column[
-- Yeast high-throuput double-knockdown assay
-- ~5000 genes
-- ~800k interactions
+One way of thinking about networks:
 
-http://www.geneticinteractions.org/
-]
+- Entities and their characteristics (nodes and their attributes)
+- Interactions and their characteristics (edges and their attributes)
 
-.column[.image-70[![](img/robot.jpg)]]
-.source[Costanzo et al. (2016) Science. DOI: 10.1126/science.aaf1420]  
+How is the _presence or absence of interactions_ distributed in the population?
 
+---
 
-```{r libsetup, echo=FALSE, message=FALSE, warning=FALSE}
-library(readr)
-library(dplyr)
-library(tidyverse)
-```
+## Presence/absence models
 
-```{r read_data, cache=TRUE, echo=FALSE, message=FALSE}
-mat <- read_tsv("data/Data File S2. Raw genetic interaction datasets: Matrix format/SGA_NxN_clustered.cdt")
-```
+Consider the analysis of a binary attribute in the population.
 
-```{r setup_data, cache=TRUE, echo=FALSE, message=FALSE}
-amat <- mat %>%
-  slice(-(1:5)) %>%
-  select(starts_with("dma")) %>%
-  type_convert() %>%
-  as.matrix()
-amat <- 1 * (abs(amat) > 0.2)
+E.g., is gene PTEN expressed in normal breast cells?
 
-coldata <- mat %>%
-  slice(1:5) %>%
-  select(GID, starts_with("dma")) %>%
-  slice(2) %>% select(-1) %>%
-  gather(dma, orf, starts_with("dma"))
-  
+What is a model we tend to use? Suppose the gene is expressed in $p$ cells in the
+population.
 
-row_orf <- mat %>%
-  slice(-(1:5)) %>%
-  pull(ORF)
+I take a sample of $N$ cells, measure how many express PTEN.
 
-m <- match(row_orf, coldata$orf)
-rows_to_use <- !is.na(m)
-cols_to_use <- m[rows_to_use]
+---
 
-amat <- amat[rows_to_use, cols_to_use]
+## Presence/absence models
 
-rownames(amat) <- row_orf[rows_to_use]
-colnames(amat) <- coldata$orf[cols_to_use]
-diag(amat) <- 0
-amat[is.na(amat)] <- 0
-amat <- ceiling(0.5 * (amat + t(amat)))
+If we do this sampling experiment many times, we expect to see Binomial distribution
 
-num_vertices <- nrow(amat)
-num_edges <- sum(amat)
-degrees <- rowSums(amat)
-ave_degree <- 2 * num_edges / num_vertices
-density <- ave_degree / (num_vertices - 1)
+$$Y \sim Bin(N,p)$$
+
+```{r, echo=FALSE, fig.align="center", fig.height=4.5}
+hist(rbinom(1000, 100, .2), xlab="Y", main="Bin(100,.2)")
 ```
 
 ---
 
-## Genetic Interaction Network
+## Presence/absence models
 
-- Number of vertices: `r num_vertices`  
-- Number of edges: `r format(num_edges, big.mark=",")`
-
----
-layout: true
-
-## Preliminaries
-
----
-class: split-40
-
-.column[
-**Network**: abstraction of _entities_ and their interactions  
-**Graph**: mathematical representation
-
-_vertices_: nodes  
-_edges_: links
-]
-
-.column[
-
-```{r toygraph, echo=FALSE, message=FALSE}
-library(tidygraph)
-library(ggraph)
-
-graph <- as_tbl_graph(highschool)
-
-graph_1958 <- graph %>%
-  activate(edges) %>%
-  filter(year == 1958)
-
-undirected_graph_1958 <- graph_1958 %>%
-  convert(to_undirected) %>%
-  convert(to_simple)
-```
-
-```{r plot_undirected, echo=FALSE, fig.width=6}
-undirected_graph_1958 %>%
-  ggraph(layout="kk") +
-    geom_edge_fan() +
-    geom_node_point(size=3) +
-    theme_graph(foreground=NA) +
-    ggtitle("Undirected graph")
-```
-]
-
----
-class: split-40
-
-.column[
-**Network**: abstraction of _entities_ and their interactions  
-**Graph**: mathematical representation
-
-_vertices_: nodes  
-_edges_: links
-]
-
-.column[
-
-```{r toygraph2, echo=FALSE, message=FALSE, fig.width=6}
-graph_1958 %>%
-  ggraph(layout="kk") +
-    geom_edge_fan(arrow=arrow(length=unit(0.15,"inches"))) +
-    geom_node_point(size=3) +
-    theme_graph(foreground=NA) +
-    ggtitle("Directed graph")
-```
-]
-
----
-layout: true
-
-## Network statistics: notation
-
----
-
-Number of vertices: $n$
-
-In our example: _number of genes_
+What is our expectation for $Y$?
+Variance?
 
 --
 
-Number of edges: $m$
+For very large $N$, same distribution is well approximated by $Y\sim\mathrm{Poisson}(\lambda=pN)$
 
-In our example: _number of genetic interactions_
+---
+
+## Presence/absence models
+
+```{r, echo=FALSE, fig.align="center"}
+hist(rpois(1000, 1000*.2), xlab="Y",main="Pois(1000*.2)")
+```
+
+---
+
+## Presence/absence models
+
+We can follow a similar idea to model presence/absence of an _interaction_ in the network
+
+Given a network over $N$ entities (vertices)
+
+What is the population of interest? All possible pairwise interactions
+
+---
+
+## Presence/absence models
+
+Assumptions:
+
+Fraction $p$ of interactions actually occur in the population
+
+The observed edges is a _realization_ of random occurrences in measurement of those interactions
+
+How can we model the number of edges in a network?
+
+---
+
+## Presence/absence models
+
+$Y \sim Bin(N(N-1/2), p)$
+
+```{r, echo=FALSE, fig.align="center", fig.height=5}
+hist(rbinom(1000, 100*99/2, .2), main="Bin(100*99/2, .2)", xlab="Y")
+```
+
+---
+
+## Presence/absence models
+
+What if we ask this question _one node at a time_?
+
+If proportion $p$ of interactions actually occur in the population, then 
+what is the distribution of the number of interactions (edges) for a single node?
+
+---
+
+## Presence/absence models
+
+$k_i \sim Bin(N-1,p)$
+
+```{r, echo=FALSE, fig.align="center", fig.height=5}
+hist(rbinom(100, 99, .2), main="Bin(99,.2)", xlab="Y")
+```
+
+---
+
+## Important observations
+
+Expected degree is $p(N-1)$. 
 
 --
 
-Degree of vertex $i$: $k_i$
-
-_Number of genetic interactions for gene $i$_
-
----
-
-On the board:
-
-- Calculate number of edges $m$ using degrees $k_i$
-  (for both directed and undirected networks)
-  
-- Calculate _average degree_ $c$
-- Calculate _density_ $\rho$
-
---
-
-In our example:
-
-Average degree: `r ave_degree`  
-Density: `r density`
-
----
-layout: true
-
-## (On the board)
-
----
-
-
-Number of edges using degrees (undirected)
-
-$$
-m = \frac{1}{2} \sum_{i=1}^n k_i
-$$
-
-Number of edges using degrees (directed)
-
-$$m = \sum_{i=1}^n k_i^{\textrm{in}} = \sum_{i=1}^n k_i^{\textrm{out}}$$
-
----
-
-Average degree
-
-$$c = \frac{1}{n} \sum_{i=1}^n k_i$$
-
-Density
-
-$$\rho=\frac{m}{\binom{n}{2}} = \frac{2m}{n(n-1)} = \frac{c}{n-1} \approx \frac{c}{n}$$
-
----
-layout: false
-class: split-50
-
-## Degree distribution
-
-.column[
-Fundamental analytical tool to characterize networks
-
-$p_k$: probability randomly chosen vertex has degree $k$
-
-On the board: how to calculate $p_k$ and how to calculate average
-degree $c$ using degree distribution.
-]
-
-.column[
-```{r stats, echo=FALSE, cache=TRUE}
-degree_count <- table(degrees)
-degree_dist <- degree_count / num_vertices
-```
-
-```{r plot_deg, echo=FALSE, fig.width=5}
-hist(degrees, nc=50, main="Degree Distribution",xlab="Degree")
-```
-]
-
----
-
-## (On the board)
-
-Degree distribution
-
-$$p_k = \frac{n_k}{n}$$
-
-$n_k$: number of nodes in graph with degree $k$
-
----
-
-## Degree Distribution
-
-```{r plot_loglog, echo=FALSE, fig.align="center"}
-degs <- as.integer(names(degree_count))
-plot(log(degs), log(degree_dist), pch=19,
-     main="log/log degree distribution",
-     xlab=expression(log(k)), ylab=expression(log(p[k])))
-```
-
----
-class: split-40
-
-## Paths and Distances
-
-.column[
-_Distance_ $d_{ij}$: length of **shortest** path betwen vertices $i$ and $j$.
-]
-
-.column[
-```{r toy3, echo=FALSE, fig.width=6}
-undirected_plot_1958 <- undirected_graph_1958 %>%
-  ggraph(layout="kk") +
-    geom_edge_fan() +
-    geom_node_point(size=3) +
-    theme_graph(foreground=NA)
-undirected_plot_1958
-```
-]
----
-class: split-40
-
-## Paths and Distances
-
-.column[
-_Distance_ $d_{ij}$: length of **shortest** path betwen vertices $i$ and $j$.
-
-_Diameter_: longest shortest path $\max_{ij} d_{ij}$
-]
-
-.column[
-```{r toy4, echo=FALSE, fig.width=6}
-undirected_plot_1958
-```
-]
-
----
-class: split-40
-
-## Paths and Distances
-
-.column[
-_Distance_ $d_{ij}$: length of **shortest** path betwen vertices $i$ and $j$.
-
-On the board: average path length
-]
-
-.column[
-```{r toy5, echo=FALSE, fig.width=6}
-undirected_plot_1958
-```
-]
-
----
-
-## (On the board)
-
-Average path length
-
-$$\overline{d}=\frac{1}{n(n-1)} \sum_{i,j;i\neq j} d_{ij}$$
-
----
-
-## Distance Distribution
-
-```{r floyd_warshal, cache=TRUE, echo=FALSE, results="hide"}
-fw_dists <- function(amat) {
-  nvertices <- nrow(amat)
-  dmat <- matrix(Inf, nvertices, nvertices)
-  diag(dmat) <- 0
-  dmat[amat == 1] <- 1
-  
-  for (k in seq_len(nvertices)) {
-#    cat(".")
-    dk <- outer(dmat[,k],dmat[k,],FUN="+")
-    switch <- dmat > dk
-    dmat[switch] <- dk[switch]
-  }
-#  cat("\n")
-  dmat
-}
-
-dmat <- fw_dists(amat)
-```
-
-```{r dmat_dist, echo=FALSE, eval=TRUE}
-dist_tab <- tibble(dist=dmat[upper.tri(dmat, diag=FALSE)]) %>%
-  group_by(dist) %>%
-  summarize(freq=n()) %>%
-  mutate(pdist=freq / sum(freq))
-```
-
-```{r plot_dist, echo=FALSE, eval=TRUE, fig.align="center"}
-dist_tab %>%
-  ggplot(aes(dist, log(pdist))) +
-    geom_point(size=2.7) +
-    scale_x_continuous(breaks=seq(0,20,2))
-```
-
----
-
-# Distances and paths
-
-By convention: if there is no path between vertices $i$ and $j$ then $d_{ij}=\infty$
-
---
-
-_Vertices_ $i$ and $j$ are _connected_ if $d_{ij} < \infty$
-
---
-
-_Graph_ is connected if $d_{ij} < \infty$ for all $i$, $j$
-
---
-
-_Components_ maximal subset of connected components
-
----
-
-# Components
-
-```{r disconnected, echo=FALSE, fig.align="center"}
-graph %>%
-  activate(edges) %>%
-  filter(year == 1957) %>%
-  convert(to_undirected) %>%
-  convert(to_simple) %>%
-  ggraph(layout="kk") +
-    geom_edge_fan() +
-    geom_node_point(size=3) +
-    theme_graph(foreground=NA) 
-```
-
----
-
-# Clustering Coefficient
-
-One more quantity of interest: how dense is the neighborhood around vertex $i$?
-
-Do the genes that interact with me also interact with each other?
-
-Definition on the board
-
----
-
-## (On the board)
-
-Clustering coefficient
-
-$$c_i = \frac{2m_i}{k_i(k_i-1)}$$
-
-$m_i$: number of edges between neighbors of vertex $i$
-
-
----
-
-# Clustering coefficient
-
-```{r clust_coef, cache=TRUE, echo=FALSE, fig.align=TRUE}
-cc <- vector("numeric", num_vertices)
-
-for (i in seq_len(num_vertices)) {
-  ki <- degrees[i]
-  denom <- ki * (ki-1) / 2
-  neighbors <- which(amat[,i] > 0)
-  mi <- sum(amat[neighbors, neighbors]) / 2
-  cc[i] <- mi / denom
-}
-
-cc_dat <- data_frame(degree=degrees, cc=cc) %>%
-  group_by(degree) %>%
-  summarize(ck=mean(cc))
-```
-
-```{r cc_plot, echo=FALSE, fig.align="center"}
-cc_dat %>%
-  filter(degree>1) %>%
-  ggplot(aes(degree, ck)) +
-    geom_point(na.rm=TRUE) +
-    scale_x_log10(
-      breaks = scales::trans_breaks("log10", function(x) 10^x),
-      labels = scales::trans_format("log10", scales::math_format(10^.x))) +
-    scale_y_log10(
-      breaks = scales::trans_breaks("log10", function(x) 10^x),
-      labels = scales::trans_format("log10", scales::math_format(10^.x)))
-```
+One reasonable estimate from data would be $<k>$ (average degree)
 
 ---
 class: split-50
 
-# Adjacency Matrix
+## Important observations
 
 .column[
-```{r toy6, echo=FALSE, fig.width=6,eval=FALSE}
-undirected_graph <- graph %>%
-  activate(edges) %>%
-  filter(year == 1958) %>%
-  mutate(single_edge = !edge_is_mutual() & !edge_is_multiple()) %>%
-  filter(single_edge) %>% 
-  activate(nodes) %>%
-  mutate(connected = !node_is_isolated()) %>%
-  filter(connected) 
-
-undirected_graph %>%
-  ggraph(layout="kk") +
-    geom_edge_fan() +
-    geom_node_point(size=3) +
-    theme_graph(foreground=NA) +
-    ggtitle("Undirected graph")
-```
-
-```{r toy61, echo=FALSE, fig.width=6}
-undirected_plot_1958 +
-  ggtitle("Undirected graph")
-```
+- Degrees concentrated around expectation
+- Low degree and high degree nodes rare
 ]
-
 .column[
-```{r adjplot2, echo=FALSE, fig.align="center", fig.width=5,warning=FALSE}
-undirected_amat_plot_1958 <- undirected_graph_1958 %>%
-  igraph::as_adj() %>%
-  as.matrix() %>%
-  as_data_frame() %>%
-  rowid_to_column(var="row") %>%
-  gather("column", "edge", -row) %>%
-  mutate(column=as.integer(column)) %>%
-  mutate(edge=as.integer(edge)) %>%
-  ggplot(aes(x=row,y=column,fill=factor(edge))) +
-    geom_raster() +
-    scale_fill_manual(values=c("white","black")) +
-    theme(axis.text=element_blank(),
-          axis.title=element_blank(),
-          axis.ticks=element_blank(),
-          legend.position="none")
-undirected_amat_plot_1958
-```
-]
-
----
-class: split-50
-
-# Adjacency Matrix
-
-.column[
-On the board:
-  - Definition
-  - Computing degree with adj. matrix
-  - Computing num. edges $m$ with adj. matrix
-  - Computing paths with adj. matrix
-]
-
-.column[
-```{r adjplot3, echo=FALSE, fig.align="center", fig.width=5, warning=FALSE}
-undirected_amat_plot_1958
-```
-]
----
-class: split-50
-
-# Adjacency Matrix
-
-.column[
-```{r toy8, echo=FALSE, fig.width=6,eval=TRUE}
-graph_1958 %>%
-  ggraph(layout="kk") +
-    geom_edge_fan(arrow=arrow(length=unit(0.15,"inches"))) +
-    geom_node_point(size=3) +
-    theme_graph(foreground=NA) +
-    ggtitle("Directed graph")
-```
-]
-
-.column[
-```{r adjplot4, echo=FALSE, fig.align="center", fig.width=5,eval=TRUE, warning=FALSE}
-graph_1958 %>% 
-  igraph::as_adj() %>%
-  as.matrix() %>%
-  as_data_frame() %>%
-  rowid_to_column(var="row") %>%
-  gather("column", "edge", -row) %>%
-  mutate(column=as.integer(column)) %>%
-  mutate(edge=as.integer(edge)) %>%
-  ggplot(aes(x=row,y=column,fill=factor(edge))) +
-    geom_raster() +
-    scale_fill_manual(values=c("white","black")) +
-    theme(axis.text=element_blank(),
-          axis.title=element_blank(),
-          axis.ticks=element_blank(),
-          legend.position="none")
-```
-]
-
----
-layout: true
-
----
-
-## Weighted networks
-
-Edges are assigned a weight indicating quantitative property of interaction
-
---
-
-- Strength of genetic interaction (evidence from experiment)
-
-- Rates in a metabolic network
-
-- Spatial distance in an ecological network
-
----
-
-Adjacency matrix contains weights instead of 0/1 entries
-
---
-
-Path lengths are the sum of edge weights in a path
-
----
-
-## Hypergraphs
-
-Edges connect more than two vertices
-
-![](img/hypergraph.png)
-
-.source[https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000385]
-
----
-class: split-50
-
-## Trees
-
-.column[
-_Acyclic graphs_
-
-Single path between any pair of vertices
-]
-
-.column[
-![](img/tree.png)
-]
-
-.source[https://www.sciencedirect.com/science/article/pii/S0981942817304321]
-
----
-
-## Bipartite Networks
-
-
-.center.middle.image-70[![](img/reaction.png)]
-
-.source[https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000385]
-
----
-
-## Bipartite Networks
-
-We use an _Incidence Matrix_ $B$ instead of _Adjacency Matrix_
-
-(On the board): definition
-
----
-
-## Bipartite Networks
-
-### Projections
-
-_vertex projection_: $P_{ij}$, num. of groups in which vertices $i$ and $j$ co-occur
-
-_group projection_: $P'_{ij}$, num. of members groups $i$ and $j$ share
-
---
-
-(On the board)
-
-$$P=B^TB$$
-
-$$P'=BB^T$$
-
----
-class: split-40
-
-## Centrality
-
-
-.column[
-What are the _important_ nodes in the network? 
-
-What are _central_ nodes in the network?
-]
-
-.column[
-```{r centrality, echo=FALSE, fig.width=8,eval=TRUE}
-undirected_graph_1958 %>%
-  activate(nodes) %>% 
-  mutate(centrality = centrality_eigen()) %>%
-  ggraph(layout="kk") +
-    geom_edge_fan() +
-    geom_node_point(aes(size=centrality)) +
-    theme_graph(foreground=NA)
+```{r, echo=FALSE, fig.align="center", fig.height=4}
+hist(rbinom(1000, 99, .2), main="Bin(99,.2)", xlab="Y")
 ```
 ]
 
 ---
 
-## Centrality
+## Important observations
 
-### Undirected Graphs
-- Eigenvalue Centrality
+Back to Poisson
 
-### Directed Graphs
-- Katz Centrality
-- Pagerank
+$k_i \sim \mathrm{Pois(<k>)}$
 
----
-class:split-50
-
-## Centrality
-
-.column[
-```{r deg_centrality, fig.width=6, echo=FALSE,eval=TRUE}
-undirected_graph_1958 %>%
-  activate(nodes) %>% 
-  mutate(degree_centrality = centrality_degree()) %>%
-  ggraph(layout="kk") +
-    geom_edge_fan() +
-    geom_node_point(aes(size=degree_centrality)) +
-    theme_graph(foreground=NA)
-```
-]
-
-.column[
-```{r eig_centrality, fig.width=6, echo=FALSE,eval=TRUE}
-undirected_graph_1958 %>%
-  activate(nodes) %>% 
-  mutate(eigen_centrality = centrality_eigen()) %>%
-  ggraph(layout="kk") +
-    geom_edge_fan() +
-    geom_node_point(aes(size=eigen_centrality)) +
-    theme_graph(foreground=NA)
-```
-]
-
----
-layout: true
-
-## Betweenness
-
----
-class: split-40
-
-.column[
-What are the _important_ edges in the network? 
-
-What are edges that may connect clusters of nodes in the network?
-]
-
-.column[
-```{r betweenness, echo=FALSE, fig.width=6,eval=TRUE}
-undirected_graph_1958 %>%
-  activate(edges) %>% 
-  mutate(betweenness = centrality_edge_betweenness()) %>%
-  ggraph(layout="kk") +
-    geom_edge_fan(aes(width=betweenness)) +
-    scale_edge_width_continuous(range=c(0,2)) +
-    geom_node_point(size=3) +
-    theme_graph(foreground=NA)
-```
-]
-
----
-class: split-40
-
-.column[
-Girvan-Newman Algorithm - hierarchical method to
-partition nodes into communities using edge betweenness
-]
-
-.column[
-```{r gn, echo=FALSE, fig.width=6, eval=TRUE}
-undirected_graph_1958 %>%
-  activate(edges) %>%
-  mutate(betweenness=centrality_edge_betweenness()) %>%
-  activate(nodes) %>%
-  mutate(group = factor(group_edge_betweenness())) %>%
-  ggraph(layout="kk") +
-    geom_edge_fan(aes(width=betweenness)) +
-    scale_edge_width_continuous(range=c(0,2)) +
-    geom_node_point(aes(color=group), size=3) +
-    theme_graph(foreground=NA)
-```
-]
-
----
-layout: true
-
-## Girvan-Newman Algorithm
+$p_k=P(k_i=k)=e^{-<k>}\frac{<k>}{k!}$
 
 ---
 
-Two phases:
+## Important observations
 
-  Phase One: Compute betweenness for every edge  
-  Phase Two: Discover communities by removing _high_ betweenness edges (similar to hierarchical clustering)
-
----
-
-### Calculating Betweenness
-
-Formally, $\mathrm{betweenness}(e)$: fraction of vertex pairs $(x,y)$ where shortest path crossess edge $e$
-
-Path Counting: For each vertex $x$, use breadth-first-search to count number of shortest paths through each edge $e$ in graph between $x$ and every other vertex $y$.
-
-Sum result across vertices for each edge $e$, and divide by two
-
-Presentation from _Mining Massive Datasets_ Leskovec, et al. http://mmds.org/ (Ch. 10)
+.center[![](img/pois.png)]
 
 ---
 
-### Counting Paths
+## ER network model
 
-Algorithm (starting from node $x$)
-
-1. Construct breadth-first search tree
-2. (Root->Leaf) Label each vertex $v$ with the number of shortest paths between $x$ and $v$: sum of labels of parents 
-3. (Leaf->Root) Count the (weighted) number of shortest paths that go through each edge: next slide
+_Erdos-Renyi_ Construct a network with $N$ vertices given parameter $p$ by connecting vertices with probability $p$
 
 ---
 
-### Counting Paths
+## ER model
 
-Step 3, counting number of shortest paths through each edge
+Emmergence of connected component
 
-a. Leafs $v$ in search tree get a _credit_ of $C_v=1$
+.center[![](img/er.png)]
 
-b. Incoming edge $e_i=(y_i,v)$ to vertex $v$ in search tree gets _credit_ $C_{e_i}=C_v * \frac{p_i}{\sum_j p_j}$ 
-  - $p_i$: number of shortest paths between $x$ and $y_i$ (computed in Step 2)
-  - sum $\sum_j$ is over parents of $v$ 
 
 ---
 
-### Counting Paths
+## ER model
 
-c. Non-leaf vertex $v$ gets credit $C_v = 1 + \sum_j e_j$ where sum $j$ is over outgoing edges $e_j$ in search tree
+Small world
 
----
-
-### Example
-
-![](img/graph.png)
-
----
-layout: true
-
-## Resources
+.center[![](img/smallworld.png)]
 
 ---
 
-### Cross-language
+## ER model
 
-igraph: http://igraph.org/  
-Boost Graph Library: https://www.boost.org/doc/libs/1_71_0/libs/graph/doc/
+Clustering coefficient?
 
----
-
-### Python
-
-- [`igraph`](http://igraph.org/python/doc/tutorial/tutorial.html)
-- [`networkx`](https://networkx.github.io/)
+On the board
 
 ---
 
-### R
+## ER model
 
-Workhorses: 
-- [`igraph`](https://cran.r-project.org/web/packages/igraph/index.html)
-- [`Rgraphviz`](https://www.bioconductor.org/packages/release/bioc/html/Rgraphviz.html)
+How well does this model fit data?
 
-Tidyverse (https://tidyverse.org):
-- [`tidygraph`](https://cran.r-project.org/web/packages/tidygraph/index.html)
-- [`ggraph`](https://cran.r-project.org/web/packages/ggraph/index.html)
-
----
-class: split-50
-
-For data analysis it is helpful to think in terms of rectangular datasets
-
-For networks, we need to have two distinct
-tables to represent this data. 
-
-- One table represents entities and their attributes:
-
-.column[
-```r 
- undirected_graph_1958 %>%
-  activate(nodes) %>%
-  as_tibble()
-```
-]
-
-.column[
-```{r graph_nodes, echo=FALSE}
- undirected_graph_1958 %>%
-  activate(nodes) %>%
-  as_tibble()
-```
-]
-
----
-class: split-50
-
-- Second table to represent edges and their attributes:
-
-.column[
-```r
-undirected_graph_1958 %>%
-  activate(edges) %>%
-  as_tibble()
-```
-]
-
-.column[
-```{r graph_edges, echo=FALSE}
-undirected_graph_1958 %>%
-  activate(edges) %>%
-  as_tibble()
-```
-]
-
----
-layout: true
-
-## Network-derived attributes
+.image-40.center[![](img/plot_loglog-1.png)]
 
 ---
 
-Besides attributes measured for each node, we have seen we can derive 
-node and edge attributes based on the structure of the network.
+## ER model
 
-For instance, we can compute the _degree_ of a node, that is, the number of edges incident to the node. 
+How well does this model fit data?
+
+.center[![](img/erfit.png)]
 
 ---
-class: split-50
 
-.column[
-```r
-undirected_graph_1958 <- undirected_graph_1958 %>%
-  activate(nodes) %>%
-  mutate(degree = centrality_degree())
+## Power law
 
-undirected_graph_1958 %>%
-  activate(nodes) %>%
-  as_tibble
-```
-]
+We see that exponential decay of high-degree probability does not fit data well.
 
-.column[
-```{r node_add_degree, echo=FALSE}
-undirected_graph_1958 <- undirected_graph_1958 %>%
-  activate(nodes) %>%
-  mutate(degree = centrality_degree())
+Log-log plot suggests a linear relationship
 
-undirected_graph_1958 %>%
-  activate(nodes) %>%
-  as_tibble
-```
-]
+$\log p_k \approx -\gamma \times k$
+
+$p_k \approx k^{-\gamma}$
+
 ---
-class: split-50
 
-The distribution of newly created attributes are fundamental analytical tools to characterize networks.
+## Power law
 
-.column[
-```r
-undirected_graph_1958 %>%
-  activate(nodes) %>%
-  as_tibble() %>%
-  group_by(degree) %>%
-  summarize(n=n()) %>%
-  ungroup() %>%
-  mutate(num_nodes = sum(n)) %>%
-  mutate(deg_prop = n / num_nodes) %>%
-  ggplot(aes(x=log(degree), y=log(deg_prop))) +
-    geom_point() +
-    labs(title="Degree distribution of transaction network",
-         x="Degree (log)",
-         y="Proportion of nodes (log)")
-```
-]
+.image-50[.center[![](img/power1.png)]]
 
-.column[
-```{r plot_deg2, echo=FALSE, eval=TRUE,fig.align='center',fig.width=6, fig.height=5}
-undirected_graph_1958 %>%
-  activate(nodes) %>%
-  as_tibble() %>%
-  group_by(degree) %>%
-  summarize(n=n()) %>%
-  ungroup() %>%
-  mutate(num_nodes = sum(n)) %>%
-  mutate(deg_prop = n / num_nodes) %>%
-  ggplot(aes(x=log(degree), y=log(deg_prop))) +
-    geom_point() +
-    labs(title="Degree distribution of friendship network",
-         x="Degree (log)",
-         y="Proportion of nodes (log)")
-```
-]
+---
+
+## Power law
+
+.center[![](img/power2.png)]
+
+---
+
+## Power law (ultra-small world)
+
+.image-50[.center[![](img/ultrasmall.png)]]
+
+---
+
+## Power law (scale-free)
+
+.image-70[.center[![](img/scalefree.png)]]
+
+---
+
+## Power Law
+
+Generative random model for ER (poisson, random) network was straightforward
+
+Next topics:
+- Why scale-free?
+- Fitting power law networks to data
+- Generative random model for power law networks
+- More sophisticated models to fit empirical data closer
+- Biologically-plausible random models (evolution/fitness etc.)
+
+
+
