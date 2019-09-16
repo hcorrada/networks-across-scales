@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Resources on CMSC828O: Networks Across Scales (Fall 2019)</title>
-    <link>http://www.hcbravo.org/networks-across-scales/resources/</link>
+    <link>https://www.hcbravo.org/networks-across-scales/resources/</link>
     <description>Recent content in Resources on CMSC828O: Networks Across Scales (Fall 2019)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
     <lastBuildDate>Wed, 25 Jan 2017 08:54:37 -0800</lastBuildDate>
     
-	<atom:link href="http://www.hcbravo.org/networks-across-scales/resources/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.hcbravo.org/networks-across-scales/resources/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CMSC Resources</title>
-      <link>http://www.hcbravo.org/networks-across-scales/resources/howto-biopython/</link>
+      <link>https://www.hcbravo.org/networks-across-scales/resources/howto-biopython/</link>
       <pubDate>Wed, 25 Jan 2017 08:54:37 -0800</pubDate>
       
-      <guid>http://www.hcbravo.org/networks-across-scales/resources/howto-biopython/</guid>
+      <guid>https://www.hcbravo.org/networks-across-scales/resources/howto-biopython/</guid>
       <description> Install Biopython  Download and install Python 2.7
  Download and install Anaconda
  Use the following commad to install biopython:
@@ -26,10 +26,10 @@ conda install -c anaconda biopython=1.68  </description>
     
     <item>
       <title>CMSC Resources</title>
-      <link>http://www.hcbravo.org/networks-across-scales/resources/</link>
+      <link>https://www.hcbravo.org/networks-across-scales/resources/</link>
       <pubDate>Mon, 29 Aug 2016 08:54:37 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/networks-across-scales/resources/</guid>
+      <guid>https://www.hcbravo.org/networks-across-scales/resources/</guid>
       <description>Python We will be using Python for all programming projects. Here are some resources to get you started:
  Short tutorial by Hal Daume
  Python Tutorial

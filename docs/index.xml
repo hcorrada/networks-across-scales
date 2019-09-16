@@ -2,36 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CMSC828O: Networks Across Scales (Fall 2019)</title>
-    <link>http://www.hcbravo.org/networks-across-scales/</link>
+    <link>https://www.hcbravo.org/networks-across-scales/</link>
     <description>Recent content on CMSC828O: Networks Across Scales (Fall 2019)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
     <lastBuildDate>Thu, 16 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.hcbravo.org/networks-across-scales/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.hcbravo.org/networks-across-scales/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Homework: Network Structure Inference</title>
-      <link>http://www.hcbravo.org/networks-across-scales/homeworks/net_structure/</link>
+      <link>https://www.hcbravo.org/networks-across-scales/homeworks/net_structure/</link>
       <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.hcbravo.org/networks-across-scales/homeworks/net_structure/</guid>
+      <guid>https://www.hcbravo.org/networks-across-scales/homeworks/net_structure/</guid>
       <description>Posted: 11/6/2018
 Last Update: 11/6/2018
 Data Download timeseries data derived from the ADHD-200 resting fMRI samples (http://fcon_1000.projects.nitrc.org/indi/adhd200/).
-http://www.hcbravo.org/networks-across-scales/ data/roi_timeseries.csv.
+https://www.hcbravo.org/networks-across-scales/ data/roi_timeseries.csv.
 The data consists of standardized measurements over 176 time points of 39 regions of interest (ROI). The rows of the data correspond to the 39 regions, the first column contains a label indicating the name of the brain ROI, with the remaining columns corresponding to the fMRI timeseries.
 Correlation Network Build a correlation network from the timeseries data as follows:</description>
     </item>
     
     <item>
       <title>Homework: Statistical Analysis of Network Data</title>
-      <link>http://www.hcbravo.org/networks-across-scales/homeworks/stat_models/</link>
+      <link>https://www.hcbravo.org/networks-across-scales/homeworks/stat_models/</link>
       <pubDate>Tue, 24 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.hcbravo.org/networks-across-scales/homeworks/stat_models/</guid>
+      <guid>https://www.hcbravo.org/networks-across-scales/homeworks/stat_models/</guid>
       <description>DUE: Monday 11/5/2018, 11:59pm
 Posted: 10/25/2018
 Last Update: 10/30/2018
@@ -40,10 +40,10 @@ We will use ecological network data from the paper &amp;ldquo;How Structured is 
     
     <item>
       <title>Homework: Network Models</title>
-      <link>http://www.hcbravo.org/networks-across-scales/homeworks/network_models/</link>
+      <link>https://www.hcbravo.org/networks-across-scales/homeworks/network_models/</link>
       <pubDate>Sat, 02 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.hcbravo.org/networks-across-scales/homeworks/network_models/</guid>
+      <guid>https://www.hcbravo.org/networks-across-scales/homeworks/network_models/</guid>
       <description>DUE: Wednesday 10/3/2018, 11:59pm
 Posted: 9/20/2018
 Last Update: 9/28/2018
@@ -56,10 +56,10 @@ Question 2:
     
     <item>
       <title>Homework: Practice with Network Statistics</title>
-      <link>http://www.hcbravo.org/networks-across-scales/homeworks/network_stats/</link>
+      <link>https://www.hcbravo.org/networks-across-scales/homeworks/network_stats/</link>
       <pubDate>Sat, 02 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.hcbravo.org/networks-across-scales/homeworks/network_stats/</guid>
+      <guid>https://www.hcbravo.org/networks-across-scales/homeworks/network_stats/</guid>
       <description>DUE: Friday 9/13/2017, 11:59pm
 Posted: 9/1/2017
 Last Update: 9/9/2017
@@ -69,10 +69,10 @@ Data Obtain data for the year genetic interaction network at http://thecellmap.o
     
     <item>
       <title>Project 4: SNP finding</title>
-      <link>http://www.hcbravo.org/networks-across-scales/projects/project_4/</link>
+      <link>https://www.hcbravo.org/networks-across-scales/projects/project_4/</link>
       <pubDate>Tue, 02 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.hcbravo.org/networks-across-scales/projects/project_4/</guid>
+      <guid>https://www.hcbravo.org/networks-across-scales/projects/project_4/</guid>
       <description>Due: Thursday May 11, 2017
 Posted: May 2, 2017
 Last Update: May 2, 2017
@@ -84,10 +84,10 @@ To get code you will be using for this project using git:</description>
     
     <item>
       <title>Project 2: Gibbs Sampling, EM and evolution</title>
-      <link>http://www.hcbravo.org/networks-across-scales/projects/project_2/</link>
+      <link>https://www.hcbravo.org/networks-across-scales/projects/project_2/</link>
       <pubDate>Thu, 23 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.hcbravo.org/networks-across-scales/projects/project_2/</guid>
+      <guid>https://www.hcbravo.org/networks-across-scales/projects/project_2/</guid>
       <description>Due Monday March 6
 Posted: 2/23/2017
 Last Update: 2/23/2017
@@ -98,10 +98,10 @@ Note: Postmortem refers to short reviews usually done after completion of a proj
     
     <item>
       <title>Project 1: Finding origin of DNA replication in a bacterial genome</title>
-      <link>http://www.hcbravo.org/networks-across-scales/projects/project_1/</link>
+      <link>https://www.hcbravo.org/networks-across-scales/projects/project_1/</link>
       <pubDate>Tue, 07 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.hcbravo.org/networks-across-scales/projects/project_1/</guid>
+      <guid>https://www.hcbravo.org/networks-across-scales/projects/project_1/</guid>
       <description>Due: Monday Feb. 20, 2017
 Posted: Feb 9, 2017
 Last Update: Feb 9, 2017
@@ -112,10 +112,10 @@ Question 1. (10pts) For each of the 3 solutions submitted provide a runtime anal
     
     <item>
       <title>Project 3: Genome Assembly and String Alignment</title>
-      <link>http://www.hcbravo.org/networks-across-scales/projects/project_3/</link>
+      <link>https://www.hcbravo.org/networks-across-scales/projects/project_3/</link>
       <pubDate>Tue, 07 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.hcbravo.org/networks-across-scales/projects/project_3/</guid>
+      <guid>https://www.hcbravo.org/networks-across-scales/projects/project_3/</guid>
       <description>Due: Tuesday April 18
 Posted: April 4, 2017
 Last Update: April 16, 2017
@@ -127,10 +127,10 @@ http://cbcb.umd.edu/~hcorrada/CMSC423/downloads/hw3data.zip</description>
     
     <item>
       <title>CMSC Resources</title>
-      <link>http://www.hcbravo.org/networks-across-scales/resources/howto-biopython/</link>
+      <link>https://www.hcbravo.org/networks-across-scales/resources/howto-biopython/</link>
       <pubDate>Wed, 25 Jan 2017 08:54:37 -0800</pubDate>
       
-      <guid>http://www.hcbravo.org/networks-across-scales/resources/howto-biopython/</guid>
+      <guid>https://www.hcbravo.org/networks-across-scales/resources/howto-biopython/</guid>
       <description> Install Biopython  Download and install Python 2.7
  Download and install Anaconda
  Use the following commad to install biopython:
@@ -139,28 +139,28 @@ conda install -c anaconda biopython=1.68  </description>
     
     <item>
       <title>Setting up R</title>
-      <link>http://www.hcbravo.org/networks-across-scales/homeworks/rocker/</link>
+      <link>https://www.hcbravo.org/networks-across-scales/homeworks/rocker/</link>
       <pubDate>Wed, 31 Aug 2016 00:05:51 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/networks-across-scales/homeworks/rocker/</guid>
+      <guid>https://www.hcbravo.org/networks-across-scales/homeworks/rocker/</guid>
       <description>For class we will be using R, Rstudio and git. You can download and install each using the links below. However, you can instead use Rocker, a project built on top of Docker to manage your software installation. We&amp;rsquo;ve setup a container that will provide you with a working installation of R, and the Rstudio IDE, along with a lot of packages providing analysis tools and datasets we will use throughout the semester.</description>
     </item>
     
     <item>
       <title>CMSC828O Calendar (Fall 2019)</title>
-      <link>http://www.hcbravo.org/networks-across-scales/calendar/</link>
+      <link>https://www.hcbravo.org/networks-across-scales/calendar/</link>
       <pubDate>Tue, 30 Aug 2016 10:13:51 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/networks-across-scales/calendar/</guid>
+      <guid>https://www.hcbravo.org/networks-across-scales/calendar/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CMSC828O Projects</title>
-      <link>http://www.hcbravo.org/networks-across-scales/projects/</link>
+      <link>https://www.hcbravo.org/networks-across-scales/projects/</link>
       <pubDate>Mon, 29 Aug 2016 08:54:44 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/networks-across-scales/projects/</guid>
+      <guid>https://www.hcbravo.org/networks-across-scales/projects/</guid>
       <description>Throughout the semester, you will be working as a group analyzing a network dataset of your choice. The goal is to apply appropriate methodology as we cover it during the semester.
 Group membership is listed on piazza: LINK COMING SOON
 Data Project Lightning Talks: Prepare 5-6 minutes to introduce your group project. Please include
@@ -170,10 +170,10 @@ Data Project Lightning Talks: Prepare 5-6 minutes to introduce your group projec
     
     <item>
       <title>CMSC Resources</title>
-      <link>http://www.hcbravo.org/networks-across-scales/resources/</link>
+      <link>https://www.hcbravo.org/networks-across-scales/resources/</link>
       <pubDate>Mon, 29 Aug 2016 08:54:37 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/networks-across-scales/resources/</guid>
+      <guid>https://www.hcbravo.org/networks-across-scales/resources/</guid>
       <description>Python We will be using Python for all programming projects. Here are some resources to get you started:
  Short tutorial by Hal Daume
  Python Tutorial
@@ -188,10 +188,10 @@ Data Project Lightning Talks: Prepare 5-6 minutes to introduce your group projec
     
     <item>
       <title>Logistics</title>
-      <link>http://www.hcbravo.org/networks-across-scales/logistics/</link>
+      <link>https://www.hcbravo.org/networks-across-scales/logistics/</link>
       <pubDate>Mon, 29 Aug 2016 05:41:03 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/networks-across-scales/logistics/</guid>
+      <guid>https://www.hcbravo.org/networks-across-scales/logistics/</guid>
       <description>This page and the Course Calendar constitute the official syllabus for this class.
 Course Information Computational and Mathematical Analysis of Biological Networks Across Scales
 CMSC828O Fall 2019
@@ -211,10 +211,10 @@ Office Hours: Friday 1:00pm-2:00pm and by appointment
     
     <item>
       <title>CMSC828O: Computational and Mathematical Analysis of Biological Networks across Scales</title>
-      <link>http://www.hcbravo.org/networks-across-scales/</link>
+      <link>https://www.hcbravo.org/networks-across-scales/</link>
       <pubDate>Sun, 28 Aug 2016 17:13:09 -0400</pubDate>
       
-      <guid>http://www.hcbravo.org/networks-across-scales/</guid>
+      <guid>https://www.hcbravo.org/networks-across-scales/</guid>
       <description>Course Information CMSC828O: Computational and Mathematical Analysis of Biological Networks Across Scales
 Fall 2019
  Instructor:

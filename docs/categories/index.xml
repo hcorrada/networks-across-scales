@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on CMSC828O: Networks Across Scales (Fall 2019)</title>
-    <link>http://www.hcbravo.org/networks-across-scales/categories/</link>
+    <link>https://www.hcbravo.org/networks-across-scales/categories/</link>
     <description>Recent content in Categories on CMSC828O: Networks Across Scales (Fall 2019)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license</copyright>
     
-	<atom:link href="http://www.hcbravo.org/networks-across-scales/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.hcbravo.org/networks-across-scales/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

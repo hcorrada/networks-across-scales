@@ -260,7 +260,7 @@ We see that exponential decay of high-degree probability does not fit data well.
 
 Log-log plot suggests a linear relationship
 
-$\log p_k \approx -\gamma \times k$
+$\log p_k \approx -\gamma \times \log k$
 
 $p_k \approx k^{-\gamma}$
 
