@@ -3,9 +3,9 @@ title: "Homework: Network Models"
 date: "2017-09-02"
 ---
 
-**DUE**: Wednesday 10/3/2018, 11:59pm  
-**Posted**: 9/20/2018  
-**Last Update**: 9/28/2018
+**DUE**: Wednesday 9/30/2019, 11:59pm  
+**Posted**: 9/16/2019  
+**Last Update**: 9/16/2019
 
 In our previous homework you generated the degree distribution of a genetic interaction network:
 

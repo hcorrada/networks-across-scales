@@ -124,6 +124,10 @@ date = "9/30"
 [[day10.covers]]
 title = "Unit Closing: State-of-the-art Paper Presentations, Random Networks"
 
+[[day10.workdue]]
+title = "Homework 2: Network Models"
+link = "homeworks/network_models/"
+
 #### DAY 11
 [day11]
 date = "10/2"
@@ -143,10 +147,6 @@ title = "Dynamical Networks II"
 
 [[day12.prep]]
 title = "Barabasi, Ch. 10"
-
-[[day12.workdue]]
-title = "Homework 2: Network Models"
-link = "homeworks/network_models/"
 
 
 #### DAY 13
