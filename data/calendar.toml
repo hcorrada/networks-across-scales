@@ -57,7 +57,7 @@ date = "9/9"
 
 [[day04.covers]]
 title = "Random Networks I"
-#notes = "lectures/CMSC423_BioResources.pdf"
+notes = "lectures/cmsc828o_netmodels.pdf"
 
 [[day04.prep]]
 title = "Barabasi, Ch. 3 and 4"
@@ -86,7 +86,7 @@ date = "9/16"
 
 [[day06.covers]]
 title = "Random Networks II"
-#notes = "lectures/Motif_finding.pdf"
+notes = "lectures/cmsc828o_netmodels.pdf"
 
 [[day06.prep]]
 title = "Barabasi, Ch. 5 and 6"
