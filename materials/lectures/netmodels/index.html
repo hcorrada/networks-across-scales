@@ -186,13 +186,15 @@ Back to Poisson
 
 `\(k_i \sim \mathrm{Pois(&lt;k&gt;)}\)`
 
-`\(p_k=P(k_i=k)=e^{-&lt;k&gt;}\frac{&lt;k&gt;}{k!}\)`
+`\(p_k=P(k_i=k)=e^{-&lt;k&gt;}\frac{&lt;k&gt;^k}{k!}\)`
 
 ---
 
 ## Important observations
 
 .center[![](img/pois.png)]
+
+Note: equation for `\(p_k\)` is incorrect (numerator is `\(&lt;k&gt;^k\)`)
 
 ---
 
@@ -289,6 +291,214 @@ Next topics:
 - Generative random model for power law networks
 - More sophisticated models to fit empirical data closer
 - Biologically-plausible random models (evolution/fitness etc.)
+
+---
+
+## Power Law
+
+Why scale-free? A couple of ways to think about it:
+
+- The variance of the degree distribution is infinite
+- The right-hand tail of the degree distribution does not go to 0
+
+--
+
+_Moments_ of an RV, the expected value of powers of an RV  
+`\(E[k]\)` - center of the distribution  
+`\(E[k^2]\)` - spread of the distribution (variance) **this is the important one**  
+`\(E[k^3]\)` - skew of the distribution  
+and more...
+
+---
+
+## Power Law
+
+Why scale-free?
+
+`$$E[k^2] = \sum_{k_{min}}^\infty k^2 p_k = \sum_{k_{min}}^\infty k^{2-\gamma}$$`
+
+--
+
+Let's take some liberties to make this easier to think about
+
+`$$E[k^2] = \int_{k_{min}}^{k_{max}} k^{2-\gamma} dk$$`
+
+and see what happens as `\(k_{max} \to \infty\)`
+
+---
+
+## Power law
+
+.center.image-80[![](img/largesthub.png)]
+
+---
+
+## Power law
+
+`\begin{align}
+E[k^2] &amp; = &amp; C\frac{k_{max}^{3-\gamma} - k_{min}^{3-\gamma}}{3-\gamma} \\
+{} &amp; = &amp; a k_{max}^{3-\gamma} + b
+\end{align}`
+
+- For `\(\gamma &gt; 3\)`: scale is finite value as `\(k_{max}\)` grows  
+- For `\(2 \leq \gamma \leq 3\)`: scale is infinite value as `\(k_{\max}\)` grows (scale-free)
+
+---
+
+## Power law
+
+.image-70[.center[![](img/scalefree.png)]]
+
+---
+
+## Estimating the degree coefficient
+
+Since so many structural properties of network depend on this value, estimating it properly matters a lot.
+
+Here is a procedure based on Maximum Likelihood Estimation
+
+---
+
+## Estimating the degree coefficient
+
+.center.image-80[![](img/estimation.png)]
+
+---
+
+## Estimating the degree coefficient
+
+Step 1 - The estimate
+
+Given `\(k_{min}\)`, estimate `\(\gamma\)` as 
+
+`$$\gamma_{k_{min}} = 1 + N\left[ \sum_{i=1}^N \log \frac{k_i}{k_{min}-\frac{1}{2}} \right]^{-1}$$`
+
+---
+
+## Estimating the degree coefficient
+
+Step 2 - How good is it?
+
+`$$D_{k_{min}} = \max_{k \geq k_{min}} |S(k) - p_k|$$`
+
+with `\(p_k\)` given by `\(\gamma_{k_{min}}\)`
+
+---
+
+## Estimating the degree coefficient
+
+Step 3 - Best model fit
+
+Estimate `\(\gamma\)` as `\(\gamma_{k_{min}}\)` that _minimizes_ `\(D_{k_{min}}\)`
+
+---
+
+## Estimating the degree coefficient
+
+Step 4 - Model check
+
+Is the optimal observed deviance `\(D_{k_{min}}\)` consistent with the estimated `\(\gamma\)`?
+
+Generate a distribution of deviance statistics from power law model, check where optimal deviance falls within generated distribution.
+
+---
+
+## Network Generation
+
+The ER model gave use a generative algorithm to create a network that satisifies "Poisson" degree distribution?
+
+Let's see a generative model to obtain a power law network
+
+---
+
+## The Barabasi-Albert Model
+
+Procedure:
+
+- Start with `\(m_0\)` nodes (with arbitrary links, or connected)
+- At each time step `\(t\)`
+  - Growth: Add a new node with `\(m\)` edges  
+  - Preferential attachment: probability new node links to node `\(i\)` `\(\Pi(k_i) = \frac{k_i}{\sum_i k_i}\)`
+  
+Some simple questions to warm up: (a) how many nodes after `\(t\)` steps? (b) how many edges after `\(t\)` steps?
+
+---
+class: split-50
+
+## The Barabasi-Albert Model
+
+.column[
+Degree dynamics
+
+`\(k_i(t) = m\left( \frac{t}{t_i} \right)^{1/2}\)`
+
+]
+
+.column[
+.center.image-50[![](img/badynamics.png)]
+]
+
+---
+
+## The Barabasi-Albert Model
+
+.column[
+Degree distribution
+
+`\(p_k \sim k^{-3}\)`
+]
+
+.column[
+.center.image-80[![](img/badistr.png)]
+]
+
+---
+
+## The Barabasi-Albert Model
+
+.column[
+Distance
+
+`\(&lt;d&gt; = \frac{\log N}{\log \log N}\)`
+]
+
+.column[
+.center.image-60[![](img/badist.png)]
+]
+
+---
+
+## The Barabasi-Albert Model
+
+Cluster coefficient
+
+.center.image-70[![](img/bacc.png)]
+
+---
+
+## Network growth models
+
+Barabasi-Albert, some missing ingredients
+
+- Fitness, properties beyond degree that control preferential attachment
+- Age, preferential attachment depending on time
+- Death, how to model nodes that go away?
+
+---
+
+## Network growth models
+
+.center.image-40[![](img/modeltree.png)]
+
+---
+
+## Network growth models
+
+More importantly: how well does this describe biologically plausible emergence.
+
+Is this consistent with evolution?
+
+Next time...
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

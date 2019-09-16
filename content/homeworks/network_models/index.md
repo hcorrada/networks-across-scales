@@ -23,7 +23,7 @@ Use a network analysis library to estimate the degree exponent under a power-law
 
 - What is the estimated degree exponent of the genetic interaction network?
 
-### Implementation (Optional Challenge)
+### Implementation (_Qual_)
 
 Implement and apply the procedures of Section 4.13 in the Barabasi book to estimate the degree exponent of this network.
 
@@ -46,6 +46,10 @@ e. other, see papers below for ideas.
     Perform your comparison both qualitatively (i.e., graphically) and quantitatively. For the latter, you need to decide how to do so, e.g., if your network structure measure is based on distribution, you can use, e.g., the KS statistic to compare distributions as described in the method used to fit the degree exponent for power-law distributions 
 3. Generate a network of the same size of the genetic interaction network using a gene duplication model as described below. Comment how you chose parameters of the duplication model (e.g., seed graph structure and size, edge deletion probability `p` and rewiring rate `r`). Compare the resulting network to the observed genetic interaction network using the same measure as question 2.
 4. Choose what you think is the most appropriate network evolution model for the genetic interaction network from the taxonomy of network evolution models (Image 6.15), or other model you deem appropriate. Explain why you chose it and compare to the observed genetic interaction network as before. 
+
+`igraph` and other libraries have methods to generate models according to BA-like network emergence models. Feel free to use those.
+
+_Qual_: implement the network generation model yourself
 
 ### A simple gene duplication model
 
