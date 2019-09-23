@@ -5,7 +5,7 @@ date: "2017-09-02"
 
 **DUE**: Wednesday 9/30/2019, 11:59pm  
 **Posted**: 9/16/2019  
-**Last Update**: 9/16/2019
+**Last Update**: 9/23/2019
 
 In our previous homework you generated the degree distribution of a genetic interaction network:
 
@@ -53,7 +53,7 @@ _Qual_: implement the network generation model yourself
 
 ### A simple gene duplication model
 
-The following procedure generates a network of size `n` based on a seed graph `G_0` and parameters `p` (edge deletion) and `r` (node rewiring). It follows the description in [xx]
+The following procedure generates a network of size `n` based on a seed graph `G_0` and parameters `p` (edge deletion) and `r` (node rewiring). It follows the description in [1]
 
 1. Start from a seed graph `G_0` of size `n_0`
 2. For `t=1,...,(n-n_0)`:  
