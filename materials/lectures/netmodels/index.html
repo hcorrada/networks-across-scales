@@ -4,7 +4,7 @@
     <title>Random Networks</title>
     <meta charset="utf-8" />
     <meta name="author" content="Héctor Corrada Bravo" />
-    <meta name="date" content="2019-09-16" />
+    <meta name="date" content="2019-09-23" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
@@ -24,7 +24,7 @@ count: false
 
 .other-info[
 University of Maryland, College Park, USA  
-CMSC828O 2019-09-16
+CMSC828O 2019-09-23
 ]
 
 .logo[![](img/logo.png)]
@@ -499,6 +499,126 @@ More importantly: how well does this describe biologically plausible emergence.
 Is this consistent with evolution?
 
 Next time...
+
+---
+class: split-50
+
+## Fitness: Bianconi-Barabasi
+
+Goal: not all nodes of the same degree are equally attractive
+
+.column[
+Each node has fitness `\(\eta_i\)`
+
+$$
+\Pi(k_i) = \frac{\eta_i k_i}{\sum_j \eta_j k_j}
+$$
+Dynamics:
+`$$k_i(t) = m\left(\frac{t}{t_i}\right)^{\eta_i/C}$$`
+]
+
+.column[
+.center.image-50[![](img/bbdynamics.png)]
+]
+
+---
+
+## Fitness: Bianconi-Barabasi
+
+Note: if you have data of network growth, you can estimate fitness coefficient under BB model assumption
+
+---
+
+## Node deletion
+
+In biological networks we often encounter systems in which nodes are removed from networks:
+
+- deleterious mutations in molecular networks
+- neuron loss (e.g. AD)
+- extinction in ecological networks
+
+Model: at each time step, remove nodes with rate `\(r\)`
+
+---
+
+## Node deletion
+
+Some observations:
+
+- For `\(r&lt;1\)` network grows slighly slower to BA model, so power-law with `\(\gamma=3+\frac{2}{1-r}\)`
+- `\(r=1\)` exactly BA model
+- For `\(r&gt;1\)` network decays as it grows, analytical model not so clean...
+
+Regimes for deletion important to think about: e.g., removal probability depends on degree (weak-get-weaker)
+
+---
+class: split-50
+
+## Aging
+
+.column[
+Probability of attachment depends on node age
+
+`$$\Pi(k_i,t_i) \sim k_i(t-t_i)^{\nu}$$`
+]
+
+.columns[
+.center.image-30[![](img/aging.png)]
+]
+
+---
+
+## Node duplication
+
+An alternative, more biologically plausible network growth model. _New nodes evolve from existing nodes through duplication_
+
+.center.image-60[![](img/duplication.png)]
+
+---
+
+## Node duplication
+
+Procedure:
+
+- Start with seed graph `\(G_0\)` with `\(n_0\)` nodes 
+- At each time step `\(t\)`
+  - Growth: Create graph `\(G_t\)` by selecting a vertex `\(v_t\)` uniformly at random from graph `\(G_{t-1}\)` and duplicate it by adding new node `\(v\)` with same links as `\(v_t\)`  
+  - Deletion: Delete each edge connecting `\(v\)` with probability `\((1-p)\)`  
+  - Addition: For each vertex `\(u\)` not connected to `\(v\)`, attach with probability `\(\frac{r}{t+n_0}\)`
+  
+---
+
+## Node duplication
+
+For large `\(k\)` can show power law
+
+`$$p_k \approx k^{-\gamma}$$`
+`$$\gamma=1-\frac{2r}{1-p}$$`
+
+---
+
+## Node duplication
+
+Arguments of fitness, and to a greater degree, node deletion still hold in this case.
+
+---
+
+## Analytical question
+
+Given observed network structure, can we posit a growth model (with associated parameters) that recapitulate observed network structure.
+
+For many biological applications, node duplication with a node deletion regime is a good first place to start
+
+---
+
+## Next time
+
+We briefly saw analysis of some network properties in terms of dynamics
+
+Next we use similar ideas to model processes over data: 
+- network diffusion
+- network epidemics
+- network robustness (percolation)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
