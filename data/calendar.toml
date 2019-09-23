@@ -115,9 +115,6 @@ title = "Barabasi, Ch. 6"
 date = "9/25"
 
 [[day09.covers]]
-title = "Presentations: Cellular Networks"
-
-[[day09.covers]]
 title = "Dynamical Networks I"
 
 [[day09.prep]]
@@ -129,6 +126,9 @@ date = "9/30"
 
 [[day10.covers]]
 title = "Unit Closing: State-of-the-art Paper Presentations, Random Networks"
+
+[[day10.covers]]
+title = "Presentations: Cellular Networks"
 
 [[day10.workdue]]
 title = "Homework 2: Network Models"
