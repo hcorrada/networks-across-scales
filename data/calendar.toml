@@ -105,6 +105,7 @@ date = "9/23"
 
 [[day08.covers]]
 title = "Random Networks III"
+notes = "lectures/cmsc828o_netmodels.pdf"
 
 [[day08.prep]]
 title = "Barabasi, Ch. 6"
