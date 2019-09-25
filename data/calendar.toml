@@ -117,6 +117,7 @@ date = "9/25"
 
 [[day09.covers]]
 title = "Dynamical Networks I"
+notes = "lectures/cmsc828o-dynamics.pdf"
 
 [[day09.prep]]
 title = "Barabasi, Ch. 10"
