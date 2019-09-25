@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
   <head>
-    <title>Random Networks</title>
+    <title>Dynamical Processes over Networks</title>
     <meta charset="utf-8" />
     <meta name="author" content="Héctor Corrada Bravo" />
-    <meta name="date" content="2019-09-23" />
+    <meta name="date" content="2019-09-25" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
@@ -18,13 +18,13 @@ count: false
 
 .banner[![](img/head.png)]
 
-.title[Random Networks]
+.title[Dynamical Processes over Networks]
 
 .author[Héctor Corrada Bravo]
 
 .other-info[
 University of Maryland, College Park, USA  
-CMSC828O 2019-09-23
+CMSC828O 2019-09-25
 ]
 
 .logo[![](img/logo.png)]
@@ -45,580 +45,495 @@ Using **high-throughput** experimental methods
 .column[.image-80[![](img/stickmen.png)]]
 
 ---
+class: split-30
 
-## The core of data analysis
+## Modeling epidemics over Networks
 
-Given observations (entities), and their characteristics (attributes)
+.column[
+First analysis of dynamical processes over
+networks
 
-Understand how those characteristics are _distributed_ in the population
+Will let us exercise some of the ways of thinking about
+these processes
+]
 
-- means, variances, empirical distributions
-- data generative models with parameters
-
-Hope we can infer something useful about that population from the understanding of the distribution of characteristics
-
----
-
-## Thinking of networks in terms of data analysis
-
-One way of thinking about networks:
-
-- Entities and their characteristics (nodes and their attributes)
-- Interactions and their characteristics (edges and their attributes)
-
-How is the _presence or absence of interactions_ distributed in the population?
+.column[
+.center.image-60[![](img/epidemic.png)]
+]
 
 ---
 
-## Presence/absence models
+## Modeling epidemics over Networks
 
-Consider the analysis of a binary attribute in the population.
+**Questions**
 
-E.g., is gene PTEN expressed in normal breast cells?
+Are there network properties that predict spread of infection?
 
-What is a model we tend to use? Suppose the gene is expressed in `\(p\)` cells in the
-population.
+Are certain network types more resilient to infection than others?
 
-I take a sample of `\(N\)` cells, measure how many express PTEN.
-
----
-
-## Presence/absence models
-
-If we do this sampling experiment many times, we expect to see Binomial distribution
-
-`$$Y \sim Bin(N,p)$$`
-
-&lt;img src="index_files/figure-html/unnamed-chunk-1-1.png" style="display: block; margin: auto;" /&gt;
-
----
-
-## Presence/absence models
-
-What is our expectation for `\(Y\)`?
-Variance?
+If we can intervene (vaccinate) are there nodes in the network that are more effective to vaccinate?
 
 --
 
-For very large `\(N\)`, same distribution is well approximated by `\(Y\sim\mathrm{Poisson}(\lambda=pN)\)`
-
----
-
-## Presence/absence models
-
-&lt;img src="index_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" /&gt;
-
----
-
-## Presence/absence models
-
-We can follow a similar idea to model presence/absence of an _interaction_ in the network
-
-Given a network over `\(N\)` entities (vertices)
-
-What is the population of interest? All possible pairwise interactions
-
----
-
-## Presence/absence models
-
-Assumptions:
-
-Fraction `\(p\)` of interactions actually occur in the population
-
-The observed edges is a _realization_ of random occurrences in measurement of those interactions
-
-How can we model the number of edges in a network?
-
----
-
-## Presence/absence models
-
-`\(Y \sim Bin(N(N-1/2), p)\)`
-
-&lt;img src="index_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" /&gt;
-
----
-
-## Presence/absence models
-
-What if we ask this question _one node at a time_?
-
-If proportion `\(p\)` of interactions actually occur in the population, then 
-what is the distribution of the number of interactions (edges) for a single node?
-
----
-
-## Presence/absence models
-
-`\(k_i \sim Bin(N-1,p)\)`
-
-&lt;img src="index_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
-
----
-
-## Important observations
-
-Expected degree is `\(p(N-1)\)`. 
-
---
-
-One reasonable estimate from data would be `\(&lt;k&gt;\)` (average degree)
+We'll start by looking at spread over non-networked populations
 
 ---
 class: split-50
 
-## Important observations
+## Susceptibility and infection (SI model)
 
 .column[
-- Degrees concentrated around expectation
-- Low degree and high degree nodes rare
+Individuals in the population can be in two states
+
+An infected individual can infect _any_ susceptible individual they are in contact with
+
+If we start ( `\(t=0\)` ) with some number of infected individuals ( `\(i_0\)` ). How many infected individuals are there at time `\(t\)`?
 ]
+
 .column[
-&lt;img src="index_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" /&gt;
+.center.image-50[![](img/si.png)]
 ]
 
 ---
 
-## Important observations
+## SI model
 
-Back to Poisson
+`$$\frac{d}{dt}I(t) = \beta \langle k \rangle \frac{S(t)}{N}I(t)$$`
 
-`\(k_i \sim \mathrm{Pois(&lt;k&gt;)}\)`
+`\(\langle k \rangle\)`, average number of contacts per individual in one time step
 
-`\(p_k=P(k_i=k)=e^{-&lt;k&gt;}\frac{&lt;k&gt;^k}{k!}\)`
-
----
-
-## Important observations
-
-.center[![](img/pois.png)]
-
-Note: equation for `\(p_k\)` is incorrect (numerator is `\(&lt;k&gt;^k\)`)
-
----
-
-## ER network model
-
-_Erdos-Renyi_ Construct a network with `\(N\)` vertices given parameter `\(p\)` by connecting vertices with probability `\(p\)`
-
----
-
-## ER model
-
-Emmergence of connected component
-
-.center[![](img/er.png)]
-
-
----
-
-## ER model
-
-Small world
-
-.center[![](img/smallworld.png)]
-
----
-
-## ER model
-
-Clustering coefficient?
-
-On the board
-
----
-
-## ER model
-
-How well does this model fit data?
-
-.image-40.center[![](img/plot_loglog-1.png)]
-
----
-
-## ER model
-
-How well does this model fit data?
-
-.center[![](img/erfit.png)]
-
----
-
-## Power law
-
-We see that exponential decay of high-degree probability does not fit data well.
-
-Log-log plot suggests a linear relationship
-
-`\(\log p_k \approx -\gamma \times \log k\)`
-
-`\(p_k \approx k^{-\gamma}\)`
-
----
-
-## Power law
-
-.image-50[.center[![](img/power1.png)]]
-
----
-
-## Power law
-
-.center[![](img/power2.png)]
-
----
-
-## Power law (ultra-small world)
-
-.image-50[.center[![](img/ultrasmall.png)]]
-
----
-
-## Power law (scale-free)
-
-.image-70[.center[![](img/scalefree.png)]]
-
----
-
-## Power Law
-
-Generative random model for ER (poisson, random) network was straightforward
-
-Next topics:
-- Why scale-free?
-- Fitting power law networks to data
-- Generative random model for power law networks
-- More sophisticated models to fit empirical data closer
-- Biologically-plausible random models (evolution/fitness etc.)
-
----
-
-## Power Law
-
-Why scale-free? A couple of ways to think about it:
-
-- The variance of the degree distribution is infinite
-- The right-hand tail of the degree distribution does not go to 0
+`\(\beta\)`, "rate" probability an I infects an S upon contact
 
 --
 
-_Moments_ of an RV, the expected value of powers of an RV  
-`\(E[k]\)` - center of the distribution  
-`\(E[k^2]\)` - spread of the distribution (variance) **this is the important one**  
-`\(E[k^3]\)` - skew of the distribution  
-and more...
+`$$\frac{di}{dt} = \beta \langle k \rangle i(1-i)$$`
+
+---
+class: split-50
+
+## SI model
+
+.column[
+Fraction of infected individuals in population
+
+`$$i(t) = \frac{i_0e^{\beta \langle k \rangle t}}{1-i_0+i_0e^{\beta \langle k \rangle t}}$$` 
+Characteristic time ( `\(t\)` s.t. `\(i(t)=1/e\approx .36\)`)
+`$$\tau = \frac{1}{\beta \langle k \rangle}$$`
+]
+
+.column[
+.center.image-50[![](img/sidyn.png)]
+]
 
 ---
 
-## Power Law
+## SIS model
 
-Why scale-free?
+Infection ends (recovery), individual becomes susceptible again
 
-`$$E[k^2] = \sum_{k_{min}}^\infty k^2 p_k = \sum_{k_{min}}^\infty k^{2-\gamma}$$`
+.center[![](img/sis.png)]
+
+---
+
+## SIS model
+
+`$$\frac{di}{dt} = \beta \langle k \rangle i(1-i)-\mu i$$`
+
+`\(\mu\)` - recovery rate
+
+---
+class: split-30
+
+## SIS model
+
+.column[
+`\begin{array}
+x i(t) = \left( 1 - \frac{\mu}{\beta \langle k \rangle} \right)\times \\
+\frac{Ce^{(\beta \langle k \rangle -\mu)t}}{1+Ce^{(\beta \langle k \rangle -\mu)t}}
+\end{array}`
+]
+
+.column[
+.center.image-60[![](img/sisdyn.png)]
+]
+
+---
+class: split-30
+
+## SIS model
+
+.column[
+**Endemic State** Pathogen persists in population after saturation
+
+`$$R_0 = \frac{\beta \langle k \rangle}{\mu} &gt; 1$$`
+
+`$$i(\infty) = 1 - \frac{\mu}{\beta \langle k \rangle} = 1-1/R_0$$`
+]
+
+.column[
+.center.image-60[![](img/sisdyn.png)]
+]
+
+---
+class: split-30
+
+## SIS model
+
+.column[
+**Disease-free State** Pathogen disappears from population
+
+`$$R_0 = \frac{\beta \langle k \rangle}{\mu} &lt; 1$$`
+
+`$$i(\infty) = 0$$`
+]
+
+.column[
+.center.image-60[![](img/sisdyn.png)]
+]
+
+---
+
+## SIS model
+
+**Basic Reproductive Number**
+
+`$$R_0=\frac{\beta \langle k \rangle}{\mu}$$`
+
+**Characteristic Time**
+
+`$$\tau = \frac{1}{\mu(R_0-1)}$$`
+
+---
+
+## SIR model
+
+Individuals **removed** after infection (either death or immunity)
+
+.center.image-70[![](img/sir.png)]
+
+---
+class: split-30
+
+## SIR model
+
+.column[
+`\begin{array}
+i\frac{di}{dt} = &amp; \beta \langle k \rangle i (1-r-i) - \mu i \\
+\frac{dr}{dt} = &amp; \mu i \\
+\frac{ds}{dt} = &amp; - \beta \langle k \rangle i (1-r-i)
+\end{array}`
+]
+
+.column[
+.center.image-70[![](img/sirdyn.png)]
+]
+
+---
+class: split-30
+
+## Summary
+
+.column[
+.center.image-50[![](img/episum1.png)]
+]
+
+.column[
+.center.image-60[![](img/episum2.png)]
+]
+
+---
+
+## Epidemic processes over networks (SI)
+
+Consider node `\(i\)` in network:
+
+`\(s_i(t)\)` average probability node `\(i\)` is *susceptible* at time `\(t\)`
+
+`\(x_i(t)\)` average probability node `\(i\)` is *infected* at time `\(t\)`
+
+---
+
+## Epidemic processes over networks (SI)
+
+`$$\frac{ds_i}{dt} = - s_i \beta \sum_{j=1}^N a_{ij}x_j$$`
+
+`$$\frac{dx_i}{dt} = s_i \beta \sum_{j=1}^N a_{ij} x_j$$`
 
 --
 
-Let's take some liberties to make this easier to think about
+For large `\(N\)`, and early `\(t\)`
 
-`$$E[k^2] = \int_{k_{min}}^{k_{max}} k^{2-\gamma} dk$$`
+`$$\frac{dx}{dt} = \beta Ax$$`
 
-and see what happens as `\(k_{max} \to \infty\)`
+---
+class: split-40
+
+## Eigenvalue decomposition of `\(A\)`
+
+.column[
+`$$A = V^T\Lambda V$$`
+
+Any quantity `\(x_i\)` over nodes in the graph can be written as
+
+`$$\mathbf{x} = \sum_{r=1}^N c_r \mathbf{v}_r$$`
+]
+.column[
+.center.image-50[![](img/evs.png)]
+]
+
+---
+class: split-40
+
+## Eigenvalue decomposition of `\(A\)`
+
+.column[
+`$$A\mathbf{v}_r = \lambda_r \mathbf{v}_r$$`
+
+`$$\lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_N$$`
+]
+.column[
+.center.image-50[![](img/evs.png)]
+]
 
 ---
 
-## Power law
+## Eigenvalue decomposition of `\(A\)`
 
-.center.image-80[![](img/largesthub.png)]
+Let's revisit centrality
 
----
+`$$\mathbf{x}(t) = A^t\mathbf{x}(0)=\sum_{r=1}^N c_r A^t \mathbf{v}_r$$`
 
-## Power law
+Then
 
-`\begin{align}
-E[k^2] &amp; = &amp; C\frac{k_{max}^{3-\gamma} - k_{min}^{3-\gamma}}{3-\gamma} \\
-{} &amp; = &amp; a k_{max}^{3-\gamma} + b
-\end{align}`
-
-- For `\(\gamma &gt; 3\)`: scale is finite value as `\(k_{max}\)` grows  
-- For `\(2 \leq \gamma \leq 3\)`: scale is infinite value as `\(k_{\max}\)` grows (scale-free)
+`$$\mathbf{x}(t) = \sum_{r=1}^N c_r \lambda_r^t \mathbf{v}_r=\lambda_1^t \sum_{i=1}^N c_r \left( \frac{\lambda_r}{\lambda_1}\right)^t \mathbf{v}_r$$`
 
 ---
 
-## Power law
+## Eigenvalue decomposition of `\(A\)`
 
-.image-70[.center[![](img/scalefree.png)]]
+As `\(t\)` grows, first term dominates
 
----
+`$$\mathbf{x}(t) = c_1 \lambda_1^t \mathbf{v}_1$$`
 
-## Estimating the degree coefficient
+So set centrality `\(\mathbf{x}\)` to be proportional to first *eigenvector* `\(\mathbf{v}_1\)`
 
-Since so many structural properties of network depend on this value, estimating it properly matters a lot.
+--
 
-Here is a procedure based on Maximum Likelihood Estimation
-
----
-
-## Estimating the degree coefficient
-
-.center.image-80[![](img/estimation.png)]
+In which case `\(x = Ax\)` if `\(\mathbf{x}=\frac{1}{\lambda_1} \mathbf{v}_1\)` as desired
 
 ---
 
-## Estimating the degree coefficient
+## Back to epidemics (SI)
 
-Step 1 - The estimate
+`\(\mathbf{x}(t)\)` average probability each node is infected at time `\(t\)`
 
-Given `\(k_{min}\)`, estimate `\(\gamma\)` as 
+`$$\frac{d\mathbf{x}}{dt} = \beta A \mathbf{x}$$`
 
-`$$\gamma_{k_{min}} = 1 + N\left[ \sum_{i=1}^N \log \frac{k_i}{k_{min}-\frac{1}{2}} \right]^{-1}$$`
+Can write as
 
----
-
-## Estimating the degree coefficient
-
-Step 2 - How good is it?
-
-`$$D_{k_{min}} = \max_{k \geq k_{min}} |S(k) - p_k|$$`
-
-with `\(p_k\)` given by `\(\gamma_{k_{min}}\)`
+`$$\mathbf{x}(t) = \sum_{r=1}^N c_r(t) \mathbf{v}_r$$`
 
 ---
 
-## Estimating the degree coefficient
+## Back to epidemics (SI)
 
-Step 3 - Best model fit
+`\begin{array}
+i\frac{d\mathbf{x}}{dt} &amp; = &amp; \sum_{r=1}^N \frac{dc_r}{dt}\mathbf{v}_r \\
+{} &amp; = &amp; \beta A \sum_{r=1}^N c_r(t) \mathbf{v}_r = \beta \sum_{r=1}^N \lambda_r c_r(t) \mathbf{v}_r
+\end{array}`
 
-Estimate `\(\gamma\)` as `\(\gamma_{k_{min}}\)` that _minimizes_ `\(D_{k_{min}}\)`
+--
 
----
+Implying
 
-## Estimating the degree coefficient
+`$$\frac{dc_r}{dt} = \beta \lambda_r c_r$$`
 
-Step 4 - Model check
+--
 
-Is the optimal observed deviance `\(D_{k_{min}}\)` consistent with the estimated `\(\gamma\)`?
+With solution
 
-Generate a distribution of deviance statistics from power law model, check where optimal deviance falls within generated distribution.
-
----
-
-## Network Generation
-
-The ER model gave use a generative algorithm to create a network that satisifies "Poisson" degree distribution?
-
-Let's see a generative model to obtain a power law network
+`$$c_r(t) = c_r(0) e^{\beta \lambda_r t}$$`
 
 ---
 
-## The Barabasi-Albert Model
+## Back to epidemics (SI)
 
-Procedure:
+As before, first term dominates so
 
-- Start with `\(m_0\)` nodes (with arbitrary links, or connected)
-- At each time step `\(t\)`
-  - Growth: Add a new node with `\(m\)` edges  
-  - Preferential attachment: probability new node links to node `\(i\)` `\(\Pi(k_i) = \frac{k_i}{\sum_i k_i}\)`
-  
-Some simple questions to warm up: (a) how many nodes after `\(t\)` steps? (b) how many edges after `\(t\)` steps?
+`$$\mathbf{x}(t) \sim e^{\beta \lambda_1 t} \mathbf{v}_1$$`
+
+Eigen-centrality!
+
+---
+
+## Back to epidemics (SIR)
+
+`$$\frac{d\mathbf{x}}{dt} = \beta A \mathbf{x} - \mu \mathbf{x}$$`
+
+Similarily
+
+`$$\mathbf{x}(t) \sim e^{(\beta \lambda_1 - \mu)t}$$`
+
+--
+
+Is there an epidemic? Not if `\(R_0=\frac{\beta}{\mu} = \frac{1}{\lambda_1}\)`
+
+---
+class: split-30
+
+## Degree distributions and epidemics
+
+.column[
+**Degree Block Approximation** Assume that all nodes of the same degree are statistically equivalent
+]
+
+.column[
+.center.image-60[![](img/degblock.png)]
+]
+
+---
+class: split-30
+
+## Degree distributions and epidemics
+
+.column[
+**Degree Block Approximation** Assume that all nodes of the same degree are statistically equivalent
+]
+
+.column[
+.center.image-60[![](img/degblock.png)]
+]
+
+---
+
+## Degree distributions and epidemics
+
+**SI model**
+
+Fraction of nodes of degree `\(k\)` that are infected
+
+`$$i_k= \frac{I_k}{N_k}$$` 
+
+`$$\frac{di_k}{dt}=\beta(1-i_k)k\Theta_k$$`
+
+With `\(\Theta_k\)` the fraction of infected neighbors for a node of degree `\(k\)`
+
+---
+
+## Degree distributions and epidemics
+
+For early time and assuming no degree correlation
+
+`$$\frac{di_k}{dt} = \beta k i_0 \frac{\langle k \rangle -1}{\langle k \rangle} e^{t/\tau^{SI}}$$`
+
+with
+
+`$$\tau^{SI}=\frac{\langle k \rangle}{\beta(\langle k^2 \rangle - \langle k \rangle)}$$`
+
+---
+
+## Degree distributions and epidemics
+
+**Characteristic time**
+
+`$$\tau^{SI}=\frac{\langle k \rangle}{\beta(\langle k^2 \rangle - \langle k \rangle)}$$`
+
+For random networks  `\(\langle k^2 \rangle = \langle k \rangle (\langle k \rangle + 1)\)` 
+
+`$$\tau^{SI}=\frac{1}{\beta \langle k \rangle}$$`
+
+---
+
+## Degree distributions and epidemics
+
+**Characteristic time**
+
+`$$\tau^{SI}=\frac{\langle k \rangle}{\beta(\langle k^2 \rangle - \langle k \rangle)}$$`
+
+For power law network `\(\gamma \geq 3\)` `\(\langle k^2 \rangle\)` is finite, characteristic time is finite
+
+--
+
+For power law `\(\gamma &lt; 3\)`, `\(\langle k^2 \rangle\)` does not converge as `\(N \to \infty\)` so characteristic time goes to 0
+
+---
+
+## Degree distributions and epidemics
+
+.center.middle[![](img/epitab.png)]
+
+---
+
+## Immunization
+
+Suppose a fraction `\(g\)` of nodes is immunized (i.e. resistant)
+
+Rate of infection in SIR model changes from 
+
+`$$\lambda=\frac{\beta}{\mu}$$`
+
+to
+
+`$$\lambda(1-g)$$`
+
+---
+
+## Immunization
+
+We can choose a fraction `\(g_c\)` such that rate of infection is below epidemic threshold
+
+For a random network
+
+`$$g_c = 1- \frac{\mu}{\beta}\frac{1}{\langle k \rangle + 1}$$`
+
+---
+
+## Immunization
+
+For a power-law network
+
+`$$g_c = 1-\frac{\mu}{\beta}\frac{\langle k \rangle}{\langle k^2 \rangle}$$`
+
+For high `\(\langle k^2 \rangle\)` need to immunize almost the entire population
+
+---
+
+## Immunization
+
+Immunization can be more effective if performed selectively.
+
+In power law contact networks, what is the effect of immunizing high-degree nodes?
+
+--
+
+First, how do you find them?
+
+Idea: choose individuals at random, ask them to nominate a neighbor in contact graph
 
 ---
 class: split-50
 
-## The Barabasi-Albert Model
+## Immunization
 
 .column[
-Degree dynamics
+What is the expected degree of the nominated neighbor?
 
-`\(k_i(t) = m\left( \frac{t}{t_i} \right)^{1/2}\)`
 
-]
-
-.column[
-.center.image-50[![](img/badynamics.png)]
-]
-
----
-
-## The Barabasi-Albert Model
-
-.column[
-Degree distribution
-
-`\(p_k \sim k^{-3}\)`
+`$$\propto k p_k$$`
 ]
 
 .column[
-.center.image-80[![](img/badistr.png)]
+.center.image-50[![](img/immun.png)]
 ]
 
 ---
 
-## The Barabasi-Albert Model
-
-.column[
-Distance
-
-`\(&lt;d&gt; = \frac{\log N}{\log \log N}\)`
-]
-
-.column[
-.center.image-60[![](img/badist.png)]
-]
-
----
-
-## The Barabasi-Albert Model
-
-Cluster coefficient
-
-.center.image-70[![](img/bacc.png)]
-
----
-
-## Network growth models
-
-Barabasi-Albert, some missing ingredients
-
-- Fitness, properties beyond degree that control preferential attachment
-- Age, preferential attachment depending on time
-- Death, how to model nodes that go away?
-
----
-
-## Network growth models
-
-.center.image-40[![](img/modeltree.png)]
-
----
-
-## Network growth models
-
-More importantly: how well does this describe biologically plausible emergence.
-
-Is this consistent with evolution?
-
-Next time...
-
----
-class: split-50
-
-## Fitness: Bianconi-Barabasi
-
-Goal: not all nodes of the same degree are equally attractive
-
-.column[
-Each node has fitness `\(\eta_i\)`
-
-$$
-\Pi(k_i) = \frac{\eta_i k_i}{\sum_j \eta_j k_j}
-$$
-Dynamics:
-`$$k_i(t) = m\left(\frac{t}{t_i}\right)^{\eta_i/C}$$`
-]
-
-.column[
-.center.image-50[![](img/bbdynamics.png)]
-]
-
----
-
-## Fitness: Bianconi-Barabasi
-
-Note: if you have data of network growth, you can estimate fitness coefficient under BB model assumption
-
----
-
-## Node deletion
-
-In biological networks we often encounter systems in which nodes are removed from networks:
-
-- deleterious mutations in molecular networks
-- neuron loss (e.g. AD)
-- extinction in ecological networks
-
-Model: at each time step, remove nodes with rate `\(r\)`
-
----
-
-## Node deletion
-
-Some observations:
-
-- For `\(r&lt;1\)` network grows slighly slower to BA model, so power-law with `\(\gamma=3+\frac{2}{1-r}\)`
-- `\(r=1\)` exactly BA model
-- For `\(r&gt;1\)` network decays as it grows, analytical model not so clean...
-
-Regimes for deletion important to think about: e.g., removal probability depends on degree (weak-get-weaker)
-
----
-class: split-50
-
-## Aging
-
-.column[
-Probability of attachment depends on node age
-
-`$$\Pi(k_i,t_i) \sim k_i(t-t_i)^{\nu}$$`
-]
-
-.columns[
-.center.image-30[![](img/aging.png)]
-]
-
----
-
-## Node duplication
-
-An alternative, more biologically plausible network growth model. _New nodes evolve from existing nodes through duplication_
-
-.center.image-60[![](img/duplication.png)]
-
----
-
-## Node duplication
-
-Procedure:
-
-- Start with seed graph `\(G_0\)` with `\(n_0\)` nodes 
-- At each time step `\(t\)`
-  - Growth: Create graph `\(G_t\)` by selecting a vertex `\(v_t\)` uniformly at random from graph `\(G_{t-1}\)` and duplicate it by adding new node `\(v\)` with same links as `\(v_t\)`  
-  - Deletion: Delete each edge connecting `\(v\)` with probability `\((1-p)\)`  
-  - Addition: For each vertex `\(u\)` not connected to `\(v\)`, attach with probability `\(\frac{r}{t+n_0}\)`
-  
----
-
-## Node duplication
-
-For large `\(k\)` can show power law
-
-`$$p_k \approx k^{-\gamma}$$`
-`$$\gamma=1-\frac{2r}{1-p}$$`
-
----
-
-## Node duplication
-
-Arguments of fitness, and to a greater degree, node deletion still hold in this case.
-
----
-
-## Analytical question
-
-Given observed network structure, can we posit a growth model (with associated parameters) that recapitulate observed network structure.
-
-For many biological applications, node duplication with a node deletion regime is a good first place to start
-
----
-
-## Next time
-
-We briefly saw analysis of some network properties in terms of dynamics
-
-Next we use similar ideas to model processes over data: 
-- network diffusion
-- network epidemics
-- network robustness (percolation)
+## Summary
+
+- Epidemic as first example of dynamical process over network
+- Role of eigenvalue property in understanding epidemic spread
+- Role of degree distribution (specifically scale) in understanding spread
+- Role of high-degree nodes in robustness of networks to epidemics (immunization)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

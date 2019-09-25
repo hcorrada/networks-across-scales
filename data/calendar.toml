@@ -117,9 +117,10 @@ date = "9/25"
 
 [[day09.covers]]
 title = "Dynamical Networks I"
+notes = "lectures/cmsc828o-dynamics.pdf"
 
 [[day09.prep]]
-title = "Barabasi, Ch. 8"
+title = "Barabasi, Ch. 10"
 
 #### DAY 10
 [day10]
@@ -143,7 +144,7 @@ date = "10/2"
 title = "Dynamical Networks II"
 
 [[day11.prep]]
-title = "Barabasi, Ch. 10"
+title = "Barabasi, Ch. 8"
 
 #### DAY 12
 [day12]
