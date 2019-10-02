@@ -138,6 +138,7 @@ date = "10/2"
 
 [[day11.covers]]
 title = "Dynamical Networks II"
+notes = "lectures/cmsc828o-dynamics.pdf"
 
 [[day11.prep]]
 title = "Barabasi, Ch. 8"
@@ -163,6 +164,12 @@ date = "10/9"
 [[day13.covers]]
 title = "Unit Closing: State-of-the-art Paper Presentations, Dynamical Networks"
 
+[[day13.covers]]
+title = "Statistical Inference with Networked Data"
+
+[[day13.prep]]
+title = "SAND Ch. 6"
+
 #################
 # Statistics over Networks
 #
@@ -173,28 +180,32 @@ title = "Unit Closing: State-of-the-art Paper Presentations, Dynamical Networks"
 date = "10/14"
 
 [[day14.covers]]
-title = "Data Project Updates"
+title = "Learning with Network Data"
+#notes = "lectures/stat_inference.pdf"
 
-#[[day14.prep]]
-#title = "Compeau & Pevzner, playlist 4, videos 6-10"
-#link = "https://www.youtube.com/playlist?list=PLQ-85lQlPqFPdIS_5qv_Q3XWieobVPLlc"
+[[day14.prep]]
+title = "SAND ch. 7"
 
 #### DAY 15
 [day15]
 date = "10/16"
 
 [[day15.covers]]
-title = "Data Project Updates"
+title = "Learning with Network Data"
+#notes = "lectures/stat_inference.pdf"
 
 #### DAY 16
 [day16]
 date = "10/21"
 
 [[day16.covers]]
-title = "Statistical Inference with Networked Data"
+title = "Presentations: Ecological Networks"
+
+[[day16.covers]]
+title = "Learning Networks from Data"
 
 [[day16.prep]]
-title = "SAND Ch. 6"
+title = "SAND ch. 8"
 
 ###### DAY 17
 ####
@@ -202,22 +213,18 @@ title = "SAND Ch. 6"
 [day17]
 date = "10/23"
 
-[[day17.covers]]
-title = "Learning with Network Data"
-#notes = "lectures/stat_inference.pdf"
-
 ###### DAY 18
 ##
+
+[[day17.covers]]
+title = "Learning Networks from Data"
+#notes = "lectures/graph_kernel_regression.pdf"
 
 [day18]
 date = "10/28"
 
 [[day18.covers]]
-title = "Learning with Network Data"
-#notes = "lectures/stat_inference.pdf"
-
-[[day18.prep]]
-title = "SAND ch. 7"
+title = "Data Project Updates"
 
 #### DAY 19
 ##
@@ -226,16 +233,13 @@ title = "SAND ch. 7"
 date = "10/30" 
 
 [[day19.covers]]
-title = "Presentations: Ecological Networks"
+title = "Data Project Updates"
 
 [day20]
 date = "11/4"
 
 [[day20.covers]]
 title = "Learning Networks from Data"
-
-[[day20.prep]]
-title = "SAND ch. 8"
 
 [[day20.workdue]]
 title = "Homework 3: Statistical Analysis of Network Data"
@@ -245,15 +249,13 @@ link = "homeworks/stat_models/"
 date = "11/6"
 
 [[day21.covers]]
-title = "Learning Networks from Data"
-#notes = "lectures/graph_kernel_regression.pdf"
-
+title = "Unit Closing: State-of-the-art Paper Presentations: ML and Stat Inference"
 
 [day22]
 date = "11/11"
 
 [[day22.covers]]
-title = "Unit Closing: State-of-the-art Paper Presentations: ML and Stat Inference"
+title = "TBD"
 
 [day23]
 date = "11/13"

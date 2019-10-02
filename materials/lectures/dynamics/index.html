@@ -4,7 +4,7 @@
     <title>Dynamical Processes over Networks</title>
     <meta charset="utf-8" />
     <meta name="author" content="Héctor Corrada Bravo" />
-    <meta name="date" content="2019-09-25" />
+    <meta name="date" content="2019-10-02" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
@@ -24,7 +24,7 @@ count: false
 
 .other-info[
 University of Maryland, College Park, USA  
-CMSC828O 2019-09-25
+CMSC828O 2019-10-02
 ]
 
 .logo[![](img/logo.png)]
@@ -534,6 +534,230 @@ What is the expected degree of the nominated neighbor?
 - Role of eigenvalue property in understanding epidemic spread
 - Role of degree distribution (specifically scale) in understanding spread
 - Role of high-degree nodes in robustness of networks to epidemics (immunization)
+
+---
+
+## Network Robustness
+
+What if we lose nodes in the network?
+
+
+.center.middle.image-60[![](img/rob1.png)]
+
+---
+class: split-50
+
+## Percolation
+
+Let's look at a simplified network growth model (related to ER)
+
+.column[
+- Nodes are uniformly at random placed in the intersections of a regular grid
+- Nodes in adjacent intersections are linked
+- Keep track of largest component
+]
+
+.column[
+.center[![](img/percolation1.png)]
+]
+
+---
+class: split-50
+
+## Percolation
+
+Let's look at a simplified network growth model (related to ER)
+
+.column[
+As nodes are added to the graph
+
+- What is the expected size of the largest cluster?
+- What is the average cluster size?
+]
+
+.column[
+.center[![](img/percolation1.png)]
+]
+
+---
+
+## Percolation
+
+There is a critical threshold (percolation cluster `\(p_c\)` )
+
+.center.middle.image-60[![](img/percolation.png)]
+
+---
+
+## Percolation
+
+There is a critical threshold (percolation cluster)
+
+- Average cluster size
+
+`$$\langle s \rangle \sim |p-p_c|^{-\gamma_p}$$`
+
+- Order parameter ( `\(P_\infty\)` probability node is in large cluster) 
+
+`$$P_{\infty} \sim (p-p_c)^{\beta_p}$$`
+---
+class: split-50
+
+## Critical Failure Threshold
+
+.column[
+Model failure as the reverse process (nodes are removed)
+]
+
+.column[
+.center.middle.image-40[![](img/cft.png)]
+]
+
+---
+
+## Critical Failure Threshold
+
+Similar modeling strategy applied to general networks
+
+.center.middle[![](img/cft2.png)]
+
+---
+
+## Critical Failure Threshold
+
+First question: is there a giant component?
+
+Molloy-Reed Criterion: Yes, if
+
+`$$\frac{\langle k^2 \rangle}{\langle k \rangle} &gt; 2$$`
+
+---
+
+## Critical Failure Threshold
+
+For ER: `\(\langle k^2 \rangle = \langle k \rangle (\langle k \rangle + 1)\)`
+
+--
+
+There is a large component if
+
+`$$\frac{\langle k^2 \rangle}{\langle k \rangle} = \langle k \rangle &gt; 1$$`
+
+Good, coincides with what we know
+
+---
+
+## Critical Failure Threshold
+
+Second question: if we model failure as before, when does the giant component disappear?
+
+`$$f_c = 1 - \frac{1}{\frac{\langle k^2 \rangle}{\langle k \rangle} - 1}$$`
+
+--
+
+For ER:
+
+`$$f_c = 1 - \frac{1}{\langle k \rangle}$$`
+
+---
+
+## Critical Failure Threshold
+
+For power law networks
+
+.middle.center.image-70[![](img/fcmath.png)]
+
+---
+
+## Critical Failure Threshold
+
+For power law networks
+
+.center.middle.image-60[![](img/sffc.png)]
+
+---
+
+## Robustness to Attacks
+
+What if node removal is targeted to hubs?
+
+.center.middle.image-60[![](img/attacks.png)]
+
+---
+
+## Robustness to Attacks
+
+What if node removal is targeted to hubs?
+
+`$$f_c^{\frac{2-\gamma}{1-\gamma}} = 2 + \frac{2-\gamma}{3-\gamma} k_{min} (f_c^{\frac{3-\gamma}{1-\gamma}} - 1)$$`
+
+---
+
+## Robustness to Attacks
+
+.center.middle[![](img/sfree_attacks.png)]
+
+---
+
+## Designing Robustness
+
+Hubs - robustness to random attacks
+No hubs - robustness to targeted attacks
+
+.center.image-60[![](img/building1.png)]
+
+---
+
+## Designing Robustness
+
+Maximize `$$f_c^{tot} = f_c^{random} + f_c^{targeted}$$` 
+
+--
+
+Mixture of nodes 
+- fraction `\(r\)` of nodes have `\(k_{max}\)` degree
+- remaining `\(1-r\)` nodes have `\(k_{min}\)` degree
+
+---
+
+## Designing Robustness
+
+.middle.center[![](img/mix1.png)]
+
+---
+
+## Designing Robustness
+
+.middle.center[![](img/mix2.png)]
+
+---
+
+## Designing Robustness
+
+.middle.center[![](img/mix3.png)]
+
+--
+
+## Summary
+
+- Percolation process to understand random failure 
+- Defining catastrophic failure as the dissapearance of big cluster
+- Catastrophic failure has a critical threshold (relative to fraction of failures)
+- Power law degree modulates critical threshold
+
+---
+
+## Summary
+
+- Power law networks are robust to random failures
+- Power law networks are susceptible to targeted failures
+- Provable robustness to random _and_ targeted failure using mixture of node degrees
+
+---
+
+## Next time
+
+Diffusion!!
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
