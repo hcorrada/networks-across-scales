@@ -153,6 +153,7 @@ date = "10/7"
 
 [[day12.covers]]
 title = "Dynamical Networks III"
+notes = "lectures/cmsc828o-diffusion.pdf"
 
 [[day12.prep]]
 title = "Newman 6.13, 18.2"

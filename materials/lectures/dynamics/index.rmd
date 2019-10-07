@@ -755,8 +755,17 @@ Mixture of nodes
 - Provable robustness to random _and_ targeted failure using mixture of node degrees
 
 ---
+class: split-50
 
-## Next time
+## Diffusion Processes
 
-Diffusion!!
+.column.image-70[![](img/hotnet2.png)]
+.column.image-90[![](img/hotnet2b.png)]
+
+---
+class: split-50
+
+## Diffusion Processes
+
+
 

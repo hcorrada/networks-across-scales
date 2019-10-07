@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Dynamical Processes over Networks (Diffusion)</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Héctor Corrada Bravo" />
+    <meta name="date" content="2019-10-07" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+class: title-slide, center, middle
+count: false
+
+.banner[![](img/head.png)]
+
+.title[Dynamical Processes over Networks (Diffusion)]
+
+.author[Héctor Corrada Bravo]
+
+.other-info[
+University of Maryland, College Park, USA  
+CMSC828O 2019-10-07
+]
+
+.logo[![](img/logo.png)]
+
+---
+class: split-50
+exclude: true
+
+## What does my group do?
+
+.column[
+Study the **molecular** basis of *variation* in development and disease
+
+
+Using **high-throughput** experimental methods  
+]
+
+.column[.image-80[![](img/stickmen.png)]]
+
+---
+class: split-50
+
+## Diffusion Processes
+
+.column.image-70[![](img/hotnet2.png)]
+.column.image-90[![](img/hotnet2b.png)]
+
+---
+class: split-50
+
+## Diffusion Processes
+
+.image-50[![](img/brain1.png)]
+.center.image-80[![](img/braing2.png)]
+
+---
+class: split-50
+
+## General dynamical processes
+
+.image-60[![](img/eco1.png)]
+.center.image-40[![](img/eco2.png)]
+
+---
+class: split-50
+
+## Diffusion
+
+.column[
+Data: Real-valued variable `\(x_i\)` for each node in network  
+Assumption: Network seeks stable state where `\(x_i\)` is "smooth" over network  
+Process: Nodes with high value of `\(x_i\)` diffuse value to neighbors with lower value `\(x_i\)`
+]
+
+.center.column[![](img/hotnet2b1.png)]
+
+---
+
+## Diffusion
+
+Question: How does the value of `\(x_i\)` change over time?
+
+`$$\frac{dx_i}{dt} = C \sum_j A_{ij}(x_j - x_i)$$`
+
+---
+
+## Diffusion
+
+In matrix form, in terms of the _Graph Laplacian_
+
+`$$\frac{d\mathbf{x}}{dt} + CL\mathbf{x} = 0$$`
+
+`$$L=D-A$$` 
+
+with `\(D=\mathrm{diag}(\mathbf{k})\)`, `\(\mathbf{k}\)` the vector of node degrees.
+
+---
+
+## Diffusion
+
+Let's do the same previous trick with Eigenvalue decomposition (this time of `\(L\)`)
+
+`$$\mathbf{x}(t) = \sum_r a_r(t) \mathbf{v}_r$$`
+
+--
+
+Can rewrite diffusion equation as
+
+`$$\frac{da_r}{dt} + C\lambda_l a_r = 0$$`
+
+---
+
+## Difussion
+
+Solution
+
+`$$a_r(t) = a_r(0) e^{-C\lambda_r t}$$`
+
+--
+
+### Properties 
+
+- `\(\lambda_r \geq 0\)` for all 0 (dynamics tend to stable point)
+- The smallest E.V. `\(\lambda_1 = 0\)`
+- `\(L\)` is block-diagonal, number of 0 eigenvalues equal to number of components 
+
+---
+
+## General Dynamical Systems on Networks
+
+We have now seen two examples of dynamical systems on networks
+
+- Epidemics `$$\frac{dx_i}{dt} = \beta (1-x_i) \sum_j A_{ij}x_j$$`
+- Diffusion `$$\frac{dx_i}{dt} = C\sum_j A_{ij}(x_j-x_i)$$`
+
+---
+
+## General Dynamical Systems on Networks
+
+Let's look at these in the general case
+
+`$$\frac{dx_i}{dt} = f_i(x_i) + \sum_j A_{ij}g_{ij}(x_i,x_j)$$`
+
+Exercise: rewrite epidemic (SI) model and diffusion model in general framework
+
+---
+
+## General Dynamical Systems on Networks
+
+How to analyze this in the general case?
+
+_Linear stability analysis_
+
+- Stability: let's find states where dynamics are stable (attracting fixed points)  
+- Linear: let's simplify analysis by looking at linear approximations of dynamics around these states
+
+---
+layout: true
+
+## Linear stability analysis
+
+---
+
+Let's forget networks for a moment. Consider dynamical system defined by
+
+`$$\frac{dx}{dt} = f(x)$$`
+
+--
+
+Suppose there is a point `\(x^*\)` where `\(f(x^*)=0\)` (i.e., `\(\frac{dx^*}{dt}=0\)`)
+
+---
+
+Let's look at a point _close_ to `\(x^*\)`; `\(x=x^* + \epsilon\)`
+
+--
+
+Then 
+
+`$$\frac{dx}{dt}=\frac{d\epsilon}{dt}=f(x^* + \epsilon)$$`
+
+---
+
+Now we approximate it! (Taylor expansions, a.k.a. how the Iribe center can curve)
+
+`$$\frac{d\epsilon}{dt} \approx f(x^*) + \epsilon f'(x^*) = \epsilon f'(x^*)$$`
+
+--
+
+and solve
+
+`$$x(t) = x^* + \epsilon(0) e^{\lambda t}$$`
+
+with `\(\lambda = f'(x^*)\)`
+
+The sign of `\(\lambda\)` gives us useful information (hold on to this thought).
+
+---
+
+How about systems with two variables?
+
+`$$\frac{dx}{dt} = f(x,y)$$`
+`$$\frac{dy}{dt} = g(x,y)$$`
+
+---
+
+Suppose we have fixed point `\((x^*,y^*)\)`
+
+`$$f(x^*,y^*)=0$$`
+
+`$$g(x^*,y^*)=0$$`
+
+---
+
+Under the useful condition that `\(\frac{df}{dy}=0\)` and `\(\frac{dg}{dx}=0\)` then
+
+`$$\frac{d\epsilon_x}{dt}=\lambda_1 \epsilon_x$$`
+`$$\frac{d\epsilon_y}{dt}=\lambda_2 \epsilon_y$$` 
+
+with `\(\lambda_1 = f'_x(x^*,y^*)\)` and `\(\lambda_2 = g'_y(x^*,y^*)\)`
+
+---
+
+And solution
+
+`$$x(t) = x^* + \epsilon_x(0)e^{\lambda_1 t}$$`
+`$$y(t) = y^* + \epsilon_y(0)e^{\lambda_2 t}$$`
+
+---
+class: split-40
+
+.column[
+`\(\lambda &lt; 0\)` _attracting_ fixed point  
+`\(\lambda &gt; 0\)` _repelling_ fixed point  
+`\(\lambda = 0\)` ¯\\_(ツ)_/¯
+]
+
+.column[.image-60.center.middle[![](img/attractors.png)]]
+
+---
+
+Back to networks
+
+`$$\frac{dx_i}{dt} = f(x_i) + \sum_j A_{ij} g(x_i,x_j)$$`
+
+--
+
+Imagine we have a fixpoint `\(\{x_i^*\}\)`
+
+`$$f(x_i^*)=0$$`
+`$$g(x_i^*,x_j^*)=0$$`
+
+---
+
+Using same approach
+
+`$$\frac{d\epsilon_i}{dt} = \left[ \alpha_i \sum_j \beta_{ij} A_{ij} \right] \epsilon_i + \sum_{j} \gamma_{ij} A_{ij} \epsilon_j$$`
+
+with `\(\alpha_i = f'(x_i^*)\)`; `\(\beta_{ij} = g'_{x_i}(x_i^*,x_j^*)\)`; and `\(\gamma_{ij}=g'_{x_j}(x^*_i,x^*_j)\)`
+
+---
+
+Eigenvalues again!
+
+Letting 
+
+`$$M_{ij} = \delta_{ij}\left[ \alpha_i \sum_j \beta_{ij} A_{ij} \right] + \sum_{j} \gamma_{ij} A_{ij}$$`
+
+--
+
+Then
+
+`$$\frac{d\mathbf{\epsilon}}{dt} = M\mathbf{\epsilon}$$`
+
+---
+
+Write `\(\mathbf{\epsilon}(t) = \sum_r a_r(t) \mathbf{v}_r\)` where `\(\mathbf{v}_r\)` is eigen-vector of `\(M\)`.
+
+--
+
+Then solve as
+
+`$$a_r(t) = a_r(0)e^{\lambda_r t}$$`
+
+"Eigenvalues" of `\(M\)` determine attracting or repelling state, if at least one positive `\(\lambda_r\)` then system is not stable
+
+---
+
+### Back to Graph Laplacian
+
+Consider case `\(g(x_i,x_j)=g(x_i)-g(x_j)\)` (if `\(g\)` is identity then we can do linear diffusion as before)
+
+_and_ we have a symmetric fixed point `\(x^*_i=x^*\)` for all vertices `\(i\)`
+
+--
+
+`$$\frac{d\epsilon_i}{dt} = \alpha \epsilon_i + \beta \sum_j (k_i \delta_{ij} - A_{ij})\epsilon_j$$`
+
+---
+
+Or,
+
+`$$\frac{d\mathrm{\epsilon}}{dt} = (\alpha I + \beta L) \mathbf{\epsilon}$$`
+
+--
+
+System is _stable_ if `\(\alpha + \beta \lambda_r &lt; 0\)` for all `\(r\)`
+
+---
+
+Since smallest eigenvalue of Laplacian is 0, `\(\alpha = f'(x^*) &lt; 0\)` is a condition for stability
+
+--
+
+Also,
+
+`$$\frac{1}{\lambda_n} &gt; - \left( \frac{g'(x^*)}{f'(x)} \right)$$` is a condition for stability
+
+---
+layout: true
+
+## An example
+
+---
+class: split-50
+
+.column[
+Meme network (how often does `\(x_i\)` share this meme)
+
+`$$f(x) = a(1-x)$$`
+`$$g(x_i,x_j) = \frac{bx_j}{1+x_j} - \frac{bx_i}{1+x_i}$$`
+
+`\(a&gt;0\)`, `\(b&gt;0\)`
+]
+
+.column[
+.center.image-50[![](img/wonka.png)]
+]
+
+---
+
+.column[
+Symmetric fixed point `\(x_i^*=x^*=1\)`
+
+Stability conditions 
+
+(a) `\(\alpha = f'(x^*) &lt; 0\)`? 
+
+(b) `\(\lambda_n &lt; \frac{4a}{b}\)`
+]
+
+.column[
+.center.image-50[![](img/wonka.png)]
+]
+
+---
+layout: false
+
+## Two useful properties of Eigenvalues
+
+- Largest eigenvalue of adj. matrix `\(A\)` is bounded by maximum degree `\(\lambda_n \geq \sqrt{k_{max}}\)`, so increasing degree increases largest eigenvalue and potentially lead to _unstable_ system
+
+--
+
+- Largest eigenvalue of Laplacian is bounded as `\(k_{max} \geq \lambda_n \geq 2k_{max}\)`, similarly, increasing maximum degree increases largest eigenvalue and potentially lead to _unstable_ system
+
+---
+
+## Summary
+
+Dynamical systems can be represented over networks
+
+Key analytical tool is linear stability analysis
+  - fixed points,
+  - linear approximation
+  
+Conditions for stability (i.e., when fixed point is strictly attracting) depend on spectral properties of graph (precisely) and maximum degree (imprecisely)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+<script>
+remark.macros['scale'] = function (percentage) {
+  var url = this;
+  return '<img src="' + url + '" style=width: ' + percentage + '"/>';
+};
+</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
