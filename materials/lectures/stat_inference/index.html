@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
   <head>
     <title>Statistical Analysis of Network Data</title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <meta name="author" content="Héctor Corrada Bravo" />
-    <meta name="date" content="2018-10-30" />
+    <meta name="date" content="2019-10-08" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
@@ -26,7 +26,7 @@ count: false
 
 .other-info[
 University of Maryland, College Park, USA  
-CMSC828O 2018-10-30
+CMSC828O 2019-10-08
 ]
 
 .logo[![](img/logo.png)]
@@ -180,19 +180,19 @@ class: split-30
 ```
 ## Observations: 36
 ## Variables: 9
-## $ name      &lt;chr&gt; "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9"...
-## $ Seniority &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1...
-## $ Status    &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1...
-## $ Gender    &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1...
-## $ Office    &lt;int&gt; 1, 1, 2, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 3, 1, 1, 2...
-## $ Years     &lt;int&gt; 31, 32, 13, 31, 31, 29, 29, 28, 25, 25, 23, 24, 22, ...
-## $ Age       &lt;int&gt; 64, 62, 67, 59, 59, 55, 63, 53, 53, 53, 50, 52, 57, ...
-## $ Practice  &lt;int&gt; 1, 2, 1, 2, 1, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 2, 2, 1...
-## $ School    &lt;int&gt; 1, 1, 1, 3, 2, 1, 3, 3, 1, 3, 1, 2, 2, 1, 3, 1, 1, 2...
+## $ name      &lt;chr&gt; "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", …
+## $ Seniority &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,…
+## $ Status    &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
+## $ Gender    &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
+## $ Office    &lt;int&gt; 1, 1, 2, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 2, 3, 1, 1, 2, …
+## $ Years     &lt;int&gt; 31, 32, 13, 31, 31, 29, 29, 28, 25, 25, 23, 24, 22, 1,…
+## $ Age       &lt;int&gt; 64, 62, 67, 59, 59, 55, 63, 53, 53, 53, 50, 52, 57, 56…
+## $ Practice  &lt;int&gt; 1, 2, 1, 2, 1, 1, 2, 1, 2, 2, 1, 2, 1, 2, 2, 2, 2, 1, …
+## $ School    &lt;int&gt; 1, 1, 1, 3, 2, 1, 3, 3, 1, 3, 1, 2, 2, 1, 3, 1, 1, 2, …
 ```
 ]
 
-&lt;img src="index_files/figure-html/unnamed-chunk-4-1.png" width="576" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 class: split-70
@@ -228,7 +228,7 @@ and thus `\(p=0.183\)`
 
 
 
-&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" width="1152" style="display: block; margin: auto;" /&gt;&lt;img src="index_files/figure-html/unnamed-chunk-8-2.png" width="1152" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" /&gt;&lt;img src="index_files/figure-html/unnamed-chunk-8-2.png" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -314,61 +314,53 @@ lazega.ergm &lt;- formula(lazega.s ~ edges + gwesp(log(3), fixed=TRUE) +
 &lt;table&gt;
  &lt;thead&gt;
   &lt;tr&gt;
-   &lt;th style="text-align:left;"&gt; term &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; estimate &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; std.error &lt;/th&gt;
-   &lt;th style="text-align:right;"&gt; mcmc.error &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; statistic &lt;/th&gt;
    &lt;th style="text-align:right;"&gt; p.value &lt;/th&gt;
   &lt;/tr&gt;
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; edges &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -7.0126525 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.7030685 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -7.0065546 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6711396 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -10.439787 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; gwesp.fixed.1.09861228866811 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.5906030 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0866729 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5916556 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0855375 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.916915 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; nodecov.Seniority &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0247161 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0063578 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0001013 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0245612 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0061996 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.961761 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000744 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; nodecov.Practice &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.3960366 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1042741 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0001458 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3945545 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1021836 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.861229 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0001128 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; nodematch.Practice &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.7694967 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1961173 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0000872 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7696627 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1906006 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.038093 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0000539 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; nodematch.Gender &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.7374215 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2463944 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0027639 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7376656 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2436241 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.027885 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0024627 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; nodematch.Office &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 1.1654418 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1905383 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.1643929 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1875340 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.208970 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.0000000 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -377,7 +369,7 @@ lazega.ergm &lt;- formula(lazega.s ~ edges + gwesp(log(3), fixed=TRUE) +
 ---
 
 
-&lt;img src="index_files/figure-html/unnamed-chunk-11-1.png" width="1152" style="display: block; margin: auto;" /&gt;&lt;img src="index_files/figure-html/unnamed-chunk-11-2.png" width="1152" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-11-1.png" style="display: block; margin: auto;" /&gt;&lt;img src="index_files/figure-html/unnamed-chunk-11-2.png" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -919,6 +911,7 @@ Block-coordinate ascent method leads to l1-regularized regression at each step
 
 - Can use efficient coordinate descent (soft-thresholding) to solve regression problem
     </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
 "ratio": "16:9"
@@ -926,11 +919,41 @@ Block-coordinate ascent method leads to l1-regularized regression at each step
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
 });
-(function() {
-  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
   if (!r) return;
   s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
   d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
 })();</script>
 <script>
 remark.macros['scale'] = function (percentage) {
@@ -941,7 +964,18 @@ remark.macros['scale'] = function (percentage) {
 
 <script>
 (function() {
-  var i, text, code, codes = document.getElementsByTagName('code');
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
   for (i = 0; i < codes.length;) {
     code = codes[i];
     if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
@@ -955,14 +989,15 @@ remark.macros['scale'] = function (percentage) {
     }
     i++;
   }
-})();
+};
+slideshow._releaseMath(document);
 </script>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
 (function () {
   var script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
   if (location.protocol !== 'file:' && /^https?:/.test(script.src))
     script.src  = script.src.replace(/^https?:/, '');
   document.getElementsByTagName('head')[0].appendChild(script);
