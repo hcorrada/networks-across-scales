@@ -181,11 +181,7 @@ title = "SAND Ch. 6"
 date = "10/14"
 
 [[day14.covers]]
-title = "Learning with Network Data"
-#notes = "lectures/stat_inference.pdf"
-
-[[day14.prep]]
-title = "SAND ch. 7"
+title = "NO LECTURE"
 
 #### DAY 15
 [day15]
@@ -194,6 +190,9 @@ date = "10/16"
 [[day15.covers]]
 title = "Learning with Network Data"
 #notes = "lectures/stat_inference.pdf"
+
+[[day15.prep]]
+title = "SAND ch. 6 and 7"
 
 #### DAY 16
 [day16]
@@ -225,7 +224,7 @@ title = "Learning Networks from Data"
 date = "10/28"
 
 [[day18.covers]]
-title = "Data Project Updates"
+title = "Learning Networks from Data"
 
 #### DAY 19
 ##
@@ -234,13 +233,13 @@ title = "Data Project Updates"
 date = "10/30" 
 
 [[day19.covers]]
-title = "Data Project Updates"
+title = "Unit Closing: State-of-the-art Paper Presentations: ML and Stat Inference"
 
 [day20]
 date = "11/4"
 
 [[day20.covers]]
-title = "Learning Networks from Data"
+title = "TBD"
 
 [[day20.workdue]]
 title = "Homework 3: Statistical Analysis of Network Data"
@@ -250,23 +249,23 @@ link = "homeworks/stat_models/"
 date = "11/6"
 
 [[day21.covers]]
-title = "Unit Closing: State-of-the-art Paper Presentations: ML and Stat Inference"
+title = "Network Visualization"
+
+[[day21.prep]]
+title = "Simple Algorithms for Network Visualization: A Tutorial"
+link = "http://profs.etsmtl.ca/mmcguffin/research/2012-mcguffin-simpleNetVis/mcguffin-2012-simpleNetVis.pdf"
 
 [day22]
 date = "11/11"
 
 [[day22.covers]]
-title = "TBD"
+title = "Data Project Updates"
 
 [day23]
 date = "11/13"
 
 [[day23.covers]]
-title = "Network Visualization"
-
-[[day23.prep]]
-title = "Simple Algorithms for Network Visualization: A Tutorial"
-link = "http://profs.etsmtl.ca/mmcguffin/research/2012-mcguffin-simpleNetVis/mcguffin-2012-simpleNetVis.pdf"
+title = "Data Project Updates"
 
 #[[day23.prep]]
 #title = "SAND ch. 3"
@@ -293,7 +292,7 @@ title = "Dynamic visualization of networks"
 date = "11/25"
 
 [[day26.covers]]
-title = "Dynamic visualization of networks"
+title = "Unit Closing: State-of-the-art Paper Presentations"
 
 [[day26.workdue]]
 title = "Homework 4: Network Structure Inference"
@@ -303,7 +302,7 @@ link = "homeworks/net_structure/"
 date = "11/27"
 
 [[day27.covers]]
-title = "Unit Closing: State-of-the-art Paper Presentations"
+title = "NO LECTURE - Thanksgiving Break"
 
 [day28]
 date = "12/2"
