@@ -199,9 +199,6 @@ title = "SAND ch. 6 and 7"
 date = "10/21"
 
 [[day16.covers]]
-title = "Presentations: Ecological Networks"
-
-[[day16.covers]]
 title = "Learning Networks from Data"
 
 [[day16.prep]]
@@ -215,6 +212,9 @@ date = "10/23"
 
 ###### DAY 18
 ##
+
+[[day17.covers]]
+title = "Presentations: Ecological Networks"
 
 [[day17.covers]]
 title = "Learning Networks from Data"
