@@ -189,7 +189,7 @@ date = "10/16"
 
 [[day15.covers]]
 title = "Learning with Network Data"
-#notes = "lectures/stat_inference.pdf"
+notes = "lectures/stat_inference.pdf"
 
 [[day15.prep]]
 title = "SAND ch. 6 and 7"
@@ -200,6 +200,7 @@ date = "10/21"
 
 [[day16.covers]]
 title = "Learning Networks from Data"
+notes = "lectures/stat_inference.pdf"
 
 [[day16.prep]]
 title = "SAND ch. 8"
