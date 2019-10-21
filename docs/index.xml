@@ -32,9 +32,9 @@ Correlation Network Build a correlation network from the timeseries data as foll
       <pubDate>Tue, 24 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://www.hcbravo.org/networks-across-scales/homeworks/stat_models/</guid>
-      <description>DUE: Monday 11/5/2018, 11:59pm
-Posted: 10/25/2018
-Last Update: 10/30/2018
+      <description>DUE: Monday 11/4/2019, 11:59pm
+Posted: 10/21/2019
+Last Update: 10/21/2019
 We will use ecological network data from the paper &amp;ldquo;How Structured is the Entangled Bank?&amp;hellip;&amp;rdquo; by Kefi et al. http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002527. This paper used Stochastic Block Models to analyze both trophic and non-trophic species interaction networks. Your goal in this homework is to (a) partially replicate some of the analyses in the paper, and reanalyze this data using other statistical methods for analysis.</description>
     </item>
     
