@@ -3,9 +3,9 @@ title: "Homework: Statistical Analysis of Network Data"
 date: "2017-10-24"
 ---
 
-**DUE**: Monday 11/4/2019, 11:59pm  
+**DUE**: Monday 11/8/2019, 11:59pm  
 **Posted**: 10/21/2019  
-**Last Update**: 10/21/2019  
+**Last Update**: 10/28/2019  
 
 
 We will use ecological network data from the paper "How Structured is the Entangled Bank?..." by Kefi et al. http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002527. This paper used Stochastic Block Models to analyze both trophic and non-trophic species interaction networks. Your goal in this homework is to (a) partially replicate some of the analyses in the paper, and reanalyze this data using other statistical methods for analysis. 
@@ -30,6 +30,8 @@ Implement an inference procedure for the SBM model. You have two options:
 - Variational EM algorithm: this is what `blockmodels` implements. The reference implementation is described in this paper: https://arxiv.org/pdf/1011.1813.pdf. The preprint for the `blockmodels` package has a smaller introduction: https://arxiv.org/pdf/1602.07587.pdf
 
 - MCMC: this is what `graph-tool` implements. The reference implementation is described in this paper https://arxiv.org/pdf/1310.4378.pdf
+
+This writeup may help: [{{< baseurl >}}misc/sbm_notes.pdf]({{< baseurl >}}misc/sbm_notes.pdf)
 
 ## Non-probabilistic modularity methods
 
