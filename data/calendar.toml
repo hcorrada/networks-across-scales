@@ -189,7 +189,7 @@ date = "10/16"
 
 [[day15.covers]]
 title = "Learning with Network Data"
-notes = "lectures/stat_inference.pdf"
+notes = "lectures/cmsc828o-stat_inference.pdf"
 
 [[day15.prep]]
 title = "SAND ch. 6 and 7"
@@ -200,7 +200,7 @@ date = "10/21"
 
 [[day16.covers]]
 title = "Learning Networks from Data"
-notes = "lectures/stat_inference.pdf"
+notes = "lectures/cmsc828o-stat_inference.pdf"
 
 [[day16.prep]]
 title = "SAND ch. 8"
@@ -226,6 +226,7 @@ date = "10/28"
 
 [[day18.covers]]
 title = "Learning Networks from Data"
+notes = "lectures/cmsc828o-stat_inference.pdf"
 
 #### DAY 19
 ##
@@ -234,17 +235,14 @@ title = "Learning Networks from Data"
 date = "10/30" 
 
 [[day19.covers]]
-title = "Unit Closing: State-of-the-art Paper Presentations: ML and Stat Inference"
+title = "Learning with Network Data"
 
 [day20]
 date = "11/4"
 
 [[day20.covers]]
-title = "TBD"
+title = "Unit Closing: State-of-the-art Paper Presentations: ML and Stat Inference"
 
-[[day20.workdue]]
-title = "Homework 3: Statistical Analysis of Network Data"
-link = "homeworks/stat_models/"
 
 [day21]
 date = "11/6"
@@ -255,6 +253,13 @@ title = "Network Visualization"
 [[day21.prep]]
 title = "Simple Algorithms for Network Visualization: A Tutorial"
 link = "http://profs.etsmtl.ca/mmcguffin/research/2012-mcguffin-simpleNetVis/mcguffin-2012-simpleNetVis.pdf"
+
+[day21b]
+date = "11/8"
+
+[[day21b.workdue]]
+title = "Homework 3: Statistical Analysis of Network Data"
+link = "homeworks/stat_models/"
 
 [day22]
 date = "11/11"
