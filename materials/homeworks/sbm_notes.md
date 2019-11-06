@@ -109,7 +109,7 @@ $$
 S(\{e_{qr}\}, \{n_r\}) = \frac{1}{2} \sum_{q,r} n_q n_r H_z \left( \frac{e_{qr}}{n_q n_r} \right)
 $$
 
-with $H_z(x) = - x \log x - (1-x) \log x$. This suggests that instead of maximizing $\mathcal{L}$ as we did before, we get our model from minimizing $S$ (this is the entropy of the same distribution btw). We will use sampling in such a way that samples are accepted so they improve $S$.
+with $H_z(x) = - x \log x - (1-x) \log (1-x)$. This suggests that instead of maximizing $\mathcal{L}$ as we did before, we get our model from minimizing $S$ (this is the entropy of the same distribution btw). We will use sampling in such a way that samples are accepted so they improve $S$.
 
 
 ### The sampling procedure
