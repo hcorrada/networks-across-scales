@@ -49,7 +49,7 @@ $$
 with $n$ the number of nodes in the graph.
 
 $$
-\theta_{qr} = \frac{\sum_{i \neq j} \gamma_{iq} \gamma_{jr}}{\sum_{s,t}\sum_{u\neq v} \gamma_{us} \gamma_{vt}}
+\theta_{qr} = \frac{\sum_{i \neq j} y_{ij} \gamma_{iq} \gamma_{jr}}{\sum_{i\neq j} \gamma_{iq} \gamma_{jr}}
 $$
 
 The E-step presents an issue. To compute $P(z_{iq}=1 | y, \theta, \alpha)$ we would employ Bayes' rule:
@@ -74,7 +74,7 @@ then estimate $\theta$ and $\alpha$ as before, but now using parameters $\tau$.
 Finding the optimal $\tau$ does not have a closed-form, but you can show that the optimal $\tau$ satisfy this fixed-point relation
 
 $$
-\tau_{iq} \propto \alpha_q \prod_{j\neq i} \prod_l \left[ \exp\{b(y_ij, \theta_{ql})\} \exp\{b(y_{ij}, \theta_{lq})\} \right]^{\tau_{jl}}
+\tau_{iq} \propto \alpha_q \prod_{j\neq i} \prod_l \left[ \exp\{b(y_ij, \theta_{ql})\} \exp\{b(y_{ji}, \theta_{lq})\} \right]^{\tau_{jl}}
 $$
 
 Based on this observation, the E-step is replaced by iterating over the fixed point relation until convergence to obtain $\tau$.
