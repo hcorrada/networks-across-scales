@@ -248,11 +248,7 @@ title = "Unit Closing: State-of-the-art Paper Presentations: ML and Stat Inferen
 date = "11/6"
 
 [[day21.covers]]
-title = "Network Visualization"
-
-[[day21.prep]]
-title = "Simple Algorithms for Network Visualization: A Tutorial"
-link = "http://profs.etsmtl.ca/mmcguffin/research/2012-mcguffin-simpleNetVis/mcguffin-2012-simpleNetVis.pdf"
+title = "Unit Closing: State-of-the-art Paper Presentations: ML and Stat Inference"
 
 [day21b]
 date = "11/8"
@@ -273,15 +269,19 @@ date = "11/13"
 [[day23.covers]]
 title = "Data Project Updates"
 
-#[[day23.prep]]
-#title = "SAND ch. 3"
+[[day23.covers]]
+title = "Network Visualization"
+
+[[day23.prep]]
+title = "Simple Algorithms for Network Visualization: A Tutorial"
+link = "http://profs.etsmtl.ca/mmcguffin/research/2012-mcguffin-simpleNetVis/mcguffin-2012-simpleNetVis.pdf"
 
 [day24]
 date = "11/18"
 
 [[day24.covers]]
 title = "Network Visualization"
-notes = "lectures/network_vis_muzner.pdf"
+#notes = "lectures/network_vis_muzner.pdf"
 
 [[day24.prep]]
 title = "Visual Analysis of Large Graphs: State-of-the-Art and Future Research Challenges"
@@ -300,10 +300,6 @@ date = "11/25"
 [[day26.covers]]
 title = "Unit Closing: Visualization State-of-the-art Paper Presentations"
 
-[[day26.workdue]]
-title = "Homework 4: Network Structure Inference"
-link = "homeworks/net_structure/"
-
 [day27]
 date = "11/27"
 
@@ -321,6 +317,13 @@ date = "12/4"
 
 [[day29.covers]]
 title = "Data Project Updates 2-2"
+
+[day29a]
+date = "12/6"
+
+[[day29a.workdue]]
+title = "Homework 4: Network Structure Inference"
+link = "homeworks/net_structure/"
 
 [day30]
 date = "12/9"
