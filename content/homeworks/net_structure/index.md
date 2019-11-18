@@ -3,8 +3,8 @@ title: "Homework: Network Structure Inference"
 date: "2017-11-16"
 ---
 
-**Posted**: 11/6/2018  
-**Last Update**: 11/6/2018
+**Posted**: 11/18/2019  
+**Last Update**: 11/18/2019
 
 ## Data
 
