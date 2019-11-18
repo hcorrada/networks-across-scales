@@ -9,6 +9,7 @@ fontfamily: utopia
 
     #. Background and Significance
        - Report specific research question(s) you are addressing
+       - Assumptions underlying questions and formulate hypotheses as appropriate  
        - How does it fit within current knowledge in area
        - What are we missing if we don’t get an answer
        
