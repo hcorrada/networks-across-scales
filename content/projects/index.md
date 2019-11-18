@@ -5,7 +5,7 @@ title: CMSC828O Projects
 
 Throughout the semester, you will be working as a group analyzing a network dataset of your choice. The goal is to apply appropriate methodology as we cover it during the semester. 
 
-Group membership is listed on piazza: LINK COMING SOON
+Group membership is listed on piazza: https://piazza.com/class/jzrnbyj8siq5z3?cid=13
 
 ## Data Project Lightning Talks: 
 
@@ -35,24 +35,23 @@ Prepare 10 minutes to update the class on your work. The focus of this presentat
 
 ## Final Project Presentations: 
 
-For the final presentation prepare 20 minutes presenting a completed analysis of your dataset addressing your research question(s) of choice. You will need to repeat some things from previous presentations:
+For the final presentation prepare 20 minutes presenting a completed analysis of your dataset addressing your research question(s) of choice. You should aim for a target audience consisting of peer researchers, but are not intimately familiar with network data analysis methods. I.e., you and your classmates before this class. You will need to repeat some things from previous presentations:
 
 
 I. *Introduction*. 
 
-  A. What data you plan worked with. This includes:
+  A. What data you worked with. This includes:
 
   - What entities are being studied (e.g., neurons, genes, bacterial species) etc. and their interactions
   
   - The source of your data 
   
-  B. Report the research question(s) you are addressing (background and significance)
+  B. Report the research question(s) you are addressing (background and significance including assumptions and hypotheses as appropriate)
 
 II. *Methods*: 
 
   A. Describe the methodological approach you chose to apply 
 
-  - If we saw these methods in class you can be brief, otherwise, spend a few minutes describing at a high level
   - Make sure you discuss reasoning and justification for your methodological choices 
 
   B. Evaluation framework. Before presenting results introduce how you will evaluate and or validate your applied methods. 

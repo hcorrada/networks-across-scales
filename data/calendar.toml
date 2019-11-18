@@ -281,7 +281,7 @@ date = "11/18"
 
 [[day24.covers]]
 title = "Network Visualization"
-#notes = "lectures/network_vis_muzner.pdf"
+notes = "lectures/network_vis_muzner.pdf"
 
 [[day24.prep]]
 title = "Visual Analysis of Large Graphs: State-of-the-Art and Future Research Challenges"
