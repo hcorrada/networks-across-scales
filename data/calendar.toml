@@ -292,7 +292,7 @@ date = "11/20"
 
 [[day25.covers]]
 title = "Dynamic visualization of networks"
-#notes = "lectures/network_vis_muzner.pdf"
+notes = "lectures/dynamic_viz.pdf"
 
 [day26]
 date = "11/25"
