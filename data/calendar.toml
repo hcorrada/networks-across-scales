@@ -310,13 +310,13 @@ title = "NO LECTURE - Thanksgiving Break"
 date = "12/2"
 
 [[day28.covers]]
-title = "Data Project Updates 2-1"
+title ="NO LECTURE - Project Meetings"
 
 [day29]
 date = "12/4"
 
 [[day29.covers]]
-title = "Data Project Updates 2-2"
+title = "Data Project Updates 2-1"
 
 [day29a]
 date = "12/6"
@@ -327,6 +327,9 @@ link = "homeworks/net_structure/"
 
 [day30]
 date = "12/9"
+
+[[day30.covers]]
+title = "Data Project Updates 2-2"
 
 [[day30.covers]]
 title = "Closing and Perspectives"
